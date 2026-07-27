@@ -1,0 +1,259 @@
+:root {
+    color-scheme: light dark;
+    --background: #f5f7fb;
+    --surface: rgba(255, 255, 255, 0.86);
+    --text: #111827;
+    --secondary: #5b6474;
+    --border: rgba(15, 23, 42, 0.11);
+    --accent: #0878ff;
+    --accent-strong: #0068df;
+    --shadow: 0 22px 60px rgba(31, 41, 55, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(circle at 12% 0%, rgba(8, 120, 255, 0.13), transparent 34rem),
+        var(--background);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+}
+
+a {
+    color: var(--accent);
+    text-underline-offset: 0.18em;
+}
+
+.page-shell {
+    width: min(920px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 72px 0 40px;
+}
+
+.hero {
+    max-width: 720px;
+    padding: 32px 0 54px;
+}
+
+.app-mark {
+    display: grid;
+    width: 72px;
+    height: 72px;
+    margin-bottom: 28px;
+    place-items: center;
+    border-radius: 22px;
+    background: linear-gradient(145deg, #0a8cff, #075ee8);
+    box-shadow: 0 16px 38px rgba(8, 120, 255, 0.28);
+    color: white;
+    font-size: 38px;
+    font-weight: 750;
+    letter-spacing: -0.05em;
+}
+
+.eyebrow {
+    margin: 0 0 8px;
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(44px, 8vw, 72px);
+    line-height: 1.02;
+    letter-spacing: -0.05em;
+}
+
+h2 {
+    margin: 0 0 24px;
+    font-size: 28px;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+}
+
+h3 {
+    margin: 0 0 8px;
+    font-size: 19px;
+    line-height: 1.35;
+}
+
+p {
+    margin: 0 0 18px;
+}
+
+.intro {
+    max-width: 650px;
+    margin: 24px 0 28px;
+    color: var(--secondary);
+    font-size: 21px;
+    line-height: 1.55;
+}
+
+.primary-action {
+    display: inline-block;
+    padding: 13px 20px;
+    border-radius: 15px;
+    background: var(--accent);
+    box-shadow: 0 12px 28px rgba(8, 120, 255, 0.23);
+    color: white;
+    font-weight: 650;
+    text-decoration: none;
+}
+
+.primary-action:hover {
+    background: var(--accent-strong);
+}
+
+.primary-action:focus-visible,
+a:focus-visible {
+    outline: 3px solid rgba(8, 120, 255, 0.42);
+    outline-offset: 4px;
+}
+
+.contact-address {
+    margin-top: 14px;
+    color: var(--secondary);
+    font-size: 14px;
+}
+
+.content-card {
+    margin-bottom: 24px;
+    padding: clamp(24px, 5vw, 42px);
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+}
+
+.help-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px 36px;
+}
+
+.help-grid p,
+.policy-header p,
+.policy-content p,
+li {
+    color: var(--secondary);
+}
+
+ul {
+    margin: 0;
+    padding-left: 1.3em;
+}
+
+li + li {
+    margin-top: 10px;
+}
+
+.top-nav {
+    margin-bottom: 48px;
+}
+
+.top-nav a {
+    font-weight: 650;
+    text-decoration: none;
+}
+
+.policy-header {
+    max-width: 760px;
+    margin-bottom: 36px;
+}
+
+.policy-header h1 {
+    margin-bottom: 18px;
+}
+
+.updated {
+    font-size: 15px;
+}
+
+.policy-content h2 {
+    margin-top: 42px;
+    margin-bottom: 12px;
+    font-size: 24px;
+}
+
+.policy-content h2:first-child {
+    margin-top: 0;
+}
+
+code {
+    padding: 0.12em 0.35em;
+    border-radius: 6px;
+    background: rgba(127, 127, 127, 0.12);
+    font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+    font-size: 0.9em;
+}
+
+footer {
+    padding: 32px 8px 0;
+    color: var(--secondary);
+    font-size: 14px;
+    text-align: center;
+}
+
+footer span {
+    margin: 0 8px;
+}
+
+footer p {
+    margin-top: 12px;
+}
+
+@media (max-width: 650px) {
+    .page-shell {
+        padding-top: 36px;
+    }
+
+    .hero {
+        padding-bottom: 38px;
+    }
+
+    .help-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .content-card {
+        border-radius: 22px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #06080c;
+        --surface: rgba(24, 27, 33, 0.88);
+        --text: #f7f8fa;
+        --secondary: #a6adba;
+        --border: rgba(255, 255, 255, 0.1);
+        --shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+    }
+
+    body {
+        background:
+            radial-gradient(circle at 12% 0%, rgba(8, 120, 255, 0.17), transparent 34rem),
+            var(--background);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}

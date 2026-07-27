@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Privacy Policy for Dibsly for iOS.">
+    <title>Dibsly Privacy Policy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="page-shell policy-shell">
+        <nav class="top-nav" aria-label="Support navigation">
+            <a href="index.html">← Dibsly Support</a>
+        </nav>
+
+        <header class="policy-header">
+            <p class="eyebrow">Dibsly for iOS</p>
+            <h1>Privacy Policy</h1>
+            <p class="updated">Last updated: July 27, 2026</p>
+            <p>Dibsly is a local-first personal finance tracker for iOS.</p>
+        </header>
+
+        <article class="content-card policy-content">
+            <h2>Data Stored by the App</h2>
+            <p>Dibsly stores the financial information you enter in the app, including accounts, categories, transactions, transfers, currencies, notes, monthly plans and allocations, investment assets and activity, and data imported from Dibsly, Monefy, Freedom Finance, or Interactive Brokers files. This information is stored locally on your device.</p>
+
+            <h2>Data Collection</h2>
+            <p>Dibsly does not collect personal data, financial data, analytics data, tracking data, or usage data on Dibsly-operated servers.</p>
+            <p>The app does not require a Dibsly account and does not add its own general-purpose analytics, advertising, or tracking service. Dibsly has no application backend that receives your finance database. Google Sign-In is included only for optional Google Drive backup; Google may process account, device, location, and usage information for sign-in functionality, security, and analytics under Google's terms and SDK privacy declarations. Dibsly does not use this integration for advertising or cross-app tracking.</p>
+
+            <h2>Market Data Requests</h2>
+            <p>When you search for an investment symbol, refresh a quote, or open portfolio history, Dibsly contacts public market-data endpoints, currently including Nasdaq services and Yahoo Finance historical chart data. A request can include the ticker, search text, requested date range, chart interval, and standard network metadata visible to the provider, such as an IP address. Dibsly does not send account balances, transaction history, notes, or imported broker files with these requests.</p>
+
+            <h2>Currency Rate Requests</h2>
+            <p>Dibsly retrieves current reference exchange rates from the National Bank of Ukraine. This request does not include account balances, transactions, plans, notes, or imported files. The provider can receive standard network metadata such as an IP address.</p>
+
+            <h2>Data Sharing</h2>
+            <p>Dibsly does not sell or rent your data and does not share it for advertising or cross-app tracking.</p>
+            <p>Financial records can leave your device only when you choose to export, share, or enable backup. Provider-directed backup and Google authentication are described below. Market-data requests are limited as described above.</p>
+
+            <h2>Optional Backup &amp; Recovery</h2>
+            <p>Dibsly supports optional encrypted backup to iCloud Drive and Google Drive. The same provider-independent encrypted archive is used for both destinations. Backup is not live synchronization, and the app remains usable without either provider.</p>
+            <p>For iCloud Drive, you choose a storage location through Apple's file-provider interface. Apple may receive the encrypted backup file and standard account, device, and network information under your Apple agreement and privacy settings.</p>
+            <p>For Google Drive, you explicitly sign in with Google and authorize the narrow <code>drive.file</code> scope. Dibsly displays the connected account name and email locally, creates a visible Dibsly Backups folder, and accesses files it creates there. Google may receive the encrypted backup file, basic sign-in information, OAuth authorization data, and standard device and network metadata. Dibsly does not request broad access to unrelated Drive files and does not send Google credentials or backup contents through a Dibsly server.</p>
+            <p>Backup files are encrypted and integrity-protected before upload. The recovery password is not stored beside a backup; when automatic backup is enabled, the routine credential is stored only in this device's data-protection Keychain. Best-effort automatic backup runs only after you opt in, financial data changes, and the app becomes active. Dibsly retains up to 10 automatic snapshots that the current installation positively identifies as managed; manual and unrelated files are not silently removed.</p>
+            <p>Disconnecting Google Drive removes local authorization but does not delete remote backups. Deleting all local Dibsly data turns automatic backup off and does not delete existing cloud backups.</p>
+            <p>Before managed restore or CSV Replace mutates local data, Dibsly creates and verifies an encrypted emergency snapshot in the app's local Application Support storage. Its local-only encryption credential is held in the device Keychain. Dibsly does not upload these emergency files or their credentials. After a new snapshot is verified, Dibsly keeps the five newest Dibsly-managed emergency snapshots on a best-effort basis and does not remove unrelated files.</p>
+
+            <h2>File Import and Export</h2>
+            <p>Dibsly can import and export CSV files and import supported broker CSV/XLSX reports when you explicitly select those actions. Files selected through the iOS document picker remain under your control.</p>
+
+            <h2>Data Retention and Deletion</h2>
+            <p>Local data remains on your device until you edit it, delete it, remove the app, or use Dibsly's Delete All Data action. Cloud backups remain in the storage provider account you selected until you delete them there or use Dibsly's supported delete-and-disconnect action for recognized Dibsly backups. Dibsly does not control the provider's own retention practices.</p>
+
+            <h2>Your Choices</h2>
+            <p>You can use Dibsly without Google Drive, disable automatic backup, disconnect a cloud provider, delete recognized Dibsly backups, export your data, or delete all local Dibsly data from the app. You can also revoke Dibsly's Google access from your Google Account settings.</p>
+
+            <h2>Contact</h2>
+            <p>For privacy questions, email <a href="mailto:dibslysupport@gmail.com">dibslysupport@gmail.com</a>.</p>
+        </article>
+
+        <footer>
+            <a href="index.html">Support</a>
+            <span aria-hidden="true">·</span>
+            <a href="mailto:dibslysupport@gmail.com">Contact Support</a>
+            <p>© 2026 Dibsly</p>
+        </footer>
+    </main>
+</body>
+</html>
