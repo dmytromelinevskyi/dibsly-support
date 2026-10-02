@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <meta name="description" content="A bill shared from Dibsly: tap your items and see your part.">
+    <title>Split the bill</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+            --background: #f6f3ee;
+            --surface: #ffffff;
+            --text: #1c1a17;
+            --secondary: #6b665e;
+            --border: rgba(28, 26, 23, 0.1);
+            --accent: #f2a33a;
+            --accent-text: #b8640f;
+            --accent-soft: rgba(242, 163, 58, 0.16);
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background: #0f0e0d;
+                --surface: #1d1b19;
+                --text: #f4f1ec;
+                --secondary: #a39d94;
+                --border: rgba(255, 255, 255, 0.09);
+                --accent-text: #f4b25c;
+                --accent-soft: rgba(242, 163, 58, 0.2);
+            }
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            background: var(--background);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+            font-size: 17px;
+            line-height: 1.45;
+            -webkit-tap-highlight-color: transparent;
+        }
+        main { width: min(560px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 140px; }
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 18px;
+            margin-bottom: 12px;
+        }
+        .head { text-align: center; }
+        .merchant { font-weight: 650; font-size: 17px; }
+        .part { font-size: 40px; font-weight: 750; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+        .muted { color: var(--secondary); font-size: 14px; }
+        .hint { color: var(--secondary); font-size: 14px; margin: 0 0 8px; }
+        .item {
+            display: flex; align-items: center; gap: 10px;
+            width: 100%; min-height: 48px; padding: 6px 0;
+            border: 0; border-top: 1px solid var(--border);
+            background: none; color: inherit; font: inherit; text-align: left; cursor: pointer;
+        }
+        .item:first-of-type { border-top: 0; }
+        .check {
+            flex: none; width: 26px; height: 26px; border-radius: 50%;
+            border: 2px solid var(--secondary); display: grid; place-items: center;
+            color: #1c1a17; font-size: 15px; font-weight: 800;
+        }
+        .item.mine .check { background: var(--accent); border-color: var(--accent); }
+        .name { flex: 1; }
+        .qty { color: var(--secondary); font-size: 14px; margin-left: 4px; }
+        .amount { color: var(--secondary); font-variant-numeric: tabular-nums; }
+        .share {
+            flex: none; min-width: 44px; height: 32px; border-radius: 16px;
+            border: 1px solid var(--border); background: none; color: var(--accent-text);
+            font: inherit; font-size: 14px; font-weight: 650; cursor: pointer;
+        }
+        .share[hidden] { display: none; }
+        .bar {
+            position: fixed; left: 0; right: 0; bottom: 0;
+            padding: 14px 16px calc(14px + env(safe-area-inset-bottom));
+            background: var(--background); border-top: 1px solid var(--border);
+        }
+        .bar-inner { width: min(560px, 100%); margin: 0 auto; display: flex; gap: 10px; }
+        .bar button {
+            flex: 1; min-height: 50px; border-radius: 25px; border: 0;
+            font: inherit; font-weight: 650; cursor: pointer;
+        }
+        .primary { background: var(--accent); color: #1c1a17; }
+        .secondary { background: var(--accent-soft); color: var(--accent-text); }
+        .footer { text-align: center; margin-top: 18px; }
+        .footer a { color: var(--accent-text); }
+        .error { text-align: center; padding: 60px 0; }
+    </style>
+</head>
+<body>
+<main id="app"><p class="error" id="loading">…</p></main>
+<div class="bar" id="bar" hidden>
+    <div class="bar-inner">
+        <button class="secondary" id="clear" type="button"></button>
+        <button class="primary" id="copy" type="button"></button>
+    </div>
+</div>
+<script>
+(() => {
+    // The receipt travels in the link's # part (format 1 of Dibsly's ReceiptShareLink): raw-deflated JSON in
+    // base64url. Nothing is sent anywhere; the choices stay on this device.
+    const lang = (navigator.language || "en").slice(0, 2);
+    const strings = {
+        en: { title: "Split the bill", yours: "Your part", of: "of {0} · tips and discounts shared in proportion",
+              hint: "Tap what’s yours. Tap ½ to share an item with others.", clear: "Clear", copy: "Copy my part",
+              copied: "Copied", items: "items", broken: "This link is incomplete. Ask for it again.",
+              old: "Open this link in Safari or Chrome.", made: "Made with", mine: "My part: {0} — {1}" },
+        uk: { title: "Поділити рахунок", yours: "Твоя частина", of: "з {0} · чайові та знижки — пропорційно",
+              hint: "Торкнись свого. Торкнись ½, щоб поділити позицію з іншими.", clear: "Очистити",
+              copy: "Скопіювати мою частину", copied: "Скопійовано", items: "позицій",
+              broken: "Посилання неповне. Попроси надіслати його ще раз.",
+              old: "Відкрий це посилання в Safari чи Chrome.", made: "Зроблено в", mine: "Моя частина: {0} — {1}" },
+        ru: { title: "Разделить счёт", yours: "Твоя часть", of: "из {0} · чаевые и скидки — пропорционально",
+              hint: "Нажми на своё. Нажми ½, чтобы поделить позицию с другими.", clear: "Очистить",
+              copy: "Скопировать мою часть", copied: "Скопировано", items: "позиций",
+              broken: "Ссылка неполная. Попроси прислать её ещё раз.",
+              old: "Открой эту ссылку в Safari или Chrome.", made: "Сделано в", mine: "Моя часть: {0} — {1}" }
+    };
+    const t = strings[lang] || strings.en;
+    const fill = (text, ...values) => values.reduce((s, v, i) => s.replace("{" + i + "}", v), text);
+    document.documentElement.lang = strings[lang] ? lang : "en";
+    document.title = t.title;
+    const app = document.getElementById("app");
+
+    function fail(message) {
+        app.innerHTML = "";
+        const p = document.createElement("p");
+        p.className = "error";
+        p.textContent = message;
+        app.appendChild(p);
+    }
+
+    async function decode(fragment) {
+        let base64 = fragment.replace(/-/g, "+").replace(/_/g, "/");
+        base64 += "=".repeat((4 - base64.length % 4) % 4);
+        const bytes = Uint8Array.from(atob(base64), c => c.charCodeAt(0));
+        const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream("deflate-raw"));
+        return JSON.parse(await new Response(stream).text());
+    }
+
+    function render(receipt) {
+        const currency = receipt.c || "UAH";
+        let format;
+        try {
+            format = new Intl.NumberFormat(navigator.language, { style: "currency", currency });
+        } catch (error) {
+            format = new Intl.NumberFormat(navigator.language, { minimumFractionDigits: 2 });
+        }
+        const money = minor => format.format(minor / 100);
+        const items = (receipt.i || []).map((row, index) => ({
+            id: index, name: String(row[0] || ""), minor: Number(row[1]) || 0, qty: String(row[2] || "")
+        })).filter(item => item.minor > 0);
+        const itemsSum = items.reduce((sum, item) => sum + item.minor, 0);
+        const total = Number(receipt.t) || itemsSum;
+        const key = "dibsly-split-" + location.hash.slice(1, 40);
+        let shares = {};
+        try { shares = JSON.parse(localStorage.getItem(key) || "{}"); } catch (error) { shares = {}; }
+
+        app.innerHTML = "";
+        const head = document.createElement("section");
+        head.className = "card head";
+        head.innerHTML = '<div class="merchant"></div><div class="muted"></div><div class="part"></div><div class="muted of"></div>';
+        head.querySelector(".merchant").textContent = receipt.m || t.title;
+        head.querySelector(".muted").textContent = t.yours;
+        head.querySelector(".of").textContent = fill(t.of, money(total));
+        app.appendChild(head);
+
+        const list = document.createElement("section");
+        list.className = "card";
+        const hint = document.createElement("p");
+        hint.className = "hint";
+        hint.textContent = t.hint;
+        list.appendChild(hint);
+        const rows = items.map(item => {
+            const row = document.createElement("div");
+            row.style.display = "flex";
+            row.style.alignItems = "center";
+            row.style.gap = "8px";
+            const button = document.createElement("button");
+            button.type = "button";
+            button.className = "item";
+            button.innerHTML = '<span class="check" aria-hidden="true"></span><span class="name"></span><span class="amount"></span>';
+            button.querySelector(".name").textContent = item.name;
+            if (item.qty && item.qty !== "1") {
+                const qty = document.createElement("span");
+                qty.className = "qty";
+                qty.textContent = "× " + item.qty;
+                button.querySelector(".name").appendChild(qty);
+            }
+            button.querySelector(".amount").textContent = money(item.minor);
+            const share = document.createElement("button");
+            share.type = "button";
+            share.className = "share";
+            button.addEventListener("click", () => {
+                shares[item.id] = shares[item.id] ? 0 : 1;
+                update();
+            });
+            share.addEventListener("click", () => {
+                const next = { 1: 2, 2: 3, 3: 4, 4: 1 };
+                shares[item.id] = next[shares[item.id] || 1];
+                update();
+            });
+            row.appendChild(button);
+            row.appendChild(share);
+            list.appendChild(row);
+            return { item, button, share };
+        });
+        app.appendChild(list);
+
+        const footer = document.createElement("p");
+        footer.className = "muted footer";
+        footer.innerHTML = t.made + ' <a href="https://dmytromelinevskyi.github.io/dibsly-support/">Dibsly</a>';
+        app.appendChild(footer);
+
+        const myPart = () => {
+            if (!itemsSum) return 0;
+            const mine = items.reduce((sum, item) => sum + (shares[item.id] ? item.minor / shares[item.id] : 0), 0);
+            return Math.round(total * mine / itemsSum);
+        };
+
+        function update() {
+            rows.forEach(({ item, button, share }) => {
+                const people = shares[item.id] || 0;
+                button.classList.toggle("mine", people > 0);
+                button.setAttribute("aria-pressed", people > 0 ? "true" : "false");
+                button.querySelector(".check").textContent = people > 0 ? "✓" : "";
+                share.hidden = people === 0;
+                share.textContent = people > 1 ? "1/" + people : "½";
+            });
+            head.querySelector(".part").textContent = money(myPart());
+            try { localStorage.setItem(key, JSON.stringify(shares)); } catch (error) { /* private mode */ }
+        }
+
+        const bar = document.getElementById("bar");
+        const clear = document.getElementById("clear");
+        const copy = document.getElementById("copy");
+        clear.textContent = t.clear;
+        copy.textContent = t.copy;
+        clear.addEventListener("click", () => { shares = {}; update(); });
+        copy.addEventListener("click", async () => {
+            const names = items.filter(item => shares[item.id]).map(item =>
+                shares[item.id] > 1 ? item.name + " (1/" + shares[item.id] + ")" : item.name);
+            const text = fill(t.mine, money(myPart()), names.join(", "));
+            try {
+                await navigator.clipboard.writeText(text);
+                copy.textContent = t.copied;
+                setTimeout(() => { copy.textContent = t.copy; }, 1500);
+            } catch (error) { /* clipboard not allowed */ }
+        });
+        bar.hidden = false;
+        update();
+    }
+
+    const fragment = location.hash.slice(1);
+    if (!fragment) return fail(t.broken);
+    if (typeof DecompressionStream === "undefined") return fail(t.old);
+    decode(fragment).then(receipt => {
+        if (!receipt || receipt.v !== 1) return fail(t.broken);
+        render(receipt);
+    }).catch(() => fail(t.broken));
+})();
+</script>
+</body>
+</html>
