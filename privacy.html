@@ -16,94 +16,67 @@
         <header class="policy-header">
             <p class="eyebrow">Dibsly for iOS</p>
             <h1>Privacy Policy</h1>
-            <p class="updated">Last updated: September 27, 2026</p>
+            <p class="updated">Last updated: October 2, 2026</p>
             <p>Dibsly is a local-first personal finance tracker for iOS.</p>
         </header>
 
         <article class="content-card policy-content">
             <h2>Data Stored by the App</h2>
-
             <p>Dibsly stores the financial information you enter in the app, including accounts, categories, transactions, transfers, currencies, notes, monthly plans and allocations, recurring payment schedules and their expense links, payment drafts received through Shortcuts and their confirmation state, investment assets and activity, and data imported from Dibsly, Monefy, Freedom Finance, or Interactive Brokers files, from bank statement files, or from the monobank personal API. Imported operations are stored together with a record of each imported statement row (its identity, date, amount, and what it became in Dibsly), the merchant categories you asked Dibsly to remember, and the mapping between monobank cards or jars and your Dibsly accounts. This information is stored locally on your device.</p>
-
             <h2>Data Collection</h2>
-
             <p>Dibsly does not collect personal data, financial data, analytics data, tracking data, or usage data on Dibsly-operated servers.</p>
-
             <p>The app does not require a Dibsly account and does not add its own general-purpose analytics, advertising, or tracking service. Dibsly has no application backend that receives your finance database. This version offers backup to iCloud Drive only: Google Drive backup is not available, Dibsly does not sign in to Google and does not send data to Google.</p>
-
             <h2>Market Data Requests</h2>
-
             <p>When you search for an investment symbol, refresh a quote, or open portfolio history, Dibsly contacts public market-data endpoints, currently including Nasdaq services and Yahoo Finance historical chart data. A request can include the ticker, search text, requested date range, chart interval, and standard network metadata visible to the provider, such as an IP address. Dibsly does not send account balances, transaction history, notes, or imported broker files with these requests.</p>
-
             <h2>Currency Rate Requests</h2>
-
             <p>Dibsly retrieves current reference exchange rates from the National Bank of Ukraine. This request does not include account balances, transactions, plans, notes, or imported files. The provider can receive standard network metadata such as an IP address.</p>
-
             <h2>Recurring Payments and Local Notifications</h2>
-
             <p>Recurring schedules and their links to recorded expenses stay on the device and are included in optional encrypted backups. Searching past expenses to suggest a payment name, category and estimated amount happens on the device; it does not send transaction history to a search service.</p>
-
             <p>If you grant notification permission and enable a reminder, Dibsly schedules local notifications through iOS. Their text includes the payment name, estimated amount/currency and expected date. App Lock and Hide amounts do not redact these notification previews. You control notification permissions and lock-screen previews in iOS Settings. Opening Dibsly from a reminder still respects App Lock. No Dibsly remote-push service or bank connection is used.</p>
-
             <h2>Apple Pay Drafts through Shortcuts</h2>
-
             <p>If you enable Apple Pay capture and configure a personal automation in iPhone Shortcuts, the Dibsly action stores the inputs supplied by that automation: available amount and currency, merchant, selected Dibsly account, optional card name and payment date, and a derived retry key when a source event identifier is supplied. Dibsly does not directly read your Wallet transaction history or connect to your bank. The automation is configured and managed in Apple’s Shortcuts app.</p>
-
             <p>Payments wait locally as drafts until you confirm or link them to an expense. Note/category suggestions search recent expenses on the device. Drafts and handled-payment receipts are included in optional encrypted Dibsly backups; iOS personal automations are not included. Capture returns a generic result without payment details, while viewing and confirming payments follows the app’s existing lock and amount-privacy settings. This feature adds no Dibsly server or new remote recipient.</p>
-
             <p>Turning Apple Pay off stops new captures and hides Activity while keeping existing drafts. It does not disable the iOS automation. Discarding or confirming a draft retains a local receipt, including its captured details and retry key, to prevent explicit event retries from recreating it. To remove all draft and receipt data, use Delete All Data; existing cloud backups remain governed by the backup/deletion controls below.</p>
-
             <h2>Data Sharing</h2>
-
             <p>Dibsly does not sell or rent your data and does not share it for advertising or cross-app tracking.</p>
-
-            <p>Financial records can leave your device only when you choose to export, share, or enable backup. Optional iCloud Drive backup is described below. Market-data requests are limited as described above.</p>
-
+            <p>Financial records can leave your device only when you choose to export, share, enable backup, or use AI categorization. Optional iCloud Drive backup and AI categorization are described below. Market-data requests are limited as described above.</p>
             <h2>Optional Backup &amp; Recovery</h2>
-
             <p>Dibsly supports optional encrypted backup to iCloud Drive. Backup is not live synchronization, and the app remains usable without it.</p>
-
             <p>You choose the iCloud Drive folder for backups through Apple's file-provider interface; the backup files stay visible there in the Files app. Apple may receive the encrypted backup file and standard account, device, and network information under your Apple agreement and privacy settings. Dibsly has no server in between and does not use iCloud to synchronize your finance database.</p>
-
             <p>Backup files are encrypted and integrity-protected before upload. The recovery password is not stored beside a backup; when automatic backup is enabled, the routine credential is stored only in this device's data-protection Keychain. Automatic backup is opt-in and best-effort: after setup, eligible Daily or Weekly attempts run when the app becomes active and, when iOS allows it, in the background (usually while the device is idle), only if backed-up data has changed; setup or an explicit retry can also trigger an attempt. iOS decides when background attempts run, so exact timing is not guaranteed.</p>
-
             <p>Automatic retention keeps the newest 5 automatic backups created by this installation in each backup location when cleanup succeeds. Automatic backups made by another device or an earlier installation, manual backups, and files not recognized as Dibsly automatic backups are never removed by this cleanup. Provider failures may delay cleanup.</p>
-
             <p>Disconnecting iCloud Drive in Dibsly stops backups there but does not delete existing backup files. Deleting all local Dibsly data turns automatic backup off and does not delete existing cloud backups.</p>
-
             <p>Before managed restore or CSV Replace mutates local data, Dibsly creates and verifies an encrypted emergency snapshot in the app's local Application Support storage. Its local-only encryption credential is held in the device Keychain. Dibsly does not upload these emergency files or their credentials. After a new snapshot is verified, Dibsly keeps the five newest Dibsly-managed emergency snapshots on a best-effort basis and does not remove unrelated files. Only exact <code>pre-restore-&lt;UUID&gt;.dibslybackup</code> and <code>pre-replace-import-&lt;UUID&gt;.dibslybackup</code> names are eligible for this pruning.</p>
-
             <h2>File Import and Export</h2>
-
             <p>Dibsly can import and export CSV files and import supported broker CSV/XLSX reports when you explicitly select those actions. Files selected through the iOS document picker remain under your control.</p>
-
             <h2>Bank Statement Import</h2>
-
             <p>Dibsly can read bank statement files you select yourself (monobank CSV, XLS and PDF; UKRSIBBANK, PrivatBank and KredoBank PDF). The file is read entirely on your device: it is never uploaded, and no part of it is sent to Dibsly or to any other service. Dibsly reads only the fields it needs — dates, operation details, amounts, currencies, balances, card masks and the account IBAN — and never parses the tax number, passport data, date of birth or registration address that bank statements print in their headers. The account holder's name is used in memory only, to recognize transfers between your own accounts, and is then discarded. Card masks and a masked form of the IBAN (country code and the last digits) are stored so later imports recognize the same account; full card numbers and full IBANs are not stored. Import History keeps the bank, the file name you chose, the period and the counts, not the operations themselves.</p>
-
             <h2>monobank Connection</h2>
-
             <p>If you connect monobank, Dibsly uses the personal token you create yourself at api.monobank.ua. The token is stored in the Keychain of that device only (available after first unlock, this device only). It is never included in a backup, a CSV export, Import History, a diagnostic report, or anything sent to Dibsly; Dibsly has no server that could receive it.</p>
-
             <p>Synchronization starts only when you connect monobank or tap Sync; a longer history import you started can continue in the background, paced by monobank's request limits. Dibsly calls api.monobank.ua directly from your device with your token and asks for your accounts and jars and for the operations of the accounts you mapped, within the period shown on screen. monobank receives the request and standard network metadata such as an IP address; it does not receive anything you entered in Dibsly. The answer — your cards, jars, balances and operations — stays on the device and is shown in a preview before anything is written.</p>
-
             <p>Disconnecting deletes the token and the card and jar mapping from the device; operations already imported stay in your data. Revoking the token itself is done in your monobank cabinet at api.monobank.ua.</p>
-
+            <h2>AI Categorization (Dibsly Premium, optional)</h2>
+            <p>AI categorization helps with the operations Dibsly could not categorize itself: imported operations when you tap Sort with AI, and new payments captured from bank notifications or Apple Pay, whose category it proposes before you save them. It works only after you allow it on a screen that names the receiver (Settings → Dibsly Premium → AI categorization). Dibsly then sends, directly from your device to Anthropic (the maker of the Claude AI model), the names of those merchants as your bank wrote them (for a bill paid to a company through internet banking: the company and the service, without an address, a phone number or an account number), the names of your categories, and up to eight merchants you already filed under each category. Long numbers are removed from every name before it is sent. Amounts, dates, accounts, balances, notes, card or account numbers are never sent, and transfers to and from people are never sent at all: Dibsly files them as transfers itself. Anthropic receives standard network metadata such as an IP address; your device proves it runs a genuine copy of Dibsly through Apple's App Attest, and Dibsly has no server in between. Under Anthropic's API terms the data is deleted within 30 days and is not used to train models.</p>
+            <p><strong>Bank notifications read by the AI (Dibsly Premium, iOS 27 or later).</strong> If you set up the Dibsly automation for your bank apps in Shortcuts and allow Dibsly's AI, each notification from those apps that names an amount with a currency is saved on your device and its text is sent, directly from your device, to Anthropic, which reads the amount, the currency, the merchant or sender, the card's last digits and any fee. Full card numbers, IBANs and phone numbers in the text are replaced before it is sent; the rest of the notification — which can include your balance and the name of a person who sent you money — is sent as it is. Notifications without an amount, such as codes and offers, are not sent. The result becomes a draft in Activity that you confirm or discard; a notification that could not be read yet waits on your device for up to a week. The same Anthropic terms apply: the data is deleted within 30 days and is not used to train models.</p>
+            <p>The answers (a category, a confidence and a readable merchant name per merchant, which Dibsly shows in lists instead of the bank's text) and a record of which operations the AI filed are kept on your device only; they are not part of backups or exports and are erased by Delete All Data. A usage counter for the AI allowance (a number of merchants, not their names) is kept in the device Keychain. You can switch AI categorization off at any time in Settings → Dibsly Premium; every category the AI chose can be changed like any other.</p>
+            <h2>Dibsly Premium Subscription</h2>
+            <p>Dibsly Premium (AI categorization and Investments) is an auto-renewable subscription sold through the App Store, with a free trial for new subscribers. Apple processes the purchase, the payment and the renewals under your Apple account; Dibsly never receives your payment details, name or email. On your device Dibsly reads only whether the subscription or the trial is active and until when, through Apple's StoreKit. You manage and cancel the subscription in iOS Settings → your name → Subscriptions. Your data stays on your device whether or not you subscribe: when Premium ends, Investments are hidden until you subscribe again, and nothing is deleted.</p>
             <h2>Data Retention and Deletion</h2>
-
             <p>Local data remains on your device until you edit it, delete it, remove the app, or use Dibsly's Delete All Data action. Cloud backups remain in your iCloud Drive until you delete them there, from Dibsly's backup list, or through automatic retention described above. Dibsly does not control Apple's own retention practices.</p>
-
             <h2>Your Choices</h2>
-
-            <p>You can use Dibsly without backup, disable automatic backup, disconnect iCloud Drive, delete Dibsly backups, export your data, or delete all local Dibsly data from the app. Bank statement import and the monobank connection are optional: you can use Dibsly without them, disconnect monobank at any time, and revoke its token in your monobank cabinet.</p>
-
+            <p>You can use Dibsly without backup, disable automatic backup, disconnect iCloud Drive, delete Dibsly backups, export your data, or delete all local Dibsly data from the app. Bank statement import, the monobank connection and AI categorization are optional: you can use Dibsly without them, disconnect monobank at any time, and revoke its token in your monobank cabinet.</p>
             <h2>Contact</h2>
-
-            <p>For privacy questions, email <a href="mailto:dibslysupport@gmail.com">dibslysupport@gmail.com</a>.</p>
+            <p>For privacy questions, contact:</p>
+            <p><a href="mailto:dibslysupport@gmail.com">dibslysupport@gmail.com</a></p>
+            <p>Public policy: <a href="https://dmytromelinevskyi.github.io/dibsly-support/privacy.html">https://dmytromelinevskyi.github.io/dibsly-support/privacy.html</a></p>
         </article>
 
         <footer>
             <a href="index.html">Support</a>
+            <span aria-hidden="true">·</span>
+            <a href="privacy.html">Privacy Policy</a>
+            <span aria-hidden="true">·</span>
+            <a href="terms.html">Terms of Use</a>
             <span aria-hidden="true">·</span>
             <a href="mailto:dibslysupport@gmail.com">Contact Support</a>
             <p>© 2026 Dibsly</p>
