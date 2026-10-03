@@ -52,13 +52,13 @@
         .part { font-size: 40px; font-weight: 750; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
         .muted { color: var(--secondary); font-size: 14px; }
         .hint { color: var(--secondary); font-size: 14px; margin: 0 0 8px; }
+        .row { border-top: 1px solid var(--border); }
+        .row:first-of-type { border-top: 0; }
         .item {
             display: flex; align-items: center; gap: 10px;
             width: 100%; min-height: 48px; padding: 6px 0;
-            border: 0; border-top: 1px solid var(--border);
-            background: none; color: inherit; font: inherit; text-align: left; cursor: pointer;
+            border: 0; background: none; color: inherit; font: inherit; text-align: left; cursor: pointer;
         }
-        .item:first-of-type { border-top: 0; }
         .check {
             flex: none; width: 26px; height: 26px; border-radius: 50%;
             border: 2px solid var(--secondary); display: grid; place-items: center;
@@ -67,7 +67,13 @@
         .item.mine .check { background: var(--accent); border-color: var(--accent); }
         .name { flex: 1; }
         .qty { color: var(--secondary); font-size: 14px; margin-left: 4px; }
-        .amount { color: var(--secondary); font-variant-numeric: tabular-nums; }
+        .amount { flex: none; white-space: nowrap; color: var(--secondary); font-variant-numeric: tabular-nums; }
+        /* The friend's part of a marked item, on its own line under it (owner, 2026-10-03: − and + squeezed the
+           name and the amount into a narrow column). */
+        .partline { display: flex; align-items: center; gap: 8px; padding: 0 0 8px 36px; }
+        .partline[hidden] { display: none; }
+        .partline .mine { flex: 1; color: var(--accent-text); font-size: 14px; font-weight: 650;
+                          font-variant-numeric: tabular-nums; }
         .share {
             flex: none; min-width: 44px; height: 32px; border-radius: 16px;
             border: 1px solid var(--border); background: none; color: var(--accent-text);
@@ -105,16 +111,19 @@
     // base64url. Nothing is sent anywhere; the choices stay on this device.
     const lang = (navigator.language || "en").slice(0, 2);
     const strings = {
-        en: { title: "Split the bill", yours: "Your part", of: "of {0} · tips and discounts shared in proportion",
+        en: { title: "Split the bill", yours: "Your part", of: "of {0} · at the receipt’s prices; tips shared in proportion",
+              bonus: "Bonuses and discounts −{0} · paid {1}",
               hint: "Tap what’s yours. ½ shares an item with others; − and + set how many of several are yours.", clear: "Clear", copy: "Copy my part",
               copied: "Copied", items: "items", broken: "This link is incomplete. Ask for it again.",
               old: "Open this link in Safari or Chrome.", made: "Made with", mine: "My part: {0} — {1}" },
-        uk: { title: "Поділити рахунок", yours: "Твоя частина", of: "з {0} · чайові та знижки — пропорційно",
+        uk: { title: "Поділити рахунок", yours: "Твоя частина", of: "з {0} · за цінами чека; чайові — пропорційно",
+              bonus: "Бонуси й знижки −{0} · сплачено {1}",
               hint: "Торкнись свого. ½ ділить позицію з іншими; − і + — скільки з кількох твоїх.", clear: "Очистити",
               copy: "Скопіювати мою частину", copied: "Скопійовано", items: "позицій",
               broken: "Посилання неповне. Попроси надіслати його ще раз.",
               old: "Відкрий це посилання в Safari чи Chrome.", made: "Зроблено в", mine: "Моя частина: {0} — {1}" },
-        ru: { title: "Разделить счёт", yours: "Твоя часть", of: "из {0} · чаевые и скидки — пропорционально",
+        ru: { title: "Разделить счёт", yours: "Твоя часть", of: "из {0} · по ценам чека; чаевые — пропорционально",
+              bonus: "Бонусы и скидки −{0} · оплачено {1}",
               hint: "Нажми на своё. ½ делит позицию с другими; − и + — сколько из нескольких твоих.", clear: "Очистить",
               copy: "Скопировать мою часть", copied: "Скопировано", items: "позиций",
               broken: "Ссылка неполная. Попроси прислать её ещё раз.",
@@ -177,6 +186,13 @@
         head.querySelector(".merchant").textContent = receipt.m || t.title;
         head.querySelector(".muted").textContent = t.yours;
         head.querySelector(".of").textContent = fill(t.of, money(total));
+        // Bonuses and discounts are the payer's: shown once, never spread over the items (owner, 2026-10-03).
+        if (itemsSum > total * 1.02) {
+            const bonus = document.createElement("div");
+            bonus.className = "muted";
+            bonus.textContent = fill(t.bonus, money(itemsSum - total), money(total));
+            head.appendChild(bonus);
+        }
         app.appendChild(head);
 
         const list = document.createElement("section");
@@ -187,9 +203,11 @@
         list.appendChild(hint);
         const rows = items.map(item => {
             const row = document.createElement("div");
-            row.style.display = "flex";
-            row.style.alignItems = "center";
-            row.style.gap = "8px";
+            row.className = "row";
+            const line = document.createElement("div");
+            line.className = "partline";
+            const part = document.createElement("span");
+            part.className = "mine";
             const button = document.createElement("button");
             button.type = "button";
             button.className = "item";
@@ -230,11 +248,13 @@
                 shares[item.id] = { units: Math.min((current.units || 0) + 1, item.units) };
                 update();
             });
+            line.appendChild(part);
+            line.appendChild(share);
+            line.appendChild(plus);
             row.appendChild(button);
-            row.appendChild(share);
-            row.appendChild(plus);
+            row.appendChild(line);
             list.appendChild(row);
-            return { item, button, share, plus };
+            return { item, button, line, part, share, plus };
         });
         app.appendChild(list);
 
@@ -246,25 +266,28 @@
         const myPart = () => {
             if (!itemsSum) return 0;
             const mine = items.reduce((sum, item) => sum + item.minor * fraction(item, shares[item.id]), 0);
-            return Math.round(total * mine / itemsSum);
+            // At the receipt's prices; only tips or service on top of the items follow in proportion.
+            return Math.round(mine * Math.max(total / itemsSum, 1));
         };
 
         function update() {
-            rows.forEach(({ item, button, share, plus }) => {
+            rows.forEach(({ item, button, line, part, share, plus }) => {
                 const current = shares[item.id];
                 const mine = Boolean(current);
                 button.classList.toggle("mine", mine);
                 button.setAttribute("aria-pressed", mine ? "true" : "false");
                 button.querySelector(".check").textContent = mine ? "✓" : "";
-                share.hidden = !mine;
-                plus.hidden = !mine || !item.units;
+                line.hidden = !mine;
+                plus.hidden = !item.units;
+                if (!mine) return;
+                const amount = money(Math.round(item.minor * fraction(item, current)));
                 if (item.units) {
                     share.textContent = "−";
-                    plus.disabled = mine && current.units >= item.units;
-                    button.querySelector(".amount").textContent =
-                        mine ? current.units + "/" + item.units + " · " + money(item.minor) : money(item.minor);
+                    plus.disabled = current.units >= item.units;
+                    part.textContent = current.units + "/" + item.units + " · " + amount;
                 } else {
-                    share.textContent = current && current.people > 1 ? "1/" + current.people : "½";
+                    share.textContent = current.people > 1 ? "1/" + current.people : "½";
+                    part.textContent = (current.people > 1 ? "1/" + current.people + " · " : "") + amount;
                 }
             });
             head.querySelector(".part").textContent = money(myPart());
