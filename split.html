@@ -106,16 +106,16 @@
     const lang = (navigator.language || "en").slice(0, 2);
     const strings = {
         en: { title: "Split the bill", yours: "Your part", of: "of {0} · tips and discounts shared in proportion",
-              hint: "Tap what’s yours. Tap ½ to share an item with others.", clear: "Clear", copy: "Copy my part",
+              hint: "Tap what’s yours. ½ shares an item with others; − and + set how many of several are yours.", clear: "Clear", copy: "Copy my part",
               copied: "Copied", items: "items", broken: "This link is incomplete. Ask for it again.",
               old: "Open this link in Safari or Chrome.", made: "Made with", mine: "My part: {0} — {1}" },
         uk: { title: "Поділити рахунок", yours: "Твоя частина", of: "з {0} · чайові та знижки — пропорційно",
-              hint: "Торкнись свого. Торкнись ½, щоб поділити позицію з іншими.", clear: "Очистити",
+              hint: "Торкнись свого. ½ ділить позицію з іншими; − і + — скільки з кількох твоїх.", clear: "Очистити",
               copy: "Скопіювати мою частину", copied: "Скопійовано", items: "позицій",
               broken: "Посилання неповне. Попроси надіслати його ще раз.",
               old: "Відкрий це посилання в Safari чи Chrome.", made: "Зроблено в", mine: "Моя частина: {0} — {1}" },
         ru: { title: "Разделить счёт", yours: "Твоя часть", of: "из {0} · чаевые и скидки — пропорционально",
-              hint: "Нажми на своё. Нажми ½, чтобы поделить позицию с другими.", clear: "Очистить",
+              hint: "Нажми на своё. ½ делит позицию с другими; − и + — сколько из нескольких твоих.", clear: "Очистить",
               copy: "Скопировать мою часть", copied: "Скопировано", items: "позиций",
               broken: "Ссылка неполная. Попроси прислать её ещё раз.",
               old: "Открой эту ссылку в Safari или Chrome.", made: "Сделано в", mine: "Моя часть: {0} — {1}" }
@@ -151,14 +151,24 @@
             format = new Intl.NumberFormat(navigator.language, { minimumFractionDigits: 2 });
         }
         const money = minor => format.format(minor / 100);
-        const items = (receipt.i || []).map((row, index) => ({
-            id: index, name: String(row[0] || ""), minor: Number(row[1]) || 0, qty: String(row[2] || "")
-        })).filter(item => item.minor > 0);
+        const items = (receipt.i || []).map((row, index) => {
+            const qty = String(row[2] || "");
+            const count = /^\d+$/.test(qty.trim()) ? Number(qty) : 0;
+            // A whole quantity above one (15 beers): a friend takes some of them, not a share of the line.
+            return { id: index, name: String(row[0] || ""), minor: Number(row[1]) || 0, qty,
+                     units: count > 1 && count <= 999 ? count : 0 };
+        }).filter(item => item.minor > 0);
         const itemsSum = items.reduce((sum, item) => sum + item.minor, 0);
         const total = Number(receipt.t) || itemsSum;
         const key = "dibsly-split-" + location.hash.slice(1, 40);
+        // shares[id] = { people: n } or { units: k }; absent = not mine.
         let shares = {};
-        try { shares = JSON.parse(localStorage.getItem(key) || "{}"); } catch (error) { shares = {}; }
+        try { shares = JSON.parse(localStorage.getItem(key + "-v2") || "{}"); } catch (error) { shares = {}; }
+        const fraction = (item, share) => {
+            if (!share) return 0;
+            if (share.units) return item.units ? Math.min(share.units, item.units) / item.units : 1;
+            return share.people ? 1 / share.people : 0;
+        };
 
         app.innerHTML = "";
         const head = document.createElement("section");
@@ -195,19 +205,36 @@
             const share = document.createElement("button");
             share.type = "button";
             share.className = "share";
+            const plus = document.createElement("button");
+            plus.type = "button";
+            plus.className = "share";
+            plus.textContent = "+";
             button.addEventListener("click", () => {
-                shares[item.id] = shares[item.id] ? 0 : 1;
+                if (shares[item.id]) delete shares[item.id];
+                else shares[item.id] = item.units ? { units: 1 } : { people: 1 };
                 update();
             });
             share.addEventListener("click", () => {
-                const next = { 1: 2, 2: 3, 3: 4, 4: 1 };
-                shares[item.id] = next[shares[item.id] || 1];
+                const current = shares[item.id] || {};
+                if (item.units) {
+                    if ((current.units || 0) > 1) shares[item.id] = { units: current.units - 1 };
+                    else delete shares[item.id];
+                } else {
+                    const next = { 1: 2, 2: 3, 3: 4, 4: 1 };
+                    shares[item.id] = { people: next[current.people || 1] };
+                }
+                update();
+            });
+            plus.addEventListener("click", () => {
+                const current = shares[item.id] || { units: 0 };
+                shares[item.id] = { units: Math.min((current.units || 0) + 1, item.units) };
                 update();
             });
             row.appendChild(button);
             row.appendChild(share);
+            row.appendChild(plus);
             list.appendChild(row);
-            return { item, button, share };
+            return { item, button, share, plus };
         });
         app.appendChild(list);
 
@@ -218,21 +245,30 @@
 
         const myPart = () => {
             if (!itemsSum) return 0;
-            const mine = items.reduce((sum, item) => sum + (shares[item.id] ? item.minor / shares[item.id] : 0), 0);
+            const mine = items.reduce((sum, item) => sum + item.minor * fraction(item, shares[item.id]), 0);
             return Math.round(total * mine / itemsSum);
         };
 
         function update() {
-            rows.forEach(({ item, button, share }) => {
-                const people = shares[item.id] || 0;
-                button.classList.toggle("mine", people > 0);
-                button.setAttribute("aria-pressed", people > 0 ? "true" : "false");
-                button.querySelector(".check").textContent = people > 0 ? "✓" : "";
-                share.hidden = people === 0;
-                share.textContent = people > 1 ? "1/" + people : "½";
+            rows.forEach(({ item, button, share, plus }) => {
+                const current = shares[item.id];
+                const mine = Boolean(current);
+                button.classList.toggle("mine", mine);
+                button.setAttribute("aria-pressed", mine ? "true" : "false");
+                button.querySelector(".check").textContent = mine ? "✓" : "";
+                share.hidden = !mine;
+                plus.hidden = !mine || !item.units;
+                if (item.units) {
+                    share.textContent = "−";
+                    plus.disabled = mine && current.units >= item.units;
+                    button.querySelector(".amount").textContent =
+                        mine ? current.units + "/" + item.units + " · " + money(item.minor) : money(item.minor);
+                } else {
+                    share.textContent = current && current.people > 1 ? "1/" + current.people : "½";
+                }
             });
             head.querySelector(".part").textContent = money(myPart());
-            try { localStorage.setItem(key, JSON.stringify(shares)); } catch (error) { /* private mode */ }
+            try { localStorage.setItem(key + "-v2", JSON.stringify(shares)); } catch (error) { /* private mode */ }
         }
 
         const bar = document.getElementById("bar");
@@ -242,8 +278,11 @@
         copy.textContent = t.copy;
         clear.addEventListener("click", () => { shares = {}; update(); });
         copy.addEventListener("click", async () => {
-            const names = items.filter(item => shares[item.id]).map(item =>
-                shares[item.id] > 1 ? item.name + " (1/" + shares[item.id] + ")" : item.name);
+            const names = items.filter(item => shares[item.id]).map(item => {
+                const share = shares[item.id];
+                if (share.units) return item.name + " ×" + share.units;
+                return share.people > 1 ? item.name + " (1/" + share.people + ")" : item.name;
+            });
             const text = fill(t.mine, money(myPart()), names.join(", "));
             try {
                 await navigator.clipboard.writeText(text);
