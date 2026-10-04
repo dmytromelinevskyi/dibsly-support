@@ -3,64 +3,165 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Official support page for Dibsly, a local-first personal finance tracker for iOS.">
+    <meta name="description" content="Support for Dibsly, a local-first money tracker for iPhone: Free and Dibsly Premium, backups, imports, privacy and contact.">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#F7F3EE" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0F0D0C" media="(prefers-color-scheme: dark)">
     <title>Dibsly Support</title>
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <main class="page-shell">
-        <header class="hero">
-            <div class="app-mark" aria-hidden="true">D</div>
-            <p class="eyebrow">Dibsly for iOS</p>
-            <h1>Support</h1>
-            <p class="intro">Need help with Dibsly, importing data, or an encrypted backup? Send us an email and include the app version and a short description of what happened.</p>
-            <a class="primary-action" href="mailto:dibslysupport@gmail.com">Email Dibsly Support</a>
-            <p class="contact-address">dibslysupport@gmail.com</p>
+    <div class="shell">
+        <header class="site-header">
+            <a class="brand" href="index.html"><img src="img/apple-touch-icon.png" alt="" width="32" height="32">Dibsly</a>
+            <nav class="site-nav" aria-label="Site">
+                <a href="index.html" aria-current="page">Support</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+            </nav>
         </header>
 
-        <section class="content-card" aria-labelledby="quick-help-title">
-            <h2 id="quick-help-title">Quick help</h2>
-            <div class="help-grid">
-                <article>
-                    <h3>Backup &amp; Recovery</h3>
-                    <p>Dibsly can create encrypted backups, manually or automatically, in an iCloud Drive folder you choose.</p>
-                </article>
-                <article>
-                    <h3>Recovery password</h3>
-                    <p>Your password is required to decrypt a backup. Dibsly does not receive it and cannot reset or recover it for you.</p>
-                </article>
-                <article>
-                    <h3>Import &amp; Export</h3>
-                    <p>Dibsly reads statements from monobank, UKRSIBBANK, PrivatBank and KredoBank, connects to monobank with your own token, and imports its own CSV, Monefy CSV and supported Freedom Finance and Interactive Brokers reports.</p>
-                </article>
-                <article>
-                    <h3>Your data</h3>
-                    <p>Dibsly is local-first and does not require a Dibsly account. Financial data stays on your device unless you export or back it up, or allow AI categorization, which sends merchant names to OpenAI.</p>
-                </article>
-                <article>
-                    <h3>Dibsly Premium</h3>
-                    <p>AI categorization and Investments are a subscription with a free trial, bought through the App Store. Manage or cancel it in iOS Settings → your name → Subscriptions; Apple handles payments and refunds.</p>
-                </article>
-            </div>
-        </section>
+        <main>
+            <section class="hero" aria-labelledby="title">
+                <div class="dibsly">
+                    <picture>
+                        <source srcset="img/dibsly-dark.png" media="(prefers-color-scheme: dark)">
+                        <img src="img/dibsly.png" alt="Dibsly, an orange hamster" width="404" height="386">
+                    </picture>
+                    <p class="bubble">Hi, I’m Dibsly<span class="wave" aria-hidden="true">👋</span> I keep your money in order.</p>
+                </div>
+                <div class="hero-copy">
+                    <p class="eyebrow">Dibsly for iPhone</p>
+                    <h1 id="title">How can we help?</h1>
+                    <p class="intro">Answers about Free and Premium, backups, imports and your data. Still stuck? Write to the people who make Dibsly.</p>
+                    <a class="button" href="mailto:dibslysupport@gmail.com">Email support</a>
+                    <p class="address">dibslysupport@gmail.com</p>
+                </div>
+            </section>
 
-        <section class="content-card" aria-labelledby="contact-title">
-            <h2 id="contact-title">When contacting support</h2>
-            <ul>
-                <li>Include your Dibsly version and build number from Settings.</li>
-                <li>Describe the steps that led to the problem.</li>
-                <li>Do not email your recovery password or unencrypted financial exports.</li>
-            </ul>
-        </section>
+            <section class="section" aria-labelledby="what">
+                <h2 id="what">What Dibsly does</h2>
+                <p class="section-lead">A calm place for your money: accounts, spending, plans and savings in one app, kept on your iPhone. No account, no ads, no tracking.</p>
+                <div class="grid">
+                    <article class="card">
+                        <h3>Your ledger</h3>
+                        <p>Accounts, spending, income and transfers. Add a payment in seconds with the calculator or your voice.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Bank imports</h3>
+                        <p>Bring in a year of statements in a minute. Dibsly finds transfers between your accounts and sorts what it can.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Where the month went</h3>
+                        <p>Categories and trends, a monthly plan with limits, savings and a calendar of recurring payments.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Apple Pay through Wallet</h3>
+                        <p>A Shortcuts automation reads Wallet’s notification on your phone, and the payment waits for you as a draft.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Receipts and split bills</h3>
+                        <p>Photograph a receipt to file it by category, or send friends a link where each taps what was theirs.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Investments</h3>
+                        <p>Portfolio, broker reports, quotes and price charts beside the rest of your money.</p>
+                    </article>
+                </div>
+            </section>
 
-        <footer>
-            <a href="privacy.html">Privacy Policy</a>
-            <span aria-hidden="true">·</span>
-            <a href="terms.html">Terms of Use</a>
-            <span aria-hidden="true">·</span>
-            <a href="mailto:dibslysupport@gmail.com">Contact Support</a>
+            <section class="section" aria-labelledby="plans">
+                <h2 id="plans">Free and Dibsly Premium</h2>
+                <p class="section-lead">Dibsly is free to use. Premium is for the things the AI does for you.</p>
+                <div class="plans">
+                    <article class="card plan">
+                        <div class="plan-head">
+                            <h3>Free</h3>
+                        </div>
+                        <p class="plan-sub">No subscription, no time limit.</p>
+                        <ul>
+                            <li>The ledger, accounts, analytics, the monthly plan and the payment calendar</li>
+                            <li>Statement imports from every supported bank and app <span>(see Imports below)</span></li>
+                            <li>Investments: portfolio, broker imports, quotes and charts</li>
+                            <li>Apple Pay through Wallet <span>— read on your phone, no AI</span></li>
+                            <li>Voice entry when your phone understands the phrase <span>(Apple speech recognition)</span></li>
+                            <li>Receipts and split bills: 10 a month</li>
+                            <li>Encrypted backups to your iCloud Drive</li>
+                        </ul>
+                    </article>
+                    <article class="card plan plan-premium">
+                        <div class="plan-head">
+                            <h3>Dibsly Premium</h3>
+                            <span class="tag">Dibsly does it for you</span>
+                        </div>
+                        <p class="plan-sub">Everything in Free, plus:</p>
+                        <ul>
+                            <li>Bank notifications from any bank, read by the AI <span>(needs iOS 27)</span></li>
+                            <li>AI categorization: Sort with AI after an import, category suggestions on drafts</li>
+                            <li>Receipts and split bills: up to 300 a month</li>
+                            <li>Voice with the AI for phrases your phone could not read</li>
+                        </ul>
+                        <p class="price"><strong>$1.99 a month or $19.99 a year</strong><br>7-day free trial. Renews automatically through the App Store; the App Store shows the price in your country.</p>
+                    </article>
+                </div>
+                <div class="card after-plans">
+                    <h3>Cancel or change your subscription</h3>
+                    <p class="muted">Open iOS Settings → your name → Subscriptions → Dibsly. Cancel at least 24 hours before the trial or the period ends, and you won’t be charged again. Apple handles payments and refunds; Dibsly never sees your payment details. Your data stays on your phone when Premium ends: nothing is deleted, and receipts go back to 10 a month.</p>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="backup">
+                <h2 id="backup">Backup and recovery</h2>
+                <div class="card">
+                    <p>Dibsly makes encrypted backups, by hand or automatically (daily or weekly), in an iCloud Drive folder you choose. They stay visible in the Files app, and Dibsly keeps the newest five automatic ones.</p>
+                    <p>A backup opens only with your recovery password. Dibsly never receives it and cannot reset or recover it, so keep it somewhere safe, such as a password manager.</p>
+                    <p class="muted">Backup is not live sync: to move to a new iPhone, install Dibsly, choose Restore my data and pick the latest backup.</p>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="imports">
+                <h2 id="imports">Imports</h2>
+                <div class="grid grid-2">
+                    <article class="card">
+                        <h3>Banks</h3>
+                        <p>Statements from monobank (CSV, XLS or PDF), UKRSIBBANK, PrivatBank and KredoBank (PDF) are read entirely on your phone; the file is never uploaded. monobank can also sync with your own read-only token from api.monobank.ua.</p>
+                    </article>
+                    <article class="card">
+                        <h3>Apps and brokers</h3>
+                        <p>Move a ledger in from a Dibsly CSV or a Monefy CSV, and bring investments from Freedom Finance and Interactive Brokers reports. Your bank isn’t listed? Send us a note.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="privacy">
+                <h2 id="privacy">Your data and privacy</h2>
+                <div class="card">
+                    <p>Dibsly is local-first. There is no Dibsly account and no server that receives your records: they stay on your iPhone and in your own encrypted backups. Bank statements are read on the phone.</p>
+                    <p>The AI is used only after you allow it. It sends only what a feature needs to OpenAI (the maker of the GPT models): merchant names and your category names, a receipt photo, a phrase, or the text of a bank notification with card numbers and IBANs replaced (it can include your balance). Categorization never sends amounts, balances or history.</p>
+                    <p>Requests go through Dibsly’s own relay on Cloudflare, which keeps no content, only an anonymous device key and request counts for the monthly limits. Apple’s App Attest proves each request comes from a genuine Dibsly. OpenAI deletes the data within 30 days and does not train on it.</p>
+                    <p class="muted">Quotes come from Nasdaq and Yahoo Finance and exchange rates from the National Bank of Ukraine; those requests carry none of your records. Details: <a href="privacy.html">Privacy Policy</a>.</p>
+                </div>
+            </section>
+
+            <section class="section" aria-labelledby="contact">
+                <h2 id="contact">Contact</h2>
+                <div class="card">
+                    <p>Write to <a href="mailto:dibslysupport@gmail.com">dibslysupport@gmail.com</a>. Tell us what you did and what happened, and include the app version from Settings.</p>
+                    <p class="dont">Never send your recovery password or unencrypted exports of your data.</p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <nav aria-label="Footer">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+                <a href="mailto:dibslysupport@gmail.com">Contact Support</a>
+            </nav>
             <p>© 2026 Dibsly</p>
         </footer>
-    </main>
+    </div>
 </body>
 </html>
