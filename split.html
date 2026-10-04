@@ -92,6 +92,26 @@
         }
         .primary { background: var(--accent); color: #1c1a17; }
         .secondary { background: var(--accent-soft); color: var(--accent-text); }
+        /* Tips on top of the friend's part (owner, 2026-10-04): the usual percents or their own. */
+        .tiphead { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 10px; }
+        .tiphead strong { font-size: 17px; }
+        .tipamount { color: var(--accent-text); font-weight: 650; font-variant-numeric: tabular-nums; }
+        .chips { display: flex; gap: 6px; }
+        .chip {
+            flex: 1; min-width: 0; height: 36px; padding: 0; border-radius: 18px; border: 1px solid var(--border);
+            background: none; color: inherit; font: inherit; font-size: 14px; cursor: pointer; white-space: nowrap;
+            font-variant-numeric: tabular-nums;
+        }
+        .chip.on { background: var(--accent); border-color: var(--accent); color: #1c1a17; font-weight: 650; }
+        .tipown { display: flex; align-items: center; gap: 6px; margin-top: 10px; }
+        .tipown[hidden] { display: none; }
+        .tipown input {
+            flex: 1; min-height: 44px; padding: 0 12px; border-radius: 12px; border: 1px solid var(--border);
+            background: none; color: inherit; font: inherit; font-variant-numeric: tabular-nums;
+        }
+        .tipline { color: var(--accent-text); font-size: 14px; font-weight: 650; font-variant-numeric: tabular-nums; }
+        .tipline:empty { display: none; }
+        .card .note { margin: 10px 0 0; }
         .footer { text-align: center; margin-top: 18px; }
         .footer a { color: var(--accent-text); }
         .error { text-align: center; padding: 60px 0; }
@@ -115,19 +135,28 @@
               bonus: "Bonuses and discounts −{0} · paid {1}",
               hint: "Tap what’s yours. ½ shares an item with others; − and + set how many of several are yours.", clear: "Clear", copy: "Copy my part",
               copied: "Copied", items: "items", broken: "This link is incomplete. Ask for it again.",
-              old: "Open this link in Safari or Chrome.", made: "Made with", mine: "My part: {0} — {1}" },
+              old: "Open this link in Safari or Chrome.", made: "Made with", mine: "My part: {0} — {1}",
+              mineTip: "My part: {0} (tips {1}% included) — {2}", tips: "Tips", other: "Other", own: "Your percent",
+              tipline: "Items {0} + tips {1}% {2}", tipnote: "A percent of your part, added to it.",
+              inReceipt: "The receipt already adds {0} on top of its items — if that is service or tips, it is already in your part." },
         uk: { title: "Поділити рахунок", yours: "Твоя частина", of: "з {0} · за цінами чека; чайові — пропорційно",
               bonus: "Бонуси й знижки −{0} · сплачено {1}",
               hint: "Торкнись свого. ½ ділить позицію з іншими; − і + — скільки з кількох твоїх.", clear: "Очистити",
               copy: "Скопіювати мою частину", copied: "Скопійовано", items: "позицій",
               broken: "Посилання неповне. Попроси надіслати його ще раз.",
-              old: "Відкрий це посилання в Safari чи Chrome.", made: "Зроблено в", mine: "Моя частина: {0} — {1}" },
+              old: "Відкрий це посилання в Safari чи Chrome.", made: "Зроблено в", mine: "Моя частина: {0} — {1}",
+              mineTip: "Моя частина: {0} (з чайовими {1}%) — {2}", tips: "Чайові", other: "Своє", own: "Свій відсоток",
+              tipline: "Позиції {0} + чайові {1}% {2}", tipnote: "Відсоток від твоєї частини, додається до неї.",
+              inReceipt: "Чек уже додає {0} понад позиції — якщо це сервіс чи чайові, вони вже у твоїй частині." },
         ru: { title: "Разделить счёт", yours: "Твоя часть", of: "из {0} · по ценам чека; чаевые — пропорционально",
               bonus: "Бонусы и скидки −{0} · оплачено {1}",
               hint: "Нажми на своё. ½ делит позицию с другими; − и + — сколько из нескольких твоих.", clear: "Очистить",
               copy: "Скопировать мою часть", copied: "Скопировано", items: "позиций",
               broken: "Ссылка неполная. Попроси прислать её ещё раз.",
-              old: "Открой эту ссылку в Safari или Chrome.", made: "Сделано в", mine: "Моя часть: {0} — {1}" }
+              old: "Открой эту ссылку в Safari или Chrome.", made: "Сделано в", mine: "Моя часть: {0} — {1}",
+              mineTip: "Моя часть: {0} (с чаевыми {1}%) — {2}", tips: "Чаевые", other: "Своё", own: "Свой процент",
+              tipline: "Позиции {0} + чаевые {1}% {2}", tipnote: "Процент от твоей части, добавляется к ней.",
+              inReceipt: "Чек уже добавляет {0} сверх позиций — если это сервис или чаевые, они уже в твоей части." }
     };
     const t = strings[lang] || strings.en;
     const fill = (text, ...values) => values.reduce((s, v, i) => s.replace("{" + i + "}", v), text);
@@ -182,7 +211,7 @@
         app.innerHTML = "";
         const head = document.createElement("section");
         head.className = "card head";
-        head.innerHTML = '<div class="merchant"></div><div class="muted"></div><div class="part"></div><div class="muted of"></div>';
+        head.innerHTML = '<div class="merchant"></div><div class="muted"></div><div class="part"></div><div class="tipline"></div><div class="muted of"></div>';
         head.querySelector(".merchant").textContent = receipt.m || t.title;
         head.querySelector(".muted").textContent = t.yours;
         head.querySelector(".of").textContent = fill(t.of, money(total));
@@ -258,6 +287,61 @@
         });
         app.appendChild(list);
 
+        // Tips: the sharer's percent from the link (p) until this friend picks their own.
+        const presets = [0, 5, 10, 15, 20];
+        const clampTip = value => Math.min(Math.max(Math.round(Number(value) || 0), 0), 100);
+        let tip = clampTip(receipt.p);
+        try {
+            const saved = localStorage.getItem(key + "-tip");
+            if (saved !== null) tip = clampTip(saved);
+        } catch (error) { /* private mode */ }
+        let ownTip = !presets.includes(tip);
+        const tips = document.createElement("section");
+        tips.className = "card";
+        tips.innerHTML = '<div class="tiphead"><strong></strong><span class="tipamount"></span></div>'
+            + '<div class="chips"></div><label class="tipown"><input type="number" inputmode="numeric" min="0" max="100">'
+            + '<span class="muted">%</span></label><p class="muted note tipnote"></p>';
+        tips.querySelector("strong").textContent = t.tips;
+        tips.querySelector(".tipnote").textContent = t.tipnote;
+        const ownRow = tips.querySelector(".tipown");
+        const ownInput = ownRow.querySelector("input");
+        ownInput.placeholder = t.own;
+        ownInput.setAttribute("aria-label", t.own);
+        const chips = [...presets, "other"].map(value => {
+            const chip = document.createElement("button");
+            chip.type = "button";
+            chip.className = "chip";
+            chip.textContent = value === "other" ? t.other : value + "%";
+            chip.addEventListener("click", () => {
+                if (value === "other") {
+                    // Empty, so what is typed is the percent, not appended to the one before.
+                    ownTip = true;
+                    ownInput.value = "";
+                    tip = 0;
+                    update();
+                    ownInput.focus();
+                } else {
+                    ownTip = false;
+                    tip = value;
+                    update();
+                }
+            });
+            tips.querySelector(".chips").appendChild(chip);
+            return { value, chip };
+        });
+        ownInput.addEventListener("input", () => {
+            tip = clampTip(ownInput.value);
+            if (Number(ownInput.value) > 100) ownInput.value = "100";
+            update();
+        });
+        if (itemsSum && total > itemsSum * 1.02) {
+            const note = document.createElement("p");
+            note.className = "muted note";
+            note.textContent = fill(t.inReceipt, money(total - itemsSum));
+            tips.appendChild(note);
+        }
+        app.appendChild(tips);
+
         const footer = document.createElement("p");
         footer.className = "muted footer";
         footer.innerHTML = t.made + ' <a href="https://dmytromelinevskyi.github.io/dibsly-support/">Dibsly</a>';
@@ -290,8 +374,22 @@
                     part.textContent = (current.people > 1 ? "1/" + current.people + " · " : "") + amount;
                 }
             });
-            head.querySelector(".part").textContent = money(myPart());
-            try { localStorage.setItem(key + "-v2", JSON.stringify(shares)); } catch (error) { /* private mode */ }
+            const base = myPart();
+            const tipAmount = Math.round(base * tip / 100);
+            head.querySelector(".part").textContent = money(base + tipAmount);
+            head.querySelector(".tipline").textContent = tipAmount > 0 ? fill(t.tipline, money(base), tip, money(tipAmount)) : "";
+            tips.querySelector(".tipamount").textContent = tipAmount > 0 ? "+" + money(tipAmount) : "";
+            chips.forEach(({ value, chip }) => {
+                const on = value === "other" ? ownTip : !ownTip && value === tip;
+                chip.classList.toggle("on", on);
+                chip.setAttribute("aria-pressed", on ? "true" : "false");
+            });
+            ownRow.hidden = !ownTip;
+            if (ownTip && ownInput.value === "" && tip > 0) ownInput.value = String(tip);
+            try {
+                localStorage.setItem(key + "-v2", JSON.stringify(shares));
+                localStorage.setItem(key + "-tip", String(tip));
+            } catch (error) { /* private mode */ }
         }
 
         const bar = document.getElementById("bar");
@@ -306,7 +404,10 @@
                 if (share.units) return item.name + " ×" + share.units;
                 return share.people > 1 ? item.name + " (1/" + share.people + ")" : item.name;
             });
-            const text = fill(t.mine, money(myPart()), names.join(", "));
+            const base = myPart();
+            const tipAmount = Math.round(base * tip / 100);
+            const text = tipAmount > 0 ? fill(t.mineTip, money(base + tipAmount), tip, names.join(", "))
+                : fill(t.mine, money(base), names.join(", "));
             try {
                 await navigator.clipboard.writeText(text);
                 copy.textContent = t.copied;
