@@ -122,7 +122,17 @@
             background: none; color: inherit; font: inherit; font-variant-numeric: tabular-nums;
         }
         .tipline { color: var(--accent-text); font-size: 14px; font-weight: 650; font-variant-numeric: tabular-nums; }
-        .tipline:empty { display: none; }
+        /* Always one line tall: it appeared with the first tapped item and pushed the page down (2026-10-05). */
+        .tipline { min-height: 1.45em; }
+        .table { display: flex; align-items: center; gap: 12px; }
+        .table strong { flex: 1; }
+        .table output { min-width: 28px; text-align: center; font-size: 20px; font-weight: 650;
+                        font-variant-numeric: tabular-nums; }
+        .round { width: 44px; height: 44px; border-radius: 22px; border: 1px solid var(--border); background: none;
+                 color: var(--accent-text); font: inherit; font-size: 22px; cursor: pointer; }
+        .round:disabled { opacity: 0.35; cursor: default; }
+        .feehead { color: var(--secondary); font-size: 14px; font-weight: 650; margin: 0 0 8px; }
+        select.share { appearance: none; -webkit-appearance: none; padding: 0 14px; text-align: center; }
         .card .note { margin: 10px 0 0; }
         .footer { text-align: center; margin-top: 18px; }
         .footer a { color: var(--accent-text); }
@@ -145,7 +155,8 @@
     const strings = {
         en: { title: "Split the bill", yours: "Your part", of: "of {0} · at the receipt’s prices; tips shared in proportion",
               bonus: "Bonuses and discounts −{0} · paid {1}",
-              hint: "Tap what’s yours. ½ shares an item with others; − and + set how many of several are yours.", clear: "Clear", copy: "Copy my part",
+              hint: "Tap what’s yours; under it, choose your share: whole, 1/2 … 1/8. − and + set how many of several are yours.",
+              table: "At the table", fees: "Fees — shared by everyone at the table", whole: "Whole", clear: "Clear", copy: "Copy my part",
               copied: "Copied", items: "items", broken: "This link is incomplete. Ask for it again.",
               old: "Open this link in Safari or Chrome.", made: "Made with", mine: "My part: {0} — {1}",
               mineTip: "My part: {0} (tips {1}% included) — {2}", tips: "Tips", other: "Other", own: "Your percent",
@@ -153,7 +164,8 @@
               inReceipt: "The receipt already adds {0} on top of its items — if that is service or tips, it is already in your part." },
         uk: { title: "Поділити рахунок", yours: "Твоя частина", of: "з {0} · за цінами чека; чайові — пропорційно",
               bonus: "Бонуси й знижки −{0} · сплачено {1}",
-              hint: "Торкнись свого. ½ ділить позицію з іншими; − і + — скільки з кількох твоїх.", clear: "Очистити",
+              hint: "Торкнись свого; під позицією вибери свою частку: ціле, 1/2 … 1/8. − і + — скільки з кількох твоїх.",
+              table: "За столом", fees: "Збори — діляться на всіх за столом", whole: "Ціле", clear: "Очистити",
               copy: "Скопіювати мою частину", copied: "Скопійовано", items: "позицій",
               broken: "Посилання неповне. Попроси надіслати його ще раз.",
               old: "Відкрий це посилання в Safari чи Chrome.", made: "Зроблено в", mine: "Моя частина: {0} — {1}",
@@ -162,7 +174,8 @@
               inReceipt: "Чек уже додає {0} понад позиції — якщо це сервіс чи чайові, вони вже у твоїй частині." },
         ru: { title: "Разделить счёт", yours: "Твоя часть", of: "из {0} · по ценам чека; чаевые — пропорционально",
               bonus: "Бонусы и скидки −{0} · оплачено {1}",
-              hint: "Нажми на своё. ½ делит позицию с другими; − и + — сколько из нескольких твоих.", clear: "Очистить",
+              hint: "Нажми на своё; под позицией выбери свою долю: целиком, 1/2 … 1/8. − и + — сколько из нескольких твоих.",
+              table: "За столом", fees: "Сборы — делятся на всех за столом", whole: "Целиком", clear: "Очистить",
               copy: "Скопировать мою часть", copied: "Скопировано", items: "позиций",
               broken: "Ссылка неполная. Попроси прислать её ещё раз.",
               old: "Открой эту ссылку в Safari или Chrome.", made: "Сделано в", mine: "Моя часть: {0} — {1}",
@@ -205,15 +218,30 @@
             const qty = String(row[2] || "");
             const count = /^\d+$/.test(qty.trim()) ? Number(qty) : 0;
             // A whole quantity above one (15 beers): a friend takes some of them, not a share of the line.
+            // A fee (service, delivery, packaging, tips) ends its row in 1: shared by the whole table.
             return { id: index, name: String(row[0] || ""), minor: Number(row[1]) || 0, qty,
-                     units: count > 1 && count <= 999 ? count : 0 };
+                     units: count > 1 && count <= 999 ? count : 0, fee: row[3] === 1 };
         }).filter(item => item.minor > 0);
         const itemsSum = items.reduce((sum, item) => sum + item.minor, 0);
         const total = Number(receipt.t) || itemsSum;
         const key = "dibsly-split-" + location.hash.slice(1, 40);
         // shares[id] = { people: n } or { units: k }; absent = not mine.
         let shares = {};
-        try { shares = JSON.parse(localStorage.getItem(key + "-v2") || "{}"); } catch (error) { shares = {}; }
+        let saved = false;
+        try {
+            const stored = localStorage.getItem(key + "-v2");
+            saved = stored !== null;
+            shares = JSON.parse(stored || "{}");
+        } catch (error) { shares = {}; }
+        // How many sit at the table: the sharer's number from the link until this friend changes it.
+        const maxPeople = 8;
+        const clampPeople = value => Math.min(Math.max(Math.round(Number(value) || 2), 2), maxPeople);
+        let people = clampPeople(receipt.n);
+        try {
+            const stored = localStorage.getItem(key + "-people");
+            if (stored !== null) people = clampPeople(stored);
+        } catch (error) { /* private mode */ }
+        if (!saved) items.filter(item => item.fee).forEach(item => { shares[item.id] = { people }; });
         const fraction = (item, share) => {
             if (!share) return 0;
             if (share.units) return item.units ? Math.min(share.units, item.units) / item.units : 1;
@@ -236,12 +264,38 @@
         }
         app.appendChild(head);
 
+        const table = document.createElement("section");
+        table.className = "card table";
+        table.innerHTML = '<strong></strong><button class="round" type="button">−</button><output></output>'
+            + '<button class="round" type="button">+</button>';
+        table.querySelector("strong").textContent = t.table;
+        const [fewer, more] = table.querySelectorAll("button");
+        const setPeople = value => {
+            const next = clampPeople(value);
+            // Fees, and whatever was shared by the whole table, follow the table.
+            Object.keys(shares).forEach(id => {
+                if (shares[id].people === people) shares[id] = { people: next };
+            });
+            people = next;
+            update();
+        };
+        fewer.addEventListener("click", () => setPeople(people - 1));
+        more.addEventListener("click", () => setPeople(people + 1));
+        app.appendChild(table);
+
         const list = document.createElement("section");
         list.className = "card";
         const hint = document.createElement("p");
         hint.className = "hint";
         hint.textContent = t.hint;
         list.appendChild(hint);
+        // Service, delivery, packaging and tips apart, already shared by the table (2026-10-05).
+        const feeList = document.createElement("section");
+        feeList.className = "card";
+        const feeHead = document.createElement("p");
+        feeHead.className = "feehead";
+        feeHead.textContent = t.fees;
+        feeList.appendChild(feeHead);
         const rows = items.map(item => {
             const row = document.createElement("div");
             row.className = "row";
@@ -264,24 +318,32 @@
             const share = document.createElement("button");
             share.type = "button";
             share.className = "share";
+            // Whole, 1/2 … 1/8 for an item that is not counted in units.
+            const portion = document.createElement("select");
+            portion.className = "share";
+            for (let count = 1; count <= maxPeople; count++) {
+                const option = document.createElement("option");
+                option.value = String(count);
+                option.textContent = count === 1 ? t.whole : "1/" + count;
+                portion.appendChild(option);
+            }
+            portion.addEventListener("change", () => {
+                shares[item.id] = { people: Number(portion.value) };
+                update();
+            });
             const plus = document.createElement("button");
             plus.type = "button";
             plus.className = "share";
             plus.textContent = "+";
             button.addEventListener("click", () => {
                 if (shares[item.id]) delete shares[item.id];
-                else shares[item.id] = item.units ? { units: 1 } : { people: 1 };
+                else shares[item.id] = item.units ? { units: 1 } : { people: item.fee ? people : 1 };
                 update();
             });
             share.addEventListener("click", () => {
                 const current = shares[item.id] || {};
-                if (item.units) {
-                    if ((current.units || 0) > 1) shares[item.id] = { units: current.units - 1 };
-                    else delete shares[item.id];
-                } else {
-                    const next = { 1: 2, 2: 3, 3: 4, 4: 1 };
-                    shares[item.id] = { people: next[current.people || 1] };
-                }
+                if ((current.units || 0) > 1) shares[item.id] = { units: current.units - 1 };
+                else delete shares[item.id];
                 update();
             });
             plus.addEventListener("click", () => {
@@ -291,13 +353,15 @@
             });
             line.appendChild(part);
             line.appendChild(share);
+            line.appendChild(portion);
             line.appendChild(plus);
             row.appendChild(button);
             row.appendChild(line);
-            list.appendChild(row);
-            return { item, button, line, part, share, plus };
+            (item.fee ? feeList : list).appendChild(row);
+            return { item, button, line, part, share, portion, plus };
         });
         app.appendChild(list);
+        if (items.some(item => item.fee)) app.appendChild(feeList);
 
         // Tips: the sharer's percent from the link (p) until this friend picks their own.
         const presets = [0, 5, 10, 15, 20];
@@ -367,7 +431,10 @@
         };
 
         function update() {
-            rows.forEach(({ item, button, line, part, share, plus }) => {
+            table.querySelector("output").textContent = String(people);
+            fewer.disabled = people <= 2;
+            more.disabled = people >= maxPeople;
+            rows.forEach(({ item, button, line, part, share, portion, plus }) => {
                 const current = shares[item.id];
                 const mine = Boolean(current);
                 button.classList.toggle("mine", mine);
@@ -375,6 +442,8 @@
                 button.querySelector(".check").textContent = mine ? "✓" : "";
                 line.hidden = !mine;
                 plus.hidden = !item.units;
+                share.hidden = !item.units;
+                portion.hidden = Boolean(item.units);
                 if (!mine) return;
                 const amount = money(Math.round(item.minor * fraction(item, current)));
                 if (item.units) {
@@ -382,7 +451,7 @@
                     plus.disabled = current.units >= item.units;
                     part.textContent = current.units + "/" + item.units + " · " + amount;
                 } else {
-                    share.textContent = current.people > 1 ? "1/" + current.people : "½";
+                    portion.value = String(current.people || 1);
                     part.textContent = (current.people > 1 ? "1/" + current.people + " · " : "") + amount;
                 }
             });
@@ -401,6 +470,7 @@
             try {
                 localStorage.setItem(key + "-v2", JSON.stringify(shares));
                 localStorage.setItem(key + "-tip", String(tip));
+                localStorage.setItem(key + "-people", String(people));
             } catch (error) { /* private mode */ }
         }
 
@@ -409,7 +479,12 @@
         const copy = document.getElementById("copy");
         clear.textContent = t.clear;
         copy.textContent = t.copy;
-        clear.addEventListener("click", () => { shares = {}; update(); });
+        clear.addEventListener("click", () => {
+            // Fees stay shared by the table: they are everyone's.
+            shares = {};
+            items.filter(item => item.fee).forEach(item => { shares[item.id] = { people }; });
+            update();
+        });
         copy.addEventListener("click", async () => {
             const names = items.filter(item => shares[item.id]).map(item => {
                 const share = shares[item.id];
