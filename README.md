@@ -14,3 +14,9 @@ those first and keep the pages word for word in step. `styles.css` serves the su
 
 `samples/monobank-sample.csv` — a monobank CSV statement with invented data (no real person, card or bank
 account), for App Review to try statement import and “Sort with AI”.
+
+## App config
+
+`app-config.json` — read by Dibsly when it comes to the front. `minimumVersion` is the oldest version that still
+works: a lower installed version shows a required “Update” window without Close. Keep it `0.0`; raise it only when old
+versions break (for example after a change of the AI relay), and lower it back once fixed.
