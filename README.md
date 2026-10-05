@@ -8,7 +8,8 @@ Public support, privacy and terms pages for Dibsly for iOS, and the split-the-bi
 
 `privacy.html` and `terms.html` carry the text of `PRIVACY.md` and `TERMS.md` in the Dibsly app repository; change
 those first and keep the pages word for word in step. `styles.css` serves the support, privacy and terms pages;
-`split.html` has its own inline styles. `img/` holds the app icon and Dibsly (the idle pose, light and dark).
+`split.html` has its own inline styles. `img/` holds the app icon and Dibsly (the idle pose, light and dark). `img/split-card.png` (1200×630) is the card messengers show under a split
+link (`og:image` in `split.html`); the bill stays in the link's `#` part.
 
 ## Sample statement
 
