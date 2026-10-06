@@ -245,7 +245,8 @@
         const fraction = (item, share) => {
             if (!share) return 0;
             if (share.units) return item.units ? Math.min(share.units, item.units) / item.units : 1;
-            return share.people ? 1 / share.people : 0;
+            // { people: 5, k: 2 } is 2/5 of an item cut for five (2026-10-06).
+            return share.people ? Math.min(share.k || 1, share.people) / share.people : 0;
         };
 
         app.innerHTML = "";
@@ -274,7 +275,10 @@
             const next = clampPeople(value);
             // Fees, and whatever was shared by the whole table, follow the table.
             Object.keys(shares).forEach(id => {
-                if (shares[id].people === people) shares[id] = { people: next };
+                const share = shares[id];
+                if (share.people === people) {
+                    shares[id] = share.k && share.k < next ? { people: next, k: share.k } : { people: next };
+                }
             });
             people = next;
             update();
@@ -328,7 +332,7 @@
                 portion.appendChild(option);
             }
             portion.addEventListener("change", () => {
-                shares[item.id] = { people: Number(portion.value) };
+                shares[item.id] = { people: Number(portion.value) };  // a new size starts at one part
                 update();
             });
             const plus = document.createElement("button");
@@ -342,13 +346,20 @@
             });
             share.addEventListener("click", () => {
                 const current = shares[item.id] || {};
-                if ((current.units || 0) > 1) shares[item.id] = { units: current.units - 1 };
+                if (!item.units) {
+                    const k = (current.k || 1) - 1;
+                    shares[item.id] = k > 1 ? { people: current.people, k } : { people: current.people };
+                } else if ((current.units || 0) > 1) shares[item.id] = { units: current.units - 1 };
                 else delete shares[item.id];
                 update();
             });
             plus.addEventListener("click", () => {
                 const current = shares[item.id] || { units: 0 };
-                shares[item.id] = { units: Math.min((current.units || 0) + 1, item.units) };
+                if (!item.units) {
+                    // All the parts make the item whole.
+                    const k = (current.k || 1) + 1;
+                    shares[item.id] = k >= current.people ? { people: 1 } : { people: current.people, k };
+                } else shares[item.id] = { units: Math.min((current.units || 0) + 1, item.units) };
                 update();
             });
             line.appendChild(part);
@@ -441,8 +452,9 @@
                 button.setAttribute("aria-pressed", mine ? "true" : "false");
                 button.querySelector(".check").textContent = mine ? "✓" : "";
                 line.hidden = !mine;
-                plus.hidden = !item.units;
-                share.hidden = !item.units;
+                const parts = !item.units && current && current.people > 1;
+                plus.hidden = !item.units && !parts;
+                share.hidden = !item.units && !(parts && current.k > 1);
                 portion.hidden = Boolean(item.units);
                 if (!mine) return;
                 const amount = money(Math.round(item.minor * fraction(item, current)));
@@ -452,7 +464,10 @@
                     part.textContent = current.units + "/" + item.units + " · " + amount;
                 } else {
                     portion.value = String(current.people || 1);
-                    part.textContent = (current.people > 1 ? "1/" + current.people + " · " : "") + amount;
+                    share.textContent = "−";
+                    plus.disabled = false;
+                    const label = (current.k || 1) + "/" + current.people;
+                    part.textContent = (current.people > 1 ? label + " · " : "") + amount;
                 }
             });
             const base = myPart();
@@ -489,7 +504,7 @@
             const names = items.filter(item => shares[item.id]).map(item => {
                 const share = shares[item.id];
                 if (share.units) return item.name + " ×" + share.units;
-                return share.people > 1 ? item.name + " (1/" + share.people + ")" : item.name;
+                return share.people > 1 ? item.name + " (" + (share.k || 1) + "/" + share.people + ")" : item.name;
             });
             const base = myPart();
             const tipAmount = Math.round(base * tip / 100);
