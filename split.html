@@ -273,11 +273,13 @@
         const [fewer, more] = table.querySelectorAll("button");
         const setPeople = value => {
             const next = clampPeople(value);
-            // Fees, and whatever was shared by the whole table, follow the table.
+            // Fees, and whatever was shared by the whole table, follow the table: 3/5 at five becomes 3/4 at four,
+            // and parts that no longer fit stop one short of whole (2026-10-06).
             Object.keys(shares).forEach(id => {
                 const share = shares[id];
                 if (share.people === people) {
-                    shares[id] = share.k && share.k < next ? { people: next, k: share.k } : { people: next };
+                    const k = Math.min(share.k || 1, next - 1);
+                    shares[id] = k > 1 ? { people: next, k } : { people: next };
                 }
             });
             people = next;
