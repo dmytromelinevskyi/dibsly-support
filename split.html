@@ -52,7 +52,7 @@
             line-height: 1.45;
             -webkit-tap-highlight-color: transparent;
         }
-        main { width: min(560px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 140px; }
+        main { width: min(560px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 190px; }
         .card {
             background: var(--surface);
             border: 1px solid var(--border);
@@ -99,6 +99,10 @@
             background: var(--background); border-top: 1px solid var(--border);
         }
         .bar-inner { width: min(560px, 100%); margin: 0 auto; display: flex; gap: 10px; }
+        /* The friend's part under their thumb too (owner, 2026-10-10): the top of the page scrolls away. */
+        .bar-part { width: min(560px, 100%); margin: 0 auto 10px; display: flex; align-items: baseline; justify-content: space-between;
+            gap: 10px; color: var(--secondary); font-weight: 600; }
+        .bar-part strong { color: var(--text); font-size: 20px; font-variant-numeric: tabular-nums; }
         .bar button {
             flex: 1; min-height: 50px; border-radius: 25px; border: 0;
             font: inherit; font-weight: 650; cursor: pointer;
@@ -143,6 +147,7 @@
 <body>
 <main id="app"><p class="error" id="loading">…</p></main>
 <div class="bar" id="bar" hidden>
+    <div class="bar-part" id="barpart"><span></span><strong></strong></div>
     <div class="bar-inner">
         <button class="secondary" id="clear" type="button"></button>
         <button class="primary" id="copy" type="button"></button>
@@ -163,6 +168,8 @@
               old: "Open this link in Safari or Chrome.", made: "Made with", mine: "My part: {0} — {1}",
               mineTip: "My part: {0} (tips {1}% included) — {2}", tips: "Tips", other: "Other", own: "Your percent",
               tipline: "Items {0} + tips {1}% {2}", tipnote: "A percent of your part, added to it.",
+              amount: "Amount", ownAmount: "Your tips", amountnote: "Your tips in money, added to your part.",
+              tiplineAmount: "Items {0} + tips {1}", mineTipAmount: "My part: {0} (tips {1} included) — {2}",
               inReceipt: "The receipt already adds {0} on top of its items — if that is service or tips, it is already in your part." },
         uk: { title: "Поділити рахунок", yours: "Твоя частина", of: "з {0} · за цінами чека; чайові — пропорційно",
               bonus: "Бонуси й знижки −{0} · сплачено {1}",
@@ -174,6 +181,8 @@
               old: "Відкрий це посилання в Safari чи Chrome.", made: "Зроблено в", mine: "Моя частина: {0} — {1}",
               mineTip: "Моя частина: {0} (з чайовими {1}%) — {2}", tips: "Чайові", other: "Своє", own: "Свій відсоток",
               tipline: "Позиції {0} + чайові {1}% {2}", tipnote: "Відсоток від твоєї частини, додається до неї.",
+              amount: "Сума", ownAmount: "Твої чайові", amountnote: "Твої чайові сумою, додаються до твоєї частини.",
+              tiplineAmount: "Позиції {0} + чайові {1}", mineTipAmount: "Моя частина: {0} (з чайовими {1}) — {2}",
               inReceipt: "Чек уже додає {0} понад позиції — якщо це сервіс чи чайові, вони вже у твоїй частині." },
         ru: { title: "Разделить счёт", yours: "Твоя часть", of: "из {0} · по ценам чека; чаевые — пропорционально",
               bonus: "Бонусы и скидки −{0} · оплачено {1}",
@@ -185,6 +194,8 @@
               old: "Открой эту ссылку в Safari или Chrome.", made: "Сделано в", mine: "Моя часть: {0} — {1}",
               mineTip: "Моя часть: {0} (с чаевыми {1}%) — {2}", tips: "Чаевые", other: "Своё", own: "Свой процент",
               tipline: "Позиции {0} + чаевые {1}% {2}", tipnote: "Процент от твоей части, добавляется к ней.",
+              amount: "Сумма", ownAmount: "Твои чаевые", amountnote: "Твои чаевые суммой, добавляются к твоей части.",
+              tiplineAmount: "Позиции {0} + чаевые {1}", mineTipAmount: "Моя часть: {0} (с чаевыми {1}) — {2}",
               inReceipt: "Чек уже добавляет {0} сверх позиций — если это сервис или чаевые, они уже в твоей части." }
     };
     const t = strings[lang] || strings.en;
@@ -380,6 +391,7 @@
         app.appendChild(list);
         if (items.some(item => item.fee)) app.appendChild(feeList);
 
+        const barPart = document.getElementById("barpart");
         // Tips: the sharer's percent from the link (p) until this friend picks their own.
         const presets = [0, 5, 10, 15, 20];
         const clampTip = value => Math.min(Math.max(Math.round(Number(value) || 0), 0), 100);
@@ -389,23 +401,50 @@
             if (saved !== null) tip = clampTip(saved);
         } catch (error) { /* private mode */ }
         let ownTip = !presets.includes(tip);
+        // Or tips as the friend's own amount (owner, 2026-10-10: “a choice of the kind of tips”).
+        let tipMode = "percent";
+        let tipMinor = 0;
+        try {
+            if (localStorage.getItem(key + "-tipmode") === "amount") tipMode = "amount";
+            tipMinor = Math.max(0, Math.round(Number(localStorage.getItem(key + "-tipminor")) || 0));
+        } catch (error) { /* private mode */ }
+        const tipNow = base => tipMode === "amount" ? tipMinor : Math.round(base * tip / 100);
         const tips = document.createElement("section");
         tips.className = "card";
         tips.innerHTML = '<div class="tiphead"><strong></strong><span class="tipamount"></span></div>'
             + '<div class="chips"></div><label class="tipown"><input type="number" inputmode="numeric" min="0" max="100">'
-            + '<span class="muted">%</span></label><p class="muted note tipnote"></p>';
+            + '<span class="muted">%</span></label><label class="tipown tipmoney"><input type="text" inputmode="decimal">'
+            + '<span class="muted currency"></span></label><p class="muted note tipnote"></p>';
         tips.querySelector("strong").textContent = t.tips;
         tips.querySelector(".tipnote").textContent = t.tipnote;
         const ownRow = tips.querySelector(".tipown");
         const ownInput = ownRow.querySelector("input");
+        const moneyRow = tips.querySelector(".tipmoney");
+        const moneyInput = moneyRow.querySelector("input");
+        moneyRow.querySelector(".currency").textContent = receipt.c || "";
+        moneyInput.placeholder = t.ownAmount;
+        moneyInput.setAttribute("aria-label", t.ownAmount);
+        if (tipMinor > 0) moneyInput.value = (tipMinor / 100).toFixed(2).replace(/\.00$/, "");
+        moneyInput.addEventListener("input", () => {
+            const value = Number(moneyInput.value.replace(",", ".").replace(/[^0-9.]/g, ""));
+            tipMinor = Number.isFinite(value) ? Math.min(Math.round(value * 100), 100_000_000) : 0;
+            update();
+        });
         ownInput.placeholder = t.own;
         ownInput.setAttribute("aria-label", t.own);
-        const chips = [...presets, "other"].map(value => {
+        const chips = [...presets, "other", "amount"].map(value => {
             const chip = document.createElement("button");
             chip.type = "button";
             chip.className = "chip";
-            chip.textContent = value === "other" ? t.other : value + "%";
+            chip.textContent = value === "other" ? t.other : value === "amount" ? t.amount : value + "%";
             chip.addEventListener("click", () => {
+                if (value === "amount") {
+                    tipMode = "amount";
+                    update();
+                    moneyInput.focus();
+                    return;
+                }
+                tipMode = "percent";
                 if (value === "other") {
                     // Empty, so what is typed is the percent, not appended to the one before.
                     ownTip = true;
@@ -477,20 +516,28 @@
                 }
             });
             const base = myPart();
-            const tipAmount = Math.round(base * tip / 100);
+            const tipAmount = tipNow(base);
             head.querySelector(".part").textContent = money(base + tipAmount);
-            head.querySelector(".tipline").textContent = tipAmount > 0 ? fill(t.tipline, money(base), tip, money(tipAmount)) : "";
+            head.querySelector(".tipline").textContent = tipAmount <= 0 ? ""
+                : tipMode === "amount" ? fill(t.tiplineAmount, money(base), money(tipAmount)) : fill(t.tipline, money(base), tip, money(tipAmount));
             tips.querySelector(".tipamount").textContent = tipAmount > 0 ? "+" + money(tipAmount) : "";
+            tips.querySelector(".tipnote").textContent = tipMode === "amount" ? t.amountnote : t.tipnote;
+            barPart.querySelector("span").textContent = t.yours;
+            barPart.querySelector("strong").textContent = money(base + tipAmount);
             chips.forEach(({ value, chip }) => {
-                const on = value === "other" ? ownTip : !ownTip && value === tip;
+                const on = value === "amount" ? tipMode === "amount"
+                    : tipMode === "percent" && (value === "other" ? ownTip : !ownTip && value === tip);
                 chip.classList.toggle("on", on);
                 chip.setAttribute("aria-pressed", on ? "true" : "false");
             });
-            ownRow.hidden = !ownTip;
+            ownRow.hidden = !ownTip || tipMode === "amount";
+            moneyRow.hidden = tipMode !== "amount";
             if (ownTip && ownInput.value === "" && tip > 0) ownInput.value = String(tip);
             try {
                 localStorage.setItem(key + "-v2", JSON.stringify(shares));
                 localStorage.setItem(key + "-tip", String(tip));
+                localStorage.setItem(key + "-tipmode", tipMode);
+                localStorage.setItem(key + "-tipminor", String(tipMinor));
                 localStorage.setItem(key + "-people", String(people));
             } catch (error) { /* private mode */ }
         }
@@ -513,8 +560,9 @@
                 return share.people > 1 ? item.name + " (" + (share.k || 1) + "/" + share.people + ")" : item.name;
             });
             const base = myPart();
-            const tipAmount = Math.round(base * tip / 100);
-            const text = tipAmount > 0 ? fill(t.mineTip, money(base + tipAmount), tip, names.join(", "))
+            const tipAmount = tipNow(base);
+            const text = tipAmount > 0 && tipMode === "amount" ? fill(t.mineTipAmount, money(base + tipAmount), money(tipAmount), names.join(", "))
+                : tipAmount > 0 ? fill(t.mineTip, money(base + tipAmount), tip, names.join(", "))
                 : fill(t.mine, money(base), names.join(", "));
             try {
                 await navigator.clipboard.writeText(text);
