@@ -1,0 +1,23 @@
+# dibslyapp.com — Dibsly's public site (support, privacy, terms, the split page) and short split links, served by
+# Cloudflare from this repository (`worker.js`). GitHub Pages keeps serving the same files at
+# dmytromelinevskyi.github.io/dibsly-support for links made before the domain (2026-10-10). Deploy with
+# `npx wrangler deploy` (wrangler from the Dibsly repository's Server/sync) on the owner's word.
+name = "dibsly-site"
+main = "worker.js"
+compatibility_date = "2026-09-01"
+workers_dev = false
+routes = [
+  { pattern = "dibslyapp.com", custom_domain = true },
+  { pattern = "www.dibslyapp.com", custom_domain = true },
+]
+
+[assets]
+directory = "."
+binding = "ASSETS"
+# The Worker runs first everywhere: www redirects and /s/<code>; everything else goes to the files.
+run_worker_first = true
+
+# The bills of short links live on Dibsly's server.
+[[services]]
+binding = "SYNC"
+service = "dibsly-sync"

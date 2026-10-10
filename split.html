@@ -6,13 +6,14 @@
     <meta name="robots" content="noindex">
     <meta name="description" content="A bill shared from Dibsly: tap your items and see your part.">
     <title>Розділи рахунок · Dibsly</title>
-    <!-- The card messengers show under the link (owner, 2026-10-05: the bare link looked like a scam). The bill
-         itself stays in the link's # part, which no server — this one included — ever receives. -->
+    <!-- The card messengers show under the link (owner, 2026-10-05: the bare link looked like a scam). A long link
+         keeps the bill in its # part, which no server receives; a short link (dibslyapp.com/s/<code>, 1.1.2) is
+         kept 30 days by Dibsly's server, and the site's Worker names the shop in this card. -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Dibsly">
     <meta property="og:title" content="Розділи рахунок · Dibsly">
     <meta property="og:description" content="Обери свої позиції — побачиш свою частину. Без реєстрації та застосунку.">
-    <meta property="og:image" content="https://dmytromelinevskyi.github.io/dibsly-support/img/split-card.png">
+    <meta property="og:image" content="https://dibslyapp.com/img/split-card.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
@@ -158,6 +159,7 @@
               hint: "Tap what’s yours; under it, choose your share: whole, 1/2 … 1/8. − and + set how many of several are yours.",
               table: "At the table", fees: "Fees — shared by everyone at the table", whole: "Whole", clear: "Clear", copy: "Copy my part",
               copied: "Copied", items: "items", broken: "This link is incomplete. Ask for it again.",
+              expired: "This link has expired: bills are kept 30 days. Ask for it again.",
               old: "Open this link in Safari or Chrome.", made: "Made with", mine: "My part: {0} — {1}",
               mineTip: "My part: {0} (tips {1}% included) — {2}", tips: "Tips", other: "Other", own: "Your percent",
               tipline: "Items {0} + tips {1}% {2}", tipnote: "A percent of your part, added to it.",
@@ -168,6 +170,7 @@
               table: "За столом", fees: "Збори — діляться на всіх за столом", whole: "Ціле", clear: "Очистити",
               copy: "Скопіювати мою частину", copied: "Скопійовано", items: "позицій",
               broken: "Посилання неповне. Попроси надіслати його ще раз.",
+              expired: "Посилання застаріло: рахунок зберігається 30 днів. Попроси надіслати його ще раз.",
               old: "Відкрий це посилання в Safari чи Chrome.", made: "Зроблено в", mine: "Моя частина: {0} — {1}",
               mineTip: "Моя частина: {0} (з чайовими {1}%) — {2}", tips: "Чайові", other: "Своє", own: "Свій відсоток",
               tipline: "Позиції {0} + чайові {1}% {2}", tipnote: "Відсоток від твоєї частини, додається до неї.",
@@ -178,6 +181,7 @@
               table: "За столом", fees: "Сборы — делятся на всех за столом", whole: "Целиком", clear: "Очистить",
               copy: "Скопировать мою часть", copied: "Скопировано", items: "позиций",
               broken: "Ссылка неполная. Попроси прислать её ещё раз.",
+              expired: "Ссылка устарела: счёт хранится 30 дней. Попроси прислать её ещё раз.",
               old: "Открой эту ссылку в Safari или Chrome.", made: "Сделано в", mine: "Моя часть: {0} — {1}",
               mineTip: "Моя часть: {0} (с чаевыми {1}%) — {2}", tips: "Чаевые", other: "Своё", own: "Свой процент",
               tipline: "Позиции {0} + чаевые {1}% {2}", tipnote: "Процент от твоей части, добавляется к ней.",
@@ -224,7 +228,7 @@
         }).filter(item => item.minor > 0);
         const itemsSum = items.reduce((sum, item) => sum + item.minor, 0);
         const total = Number(receipt.t) || itemsSum;
-        const key = "dibsly-split-" + location.hash.slice(1, 40);
+        const key = "dibsly-split-" + (window.DIBSLY_SPLIT_CODE || location.hash.slice(1, 40));
         // shares[id] = { people: n } or { units: k }; absent = not mine.
         let shares = {};
         let saved = false;
@@ -433,7 +437,7 @@
 
         const footer = document.createElement("p");
         footer.className = "muted footer";
-        footer.innerHTML = t.made + ' <a href="https://dmytromelinevskyi.github.io/dibsly-support/">Dibsly</a>';
+        footer.innerHTML = t.made + ' <a href="https://dibslyapp.com/">Dibsly</a>';
         app.appendChild(footer);
 
         const myPart = () => {
@@ -522,7 +526,10 @@
         update();
     }
 
-    const fragment = location.hash.slice(1);
+    // A short link (dibslyapp.com/s/<code>, 1.1.2): the site's Worker puts the bill into the page; a long link carries
+    // it after #.
+    if (window.DIBSLY_SPLIT_EXPIRED) return fail(t.expired);
+    const fragment = window.DIBSLY_SPLIT || location.hash.slice(1);
     if (!fragment) return fail(t.broken);
     if (typeof DecompressionStream === "undefined") return fail(t.old);
     decode(fragment).then(receipt => {

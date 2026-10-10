@@ -2,6 +2,11 @@
 
 Public support, privacy and terms pages for Dibsly for iOS, and the split-the-bill page friends open from a shared receipt.
 
+Since 2026-10-10 the same files are also served at **<https://dibslyapp.com>** by the Cloudflare Worker `dibsly-site`
+(`worker.js`, `wrangler.toml`; deploy with `npx wrangler deploy` on the owner's word), which also opens short split
+links `dibslyapp.com/s/<code>`: the bill is kept 30 days by Dibsly's server (`dibsly-sync`, service binding) and put
+into `split.html`. GitHub Pages keeps serving older links.
+
 - Support: <https://dmytromelinevskyi.github.io/dibsly-support/>
 - Privacy Policy: <https://dmytromelinevskyi.github.io/dibsly-support/privacy.html>
 - Terms of Use: <https://dmytromelinevskyi.github.io/dibsly-support/terms.html>
