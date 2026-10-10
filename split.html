@@ -85,6 +85,7 @@
            name and the amount into a narrow column). */
         .partline { display: flex; align-items: center; gap: 8px; padding: 0 0 8px 36px; }
         .partline[hidden] { display: none; }
+        .partline.tipshare { padding: 10px 0 0; }
         .partline .mine { flex: 1; color: var(--accent-text); font-size: 14px; font-weight: 650;
                           font-variant-numeric: tabular-nums; }
         .share {
@@ -174,7 +175,7 @@
               old: "Open this link in Safari or Chrome.", made: "Made with", mine: "My part: {0} — {1}",
               mineTip: "My part: {0} (tips {1}% included) — {2}", tips: "Tips", other: "Other", own: "Your percent",
               tipline: "Items {0} + tips {1}% {2}", tipnote: "A percent of your part, added to it.",
-              amount: "Amount", percent: "Percent", ownAmount: "Your tips", amountnote: "Your tips in money, added to your part.",
+              amount: "Amount", percent: "Percent", ownAmount: "Tips for the whole table", amountnote: "The whole table's tips: pick your share — 1/6, 1/7 …",
               tiplineAmount: "Items {0} + tips {1}", mineTipAmount: "My part: {0} (tips {1} included) — {2}",
               inReceipt: "The receipt already adds {0} on top of its items — if that is service or tips, it is already in your part." },
         uk: { title: "Поділити рахунок", yours: "Твоя частина", of: "з {0} · за цінами чека; чайові — пропорційно",
@@ -187,7 +188,7 @@
               old: "Відкрий це посилання в Safari чи Chrome.", made: "Зроблено в", mine: "Моя частина: {0} — {1}",
               mineTip: "Моя частина: {0} (з чайовими {1}%) — {2}", tips: "Чайові", other: "Своє", own: "Свій відсоток",
               tipline: "Позиції {0} + чайові {1}% {2}", tipnote: "Відсоток від твоєї частини, додається до неї.",
-              amount: "Сума", percent: "Відсоток", ownAmount: "Твої чайові", amountnote: "Твої чайові сумою, додаються до твоєї частини.",
+              amount: "Сума", percent: "Відсоток", ownAmount: "Чайові на весь стіл", amountnote: "Чайові на весь стіл: вибери свою частку — 1/6, 1/7 …",
               tiplineAmount: "Позиції {0} + чайові {1}", mineTipAmount: "Моя частина: {0} (з чайовими {1}) — {2}",
               inReceipt: "Чек уже додає {0} понад позиції — якщо це сервіс чи чайові, вони вже у твоїй частині." },
         ru: { title: "Разделить счёт", yours: "Твоя часть", of: "из {0} · по ценам чека; чаевые — пропорционально",
@@ -200,7 +201,7 @@
               old: "Открой эту ссылку в Safari или Chrome.", made: "Сделано в", mine: "Моя часть: {0} — {1}",
               mineTip: "Моя часть: {0} (с чаевыми {1}%) — {2}", tips: "Чаевые", other: "Своё", own: "Свой процент",
               tipline: "Позиции {0} + чаевые {1}% {2}", tipnote: "Процент от твоей части, добавляется к ней.",
-              amount: "Сумма", percent: "Процент", ownAmount: "Твои чаевые", amountnote: "Твои чаевые суммой, добавляются к твоей части.",
+              amount: "Сумма", percent: "Процент", ownAmount: "Чаевые на весь стол", amountnote: "Чаевые на весь стол: выбери свою долю — 1/6, 1/7 …",
               tiplineAmount: "Позиции {0} + чаевые {1}", mineTipAmount: "Моя часть: {0} (с чаевыми {1}) — {2}",
               inReceipt: "Чек уже добавляет {0} сверх позиций — если это сервис или чаевые, они уже в твоей части." }
     };
@@ -414,7 +415,12 @@
             if (localStorage.getItem(key + "-tipmode") === "amount") tipMode = "amount";
             tipMinor = Math.max(0, Math.round(Number(localStorage.getItem(key + "-tipminor")) || 0));
         } catch (error) { /* private mode */ }
-        const tipNow = base => tipMode === "amount" ? tipMinor : Math.round(base * tip / 100);
+        // The amount is the whole table's tips; the friend takes a share of it like a fee (owner, 2026-10-10): the
+        // table's size until they pick their own.
+        let tipShare = null;
+        try { tipShare = JSON.parse(localStorage.getItem(key + "-tipshare") || "null"); } catch (error) { /* private mode */ }
+        const tipPart = () => tipShare || { people };
+        const tipNow = base => tipMode === "amount" ? Math.round(tipMinor * fraction({}, tipPart())) : Math.round(base * tip / 100);
         const tips = document.createElement("section");
         tips.className = "card";
         tips.innerHTML = '<div class="tiphead"><strong></strong><span class="tipamount"></span></div>'
@@ -422,7 +428,9 @@
             + '<button type="button" role="tab" data-mode="amount"></button></div>'
             + '<div class="chips"></div><label class="tipown"><input type="number" inputmode="numeric" min="0" max="100">'
             + '<span class="muted">%</span></label><label class="tipown tipmoney"><input type="text" inputmode="decimal">'
-            + '<span class="muted currency"></span></label><p class="muted note tipnote"></p>';
+            + '<span class="muted currency"></span></label><div class="partline tipshare"><span class="mine"></span>'
+            + '<button type="button" class="share">−</button><select class="share"></select><button type="button" class="share">+</button></div>'
+            + '<p class="muted note tipnote"></p>';
         tips.querySelector("strong").textContent = t.tips;
         tips.querySelector(".tipnote").textContent = t.tipnote;
         const ownRow = tips.querySelector(".tipown");
@@ -433,6 +441,28 @@
         moneyInput.placeholder = t.ownAmount;
         moneyInput.setAttribute("aria-label", t.ownAmount);
         if (tipMinor > 0) moneyInput.value = (tipMinor / 100).toFixed(2).replace(/\.00$/, "");
+        const shareLine = tips.querySelector(".tipshare");
+        const [tipLess, tipMore] = shareLine.querySelectorAll("button");
+        const tipPortion = shareLine.querySelector("select");
+        for (let count = 1; count <= maxPeople; count++) {
+            const option = document.createElement("option");
+            option.value = String(count);
+            option.textContent = count === 1 ? t.whole : "1/" + count;
+            tipPortion.appendChild(option);
+        }
+        tipPortion.addEventListener("change", () => { tipShare = { people: Number(tipPortion.value) }; update(); });
+        tipLess.addEventListener("click", () => {
+            const current = tipPart();
+            const k = (current.k || 1) - 1;
+            tipShare = k > 1 ? { people: current.people, k } : { people: current.people };
+            update();
+        });
+        tipMore.addEventListener("click", () => {
+            const current = tipPart();
+            const k = (current.k || 1) + 1;
+            tipShare = k >= current.people ? { people: 1 } : { people: current.people, k };
+            update();
+        });
         moneyInput.addEventListener("input", () => {
             const value = Number(moneyInput.value.replace(",", ".").replace(/[^0-9.]/g, ""));
             tipMinor = Number.isFinite(value) ? Math.min(Math.round(value * 100), 100_000_000) : 0;
@@ -547,12 +577,20 @@
             });
             ownRow.hidden = !ownTip || tipMode === "amount";
             moneyRow.hidden = tipMode !== "amount";
+            const part = tipPart();
+            shareLine.hidden = tipMode !== "amount";
+            tipPortion.value = String(part.people || 1);
+            tipLess.hidden = !(part.people > 1 && (part.k || 1) > 1);
+            tipMore.hidden = !(part.people > 1);
+            shareLine.querySelector(".mine").textContent = (part.people > 1 ? (part.k || 1) + "/" + part.people + " · " : "")
+                + money(Math.round(tipMinor * fraction({}, part)));
             if (ownTip && ownInput.value === "" && tip > 0) ownInput.value = String(tip);
             try {
                 localStorage.setItem(key + "-v2", JSON.stringify(shares));
                 localStorage.setItem(key + "-tip", String(tip));
                 localStorage.setItem(key + "-tipmode", tipMode);
                 localStorage.setItem(key + "-tipminor", String(tipMinor));
+                localStorage.setItem(key + "-tipshare", JSON.stringify(tipShare));
                 localStorage.setItem(key + "-people", String(people));
             } catch (error) { /* private mode */ }
         }
