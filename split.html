@@ -120,6 +120,12 @@
             font-variant-numeric: tabular-nums;
         }
         .chip.on { background: var(--accent); border-color: var(--accent); color: #1c1a17; font-weight: 650; }
+        /* Percent or amount (owner, 2026-10-10): one switch above, then the percents or the amount — as in the app. */
+        .tipmode { display: flex; padding: 3px; gap: 2px; margin-bottom: 10px; border-radius: 12px; background: var(--accent-soft); }
+        .tipmode button { flex: 1; height: 34px; border: 0; border-radius: 9px; background: none; color: var(--accent-text);
+            font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; }
+        .tipmode button.on { background: var(--surface); color: var(--text); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18); }
+        .chips[hidden] { display: none; }
         .tipown { display: flex; align-items: center; gap: 6px; margin-top: 10px; }
         .tipown[hidden] { display: none; }
         .tipown input {
@@ -168,7 +174,7 @@
               old: "Open this link in Safari or Chrome.", made: "Made with", mine: "My part: {0} — {1}",
               mineTip: "My part: {0} (tips {1}% included) — {2}", tips: "Tips", other: "Other", own: "Your percent",
               tipline: "Items {0} + tips {1}% {2}", tipnote: "A percent of your part, added to it.",
-              amount: "Amount", ownAmount: "Your tips", amountnote: "Your tips in money, added to your part.",
+              amount: "Amount", percent: "Percent", ownAmount: "Your tips", amountnote: "Your tips in money, added to your part.",
               tiplineAmount: "Items {0} + tips {1}", mineTipAmount: "My part: {0} (tips {1} included) — {2}",
               inReceipt: "The receipt already adds {0} on top of its items — if that is service or tips, it is already in your part." },
         uk: { title: "Поділити рахунок", yours: "Твоя частина", of: "з {0} · за цінами чека; чайові — пропорційно",
@@ -181,7 +187,7 @@
               old: "Відкрий це посилання в Safari чи Chrome.", made: "Зроблено в", mine: "Моя частина: {0} — {1}",
               mineTip: "Моя частина: {0} (з чайовими {1}%) — {2}", tips: "Чайові", other: "Своє", own: "Свій відсоток",
               tipline: "Позиції {0} + чайові {1}% {2}", tipnote: "Відсоток від твоєї частини, додається до неї.",
-              amount: "Сума", ownAmount: "Твої чайові", amountnote: "Твої чайові сумою, додаються до твоєї частини.",
+              amount: "Сума", percent: "Відсоток", ownAmount: "Твої чайові", amountnote: "Твої чайові сумою, додаються до твоєї частини.",
               tiplineAmount: "Позиції {0} + чайові {1}", mineTipAmount: "Моя частина: {0} (з чайовими {1}) — {2}",
               inReceipt: "Чек уже додає {0} понад позиції — якщо це сервіс чи чайові, вони вже у твоїй частині." },
         ru: { title: "Разделить счёт", yours: "Твоя часть", of: "из {0} · по ценам чека; чаевые — пропорционально",
@@ -194,7 +200,7 @@
               old: "Открой эту ссылку в Safari или Chrome.", made: "Сделано в", mine: "Моя часть: {0} — {1}",
               mineTip: "Моя часть: {0} (с чаевыми {1}%) — {2}", tips: "Чаевые", other: "Своё", own: "Свой процент",
               tipline: "Позиции {0} + чаевые {1}% {2}", tipnote: "Процент от твоей части, добавляется к ней.",
-              amount: "Сумма", ownAmount: "Твои чаевые", amountnote: "Твои чаевые суммой, добавляются к твоей части.",
+              amount: "Сумма", percent: "Процент", ownAmount: "Твои чаевые", amountnote: "Твои чаевые суммой, добавляются к твоей части.",
               tiplineAmount: "Позиции {0} + чаевые {1}", mineTipAmount: "Моя часть: {0} (с чаевыми {1}) — {2}",
               inReceipt: "Чек уже добавляет {0} сверх позиций — если это сервис или чаевые, они уже в твоей части." }
     };
@@ -412,6 +418,8 @@
         const tips = document.createElement("section");
         tips.className = "card";
         tips.innerHTML = '<div class="tiphead"><strong></strong><span class="tipamount"></span></div>'
+            + '<div class="tipmode" role="tablist"><button type="button" role="tab" data-mode="percent"></button>'
+            + '<button type="button" role="tab" data-mode="amount"></button></div>'
             + '<div class="chips"></div><label class="tipown"><input type="number" inputmode="numeric" min="0" max="100">'
             + '<span class="muted">%</span></label><label class="tipown tipmoney"><input type="text" inputmode="decimal">'
             + '<span class="muted currency"></span></label><p class="muted note tipnote"></p>';
@@ -432,19 +440,21 @@
         });
         ownInput.placeholder = t.own;
         ownInput.setAttribute("aria-label", t.own);
-        const chips = [...presets, "other", "amount"].map(value => {
+        const modes = [...tips.querySelectorAll(".tipmode button")];
+        modes.forEach(button => {
+            button.textContent = button.dataset.mode === "amount" ? t.amount : t.percent;
+            button.addEventListener("click", () => {
+                tipMode = button.dataset.mode;
+                update();
+                if (tipMode === "amount") moneyInput.focus();
+            });
+        });
+        const chips = [...presets, "other"].map(value => {
             const chip = document.createElement("button");
             chip.type = "button";
             chip.className = "chip";
-            chip.textContent = value === "other" ? t.other : value === "amount" ? t.amount : value + "%";
+            chip.textContent = value === "other" ? t.other : value + "%";
             chip.addEventListener("click", () => {
-                if (value === "amount") {
-                    tipMode = "amount";
-                    update();
-                    moneyInput.focus();
-                    return;
-                }
-                tipMode = "percent";
                 if (value === "other") {
                     // Empty, so what is typed is the percent, not appended to the one before.
                     ownTip = true;
@@ -524,9 +534,14 @@
             tips.querySelector(".tipnote").textContent = tipMode === "amount" ? t.amountnote : t.tipnote;
             barPart.querySelector("span").textContent = t.yours;
             barPart.querySelector("strong").textContent = money(base + tipAmount);
+            modes.forEach(button => {
+                const on = button.dataset.mode === tipMode;
+                button.classList.toggle("on", on);
+                button.setAttribute("aria-selected", on ? "true" : "false");
+            });
+            tips.querySelector(".chips").hidden = tipMode === "amount";
             chips.forEach(({ value, chip }) => {
-                const on = value === "amount" ? tipMode === "amount"
-                    : tipMode === "percent" && (value === "other" ? ownTip : !ownTip && value === tip);
+                const on = value === "other" ? ownTip : !ownTip && value === tip;
                 chip.classList.toggle("on", on);
                 chip.setAttribute("aria-pressed", on ? "true" : "false");
             });
