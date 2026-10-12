@@ -169,7 +169,7 @@
         en: { title: "Split the bill", yours: "Your part", of: "of {0} · at the receipt’s prices; tips shared in proportion",
               bonus: "Bonuses and discounts −{0} · paid {1}",
               hint: "Tap what’s yours; under it, choose your share: whole, 1/2 … 1/8. − and + set how many of several are yours.",
-              table: "At the table", fees: "Fees — shared by everyone at the table", whole: "Whole", clear: "Clear", copy: "Copy my part",
+              table: "At the table", fees: "Fees — shared by everyone at the table", paidTips: "The tips are already paid by whoever shared this bill — just pick your share of them.", whole: "Whole", clear: "Clear", copy: "Copy my part",
               copied: "Copied", items: "items", broken: "This link is incomplete. Ask for it again.",
               expired: "This link has expired: bills are kept 30 days. Ask for it again.",
               old: "Open this link in Safari or Chrome.", made: "Made with", mine: "My part: {0} — {1}",
@@ -181,7 +181,7 @@
         uk: { title: "Поділити рахунок", yours: "Твоя частина", of: "з {0} · за цінами чека; чайові — пропорційно",
               bonus: "Бонуси й знижки −{0} · сплачено {1}",
               hint: "Торкнись свого; під позицією вибери свою частку: ціле, 1/2 … 1/8. − і + — скільки з кількох твоїх.",
-              table: "За столом", fees: "Збори — діляться на всіх за столом", whole: "Ціле", clear: "Очистити",
+              table: "За столом", fees: "Збори — діляться на всіх за столом", paidTips: "Чайові вже заплатив той, хто поділився рахунком, — просто вибери свою частку.", whole: "Ціле", clear: "Очистити",
               copy: "Скопіювати мою частину", copied: "Скопійовано", items: "позицій",
               broken: "Посилання неповне. Попроси надіслати його ще раз.",
               expired: "Посилання застаріло: рахунок зберігається 30 днів. Попроси надіслати його ще раз.",
@@ -194,7 +194,7 @@
         ru: { title: "Разделить счёт", yours: "Твоя часть", of: "из {0} · по ценам чека; чаевые — пропорционально",
               bonus: "Бонусы и скидки −{0} · оплачено {1}",
               hint: "Нажми на своё; под позицией выбери свою долю: целиком, 1/2 … 1/8. − и + — сколько из нескольких твоих.",
-              table: "За столом", fees: "Сборы — делятся на всех за столом", whole: "Целиком", clear: "Очистить",
+              table: "За столом", fees: "Сборы — делятся на всех за столом", paidTips: "Чаевые уже заплатил тот, кто поделился счётом, — просто выбери свою долю.", whole: "Целиком", clear: "Очистить",
               copy: "Скопировать мою часть", copied: "Скопировано", items: "позиций",
               broken: "Ссылка неполная. Попроси прислать её ещё раз.",
               expired: "Ссылка устарела: счёт хранится 30 дней. Попроси прислать её ещё раз.",
@@ -324,6 +324,15 @@
         feeHead.className = "feehead";
         feeHead.textContent = t.fees;
         feeList.appendChild(feeHead);
+        // The sharer paid the tips (owner, 2026-10-12, `a`): their amount is one of these fees; the friend enters no
+        // tips of their own and only picks a share, so the tips card below is left out.
+        const paidTips = receipt.a === 1;
+        if (paidTips) {
+            const paidNote = document.createElement("p");
+            paidNote.className = "muted note";
+            paidNote.textContent = t.paidTips;
+            feeList.appendChild(paidNote);
+        }
         const rows = items.map(item => {
             const row = document.createElement("div");
             row.className = "row";
@@ -405,14 +414,15 @@
         let tip = clampTip(receipt.p);
         try {
             const saved = localStorage.getItem(key + "-tip");
-            if (saved !== null) tip = clampTip(saved);
+            if (saved !== null && !paidTips) tip = clampTip(saved);
         } catch (error) { /* private mode */ }
+        if (paidTips) tip = 0;
         let ownTip = !presets.includes(tip);
         // Or tips as the friend's own amount (owner, 2026-10-10: “a choice of the kind of tips”).
         let tipMode = "percent";
         let tipMinor = 0;
         try {
-            if (localStorage.getItem(key + "-tipmode") === "amount") tipMode = "amount";
+            if (localStorage.getItem(key + "-tipmode") === "amount" && !paidTips) tipMode = "amount";
             tipMinor = Math.max(0, Math.round(Number(localStorage.getItem(key + "-tipminor")) || 0));
         } catch (error) { /* private mode */ }
         // The amount is the whole table's tips; the friend takes a share of it like a fee (owner, 2026-10-10): the
@@ -512,7 +522,7 @@
             note.textContent = fill(t.inReceipt, money(total - itemsSum));
             tips.appendChild(note);
         }
-        app.appendChild(tips);
+        if (!paidTips) app.appendChild(tips);
 
         const footer = document.createElement("p");
         footer.className = "muted footer";
