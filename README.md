@@ -1,6 +1,13 @@
 # Dibsly Support
 
-Public support, privacy and terms pages for Dibsly for iOS, and the split-the-bill page friends open from a shared receipt.
+Public pages for Dibsly: the landing page, support, privacy and terms, and the split-the-bill page friends open from a
+shared receipt.
+
+**The landing page (1.0, 2026-10-17, owner: «лендинг уже можешь ебануть версию 1.0, задеплоить, на ее основе правки»):**
+`index.html` (Ukrainian) and `en.html` (English), styled by `landing.css`; the App Store screenshots in `img/shots/`
+(made from the app's showcase data by `make screenshots`). A first visit from a browser that speaks neither Ukrainian
+nor Russian goes to `en.html`; the UK / EN switch is kept in the browser. The former support page is `support.html`
+(its “no account, no server” lines updated for 1.1); privacy and terms link to it.
 
 Since 2026-10-10 the same files are also served at **<https://dibslyapp.com>** by the Cloudflare Worker `dibsly-site`
 (`worker.js`, `wrangler.toml`; deploy with `npx wrangler deploy` on the owner's word), which also opens short split
