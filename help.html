@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Dibsly guide: first steps, Apple Pay and bank notifications through Shortcuts, statements, investing, shared accounts, the website, ChatGPT and Claude, backups, Premium.">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#F7F3EE" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0F0D0C" media="(prefers-color-scheme: dark)">
+    <title>Dibsly Guide</title>
+    <link rel="alternate" hreflang="uk" href="https://dibslyapp.com/help-uk.html">
+    <link rel="alternate" hreflang="en" href="https://dibslyapp.com/help.html">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="shell shell-narrow">
+        <header class="site-header">
+            <a class="brand" href="en.html"><img src="img/apple-touch-icon.png" alt="" width="32" height="32">Dibsly</a>
+            <nav class="site-nav" aria-label="Site">
+                <a href="help.html" aria-current="page">Guide</a>
+                <a href="support.html">Support</a>
+                <a href="privacy.html">Privacy</a>
+                <a class="lang-switch" href="help-uk.html" hreflang="uk">UK</a>
+            </nav>
+        </header>
+
+        <main>
+            <header class="policy-header">
+                <p class="eyebrow">Dibsly for iPhone</p>
+                <h1>Guide</h1>
+                <p class="lead">How to set Dibsly up so it records everything by itself: from the first launch to Apple Pay, bank notifications and your ChatGPT or Claude.</p>
+            </header>
+
+            <nav class="card toc" aria-labelledby="toc-title">
+                <h2 id="toc-title">Sections</h2>
+                <ol>
+                    <li><a href="#start">First steps</a></li>
+                    <li><a href="#apple-pay">Apple Pay through Shortcuts</a></li>
+                    <li><a href="#bank-notifications">Bank notifications</a></li>
+                    <li><a href="#statements">Bank statements and monobank</a></li>
+                    <li><a href="#investments">Investing</a></li>
+                    <li><a href="#moving">Moving from another app</a></li>
+                    <li><a href="#shared">Shared accounts</a></li>
+                    <li><a href="#website">The website my.dibslyapp.com</a></li>
+                    <li><a href="#assistants">ChatGPT and Claude</a></li>
+                    <li><a href="#backup">Backups and a new iPhone</a></li>
+                    <li><a href="#premium">Premium and cancelling</a></li>
+                </ol>
+            </nav>
+
+            <article class="card policy guide">
+                <h2 id="start">First steps</h2>
+                <ol class="guide-steps">
+                    <li>Install Dibsly from the <a href="https://apps.apple.com/app/id6765870838">App Store</a> and go through the setup: language, main currency, first account.</li>
+                    <li>At Your banks, connect monobank or pick your bank's statement, and the history comes in at once.</li>
+                    <li>An account is optional. You can sign in with Apple any time later, from your profile on Main.</li>
+                    <li>Then let new spending record itself: <a href="#apple-pay">Apple Pay</a> and, with Premium, <a href="#bank-notifications">bank notifications</a>.</li>
+                </ol>
+
+                <h2 id="apple-pay">Apple Pay through Shortcuts</h2>
+                <p>Every Apple Pay payment becomes a draft in Dibsly: check the amount and category and save it with one tap. Free, with any card.</p>
+                <ol class="guide-steps">
+                    <li>In Dibsly open <strong>Settings → Transaction automation → Apple Pay</strong> and tap <strong>Install automation</strong>.</li>
+                    <li>In the Shortcuts app open the <strong>Automation</strong> tab, find <strong>Dibsly · Apple Pay</strong> and make sure it is on and runs immediately, without asking.</li>
+                    <li>The first payment with each card asks for its account in Dibsly; after that it is remembered.</li>
+                </ol>
+                <p class="muted">By hand: a new Notification automation for the Wallet app, Run Immediately. Actions: Get text from Subtitle, Body and Title, a Text with the texts, then Dibsly's <strong>Import Wallet notification</strong>: Notification text — the text, Card — the card's name, Show When Run off.</p>
+                <div class="guide-shots">
+                    <img src="img/help/wallet-1.webp" alt="The Dibsly · Apple Pay automation in Shortcuts: a notification from Wallet and getting its text" width="460" height="1000" loading="lazy">
+                    <img src="img/help/wallet-2.webp" alt="The Import Wallet notification action: Notification text, Card and Show When Run off" width="460" height="1000" loading="lazy">
+                </div>
+                <p class="muted">Nothing arrives? Check that Wallet may show notifications (iOS Settings → Notifications → Wallet). With bank notifications on too, one purchase stays one draft.</p>
+
+                <h2 id="bank-notifications">Bank notifications <span class="tag">Premium · iOS 27</span></h2>
+                <p>Pushes from any bank — purchases, top-ups, transfers — are read by Dibsly with the AI and become drafts.</p>
+                <ol class="guide-steps">
+                    <li>In Dibsly open <strong>Settings → Transaction automation → Bank notifications</strong> and tap <strong>Install automation</strong>.</li>
+                    <li>In Shortcuts open the <strong>Dibsly · Bank Notifications</strong> automation and, under “When I receive a notification from”, pick your banks' apps: monobank, Privat24, UKRSIB online, KredoBank or any other.</li>
+                    <li>Make sure it runs immediately and that Show When Run is off in the <strong>Read notification</strong> action.</li>
+                    <li>Allow the AI in Dibsly when it asks: without it the notifications cannot be read.</li>
+                </ol>
+                <div class="guide-shots">
+                    <img src="img/help/bank-1.webp" alt="The Dibsly · Bank Notifications automation: notifications from monobank, Privat24, UKRSIB online and KredoBank" width="460" height="1000" loading="lazy">
+                    <img src="img/help/bank-2.webp" alt="The Read notification action with Title, Subtitle, Body and Show When Run off" width="460" height="1000" loading="lazy">
+                </div>
+
+                <h2 id="statements">Bank statements and monobank</h2>
+                <ol class="guide-steps">
+                    <li><strong>monobank directly:</strong> create a personal token at <a href="https://api.monobank.ua">api.monobank.ua</a> and paste it in Dibsly: <strong>Settings → Import &amp; export → Connect monobank</strong>. The token only reads, and it stays on this iPhone.</li>
+                    <li><strong>A statement:</strong> in your bank's app save a statement for the period you need — PDF (monobank also CSV or XLS) — and share it to Dibsly or open it in <strong>Settings → Import &amp; export → Bank statement</strong>. monobank, PrivatBank, UKRSIBBANK and KredoBank are supported.</li>
+                    <li>Check the preview — the account, the number of operations and the transfers between your accounts — and tap <strong>Add and continue</strong>. What Dibsly already has is not added twice.</li>
+                    <li><strong>Any other bank</strong> <span class="tag">Premium</span>: give the statement to your ChatGPT or Claude connected to Dibsly and ask it to record it. See <a href="#assistants">ChatGPT and Claude</a>.</li>
+                </ol>
+
+                <h2 id="investments">Investing</h2>
+                <ol class="guide-steps">
+                    <li>Turn the Invest tab on in Settings if it is not there yet.</li>
+                    <li>Save your broker's report: Interactive Brokers — the Activity Statement, Freedom Finance — the broker report as XLSX or PDF.</li>
+                    <li>Open <strong>Settings → Import &amp; export → Broker report</strong> and pick the file. Dibsly sorts out buys, sales, dividends with the tax withheld and deposits.</li>
+                </ol>
+
+                <h2 id="moving">Moving from another app</h2>
+                <p>Dibsly imports a Monefy export and its own Dibsly CSV. In Monefy export your data to CSV, then in Dibsly open <strong>Settings → Import &amp; export → CSV file → Monefy CSV</strong>. Accounts, categories, currencies and transfers come along, and Dibsly shows what it will add before saving.</p>
+
+                <h2 id="shared">Shared accounts <span class="tag">Premium</span></h2>
+                <ol class="guide-steps">
+                    <li>Sign in to a Dibsly account: your profile on Main → Sign in with Apple.</li>
+                    <li>Open <strong>Profile → Sharing → Invite by link</strong> and send the link.</li>
+                    <li>The other person opens the link on an iPhone with Dibsly and taps Join. Then choose which account to share.</li>
+                    <li>One member's Premium is enough. You can leave any time, in Sharing too.</li>
+                </ol>
+
+                <h2 id="website">The website my.dibslyapp.com <span class="tag">Premium</span></h2>
+                <p>Open <a href="https://my.dibslyapp.com">my.dibslyapp.com</a> on your computer and sign in with the same Apple ID as on your iPhone. You get searchable history, analytics, the plan, the calendar and drafts; changes show up on your phone too.</p>
+
+                <h2 id="assistants">ChatGPT and Claude <span class="tag">Premium</span></h2>
+                <ol class="guide-steps">
+                    <li>On the website open <strong>Connect AI</strong>: it has the connection address <strong>https://my.dibslyapp.com/mcp</strong> and the steps for each assistant.</li>
+                    <li><strong>Claude</strong> (claude.ai, the app): Settings → Connectors → add a custom connector with the address above, then sign in with Apple.</li>
+                    <li><strong>ChatGPT</strong>: Settings → Apps → Advanced → Developer mode, then add an app with the address above. Availability depends on your OpenAI plan.</li>
+                    <li>Ask in plain words: “how much did I spend on cafés this month?”, “here is a statement, record it”. The assistant saves changes only after your “yes”, and each one can be undone in the AI journal on the website.</li>
+                </ol>
+
+                <h2 id="backup">Backups and a new iPhone</h2>
+                <ol class="guide-steps">
+                    <li><strong>Settings → Backup &amp; recovery</strong>: choose an iCloud Drive folder, make up a recovery password and turn on automatic backups.</li>
+                    <li>Keep the password in a password manager: a backup does not open without it, and Dibsly cannot reset it.</li>
+                    <li>On a new iPhone install Dibsly, choose <strong>Restore my data</strong> and the latest backup — or just sign in to your Dibsly account if you have sync (Premium).</li>
+                </ol>
+
+                <h2 id="premium">Premium and cancelling</h2>
+                <p>Premium adds sync and the website, ChatGPT and Claude, shared accounts, notifications from any bank, categories from the AI and up to 300 receipts a month. The first 7 days are free. Start it from your profile on Main or the Premium screen.</p>
+                <p>To cancel: <strong>iOS Settings → your name → Subscriptions → Dibsly</strong>, at least 24 hours before the period ends. Nothing is deleted when Premium ends.</p>
+
+                <p class="muted">Didn't find an answer? <a href="support.html">Support</a> or <a href="mailto:dibslysupport@gmail.com">dibslysupport@gmail.com</a>.</p>
+            </article>
+        </main>
+
+        <footer class="site-footer">
+            <nav aria-label="Footer">
+                <a href="support.html">Support</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+                <a href="mailto:dibslysupport@gmail.com">Contact Support</a>
+            </nav>
+            <p>© 2026 Dibsly</p>
+        </footer>
+    </div>
+</body>
+</html>

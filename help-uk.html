@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Інструкції Dibsly: перші кроки, Apple Pay і сповіщення банків через «Команди», виписки, інвестиції, спільні рахунки, сайт, ChatGPT і Claude, копії, Premium.">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#F7F3EE" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0F0D0C" media="(prefers-color-scheme: dark)">
+    <title>Інструкції Dibsly</title>
+    <link rel="alternate" hreflang="uk" href="https://dibslyapp.com/help-uk.html">
+    <link rel="alternate" hreflang="en" href="https://dibslyapp.com/help.html">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="shell shell-narrow">
+        <header class="site-header">
+            <a class="brand" href="./"><img src="img/apple-touch-icon.png" alt="" width="32" height="32">Dibsly</a>
+            <nav class="site-nav" aria-label="Сайт">
+                <a href="help-uk.html" aria-current="page">Інструкції</a>
+                <a href="support-uk.html">Підтримка</a>
+                <a href="privacy-uk.html">Конфіденційність</a>
+                <a class="lang-switch" href="help.html" hreflang="en">EN</a>
+            </nav>
+        </header>
+
+        <main>
+            <header class="policy-header">
+                <p class="eyebrow">Dibsly для iPhone</p>
+                <h1>Інструкції</h1>
+                <p class="lead">Як налаштувати Dibsly, щоб він записував усе сам: від першого запуску до Apple Pay, сповіщень банку й твого ChatGPT чи Claude.</p>
+            </header>
+
+            <nav class="card toc" aria-labelledby="toc-title">
+                <h2 id="toc-title">Розділи</h2>
+                <ol>
+                    <li><a href="#start">Перші кроки</a></li>
+                    <li><a href="#apple-pay">Apple Pay через «Команди»</a></li>
+                    <li><a href="#bank-notifications">Сповіщення банку</a></li>
+                    <li><a href="#statements">Виписки банків і monobank</a></li>
+                    <li><a href="#investments">Інвестиції</a></li>
+                    <li><a href="#moving">Переїзд з іншого застосунку</a></li>
+                    <li><a href="#shared">Спільні рахунки</a></li>
+                    <li><a href="#website">Сайт my.dibslyapp.com</a></li>
+                    <li><a href="#assistants">ChatGPT і Claude</a></li>
+                    <li><a href="#backup">Резервні копії й новий iPhone</a></li>
+                    <li><a href="#premium">Premium і скасування</a></li>
+                </ol>
+            </nav>
+
+            <article class="card policy guide">
+                <h2 id="start">Перші кроки</h2>
+                <ol class="guide-steps">
+                    <li>Встанови Dibsly з <a href="https://apps.apple.com/app/id6765870838">App Store</a> і пройди знайомство: мова, основна валюта, перший рахунок.</li>
+                    <li>На кроці «Твої банки» підключи monobank або обери виписку свого банку — історія підтягнеться одразу.</li>
+                    <li>Акаунт не обов'язковий. Увійти з Apple можна будь-коли пізніше — у профілі на Головній.</li>
+                    <li>Далі налаштуй, щоб нові витрати записувалися самі: <a href="#apple-pay">Apple Pay</a> і, з Premium, <a href="#bank-notifications">сповіщення банку</a>.</li>
+                </ol>
+
+                <h2 id="apple-pay">Apple Pay через «Команди»</h2>
+                <p>Кожна оплата Apple Pay стає чернеткою в Dibsly: перевір суму й категорію і збережи одним дотиком. Безкоштовно, з будь-якою карткою.</p>
+                <ol class="guide-steps">
+                    <li>У Dibsly відкрий <strong>Налаштування → Автоматизація операцій → Apple Pay</strong> і натисни <strong>Установити автоматизацію</strong>.</li>
+                    <li>У застосунку «Команди» відкрий вкладку <strong>Автоматизація</strong>, знайди <strong>Dibsly · Apple Pay</strong> і переконайся, що вона ввімкнена й виконується одразу, без запиту.</li>
+                    <li>Перша оплата кожною карткою попросить обрати її рахунок у Dibsly; далі він запам'ятовується.</li>
+                </ol>
+                <p class="muted">Налаштувати вручну: нова автоматизація «Сповіщення» від застосунку Wallet, «Виконувати одразу». Дії: «Отримати текст» з Subtitle, Body і Title, «Текст» з двома отриманими текстами, далі дія Dibsly <strong>Import Wallet notification</strong>: Notification text — текст, Card — назва картки, «Показувати під час виконання» вимкнено.</p>
+                <div class="guide-shots">
+                    <img src="img/help/wallet-1.webp" alt="Автоматизація Dibsly · Apple Pay у «Командах»: сповіщення від Wallet і отримання тексту" width="460" height="1000" loading="lazy">
+                    <img src="img/help/wallet-2.webp" alt="Дія Import Wallet notification: Notification text, Card і вимкнене Show When Run" width="460" height="1000" loading="lazy">
+                </div>
+                <p class="muted">Нічого не приходить? Перевір, що Wallet може показувати сповіщення (Параметри iOS → Сповіщення → Wallet). Якщо ввімкнені й сповіщення банку, одна покупка лишається однією чернеткою.</p>
+
+                <h2 id="bank-notifications">Сповіщення банку <span class="tag">Premium · iOS 27</span></h2>
+                <p>Пуші будь-якого банку — покупки, поповнення, перекази — Dibsly читає з AI і робить з них чернетки.</p>
+                <ol class="guide-steps">
+                    <li>У Dibsly відкрий <strong>Налаштування → Автоматизація операцій → Сповіщення банків</strong> і натисни <strong>Установити автоматизацію</strong>.</li>
+                    <li>У «Командах» відкрий автоматизацію <strong>Dibsly · Bank Notifications</strong> і в пункті «Коли я отримую сповіщення від» обери застосунки своїх банків: monobank, Privat24, UKRSIB online, KredoBank чи будь-які інші.</li>
+                    <li>Переконайся, що автоматизація виконується одразу, а в дії <strong>Read notification</strong> вимкнено «Показувати під час виконання».</li>
+                    <li>Дозволь AI в Dibsly, коли він попросить: без цього сповіщення не прочитати.</li>
+                </ol>
+                <div class="guide-shots">
+                    <img src="img/help/bank-1.webp" alt="Автоматизація Dibsly · Bank Notifications: сповіщення від monobank, Privat24, UKRSIB online і KredoBank" width="460" height="1000" loading="lazy">
+                    <img src="img/help/bank-2.webp" alt="Дія Read notification з Title, Subtitle, Body і вимкненим Show When Run" width="460" height="1000" loading="lazy">
+                </div>
+
+                <h2 id="statements">Виписки банків і monobank</h2>
+                <ol class="guide-steps">
+                    <li><strong>monobank напряму:</strong> створи персональний токен на <a href="https://api.monobank.ua">api.monobank.ua</a> і встав його в Dibsly: <strong>Налаштування → Імпорт та експорт → Підключити monobank</strong>. Токен дає доступ лише на читання й лишається на цьому iPhone.</li>
+                    <li><strong>Виписка:</strong> у застосунку банку збережи виписку за потрібний період — PDF (monobank ще CSV чи XLS) — і поділись нею з Dibsly або відкрий її в <strong>Налаштування → Імпорт та експорт → Виписка банку</strong>. Підтримуються monobank, PrivatBank, UKRSIBBANK і KredoBank.</li>
+                    <li>Перевір перегляд: рахунок, кількість операцій і перекази між твоїми рахунками — і натисни <strong>Додати й продовжити</strong>. Те, що вже є в Dibsly, не задвоїться.</li>
+                    <li><strong>Будь-який інший банк</strong> <span class="tag">Premium</span>: дай виписку своєму ChatGPT чи Claude, підключеному до Dibsly, і попроси записати її. Див. <a href="#assistants">ChatGPT і Claude</a>.</li>
+                </ol>
+
+                <h2 id="investments">Інвестиції</h2>
+                <ol class="guide-steps">
+                    <li>Увімкни вкладку «Інвестиції» в Налаштуваннях, якщо її ще немає.</li>
+                    <li>Збережи звіт брокера: Interactive Brokers — Activity Statement, Freedom Finance — звіт брокера у XLSX чи PDF.</li>
+                    <li>Відкрий <strong>Налаштування → Імпорт та експорт → Звіт брокера</strong> і обери файл. Dibsly розбере покупки, продажі, дивіденди з утриманим податком і поповнення.</li>
+                </ol>
+
+                <h2 id="moving">Переїзд з іншого застосунку</h2>
+                <p>Dibsly імпортує експорт Monefy і власні CSV Dibsly. У Monefy експортуй дані в CSV, потім у Dibsly відкрий <strong>Налаштування → Імпорт та експорт → CSV-файл → CSV Monefy</strong>. Рахунки, категорії, валюти й перекази перенесуться, а перед збереженням Dibsly покаже, що саме додасть.</p>
+
+                <h2 id="shared">Спільні рахунки <span class="tag">Premium</span></h2>
+                <ol class="guide-steps">
+                    <li>Увійди в акаунт Dibsly: профіль на Головній → Увійти з Apple.</li>
+                    <li>Відкрий <strong>Профіль → Спільний доступ → Запросити за посиланням</strong> і надішли посилання.</li>
+                    <li>Друга людина відкриває посилання на iPhone з Dibsly й натискає «Приєднатися». Далі обери, який рахунок зробити спільним.</li>
+                    <li>Досить Premium в одного учасника. Вийти можна будь-коли там само, у «Спільному доступі».</li>
+                </ol>
+
+                <h2 id="website">Сайт my.dibslyapp.com <span class="tag">Premium</span></h2>
+                <p>Відкрий <a href="https://my.dibslyapp.com">my.dibslyapp.com</a> на комп'ютері й увійди з тим самим Apple ID, що й на iPhone. Там історія з пошуком, аналітика, план, календар і чернетки; зміни з'являються й на телефоні.</p>
+
+                <h2 id="assistants">ChatGPT і Claude <span class="tag">Premium</span></h2>
+                <ol class="guide-steps">
+                    <li>На сайті відкрий <strong>Підключити ШІ</strong>: там адреса підключення <strong>https://my.dibslyapp.com/mcp</strong> і кроки для кожного асистента.</li>
+                    <li><strong>Claude</strong> (claude.ai, застосунок): Налаштування → Конектори → додати власний конектор за адресою вище, увійти з Apple.</li>
+                    <li><strong>ChatGPT</strong>: Налаштування → Застосунки → Додатково → режим розробника, далі додати застосунок за адресою вище. Доступність залежить від тарифу OpenAI.</li>
+                    <li>Питай словами: «скільки я витратив на кафе цього місяця?», «ось виписка, запиши». Зміни асистент записує лише після твого «так», і кожну можна скасувати в журналі AI на сайті.</li>
+                </ol>
+
+                <h2 id="backup">Резервні копії й новий iPhone</h2>
+                <ol class="guide-steps">
+                    <li><strong>Налаштування → Резервні копії та відновлення</strong>: обери папку в iCloud Drive, придумай пароль відновлення й увімкни автоматичні копії.</li>
+                    <li>Збережи пароль у менеджері паролів: без нього копію не відкрити, і Dibsly не може його скинути.</li>
+                    <li>На новому iPhone встанови Dibsly, обери <strong>Відновити мої дані</strong> й найновішу копію — або просто ввійди в акаунт Dibsly, якщо в тебе є синхронізація (Premium).</li>
+                </ol>
+
+                <h2 id="premium">Premium і скасування</h2>
+                <p>Premium додає синхронізацію й сайт, ChatGPT і Claude, спільні рахунки, сповіщення будь-якого банку, категорії від AI й до 300 чеків на місяць. Перші 7 днів безкоштовно. Оформити — в профілі на Головній або на екрані Premium.</p>
+                <p>Скасувати: <strong>Параметри iOS → твоє ім'я → Підписки → Dibsly</strong>, щонайменше за 24 години до кінця періоду. Коли Premium закінчується, нічого не видаляється.</p>
+
+                <p class="muted">Не знайшов відповіді? <a href="support-uk.html">Підтримка</a> або <a href="mailto:dibslysupport@gmail.com">dibslysupport@gmail.com</a>.</p>
+            </article>
+        </main>
+
+        <footer class="site-footer">
+            <nav aria-label="Посилання">
+                <a href="support-uk.html">Підтримка</a>
+                <a href="privacy-uk.html">Політика конфіденційності</a>
+                <a href="terms-uk.html">Умови використання</a>
+                <a href="mailto:dibslysupport@gmail.com">Написати в підтримку</a>
+            </nav>
+            <p>© 2026 Dibsly</p>
+        </footer>
+    </div>
+</body>
+</html>

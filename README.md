@@ -65,3 +65,9 @@ versions break (for example after a change of the AI relay), and lower it back o
 `PRIVACY.md` / `TERMS.md`; the English ones bind); `support-uk.html` is the support page in Ukrainian, `support.html`
 updated for 1.1 (Premium: sync, the website, assistants, shared accounts). Every page has an EN / UK switch; the
 Ukrainian landing links to the Ukrainian pages; the app opens the Ukrainian policy and support for Ukrainian and Russian.
+
+**Guide (2026-10-17, owner: «хуярь страницу инструкций»):** `help-uk.html` and `help.html` — first steps, Apple Pay and
+bank notifications through Shortcuts (the owner's Shortcuts screenshots in `img/help/`), statements and monobank,
+investing, moving from Monefy, shared accounts, the website, ChatGPT and Claude, backups, Premium. Linked from the
+landing's menu and help card, the support pages and the app's Help (“Guide on the website”).
+

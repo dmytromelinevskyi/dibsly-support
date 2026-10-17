@@ -576,3 +576,12 @@ code {
         scroll-behavior: auto;
     }
 }
+
+/* Instructions (help.html, help-uk.html): numbered steps and the Shortcuts screenshots side by side. */
+.guide h2 { scroll-margin-top: 16px; }
+.guide h2 .tag { font-size: 12px; vertical-align: middle; margin-left: 6px; }
+.guide-steps { margin: 0 0 14px; padding-left: 22px; display: grid; gap: 10px; }
+.guide-steps li { padding-left: 4px; }
+.guide-shots { display: flex; flex-wrap: wrap; gap: 14px; margin: 6px 0 16px; }
+.guide-shots img { width: min(230px, calc(50% - 7px)); height: auto; border-radius: 22px; border: 1px solid var(--line, rgba(127, 127, 127, 0.25)); }
+
