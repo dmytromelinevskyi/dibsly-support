@@ -59,3 +59,9 @@ account), for App Review to try statement import and “Sort with AI”.
 `app-config.json` — read by Dibsly when it comes to the front. `minimumVersion` is the oldest version that still
 works: a lower installed version shows a required “Update” window without Close. Keep it `0.0`; raise it only when old
 versions break (for example after a change of the AI relay), and lower it back once fixed.
+
+**Ukrainian pages (2026-10-17, owner: «а укр версия?», «support тоже перевести»):** `privacy-uk.html` and
+`terms-uk.html` are generated from `PRIVACY.uk.md` / `TERMS.uk.md` in the app repository (the English pages from
+`PRIVACY.md` / `TERMS.md`; the English ones bind); `support-uk.html` is the support page in Ukrainian, `support.html`
+updated for 1.1 (Premium: sync, the website, assistants, shared accounts). Every page has an EN / UK switch; the
+Ukrainian landing links to the Ukrainian pages; the app opens the Ukrainian policy and support for Ukrainian and Russian.
