@@ -55,6 +55,7 @@
             });
         }, { rootMargin: "-45% 0px -45% 0px" });
         panels.forEach(function (panel) { picker.observe(panel); });
+        tour.classList.add("live");
         show(0);
     }
 
