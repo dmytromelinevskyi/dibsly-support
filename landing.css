@@ -85,7 +85,6 @@ a:hover { text-decoration: underline; }
 .stage { position: relative; justify-self: center; width: min(340px, 100%); }
 .phone { border-radius: 44px; background: var(--card); padding: 10px; box-shadow: var(--shadow); border: 1px solid var(--line); }
 .phone img { border-radius: 34px; width: 100%; }
-.stage .hamster { position: absolute; left: -96px; bottom: -18px; width: 150px; filter: drop-shadow(0 12px 18px rgba(110, 52, 16, 0.18)); }
 
 section { padding: 88px 0; }
 h2 { font: 700 clamp(30px, 3.6vw, 44px)/1.1 var(--display); letter-spacing: -0.03em; margin: 0 0 14px; text-wrap: balance; }
@@ -188,6 +187,48 @@ h3 { font: 650 20px/1.25 var(--display); letter-spacing: -0.01em; margin: 0 0 8p
 .trio figcaption { color: var(--ink-2); text-align: center; max-width: 30ch; }
 .trio figcaption strong { display: block; color: var(--ink); font: 650 19px/1.3 var(--display); margin-bottom: 4px; }
 
+/* Dibsly comes alive: the app's Lottie over the picture, which stays when motion is reduced or the script is off. */
+.mascot { position: relative; }
+.mascot .mascot-still { display: block; transition: opacity 300ms var(--ease); }
+.mascot .mascot-stage { position: absolute; inset: -12%; pointer-events: none; }
+.mascot.alive .mascot-still { opacity: 0; }
+.stage .hero-mascot { position: absolute; left: -110px; bottom: -30px; width: 170px; }
+.stage .hero-mascot img { width: 100%; filter: drop-shadow(0 12px 18px rgba(110, 52, 16, 0.18)); }
+.side-stage { position: relative; justify-self: center; width: min(320px, 100%); }
+.side-stage .phone { width: 100%; }
+.side-stage .side-mascot { position: absolute; right: -96px; bottom: -24px; width: 150px; }
+.head-row { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; }
+.head-row .mascot { width: 150px; flex: none; margin-bottom: 8px; }
+.head-row .mascot img, .help .mascot img { width: 100%; }
+.help .mascot { width: 120px; }
+
+/* Analytics: a sticky phone whose screen follows the text beside it. */
+.tour { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 72px; align-items: start; }
+.tour-phone { position: sticky; top: 96px; justify-self: center; width: min(320px, 100%); }
+.tour-screens { position: relative; aspect-ratio: 550 / 1195; }
+.tour-screen { position: absolute; inset: 0; width: 100%; height: 100%; border-radius: 34px; opacity: 0; transform: scale(0.97);
+    transition: opacity 500ms var(--ease), transform 600ms var(--ease); }
+.tour-screen.active { opacity: 1; transform: none; }
+.tour-panels { list-style: none; margin: 0; padding: 0; }
+.tour-panel { min-height: 72vh; display: flex; flex-direction: column; justify-content: center; gap: 12px; opacity: 0.3;
+    transition: opacity 400ms var(--ease); }
+.tour-panel.active { opacity: 1; }
+.tour-panel h3 { font-size: clamp(26px, 3vw, 38px); letter-spacing: -0.025em; margin: 0; }
+.tour-panel p { font-size: 19px; color: var(--ink-2); max-width: 36ch; margin: 0; }
+.tour-shot { display: none; }
+
+/* Money together: both cards one height, the shares drawn. */
+.together { align-items: stretch; }
+.story { display: flex; flex-direction: column; gap: 10px; }
+.story.shared h3 { margin-top: auto; }
+.shares { display: grid; gap: 14px; margin: 28px 0 32px; }
+.shares div { display: grid; grid-template-columns: 34px 1fr auto; align-items: center; gap: 12px; color: var(--peach-ink); font-weight: 600; }
+.shares .who { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--orange); color: #fff; font-size: 15px; }
+.shares div + div .who { background: var(--peach-ink); color: var(--peach); }
+.shares .bar { height: 10px; border-radius: 6px; background: color-mix(in srgb, var(--peach-ink) 14%, transparent); overflow: hidden; }
+.shares .bar i { display: block; height: 100%; width: var(--w); border-radius: 6px; background: var(--orange); }
+.shares div + div .bar i { background: var(--peach-ink); }
+
 /* Questions: native disclosure rows. */
 .faq-wrap { display: grid; grid-template-columns: 0.7fr 1.3fr; gap: 48px; align-items: start; }
 .faq { border-top: 1px solid var(--line); }
@@ -226,9 +267,21 @@ footer p { margin: 0 0 0 auto; }
 
 /* Sections rise in as they come into view; nothing moves when the system asks for less motion. */
 @media (prefers-reduced-motion: no-preference) {
+    .chat.waiting p { opacity: 0; transform: translateY(10px); }
+    .chat.waiting p.said { opacity: 1; transform: none; transition: opacity 350ms var(--ease), transform 450ms var(--ease); }
+    .chat p.typing { color: transparent; position: relative; min-width: 64px; max-height: 40px; overflow: hidden; }
+    .chat p.typing::after { content: "• • •"; position: absolute; left: 16px; top: 9px; color: var(--muted); animation: typing 900ms ease-in-out infinite; }
+    @keyframes typing { 50% { opacity: 0.35; } }
+    .shares .bar i { transform-origin: left; transform: scaleX(0); transition: transform 1100ms var(--ease) 250ms; }
+    .shown .shares .bar i { transform: none; }
+    @supports (animation-timeline: view()) {
+        .browser { animation: unfold linear both; animation-timeline: view(); animation-range: entry 0% cover 35%; }
+        @keyframes unfold { from { transform: perspective(1600px) rotateX(16deg) scale(0.92); opacity: 0.5; } to { transform: none; opacity: 1; } }
+    }
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity 700ms var(--ease), transform 700ms var(--ease); }
     .reveal.shown { opacity: 1; transform: none; }
     .hero .stage { animation: rise 900ms var(--ease) both 120ms; }
+    .tour-panel { transition: opacity 400ms var(--ease); }
     @keyframes rise { from { opacity: 0; transform: translateY(32px); } }
 }
 
@@ -238,7 +291,6 @@ footer p { margin: 0 0 0 auto; }
     .hero { padding-top: 40px; }
     .hero .wrap, .split, .web, .together, .plans { grid-template-columns: 1fr; }
     .hero .wrap { gap: 56px; }
-    .stage .hamster { left: -40px; width: 110px; }
     .works { grid-template-columns: 1fr 1fr; }
     .pro-grid { grid-template-columns: 1fr 1fr; }
     .pro-card.ai { grid-row: auto; grid-column: span 2; }
@@ -248,6 +300,14 @@ footer p { margin: 0 0 0 auto; }
     .steps { grid-template-columns: 1fr; }
     .step .shot { max-width: 300px; }
     .faq-wrap { grid-template-columns: 1fr; gap: 28px; }
+    .tour { grid-template-columns: 1fr; gap: 0; }
+    .tour-phone { display: none; }
+    .tour-panel { min-height: 0; opacity: 1; margin-bottom: 56px; }
+    .tour-shot { display: block; width: min(300px, 100%); margin: 8px auto 0; border-radius: 34px; border: 10px solid var(--card);
+        box-shadow: var(--shadow); }
+    .side-stage .side-mascot { right: -24px; width: 110px; }
+    .stage .hero-mascot { left: -40px; width: 120px; }
+    .head-row .mascot { width: 110px; }
     .split { gap: 40px; }
     .split .phone { order: 2; }
     .web { padding: 36px 24px; gap: 32px; }

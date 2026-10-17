@@ -27,6 +27,7 @@
             <a class="brand" href="./"><img src="img/apple-touch-icon.png" alt="" width="30" height="30">Dibsly</a>
             <nav class="nav-links" aria-label="Sections">
                 <a href="#why">Why Dibsly</a>
+                <a href="#analytics">Analytics</a>
                 <a href="#pro">Premium</a>
                 <a href="#invest">Investing</a>
                 <a href="#pricing">Pricing</a>
@@ -55,10 +56,13 @@
                 </div>
                 <div class="stage">
                     <div class="phone"><img src="img/shots/en-main.jpg" alt="Dibsly Main: money at hand, savings, investments, the month and drafts" width="550" height="1195"></div>
-                    <picture>
-                        <source srcset="img/dibsly-dark.png" media="(prefers-color-scheme: dark)">
-                        <img class="hamster" src="img/dibsly.png" alt="" width="404" height="386">
-                    </picture>
+                    <div class="mascot hero-mascot" data-play="hello" data-then="idle" aria-hidden="true">
+                        <picture class="mascot-still">
+                            <source srcset="img/dibsly-dark.png" media="(prefers-color-scheme: dark)">
+                            <img src="img/dibsly.png" alt="" width="404" height="386">
+                        </picture>
+                        <div class="mascot-stage"></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -131,20 +135,68 @@
                     </li>
                     <li class="step reveal">
                         <p class="num">3</p>
-                        <h3>See the whole picture</h3>
-                        <p>Where the money went, trends by year, net worth, the month's plan and the payment calendar.</p>
-                        <img class="shot" src="img/shots/en-analytics.jpg" alt="Dibsly analytics: spending by category" width="550" height="1195" loading="lazy">
+                        <h3>Or just say it</h3>
+                        <p>“Coffee 4.50” or “taxi 12 from Revolut”: Dibsly works out the amount, the category and the account.</p>
+                        <img class="shot" src="img/shots/en-voice.jpg" alt="Recording a purchase by voice in Dibsly" width="550" height="1195" loading="lazy">
                     </li>
                 </ol>
             </div>
         </section>
 
+        <section id="analytics">
+            <div class="wrap">
+                <h2 class="reveal">Where the money goes</h2>
+                <p class="lead reveal">Analytics you get at a glance: for the month, the year and all time.</p>
+                <div class="tour">
+                    <div class="tour-phone" aria-hidden="true">
+                        <div class="phone"><div class="tour-screens">
+                            <img class="tour-screen active" src="img/shots/en-analytics.jpg" alt="" width="550" height="1195" loading="lazy">
+                            <img class="tour-screen" src="img/shots/en-cashflow.jpg" alt="" width="550" height="1195" loading="lazy">
+                            <img class="tour-screen" src="img/shots/en-trends.jpg" alt="" width="550" height="1195" loading="lazy">
+                            <img class="tour-screen" src="img/shots/en-capital.jpg" alt="" width="550" height="1195" loading="lazy">
+                        </div></div>
+                    </div>
+                    <ol class="tour-panels">
+                        <li class="tour-panel">
+                            <h3>Categories</h3>
+                            <p>A chart and category tiles for any period. Tap a category to see every operation, with the plan's limit beside it.</p>
+                            <img class="tour-shot" src="img/shots/en-analytics.jpg" alt="Analytics: spending by category" width="550" height="1195" loading="lazy">
+                        </li>
+                        <li class="tour-panel">
+                            <h3>Cash flow</h3>
+                            <p>Spending by day as bars, income as marks above. Or a running total, to see where the month is going.</p>
+                            <img class="tour-shot" src="img/shots/en-cashflow.jpg" alt="Cash flow for the month" width="550" height="1195" loading="lazy">
+                        </li>
+                        <li class="tour-panel">
+                            <h3>Trends</h3>
+                            <p>The months of the year side by side: what comes in, what goes out and the share that stays.</p>
+                            <img class="tour-shot" src="img/shots/en-trends.jpg" alt="Trends: income and spending by month" width="550" height="1195" loading="lazy">
+                        </li>
+                        <li class="tour-panel">
+                            <h3>Net worth</h3>
+                            <p>Savings and investments over the year: what you put aside and what your investments earned, yours or the family's.</p>
+                            <img class="tour-shot" src="img/shots/en-capital.jpg" alt="Net worth: savings and investments" width="550" height="1195" loading="lazy">
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
         <section id="pro" class="pro-section">
             <div class="wrap">
-                <div class="pro-head reveal">
-                    <p class="pro-label">Dibsly Premium</p>
-                    <h2>Your money everywhere. And with your AI.</h2>
-                    <p class="lead">A website for the big screen, ChatGPT and Claude that know your money, shared accounts with the people close to you. 7 days free.</p>
+                <div class="head-row">
+                    <div class="pro-head reveal">
+                        <p class="pro-label">Dibsly Premium</p>
+                        <h2>Your money everywhere. And with your AI.</h2>
+                        <p class="lead">A website for the big screen, ChatGPT and Claude that know your money, shared accounts with the people close to you. 7 days free.</p>
+                    </div>
+                    <div class="mascot " data-play="celebrate" data-loop aria-hidden="true">
+                        <picture class="mascot-still">
+                            <source srcset="img/dibsly-dark.png" media="(prefers-color-scheme: dark)">
+                            <img src="img/dibsly.png" alt="" width="404" height="386">
+                        </picture>
+                        <div class="mascot-stage"></div>
+                    </div>
                 </div>
                 <figure class="browser reveal">
                     <div class="browser-bar" aria-hidden="true"><span></span><span></span><span></span><p>my.dibslyapp.com</p></div>
@@ -159,6 +211,8 @@
                             <p class="bot">₴1,855 of the ₴1,500 planned, ₴355 over. Mostly Aroma Kava, six times.</p>
                             <p class="me">Here is my Revolut statement, record it.</p>
                             <p class="bot">48 operations, 3 of them transfers between your own accounts. Record them?</p>
+                            <p class="me">Set a goal: a holiday, $2,000 by July.</p>
+                            <p class="bot">Done, the goal “Holiday” is on your savings. Put aside $250 a month and you will make it.</p>
                         </div>
                     </article>
                     <article class="pro-card reveal">
@@ -184,16 +238,27 @@
 
         <section id="plans">
             <div class="wrap">
-                <h2 class="reveal">See where you are heading</h2>
-                <p class="lead reveal">Not only where the money went this month, but what happens over the year.</p>
+                <div class="head-row">
+                    <div>
+                        <h2 class="reveal">Plan, calendar and goals</h2>
+                        <p class="lead reveal">Make it to payday, know what is charged tomorrow and see how far the goal is.</p>
+                    </div>
+                    <div class="mascot " data-play="savings" data-loop aria-hidden="true">
+                        <picture class="mascot-still">
+                            <source srcset="img/dibsly-dark.png" media="(prefers-color-scheme: dark)">
+                            <img src="img/dibsly.png" alt="" width="404" height="386">
+                        </picture>
+                        <div class="mascot-stage"></div>
+                    </div>
+                </div>
                 <div class="trio">
                     <figure class="reveal">
-                        <div class="phone"><img src="img/shots/en-trends.jpg" alt="Trends: income and spending month by month" width="550" height="1195" loading="lazy"></div>
-                        <figcaption><strong>Trends</strong>Income and spending month by month, and what is left.</figcaption>
+                        <div class="phone"><img src="img/shots/en-plan.jpg" alt="The month's plan: category limits" width="550" height="1195" loading="lazy"></div>
+                        <figcaption><strong>Monthly plan</strong>Category limits and how much you can still spend before the month ends.</figcaption>
                     </figure>
                     <figure class="reveal">
-                        <div class="phone"><img src="img/shots/en-capital.jpg" alt="Net worth: savings and investments over the year" width="550" height="1195" loading="lazy"></div>
-                        <figcaption><strong>Net worth</strong>What you saved and what your investments earned, yours or the family's.</figcaption>
+                        <div class="phone"><img src="img/shots/en-calendar.jpg" alt="The payment calendar for the month" width="550" height="1195" loading="lazy"></div>
+                        <figcaption><strong>Calendar</strong>Recurring payments by week or month, and what must be on the account by the day they are charged.</figcaption>
                     </figure>
                     <figure class="reveal">
                         <div class="phone"><img src="img/shots/en-goals.jpg" alt="Goals: a new car, capital and a safety cushion" width="550" height="1195" loading="lazy"></div>
@@ -205,7 +270,16 @@
 
         <section id="invest">
             <div class="wrap split">
-                <div class="phone reveal"><img src="img/shots/en-invest.jpg" alt="Investing in Dibsly: portfolio value and broker accounts" width="550" height="1195" loading="lazy"></div>
+                <div class="side-stage reveal">
+                    <div class="phone"><img src="img/shots/en-invest.jpg" alt="Investing in Dibsly: portfolio value and broker accounts" width="550" height="1195" loading="lazy"></div>
+                    <div class="mascot side-mascot" data-play="invest" data-loop aria-hidden="true">
+                        <picture class="mascot-still">
+                            <source srcset="img/dibsly-dark.png" media="(prefers-color-scheme: dark)">
+                            <img src="img/dibsly.png" alt="" width="404" height="386">
+                        </picture>
+                        <div class="mascot-stage"></div>
+                    </div>
+                </div>
                 <div class="reveal">
                     <h2>Investments next to the rest of your money</h2>
                     <p class="lead">Portfolio, quotes and dividends in the same app as your spending. No Premium needed.</p>
@@ -226,6 +300,10 @@
                 <div class="together">
                     <article class="story shared reveal">
                         <p class="big" aria-hidden="true">50 / 50</p>
+                        <div class="shares" aria-hidden="true">
+                            <div><span class="who">O</span><span class="bar"><i style="--w: 50%"></i></span>$260</div>
+                            <div><span class="who">D</span><span class="bar"><i style="--w: 50%"></i></span>$260</div>
+                        </div>
                         <h3>Shared accounts <span class="tag">Premium</span></h3>
                         <p>Everyone's contributions, a notification when the other adds something, and a fair split when you part ways.</p>
                     </article>
@@ -315,10 +393,13 @@
         <section>
             <div class="wrap">
                 <div class="help reveal">
-                    <picture>
-                        <source srcset="img/dibsly-dark.png" media="(prefers-color-scheme: dark)">
-                        <img src="img/dibsly.png" alt="" width="404" height="386" loading="lazy">
-                    </picture>
+                    <div class="mascot " data-play="hello" data-loop aria-hidden="true">
+                        <picture class="mascot-still">
+                            <source srcset="img/dibsly-dark.png" media="(prefers-color-scheme: dark)">
+                            <img src="img/dibsly.png" alt="" width="404" height="386">
+                        </picture>
+                        <div class="mascot-stage"></div>
+                    </div>
                     <div>
                         <h2>More questions?</h2>
                         <p>Answers about the subscription, backups, imports and data are on the support page. Or just write: <a href="mailto:dibslysupport@gmail.com">dibslysupport@gmail.com</a></p>
@@ -341,18 +422,7 @@
         </div>
     </footer>
 
-    <script>
-        // Sections rise in once as they enter the view.
-        (function () {
-            var items = document.querySelectorAll(".reveal");
-            if (!("IntersectionObserver" in window)) { items.forEach(function (each) { each.classList.add("shown"); }); return; }
-            var watch = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) { entry.target.classList.add("shown"); watch.unobserve(entry.target); }
-                });
-            }, { rootMargin: "0px 0px -8% 0px" });
-            items.forEach(function (each) { watch.observe(each); });
-        })();
-    </script>
+    <script src="js/lottie_light.min.js" defer></script>
+    <script src="js/landing.js" defer></script>
 </body>
 </html>

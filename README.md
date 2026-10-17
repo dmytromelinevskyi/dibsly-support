@@ -23,6 +23,14 @@ Free and one question; new 1.1 screenshots (Main, Analytics, Trends, Capital, Go
 from the local portal (dev data, test names replaced on the page before the capture). Prices stay $1.99 / $19.99 until
 App Store Connect changes them.
 
+**Landing 1.3 (2026-10-17, owner: «забыл про то, что раньше было», «блоки выровнены плохо», «вау-эффекты», «больше маскота»):**
+Analytics as a sticky phone whose screen follows the text (Categories, Cash flow, Trends, Capital), Plan / Calendar /
+Goals, voice in How it works, Money together's cards one height with the shares drawn; Dibsly animated with the app's
+own Lottie files (`img/mascot/*-light|dark.json`, copied from `App/Dibsly/Resources/Mascot`, played by
+`js/lottie_light.min.js`, lottie-web 5.12.2, MIT, licence in `js/`) only while on screen; the chat types itself and the
+website's frame unfolds on scroll. `js/landing.js` holds all of it; “reduce motion” shows everything still. New scenes
+`cashflow plan calendar voice receipt`.
+
 Since 2026-10-10 the same files are also served at **<https://dibslyapp.com>** by the Cloudflare Worker `dibsly-site`
 (`worker.js`, `wrangler.toml`; deploy with `npx wrangler deploy` on the owner's word), which also opens short split
 links `dibslyapp.com/s/<code>`: the bill is kept 30 days by Dibsly's server (`dibsly-sync`, service binding) and put

@@ -32,6 +32,7 @@
             <a class="brand" href="./"><img src="img/apple-touch-icon.png" alt="" width="30" height="30">Dibsly</a>
             <nav class="nav-links" aria-label="Розділи">
                 <a href="#why">Чому Dibsly</a>
+                <a href="#analytics">Аналітика</a>
                 <a href="#pro">Premium</a>
                 <a href="#invest">Інвестиції</a>
                 <a href="#pricing">Ціни</a>
@@ -60,10 +61,13 @@
                 </div>
                 <div class="stage">
                     <div class="phone"><img src="img/shots/uk-main.jpg" alt="Головна Dibsly: гроші під рукою, накопичення, інвестиції, місяць і чернетки" width="550" height="1195"></div>
-                    <picture>
-                        <source srcset="img/dibsly-dark.png" media="(prefers-color-scheme: dark)">
-                        <img class="hamster" src="img/dibsly.png" alt="" width="404" height="386">
-                    </picture>
+                    <div class="mascot hero-mascot" data-play="hello" data-then="idle" aria-hidden="true">
+                        <picture class="mascot-still">
+                            <source srcset="img/dibsly-dark.png" media="(prefers-color-scheme: dark)">
+                            <img src="img/dibsly.png" alt="" width="404" height="386">
+                        </picture>
+                        <div class="mascot-stage"></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -136,20 +140,68 @@
                     </li>
                     <li class="step reveal">
                         <p class="num">3</p>
-                        <h3>Дивись усю картину</h3>
-                        <p>Куди пішли гроші, тренди по роках, капітал, план місяця й календар платежів.</p>
-                        <img class="shot" src="img/shots/uk-analytics.jpg" alt="Аналітика Dibsly: витрати за категоріями" width="550" height="1195" loading="lazy">
+                        <h3>Або просто скажи</h3>
+                        <p>«Кава 85» чи «таксі 180 моно»: Dibsly сам розбере суму, категорію й рахунок.</p>
+                        <img class="shot" src="img/shots/uk-voice.jpg" alt="Голосовий запис витрати в Dibsly" width="550" height="1195" loading="lazy">
                     </li>
                 </ol>
             </div>
         </section>
 
+        <section id="analytics">
+            <div class="wrap">
+                <h2 class="reveal">Куди йдуть гроші</h2>
+                <p class="lead reveal">Аналітика, яку розумієш з першого погляду: за місяць, за рік і за весь час.</p>
+                <div class="tour">
+                    <div class="tour-phone" aria-hidden="true">
+                        <div class="phone"><div class="tour-screens">
+                            <img class="tour-screen active" src="img/shots/uk-analytics.jpg" alt="" width="550" height="1195" loading="lazy">
+                            <img class="tour-screen" src="img/shots/uk-cashflow.jpg" alt="" width="550" height="1195" loading="lazy">
+                            <img class="tour-screen" src="img/shots/uk-trends.jpg" alt="" width="550" height="1195" loading="lazy">
+                            <img class="tour-screen" src="img/shots/uk-capital.jpg" alt="" width="550" height="1195" loading="lazy">
+                        </div></div>
+                    </div>
+                    <ol class="tour-panels">
+                        <li class="tour-panel">
+                            <h3>Категорії</h3>
+                            <p>Діаграма й плитки категорій за будь-який період. Торкнись категорії, і побачиш кожну операцію, а поруч ліміт з плану.</p>
+                            <img class="tour-shot" src="img/shots/uk-analytics.jpg" alt="Аналітика: витрати за категоріями" width="550" height="1195" loading="lazy">
+                        </li>
+                        <li class="tour-panel">
+                            <h3>Грошовий потік</h3>
+                            <p>Витрати по днях стовпчиками, доходи позначками зверху. Або наростаючим підсумком, щоб бачити, куди йде місяць.</p>
+                            <img class="tour-shot" src="img/shots/uk-cashflow.jpg" alt="Грошовий потік за місяць" width="550" height="1195" loading="lazy">
+                        </li>
+                        <li class="tour-panel">
+                            <h3>Тренди</h3>
+                            <p>Місяці року поруч: скільки надходить, скільки витрачається і яка частка лишається.</p>
+                            <img class="tour-shot" src="img/shots/uk-trends.jpg" alt="Тренди: доходи й витрати за місяцями" width="550" height="1195" loading="lazy">
+                        </li>
+                        <li class="tour-panel">
+                            <h3>Капітал</h3>
+                            <p>Накопичення й інвестиції за рік: скільки відклав і скільки заробили інвестиції, твої чи сімейні.</p>
+                            <img class="tour-shot" src="img/shots/uk-capital.jpg" alt="Капітал: накопичення й інвестиції" width="550" height="1195" loading="lazy">
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
         <section id="pro" class="pro-section">
             <div class="wrap">
-                <div class="pro-head reveal">
-                    <p class="pro-label">Dibsly Premium</p>
-                    <h2>Твої гроші всюди. І з твоїм ШІ.</h2>
-                    <p class="lead">Сайт для великого екрана, ChatGPT і Claude, що знають твої гроші, спільні рахунки з близькими. 7 днів безкоштовно.</p>
+                <div class="head-row">
+                    <div class="pro-head reveal">
+                        <p class="pro-label">Dibsly Premium</p>
+                        <h2>Твої гроші всюди. І з твоїм ШІ.</h2>
+                        <p class="lead">Сайт для великого екрана, ChatGPT і Claude, що знають твої гроші, спільні рахунки з близькими. 7 днів безкоштовно.</p>
+                    </div>
+                    <div class="mascot " data-play="celebrate" data-loop aria-hidden="true">
+                        <picture class="mascot-still">
+                            <source srcset="img/dibsly-dark.png" media="(prefers-color-scheme: dark)">
+                            <img src="img/dibsly.png" alt="" width="404" height="386">
+                        </picture>
+                        <div class="mascot-stage"></div>
+                    </div>
                 </div>
                 <figure class="browser reveal">
                     <div class="browser-bar" aria-hidden="true"><span></span><span></span><span></span><p>my.dibslyapp.com</p></div>
@@ -164,6 +216,8 @@
                             <p class="bot">1 855 ₴ із запланованих 1 500, перевищення 355 ₴. Найчастіше Aroma Kava, шість разів.</p>
                             <p class="me">Ось виписка Revolut, запиши.</p>
                             <p class="bot">48 операцій, з них 3 перекази між твоїми рахунками. Записати?</p>
+                            <p class="me">Постав ціль: відпустка, 2 000 $ до липня.</p>
+                            <p class="bot">Готово, ціль «Відпустка» на накопиченнях. Відкладай 250 $ на місяць, і встигнеш.</p>
                         </div>
                     </article>
                     <article class="pro-card reveal">
@@ -189,16 +243,27 @@
 
         <section id="plans">
             <div class="wrap">
-                <h2 class="reveal">Бачиш, куди рухаєшся</h2>
-                <p class="lead reveal">Не тільки куди пішли гроші цього місяця, а й що відбувається за рік.</p>
+                <div class="head-row">
+                    <div>
+                        <h2 class="reveal">План, календар і цілі</h2>
+                        <p class="lead reveal">Дотягни до зарплати, знай, що спишеться завтра, і бач, скільки лишилось до мети.</p>
+                    </div>
+                    <div class="mascot " data-play="savings" data-loop aria-hidden="true">
+                        <picture class="mascot-still">
+                            <source srcset="img/dibsly-dark.png" media="(prefers-color-scheme: dark)">
+                            <img src="img/dibsly.png" alt="" width="404" height="386">
+                        </picture>
+                        <div class="mascot-stage"></div>
+                    </div>
+                </div>
                 <div class="trio">
                     <figure class="reveal">
-                        <div class="phone"><img src="img/shots/uk-trends.jpg" alt="Тренди: доходи й витрати місяць за місяцем" width="550" height="1195" loading="lazy"></div>
-                        <figcaption><strong>Тренди</strong>Доходи й витрати місяць за місяцем і скільки лишається.</figcaption>
+                        <div class="phone"><img src="img/shots/uk-plan.jpg" alt="План місяця: ліміти на категорії" width="550" height="1195" loading="lazy"></div>
+                        <figcaption><strong>План місяця</strong>Ліміти на категорії й скільки ще можна витратити до кінця місяця.</figcaption>
                     </figure>
                     <figure class="reveal">
-                        <div class="phone"><img src="img/shots/uk-capital.jpg" alt="Капітал: накопичення й інвестиції за рік" width="550" height="1195" loading="lazy"></div>
-                        <figcaption><strong>Капітал</strong>Скільки відклав і скільки заробили інвестиції, твої чи сімейні.</figcaption>
+                        <div class="phone"><img src="img/shots/uk-calendar.jpg" alt="Календар платежів на місяць" width="550" height="1195" loading="lazy"></div>
+                        <figcaption><strong>Календар</strong>Регулярні платежі на тиждень чи місяць і скільки треба на рахунку до дня списання.</figcaption>
                     </figure>
                     <figure class="reveal">
                         <div class="phone"><img src="img/shots/uk-goals.jpg" alt="Цілі: нове авто, капітал і подушка" width="550" height="1195" loading="lazy"></div>
@@ -210,7 +275,16 @@
 
         <section id="invest">
             <div class="wrap split">
-                <div class="phone reveal"><img src="img/shots/uk-invest.jpg" alt="Інвестиції в Dibsly: вартість портфеля й рахунки брокерів" width="550" height="1195" loading="lazy"></div>
+                <div class="side-stage reveal">
+                    <div class="phone"><img src="img/shots/uk-invest.jpg" alt="Інвестиції в Dibsly: вартість портфеля й рахунки брокерів" width="550" height="1195" loading="lazy"></div>
+                    <div class="mascot side-mascot" data-play="invest" data-loop aria-hidden="true">
+                        <picture class="mascot-still">
+                            <source srcset="img/dibsly-dark.png" media="(prefers-color-scheme: dark)">
+                            <img src="img/dibsly.png" alt="" width="404" height="386">
+                        </picture>
+                        <div class="mascot-stage"></div>
+                    </div>
+                </div>
                 <div class="reveal">
                     <h2>Інвестиції поруч з рештою грошей</h2>
                     <p class="lead">Портфель, котирування й дивіденди в тому самому застосунку, де твої витрати. Без Premium.</p>
@@ -231,6 +305,10 @@
                 <div class="together">
                     <article class="story shared reveal">
                         <p class="big" aria-hidden="true">50 / 50</p>
+                        <div class="shares" aria-hidden="true">
+                            <div><span class="who">О</span><span class="bar"><i style="--w: 50%"></i></span>10 700 ₴</div>
+                            <div><span class="who">Д</span><span class="bar"><i style="--w: 50%"></i></span>10 700 ₴</div>
+                        </div>
                         <h3>Спільні рахунки <span class="tag">Premium</span></h3>
                         <p>Внески кожного, сповіщення, коли інший щось додає, і чесний поділ, коли треба розійтися.</p>
                     </article>
@@ -320,10 +398,13 @@
         <section>
             <div class="wrap">
                 <div class="help reveal">
-                    <picture>
-                        <source srcset="img/dibsly-dark.png" media="(prefers-color-scheme: dark)">
-                        <img src="img/dibsly.png" alt="" width="404" height="386" loading="lazy">
-                    </picture>
+                    <div class="mascot " data-play="hello" data-loop aria-hidden="true">
+                        <picture class="mascot-still">
+                            <source srcset="img/dibsly-dark.png" media="(prefers-color-scheme: dark)">
+                            <img src="img/dibsly.png" alt="" width="404" height="386">
+                        </picture>
+                        <div class="mascot-stage"></div>
+                    </div>
                     <div>
                         <h2>Є ще питання?</h2>
                         <p>Відповіді про підписку, копії, імпорт і дані на сторінці підтримки. Або просто напиши: <a href="mailto:dibslysupport@gmail.com">dibslysupport@gmail.com</a></p>
@@ -346,18 +427,7 @@
         </div>
     </footer>
 
-    <script>
-        // Sections rise in once as they enter the view.
-        (function () {
-            var items = document.querySelectorAll(".reveal");
-            if (!("IntersectionObserver" in window)) { items.forEach(function (each) { each.classList.add("shown"); }); return; }
-            var watch = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) { entry.target.classList.add("shown"); watch.unobserve(entry.target); }
-                });
-            }, { rootMargin: "0px 0px -8% 0px" });
-            items.forEach(function (each) { watch.observe(each); });
-        })();
-    </script>
+    <script src="js/lottie_light.min.js" defer></script>
+    <script src="js/landing.js" defer></script>
 </body>
 </html>
