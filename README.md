@@ -15,6 +15,14 @@ cards, brokers, Monefy), why Dibsly (not only monobank, investments, mostly free
 from Monefy), how it works in three steps, investing, together, the website, moving from Monefy, Free / Premium,
 questions. No competitor is named except Monefy, the one Dibsly imports from.
 
+**Landing 1.2 (2026-10-17, owner, block by block: «надо продавать подписку»):** Premium gets its own section (the
+website in a browser frame, ChatGPT / Claude with a sample conversation, shared accounts, bank notifications) right
+after How it works; paid features carry a small Premium tag; Interactive Brokers before Freedom Finance; Monefy only in
+Free and one question; new 1.1 screenshots (Main, Analytics, Trends, Capital, Goals, Investments, a draft) from
+`scripts/screenshots/capture.sh` scenes `main analytics trends capital goals invest drafts`, and `img/shots/*-web.jpg`
+from the local portal (dev data, test names replaced on the page before the capture). Prices stay $1.99 / $19.99 until
+App Store Connect changes them.
+
 Since 2026-10-10 the same files are also served at **<https://dibslyapp.com>** by the Cloudflare Worker `dibsly-site`
 (`worker.js`, `wrangler.toml`; deploy with `npx wrangler deploy` on the owner's word), which also opens short split
 links `dibslyapp.com/s/<code>`: the bill is kept 30 days by Dibsly's server (`dibsly-sync`, service binding) and put

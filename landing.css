@@ -96,17 +96,18 @@ h3 { font: 650 20px/1.25 var(--display); letter-spacing: -0.01em; margin: 0 0 8p
 /* Works with: four groups in one quiet band, no cards. */
 .works-band { padding: 8px 0 24px; }
 .eyebrow { font: 600 15px/1.3 var(--body); letter-spacing: 0; color: var(--muted); margin: 0 0 18px; }
-.works { display: grid; grid-template-columns: 1.3fr 1.2fr 1fr 0.8fr; gap: 24px 40px; margin: 0; border-top: 1px solid var(--line); padding-top: 22px; }
-.works dt { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 10px; }
-.works dd { display: inline-block; margin: 0 6px 8px 0; font-size: 15px; font-weight: 600; padding: 6px 12px; border-radius: 999px; background: var(--raised); color: var(--ink-2); }
+.works { display: grid; grid-template-columns: 1.5fr 1.3fr 1fr; gap: 24px 40px; margin: 0; border-top: 1px solid var(--line); padding-top: 22px; }
+.works dt { font-size: 15px; font-weight: 650; color: var(--ink); margin-bottom: 10px; }
+.works dd { display: inline-flex; align-items: center; gap: 8px; margin: 0 6px 8px 0; font-size: 15px; font-weight: 600; padding: 6px 12px; border-radius: 999px; background: var(--raised); color: var(--ink-2); }
 
 /* Why Dibsly: two wide reasons, then four short ones. */
-.reasons { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.reasons { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
+.reason { grid-column: span 2; }
 .reason { border-top: 2px solid var(--ink); padding: 22px 4px 0; display: grid; gap: 10px; align-content: start; }
 .reason p { margin: 0; color: var(--ink-2); }
 .reason h3 { margin: 0; }
 .step .num { font: 700 15px var(--display); color: var(--orange-text); letter-spacing: 0.02em; }
-.reason.wide { grid-column: span 2; border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); padding: 32px; margin-bottom: 24px; }
+.reason.wide { grid-column: span 3; border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); padding: 32px; margin-bottom: 24px; }
 .reason.wide h3 { font-size: clamp(24px, 2.4vw, 30px); letter-spacing: -0.02em; }
 .reason.wide p { font-size: 17.5px; }
 .reason.warm { background: var(--peach); border-color: transparent; }
@@ -154,14 +155,38 @@ h3 { font: 650 20px/1.25 var(--display); letter-spacing: -0.01em; margin: 0 0 8p
 .story { gap: 10px; }
 .story img { margin-bottom: 8px; }
 
-/* Moving from Monefy: one band, the words beside three steps. */
-.move { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; border: 1px solid var(--line); border-radius: 32px; padding: 48px 56px; }
-.move .lead { margin-bottom: 0; }
-.move-steps { margin: 0; padding: 0; list-style: none; counter-reset: move; display: grid; gap: 18px; }
-.move-steps li { counter-increment: move; position: relative; padding-left: 48px; color: var(--ink-2); }
-.move-steps li::before { content: counter(move); position: absolute; left: 0; top: -2px; width: 32px; height: 32px; border-radius: 50%;
-    display: grid; place-items: center; background: var(--orange); color: #fff; font: 700 15px var(--display); }
-.move-steps strong { color: var(--ink); }
+/* The Premium mark: small, honest, never loud. */
+.tag { display: inline-block; vertical-align: 0.15em; font: 600 12px/1 var(--body);
+    padding: 4px 8px; border-radius: 6px; background: color-mix(in srgb, var(--orange) 14%, transparent); color: var(--orange-text); }
+.works dd.pro-item { background: color-mix(in srgb, var(--orange) 8%, var(--raised)); }
+
+/* Premium: the website in a browser frame, four cards, one call to try it. */
+.pro-section { background: var(--raised); }
+.pro-head { max-width: 760px; }
+.pro-label { font: 650 17px var(--display); color: var(--orange-text); margin: 0 0 10px; }
+.browser { margin: 8px 0 24px; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); box-shadow: var(--shadow); background: var(--card); }
+.browser-bar { display: flex; align-items: center; gap: 7px; height: 38px; padding: 0 14px; border-bottom: 1px solid var(--line); background: var(--card); }
+.browser-bar span { width: 11px; height: 11px; border-radius: 50%; background: var(--line); }
+.browser-bar p { margin: 0 auto; font-size: 13px; color: var(--muted); padding: 3px 14px; border-radius: 7px; background: var(--raised); }
+.browser img { width: 100%; }
+.pro-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 16px; }
+.pro-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; display: grid; gap: 10px; align-content: start; }
+.pro-card p, .pro-card h3 { margin: 0; }
+.pro-card > p { color: var(--ink-2); }
+.pro-card.ai { grid-row: span 3; }
+.chat { display: grid; gap: 8px; margin-top: 10px; font-size: 15px; line-height: 1.45; }
+.chat p { padding: 10px 14px; border-radius: 16px; max-width: 88%; }
+.chat .me { justify-self: end; background: var(--orange); color: #fff; border-bottom-right-radius: 5px; }
+.chat .bot { justify-self: start; background: var(--raised); color: var(--ink); border-bottom-left-radius: 5px; }
+.pro-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 28px; }
+.pro-cta p { margin: 0; color: var(--muted); font-size: 15px; }
+
+/* Where you are heading: three screens with captions. */
+.trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.trio figure { margin: 0; display: grid; gap: 18px; justify-items: center; }
+.trio .phone { width: min(280px, 100%); }
+.trio figcaption { color: var(--ink-2); text-align: center; max-width: 30ch; }
+.trio figcaption strong { display: block; color: var(--ink); font: 650 19px/1.3 var(--display); margin-bottom: 4px; }
 
 /* Questions: native disclosure rows. */
 .faq-wrap { display: grid; grid-template-columns: 0.7fr 1.3fr; gap: 48px; align-items: start; }
@@ -176,7 +201,9 @@ h3 { font: 650 20px/1.25 var(--display); letter-spacing: -0.01em; margin: 0 0 8p
 .faq details p { margin: 0 0 22px; color: var(--ink-2); max-width: 62ch; }
 
 /* Free and Premium. */
-#premium h2 { margin-bottom: 32px; }
+#pricing h2 { margin-bottom: 32px; }
+.plan-note { margin: 0 0 10px; color: var(--muted); font-size: 15px; }
+.plan.premium .button { margin-top: 24px; }
 .plans { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .plan { border-radius: var(--radius); padding: 32px; background: var(--card); border: 1px solid var(--line); }
 .plan.premium { border: 2px solid var(--orange); }
@@ -213,11 +240,14 @@ footer p { margin: 0 0 0 auto; }
     .hero .wrap { gap: 56px; }
     .stage .hamster { left: -40px; width: 110px; }
     .works { grid-template-columns: 1fr 1fr; }
+    .pro-grid { grid-template-columns: 1fr 1fr; }
+    .pro-card.ai { grid-row: auto; grid-column: span 2; }
+    .trio { grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
     .reasons { grid-template-columns: 1fr 1fr; }
+    .reason, .reason.wide { grid-column: auto; }
     .steps { grid-template-columns: 1fr; }
     .step .shot { max-width: 300px; }
-    .move, .faq-wrap { grid-template-columns: 1fr; gap: 28px; }
-    .move { padding: 32px 24px; }
+    .faq-wrap { grid-template-columns: 1fr; gap: 28px; }
     .split { gap: 40px; }
     .split .phone { order: 2; }
     .web { padding: 36px 24px; gap: 32px; }
@@ -228,7 +258,10 @@ footer p { margin: 0 0 0 auto; }
 @media (max-width: 560px) {
     .wrap { width: calc(100% - 32px); }
     .cols { grid-template-columns: 1fr; }
-    .works, .reasons { grid-template-columns: 1fr; }
+    .works, .reasons, .pro-grid, .trio { grid-template-columns: 1fr; }
+    .pro-card.ai { grid-column: auto; }
+    .trio .phone { width: min(300px, 100%); }
+    .browser-bar { height: 30px; }
     .reason.wide { grid-column: auto; padding: 26px 22px; margin-bottom: 8px; }
     .reason { padding-bottom: 12px; }
     .nav .button { display: none; }
