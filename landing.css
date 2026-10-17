@@ -1,4 +1,4 @@
-/* dibslyapp.com landing (1.0 of the landing, 2026-10-17): index.html (uk) and en.html. The support, privacy and terms
+/* dibslyapp.com landing (1.1 of the landing, 2026-10-17: why Dibsly first): index.html (uk) and en.html. The support, privacy and terms
    pages keep styles.css. The brand's own cream and orange, SF Pro as in the app and the portal. */
 
 :root {
@@ -77,7 +77,10 @@ a:hover { text-decoration: underline; }
 .hero { padding: 72px 0 40px; }
 .hero .wrap { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; }
 .hero h1 { font: 700 clamp(40px, 5.6vw, 68px)/1.04 var(--display); letter-spacing: -0.035em; margin: 0 0 20px; text-wrap: balance; }
-.hero p { font-size: 20px; color: var(--ink-2); max-width: 30ch; margin: 0 0 32px; }
+.hero p { font-size: 20px; color: var(--ink-2); max-width: 34ch; margin: 0 0 32px; }
+.trust { list-style: none; padding: 0; margin: 28px 0 0; display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 15px; color: var(--muted); }
+.trust li { position: relative; padding-left: 14px; }
+.trust li::before { content: ""; position: absolute; left: 0; top: 0.6em; width: 6px; height: 6px; border-radius: 50%; background: var(--orange); }
 .actions { display: flex; flex-wrap: wrap; gap: 12px; }
 .stage { position: relative; justify-self: center; width: min(340px, 100%); }
 .phone { border-radius: 44px; background: var(--card); padding: 10px; box-shadow: var(--shadow); border: 1px solid var(--line); }
@@ -88,26 +91,42 @@ section { padding: 88px 0; }
 h2 { font: 700 clamp(30px, 3.6vw, 44px)/1.1 var(--display); letter-spacing: -0.03em; margin: 0 0 14px; text-wrap: balance; }
 .lead { font-size: 19px; color: var(--ink-2); max-width: 56ch; margin: 0 0 40px; }
 h3 { font: 650 20px/1.25 var(--display); letter-spacing: -0.01em; margin: 0 0 8px; }
-.cell p, .split p, .cols p, .plan li, .facts p { color: var(--ink-2); margin: 0; }
+.split p, .cols p, .plan li { color: var(--ink-2); margin: 0; }
 
-/* Features: a bento of five, two with the app's own screens. */
-.bento { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
-.cell { background: var(--card); border-radius: var(--radius); padding: 28px; overflow: hidden; position: relative; border: 1px solid var(--line); }
-.cell.drafts { grid-column: span 3; grid-row: span 2; display: grid; grid-template-rows: auto 1fr; gap: 24px; }
-.cell.voice { grid-column: span 3; background: var(--peach); border-color: transparent; }
-.cell.voice p, .cell.voice h3 { color: var(--peach-ink); }
-.cell.voice .quote { font: 700 34px/1 var(--display); letter-spacing: -0.02em; margin: 6px 0 14px; color: var(--peach-ink); }
-.cell.imports { grid-column: span 3; }
-.cell.analytics { grid-column: span 4; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: end; padding-bottom: 0; }
-.cell.plan { grid-column: span 2; background: var(--orange); border-color: transparent; color: #fff; }
-.cell.plan p { color: rgba(255, 255, 255, 0.9); }
-.shot { border-radius: 22px 22px 0 0; border: 1px solid var(--line); border-bottom: 0; box-shadow: var(--shadow); width: 100%; max-width: 300px;
-    justify-self: center; align-self: end; margin-bottom: -28px; aspect-ratio: 3 / 4; object-fit: cover; object-position: top; }
-.cell.drafts .shot { aspect-ratio: 5 / 6; }
-.cell.drafts .shot { margin: 0 auto -28px; }
-.cell.analytics .shot { margin: 0; }
-.banks { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
-.banks span { font-size: 14px; font-weight: 600; padding: 6px 12px; border-radius: 999px; background: var(--raised); color: var(--ink-2); }
+/* Works with: four groups in one quiet band, no cards. */
+.works-band { padding: 8px 0 24px; }
+.eyebrow { font: 600 15px/1.3 var(--body); letter-spacing: 0; color: var(--muted); margin: 0 0 18px; }
+.works { display: grid; grid-template-columns: 1.3fr 1.2fr 1fr 0.8fr; gap: 24px 40px; margin: 0; border-top: 1px solid var(--line); padding-top: 22px; }
+.works dt { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 10px; }
+.works dd { display: inline-block; margin: 0 6px 8px 0; font-size: 15px; font-weight: 600; padding: 6px 12px; border-radius: 999px; background: var(--raised); color: var(--ink-2); }
+
+/* Why Dibsly: two wide reasons, then four short ones. */
+.reasons { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.reason { border-top: 2px solid var(--ink); padding: 22px 4px 0; display: grid; gap: 10px; align-content: start; }
+.reason p { margin: 0; color: var(--ink-2); }
+.reason h3 { margin: 0; }
+.step .num { font: 700 15px var(--display); color: var(--orange-text); letter-spacing: 0.02em; }
+.reason.wide { grid-column: span 2; border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); padding: 32px; margin-bottom: 24px; }
+.reason.wide h3 { font-size: clamp(24px, 2.4vw, 30px); letter-spacing: -0.02em; }
+.reason.wide p { font-size: 17.5px; }
+.reason.warm { background: var(--peach); border-color: transparent; }
+.reason.warm h3, .reason.warm p { color: var(--peach-ink); }
+.reason .aside { font-size: 15px; border-top: 1px solid color-mix(in srgb, var(--peach-ink) 18%, transparent); padding-top: 12px; margin-top: 6px; }
+.more { font-weight: 600; font-size: 15.5px; margin-top: 4px; }
+
+/* How it works: three numbered steps, two with the app's screens. */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; align-items: stretch; }
+.step { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 28px 0; overflow: hidden;
+    display: grid; grid-template-rows: auto auto auto 1fr; gap: 10px; }
+.step p, .step h3 { margin: 0; }
+.step p { color: var(--ink-2); }
+.step.connect { background: var(--raised); border-color: transparent; padding-bottom: 28px; }
+.ways { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 12px; }
+.ways li { color: var(--ink-2); padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+.ways li:last-child { border-bottom: 0; padding-bottom: 0; }
+.ways strong { color: var(--ink); font-weight: 650; }
+.shot { border-radius: 22px 22px 0 0; border: 1px solid var(--line); border-bottom: 0; box-shadow: var(--shadow); width: 100%; max-width: 260px;
+    justify-self: center; align-self: end; margin-top: 18px; aspect-ratio: 4 / 5; object-fit: cover; object-position: top; }
 
 /* Investments: the screen beside the words. */
 .split { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 64px; align-items: center; }
@@ -118,6 +137,7 @@ h3 { font: 650 20px/1.25 var(--display); letter-spacing: -0.01em; margin: 0 0 8p
 
 /* The website: one wide band. */
 .web { background: var(--raised); border-radius: 32px; padding: 64px; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+.web .actions { margin-top: 24px; }
 .web .domain { font: 700 clamp(26px, 3vw, 36px)/1.1 var(--display); letter-spacing: -0.02em; color: var(--orange-text); margin: 0 0 18px; }
 .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 32px; align-content: start; }
 .cols h3 { font-size: 17px; }
@@ -134,11 +154,29 @@ h3 { font: 650 20px/1.25 var(--display); letter-spacing: -0.01em; margin: 0 0 8p
 .story { gap: 10px; }
 .story img { margin-bottom: 8px; }
 
-/* Privacy: three plain statements. */
-.facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; border-top: 1px solid var(--line); padding-top: 32px; }
-.facts strong { display: block; font: 650 19px/1.3 var(--display); margin-bottom: 8px; color: var(--ink); }
+/* Moving from Monefy: one band, the words beside three steps. */
+.move { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; border: 1px solid var(--line); border-radius: 32px; padding: 48px 56px; }
+.move .lead { margin-bottom: 0; }
+.move-steps { margin: 0; padding: 0; list-style: none; counter-reset: move; display: grid; gap: 18px; }
+.move-steps li { counter-increment: move; position: relative; padding-left: 48px; color: var(--ink-2); }
+.move-steps li::before { content: counter(move); position: absolute; left: 0; top: -2px; width: 32px; height: 32px; border-radius: 50%;
+    display: grid; place-items: center; background: var(--orange); color: #fff; font: 700 15px var(--display); }
+.move-steps strong { color: var(--ink); }
+
+/* Questions: native disclosure rows. */
+.faq-wrap { display: grid; grid-template-columns: 0.7fr 1.3fr; gap: 48px; align-items: start; }
+.faq { border-top: 1px solid var(--line); }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary { cursor: pointer; list-style: none; padding: 20px 40px 20px 0; position: relative; font: 600 18px/1.35 var(--display); }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: ""; position: absolute; right: 8px; top: 50%; width: 10px; height: 10px; margin-top: -7px;
+    border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: rotate(45deg); transition: transform 200ms var(--ease); }
+.faq details[open] summary::after { transform: rotate(-135deg); margin-top: -2px; }
+.faq summary:hover { color: var(--orange-text); }
+.faq details p { margin: 0 0 22px; color: var(--ink-2); max-width: 62ch; }
 
 /* Free and Premium. */
+#premium h2 { margin-bottom: 32px; }
 .plans { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .plan { border-radius: var(--radius); padding: 32px; background: var(--card); border: 1px solid var(--line); }
 .plan.premium { border: 2px solid var(--orange); }
@@ -174,13 +212,15 @@ footer p { margin: 0 0 0 auto; }
     .hero .wrap, .split, .web, .together, .plans { grid-template-columns: 1fr; }
     .hero .wrap { gap: 56px; }
     .stage .hamster { left: -40px; width: 110px; }
-    .bento { grid-template-columns: 1fr; }
-    .cell.drafts, .cell.voice, .cell.imports, .cell.analytics, .cell.plan { grid-column: auto; grid-row: auto; }
-    .cell.analytics { grid-template-columns: 1fr; }
+    .works { grid-template-columns: 1fr 1fr; }
+    .reasons { grid-template-columns: 1fr 1fr; }
+    .steps { grid-template-columns: 1fr; }
+    .step .shot { max-width: 300px; }
+    .move, .faq-wrap { grid-template-columns: 1fr; gap: 28px; }
+    .move { padding: 32px 24px; }
     .split { gap: 40px; }
     .split .phone { order: 2; }
     .web { padding: 36px 24px; gap: 32px; }
-    .facts { grid-template-columns: 1fr; gap: 24px; }
     .help { grid-template-columns: 1fr; text-align: left; padding: 28px 24px; }
     section { padding: 64px 0; }
 }
@@ -188,6 +228,9 @@ footer p { margin: 0 0 0 auto; }
 @media (max-width: 560px) {
     .wrap { width: calc(100% - 32px); }
     .cols { grid-template-columns: 1fr; }
+    .works, .reasons { grid-template-columns: 1fr; }
+    .reason.wide { grid-column: auto; padding: 26px 22px; margin-bottom: 8px; }
+    .reason { padding-bottom: 12px; }
     .nav .button { display: none; }
     .hero p { font-size: 18px; }
     footer p { margin-left: 0; }

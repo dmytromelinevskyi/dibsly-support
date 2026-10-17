@@ -9,6 +9,12 @@ shared receipt.
 nor Russian goes to `en.html`; the UK / EN switch is kept in the browser. The former support page is `support.html`
 (its “no account, no server” lines updated for 1.1); privacy and terms link to it.
 
+**Landing 1.1 (2026-10-17, owner: «нам надо на лендинге показать наш функционал, а также почему выбрать именно нас»):**
+rebuilt after a look at the Ukrainian trackers. Order: hero (all your money in one place), what it works with (banks,
+cards, brokers, Monefy), why Dibsly (not only monobank, investments, mostly free, data stays yours, together, moving
+from Monefy), how it works in three steps, investing, together, the website, moving from Monefy, Free / Premium,
+questions. No competitor is named except Monefy, the one Dibsly imports from.
+
 Since 2026-10-10 the same files are also served at **<https://dibslyapp.com>** by the Cloudflare Worker `dibsly-site`
 (`worker.js`, `wrangler.toml`; deploy with `npx wrangler deploy` on the owner's word), which also opens short split
 links `dibslyapp.com/s/<code>`: the bill is kept 30 days by Dibsly's server (`dibsly-sync`, service binding) and put

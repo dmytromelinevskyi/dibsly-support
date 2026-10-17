@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dibsly: money in order on iPhone and the web</title>
-    <meta name="description" content="Dibsly: accounts, spending, a monthly plan, savings and investments on iPhone and at my.dibslyapp.com. Your bank and Apple Pay record for you, shared accounts, Claude and ChatGPT.">
+    <title>Dibsly: all your money in one place</title>
+    <meta name="description" content="Dibsly for iPhone: cards from different banks, cash, savings and investments together. Apple Pay, bank notifications, Freedom Finance and Interactive Brokers, moving from Monefy. Most of it is free.">
     <meta name="color-scheme" content="light dark">
     <meta name="theme-color" content="#F7F3EE" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#0F0D0C" media="(prefers-color-scheme: dark)">
-    <meta property="og:title" content="Dibsly: money in order">
-    <meta property="og:description" content="Accounts, spending, a monthly plan and savings on iPhone and in your browser.">
+    <meta property="og:title" content="Dibsly: all your money in one place">
+    <meta property="og:description" content="Every bank, Apple Pay, cash and investments in one iPhone app.">
     <meta property="og:image" content="https://dibslyapp.com/img/shots/en-main.jpg">
     <link rel="alternate" hreflang="uk" href="https://dibslyapp.com/">
     <link rel="alternate" hreflang="en" href="https://dibslyapp.com/en.html">
@@ -26,9 +26,10 @@
         <div class="wrap">
             <a class="brand" href="./"><img src="img/apple-touch-icon.png" alt="" width="30" height="30">Dibsly</a>
             <nav class="nav-links" aria-label="Sections">
-                <a href="#features">Features</a>
-                <a href="#web">Website</a>
-                <a href="#premium">Premium</a>
+                <a href="#why">Why Dibsly</a>
+                <a href="#how">How it works</a>
+                <a href="#invest">Investing</a>
+                <a href="#premium">Pricing</a>
                 <a href="support.html">Support</a>
             </nav>
             <a class="lang" href="./" hreflang="uk" onclick="try { localStorage.setItem('dibsly.site.lang', 'uk'); } catch (error) {}">UK</a>
@@ -40,15 +41,21 @@
         <section class="hero">
             <div class="wrap">
                 <div>
-                    <h1>Money in order. No spreadsheets.</h1>
-                    <p>Accounts, spending, a monthly plan and savings on iPhone and in your browser. Together with the people you share money with.</p>
+                    <h1>All your money in one place</h1>
+                    <p>Cards from different banks, cash, savings and a brokerage account. Dibsly records your spending by itself and shows what you really have.</p>
                     <div class="actions">
                         <a class="button primary" href="https://apps.apple.com/app/id6765870838">Download on the App Store</a>
-                        <a class="button quiet" href="https://my.dibslyapp.com">Open the website</a>
+                        <a class="button quiet" href="#why">Why Dibsly</a>
                     </div>
+                    <ul class="trust" aria-label="In short">
+                        <li>Free</li>
+                        <li>English, Ukrainian, Russian</li>
+                        <li>No ads</li>
+                        <li>No account needed</li>
+                    </ul>
                 </div>
                 <div class="stage">
-                    <div class="phone"><img src="img/shots/en-main.jpg" alt="Dibsly Main: money on hand, savings, investments and the month" width="550" height="1195"></div>
+                    <div class="phone"><img src="img/shots/en-main.jpg" alt="Dibsly Main: money at hand, savings, investments and the month" width="550" height="1195"></div>
                     <picture>
                         <source srcset="img/dibsly-dark.png" media="(prefers-color-scheme: dark)">
                         <img class="hamster" src="img/dibsly.png" alt="" width="404" height="386">
@@ -57,54 +64,118 @@
             </div>
         </section>
 
-        <section id="features">
+        <section class="works-band" aria-labelledby="works-title">
             <div class="wrap">
-                <h2 class="reveal">Record a payment. In a second.</h2>
-                <p class="lead reveal">Dibsly takes care of the routine. You only look and confirm.</p>
-                <div class="bento">
-                    <article class="cell drafts reveal">
-                        <div>
-                            <h3>Your bank and Apple Pay record for you</h3>
-                            <p>Bank and Wallet notifications become drafts. Check the amount and category, then save with one tap.</p>
-                        </div>
-                        <img class="shot" src="img/shots/en-drafts.jpg" alt="Drafts from the bank and Apple Pay" width="550" height="1195" loading="lazy">
+                <h2 id="works-title" class="eyebrow">Works with what you already have</h2>
+                <dl class="works">
+                    <div><dt>Banks</dt><dd>monobank</dd><dd>PrivatBank</dd><dd>UKRSIBBANK</dd><dd>KredoBank</dd></div>
+                    <div><dt>Cards</dt><dd>Apple Pay from any card</dd><dd>Notifications from any bank</dd></div>
+                    <div><dt>Brokers</dt><dd>Freedom Finance</dd><dd>Interactive Brokers</dd></div>
+                    <div><dt>Moving in</dt><dd>Monefy</dd><dd>CSV file</dd></div>
+                </dl>
+            </div>
+        </section>
+
+        <section id="why">
+            <div class="wrap">
+                <h2 class="reveal">Why Dibsly</h2>
+                <p class="lead reveal">Most trackers know one bank or wait for you to type everything in. Dibsly gathers your money from everywhere and counts it honestly.</p>
+                <div class="reasons">
+                    <article class="reason wide warm reveal">
+                        <h3>Any bank, even without an API</h3>
+                        <p>Apple Pay from any card records itself, and with Premium so do notifications from any bank. In Ukraine monobank connects directly and for free, and a year of PrivatBank, UKRSIBBANK or KredoBank statements is read in a minute.</p>
+                        <p class="aside">Dibsly recognizes transfers between your own accounts, so nothing is counted twice.</p>
                     </article>
-                    <article class="cell voice reveal">
-                        <h3>Calculator and voice</h3>
-                        <p class="quote">“coffee 4.50”</p>
-                        <p>Say it or type it, and Dibsly works out the amount and the category.</p>
+                    <article class="reason wide reveal">
+                        <h3>Investments next to spending</h3>
+                        <p>Freedom Finance and Interactive Brokers reports instead of typing. Dividends with the tax withheld, portfolio growth apart from deposits. All of it free.</p>
+                        <a class="more" href="#invest">More about investing</a>
                     </article>
-                    <article class="cell imports reveal">
-                        <h3>A year of statements in a minute</h3>
-                        <p>Dibsly reads the file on your phone, finds transfers between your accounts and sorts spending into categories.</p>
-                        <div class="banks"><span>monobank</span><span>UKRSIBBANK</span><span>PrivatBank</span><span>KredoBank</span></div>
+                    <article class="reason reveal">
+                        <h3>Almost everything is free</h3>
+                        <p>Accounts, imports, Apple Pay, investments, the plan and the calendar cost nothing. Premium at $1.99 a month adds the AI, sync and the website.</p>
                     </article>
-                    <article class="cell analytics reveal">
-                        <div>
-                            <h3>Where the money went</h3>
-                            <p>Categories, cash flow, trends by year and capital: savings and investments, yours or the family's.</p>
-                        </div>
-                        <img class="shot" src="img/shots/en-analytics.jpg" alt="Dibsly Analytics" width="550" height="1195" loading="lazy">
+                    <article class="reason reveal">
+                        <h3>Your data stays yours</h3>
+                        <p>Without an account everything lives on your iPhone and in encrypted backups in your iCloud Drive. No ads, no ad trackers.</p>
                     </article>
-                    <article class="cell plan reveal">
-                        <h3>Plan and calendar</h3>
-                        <p>Monthly limits and every recurring payment. See how much an account needs before the day it is charged.</p>
+                    <article class="reason reveal">
+                        <h3>Money together</h3>
+                        <p>Shared accounts with everyone's contributions, and a bill split by link: friends don't need the app.</p>
+                    </article>
+                    <article class="reason reveal">
+                        <h3>Moving from Monefy</h3>
+                        <p>Your Monefy history moves in one CSV file: accounts, categories, currencies and transfers.</p>
+                        <a class="more" href="#move">How to move</a>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section>
+        <section id="how">
+            <div class="wrap">
+                <h2 class="reveal">How it works</h2>
+                <p class="lead reveal">Set it up once. Then Dibsly does the routine, and you just glance and confirm.</p>
+                <ol class="steps">
+                    <li class="step connect reveal">
+                        <p class="num">1</p>
+                        <h3>Connect what you have</h3>
+                        <ul class="ways">
+                            <li><strong>Apple Pay</strong> through an automation in Shortcuts</li>
+                            <li><strong>Bank notifications</strong> with Premium, on iOS 27</li>
+                            <li><strong>Statements</strong> as PDF, CSV or Excel, any period</li>
+                            <li><strong>monobank</strong> with a personal token</li>
+                            <li><strong>Voice</strong> or the calculator: “coffee 4.50”</li>
+                        </ul>
+                    </li>
+                    <li class="step reveal">
+                        <p class="num">2</p>
+                        <h3>Check and save</h3>
+                        <p>New payments arrive as drafts with the amount and category. One tap and they are in your history.</p>
+                        <img class="shot" src="img/shots/en-drafts.jpg" alt="Drafts from the bank and Apple Pay" width="550" height="1195" loading="lazy">
+                    </li>
+                    <li class="step reveal">
+                        <p class="num">3</p>
+                        <h3>See the whole picture</h3>
+                        <p>Where the money went, cash flow, trends by year, the month's plan and the payment calendar.</p>
+                        <img class="shot" src="img/shots/en-analytics.jpg" alt="Dibsly analytics" width="550" height="1195" loading="lazy">
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="invest">
             <div class="wrap split">
-                <div class="phone reveal"><img src="img/shots/en-invest.jpg" alt="Investments in Dibsly" width="550" height="1195" loading="lazy"></div>
+                <div class="phone reveal"><img src="img/shots/en-invest.jpg" alt="Investing in Dibsly" width="550" height="1195" loading="lazy"></div>
                 <div class="reveal">
-                    <h2>Investments beside the rest of your money</h2>
-                    <p class="lead">Portfolio, quotes and dividends in the same app as your spending.</p>
+                    <h2>Investments next to the rest of your money</h2>
+                    <p class="lead">Portfolio, quotes and dividends in the same app as your spending. No Premium needed.</p>
                     <ul>
                         <li>Freedom Finance and Interactive Brokers reports instead of typing</li>
-                        <li>Growth shown apart from top-ups, so a deposit never reads as profit</li>
-                        <li>Goals on savings and investments: a flat, a car, a cushion</li>
+                        <li>Dividends together with the tax withheld</li>
+                        <li>Portfolio growth apart from deposits, so a deposit never looks like profit</li>
+                        <li>Goals on savings and investments: a flat, a car, a safety cushion</li>
+                        <li>Net worth by year: what you saved and what your investments earned</li>
                     </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="wrap">
+                <h2 class="reveal">Money together</h2>
+                <p class="lead reveal">For a couple, a family or friends who split the bill at a restaurant.</p>
+                <div class="together">
+                    <article class="story shared reveal">
+                        <p class="big" aria-hidden="true">50 / 50</p>
+                        <h3>Shared accounts</h3>
+                        <p>Everyone's contributions, a notification when the other adds something, and a fair split when you part ways.</p>
+                    </article>
+                    <article class="story reveal">
+                        <img src="img/split-card.png" alt="A link to split the bill" width="1200" height="630" loading="lazy">
+                        <h3>Split the bill</h3>
+                        <p>Photograph the receipt and send friends a link: each marks their items, Dibsly does the math.</p>
+                    </article>
                 </div>
             </div>
         </section>
@@ -115,13 +186,13 @@
                     <div>
                         <p class="domain">my.dibslyapp.com</p>
                         <h2>A big screen for big decisions</h2>
-                        <p>The same data as on your iPhone, in your computer's browser. Sign in with Apple and sort out your money calmly.</p>
-                        <p class="note">Sync and the website are part of Dibsly Premium.</p>
-                        <div class="actions" style="margin-top: 24px"><a class="button primary" href="https://my.dibslyapp.com">Open the website</a></div>
+                        <p>The same data as on your iPhone, in a browser on your computer. Sign in with Apple and sort out your money calmly.</p>
+                        <p class="note">Sync, the website and assistants are part of Dibsly Premium.</p>
+                        <div class="actions"><a class="button primary" href="https://my.dibslyapp.com">Open the website</a></div>
                     </div>
                     <div class="cols">
-                        <div><h3>History</h3><p>Search, filters and one category change for many operations at once.</p></div>
-                        <div><h3>Analytics</h3><p>Trends and capital by year, cash flow by day.</p></div>
+                        <div><h3>History</h3><p>Search, filters and a new category for many operations at once.</p></div>
+                        <div><h3>Analytics</h3><p>Trends and net worth by year, cash flow by day.</p></div>
                         <div><h3>Drafts and calendar</h3><p>Record a draft or a payment right from your computer.</p></div>
                         <div><h3>Claude and ChatGPT</h3><p>Connect your assistant and ask about your money in plain words.</p></div>
                     </div>
@@ -129,32 +200,18 @@
             </div>
         </section>
 
-        <section>
+        <section id="move">
             <div class="wrap">
-                <h2 class="reveal">Money together</h2>
-                <p class="lead reveal">For a couple, a family, or friends who split the bill at dinner.</p>
-                <div class="together">
-                    <article class="story shared reveal">
-                        <p class="big" aria-hidden="true">50 / 50</p>
-                        <h3>Shared accounts</h3>
-                        <p>Everyone's contributions, a notification when the other adds something, and a fair split when you part ways.</p>
-                    </article>
-                    <article class="story reveal">
-                        <img src="img/split-card.png" alt="A link to split a bill" width="1200" height="630" loading="lazy">
-                        <h3>Split a bill</h3>
-                        <p>Photograph the receipt and send friends a link: each taps what was theirs, Dibsly does the math.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="wrap">
-                <h2 class="reveal">Your data stays yours</h2>
-                <div class="facts reveal">
-                    <p><strong>No ads, no tracking</strong>No analytics, no ad SDKs. Dibsly lives on subscriptions, not on your data.</p>
-                    <p><strong>An account is optional</strong>Without one, everything stays on your iPhone and in encrypted backups in your iCloud Drive.</p>
-                    <p><strong>Delete any time</strong>Deleting the account erases all your data on the server. <a href="privacy.html">Privacy Policy</a></p>
+                <div class="move reveal">
+                    <div>
+                        <h2>Coming from Monefy?</h2>
+                        <p class="lead">Bring your history along. Years of records move in a minute, nothing to type again.</p>
+                    </div>
+                    <ol class="move-steps">
+                        <li><strong>Export your data from Monefy</strong> to a CSV file.</li>
+                        <li><strong>In Dibsly open</strong> Settings → Import &amp; export → CSV file → Monefy CSV.</li>
+                        <li><strong>Done:</strong> accounts, categories, currencies and transfers are in place. You can add them to the data you already have.</li>
+                    </ol>
                 </div>
             </div>
         </section>
@@ -165,26 +222,61 @@
                 <div class="plans">
                     <article class="plan reveal">
                         <h3>Free</h3>
-                        <p class="price">$0 <small>for good</small></p>
+                        <p class="price">$0 <small>forever</small></p>
                         <ul>
-                            <li>Accounts, analytics, the monthly plan and the payment calendar</li>
-                            <li>Statement imports from banks and brokers</li>
+                            <li>Accounts in any currency, analytics, a monthly plan and a payment calendar</li>
+                            <li>Bank statements, broker reports and monobank directly</li>
+                            <li>Investing: portfolio, dividends, taxes</li>
                             <li>Apple Pay through Wallet, voice and the calculator</li>
-                            <li>10 receipts and split bills a month</li>
-                            <li>Encrypted backups to iCloud Drive</li>
+                            <li>Moving from Monefy</li>
+                            <li>10 receipts and splits a month</li>
+                            <li>Encrypted backups in iCloud Drive</li>
                         </ul>
                     </article>
                     <article class="plan premium reveal">
                         <h3>Dibsly Premium</h3>
                         <p class="price">$1.99 <small>a month or $19.99 a year, 7 days free</small></p>
                         <ul>
-                            <li>Sync between iPhones and the my.dibslyapp.com website</li>
-                            <li>Notifications from any bank, read by the AI</li>
-                            <li>AI categories after an import and on drafts</li>
+                            <li>Sync between iPhones and the website my.dibslyapp.com</li>
+                            <li>Notifications from any bank, read by the AI (iOS 27)</li>
+                            <li>Categories from the AI after an import and on drafts</li>
                             <li>Claude and ChatGPT with access to your data</li>
-                            <li>Up to 300 receipts and split bills a month</li>
+                            <li>Voice with the AI for tricky phrases</li>
+                            <li>Up to 300 receipts and splits a month</li>
                         </ul>
                     </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq">
+            <div class="wrap faq-wrap">
+                <h2 class="reveal">Questions</h2>
+                <div class="faq reveal">
+                    <details>
+                        <summary>Which banks does Dibsly work with?</summary>
+                        <p>Apple Pay records from any card, and with Premium on iOS 27 Dibsly reads notifications from any bank. Statements of the Ukrainian banks monobank, PrivatBank, UKRSIBBANK and KredoBank are read from PDF, CSV or Excel, and monobank also connects directly with a personal token.</p>
+                    </details>
+                    <details>
+                        <summary>Is it safe?</summary>
+                        <p>Dibsly never asks for your bank password. A monobank token only reads the statement and cannot move money. Without an account your data lives only on your iPhone and in encrypted backups in your iCloud Drive. There are no ads and no ad trackers. Details are in the <a href="privacy.html">privacy policy</a>.</p>
+                    </details>
+                    <details>
+                        <summary>Do I need an account?</summary>
+                        <p>No. A Dibsly account is only needed to see the same data on several iPhones and on the website, or to keep shared accounts. Deleting the account erases all your data on the server.</p>
+                    </details>
+                    <details>
+                        <summary>How do I move my data from Monefy?</summary>
+                        <p>Export your data from Monefy to CSV, then in Dibsly open Settings → Import &amp; export → CSV file → Monefy CSV. Accounts, categories, currencies and transfers come along, and Dibsly shows what it will add before saving.</p>
+                    </details>
+                    <details>
+                        <summary>Is there an Android version?</summary>
+                        <p>For now Dibsly is iPhone only. The website my.dibslyapp.com opens in any browser; it needs an account and Premium.</p>
+                    </details>
+                    <details>
+                        <summary>What happens if I cancel Premium?</summary>
+                        <p>Nothing disappears. Premium features switch off, receipts go back to 10 a month, and all your records stay where they are.</p>
+                    </details>
                 </div>
             </div>
         </section>
@@ -197,8 +289,8 @@
                         <img src="img/dibsly.png" alt="" width="404" height="386" loading="lazy">
                     </picture>
                     <div>
-                        <h2>Questions?</h2>
-                        <p>Answers about the subscription, backups, imports and your data are on the support page. Or just write: <a href="mailto:dibslysupport@gmail.com">dibslysupport@gmail.com</a></p>
+                        <h2>More questions?</h2>
+                        <p>Answers about the subscription, backups, imports and data are on the support page. Or just write: <a href="mailto:dibslysupport@gmail.com">dibslysupport@gmail.com</a></p>
                     </div>
                     <a class="button quiet" href="support.html">Support</a>
                 </div>

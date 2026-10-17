@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dibsly: гроші в порядку на iPhone і в браузері</title>
-    <meta name="description" content="Dibsly: рахунки, витрати, план місяця, накопичення й інвестиції на iPhone і на my.dibslyapp.com. Банк і Apple Pay записують самі, спільні рахунки, Claude і ChatGPT.">
+    <title>Dibsly: усі твої гроші в одному місці</title>
+    <meta name="description" content="Dibsly для iPhone: картки різних банків, готівка, накопичення й інвестиції разом. monobank, ПриватБанк, UKRSIBBANK, KredoBank, Apple Pay, Freedom Finance та Interactive Brokers. Більшість можливостей безкоштовні.">
     <meta name="color-scheme" content="light dark">
     <meta name="theme-color" content="#F7F3EE" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#0F0D0C" media="(prefers-color-scheme: dark)">
-    <meta property="og:title" content="Dibsly: гроші в порядку">
-    <meta property="og:description" content="Рахунки, витрати, план місяця й накопичення на iPhone і в браузері.">
+    <meta property="og:title" content="Dibsly: усі твої гроші в одному місці">
+    <meta property="og:description" content="Усі банки, Apple Pay, готівка й інвестиції в одному застосунку для iPhone.">
     <meta property="og:image" content="https://dibslyapp.com/img/shots/uk-main.jpg">
     <link rel="alternate" hreflang="uk" href="https://dibslyapp.com/">
     <link rel="alternate" hreflang="en" href="https://dibslyapp.com/en.html">
@@ -31,9 +31,10 @@
         <div class="wrap">
             <a class="brand" href="./"><img src="img/apple-touch-icon.png" alt="" width="30" height="30">Dibsly</a>
             <nav class="nav-links" aria-label="Розділи">
-                <a href="#features">Можливості</a>
-                <a href="#web">Сайт</a>
-                <a href="#premium">Premium</a>
+                <a href="#why">Чому Dibsly</a>
+                <a href="#how">Як це працює</a>
+                <a href="#invest">Інвестиції</a>
+                <a href="#premium">Ціни</a>
                 <a href="support.html">Підтримка</a>
             </nav>
             <a class="lang" href="en.html" hreflang="en" onclick="try { localStorage.setItem('dibsly.site.lang', 'en'); } catch (error) {}">EN</a>
@@ -45,12 +46,18 @@
         <section class="hero">
             <div class="wrap">
                 <div>
-                    <h1>Гроші в порядку. Без таблиць.</h1>
-                    <p>Рахунки, витрати, план місяця й накопичення на iPhone і в браузері. Разом з тими, з ким ведеш гроші.</p>
+                    <h1>Усі твої гроші в одному місці</h1>
+                    <p>Картки різних банків, готівка, накопичення й брокерський рахунок. Dibsly сам записує витрати й показує, скільки в тебе є насправді.</p>
                     <div class="actions">
                         <a class="button primary" href="https://apps.apple.com/app/id6765870838">Завантажити в App Store</a>
-                        <a class="button quiet" href="https://my.dibslyapp.com">Відкрити сайт</a>
+                        <a class="button quiet" href="#why">Чому Dibsly</a>
                     </div>
+                    <ul class="trust" aria-label="Коротко">
+                        <li>Безкоштовно</li>
+                        <li>Українською</li>
+                        <li>Без реклами</li>
+                        <li>Можна без акаунта</li>
+                    </ul>
                 </div>
                 <div class="stage">
                     <div class="phone"><img src="img/shots/uk-main.jpg" alt="Головна Dibsly: гроші під рукою, накопичення, інвестиції й місяць" width="550" height="1195"></div>
@@ -62,74 +69,99 @@
             </div>
         </section>
 
-        <section id="features">
+        <section class="works-band" aria-labelledby="works-title">
             <div class="wrap">
-                <h2 class="reveal">Записати витрату. За секунду.</h2>
-                <p class="lead reveal">Dibsly бере на себе рутину, а тобі лишається тільки глянути й підтвердити.</p>
-                <div class="bento">
-                    <article class="cell drafts reveal">
-                        <div>
-                            <h3>Банк і Apple Pay записують самі</h3>
-                            <p>Сповіщення банку та Wallet стають чернетками. Перевір суму й категорію і збережи одним дотиком.</p>
-                        </div>
-                        <img class="shot" src="img/shots/uk-drafts.jpg" alt="Чернетки з банку й Apple Pay" width="550" height="1195" loading="lazy">
+                <h2 id="works-title" class="eyebrow">Працює з тим, що в тебе вже є</h2>
+                <dl class="works">
+                    <div><dt>Банки</dt><dd>monobank</dd><dd>ПриватБанк</dd><dd>UKRSIBBANK</dd><dd>KredoBank</dd></div>
+                    <div><dt>Картки</dt><dd>Apple Pay з будь-якої картки</dd><dd>Сповіщення будь-якого банку</dd></div>
+                    <div><dt>Брокери</dt><dd>Freedom Finance</dd><dd>Interactive Brokers</dd></div>
+                    <div><dt>Переїзд</dt><dd>Monefy</dd><dd>CSV-файл</dd></div>
+                </dl>
+            </div>
+        </section>
+
+        <section id="why">
+            <div class="wrap">
+                <h2 class="reveal">Чому Dibsly</h2>
+                <p class="lead reveal">Більшість трекерів знають один банк або чекають, поки ти все введеш сам. Dibsly збирає гроші звідусіль і рахує їх чесно.</p>
+                <div class="reasons">
+                    <article class="reason wide warm reveal">
+                        <h3>Не тільки monobank</h3>
+                        <p>monobank підключається напряму й безкоштовно. Виписку ПриватБанку, UKRSIBBANK чи KredoBank за рік Dibsly прочитає за хвилину, нею можна поділитися просто з Приват24. Apple Pay з будь-якої картки записується сам, а з Premium і сповіщення будь-якого банку.</p>
+                        <p class="aside">Перекази між твоїми рахунками Dibsly впізнає сам, тож нічого не рахується двічі.</p>
                     </article>
-                    <article class="cell voice reveal">
-                        <h3>Калькулятор і голос</h3>
-                        <p class="quote">«кава 85»</p>
-                        <p>Скажи або набери, і Dibsly сам розбере суму й категорію.</p>
+                    <article class="reason wide reveal">
+                        <h3>Інвестиції поруч з витратами</h3>
+                        <p>Звіти Freedom Finance та Interactive Brokers замість ручного введення. Дивіденди разом з утриманим податком, ріст портфеля окремо від поповнень. І все це безкоштовно.</p>
+                        <a class="more" href="#invest">Детальніше про інвестиції</a>
                     </article>
-                    <article class="cell imports reveal">
-                        <h3>Виписка за рік за хвилину</h3>
-                        <p>Dibsly читає файл на телефоні, знаходить перекази між твоїми рахунками й розкладає витрати по категоріях.</p>
-                        <div class="banks"><span>monobank</span><span>UKRSIBBANK</span><span>ПриватБанк</span><span>KredoBank</span></div>
+                    <article class="reason reveal">
+                        <h3>Майже все безкоштовно</h3>
+                        <p>Рахунки, імпорт, Apple Pay, інвестиції, план і календар без оплати. Premium за $1.99 на місяць додає ШІ, синхронізацію й сайт.</p>
                     </article>
-                    <article class="cell analytics reveal">
-                        <div>
-                            <h3>Куди пішли гроші</h3>
-                            <p>Категорії, грошовий потік, тренди по роках і капітал: накопичення та інвестиції, твої чи сімейні.</p>
-                        </div>
-                        <img class="shot" src="img/shots/uk-analytics.jpg" alt="Аналітика Dibsly" width="550" height="1195" loading="lazy">
+                    <article class="reason reveal">
+                        <h3>Твої дані в тебе</h3>
+                        <p>Без акаунта все лежить на iPhone і в зашифрованих копіях у твоєму iCloud Drive. Без реклами, без рекламних трекерів.</p>
                     </article>
-                    <article class="cell plan reveal">
-                        <h3>План і календар</h3>
-                        <p>Ліміти на місяць і всі регулярні платежі. Видно, скільки має бути на рахунку до дня списання.</p>
+                    <article class="reason reveal">
+                        <h3>Гроші разом</h3>
+                        <p>Спільні рахунки з внесками кожного й поділ чека посиланням: друзям не треба ставити застосунок.</p>
+                    </article>
+                    <article class="reason reveal">
+                        <h3>Переїзд з Monefy</h3>
+                        <p>Історія з Monefy переїжджає одним CSV-файлом: рахунки, категорії, валюти й перекази.</p>
+                        <a class="more" href="#move">Як перенести</a>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section>
+        <section id="how">
+            <div class="wrap">
+                <h2 class="reveal">Як це працює</h2>
+                <p class="lead reveal">Налаштовуєш один раз. Далі Dibsly робить рутину, а тобі лишається глянути й підтвердити.</p>
+                <ol class="steps">
+                    <li class="step connect reveal">
+                        <p class="num">1</p>
+                        <h3>Підключи, що маєш</h3>
+                        <ul class="ways">
+                            <li><strong>monobank</strong> за персональним токеном</li>
+                            <li><strong>Виписка</strong> PDF, CSV чи Excel за будь-який період</li>
+                            <li><strong>Apple Pay</strong> через автоматизацію в «Командах»</li>
+                            <li><strong>Сповіщення банку</strong> з Premium, на iOS 27</li>
+                            <li><strong>Голос</strong> чи калькулятор: «кава 85»</li>
+                        </ul>
+                    </li>
+                    <li class="step reveal">
+                        <p class="num">2</p>
+                        <h3>Перевір і збережи</h3>
+                        <p>Нові платежі приходять чернетками з сумою й категорією. Один дотик, і запис уже в історії.</p>
+                        <img class="shot" src="img/shots/uk-drafts.jpg" alt="Чернетки з банку й Apple Pay" width="550" height="1195" loading="lazy">
+                    </li>
+                    <li class="step reveal">
+                        <p class="num">3</p>
+                        <h3>Дивись усю картину</h3>
+                        <p>Куди пішли гроші, грошовий потік, тренди по роках, план місяця й календар платежів.</p>
+                        <img class="shot" src="img/shots/uk-analytics.jpg" alt="Аналітика Dibsly" width="550" height="1195" loading="lazy">
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="invest">
             <div class="wrap split">
                 <div class="phone reveal"><img src="img/shots/uk-invest.jpg" alt="Інвестиції в Dibsly" width="550" height="1195" loading="lazy"></div>
                 <div class="reveal">
                     <h2>Інвестиції поруч з рештою грошей</h2>
-                    <p class="lead">Портфель, котирування й дивіденди в тій самій програмі, де твої витрати.</p>
+                    <p class="lead">Портфель, котирування й дивіденди в тому самому застосунку, де твої витрати. Без Premium.</p>
                     <ul>
                         <li>Звіти Freedom Finance та Interactive Brokers замість ручного введення</li>
+                        <li>Дивіденди разом з утриманим податком</li>
                         <li>Ріст портфеля окремо від поповнень, щоб депозит не виглядав прибутком</li>
                         <li>Цілі на накопиченнях та інвестиціях: квартира, машина, подушка</li>
+                        <li>Капітал за роками: скільки відклав і скільки заробили інвестиції</li>
                     </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="web">
-            <div class="wrap">
-                <div class="web reveal">
-                    <div>
-                        <p class="domain">my.dibslyapp.com</p>
-                        <h2>Великий екран для великих рішень</h2>
-                        <p>Ті самі дані, що на iPhone, у браузері на комп'ютері. Увійди з Apple і розбирайся з грошима спокійно.</p>
-                        <p class="note">Синхронізація й сайт входять у Dibsly Premium.</p>
-                        <div class="actions" style="margin-top: 24px"><a class="button primary" href="https://my.dibslyapp.com">Відкрити сайт</a></div>
-                    </div>
-                    <div class="cols">
-                        <div><h3>Історія</h3><p>Пошук, фільтри й зміна категорії одразу для багатьох операцій.</p></div>
-                        <div><h3>Аналітика</h3><p>Тренди й капітал по роках, грошовий потік по днях.</p></div>
-                        <div><h3>Чернетки й календар</h3><p>Записати чернетку чи платіж можна просто з комп'ютера.</p></div>
-                        <div><h3>Claude і ChatGPT</h3><p>Підключи свого асистента й питай про свої гроші словами.</p></div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -153,13 +185,38 @@
             </div>
         </section>
 
-        <section>
+        <section id="web">
             <div class="wrap">
-                <h2 class="reveal">Твої дані залишаються твоїми</h2>
-                <div class="facts reveal">
-                    <p><strong>Без реклами й стеження</strong>Ні аналітики, ні рекламних SDK. Dibsly живе з підписки, а не з твоїх даних.</p>
-                    <p><strong>Акаунт не обов'язковий</strong>Без нього все лежить на iPhone і в зашифрованих копіях у твоєму iCloud Drive.</p>
-                    <p><strong>Видалити можна будь-коли</strong>Видалення акаунта стирає всі твої дані на сервері. <a href="privacy.html">Політика конфіденційності</a></p>
+                <div class="web reveal">
+                    <div>
+                        <p class="domain">my.dibslyapp.com</p>
+                        <h2>Великий екран для великих рішень</h2>
+                        <p>Ті самі дані, що на iPhone, у браузері на комп'ютері. Увійди з Apple і розбирайся з грошима спокійно.</p>
+                        <p class="note">Синхронізація, сайт і асистенти входять у Dibsly Premium.</p>
+                        <div class="actions"><a class="button primary" href="https://my.dibslyapp.com">Відкрити сайт</a></div>
+                    </div>
+                    <div class="cols">
+                        <div><h3>Історія</h3><p>Пошук, фільтри й зміна категорії одразу для багатьох операцій.</p></div>
+                        <div><h3>Аналітика</h3><p>Тренди й капітал по роках, грошовий потік по днях.</p></div>
+                        <div><h3>Чернетки й календар</h3><p>Записати чернетку чи платіж можна просто з комп'ютера.</p></div>
+                        <div><h3>Claude і ChatGPT</h3><p>Підключи свого асистента й питай про свої гроші словами.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="move">
+            <div class="wrap">
+                <div class="move reveal">
+                    <div>
+                        <h2>Переходиш з Monefy?</h2>
+                        <p class="lead">Забери історію з собою. Роки записів переїдуть за хвилину, нічого не треба вводити заново.</p>
+                    </div>
+                    <ol class="move-steps">
+                        <li><strong>Експортуй дані з Monefy</strong> у CSV-файл.</li>
+                        <li><strong>У Dibsly відкрий</strong> Налаштування → Імпорт та експорт → CSV-файл → CSV Monefy.</li>
+                        <li><strong>Готово:</strong> рахунки, категорії, валюти й перекази на місці. Можна додати до наявних даних.</li>
+                    </ol>
                 </div>
             </div>
         </section>
@@ -172,9 +229,11 @@
                         <h3>Free</h3>
                         <p class="price">0 <small>назавжди</small></p>
                         <ul>
-                            <li>Рахунки, аналітика, план місяця й календар платежів</li>
-                            <li>Імпорт виписок банків і брокерів</li>
+                            <li>Рахунки в будь-яких валютах, аналітика, план місяця й календар платежів</li>
+                            <li>monobank напряму, виписки банків і звіти брокерів</li>
+                            <li>Інвестиції: портфель, дивіденди, податки</li>
                             <li>Apple Pay через Wallet, голос і калькулятор</li>
+                            <li>Переїзд з Monefy</li>
                             <li>10 чеків і поділів на місяць</li>
                             <li>Зашифровані копії в iCloud Drive</li>
                         </ul>
@@ -184,12 +243,45 @@
                         <p class="price">$1.99 <small>на місяць або $19.99 на рік, 7 днів безкоштовно</small></p>
                         <ul>
                             <li>Синхронізація між iPhone і сайт my.dibslyapp.com</li>
-                            <li>Сповіщення будь-якого банку, прочитані ШІ</li>
+                            <li>Сповіщення будь-якого банку, прочитані ШІ (iOS 27)</li>
                             <li>Категорії від ШІ після імпорту й на чернетках</li>
                             <li>Claude і ChatGPT з доступом до твоїх даних</li>
+                            <li>Голос з ШІ для складних фраз</li>
                             <li>До 300 чеків і поділів на місяць</li>
                         </ul>
                     </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq">
+            <div class="wrap faq-wrap">
+                <h2 class="reveal">Питання</h2>
+                <div class="faq reveal">
+                    <details>
+                        <summary>Які банки підтримує Dibsly?</summary>
+                        <p>monobank підключається напряму за персональним токеном. Виписки ПриватБанку, UKRSIBBANK, KredoBank і monobank Dibsly читає з PDF, CSV чи Excel. Apple Pay записується з будь-якої картки, а з Premium на iOS 27 Dibsly читає сповіщення будь-якого банку.</p>
+                    </details>
+                    <details>
+                        <summary>Це безпечно?</summary>
+                        <p>Dibsly не просить пароль від банку. Токен monobank дає доступ лише до виписки, переказати гроші через нього неможливо. Без акаунта дані лежать тільки на твоєму iPhone і в зашифрованих копіях у твоєму iCloud Drive. Реклами й рекламних трекерів немає. Деталі в <a href="privacy.html">політиці конфіденційності</a>.</p>
+                    </details>
+                    <details>
+                        <summary>Потрібен акаунт?</summary>
+                        <p>Ні. Акаунт Dibsly потрібен, лише якщо хочеш бачити ті самі дані на кількох iPhone і на сайті або вести спільні рахунки. Видалення акаунта стирає всі твої дані на сервері.</p>
+                    </details>
+                    <details>
+                        <summary>Як перенести дані з Monefy?</summary>
+                        <p>Експортуй дані з Monefy в CSV, потім у Dibsly відкрий Налаштування → Імпорт та експорт → CSV-файл → CSV Monefy. Рахунки, категорії, валюти й перекази перенесуться, а Dibsly покаже, що саме додасть, перш ніж зберегти.</p>
+                    </details>
+                    <details>
+                        <summary>Є версія для Android?</summary>
+                        <p>Поки що Dibsly є тільки для iPhone. Сайт my.dibslyapp.com відкривається в будь-якому браузері, для нього потрібен акаунт і Premium.</p>
+                    </details>
+                    <details>
+                        <summary>Що буде, якщо скасувати Premium?</summary>
+                        <p>Нічого не зникне. Можливості Premium вимкнуться, чеків знову буде 10 на місяць, а всі записи залишаться на місці.</p>
+                    </details>
                 </div>
             </div>
         </section>
@@ -202,7 +294,7 @@
                         <img src="img/dibsly.png" alt="" width="404" height="386" loading="lazy">
                     </picture>
                     <div>
-                        <h2>Є питання?</h2>
+                        <h2>Є ще питання?</h2>
                         <p>Відповіді про підписку, копії, імпорт і дані на сторінці підтримки. Або просто напиши: <a href="mailto:dibslysupport@gmail.com">dibslysupport@gmail.com</a></p>
                     </div>
                     <a class="button quiet" href="support.html">Підтримка</a>
