@@ -95,9 +95,10 @@ h3 { font: 650 20px/1.25 var(--display); letter-spacing: -0.01em; margin: 0 0 8p
 /* Works with: four groups in one quiet band, no cards. */
 .works-band { padding: 8px 0 24px; }
 .eyebrow { font: 600 15px/1.3 var(--body); letter-spacing: 0; color: var(--muted); margin: 0 0 18px; }
-.works { display: grid; grid-template-columns: 1.5fr 1.3fr 1fr; gap: 24px 40px; margin: 0; border-top: 1px solid var(--line); padding-top: 22px; }
-.works dt { font-size: 15px; font-weight: 650; color: var(--ink); margin-bottom: 10px; }
-.works dd { display: inline-flex; align-items: center; gap: 8px; margin: 0 6px 8px 0; font-size: 15px; font-weight: 600; padding: 6px 12px; border-radius: 999px; background: var(--raised); color: var(--ink-2); }
+.works { margin: 0; border-top: 1px solid var(--line); }
+.works > div { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.works dt { flex: 0 0 150px; font-size: 15px; font-weight: 650; color: var(--ink); }
+.works dd { display: inline-flex; align-items: center; gap: 8px; margin: 0; font-size: 15px; font-weight: 600; padding: 6px 12px; border-radius: 999px; background: var(--raised); color: var(--ink-2); }
 
 /* Why Dibsly: two wide reasons, then four short ones. */
 .reasons { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
@@ -291,7 +292,6 @@ footer p { margin: 0 0 0 auto; }
     .hero { padding-top: 40px; }
     .hero .wrap, .split, .web, .together, .plans { grid-template-columns: 1fr; }
     .hero .wrap { gap: 56px; }
-    .works { grid-template-columns: 1fr 1fr; }
     .pro-grid { grid-template-columns: 1fr 1fr; }
     .pro-card.ai { grid-row: auto; grid-column: span 2; }
     .trio { grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
@@ -318,7 +318,8 @@ footer p { margin: 0 0 0 auto; }
 @media (max-width: 560px) {
     .wrap { width: calc(100% - 32px); }
     .cols { grid-template-columns: 1fr; }
-    .works, .reasons, .pro-grid, .trio { grid-template-columns: 1fr; }
+    .reasons, .pro-grid, .trio { grid-template-columns: 1fr; }
+    .works dt { flex-basis: 100%; margin-bottom: 2px; }
     .pro-card.ai { grid-column: auto; }
     .trio .phone { width: min(300px, 100%); }
     .browser-bar { height: 30px; }
