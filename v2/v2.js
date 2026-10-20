@@ -24,7 +24,8 @@
     // Dibsly: the files of the landing (hello, idle, invest, savings, celebrate) or the ones copied for 2.0.
     var own = { expense: 1, next: 1, annoyed: 1 };
     function animationPath(name) {
-        return (own[name] ? "mascot/" : "../img/mascot/") + name + "-" + (isDark() ? "dark" : "light") + ".json";
+        var where = own[name] ? (window.DIBSLY_ASSETS || "") + "mascot/" : (window.DIBSLY_IMAGES || "../img/") + "mascot/";
+        return where + name + "-" + (isDark() ? "dark" : "light") + ".json";
     }
     // Each animation's file is fetched once; a new mood is drawn in its own layer and fades in over the old one, so
     // Dibsly never blinks between moods.

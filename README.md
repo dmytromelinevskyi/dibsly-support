@@ -31,6 +31,11 @@ own Lottie files (`img/mascot/*-light|dark.json`, copied from `App/Dibsly/Resour
 website's frame unfolds on scroll. `js/landing.js` holds all of it; “reduce motion” shows everything still. New scenes
 `cashflow plan calendar voice receipt`.
 
+**Landing 2.0 is the main page since 2026-10-20 (owner: «главная да, топ, аппрувлю»):** `index.html` (uk) and
+`en.html` at the root, their styles, script, screenshots and Dibsly's extra moods in `v2/` (`v2/v2.css`, `v2/v2.js`,
+`v2/shots/`, `v2/mascot/`; the pages set `window.DIBSLY_ASSETS = "v2/"` and `DIBSLY_IMAGES = "img/"`). The old landing
+(`landing.css`, `js/landing.js`) is gone — Git keeps it. How it was built:
+
 **Landing 2.0 preview (2026-10-20, owner: «давай попробуем»; the page looked too much like midni.finance):**
 `v2/index.html` (uk) and `v2/en.html`, `v2/v2.css`, `v2/v2.js`, at https://dibslyapp.com/v2/ (noindex) until the owner
 approves it; then it replaces the landing. Built around Dibsly and the chat: the hero is a scripted conversation with
