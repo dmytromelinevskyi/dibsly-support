@@ -1,0 +1,63 @@
+/* «What Dibsly can do» (features-uk.html, features.html, 2026-10-20): every feature with an example, where it lives
+   in the app, Free or Premium and a link to its guide; the sections in a sticky list on the left. On top of v2.css. */
+
+.fhero { padding: 56px 0 8px; }
+.fhero .wrap { display: grid; grid-template-columns: 1fr 160px; gap: 32px; align-items: end; }
+.fhero h1 { font-size: clamp(38px, 5vw, 60px); line-height: 1.04; font-weight: 750; letter-spacing: -0.03em; }
+.fhero .mascot { width: 160px; }
+.fgrid { display: grid; grid-template-columns: 210px 1fr; gap: 48px; padding-bottom: 40px; }
+.toc { position: sticky; top: 84px; align-self: start; display: grid; gap: 2px; margin-top: 44px; }
+.toc a { color: var(--ink-2); padding: 7px 12px; border-radius: 10px; font-size: 15px; }
+.toc a:hover { text-decoration: none; background: var(--raised); }
+.toc a.on { background: var(--card); color: var(--ink); font-weight: 600; box-shadow: 0 1px 2px rgba(110, 52, 16, 0.06); }
+.fsection { padding: 44px 0 0; scroll-margin-top: 72px; }
+.fvisual.wide .fcrop { max-width: 440px; margin: 0 auto; }
+.fsection > h2 { font-size: clamp(28px, 3vw, 38px); margin-bottom: 18px; }
+.feature { display: grid; grid-template-columns: 1fr 230px; gap: 36px; align-items: center; background: var(--card);
+    border-radius: var(--r-card); padding: 28px; margin-top: 14px; scroll-margin-top: 80px; }
+.feature.widevis { grid-template-columns: 1fr 1.15fr; }
+.feature.textonly { grid-template-columns: 1fr; }
+.kind { display: inline-block; padding: 2px 10px; border-radius: 999px; background: var(--raised); color: var(--ink-2);
+    font: 600 12.5px/1.7 var(--font); }
+.kind.pro { background: var(--peach); color: var(--peach-ink); }
+.feature h3 { margin-top: 10px; font-size: 23px; }
+.feature .desc { color: var(--ink-2); margin-top: 8px; max-width: 62ch; }
+.try { margin-top: 14px; color: var(--muted); font-size: 15px; }
+.try b { color: var(--ink); font-weight: 600; }
+.fguide { margin-top: 8px; font-size: 15px; font-weight: 600; }
+.fvisual { justify-self: center; width: 100%; }
+.fvisual .phone { max-width: 220px; margin: 0 auto; border-radius: 34px; padding: 7px; }
+.fvisual .phone > img { width: 100%; border-radius: 27px; display: block; }
+.fvisual .phone .slides { border-radius: 27px; }
+.fcrop { border-radius: 16px; overflow: hidden; box-shadow: 0 1px 2px rgba(110, 52, 16, 0.1), 0 12px 28px rgba(110, 52, 16, 0.08);
+}
+.fcrop img { width: 100%; height: auto; }
+.fvisual .browser { margin: 0; border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); background: var(--card); }
+.convo { display: grid; gap: 8px; }
+.convo p { margin: 0; max-width: 92%; padding: 10px 14px; border-radius: 16px; font-size: 14.5px; line-height: 1.4; }
+.convo .me { justify-self: end; background: var(--raised); border-bottom-right-radius: 6px; }
+.convo .ai { background: var(--bubble-dibsly); border-bottom-left-radius: 6px; }
+.halfcard { background: var(--ink); color: var(--page); border-radius: 18px; padding: 20px; }
+.halfcard .big { font: 750 34px/1 var(--display); margin-bottom: 14px; }
+.pgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.pcard { background: var(--card); border-radius: var(--r-card); padding: 24px; }
+.pcard h3 { font-size: 19px; }
+.pcard p { color: var(--ink-2); margin-top: 8px; font-size: 15.5px; }
+.pmore { margin-top: 14px; font-weight: 600; }
+.fend { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; margin-top: 48px; padding: 28px; border-radius: var(--r-card);
+    background: var(--peach); }
+.fend p { color: var(--peach-ink); }
+
+@media (max-width: 900px) {
+    .fgrid { grid-template-columns: 1fr; gap: 0; }
+    .toc { position: sticky; top: 64px; z-index: 5; display: flex; overflow-x: auto; gap: 6px; margin: 0 -16px; padding: 10px 16px;
+        background: color-mix(in srgb, var(--page) 92%, transparent); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+        scrollbar-width: none; }
+    .toc::-webkit-scrollbar { display: none; }
+    .toc a { white-space: nowrap; background: var(--card); }
+    .feature, .feature.widevis { grid-template-columns: 1fr; gap: 22px; padding: 22px; }
+    .fvisual .phone { max-width: 210px; }
+    .pgrid { grid-template-columns: 1fr; }
+    .fhero .wrap { grid-template-columns: 1fr 96px; }
+    .fhero .mascot { width: 96px; }
+}

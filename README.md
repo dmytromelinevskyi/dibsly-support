@@ -31,6 +31,14 @@ own Lottie files (`img/mascot/*-light|dark.json`, copied from `App/Dibsly/Resour
 website's frame unfolds on scroll. `js/landing.js` holds all of it; “reduce motion” shows everything still. New scenes
 `cashflow plan calendar voice receipt`.
 
+**«Що вміє Dibsly» (2026-10-20, owner: «отдельная страница со всем функционалом… типо документации с примерами»):**
+`features-uk.html` and `features.html`, built by `python3 tools/features.py .` from one list in that script (edit the
+list, then rebuild — don't edit the pages by hand). Eight sections, 22 features and three privacy cards; each feature:
+Free or Premium, what it does, an example (a screenshot from `v2/shots/`, crossfading screens with a touch mark, a
+cropped screen, the website in a browser or a short conversation), where it lives in the app and a link to its guide
+(help*.html anchors). The sections' list sticks on the left (a scrolling row on a phone). Styles `v2/features.css`;
+`v2/v2.js` marks the section on screen. The landing's «Можливості» / «Features» and «Що він уміє» lead here.
+
 **Landing 2.0 is the main page since 2026-10-20 (owner: «главная да, топ, аппрувлю»):** `index.html` (uk) and
 `en.html` at the root, their styles, script, screenshots and Dibsly's extra moods in `v2/` (`v2/v2.css`, `v2/v2.js`,
 `v2/shots/`, `v2/mascot/`; the pages set `window.DIBSLY_ASSETS = "v2/"` and `DIBSLY_IMAGES = "img/"`). The old landing

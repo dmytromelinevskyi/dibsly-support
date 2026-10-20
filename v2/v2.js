@@ -134,6 +134,23 @@
         }, { threshold: 0.35 });
     });
 
+    // «What Dibsly can do»: the section on screen is marked in the list of sections.
+    var toc = document.querySelector(".toc");
+    if (toc && hasObserver) {
+        var links = Array.prototype.slice.call(toc.querySelectorAll("a"));
+        var mark = function (id) {
+            links.forEach(function (link) {
+                var on = link.getAttribute("href") === "#" + id;
+                link.classList.toggle("on", on);
+                if (on && toc.scrollWidth > toc.clientWidth) toc.scrollTo({ left: link.offsetLeft - 16, behavior: "smooth" });
+            });
+        };
+        var sections = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) { if (entry.isIntersecting) mark(entry.target.id); });
+        }, { rootMargin: "-30% 0px -60% 0px" });
+        Array.prototype.forEach.call(document.querySelectorAll(".fsection"), function (section) { sections.observe(section); });
+    }
+
     // The conversation.
     var script = window.DIBSLY_CHAT || [];
     var box = document.querySelector(".chatbox");
