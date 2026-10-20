@@ -47,7 +47,10 @@ drafts loop jumped — Main re-lays itself out after each save — the portfolio
 blurry):** each phone is a stack of full-resolution screenshots from «Dibsly — Clean» (`v2/shots/{uk,en}-*.jpg`, 750
 px wide; the plan, calendar and goals tiles cropped from 1206 px captures) that crossfade in 0.45 s while on screen;
 a touch mark shows where the tap was before the screen changes (`data-tap` = x,y in %), and the analytics labels follow
-the slide (`data-slide`).
+the slide (`data-slide`). **The hero is the whole product again (owner: «мы тут строим по сути финансовую
+империю», the chat is one part of it):** «Усі твої гроші в одному місці» with a phone turning through Main, analytics,
+investments and goals, the money's sources floating around it and Dibsly beside it; the conversation with Dibsly is
+the second section (`#ask`). The tiles show whole crops (plan, calendar, goals cut on clean lines), not cut text.
 
 Since 2026-10-10 the same files are also served at **<https://dibslyapp.com>** by the Cloudflare Worker `dibsly-site`
 (`worker.js`, `wrangler.toml`; deploy with `npx wrangler deploy` on the owner's word), which also opens short split
