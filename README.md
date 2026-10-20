@@ -20,8 +20,8 @@ website in a browser frame, ChatGPT / Claude with a sample conversation, shared 
 after How it works; paid features carry a small Premium tag; Interactive Brokers before Freedom Finance; Monefy only in
 Free and one question; new 1.1 screenshots (Main, Analytics, Trends, Capital, Goals, Investments, a draft) from
 `scripts/screenshots/capture.sh` scenes `main analytics trends capital goals invest drafts`, and `img/shots/*-web.jpg`
-from the local portal (dev data, test names replaced on the page before the capture). Prices stay $1.99 / $19.99 until
-App Store Connect changes them.
+from the local portal (dev data, test names replaced on the page before the capture). Prices: $2.99 / $29.99 since
+2026-10-20 (owner; App Store Connect changed the same night, before 1.0.1's submission). The terms name no figure.
 
 **Landing 1.3 (2026-10-17, owner: «забыл про то, что раньше было», «блоки выровнены плохо», «вау-эффекты», «больше маскота»):**
 Analytics as a sticky phone whose screen follows the text (Categories, Cash flow, Trends, Capital), Plan / Calendar /
