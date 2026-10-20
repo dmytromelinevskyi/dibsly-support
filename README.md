@@ -50,7 +50,11 @@ a touch mark shows where the tap was before the screen changes (`data-tap` = x,y
 the slide (`data-slide`). **The hero is the whole product again (owner: «мы тут строим по сути финансовую
 империю», the chat is one part of it):** «Усі твої гроші в одному місці» with a phone turning through Main, analytics,
 investments and goals, the money's sources floating around it and Dibsly beside it; the conversation with Dibsly is
-the second section (`#ask`). The tiles show whole crops (plan, calendar, goals cut on clean lines), not cut text.
+the second section (`#ask`). The tiles show whole crops (plan, calendar, goals cut on clean lines), not cut text. **Then every platform in the hero (owner: «там сейчас по сути только
+апка», there is the website and soon Android, iPad and Mac):** my.dibslyapp.com in a browser window with the app's
+phone in front of it and Dibsly beside them; the second button opens the website; under the buttons a row of
+platforms — iPhone and browser available, Android, iPad and Mac «скоро». The Premium section no longer repeats the
+browser shot.
 
 Since 2026-10-10 the same files are also served at **<https://dibslyapp.com>** by the Cloudflare Worker `dibsly-site`
 (`worker.js`, `wrangler.toml`; deploy with `npx wrangler deploy` on the owner's word), which also opens short split
