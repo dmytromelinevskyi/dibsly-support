@@ -31,6 +31,15 @@ own Lottie files (`img/mascot/*-light|dark.json`, copied from `App/Dibsly/Resour
 website's frame unfolds on scroll. `js/landing.js` holds all of it; “reduce motion” shows everything still. New scenes
 `cashflow plan calendar voice receipt`.
 
+**Landing 2.0 preview (2026-10-20, owner: «давай попробуем»; the page looked too much like midni.finance):**
+`v2/index.html` (uk) and `v2/en.html`, `v2/v2.css`, `v2/v2.js`, at https://dibslyapp.com/v2/ (noindex) until the owner
+approves it; then it replaces the landing. Built around Dibsly and the chat: the hero is a scripted conversation with
+Dibsly on the demo figures (`window.DIBSLY_CHAT` in each page; no AI is asked), with his mood changing per answer
+(Lottie: the landing's `img/mascot` plus `v2/mascot` copied from the app); three loops recorded in the app on the demo
+ledger (`v2/media/{uk,en}-{drafts,analytics,invest}.mp4`, `simctl io recordVideo`, ffmpeg H.264 600 px) play while on
+screen; the analytics labels light up with the video's time; light theme by default, dark on the toggle (kept in the
+browser); reduced motion shows everything still.
+
 Since 2026-10-10 the same files are also served at **<https://dibslyapp.com>** by the Cloudflare Worker `dibsly-site`
 (`worker.js`, `wrangler.toml`; deploy with `npx wrangler deploy` on the owner's word), which also opens short split
 links `dibslyapp.com/s/<code>`: the bill is kept 30 days by Dibsly's server (`dibsly-sync`, service binding) and put
