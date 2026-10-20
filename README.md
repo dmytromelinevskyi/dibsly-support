@@ -37,7 +37,11 @@ list, then rebuild — don't edit the pages by hand). Eight sections, 22 feature
 Free or Premium, what it does, an example (a screenshot from `v2/shots/`, crossfading screens with a touch mark, a
 cropped screen, the website in a browser or a short conversation), where it lives in the app and a link to its guide
 (help*.html anchors). The sections' list sticks on the left (a scrolling row on a phone). Styles `v2/features.css`;
-`v2/v2.js` marks the section on screen. The landing's «Можливості» / «Features» and «Що він уміє» lead here.
+`v2/v2.js` marks the section on screen. The landing's «Можливості» / «Features» and «Що він уміє» lead here. `img/shots/en-web.jpg` (2026-10-20, 2160 px): the website on the
+server's own English dollar demo (`Server/sync/src/demo.ts`, the reviewers' demo) — run locally (`npm run dev` in
+`Server/sync`, a local dev sign-in, Admin «Демо-дані» into it), light theme, captured at 2x through Chrome's DevTools
+protocol. The app's showcase ledger (hryvnias) is a different made-up set, so the phone and the website show different
+figures; `uk-web.jpg` stays the older Ukrainian dev shot.
 
 **Landing 2.0 is the main page since 2026-10-20 (owner: «главная да, топ, аппрувлю»):** `index.html` (uk) and
 `en.html` at the root, their styles, script, screenshots and Dibsly's extra moods in `v2/` (`v2/v2.css`, `v2/v2.js`,
