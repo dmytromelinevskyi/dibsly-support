@@ -151,7 +151,14 @@ section { padding: clamp(72px, 10vw, 120px) 0; }
 /* A phone playing a short loop recorded in the app. */
 .phone { position: relative; width: 100%; max-width: 320px; aspect-ratio: 1206 / 2622; border-radius: 44px; padding: 9px;
     background: #1C1917; box-shadow: var(--shadow); }
-.phone video, .phone img { width: 100%; height: 100%; object-fit: cover; border-radius: 36px; background: var(--page); }
+.slides { position: relative; width: 100%; height: 100%; border-radius: 36px; overflow: hidden; background: var(--page); }
+.slides img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; opacity: 0;
+    transition: opacity 0.45s ease; }
+.slides img.on { opacity: 1; }
+.tap { position: absolute; width: 38px; height: 38px; margin: -19px 0 0 -19px; border-radius: 50%; pointer-events: none;
+    background: rgba(28, 25, 23, 0.16); box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.85); opacity: 0; }
+.tap.go { animation: tap 0.55s var(--ease); }
+@keyframes tap { 0% { opacity: 0; transform: scale(0.5); } 35% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(1.5); } }
 
 /* It records by itself: the phone beside the ways money comes in. */
 .auto .wrap { display: grid; grid-template-columns: 360px 1fr; gap: 72px; align-items: center; }
@@ -186,7 +193,7 @@ section { padding: clamp(72px, 10vw, 120px) 0; }
 .tile.big { grid-row: span 2; background: var(--peach); }
 .tile.big p { color: var(--peach-ink); }
 .tile .crop { position: relative; height: 250px; border-radius: 16px 16px 0 0; overflow: hidden; box-shadow: 0 1px 2px rgba(110, 52, 16, 0.08); }
-.tile .crop img { position: absolute; left: 0; top: 0; width: 100%; height: auto; margin-top: calc(var(--y, 12%) * -1); }
+.tile .crop img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; }
 .tile.big .crop { height: auto; flex: 1; min-height: 320px; }
 @media (max-width: 860px) { .bento { grid-template-columns: 1fr; } .tile.big { grid-row: auto; } .tile.big .crop { min-height: 320px; } }
 

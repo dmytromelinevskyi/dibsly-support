@@ -42,7 +42,12 @@ browser); reduced motion shows everything still. **Smoothed the same night (owne
 наоборот слишком сильно тормозят»):** the loops re-cut at 60 fps with every frame of motion kept, still stretches
 shortened to 1-1.9 s and the app's instant tab switches crossfaded (0.28 s); Dibsly's moods fetched once and drawn in
 a new layer that fades over the old one (no blink), the «wait» pose dropped (lottie_light drew it with NaN
-transforms); the chat answers sooner (0.65 s of «•••», faster typing); sections rise 16 px in 0.55 s.
+transforms); the chat answers sooner (0.65 s of «•••», faster typing); sections rise 16 px in 0.55 s. **Then no videos at all (owner's screen recording: the
+drafts loop jumped — Main re-lays itself out after each save — the portfolio chart stuttered, and the tile shots were
+blurry):** each phone is a stack of full-resolution screenshots from «Dibsly — Clean» (`v2/shots/{uk,en}-*.jpg`, 750
+px wide; the plan, calendar and goals tiles cropped from 1206 px captures) that crossfade in 0.45 s while on screen;
+a touch mark shows where the tap was before the screen changes (`data-tap` = x,y in %), and the analytics labels follow
+the slide (`data-slide`).
 
 Since 2026-10-10 the same files are also served at **<https://dibslyapp.com>** by the Cloudflare Worker `dibsly-site`
 (`worker.js`, `wrangler.toml`; deploy with `npx wrangler deploy` on the owner's word), which also opens short split

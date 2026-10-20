@@ -87,26 +87,51 @@
         mascots.forEach(function (box) { if (box._current) play(box, box._current[0], box._current[1], box._current[2]); });
     });
 
-    // Phones: a loop plays while it is on screen.
-    var videos = Array.prototype.slice.call(document.querySelectorAll(".phone video"));
-    if (!calm) watch(videos, function (video, inView) {
-        if (inView) { var started = video.play(); if (started && started.catch) started.catch(function () {}); }
-        else video.pause();
-    }, { threshold: 0.35 });
-
-    // Analytics: the label of the tab the video shows is lit.
-    var stage = document.querySelector(".tabs-stage");
-    if (stage) {
-        var labels = Array.prototype.slice.call(stage.querySelectorAll("li[data-from]"));
-        var video = stage.querySelector("video");
-        var light = function () {
-            var at = video.currentTime;
-            var lit = labels.filter(function (li) { return at >= +li.dataset.from && at < +li.dataset.to; })[0] || labels[0];
-            labels.forEach(function (li) { li.classList.toggle("on", li === lit); });
-        };
-        video.addEventListener("timeupdate", light);
+    // Phones: sharp screenshots from the app change with a crossfade while on screen; where a tap made the change, a
+    // touch mark shows on the spot first. The analytics labels follow their phone's screen.
+    Array.prototype.forEach.call(document.querySelectorAll(".slides"), function (deck) {
+        var shots = Array.prototype.slice.call(deck.querySelectorAll("img"));
+        var mark = deck.querySelector(".tap");
+        var hold = +deck.dataset.hold || 1700;
+        var at = 0, timer = null, ready = null;
+        var stage = deck.closest(".tabs-stage");
+        var labels = stage ? Array.prototype.slice.call(stage.querySelectorAll("li[data-slide]")) : [];
+        var light = function () { labels.forEach(function (li) { li.classList.toggle("on", +li.dataset.slide === at); }); };
         light();
-    }
+        function show(index) {
+            shots[at].classList.remove("on");
+            at = index;
+            shots[at].classList.add("on");
+            light();
+        }
+        function step() {
+            var next = (at + 1) % shots.length;
+            var tap = shots[next].dataset.tap;
+            if (tap && mark) {
+                var spot = tap.split(",");
+                mark.style.left = spot[0] + "%";
+                mark.style.top = spot[1] + "%";
+                mark.classList.remove("go");
+                void mark.offsetWidth;
+                mark.classList.add("go");
+                timer = setTimeout(function () { show(next); timer = setTimeout(step, hold); }, 320);
+            } else {
+                show(next);
+                timer = setTimeout(step, hold);
+            }
+        }
+        if (calm) return;
+        watch([deck], function (target, inView) {
+            clearTimeout(timer);
+            timer = null;
+            if (!inView) return;
+            if (!ready) {
+                shots.forEach(function (shot) { shot.loading = "eager"; });
+                ready = Promise.all(shots.map(function (shot) { return shot.decode ? shot.decode().catch(function () {}) : null; }));
+            }
+            ready.then(function () { if (!timer) timer = setTimeout(step, hold); });
+        }, { threshold: 0.35 });
+    });
 
     // The conversation.
     var script = window.DIBSLY_CHAT || [];
