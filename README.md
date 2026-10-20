@@ -38,7 +38,11 @@ Dibsly on the demo figures (`window.DIBSLY_CHAT` in each page; no AI is asked), 
 (Lottie: the landing's `img/mascot` plus `v2/mascot` copied from the app); three loops recorded in the app on the demo
 ledger (`v2/media/{uk,en}-{drafts,analytics,invest}.mp4`, `simctl io recordVideo`, ffmpeg H.264 600 px) play while on
 screen; the analytics labels light up with the video's time; light theme by default, dark on the toggle (kept in the
-browser); reduced motion shows everything still.
+browser); reduced motion shows everything still. **Smoothed the same night (owner: «некоторые анимации слишком дерганые, а некоторые
+наоборот слишком сильно тормозят»):** the loops re-cut at 60 fps with every frame of motion kept, still stretches
+shortened to 1-1.9 s and the app's instant tab switches crossfaded (0.28 s); Dibsly's moods fetched once and drawn in
+a new layer that fades over the old one (no blink), the «wait» pose dropped (lottie_light drew it with NaN
+transforms); the chat answers sooner (0.65 s of «•••», faster typing); sections rise 16 px in 0.55 s.
 
 Since 2026-10-10 the same files are also served at **<https://dibslyapp.com>** by the Cloudflare Worker `dibsly-site`
 (`worker.js`, `wrangler.toml`; deploy with `npx wrangler deploy` on the owner's word), which also opens short split

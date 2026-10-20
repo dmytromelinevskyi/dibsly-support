@@ -22,23 +22,51 @@
     });
 
     // Dibsly: the files of the landing (hello, idle, invest, savings, celebrate) or the ones copied for 2.0.
-    var own = { expense: 1, next: 1, wait: 1, annoyed: 1 };
+    var own = { expense: 1, next: 1, annoyed: 1 };
     function animationPath(name) {
         return (own[name] ? "mascot/" : "../img/mascot/") + name + "-" + (isDark() ? "dark" : "light") + ".json";
     }
+    // Each animation's file is fetched once; a new mood is drawn in its own layer and fades in over the old one, so
+    // Dibsly never blinks between moods.
+    var files = {};
+    function animationData(name) {
+        var path = animationPath(name);
+        if (!files[path]) files[path] = fetch(path).then(function (answer) { return answer.json(); });
+        return files[path];
+    }
     function play(box, name, then, loop) {
         if (calm || !window.lottie) return;
-        if (box._animation) box._animation.destroy();
-        var stage = box.querySelector(".mascot-stage");
-        var animation = window.lottie.loadAnimation({ container: stage, renderer: "svg", autoplay: true,
-            loop: !then && loop, path: animationPath(name) });
-        animation.addEventListener("DOMLoaded", function () { box.classList.add("alive"); });
-        if (then) {
-            animation.addEventListener("complete", function () { play(box, then, null, true); });
-        }
-        box._animation = animation;
+        var ticket = (box._ticket || 0) + 1;
+        box._ticket = ticket;
         box._current = [name, then, loop];
+        animationData(name).then(function (data) {
+            if (box._ticket !== ticket) return;
+            var stage = box.querySelector(".mascot-stage");
+            var layer = document.createElement("div");
+            layer.className = "mascot-layer";
+            stage.appendChild(layer);
+            var animation = window.lottie.loadAnimation({ container: layer, renderer: "svg", autoplay: true,
+                loop: !then && loop, animationData: data });
+            animation.addEventListener("DOMLoaded", function () {
+                box.classList.add("alive");
+                requestAnimationFrame(function () { layer.classList.add("shown"); });
+                var old = box._animation;
+                var oldLayer = box._layer;
+                box._animation = animation;
+                box._layer = layer;
+                if (old) setTimeout(function () { old.destroy(); if (oldLayer) oldLayer.remove(); }, 220);
+            });
+            if (then) {
+                animation.addEventListener("complete", function () {
+                    if (box._ticket === ticket) play(box, then, null, true);
+                });
+            }
+        });
     }
+    // Moods the conversation uses are fetched ahead.
+    ["next", "annoyed", "expense", "savings", "celebrate", "idle"].forEach(function (name) {
+        if (!calm && window.fetch) setTimeout(function () { animationData(name); }, 1500);
+    });
     var mascots = Array.prototype.slice.call(document.querySelectorAll(".mascot[data-play]"));
     function startMascots() {
         watch(mascots, function (box, inView) {
@@ -104,11 +132,11 @@
         var shown = 0;
         return new Promise(function (done) {
             var timer = setInterval(function () {
-                shown += 2;
+                shown += 3;
                 node.textContent = characters.slice(0, shown).join("");
                 list.scrollTop = list.scrollHeight;
                 if (shown >= characters.length) { clearInterval(timer); done(); }
-            }, 18);
+            }, 16);
         });
     }
     var money = window.DIBSLY_MONEY === "en"
@@ -165,10 +193,9 @@
         var item = script[index];
         setChips(true);
         bubble(item.q, "me");
-        if (hero) play(hero, "wait", null, true);
-        wait(350).then(function () {
+        wait(250).then(function () {
             var reply = bubble("•••", "dibsly typing");
-            return wait(900).then(function () {
+            return wait(650).then(function () {
                 reply.classList.remove("typing");
                 return typeInto(reply, item.a);
             });
@@ -211,6 +238,6 @@
     // The first question asks itself once the conversation is on screen.
     var started = false;
     watch([box], function (target, inView) {
-        if (inView && !started) { started = true; setTimeout(function () { ask(0); }, calm ? 0 : 900); }
+        if (inView && !started) { started = true; setTimeout(function () { ask(0); }, calm ? 0 : 600); }
     }, { threshold: 0.5 });
 })();

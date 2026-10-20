@@ -141,6 +141,8 @@ section { padding: clamp(72px, 10vw, 120px) 0; }
 .mascot { aspect-ratio: 404 / 386; position: relative; }
 .mascot-still, .mascot-stage { position: absolute; inset: 0; }
 .mascot-stage svg { width: 100% !important; height: 100% !important; }
+.mascot-layer { position: absolute; inset: 0; opacity: 0; transition: opacity 0.2s ease; }
+.mascot-layer.shown { opacity: 1; }
 .mascot.alive .mascot-still { opacity: 0; }
 .dark-only { display: none; }
 :root[data-theme="dark"] .dark-only { display: block; }
@@ -255,7 +257,7 @@ footer nav { display: flex; flex-wrap: wrap; gap: 18px; }
 footer a { color: var(--ink-2); }
 
 /* Sections rise in once. */
-.js .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+.js .reveal { opacity: 0; transform: translateY(16px); transition: opacity 0.55s var(--ease), transform 0.55s var(--ease); }
 .js .reveal.shown { opacity: 1; transform: none; }
 
 @media (prefers-reduced-motion: reduce) {
