@@ -200,12 +200,12 @@ IDEAS = ("ideas", "Як Dibsly думає про гроші", "How Dibsly thinks
               ("Чернетка в «Активності»: Продукти?", "A draft in Activity: Groceries?"),
               ("«Зберегти»: баланс −412 ₴", "Save: balance −₴412")]), None, "apple-pay"),
   ("idea-brands",
-   ("Бренд один раз, категорія назавжди", "Dibsly знає понад 400 брендів з логотипами. Вибери категорію для бренду один раз, і всі його покупки підуть туди. А категорію, яку не хочеш бачити в аналітиці, можна приховати: вона зникне з підсумків Аналітики, і більше ніде.", "Налаштування → Бренди"),
-   ("A brand once, its category for good", "Dibsly knows over 400 brands with their logos. Pick a category for a brand once and all its purchases go there. And a category you don't want in your analytics can be hidden: it leaves the Analytics totals and nothing else.", "Settings → Brands"),
+   ("Бренд один раз, категорія назавжди", "Dibsly знає понад 400 брендів з логотипами. Вибери категорію для бренду один раз, і всі його покупки підуть туди. Купуєш у бренду різне, як-от в Епіцентрі то для дому, то подарунки? Просто зміни категорію в операції: Dibsly це запам'ятає й наступного разу запропонує обидві. А категорію, яку не хочеш бачити в аналітиці, можна приховати: вона зникне з підсумків Аналітики, і більше ніде.", "Налаштування → Бренди"),
+   ("A brand once, its category for good", "Dibsly knows over 400 brands with their logos. Pick a category for a brand once and all its purchases go there. Buy different things from one brand, like Epicentr for the home one day and a gift the next? Just change the category on the operation: Dibsly remembers and next time offers both. And a category you don't want in your analytics can be hidden: it leaves the Analytics totals and nothing else.", "Settings → Brands"),
    ("rows", [("Сільпо → Продукти", "Silpo → Groceries", "23 покупки", "23 purchases", ""),
              ("Uklon → Таксі", "Uklon → Taxi", "14 поїздок", "14 rides", ""),
              ("ОККО → Авто", "OKKO → Car", "6 заправок", "6 fill-ups", ""),
-             ("Ryanair → Подорожі", "Ryanair → Travel", "2 квитки", "2 tickets", "")]), None, "brands"),
+             ("Епіцентр → Дім або Подарунки", "Epicentr → Home or Gifts", "обидві", "both", "")]), None, "brands"),
   ("idea-goals",
    ("Цілі на заощадженнях, а не на картці", "Ціль нічого не забирає з рахунків: вона показує, які з твоїх заощаджень та інвестицій працюють на неї. Гроші під рукою в цілях не беруть участі: щоб наблизитися до цілі, переказуєш гроші на її рахунок. Кілька цілей наповнюються по черзі: спершу запас, як-от подушка, далі в твоєму порядку. А Dibsly каже, в якому місяці дійдеш до кожної в такому темпі.", "Головна → Цілі"),
    ("Goals live on savings, not on your card", "A goal takes nothing off your accounts: it shows which of your savings and investments work for it. On hand money takes no part: to get closer, you move money to the goal's account. Several goals fill in turn: a reserve such as a cushion first, then in your order. And Dibsly tells you the month you reach each one at your pace.", "Main → Goals"),
@@ -275,7 +275,8 @@ def visual(v, lang, alt):
         return ""
     kind, data = v
     if kind == "phone":
-        return f'<div class="fvisual"><div class="phone"><img src="v2/shots/{lang}-{data}.jpg" alt="{e(alt)}" width="750" height="1631" loading="lazy"></div></div>'
+        return (f'<div class="fvisual"><div class="phone"><div class="slides"><img class="on" src="v2/shots/{lang}-{data}.jpg" alt="{e(alt)}" '
+                f'width="750" height="1631" loading="lazy"></div></div></div>')
     if kind == "slides":
         dy = "68.9" if lang == "uk" else "71.1"
         imgs = []

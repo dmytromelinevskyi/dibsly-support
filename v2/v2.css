@@ -99,8 +99,7 @@ section { padding: clamp(72px, 10vw, 120px) 0; }
 .devices { position: relative; padding: 0 56px 64px 0; margin-right: -24px; }
 .devices .browser { margin: 0; border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); background: var(--card); }
 .devices .browser img { width: 100%; }
-.devices .phone { position: absolute; right: 0; bottom: 0; width: 27%; max-width: 190px; border-radius: 30px; padding: 6px; }
-.devices .phone .slides { border-radius: 25px; }
+.devices .phone { position: absolute; right: 0; bottom: 0; width: 27%; max-width: 190px; }
 .devices .mascot { position: absolute; width: 130px; left: -34px; bottom: 30px; z-index: 2; }
 .platforms { list-style: none; margin: 28px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
 .platforms li { padding: 6px 12px; border-radius: 999px; background: var(--raised); color: var(--muted); font: 600 14px var(--font); }
@@ -167,10 +166,27 @@ section { padding: clamp(72px, 10vw, 120px) 0; }
 :root[data-theme="dark"] .dark-only { display: block; }
 :root[data-theme="dark"] .light-only { display: none; }
 
-/* A phone playing a short loop recorded in the app. */
-.phone { position: relative; width: 100%; max-width: 320px; aspect-ratio: 1206 / 2622; border-radius: 44px; padding: 9px;
-    background: #1C1917; box-shadow: var(--shadow); }
-.slides { position: relative; width: 100%; height: 100%; border-radius: 36px; overflow: hidden; background: var(--page); }
+/* A phone playing a short loop recorded in the app: an iPhone 17 Pro drawn in CSS (owner, 2026-10-21: the flat black
+   slab looked cheap) — a titanium band, a thin black border, the screen's own corner radius, the Dynamic Island over
+   the screenshot's empty middle of the status bar, the side buttons. Every size is a share of the phone's width (cqw),
+   so the hero's small phone and the features' large one are the same phone. The screen (750 × 1630) sits inside a
+   2.7% border on every side, hence the frame's ratio. */
+.phone { position: relative; width: 100%; max-width: 320px; aspect-ratio: 1 / 2.11; container-type: inline-size;
+    border-radius: 16% / 7.58%; background: #050505;
+    box-shadow: inset 0 0 0 1.5px #77777c, inset 0 0 0 3px #2b2b2e, inset 0 0 0 4px #0b0b0c, var(--shadow); }
+:root[data-theme="dark"] .phone { box-shadow: inset 0 0 0 1.5px #8d8d93, inset 0 0 0 3px #3a3a3e, inset 0 0 0 4px #0b0b0c,
+    0 0 0 1px rgba(255, 255, 255, 0.06), var(--shadow); }
+/* The power button on the right; the Action button and the two volume buttons on the left. */
+.phone::before, .phone::after { content: ""; position: absolute; width: 1.1cqw; border-radius: 1cqw;
+    background: linear-gradient(90deg, #4a4a4e, #8a8a90 50%, #4a4a4e); }
+.phone::before { right: -0.9cqw; top: 26%; height: 11%; }
+.phone::after { left: -0.9cqw; top: 17%; height: 22%;
+    -webkit-mask: linear-gradient(#000 0 15%, transparent 15% 30%, #000 30% 62%, transparent 62% 69%, #000 69% 100%);
+    mask: linear-gradient(#000 0 15%, transparent 15% 30%, #000 30% 62%, transparent 62% 69%, #000 69% 100%); }
+.slides { position: absolute; top: 2.7cqw; left: 2.7cqw; width: calc(100% - 5.4cqw); height: calc(100% - 5.4cqw);
+    border-radius: 13.4cqw; overflow: hidden; background: var(--page); }
+.slides::after { content: ""; position: absolute; z-index: 3; top: 2.4cqw; left: 50%; width: 27.5cqw; height: 8cqw;
+    transform: translateX(-50%); border-radius: 999px; background: #000; pointer-events: none; }
 .slides img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; opacity: 0;
     transition: opacity 0.45s ease; }
 .slides img.on { opacity: 1; }
