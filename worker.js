@@ -31,7 +31,8 @@ const SITE_API = { "GET /api/roadmap": "/v1/site/roadmap", "POST /api/roadmap/vo
   "POST /api/feedback": "/v1/site/feedback" };
 
 async function siteAPI(path, request, env) {
-  const headers = { "Content-Type": "application/json", "CF-Connecting-IP": request.headers.get("CF-Connecting-IP") ?? "" };
+  const address = request.headers.get("CF-Connecting-IP") ?? "";
+  const headers = { "Content-Type": "application/json", "CF-Connecting-IP": address, "X-Dibsly-Visitor": address };
   const body = request.method === "POST" ? await request.text() : undefined;
   if (body && body.length > 8000) return new Response('{"error":{"code":"bad_request"}}', { status: 400 });
   const answer = await env.SYNC.fetch(`https://dibsly-sync${path}`, { method: request.method, headers, body });
