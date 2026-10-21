@@ -1,5 +1,5 @@
 """Builds dibslyapp.com's «What Dibsly can do» pages (features-uk.html, features.html) from one list."""
-import html, sys
+import html, json, sys
 
 ROOT = sys.argv[1]
 L = {
@@ -7,6 +7,15 @@ L = {
                title="Що вміє Dibsly", h1="Усе, що вміє Dibsly",
                lead="Ідеї, на яких стоїть Dibsly, і кожна можливість коротко: з прикладом і з тим, де її знайти в застосунку.",
                free="Безкоштовно", pro="Premium", where="Де", guide="Інструкція", toc="Розділи", more_link="Докладніше",
+               want="Хочу це", next="Що далі",
+               next_intro="Що ми робимо зараз і що буде потім. Дат не обіцяємо: робимо, поки не стане добре. Натисни «Хочу це» на тому, що тобі потрібно найбільше, і ми знатимемо, з чого почати.",
+               form=dict(title="Чого тобі не вистачає?", lead="Розкажи, а ми подумаємо, як зробити це круто.",
+                         placeholder="Наприклад: хочу бачити, скільки за рік пішло на дітей", email="Пошта, якщо хочеш відповідь",
+                         send="Надіслати", thanks="Дякую! Записали, команда подумає.",
+                         failed="Не вийшло надіслати. Спробуй ще раз або напиши на dibslysupport@gmail.com.",
+                         later="Забагато повідомлень за годину. Спробуй трохи пізніше.",
+                         email_bad="Схоже, в пошті помилка. Перевір її або залиш поле порожнім.",
+                         note="Текст і пошту бачить лише команда Dibsly.", privacy="Конфіденційність"),
                nav=[("index.html#ask", "Чат"), ("features-uk.html", "Можливості"), ("index.html#price", "Ціна"),
                     ("support-uk.html", "Підтримка")],
                store="Завантажити в App Store", more="Є питання? Напиши: ",
@@ -17,6 +26,15 @@ L = {
                title="What Dibsly can do", h1="Everything Dibsly can do",
                lead="The ideas Dibsly stands on, and every feature in short: with an example and where to find it in the app.",
                free="Free", pro="Premium", where="Where", guide="Guide", toc="Sections", more_link="More",
+               want="I want this", next="What's next",
+               next_intro="What we're building now and what comes later. No dates promised: we build until it's good. Tap “I want this” on what you need most, and we'll know where to start.",
+               form=dict(title="What are you missing?", lead="Tell us, and we'll think about how to make it great.",
+                         placeholder="For example: I want to see how much went on the kids this year", email="Your e-mail, if you'd like a reply",
+                         send="Send", thanks="Thank you! It's written down, and the team will think it over.",
+                         failed="Couldn't send it. Try again or write to dibslysupport@gmail.com.",
+                         later="Too many messages this hour. Try again a bit later.",
+                         email_bad="The e-mail looks wrong. Check it or leave the field empty.",
+                         note="Only the Dibsly team sees the text and the e-mail.", privacy="Privacy"),
                nav=[("en.html#ask", "Chat"), ("features.html", "Features"), ("en.html#price", "Price"),
                     ("support.html", "Support")],
                store="Download on the App Store", more="Questions? Write to ",
@@ -136,7 +154,7 @@ S = [
 ]
 # The ideas behind the features (owner, 2026-10-21: «не только що вміє, а еще и функционал, типо зачем нам нужны
 # карманы»), checked against the app's code: section id, titles, intros, then
-# idea: id, uk (h3, text, where), en (h3, text, where), example, the feature it links to
+# idea: id, uk (h3, text, where), en (h3, text, where), example (static or live, ideas.js), visual, the feature it links to
 IDEAS = ("ideas", "Як Dibsly думає про гроші", "How Dibsly thinks about money",
  "Головне правило Dibsly: не змішувати гроші, якими ти живеш щодня, з тим, що відкладаєш чи інвестуєш. На повсякденному "
  "балансі видно, як рухаються твої гроші, а заощадження й інвестиції лежать окремо: це не ті гроші, які треба щодня "
@@ -149,52 +167,96 @@ IDEAS = ("ideas", "Як Dibsly думає про гроші", "How Dibsly thinks
    ("Why three pockets", "Every account sits in one pocket. On hand: cards and cash for every day. Savings: what you put aside. Investments: broker accounts. The big number on Main and the month's income and spending count only On hand. So the ₴50,000 you put aside doesn't wink at you on a Friday night, and the month shows how you really live.", "Settings → Accounts → an account"),
    ("pockets", [("Під рукою", "On hand", "18 400 ₴", "₴18,400", "на Головній", "on Main", True),
                 ("Заощадження", "Savings", "50 000 ₴", "₴50,000", "окремо", "apart", False),
-                ("Інвестиції", "Investments", "3 200 $", "$3,200", "окремо", "apart", False)]), "all-accounts"),
+                ("Інвестиції", "Investments", "3 200 $", "$3,200", "окремо", "apart", False)]), ("phone", "accounts"), "all-accounts"),
   ("idea-income",
    ("Що таке дохід і витрата", "Дохід і витрата: гроші, що прийшли ззовні чи пішли назовні. Зарплата, подарунок, кава, оренда. Переказ між своїми рахунками й обмін валют нічого не змінюють: гроші переклалися з кишені в кишеню, і Dibsly сам впізнає такі перекази у виписках. Переказ у «Заощадження» теж не витрата: ти ці гроші не витратив, а відклав. Купівля й продаж акцій живуть в Інвестиціях, а дивіденди там рахуються доходом, податок і комісія брокера витратою.", None),
    ("What counts as income and spending", "Income and spending are money that came in from outside or went out. Salary, a gift, coffee, rent. A transfer between your own accounts or a currency exchange changes nothing: the money moved from one pocket to another, and Dibsly spots such transfers in statements by itself. A transfer to Savings isn't spending either: you didn't spend that money, you put it aside. Buying and selling shares live in Investments, where dividends count as income and the tax and the broker's fee as spending.", None),
-   ("ledger", [("Зарплата", "Salary", "+40 000 ₴", "+₴40,000", "дохід", "income", "in"),
-               ("Кава", "Coffee", "−85 ₴", "−₴85", "витрата", "spending", "out"),
-               ("monobank → ПриватБанк", "monobank → PrivatBank", "5 000 ₴", "₴5,000", "не рахується", "not counted", "same"),
-               ("У «Заощадження»", "To Savings", "10 000 ₴", "₴10,000", "не витрата", "not spending", "same"),
-               ("Купівля акцій", "Buying shares", "500 $", "$500", "в Інвестиціях", "in Investments", "same")]), None),
+   ("live-ledger", ({"hand": 18400, "income": 0, "spending": 0, "savings": 50000}, [
+               ("Зарплата", "Salary", "+40 000 ₴", "+₴40,000", "дохід", "income", "in", {"hand": 40000, "income": 40000}),
+               ("Кава", "Coffee", "−85 ₴", "−₴85", "витрата", "spending", "out", {"hand": -85, "spending": 85}),
+               ("monobank → ПриватБанк", "monobank → PrivatBank", "5 000 ₴", "₴5,000", "не рахується", "not counted", "same", {}),
+               ("У «Заощадження»", "To Savings", "10 000 ₴", "₴10,000", "не витрата", "not spending", "same", {"hand": -10000, "savings": 10000}),
+               ("Купівля акцій", "Buying shares", "500 $", "$500", "в Інвестиціях", "in Investments", "same", {})])), None, None),
   ("idea-balance",
    ("Рахунок на щодень, але не в загальній цифрі", "Буває рахунок, яким ти користуєшся, але не хочеш бачити в загальній цифрі: рахунок ФОП, куди платять клієнти, чи доларовий рахунок. Залиш його в «Під рукою» й вимкни «Враховувати в балансі». Його баланс зникне з великої цифри, а гроші, що приходять на нього, все одно будуть доходом місяця. Переказ з нього на твою картку чи продаж валюти доходом вдруге не стануть: це ті самі гроші.", "Налаштування → Рахунки → рахунок → «Враховувати в балансі»"),
    ("An everyday account outside the big number", "Some accounts you use but don't want in the total: a sole-trader account clients pay into, or a dollar account. Keep it in On hand and switch off “Count in balance”. Its balance leaves the big number, while money arriving on it is still the month's income. Moving it to your card or selling the currency won't count as income a second time: it's the same money.", "Settings → Accounts → an account → “Count in balance”"),
-   None, None),
+   ("live-switch", ({"hand": 18400, "income": 65000}, 25000, "Рахунок ФОП", "Sole-trader account")), ("phone", "accountEditor"), None),
   ("idea-salary-month",
    ("Місяць від зарплати до зарплати", "Якщо зарплата щоразу приходить в інший день, місяць з 1-го числа плутає: частина витрат до зарплати потрапляє не туди. Вибери «Із зарплати», і місяць триватиме від однієї зарплати до наступної. Затрималася зарплата: місяць просто йде далі, поки вона не прийде. Головна, Історія, Аналітика й план рахують однаково.", "Налаштування → Параметри → «Початок місяця»"),
    ("A month from payday to payday", "If your salary comes on a different day each time, a month from the 1st gets it wrong: part of the spending before payday lands in the wrong month. Choose “With the salary” and a month runs from one salary to the next. Salary late? The month just goes on until it comes. Main, History, Analytics and the plan all count the same way.", "Settings → Preferences → “Month starts on”"),
-   None, None),
+   None, ("phone", "salary"), None),
   ("idea-plan",
    ("План з того, що прийшло", "План починається з «Коштів на місяць»: скільки грошей у тебе на цей місяць, те, що під рукою, і зарплата, що прийшла. З них ти відкладаєш план заощаджень та інвестицій, а решту розкладаєш лімітами по категоріях. Так видно, скільки ще можна витратити до кінця місяця, а не тільки скільки вже пішло. Планування вмикається тут: Налаштування → Параметри → Функції.", "Головна → План"),
    ("A plan from what came in", "A plan starts with “Monthly funds”: the money you have for this month, what's on hand and the salary that came. From it you set aside the savings and investment plan and spread the rest as limits across categories. So you see how much you can still spend this month, not only how much has gone. Planning is switched on here: Settings → Preferences → Features.", "Main → Plan"),
-   None, "monthly-plan"),
+   ("rows", [("Кошти на місяць", "Monthly funds", "52 000 ₴", "₴52,000", ""),
+             ("План заощаджень", "Savings plan", "−10 000 ₴", "−₴10,000", ""),
+             ("Інвестиційний план", "Investment plan", "−5 000 ₴", "−₴5,000", ""),
+             ("Ліміти по категоріях", "Category limits", "−30 000 ₴", "−₴30,000", ""),
+             ("Лишається вільних", "Left free", "7 000 ₴", "₴7,000", "total")]), None, "monthly-plan"),
   ("idea-drafts",
    ("Чому чернетки, а не все само", "Покупки з Apple Pay, сповіщення банків і чеки Dibsly ловить сам, але не записує одразу: вони чекають в «Активності». Баланс зміниться тільки після твого «Зберегти». Так нічого не потрапляє в облік за твоєю спиною, а дивну суму чи не ту категорію видно до того, як вони зіпсують місяць.", "Головна → Активність"),
    ("Why drafts and not all by itself", "Dibsly catches Apple Pay purchases, bank notifications and receipts by itself but doesn't record them at once: they wait in Activity. The balance changes only after you tap Save. So nothing gets into your books behind your back, and an odd amount or the wrong category shows before it spoils the month.", "Main → Activity"),
-   None, "apple-pay"),
+   ("steps", [("Apple Pay · Сільпо · 412 ₴", "Apple Pay · Silpo · ₴412"),
+              ("Чернетка в «Активності»: Продукти?", "A draft in Activity: Groceries?"),
+              ("«Зберегти»: баланс −412 ₴", "Save: balance −₴412")]), None, "apple-pay"),
   ("idea-brands",
    ("Бренд один раз, категорія назавжди", "Dibsly знає понад 400 брендів з логотипами. Вибери категорію для бренду один раз, і всі його покупки підуть туди. А категорію, яку не хочеш бачити в аналітиці, можна приховати: вона зникне з підсумків Аналітики, і більше ніде.", "Налаштування → Бренди"),
    ("A brand once, its category for good", "Dibsly knows over 400 brands with their logos. Pick a category for a brand once and all its purchases go there. And a category you don't want in your analytics can be hidden: it leaves the Analytics totals and nothing else.", "Settings → Brands"),
-   None, "brands"),
+   ("rows", [("Сільпо → Продукти", "Silpo → Groceries", "23 покупки", "23 purchases", ""),
+             ("Uklon → Таксі", "Uklon → Taxi", "14 поїздок", "14 rides", ""),
+             ("ОККО → Авто", "OKKO → Car", "6 заправок", "6 fill-ups", ""),
+             ("Ryanair → Подорожі", "Ryanair → Travel", "2 квитки", "2 tickets", "")]), None, "brands"),
   ("idea-goals",
    ("Цілі на заощадженнях, а не на картці", "Ціль нічого не забирає з рахунків: вона показує, які з твоїх заощаджень та інвестицій працюють на неї. Гроші під рукою в цілях не беруть участі: щоб наблизитися до цілі, переказуєш гроші на її рахунок. Кілька цілей наповнюються по черзі: спершу запас, як-от подушка, далі в твоєму порядку. А Dibsly каже, в якому місяці дійдеш до кожної в такому темпі.", "Головна → Цілі"),
    ("Goals live on savings, not on your card", "A goal takes nothing off your accounts: it shows which of your savings and investments work for it. On hand money takes no part: to get closer, you move money to the goal's account. Several goals fill in turn: a reserve such as a cushion first, then in your order. And Dibsly tells you the month you reach each one at your pace.", "Main → Goals"),
-   None, "goals"),
+   None, ("phone", "goals-full"), "goals"),
   ("idea-growth",
    ("Поповнення не прибуток", "Закинув 1 000 $ на брокерський рахунок, і портфель виріс на 1 000 $, але ти не заробив ані цента. Тому Dibsly показує ріст окремо від поповнень: скільки ти вклав і скільки заробили самі гроші, а дивіденди разом з утриманим податком. Так само рахується Капітал в Аналітиці.", "вкладка Інвестиції"),
    ("A deposit isn't profit", "You put $1,000 into your broker account and the portfolio grew by $1,000, but you didn't earn a cent. So Dibsly shows growth apart from deposits: how much you put in and how much the money earned by itself, with dividends and the tax withheld. Capital in Analytics counts the same way.", "the Investments tab"),
-   None, "portfolio"),
+   ("live-growth", {"deposits": 10000, "value": 11200}), None, "portfolio"),
   ("idea-shared",
    ("Спільний рахунок на двох", "Спільним стає окремий рахунок, а не весь Dibsly: його бачите обоє, видно, хто скільки вніс і хто що витратив, а коли інший щось додає, приходить сповіщення. Твої особисті рахунки лишаються тільки твоїми. Вистачить Premium в одного з вас.", "Профіль → Спільний доступ"),
    ("A shared account for two", "You share one account, not your whole Dibsly: you both see it, who put in what and who spent what, and a notification comes when the other adds something. Your personal accounts stay yours alone. One Premium is enough for both of you.", "Profile → Sharing"),
-   None, "shared"),
+   None, ("phone", "shared"), "shared"),
   ("idea-save",
    ("Нічого без твого «так»", "Чат з Dibsly, твій Claude чи ChatGPT спершу показують, що саме зміниться, і записують тільки після «Зберегти» чи твого «так». У чаті Dibsly зміну скасовує кнопка під карткою. Операції, виписки, угоди, категорії й рахунки, змінені через Claude чи ChatGPT, лежать у журналі ШІ на сайті, звідки їх можна скасувати.", None),
    ("Nothing without your yes", "The chat with Dibsly, your Claude or ChatGPT first show exactly what will change and write it only after Save or your yes. In the Dibsly chat a button under the card undoes the change. Operations, statements, trades, categories and accounts changed through Claude or ChatGPT are kept in the AI journal on the website, where they can be undone.", None),
-   None, "changes"),
+   None, ("convo", [("me", "Перенеси поїздки Uber у Таксі", "Move my Uber rides to Taxi"),
+                    ("ai", "12 операцій з «Транспорт» у «Таксі». Зберегти?", "12 operations from Transport to Taxi. Save?"),
+                    ("me", "Зберегти", "Save"),
+                    ("ai", "Готово. Передумаєш: «Скасувати» під карткою.", "Done. Changed your mind? Undo is under the card.")]), "changes"),
 ])
+
+# «Що далі» (owner, 2026-10-21): the public roadmap without dates; ids are the server's ROADMAP_ITEMS
+# (`Server/sync/src/siteFeedback.ts` in dibsly-ios). Column (uk, en), then items: id, uk title, en title, uk text, en text.
+ROADMAP = [
+ (("Робимо зараз", "Building now"), [
+  ("web-chat", "Чат з Dibsly на сайті", "Chat with Dibsly on the website",
+   "Знайти, порахувати чи змінити щось складне на великому екрані.", "Find, count or change something tricky on a big screen."),
+  ("web-brands", "Бренди на сайті", "Brands on the website",
+   "Усі бренди з логотипами й категоріями, з пошуком.", "Every brand with its logo and category, with search."),
+ ]),
+ (("Далі", "Next"), [
+  ("undo-plans", "Скасування для планів, календаря й цілей", "Undo for plans, the calendar and goals",
+   "Як уже є для операцій: змінив через ШІ, передумав, скасував.", "As it already works for operations: changed through the AI, changed your mind, undone."),
+  ("mono-one-tap", "monobank в один дотик", "monobank in one tap",
+   "Підключення без токена, який треба копіювати руками.", "Connecting without a token copied by hand."),
+ ]),
+ (("Потім", "Later"), [
+  ("fop", "ФОП", "Sole traders (ФОП)",
+   "Дохід у валюті за курсом НБУ, єдиний податок і військовий збір, квартальні дедлайни.",
+   "Foreign-currency income at the NBU rate, the single tax and the military levy, quarterly deadlines."),
+  ("ipad-mac", "iPad і Mac", "iPad and Mac", "", ""),
+  ("android", "Android", "Android", "", ""),
+ ]),
+ (("Думаємо", "Thinking about"), [
+  ("shared-plans", "Спільні плани на двох", "Shared plans for two", "", ""),
+  ("brokers", "Брокерські рахунки напряму", "Broker accounts directly",
+   "Interactive Brokers і Freedom без звітів вручну.", "Interactive Brokers and Freedom without reports by hand."),
+  ("more-banks", "Більше банків", "More banks", "", ""),
+  ("guess-brand", "«Вгадай бренд»", "“Guess the brand”", "Гра: впізнай бренд за логотипом.", "A game: tell the brand by its logo."),
+ ]),
+]
 
 PRIVACY = ("privacy", "Приватність", "Privacy", [
   (("Без паролів від банку", "Dibsly не просить пароль і не може переказати гроші. Токен monobank дає доступ лише до виписки."),
@@ -240,19 +302,60 @@ def visual(v, lang, alt):
     raise ValueError(kind)
 
 
+LIVE = {
+    "uk": dict(hand="Під рукою", income="Дохід місяця", spending="Витрати місяця", savings="Заощадження",
+               tap="Натисни на операції й дивись на цифри", count="Враховувати в балансі",
+               deposits="Вклав", value="Портфель", growth="Заробили",
+               deposit="Поповнити на 1 000 $", market="Ринок +5%", reset="Спочатку"),
+    "en": dict(hand="On hand", income="Month's income", spending="Month's spending", savings="Savings",
+               tap="Tap the operations and watch the numbers", count="Count in balance",
+               deposits="Put in", value="Portfolio", growth="Earned",
+               deposit="Top up $1,000", market="Market +5%", reset="Start over"),
+}
+
+
+def total(key, label, currency="₴"):
+    return f'<div class="tot"><span>{e(label)}</span><b data-total="{key}" data-currency="{currency}"></b></div>'
+
+
 def example(x, lang):
     if not x:
         return ""
     kind, rows = x
     uk = lang == "uk"
+    w = LIVE[lang]
     if kind == "pockets":
         cells = "".join(f'<div class="pocket{" main" if main else ""}"><span>{e(a if uk else b)}</span><b>{e(c if uk else d)}</b>'
                         f'<i>{e(f if uk else g)}</i></div>' for a, b, c, d, f, g, main in rows)
         return f'<div class="iex pockets" aria-hidden="true">{cells}</div>'
-    if kind == "ledger":
-        cells = "".join(f'<div class="row {k}"><span>{e(a if uk else b)}</span><b>{e(c if uk else d)}</b><i>{e(f if uk else g)}</i></div>'
-                        for a, b, c, d, f, g, k in rows)
-        return f'<div class="iex ledger" aria-hidden="true">{cells}</div>'
+    if kind == "live-ledger":
+        start, items = rows
+        cells = "".join(f'<button type="button" class="row {k}" aria-pressed="false" data-effect=\'{json.dumps(fx)}\'>'
+                        f'<span>{e(a if uk else b)}</span><b>{e(c if uk else d)}</b><i>{e(f if uk else g)}</i></button>'
+                        for a, b, c, d, f, g, k, fx in items)
+        tots = "".join(total(key, w[key]) for key in ("hand", "income", "spending", "savings"))
+        return (f'<div class="iex live live-ledger" data-start=\'{json.dumps(start)}\'><div class="tots">{tots}</div>'
+                f'<p class="hint">{e(w["tap"])}</p><div class="ledger">{cells}</div></div>')
+    if kind == "live-switch":
+        start, amount, uk_name, en_name = rows
+        money = f"{amount:,}".replace(",", "\u00a0") + "\u00a0₴" if uk else f"₴{amount:,}"
+        return (f'<div class="iex live live-switch" data-start=\'{json.dumps(start)}\' data-account="{amount}">'
+                f'<label class="switch-row"><span><b>{e(uk_name if uk else en_name)}</b><i>{e(money)}</i></span>'
+                f'<span class="toggle"><input type="checkbox" checked><span aria-hidden="true"></span></span>'
+                f'<em>{e(w["count"])}</em></label>'
+                f'<div class="tots two">{total("hand", w["hand"])}{total("income", w["income"])}</div></div>')
+    if kind == "live-growth":
+        tots = "".join(total(key, w[key], "$") for key in ("deposits", "value", "growth"))
+        buttons = "".join(f'<button type="button" class="chip" data-act="{act}">{e(w[act])}</button>' for act in ("deposit", "market", "reset"))
+        return (f'<div class="iex live live-growth" data-start=\'{json.dumps(rows)}\'><div class="tots three">{tots}</div>'
+                f'<div class="chips">{buttons}</div></div>')
+    if kind == "rows":
+        cells = "".join(f'<div class="row{" total" if flag else ""}"><span>{e(a if uk else b)}</span><b>{e(c if uk else d)}</b></div>'
+                        for a, b, c, d, flag in rows)
+        return f'<div class="iex sums" aria-hidden="true">{cells}</div>'
+    if kind == "steps":
+        cells = "".join(f'<li>{e(a if uk else b)}</li>' for a, b in rows)
+        return f'<ol class="iex steps" aria-hidden="true">{cells}</ol>'
     raise ValueError(kind)
 
 
@@ -260,14 +363,44 @@ def ideas(lang):
     t = L[lang]
     sid, uk, en, intro_uk, intro_en, items = IDEAS
     cards = []
-    for iid, ukf, enf, x, link in items:
+    for iid, ukf, enf, x, vis, link in items:
         h3, text, where = ukf if lang == "uk" else enf
         w = f'<p class="try"><b>{t["where"]}:</b> {e(where)}</p>' if where else ""
         a = f'<p class="fguide"><a href="#{link}">{t["more_link"]}</a></p>' if link else ""
-        cls = "icard reveal" + (" wide" if x else "")
-        cards.append(f'<article class="{cls}" id="{iid}"><h3>{e(h3)}</h3><p class="desc">{e(text)}</p>{example(x, lang)}{w}{a}</article>')
+        ex = example(x, lang)
+        v = visual(vis, lang, h3) if vis else ""
+        if v:
+            body = f'<div class="ftext"><h3>{e(h3)}</h3><p class="desc">{e(text)}</p>{w}{a}{ex}</div>{v}'
+        else:
+            body = f'<div class="ftext"><h3>{e(h3)}</h3><p class="desc">{e(text)}</p>{w}{a}</div><div class="fvisual">{ex}</div>'
+        cards.append(f'<article class="feature idea{"" if v else " exvis"} reveal" id="{iid}">{body}</article>')
     return (f'<section class="fsection" id="{sid}"><h2>{e(uk if lang == "uk" else en)}</h2>'
-            f'<p class="intro">{e(intro_uk if lang == "uk" else intro_en)}</p><div class="igrid">{"".join(cards)}</div></section>')
+            f'<p class="intro">{e(intro_uk if lang == "uk" else intro_en)}</p>{"".join(cards)}</section>')
+
+
+def roadmap(lang):
+    uk = lang == "uk"
+    t = L[lang]
+    cols = []
+    for (cuk, cen), items in ROADMAP:
+        rows = "".join(f'<li><div><h4>{e(a if uk else b)}</h4>{f"<p>{e(c if uk else d)}</p>" if (c if uk else d) else ""}</div>'
+                       f'<button type="button" class="want" data-item="{iid}" aria-pressed="false">'
+                       f'{e(t["want"])} <b></b></button></li>' for iid, a, b, c, d in items)
+        cols.append(f'<div class="rcol"><h3>{e(cuk if uk else cen)}</h3><ul>{rows}</ul></div>')
+    f = t["form"]
+    form = (f'<form class="missing-form" data-thanks="{e(f["thanks"])}" data-failed="{e(f["failed"])}" data-later="{e(f["later"])}" '
+            f'data-email="{e(f["email_bad"])}" novalidate>'
+            f'<h3>{e(f["title"])}</h3><p>{e(f["lead"])}</p>'
+            f'<label class="sr" for="missing-text">{e(f["title"])}</label>'
+            f'<textarea id="missing-text" name="text" rows="4" maxlength="2000" required placeholder="{e(f["placeholder"])}"></textarea>'
+            f'<div class="form-row"><label class="sr" for="missing-email">{e(f["email"])}</label>'
+            f'<input id="missing-email" name="email" type="email" autocomplete="email" placeholder="{e(f["email"])}">'
+            f'<button class="button primary" type="submit">{e(f["send"])}</button></div>'
+            f'<input class="trap" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">'
+            f'<p class="form-status" role="status"></p>'
+            f'<p class="form-note">{e(f["note"])} <a href="{t["privacy"]}">{e(f["privacy"])}</a></p></form>')
+    return (f'<section class="fsection" id="next"><h2>{e(t["next"])}</h2><p class="intro">{e(t["next_intro"])}</p>'
+            f'<div class="rgrid">{"".join(cols)}</div>{form}</section>')
 
 
 def build(lang):
@@ -292,6 +425,8 @@ def build(lang):
             g = f'<p class="fguide"><a href="{t["help"]}#{guide}">{t["guide"]}</a></p>' if guide else ""
             items.append(f'<article class="{cls}" id="{fid}"><div class="ftext">{tag}<h3>{e(h3)}</h3><p class="desc">{e(text)}</p>{w}{g}</div>{v}</article>')
         body.append(f'<section class="fsection" id="{sid}"><h2>{e(title)}</h2>' + "".join(items) + "</section>")
+    toc.append(f'<a href="#next">{e(t["next"])}</a>')
+    body.append(roadmap(lang))
     nav = "".join(f'<a href="{h}">{e(x)}</a>' for h, x in t["nav"])
     foot = "".join(f'<a href="{h}">{e(x)}</a>' for h, x in t["foot"])
     page = f'''<!doctype html>
@@ -362,6 +497,7 @@ def build(lang):
     </script>
     <script src="js/lottie_light.min.js" defer></script>
     <script src="v2/v2.js" defer></script>
+    <script src="v2/ideas.js" defer></script>
 </body>
 </html>
 '''
