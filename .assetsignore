@@ -6,3 +6,4 @@ wrangler.toml
 .assetsignore
 .wrangler
 node_modules
+tools

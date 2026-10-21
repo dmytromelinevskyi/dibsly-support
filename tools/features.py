@@ -5,24 +5,24 @@ ROOT = sys.argv[1]
 L = {
     "uk": dict(page="features-uk.html", other="features.html", other_lang="en", other_label="EN", home="./",
                title="Що вміє Dibsly", h1="Усе, що вміє Dibsly",
-               lead="Кожна можливість коротко, з прикладом і з тим, де її знайти в застосунку.",
-               free="Безкоштовно", pro="Premium", where="Де", guide="Інструкція", toc="Розділи",
+               lead="Ідеї, на яких стоїть Dibsly, і кожна можливість коротко: з прикладом і з тим, де її знайти в застосунку.",
+               free="Безкоштовно", pro="Premium", where="Де", guide="Інструкція", toc="Розділи", more_link="Докладніше",
                nav=[("index.html#ask", "Чат"), ("features-uk.html", "Можливості"), ("index.html#price", "Ціна"),
                     ("support-uk.html", "Підтримка")],
                store="Завантажити в App Store", more="Є питання? Напиши: ",
                foot=[("help-uk.html", "Інструкції"), ("support-uk.html", "Підтримка"), ("privacy-uk.html", "Конфіденційність"),
                      ("terms-uk.html", "Умови")], help="help-uk.html", privacy="privacy-uk.html",
-               desc="Що вміє Dibsly: рахунки, імпорт банків і Apple Pay, чат з Dibsly, аналітика, план, цілі, інвестиції, сайт і ChatGPT чи Claude."),
+               desc="Що вміє Dibsly і навіщо: кармани, що таке дохід і витрата, рахунки, імпорт банків і Apple Pay, чат з Dibsly, аналітика, план, цілі, інвестиції, сайт і ChatGPT чи Claude."),
     "en": dict(page="features.html", other="features-uk.html", other_lang="uk", other_label="UK", home="en.html",
                title="What Dibsly can do", h1="Everything Dibsly can do",
-               lead="Every feature in short, with an example and where to find it in the app.",
-               free="Free", pro="Premium", where="Where", guide="Guide", toc="Sections",
+               lead="The ideas Dibsly stands on, and every feature in short: with an example and where to find it in the app.",
+               free="Free", pro="Premium", where="Where", guide="Guide", toc="Sections", more_link="More",
                nav=[("en.html#ask", "Chat"), ("features.html", "Features"), ("en.html#price", "Price"),
                     ("support.html", "Support")],
                store="Download on the App Store", more="Questions? Write to ",
                foot=[("help.html", "Guides"), ("support.html", "Support"), ("privacy.html", "Privacy"), ("terms.html", "Terms")],
                help="help.html", privacy="privacy.html",
-               desc="What Dibsly can do: accounts, bank imports and Apple Pay, the chat with Dibsly, analytics, plan, goals, investments, the website and ChatGPT or Claude."),
+               desc="What Dibsly can do and why: pockets, what counts as income and spending, accounts, bank imports and Apple Pay, the chat with Dibsly, analytics, plan, goals, investments, the website and ChatGPT or Claude."),
 }
 
 # (section id, uk title, en title, [features])
@@ -134,6 +134,68 @@ S = [
    None, "backup"),
  ]),
 ]
+# The ideas behind the features (owner, 2026-10-21: «не только що вміє, а еще и функционал, типо зачем нам нужны
+# карманы»), checked against the app's code: section id, titles, intros, then
+# idea: id, uk (h3, text, where), en (h3, text, where), example, the feature it links to
+IDEAS = ("ideas", "Як Dibsly думає про гроші", "How Dibsly thinks about money",
+ "Головне правило Dibsly: не змішувати гроші, якими ти живеш щодня, з тим, що відкладаєш чи інвестуєш. На повсякденному "
+ "балансі видно, як рухаються твої гроші, а заощадження й інвестиції лежать окремо: це не ті гроші, які треба щодня "
+ "смикати. З цього правила виростає решта.",
+ "Dibsly's main rule: don't mix the money you live on every day with what you put aside or invest. The everyday "
+ "balance shows how your money moves, while savings and investments sit apart: that's not money you need to keep "
+ "poking at. Everything else grows from this rule.", [
+  ("idea-pockets",
+   ("Навіщо три кармани", "Кожен рахунок лежить в одному кармані. «Під рукою»: картки й готівка на щодень. «Заощадження»: те, що відкладаєш. «Інвестиції»: брокерські рахунки. Велика цифра на Головній і доходи та витрати місяця рахуються тільки з «Під рукою». Тож відкладені 50 000 ₴ не підморгують тобі в п'ятницю ввечері, а місяць показує, як ти справді живеш.", "Налаштування → Рахунки → рахунок"),
+   ("Why three pockets", "Every account sits in one pocket. On hand: cards and cash for every day. Savings: what you put aside. Investments: broker accounts. The big number on Main and the month's income and spending count only On hand. So the ₴50,000 you put aside doesn't wink at you on a Friday night, and the month shows how you really live.", "Settings → Accounts → an account"),
+   ("pockets", [("Під рукою", "On hand", "18 400 ₴", "₴18,400", "на Головній", "on Main", True),
+                ("Заощадження", "Savings", "50 000 ₴", "₴50,000", "окремо", "apart", False),
+                ("Інвестиції", "Investments", "3 200 $", "$3,200", "окремо", "apart", False)]), "all-accounts"),
+  ("idea-income",
+   ("Що таке дохід і витрата", "Дохід і витрата: гроші, що прийшли ззовні чи пішли назовні. Зарплата, подарунок, кава, оренда. Переказ між своїми рахунками й обмін валют нічого не змінюють: гроші переклалися з кишені в кишеню, і Dibsly сам впізнає такі перекази у виписках. Переказ у «Заощадження» теж не витрата: ти ці гроші не витратив, а відклав. Купівля й продаж акцій живуть в Інвестиціях, а дивіденди там рахуються доходом, податок і комісія брокера витратою.", None),
+   ("What counts as income and spending", "Income and spending are money that came in from outside or went out. Salary, a gift, coffee, rent. A transfer between your own accounts or a currency exchange changes nothing: the money moved from one pocket to another, and Dibsly spots such transfers in statements by itself. A transfer to Savings isn't spending either: you didn't spend that money, you put it aside. Buying and selling shares live in Investments, where dividends count as income and the tax and the broker's fee as spending.", None),
+   ("ledger", [("Зарплата", "Salary", "+40 000 ₴", "+₴40,000", "дохід", "income", "in"),
+               ("Кава", "Coffee", "−85 ₴", "−₴85", "витрата", "spending", "out"),
+               ("monobank → ПриватБанк", "monobank → PrivatBank", "5 000 ₴", "₴5,000", "не рахується", "not counted", "same"),
+               ("У «Заощадження»", "To Savings", "10 000 ₴", "₴10,000", "не витрата", "not spending", "same"),
+               ("Купівля акцій", "Buying shares", "500 $", "$500", "в Інвестиціях", "in Investments", "same")]), None),
+  ("idea-balance",
+   ("Рахунок на щодень, але не в загальній цифрі", "Буває рахунок, яким ти користуєшся, але не хочеш бачити в загальній цифрі: рахунок ФОП, куди платять клієнти, чи доларовий рахунок. Залиш його в «Під рукою» й вимкни «Враховувати в балансі». Його баланс зникне з великої цифри, а гроші, що приходять на нього, все одно будуть доходом місяця. Переказ з нього на твою картку чи продаж валюти доходом вдруге не стануть: це ті самі гроші.", "Налаштування → Рахунки → рахунок → «Враховувати в балансі»"),
+   ("An everyday account outside the big number", "Some accounts you use but don't want in the total: a sole-trader account clients pay into, or a dollar account. Keep it in On hand and switch off “Count in balance”. Its balance leaves the big number, while money arriving on it is still the month's income. Moving it to your card or selling the currency won't count as income a second time: it's the same money.", "Settings → Accounts → an account → “Count in balance”"),
+   None, None),
+  ("idea-salary-month",
+   ("Місяць від зарплати до зарплати", "Якщо зарплата щоразу приходить в інший день, місяць з 1-го числа плутає: частина витрат до зарплати потрапляє не туди. Вибери «Із зарплати», і місяць триватиме від однієї зарплати до наступної. Затрималася зарплата: місяць просто йде далі, поки вона не прийде. Головна, Історія, Аналітика й план рахують однаково.", "Налаштування → Параметри → «Початок місяця»"),
+   ("A month from payday to payday", "If your salary comes on a different day each time, a month from the 1st gets it wrong: part of the spending before payday lands in the wrong month. Choose “With the salary” and a month runs from one salary to the next. Salary late? The month just goes on until it comes. Main, History, Analytics and the plan all count the same way.", "Settings → Preferences → “Month starts on”"),
+   None, None),
+  ("idea-plan",
+   ("План з того, що прийшло", "План починається з «Коштів на місяць»: скільки грошей у тебе на цей місяць, те, що під рукою, і зарплата, що прийшла. З них ти відкладаєш план заощаджень та інвестицій, а решту розкладаєш лімітами по категоріях. Так видно, скільки ще можна витратити до кінця місяця, а не тільки скільки вже пішло. Планування вмикається тут: Налаштування → Параметри → Функції.", "Головна → План"),
+   ("A plan from what came in", "A plan starts with “Monthly funds”: the money you have for this month, what's on hand and the salary that came. From it you set aside the savings and investment plan and spread the rest as limits across categories. So you see how much you can still spend this month, not only how much has gone. Planning is switched on here: Settings → Preferences → Features.", "Main → Plan"),
+   None, "monthly-plan"),
+  ("idea-drafts",
+   ("Чому чернетки, а не все само", "Покупки з Apple Pay, сповіщення банків і чеки Dibsly ловить сам, але не записує одразу: вони чекають в «Активності». Баланс зміниться тільки після твого «Зберегти». Так нічого не потрапляє в облік за твоєю спиною, а дивну суму чи не ту категорію видно до того, як вони зіпсують місяць.", "Головна → Активність"),
+   ("Why drafts and not all by itself", "Dibsly catches Apple Pay purchases, bank notifications and receipts by itself but doesn't record them at once: they wait in Activity. The balance changes only after you tap Save. So nothing gets into your books behind your back, and an odd amount or the wrong category shows before it spoils the month.", "Main → Activity"),
+   None, "apple-pay"),
+  ("idea-brands",
+   ("Бренд один раз, категорія назавжди", "Dibsly знає понад 400 брендів з логотипами. Вибери категорію для бренду один раз, і всі його покупки підуть туди. А категорію, яку не хочеш бачити в аналітиці, можна приховати: вона зникне з підсумків Аналітики, і більше ніде.", "Налаштування → Бренди"),
+   ("A brand once, its category for good", "Dibsly knows over 400 brands with their logos. Pick a category for a brand once and all its purchases go there. And a category you don't want in your analytics can be hidden: it leaves the Analytics totals and nothing else.", "Settings → Brands"),
+   None, "brands"),
+  ("idea-goals",
+   ("Цілі на заощадженнях, а не на картці", "Ціль нічого не забирає з рахунків: вона показує, які з твоїх заощаджень та інвестицій працюють на неї. Гроші під рукою в цілях не беруть участі: щоб наблизитися до цілі, переказуєш гроші на її рахунок. Кілька цілей наповнюються по черзі: спершу запас, як-от подушка, далі в твоєму порядку. А Dibsly каже, в якому місяці дійдеш до кожної в такому темпі.", "Головна → Цілі"),
+   ("Goals live on savings, not on your card", "A goal takes nothing off your accounts: it shows which of your savings and investments work for it. On hand money takes no part: to get closer, you move money to the goal's account. Several goals fill in turn: a reserve such as a cushion first, then in your order. And Dibsly tells you the month you reach each one at your pace.", "Main → Goals"),
+   None, "goals"),
+  ("idea-growth",
+   ("Поповнення не прибуток", "Закинув 1 000 $ на брокерський рахунок, і портфель виріс на 1 000 $, але ти не заробив ані цента. Тому Dibsly показує ріст окремо від поповнень: скільки ти вклав і скільки заробили самі гроші, а дивіденди разом з утриманим податком. Так само рахується Капітал в Аналітиці.", "вкладка Інвестиції"),
+   ("A deposit isn't profit", "You put $1,000 into your broker account and the portfolio grew by $1,000, but you didn't earn a cent. So Dibsly shows growth apart from deposits: how much you put in and how much the money earned by itself, with dividends and the tax withheld. Capital in Analytics counts the same way.", "the Investments tab"),
+   None, "portfolio"),
+  ("idea-shared",
+   ("Спільний рахунок на двох", "Спільним стає окремий рахунок, а не весь Dibsly: його бачите обоє, видно, хто скільки вніс і хто що витратив, а коли інший щось додає, приходить сповіщення. Твої особисті рахунки лишаються тільки твоїми. Вистачить Premium в одного з вас.", "Профіль → Спільний доступ"),
+   ("A shared account for two", "You share one account, not your whole Dibsly: you both see it, who put in what and who spent what, and a notification comes when the other adds something. Your personal accounts stay yours alone. One Premium is enough for both of you.", "Profile → Sharing"),
+   None, "shared"),
+  ("idea-save",
+   ("Нічого без твого «так»", "Чат з Dibsly, твій Claude чи ChatGPT спершу показують, що саме зміниться, і записують тільки після «Зберегти» чи твого «так». У чаті Dibsly зміну скасовує кнопка під карткою. Операції, виписки, угоди, категорії й рахунки, змінені через Claude чи ChatGPT, лежать у журналі ШІ на сайті, звідки їх можна скасувати.", None),
+   ("Nothing without your yes", "The chat with Dibsly, your Claude or ChatGPT first show exactly what will change and write it only after Save or your yes. In the Dibsly chat a button under the card undoes the change. Operations, statements, trades, categories and accounts changed through Claude or ChatGPT are kept in the AI journal on the website, where they can be undone.", None),
+   None, "changes"),
+])
+
 PRIVACY = ("privacy", "Приватність", "Privacy", [
   (("Без паролів від банку", "Dibsly не просить пароль і не може переказати гроші. Токен monobank дає доступ лише до виписки."),
    ("No bank passwords", "Dibsly never asks for a password and cannot move money. A monobank token only reads the statement.")),
@@ -178,9 +240,39 @@ def visual(v, lang, alt):
     raise ValueError(kind)
 
 
+def example(x, lang):
+    if not x:
+        return ""
+    kind, rows = x
+    uk = lang == "uk"
+    if kind == "pockets":
+        cells = "".join(f'<div class="pocket{" main" if main else ""}"><span>{e(a if uk else b)}</span><b>{e(c if uk else d)}</b>'
+                        f'<i>{e(f if uk else g)}</i></div>' for a, b, c, d, f, g, main in rows)
+        return f'<div class="iex pockets" aria-hidden="true">{cells}</div>'
+    if kind == "ledger":
+        cells = "".join(f'<div class="row {k}"><span>{e(a if uk else b)}</span><b>{e(c if uk else d)}</b><i>{e(f if uk else g)}</i></div>'
+                        for a, b, c, d, f, g, k in rows)
+        return f'<div class="iex ledger" aria-hidden="true">{cells}</div>'
+    raise ValueError(kind)
+
+
+def ideas(lang):
+    t = L[lang]
+    sid, uk, en, intro_uk, intro_en, items = IDEAS
+    cards = []
+    for iid, ukf, enf, x, link in items:
+        h3, text, where = ukf if lang == "uk" else enf
+        w = f'<p class="try"><b>{t["where"]}:</b> {e(where)}</p>' if where else ""
+        a = f'<p class="fguide"><a href="#{link}">{t["more_link"]}</a></p>' if link else ""
+        cls = "icard reveal" + (" wide" if x else "")
+        cards.append(f'<article class="{cls}" id="{iid}"><h3>{e(h3)}</h3><p class="desc">{e(text)}</p>{example(x, lang)}{w}{a}</article>')
+    return (f'<section class="fsection" id="{sid}"><h2>{e(uk if lang == "uk" else en)}</h2>'
+            f'<p class="intro">{e(intro_uk if lang == "uk" else intro_en)}</p><div class="igrid">{"".join(cards)}</div></section>')
+
+
 def build(lang):
     t = L[lang]
-    toc, body = [], []
+    toc, body = [f'<a href="#{IDEAS[0]}">{e(IDEAS[1] if lang == "uk" else IDEAS[2])}</a>'], [ideas(lang)]
     for sid, uk, en, features in S + [PRIVACY]:
         title = uk if lang == "uk" else en
         toc.append(f'<a href="#{sid}">{e(title)}</a>')
