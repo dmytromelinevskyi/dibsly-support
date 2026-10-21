@@ -6,7 +6,7 @@ L = {
     "uk": dict(page="features-uk.html", other="features.html", other_lang="en", other_label="EN", home="./",
                title="Що вміє Dibsly", h1="Усе, що вміє Dibsly",
                lead="Ідеї, на яких стоїть Dibsly, і кожна можливість коротко: з прикладом і з тим, де її знайти в застосунку.",
-               free="Безкоштовно", pro="Premium", where="Де", guide="Інструкція", toc="Розділи", more_link="Докладніше",
+               free="Безкоштовно", pro="Premium", where="Де", guide="Інструкція", toc="Розділи", more_link="Докладніше", signin="Увійти",
                want="Хочу це", next="Що далі",
                next_intro="Що ми робимо зараз і що буде потім. Дат не обіцяємо: робимо, поки не стане добре. Натисни «Хочу це» на тому, що тобі потрібно найбільше, і ми знатимемо, з чого почати.",
                form=dict(title="Чого тобі не вистачає?", lead="Розкажи, а ми подумаємо, як зробити це круто.",
@@ -25,7 +25,7 @@ L = {
     "en": dict(page="features.html", other="features-uk.html", other_lang="uk", other_label="UK", home="en.html",
                title="What Dibsly can do", h1="Everything Dibsly can do",
                lead="The ideas Dibsly stands on, and every feature in short: with an example and where to find it in the app.",
-               free="Free", pro="Premium", where="Where", guide="Guide", toc="Sections", more_link="More",
+               free="Free", pro="Premium", where="Where", guide="Guide", toc="Sections", more_link="More", signin="Sign in",
                want="I want this", next="What's next",
                next_intro="What we're building now and what comes later. No dates promised: we build until it's good. Tap “I want this” on what you need most, and we'll know where to start.",
                form=dict(title="What are you missing?", lead="Tell us, and we'll think about how to make it great.",
@@ -459,6 +459,7 @@ def build(lang):
             <nav class="nav-links" aria-label="{t["toc"]}">{nav}</nav>
             <a class="lang" href="{t["other"]}" hreflang="{t["other_lang"]}" onclick="try {{ localStorage.setItem('dibsly.site.lang', '{t["other_lang"]}'); }} catch (error) {{}}">{t["other_label"]}</a>
             <button class="theme" type="button" aria-label="{"Темна чи світла тема" if lang == "uk" else "Dark or light theme"}">◐</button>
+            <a class="button quiet small signin" href="https://my.dibslyapp.com">{t["signin"]}</a>
             <a class="button primary small" href="https://apps.apple.com/app/id6765870838">App Store</a>
         </div>
     </header>

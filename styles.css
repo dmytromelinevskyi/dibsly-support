@@ -190,6 +190,10 @@ code {
     color: var(--ink);
 }
 
+.site-nav .portal {
+    color: var(--link);
+}
+
 .site-nav .lang-switch {
     font-size: 13px;
     padding: 1px 9px;

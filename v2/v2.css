@@ -85,6 +85,9 @@ section { padding: clamp(72px, 10vw, 120px) 0; }
 .lang, .theme { color: var(--ink-2); font: 600 14px var(--font); background: none; border: 0; padding: 6px; cursor: pointer; }
 .theme { font-size: 17px; line-height: 1; }
 @media (max-width: 860px) { .nav-links { display: none; } .lang { margin-left: auto; } }
+/* The portal (owner, 2026-10-21: «в хедер нужно добавить кнопку входа в мой портал»): «Увійти» beside App Store; on a
+   narrow phone the header keeps one line by tighter gaps and the theme switch left to the footer's page. */
+@media (max-width: 560px) { .nav .wrap { gap: 8px; } .nav .theme { display: none; } .nav .button.small { padding: 0 13px; } }
 
 /* Hero: what Dibsly says on the left, a conversation with him on the right. */
 .hero { padding: 40px 0 72px; }
