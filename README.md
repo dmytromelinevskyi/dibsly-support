@@ -78,9 +78,9 @@ Since 2026-10-10 the same files are also served at **<https://dibslyapp.com>** b
 links `dibslyapp.com/s/<code>`: the bill is kept 30 days by Dibsly's server (`dibsly-sync`, service binding) and put
 into `split.html`. GitHub Pages keeps serving older links.
 
-**Two policies while 1.0 is in review (owner, 2026-10-12):** GitHub Pages serves `main` — the policy 1.0 links to —
-and stays as it is. dibslyapp.com, which 1.1 links to, is deployed from the branch `dibslyapp-1.1` (the 1.1 policy:
-AI assistants, the account's language). Merge the branch into `main` once 1.1 is out.
+**One branch, `main` (owner, 2026-10-21):** `dibslyapp-1.1` was merged and deleted — 1.0 never shipped, so the
+1.0.1 policy is the only one. dibslyapp.com is deployed from `main` (`npx wrangler deploy`); GitHub Pages serves the
+same `main`.
 
 - Support: <https://dmytromelinevskyi.github.io/dibsly-support/>
 - Privacy Policy: <https://dmytromelinevskyi.github.io/dibsly-support/privacy.html>
