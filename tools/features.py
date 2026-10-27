@@ -89,8 +89,8 @@ S = [
  ]),
  ("chat", "Чат з Dibsly", "Chat with Dibsly", [
   ("ask", "free",
-   ("Питай про свої гроші", "«На що пішло найбільше?», «Скільки я витратив на таксі цього року?», «Як там мої цілі?»: Dibsly рахує на телефоні з твоїх даних і відповідає твоїми цифрами, з картками й графіками. 5 питань на місяць безкоштовно, більше з Premium.", "кнопка Dibsly над «+» на Головній"),
-   ("Ask about your money", "“What did most of it go on?”, “How much did I spend on taxis this year?”, “How are my goals?”: Dibsly works it out on your phone from your data and answers in your own figures, with cards and charts. 5 questions a month free, more with Premium.", "the Dibsly button above “+” on Main"),
+   ("Питай про свої гроші", "«На що пішло найбільше?», «Скільки я витратив на таксі цього року?», «Як там мої цілі?»: Dibsly рахує на телефоні з твоїх даних і відповідає твоїми цифрами, з картками й графіками. 20 питань на місяць безкоштовно, більше з Premium.", "кнопка Dibsly над «+» на Головній"),
+   ("Ask about your money", "“What did most of it go on?”, “How much did I spend on taxis this year?”, “How are my goals?”: Dibsly works it out on your phone from your data and answers in your own figures, with cards and charts. 20 questions a month free, more with Premium.", "the Dibsly button above “+” on Main"),
    ("phone", "chat"), None),
   ("changes", "free",
    ("Змінює тільки після «Зберегти»", "«Запиши каву 85», «перенеси поїздки Uber у Таксі», «перейменуй рахунок»: Dibsly покаже картку зі змінами, а запише лише після твого «Зберегти». Кожну зміну можна скасувати.", None),
