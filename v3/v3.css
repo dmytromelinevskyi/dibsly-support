@@ -141,25 +141,29 @@ main { position: relative; z-index: 2; overflow-x: clip; }
 /* The hero phone's screen: Main's long strip scrolls under the app's own bar and tab bar, drawn live so the soft edge
    above and the glass below show what passes under them, as in the app (owner, 2026-10-28). Sizes in the app's points:
    --pt is one of the 402 points of the screen's width. */
-.screen { position: relative; width: 100%; height: 100%; border-radius: 41px; overflow: hidden; background: #0F0D0C; container-type: inline-size; }
+.screen { position: relative; width: 100%; height: 100%; border-radius: 41px; overflow: hidden; background: #151412; container-type: inline-size; }
 .screen { --pt: calc(100cqw / 402); }
 .screen .screen-long { position: absolute; left: 0; top: 12.59%; width: 100%; height: auto; border-radius: 0; object-fit: initial; will-change: transform; }
-.ios-top { position: absolute; left: 0; right: 0; top: 0; height: calc(150 * var(--pt)); z-index: 2; color: #F6EBDD; pointer-events: none;
-    background: linear-gradient(rgba(15, 13, 12, 0.97) 0, rgba(15, 13, 12, 0.9) calc(80 * var(--pt)), rgba(15, 13, 12, 0.55) calc(112 * var(--pt)), rgba(15, 13, 12, 0) 100%); }
+/* The bar and the header measured on v3/scenes/uk-a-main.jpg (2026-10-28): the app's background (#151412), opaque down
+   to the strip's top with a short soft edge and no shadow over «Під рукою»; the time centred at 32.8 pt, the icons
+   12.6 pt high ending 32 pt from the right, the capsule 62–106 pt and 17 pt from the right. */
+.ios-top { position: absolute; left: 0; right: 0; top: 0; height: calc(114 * var(--pt)); z-index: 2; color: #F6EBDD; pointer-events: none;
+    background: linear-gradient(#151412 0, #151412 calc(102 * var(--pt)), rgba(21, 20, 18, 0) 100%); }
 .ios-top::before { content: ""; position: absolute; inset: 0; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
     -webkit-mask: linear-gradient(#000 60%, transparent); mask: linear-gradient(#000 60%, transparent); z-index: -1; }
-.ios-status { position: absolute; left: calc(50 * var(--pt)); right: calc(30 * var(--pt)); top: calc(20 * var(--pt)); display: flex; justify-content: space-between; align-items: center; font-family: -apple-system, "SF Pro Text", var(--text); }
-.ios-status b { font-size: calc(17 * var(--pt)); font-weight: 600; letter-spacing: -0.01em; }
-.ios-icons { display: flex; gap: calc(6 * var(--pt)); align-items: center; }
-.ios-icons svg { height: calc(12 * var(--pt)); width: auto; fill: #F6EBDD; }
-.ios-battery { position: relative; width: calc(26 * var(--pt)); height: calc(12.5 * var(--pt)); border-radius: calc(4 * var(--pt)); background: rgba(246, 235, 221, 0.35); }
+.ios-status { position: absolute; left: calc(50 * var(--pt)); right: calc(32 * var(--pt)); top: calc(23.1 * var(--pt)); height: calc(17.5 * var(--pt)); display: flex; justify-content: space-between; align-items: center; font-family: -apple-system, "SF Pro Text", var(--text); }
+.ios-status b { line-height: 1; font-size: calc(17.5 * var(--pt)); font-weight: 600; letter-spacing: -0.01em; }
+.ios-icons { position: relative; top: calc(1.15 * var(--pt)); display: flex; gap: calc(7.7 * var(--pt)); align-items: center; }
+.ios-icons svg { height: calc(12.6 * var(--pt)); width: auto; fill: #F6EBDD; }
+.ios-battery { position: relative; margin-right: calc(2.6 * var(--pt)); width: calc(26.7 * var(--pt)); height: calc(13 * var(--pt)); border-radius: calc(4.2 * var(--pt)); background: rgba(246, 235, 221, 0.35); }
+.ios-battery::after { content: ""; position: absolute; left: calc(100% + 1 * var(--pt)); top: 32%; width: calc(1.6 * var(--pt)); height: 36%; border-radius: 0 calc(1 * var(--pt)) calc(1 * var(--pt)) 0; background: rgba(246, 235, 221, 0.35); }
 .ios-battery i { position: absolute; inset: calc(1.5 * var(--pt)); border-radius: calc(2.5 * var(--pt)); background: #F6EBDD; }
-.ios-header { position: absolute; left: calc(17 * var(--pt)); right: calc(17 * var(--pt)); top: calc(63 * var(--pt)); height: calc(42 * var(--pt)); display: flex; align-items: center; justify-content: space-between; }
-.ios-header > span:first-child { font-size: calc(16.5 * var(--pt)); color: #C9BDB1; font-family: -apple-system, "SF Pro Text", var(--text); font-weight: 500; }
-.ios-glass { display: flex; gap: calc(26 * var(--pt)); align-items: center; height: 100%; padding: 0 calc(15 * var(--pt)); border-radius: 999px; background: rgba(60, 55, 51, 0.55); border: 1px solid rgba(255, 255, 255, 0.08); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
-.ios-glass svg { width: calc(25 * var(--pt)); height: calc(25 * var(--pt)); color: #F6EBDD; }
+.ios-header { position: absolute; left: calc(17 * var(--pt)); right: calc(17 * var(--pt)); top: calc(62 * var(--pt)); height: calc(44 * var(--pt)); display: flex; align-items: center; justify-content: space-between; }
+.ios-header > span:first-child { line-height: 1; font-size: calc(15 * var(--pt)); color: #A4A4A6; font-family: -apple-system, "SF Pro Text", var(--text); font-weight: 500; }
+.ios-glass { display: flex; gap: calc(28.6 * var(--pt)); align-items: center; height: 100%; padding: 0 calc(7.9 * var(--pt)) 0 calc(9.4 * var(--pt)); border-radius: 999px; background: #373634; border: 1px solid rgba(255, 255, 255, 0.08); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+.ios-glass svg { width: calc(29.5 * var(--pt)); height: calc(29.5 * var(--pt)); color: #F6EBDD; }
 /* Signed in: the first letter on the brand's orange, as the app's profile circle. */
-.ios-avatar { width: calc(28 * var(--pt)); height: calc(28 * var(--pt)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-style: normal;
+.ios-avatar { width: calc(26 * var(--pt)); height: calc(26 * var(--pt)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-style: normal;
     font-family: ui-rounded, -apple-system, "SF Pro Rounded", var(--text); font-weight: 600; font-size: calc(13 * var(--pt)); color: #FF9A4D; background: rgba(255, 138, 61, 0.18); }
 /* Dibsly's own button above «+», as on Main. */
 .screen .ios-dibsly { position: absolute; left: calc(318.5 * var(--pt)); top: calc(-62 * var(--pt)); width: calc(61 * var(--pt)); height: calc(61 * var(--pt)); border-radius: 50%; object-fit: cover; }

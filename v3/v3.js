@@ -370,6 +370,8 @@
         var fx = {};
         ["banner", "cover", "hl", "tap", "touch", "app-toast"].forEach(function (name) { fx[name] = screen.querySelector(".fx ." + name); });
         var current = live, timeline = null, loop = null, depth = 1, playing = null, hand = null;
+        // A language whose «Activity» title takes two lines puts the first purchase lower (en: 15 points).
+        var activity = parseFloat(screen.getAttribute("data-activity-shift")) || 0;
 
         function travel() {
             var tabs = live.querySelector(".ios-tabbar");
@@ -452,9 +454,9 @@
                     show(tl, "a-main", "fade", 0);
                 }
                 tl.fromTo(fx.banner, { yPercent: -160, opacity: 1 }, { yPercent: 0, duration: 0.8, ease: "back.out(1.3)" }, 1.5);
-                mark(tl, 8, 545, 386, 46, 2.5, 1.8);
+                mark(tl, 8, 545 + activity, 386, 46, 2.5, 1.8);
                 tl.to(fx.banner, { yPercent: -160, duration: 0.6, ease: "power2.in" }, 3.7);
-                tap(tl, 359, 568, 4.6);
+                tap(tl, 359, 568 + activity, 4.6);
                 show(tl, "a-after", "fade", 4.75);
                 release(tl, 5.4);
                 mark(tl, 146, 418, 104, 46, 5.5, 2.0);
