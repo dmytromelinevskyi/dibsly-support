@@ -41,7 +41,9 @@ cropped screen, the website in a browser or a short conversation), where it live
 server's own English dollar demo (`Server/sync/src/demo.ts`, the reviewers' demo) — run locally (`npm run dev` in
 `Server/sync`, a local dev sign-in, Admin «Демо-дані» into it), light theme, captured at 2x through Chrome's DevTools
 protocol. The app's showcase ledger (hryvnias) is a different made-up set, so the phone and the website show different
-figures; `uk-web.jpg` stays the older Ukrainian dev shot.
+figures; `uk-web.jpg` stays the older Ukrainian dev shot. **2026-10-28:** both re-shot from the current website, dark theme, 1440×900 at 2x, on
+the same local demo (dev sign-in `who: demosite`), `uk-web.jpg` with the Ukrainian interface (system categories in
+Ukrainian; the demo's own account and payment names stay English).
 
 **Landing 2.0 is the main page since 2026-10-20 (owner: «главная да, топ, аппрувлю»):** `index.html` (uk) and
 `en.html` at the root, their styles, script, screenshots and Dibsly's extra moods in `v2/` (`v2/v2.css`, `v2/v2.js`,
