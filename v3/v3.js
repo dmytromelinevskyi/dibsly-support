@@ -1,7 +1,7 @@
 // dibslyapp.com landing 3.0 (2026-10-28, owner: «пиздатые анимации, что у примеров… чтоб когда пользователи зашли на
 // сайт, они ахуели»): a WebGL field of grey particles with a few orange sparks, like the app's grain (owner: «согласен»), behind the page that follows the mouse and the scroll, a short
 // counting intro, smooth scrolling, titles that rise in word by word, the hero's phone that stays and shows the app step
-// by step (owner's brother's idea), a pinned horizontal gallery, cards that tilt under the cursor and magnetic buttons. With «reduce motion», on a missing library or without WebGL, the page is simply there.
+// by step (owner's brother's idea), cards that tilt under the cursor and magnetic buttons. With «reduce motion», on a missing library or without WebGL, the page is simply there.
 (function () {
     var root = document.documentElement;
     var calm = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -289,24 +289,6 @@
             onUpdate: function (self) { skew(Math.max(-10, Math.min(10, self.getVelocity() / -300))); } });
     }
 
-    // ---------------------------------------------------------------- 08: the gallery scrolls sideways while pinned
-    var mm = gsap.matchMedia();
-    mm.add("(min-width: 1081px)", function () {
-        var trackEl = document.querySelector(".gallery-track");
-        var distance = function () { return Math.max(0, trackEl.scrollWidth - window.innerWidth); };
-        gsap.to(trackEl, { x: function () { return -distance(); }, ease: "none",
-            scrollTrigger: { trigger: ".gallery-pin", start: "center center", end: function () { return "+=" + distance(); }, pin: ".gallery", pinSpacing: true, scrub: 1, invalidateOnRefresh: true, anticipatePin: 1 } });
-        all(".shot .phone").forEach(function (phone, index) {
-            gsap.from(phone, { rotate: index % 2 ? 6 : -6, y: 60, opacity: 0.2, duration: 1.2, ease: "expo.out", scrollTrigger: { trigger: ".gallery-pin", start: "top 80%" }, delay: index * 0.06 });
-        });
-    });
-    mm.add("(max-width: 1080px)", function () {
-        var pin = document.querySelector(".gallery-pin");
-        pin.style.overflowX = "auto";
-        pin.style.scrollSnapType = "x mandatory";
-        all(".shot").forEach(function (shot) { shot.style.scrollSnapAlign = "center"; });
-    });
-
     // ---------------------------------------------------------------- the price counts up
     all(".count").forEach(function (cell) {
         var to = parseFloat(cell.getAttribute("data-to")), decimals = parseInt(cell.getAttribute("data-decimals") || "0", 10);
@@ -360,7 +342,7 @@
         var cy = gsap.quickTo(cursor, "y", { duration: 0.35, ease: "power3.out" });
         window.addEventListener("pointermove", function (event) { cursor.classList.add("on"); cx(event.clientX); cy(event.clientY); }, { passive: true });
         document.addEventListener("pointerover", function (event) {
-            cursor.classList.toggle("hover", !!event.target.closest("a, button, summary, .spot, .shot"));
+            cursor.classList.toggle("hover", !!event.target.closest("a, button, summary, .spot"));
         });
     }
 
@@ -389,6 +371,8 @@
         var current = live, timeline = null, loop = null, depth = 1, playing = null, hand = null;
         // A language whose «Activity» title takes two lines puts the first purchase lower (en: 15 points).
         var activity = parseFloat(screen.getAttribute("data-activity-shift")) || 0;
+        // Analytics' Flow, Trends and Capital tabs, x in points (their widths follow the language's words).
+        var tabs = (screen.getAttribute("data-tabs") || "161,244,337").split(",").map(Number);
 
         function travel() {
             var tabs = live.querySelector(".ios-tabbar");
@@ -423,6 +407,7 @@
         }
         // The finger comes in a little below its first target, glides from tap to tap, presses (a ring spreads from
         // under it) and lifts away at the end.
+        // The ring waits for its moment (no immediate render: the scene's last ring showed from its start).
         function tap(tl, px, py, at) {
             if (!hand) {
                 hand = { x: Math.min(370, px + 40), y: Math.min(840, py + 90) };
@@ -433,7 +418,7 @@
             tl.to(fx.touch, { left: x(px), top: y(py), duration: glide, ease: "power2.inOut" }, at - glide - 0.06)
                 .to(fx.touch, { scale: 0.78, duration: 0.1, ease: "power2.in" }, at)
                 .to(fx.touch, { scale: 1, duration: 0.22, ease: "power2.out" }, at + 0.12)
-                .fromTo(fx.tap, { left: x(px), top: y(py), scale: 0.6, opacity: 0.9 }, { scale: 1.9, opacity: 0, duration: 0.6, ease: "power2.out" }, at + 0.02);
+                .fromTo(fx.tap, { left: x(px), top: y(py), scale: 0.6, opacity: 0.9 }, { scale: 1.9, opacity: 0, duration: 0.6, ease: "power2.out", immediateRender: false }, at + 0.02);
             hand = { x: px, y: py };
         }
         function release(tl, at) {
@@ -540,6 +525,31 @@
                 show(tl, "c-fop", "push", 0);
                 mark(tl, 10, 116, 300, 104, 0.9, 2.0);
                 mark(tl, 22, 416, 360, 46, 3.2, 2.0);
+            },
+            // Analytics' four tabs one by one (Categories → Flow → Trends → Capital, the tabs measured on the frames: the
+            // screen's data-tabs, as wide as their words), History from the tab bar, then the calendar: month ↔ list.
+            analytics: function (tl) {
+                show(tl, "d-analytics", "push", 0);
+                [["d-cashflow", 1.6], ["d-trends", 3.0], ["d-capital", 4.4]].forEach(function (step, index) {
+                    tap(tl, tabs[index], 195, step[1]);
+                    show(tl, step[0], "cut", step[1] + 0.12);
+                });
+                tap(tl, 167, 800, 6.0);
+                show(tl, "d-history", "fade", 6.15);
+                release(tl, 6.6);
+                show(tl, "d-calendar", "push", 8.0);
+                tap(tl, 306, 84, 9.4);
+                show(tl, "d-calendar-list", "fade", 9.55);
+                tap(tl, 306, 84, 11.2);
+                show(tl, "d-calendar", "fade", 11.35);
+                release(tl, 11.8);
+            },
+            // A shared account: who shares it, then each one's contribution.
+            together: function (tl) {
+                show(tl, "e-shared", "push", 0);
+                mark(tl, 10, 176, 360, 26, 0.9, 1.8);
+                mark(tl, 8, 272, 386, 48, 3.0, 1.8);
+                mark(tl, 8, 374, 386, 48, 5.0, 1.8);
             }
         };
 

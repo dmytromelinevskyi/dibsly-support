@@ -71,18 +71,18 @@
     <ol class="rail" aria-hidden="true">
         <li data-for="top">00</li><li data-for="auto">01</li><li data-for="plus">02</li><li data-for="ask">03</li>
         <li data-for="plan">04</li><li data-for="invest">05</li><li data-for="money">06</li><li data-for="fop">07</li>
-        <li data-for="analytics">08</li><li data-for="everywhere">09</li><li data-for="price">10</li>
+        <li data-for="analytics">08</li><li data-for="together">09</li><li data-for="everywhere">10</li><li data-for="price">11</li>
     </ol>
 
     <main>
-        <!-- 00–07: the phone of the hero stays and shows the app step by step (owner, 2026-10-28, his brother's idea:
+        <!-- 00–09: the phone of the hero stays and shows the app step by step (owner, 2026-10-28, his brother's idea:
              «по мере скролла показываются функции приложения… с параллельным описанием» — on the 3.0 frame he likes) -->
         <div class="journey wrap">
             <div class="journey-stage">
                 <div class="stage-sticky">
                   <div class="phone-lift">
                     <div class="phone hero-phone">
-                        <div class="screen">
+                        <div class="screen" data-tabs="161,244,337">
                             <div class="live">
                             <img class="screen-long" src="v3/shots/uk-main-long.jpg" alt="Головна Dibsly: гроші під рукою, кредитний ліміт, накопичення, місяць, активність, план, цілі, календар, борги й кредити" width="750" height="3541" fetchpriority="high">
                             <div class="ios-top" aria-hidden="true">
@@ -113,6 +113,14 @@
                                 <img class="frame" data-frame="c-goals" src="v3/scenes/uk-c-goals.jpg" alt="Цілі з прогнозом" width="750" height="1631" decoding="async" fetchpriority="low">
                                 <img class="frame" data-frame="c-invest" src="v3/scenes/uk-c-invest.jpg" alt="Портфель з історією вартості" width="750" height="1631" decoding="async" fetchpriority="low">
                                 <img class="frame" data-frame="c-fop" src="v3/scenes/uk-c-fop.jpg" alt="ФОП: до сплати й найближчі строки" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="d-analytics" src="v3/scenes/uk-d-analytics.jpg" alt="Аналітика: категорії" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="d-cashflow" src="v3/scenes/uk-d-cashflow.jpg" alt="Аналітика: потік по днях" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="d-trends" src="v3/scenes/uk-d-trends.jpg" alt="Аналітика: тренди за рік" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="d-capital" src="v3/scenes/uk-d-capital.jpg" alt="Аналітика: капітал" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="d-history" src="v3/scenes/uk-d-history.jpg" alt="Історія з фільтрами" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="d-calendar" src="v3/scenes/uk-d-calendar.jpg" alt="Календар платежів на місяць" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="d-calendar-list" src="v3/scenes/uk-d-calendar-list.jpg" alt="Календар платежів списком" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="e-shared" src="v3/scenes/uk-e-shared.jpg" alt="Спільний рахунок «Відпустка разом» з внесками" width="750" height="1631" decoding="async" fetchpriority="low">
                             </div>
                             <div class="fx" aria-hidden="true">
                                 <div class="banner"><img src="img/apple-touch-icon.png" alt="" width="38" height="38"><div><b>Dibsly <span>зараз</span></b><p>Сільпо · −842,50 ₴ з UKRSIBBANK</p><p class="dim-line">Збережи — і буде в історії та балансі</p></div></div>
@@ -204,7 +212,23 @@
                 </div>
             </section>
 
-            <div class="journey-end" style="--row: 9" aria-hidden="true"></div>
+            <section class="step" id="analytics" data-section data-scene="analytics" style="--row: 9">
+                <div class="step-copy">
+                    <p class="kicker">08 · Аналітика, історія, календар</p>
+                    <h2 class="title"><span class="line">Куди йдуть гроші.</span><span class="line dim">І що спишеться далі.</span></h2>
+                    <p class="lead reveal">Чотири погляди на місяць, історія з пошуком і календар платежів.</p>
+                </div>
+            </section>
+
+            <section class="step" id="together" data-section data-scene="together" style="--row: 10">
+                <div class="step-copy">
+                    <p class="kicker">09 · Гроші разом · Premium</p>
+                    <h2 class="title"><span class="line">Гроші разом.</span><span class="line hot">Для пари чи сім'ї.</span></h2>
+                    <p class="lead reveal">Спільний рахунок: внески кожного, спільні цілі й сповіщення. Вистачить Premium в одного.</p>
+                </div>
+            </section>
+
+            <div class="journey-end" style="--row: 11" aria-hidden="true"></div>
             <a class="scroll-hint" href="#auto"><span>Гортай</span><i></i></a>
         </div>
 
@@ -217,30 +241,10 @@
 
 
 
-        <!-- 08 -->
-        <section class="block gallery" id="analytics" data-section>
-            <div class="wrap">
-                <p class="kicker">08 · Аналітика, план, календар</p>
-                <h2 class="title"><span class="line">Куди йдуть гроші.</span><span class="line dim">І скільки ще можна.</span></h2>
-            </div>
-            <div class="gallery-pin">
-                <div class="gallery-track">
-                    <figure class="shot"><div class="phone"><img src="v2/shots/uk-an-1.jpg" alt="Аналітика за категоріями" width="750" height="1630" loading="lazy"></div><figcaption><b>Аналітика</b><span>Місяць, рік чи весь час. Без таблиць і формул.</span></figcaption></figure>
-                    <figure class="shot"><div class="phone"><img src="v2/shots/uk-an-2.jpg" alt="Грошовий потік по днях" width="750" height="1630" loading="lazy"></div><figcaption><b>Грошовий потік</b><span>Витрати по днях, зарплата позначкою.</span></figcaption></figure>
-                    <figure class="shot"><div class="phone"><img src="img/shots/uk-plan.jpg" alt="План місяця з лімітами" width="550" height="1195" loading="lazy"></div><figcaption><b>План місяця</b><span>Ліміти на категорії й скільки ще можна витратити.</span></figcaption></figure>
-                    <figure class="shot"><div class="phone"><img src="img/shots/uk-calendar.jpg" alt="Календар платежів" width="550" height="1195" loading="lazy"></div><figcaption><b>Календар</b><span>Оренда, підписки й кредити: що й коли спишеться.</span></figcaption></figure>
-                    <figure class="shot"><div class="phone"><img src="v2/shots/uk-goals-full.jpg" alt="Цілі з прогнозом" width="750" height="1630" loading="lazy"></div><figcaption><b>Цілі</b><span>Dibsly каже, в якому місяці дійдеш у такому темпі.</span></figcaption></figure>
-                    <figure class="shot"><div class="phone"><img src="v2/shots/uk-an-3.jpg" alt="Тренди за рік" width="750" height="1630" loading="lazy"></div><figcaption><b>Тренди</b><span>Місяці року поруч: скільки прийшло й скільки лишилось.</span></figcaption></figure>
-                </div>
-            </div>
-        </section>
-
-
-
-        <!-- 09 -->
+        <!-- 10 -->
         <section class="block glow" id="everywhere" data-section>
             <div class="wrap">
-                <p class="kicker">09 · Твої гроші всюди · Premium</p>
+                <p class="kicker">10 · Твої гроші всюди · Premium</p>
                 <h2 class="title"><span class="line">Телефон. Браузер.</span><span class="line hot">Твій ChatGPT чи Claude.</span></h2>
                 <div class="browser-wrap">
                     <figure class="browser">
@@ -248,19 +252,18 @@
                         <img src="img/shots/uk-web.jpg" alt="Портал my.dibslyapp.com на великому екрані" width="1440" height="900" loading="lazy">
                     </figure>
                 </div>
-                <div class="cards3">
+                <div class="cards3 two">
                     <article class="spot reveal"><h3>my.dibslyapp.com</h3><p>Історія з пошуком, аналітика, план і чернетки на великому екрані. Зміни одразу й на телефоні.</p><a class="foot link" href="https://my.dibslyapp.com">Відкрити сайт →</a></article>
                     <article class="spot reveal"><h3>ChatGPT і Claude</h3><p>Імпортуй виписку будь-якого банку, питай і став цілі у своєму асистенті. Записує тільки після твого «так».</p><p class="foot">«Ось виписка Revolut, запиши»</p></article>
-                    <article class="spot reveal"><h3>Гроші разом</h3><p>Спільні рахунки для пари чи сім'ї, внески кожного, сповіщення й спільні цілі. Вистачить Premium в одного.</p><p class="foot">А чек з кафе — поділити посиланням</p></article>
                 </div>
             </div>
         </section>
 
-        <!-- 10 -->
+        <!-- 11 -->
         <section class="block" id="price" data-section>
             <div class="wrap">
                 <div class="center">
-                    <p class="kicker">10 · Ціна</p>
+                    <p class="kicker">11 · Ціна</p>
                     <h2 class="title"><span class="line">Безкоштовно.</span><span class="line hot">Premium — коли захочеш більше.</span></h2>
                 </div>
                 <div class="plans">
@@ -296,11 +299,11 @@
             </div>
         </section>
 
-        <!-- 11 -->
+        <!-- 12 -->
         <section class="block" id="faq">
             <div class="wrap split top">
                 <div class="copy narrow">
-                    <p class="kicker">11 · Питання</p>
+                    <p class="kicker">12 · Питання</p>
                     <h2 class="title small"><span class="line">Безпечно.</span><span class="line dim">Без пароля від банку.</span></h2>
                 </div>
                 <div class="faq">
