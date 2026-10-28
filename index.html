@@ -39,7 +39,7 @@
             <a class="brand" href="#top"><img src="img/apple-touch-icon.png" alt="" width="28" height="28">Dibsly</a>
             <div class="nav-links">
                 <a href="#auto">Можливості</a>
-                <a href="#money">ФОП, борги, кредити</a>
+                <a href="#money">Борги, кредити, ФОП</a>
                 <a href="#everywhere">Портал і ШІ</a>
                 <a href="#price">Ціна</a>
                 <a href="#faq">Питання</a>
@@ -53,14 +53,62 @@
     </header>
 
     <ol class="rail" aria-hidden="true">
-        <li data-for="top">00</li><li data-for="auto">01</li><li data-for="ask">02</li><li data-for="analytics">03</li>
-        <li data-for="invest">04</li><li data-for="money">05</li><li data-for="everywhere">06</li><li data-for="price">07</li>
+        <li data-for="top">00</li><li data-for="auto">01</li><li data-for="plus">02</li><li data-for="ask">03</li>
+        <li data-for="plan">04</li><li data-for="invest">05</li><li data-for="money">06</li><li data-for="fop">07</li>
+        <li data-for="analytics">08</li><li data-for="everywhere">09</li><li data-for="price">10</li>
     </ol>
 
     <main>
-        <!-- 00 -->
-        <section class="hero" id="top" data-section>
-            <div class="wrap hero-grid">
+        <!-- 00–07: the phone of the hero stays and shows the app step by step (owner, 2026-10-28, his brother's idea:
+             «по мере скролла показываются функции приложения… с параллельным описанием» — on the 3.0 frame he likes) -->
+        <div class="journey wrap">
+            <div class="journey-stage">
+                <div class="stage-sticky">
+                    <div class="phone tilt hero-phone">
+                        <div class="screen">
+                            <div class="live">
+                            <img class="screen-long" src="v3/shots/uk-main-long.jpg" alt="Головна Dibsly: гроші під рукою, кредитний ліміт, накопичення, місяць, активність, план, цілі, календар, борги й кредити" width="750" height="3658">
+                            <div class="ios-top" aria-hidden="true">
+                                <div class="ios-status"><b>09:41</b><span class="ios-icons"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"></rect><rect x="5" y="5.5" width="3" height="6.5" rx="1"></rect><rect x="10" y="3" width="3" height="9" rx="1"></rect><rect x="15" y="0" width="3" height="12" rx="1"></rect></svg><svg viewBox="0 0 16 12"><path d="M8 11.5l2.4-2.8a3.6 3.6 0 00-4.8 0L8 11.5zM3.7 6.6a6.2 6.2 0 018.6 0l1.6-1.8a8.6 8.6 0 00-11.8 0l1.6 1.8zM.6 3.1a10.9 10.9 0 0114.8 0L16 2.4A12 12 0 000 2.4l.6.7z"></path></svg><span class="ios-battery"><i></i></span></span></div>
+                                <div class="ios-header"><span>Середа, 28 жовтня</span><span class="ios-glass"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="10" r="3.4"></circle><path d="M5.6 18.6c1.6-2.4 3.8-3.6 6.4-3.6s4.8 1.2 6.4 3.6"></path></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3.2"></circle><path d="M12 2.5l1.6 2.6 3-.6.6 3 2.6 1.6-1.4 2.9 1.4 2.9-2.6 1.6-.6 3-3-.6L12 21.5l-1.6-2.6-3 .6-.6-3-2.6-1.6 1.4-2.9-1.4-2.9 2.6-1.6.6-3 3 .6z"></path></svg></span></div>
+                            </div>
+                            <div class="ios-tabbar" aria-hidden="true">
+                                <div class="ios-pill">
+                                    <span class="ios-tab on"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3.2L2.6 11.3l1.3 1.5 1.6-1.4V20h5v-5h3v5h5v-8.6l1.6 1.4 1.3-1.5z"></path></svg>Головна</span>
+                                    <span class="ios-tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="3" width="14" height="18" rx="2.5"></rect><path d="M8.5 8h7M8.5 12h7M8.5 16h4"></path></svg>Історія</span>
+                                    <span class="ios-tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"></circle><path d="M12 3v9l6.4 6.4M12 12H3.2"></path></svg>Аналітика</span>
+                                </div>
+                                <span class="ios-plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></span>
+                            </div>
+                            </div>
+                            <div class="frames" aria-hidden="true">
+                                <img class="frame" data-frame="a-main" src="v3/scenes/uk-a-main.jpg" alt="Головна: активність з покупкою Сільпо" width="750" height="1630" decoding="async">
+                                <img class="frame" data-frame="a-after" src="v3/scenes/uk-a-after.jpg" alt="Покупку збережено, «Витрачено» виросло" width="750" height="1630" decoding="async">
+                                <img class="frame" data-frame="b-plus" src="v3/scenes/uk-b-plus.jpg" alt="Меню плюса: операція, голос, чек" width="750" height="1630" decoding="async">
+                                <img class="frame" data-frame="b-form" src="v3/scenes/uk-b-form.jpg" alt="Нова витрата" width="750" height="1630" decoding="async">
+                                <img class="frame" data-frame="b-8" src="v3/scenes/uk-b-8.jpg" alt="Сума 8" width="750" height="1630" decoding="async">
+                                <img class="frame" data-frame="b-85" src="v3/scenes/uk-b-85.jpg" alt="Сума 85" width="750" height="1630" decoding="async">
+                                <img class="frame" data-frame="b-cats" src="v3/scenes/uk-b-cats.jpg" alt="Вибір категорії" width="750" height="1630" decoding="async">
+                                <img class="frame" data-frame="b-after" src="v3/scenes/uk-b-after.jpg" alt="Витрату збережено" width="750" height="1630" decoding="async">
+                                <img class="frame" data-frame="c-chat" src="v3/scenes/uk-c-chat.jpg" alt="Чат з Dibsly: найбільші витрати й запис кави" width="750" height="1630" decoding="async">
+                                <img class="frame" data-frame="c-plan" src="v3/scenes/uk-c-plan.jpg" alt="План місяця: три категорії понад план" width="750" height="1630" decoding="async">
+                                <img class="frame" data-frame="c-goals" src="v3/scenes/uk-c-goals.jpg" alt="Цілі з прогнозом" width="750" height="1630" decoding="async">
+                                <img class="frame" data-frame="c-invest" src="v3/scenes/uk-c-invest.jpg" alt="Портфель з історією вартості" width="750" height="1630" decoding="async">
+                                <img class="frame" data-frame="c-fop" src="v3/scenes/uk-c-fop.jpg" alt="ФОП: до сплати й найближчі строки" width="750" height="1630" decoding="async">
+                            </div>
+                            <div class="fx" aria-hidden="true">
+                                <div class="banner"><img src="img/apple-touch-icon.png" alt="" width="38" height="38"><div><b>Dibsly <span>зараз</span></b><p>Сільпо · −842,50 ₴ з UKRSIBBANK</p><p class="dim-line">Збережи — і буде в історії та балансі</p></div></div>
+                                <div class="cover"></div>
+                                <div class="hl"></div>
+                                <div class="tap"></div>
+                                <div class="app-toast"><img src="img/dibsly-dark.png" alt="" width="40" height="38"><div><b>Витрату збережено</b><span>Кафе й ресторани · −85 ₴</span></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="hero" id="top" data-section data-scene="hero">
                 <div class="hero-copy">
                     <p class="kicker"><span class="dot"></span>Особисті фінанси · iPhone і браузер</p>
                     <h1 class="hero-title"><span class="line">Усі гроші.</span><span class="line hot">В одному місці.</span></h1>
@@ -75,28 +123,69 @@
                         <li>iPhone</li><li>Браузер</li><li class="soon">iPad · Mac — скоро</li><li class="soon">Android — згодом</li>
                     </ul>
                 </div>
-                <div class="hero-stage">
-                    <div class="phone tilt hero-phone">
-                        <div class="screen">
-                            <img class="screen-long" src="v3/shots/uk-main-long.jpg" alt="Головна Dibsly: гроші під рукою, кредитний ліміт, накопичення, місяць, активність, план, цілі, календар, борги й кредити" width="750" height="3659">
-                            <div class="ios-top" aria-hidden="true">
-                                <div class="ios-status"><b>09:41</b><span class="ios-icons"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"></rect><rect x="5" y="5.5" width="3" height="6.5" rx="1"></rect><rect x="10" y="3" width="3" height="9" rx="1"></rect><rect x="15" y="0" width="3" height="12" rx="1"></rect></svg><svg viewBox="0 0 16 12"><path d="M8 11.5l2.4-2.8a3.6 3.6 0 00-4.8 0L8 11.5zM3.7 6.6a6.2 6.2 0 018.6 0l1.6-1.8a8.6 8.6 0 00-11.8 0l1.6 1.8zM.6 3.1a10.9 10.9 0 0114.8 0L16 2.4A12 12 0 000 2.4l.6.7z"></path></svg><span class="ios-battery"><i></i></span></span></div>
-                                <div class="ios-header"><span>Середа, 28 жовтня</span><span class="ios-glass"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="10" r="3.4"></circle><path d="M5.6 18.6c1.6-2.4 3.8-3.6 6.4-3.6s4.8 1.2 6.4 3.6"></path></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3.2"></circle><path d="M12 2.5l1.6 2.6 3-.6.6 3 2.6 1.6-1.4 2.9 1.4 2.9-2.6 1.6-.6 3-3-.6L12 21.5l-1.6-2.6-3 .6-.6-3-2.6-1.6 1.4-2.9-1.4-2.9 2.6-1.6.6-3 3 .6z"></path></svg></span></div>
-                            </div>
-                            <div class="ios-tabbar" aria-hidden="true">
-                                <div class="ios-pill">
-                                    <span class="ios-tab on"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3.2L2.6 11.3l1.3 1.5 1.6-1.4V20h5v-5h3v5h5v-8.6l1.6 1.4 1.3-1.5z"></path></svg>Головна</span>
-                                    <span class="ios-tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="3" width="14" height="18" rx="2.5"></rect><path d="M8.5 8h7M8.5 12h7M8.5 16h4"></path></svg>Історія</span>
-                                    <span class="ios-tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"></circle><path d="M12 3v9l6.4 6.4M12 12H3.2"></path></svg>Аналітика</span>
-                                </div>
-                                <span class="ios-plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></span>
-                            </div>
-                        </div>
-                    </div>
+            </section>
+
+            <section class="step" id="auto" data-section data-scene="auto" style="--row: 2">
+                <div class="step-copy">
+                    <p class="kicker">01 · Записується саме</p>
+                    <h2 class="title"><span class="line">Заплатив.</span><span class="line dim">Уже записано.</span></h2>
+                    <p class="lead reveal">Оплатив Apple Pay — покупка чекає в «Активності» з сумою й категорією. Один дотик, і вона в історії та балансі.</p>
+                    <ul class="step-tags reveal"><li>Apple Pay</li><li>monobank напряму</li><li>Виписки банків</li><li>Голос і чек</li></ul>
                 </div>
-            </div>
+            </section>
+
+            <section class="step" id="plus" data-section data-scene="plus" style="--row: 3">
+                <div class="step-copy">
+                    <p class="kicker">02 · Додати самому</p>
+                    <h2 class="title"><span class="line">Плюс. Сума.</span><span class="line hot">Категорія.</span></h2>
+                    <p class="lead reveal">Готівка чи щось, чого банк не бачив, — три дотики, і витрата вже в місяці. Або голосом: «кава 85».</p>
+                </div>
+            </section>
+
+            <section class="step" id="ask" data-section data-scene="ask" style="--row: 4">
+                <div class="step-copy">
+                    <p class="kicker">03 · Чат з Dibsly</p>
+                    <h2 class="title"><span class="line">Запитай.</span><span class="line hot">Він знає.</span></h2>
+                    <p class="lead reveal">Dibsly знає твої рахунки, витрати й цілі, тож відповідає твоїми цифрами. Змінює щось тільки після твого «Зберегти».</p>
+                    <p class="note reveal">20 питань на місяць безкоштовно, більше з Premium.</p>
+                </div>
+            </section>
+
+            <section class="step" id="plan" data-section data-scene="plan" style="--row: 5">
+                <div class="step-copy">
+                    <p class="kicker">04 · План і цілі</p>
+                    <h2 class="title"><span class="line">Скільки ще можна.</span><span class="line dim">І коли дійдеш.</span></h2>
+                    <p class="lead reveal">Ліміти на категорії й скільки лишилось до кінця місяця, а що вийшло за план — червоним. Цілі кажуть, у якому місяці дійдеш у такому темпі.</p>
+                </div>
+            </section>
+
+            <section class="step" id="invest" data-section data-scene="invest" style="--row: 6">
+                <div class="step-copy">
+                    <p class="kicker">05 · Інвестиції</p>
+                    <h2 class="title"><span class="line">Портфель.</span><span class="line green">Поруч з витратами.</span></h2>
+                    <p class="lead reveal">Звіти Interactive Brokers і Freedom Finance замість ручного введення. Дивіденди разом з утриманим податком, ріст окремо від поповнень. Безкоштовно.</p>
+                </div>
+            </section>
+
+            <section class="step" id="money" data-section data-scene="money" style="--row: 7">
+                <div class="step-copy">
+                    <p class="kicker">06 · Борги й кредити</p>
+                    <h2 class="title"><span class="line">Хто кому винен.</span><span class="line dim">І коли платити.</span></h2>
+                    <p class="lead reveal">Позичив, повернули, поділив рахунок у кафе — усе по людях. Кредит, іпотека, частинами, ліміт картки: наступний платіж, графік і переплата. Безкоштовно.</p>
+                </div>
+            </section>
+
+            <section class="step" id="fop" data-section data-scene="fop" style="--row: 8">
+                <div class="step-copy">
+                    <p class="kicker">07 · ФОП</p>
+                    <h2 class="title"><span class="line">Податки кварталу.</span><span class="line hot">Уже пораховані.</span></h2>
+                    <p class="lead reveal">Дохід ФОП окремо від особистих грошей. Єдиний податок і військовий збір, строки й декларації, нагадування до строку.</p>
+                </div>
+            </section>
+
+            <div class="journey-end" style="--row: 9" aria-hidden="true"></div>
             <a class="scroll-hint" href="#auto"><span>Гортай</span><i></i></a>
-        </section>
+        </div>
 
         <section class="marquee" aria-label="Звідки гроші потрапляють у Dibsly">
             <div class="marquee-track">
@@ -105,60 +194,12 @@
             </div>
         </section>
 
-        <!-- 01 -->
-        <section class="block" id="auto" data-section>
-            <div class="wrap split">
-                <div class="copy">
-                    <p class="kicker">01 · Записується саме</p>
-                    <h2 class="title"><span class="line">Заплатив.</span><span class="line dim">Уже записано.</span></h2>
-                    <p class="lead reveal">Оплатив Apple Pay — покупка чекає в Dibsly з сумою й категорією. monobank напряму, виписки інших банків, голос і фото чека. Тобі лишається один дотик.</p>
-                    <div class="tiles">
-                        <div class="tile reveal"><b>Apple Pay</b><span>з будь-якої картки</span></div>
-                        <div class="tile reveal"><b>monobank</b><span>напряму, лише читання</span></div>
-                        <div class="tile reveal"><b>Голосом</b><span>«кава 85» — і записано</span></div>
-                        <div class="tile reveal"><b>Чек з фото</b><span>і поділити з друзями</span></div>
-                    </div>
-                </div>
-                <div class="media duo">
-                    <div class="phone sm drift-a"><img src="v2/shots/uk-drafts.jpg" alt="Чернетки з Apple Pay чекають підтвердження" width="750" height="1630" loading="lazy"></div>
-                    <div class="phone sm drift-b"><img src="v2/shots/uk-voice.jpg" alt="Запис голосом" width="750" height="1630" loading="lazy"></div>
-                    <div class="toast">
-                        <img src="img/dibsly-dark.png" alt="" width="40" height="38">
-                        <div><b>Витрату збережено</b><span>Кава · −85 ₴</span></div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- 02 -->
-        <section class="block glow" id="ask" data-section>
-            <div class="wrap split reverse">
-                <div class="copy">
-                    <p class="kicker">02 · Чат з Dibsly</p>
-                    <h2 class="title"><span class="line">Запитай.</span><span class="line hot">Він знає.</span></h2>
-                    <p class="lead reveal">Dibsly знає твої рахунки, витрати й цілі, тож відповідає твоїми цифрами. Змінює щось тільки після твого «Зберегти».</p>
-                    <p class="note reveal">20 питань на місяць безкоштовно, більше з Premium.</p>
-                </div>
-                <div class="media">
-                    <div class="chatbox reveal">
-                        <div class="chat-head">
-                            <div class="mascot" data-play="hello" data-then="idle" aria-hidden="true">
-                                <img class="mascot-still" src="img/dibsly-dark.png" alt="" width="404" height="386">
-                                <div class="mascot-stage"></div>
-                            </div>
-                            <div><b>Dibsly</b><span>на демо-даних, спробуй</span></div>
-                        </div>
-                        <div class="messages" aria-live="polite"></div>
-                        <div class="chips" aria-label="Питання"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- 03 -->
+        <!-- 08 -->
         <section class="block gallery" id="analytics" data-section>
             <div class="wrap">
-                <p class="kicker">03 · Аналітика, план, цілі</p>
+                <p class="kicker">08 · Аналітика, план, календар</p>
                 <h2 class="title"><span class="line">Куди йдуть гроші.</span><span class="line dim">І скільки ще можна.</span></h2>
             </div>
             <div class="gallery-pin">
@@ -173,64 +214,12 @@
             </div>
         </section>
 
-        <!-- 04 -->
-        <section class="block band" id="invest" data-section>
-            <div class="wrap split">
-                <div class="copy">
-                    <p class="kicker">04 · Інвестиції</p>
-                    <h2 class="title"><span class="line">Портфель.</span><span class="line green">Поруч з витратами.</span></h2>
-                    <p class="lead reveal">Портфель і дивіденди в тому самому застосунку, де твої витрати. Безкоштовно.</p>
-                    <ul class="checks green">
-                        <li class="reveal">Звіти Interactive Brokers і Freedom Finance замість ручного введення</li>
-                        <li class="reveal">Дивіденди разом з утриманим податком</li>
-                        <li class="reveal">Ріст окремо від поповнень, щоб депозит не виглядав прибутком</li>
-                    </ul>
-                </div>
-                <div class="media invest-stage">
-                    <svg class="chart" viewBox="0 0 600 260" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5BD08A" stop-opacity=".35"></stop><stop offset="1" stop-color="#5BD08A" stop-opacity="0"></stop></linearGradient></defs><path class="chart-area" d="M0 220 L60 200 L120 210 L180 170 L240 180 L300 130 L360 145 L420 95 L480 110 L540 60 L600 40 L600 260 L0 260 Z" fill="url(#g)"></path><path class="chart-line" d="M0 220 L60 200 L120 210 L180 170 L240 180 L300 130 L360 145 L420 95 L480 110 L540 60 L600 40" fill="none" stroke="#5BD08A" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"></path></svg>
-                    <div class="phone tilt"><img src="v2/shots/uk-inv-1.jpg" alt="Портфель з графіком вартості" width="750" height="1630" loading="lazy"></div>
-                    <div class="float-card c4"><p class="tiny">Загальний результат</p><p class="big-num green">+<span class="count" data-to="18.4" data-decimals="1">0</span>%</p></div>
-                </div>
-            </div>
-        </section>
 
-        <!-- 05 -->
-        <section class="block" id="money" data-section>
-            <div class="wrap">
-                <div class="head-row">
-                    <div>
-                        <p class="kicker">05 · Нове в Dibsly</p>
-                        <h2 class="title"><span class="line">ФОП. Борги. Кредити.</span><span class="line dim">Теж тут.</span></h2>
-                    </div>
-                    <p class="lead reveal">Усе, що зазвичай живе в окремих таблицях і нотатках, — поруч з рештою грошей. Безкоштовно.</p>
-                </div>
-                <div class="cards3">
-                    <article class="spot reveal">
-                        <div class="icon orange"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"></rect><path d="M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2"></path></svg></div>
-                        <h3>ФОП</h3>
-                        <p>Дохід ФОП окремо від особистих грошей. Податки кварталу й ЄСВ пораховані, нагадування до строку, скільки відкласти й цифри для декларації.</p>
-                        <p class="foot">Квартал, строки, «Сплачено» — в одному місці</p>
-                    </article>
-                    <article class="spot reveal">
-                        <div class="icon green"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 7h11l-3-3M17 17H6l3 3"></path></svg></div>
-                        <h3>Борги</h3>
-                        <p>Хто винен тобі й кому винен ти. Позичив, повернули, поділив рахунок у кафе — усе по людях, без «а скільки там було».</p>
-                        <p class="foot">«Паша — 1 500 ₴, з вересня»</p>
-                    </article>
-                    <article class="spot reveal">
-                        <div class="icon blue"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 10h18M7 15h4"></path></svg></div>
-                        <h3>Кредити</h3>
-                        <p>Кредит, іпотека, оплата частинами, мікрокредит, кредитний ліміт картки. Наступний платіж, графік і переплата, а нагадування — щоб не платити зайвого.</p>
-                        <p class="foot">Ліміт картки окремим рядком: «ще доступно 50 000 кредитних»</p>
-                    </article>
-                </div>
-            </div>
-        </section>
 
-        <!-- 06 -->
+        <!-- 09 -->
         <section class="block glow" id="everywhere" data-section>
             <div class="wrap">
-                <p class="kicker">06 · Твої гроші всюди · Premium</p>
+                <p class="kicker">09 · Твої гроші всюди · Premium</p>
                 <h2 class="title"><span class="line">Телефон. Браузер.</span><span class="line hot">Твій ChatGPT чи Claude.</span></h2>
                 <div class="browser-wrap">
                     <figure class="browser">
@@ -246,11 +235,11 @@
             </div>
         </section>
 
-        <!-- 07 -->
+        <!-- 10 -->
         <section class="block" id="price" data-section>
             <div class="wrap">
                 <div class="center">
-                    <p class="kicker">07 · Ціна</p>
+                    <p class="kicker">10 · Ціна</p>
                     <h2 class="title"><span class="line">Безкоштовно.</span><span class="line hot">Premium — коли захочеш більше.</span></h2>
                 </div>
                 <div class="plans">
@@ -284,11 +273,11 @@
             </div>
         </section>
 
-        <!-- 08 -->
+        <!-- 11 -->
         <section class="block" id="faq">
             <div class="wrap split top">
                 <div class="copy narrow">
-                    <p class="kicker">08 · Питання</p>
+                    <p class="kicker">11 · Питання</p>
                     <h2 class="title small"><span class="line">Безпечно.</span><span class="line dim">Без пароля від банку.</span></h2>
                 </div>
                 <div class="faq">
@@ -334,19 +323,6 @@
     <script>
         window.DIBSLY_ASSETS = "v2/";
         window.DIBSLY_IMAGES = "img/";
-        window.DIBSLY_CHAT = [
-            { q: "На що пішло найбільше цього місяця?", mood: "next",
-              a: "Найбільше пішло на оренду, продукти й кафе. Кафе вже понад план, тож, може, цього тижня каву вдома? 😉",
-              bars: { title: "Витрати з 21 вересня", rows: [["Оренда", 14000], ["Продукти", 12714], ["Кафе й ресторани", 12482], ["Авто", 4947]] } },
-            { q: "Скільки я витратив на таксі?", mood: "annoyed",
-              a: "3 403 ₴ з 21 вересня. Це вже понад план на таксі. Пішки теж непогано 🙂" },
-            { q: "Запиши каву 85", mood: "expense",
-              a: "Ось що запишу. Нічого не зміню, доки не натиснеш «Зберегти».",
-              op: { icon: "☕", title: "Кава", sub: "Кафе й ресторани · monobank", sum: "−85 ₴", save: "Зберегти", skip: "Не треба", done: "Збережено ✓", thanks: "Записав. Тепер ще й план кафе знає 🙂" } },
-            { q: "Скільки я вже відклав?", mood: "savings",
-              a: "30 300 ₴, 12 190 $ і 500 €. На нове авто вже 61%: у такому темпі дійдеш у вересні 2027." }
-        ];
-        window.DIBSLY_CHAT_AGAIN = "Почати спочатку";
     </script>
     <script src="js/lottie_light.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>

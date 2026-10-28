@@ -29,7 +29,7 @@ html { background: var(--bg); -webkit-text-size-adjust: 100%; overflow-x: clip; 
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 body { margin: 0; color: var(--ink); background: var(--bg); font-family: var(--text); font-size: 16px; line-height: 1.5;
-    -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    -webkit-font-smoothing: antialiased; overflow-x: clip; }
 img { max-width: 100%; display: block; }
 a { color: var(--orange-soft); text-decoration: none; }
 a:hover { color: #FFC08A; }
@@ -111,19 +111,30 @@ main { position: relative; z-index: 2; overflow-x: clip; }
 .button.wide { width: 100%; justify-content: center; margin-top: 36px; }
 
 /* Hero */
-.hero { position: relative; overflow-x: clip; min-height: 100vh; padding: 150px 0 90px; display: flex; align-items: center; }
-.hero-grid { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 40px; align-items: center; width: 100%; }
+.hero { position: relative; min-height: 100vh; padding: 150px 0 90px; display: flex; align-items: center; }
 .platforms { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 28px 0 0; padding: 0; font-size: 13px; }
 .platforms li { padding: 7px 12px; border-radius: 999px; background: rgba(246, 235, 221, 0.08); }
 .platforms li.soon { background: none; border: 1px dashed rgba(246, 235, 221, 0.2); color: var(--muted); }
-.hero-stage { position: relative; height: 660px; perspective: 1200px; }
 .phone { border-radius: 46px; padding: 5px; background: linear-gradient(160deg, #2A231F, #171310); border: 1px solid var(--line-2);
     box-shadow: 0 60px 120px rgba(0, 0, 0, 0.6), inset 0 0 0 1px rgba(255, 255, 255, 0.03); }
 .phone img { width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 41px; }
-/* The phone starts just under the nav and ends above the fold on a laptop's screen too (owner, 2026-10-28: «сильно
-   низко опущен», then «можно еще поднять»): its height follows the window's, 650px at most. */
-.hero-phone { --ph: clamp(480px, calc(100vh - 180px), 650px); position: absolute; left: 50%; top: -50px; width: calc(var(--ph) * 300 / 650);
-    height: var(--ph); margin-left: calc(var(--ph) * -150 / 650); transform-style: preserve-3d; }
+/* The journey (owner, 2026-10-28, his brother's idea on the 3.0 frame): the hero's phone stays on the right, held in
+   the middle of the window, and shows the app — real screens, taps, a notification — while the steps scroll by on the
+   left; after the last step it goes with the page. The phone ends above the fold on a laptop too (owner: «сильно низко
+   опущен», «можно еще поднять»): its height follows the window's, 650px at most. */
+.journey { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); column-gap: 40px; }
+.journey > .hero { grid-column: 1; grid-row: 1; }
+.journey-stage { grid-column: 2; grid-row: 1 / span 9; position: relative; z-index: 3; }
+/* The last step is read with the phone still in place. */
+.journey-end { grid-column: 1; grid-row: var(--row); height: 30vh; }
+.stage-sticky { position: sticky; top: 0; height: 100vh; display: flex; align-items: center; justify-content: center; perspective: 1200px; }
+.hero-phone { --ph: clamp(480px, calc(100vh - 180px), 650px); position: relative; width: calc(var(--ph) * 300 / 650); height: var(--ph); flex: none;
+    transform-style: preserve-3d; }
+.step { grid-column: 1; grid-row: var(--row); min-height: 100vh; display: flex; align-items: center; padding: 80px 0; }
+.step-copy { max-width: 560px; }
+.step-tags { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 28px 0 0; padding: 0; font-size: 14px; }
+.step-tags li { padding: 8px 14px; border-radius: 999px; background: rgba(29, 24, 21, 0.82); border: 1px solid var(--line); color: var(--soft); }
+.journey > .scroll-hint { top: calc(100vh - 110px); bottom: auto; }
 /* The hero phone's screen: Main's long strip scrolls under the app's own bar and tab bar, drawn live so the soft edge
    above and the glass below show what passes under them, as in the app (owner, 2026-10-28). Sizes in the app's points:
    --pt is one of the 402 points of the screen's width. */
@@ -152,6 +163,31 @@ main { position: relative; z-index: 2; overflow-x: clip; }
 .ios-tab.on { color: #FF8A3D; background: rgba(120, 112, 104, 0.32); border: 1px solid rgba(255, 255, 255, 0.10); }
 .ios-plus { position: absolute; left: calc(319 * var(--pt)); top: calc(9 * var(--pt)); width: calc(58 * var(--pt)); height: calc(58 * var(--pt)); border-radius: 50%; background: #E86E1C; color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 calc(6 * var(--pt)) calc(18 * var(--pt)) rgba(232, 110, 28, 0.35); }
 .ios-plus svg { width: calc(28 * var(--pt)); height: calc(28 * var(--pt)); }
+/* The app's own screens, captured on the demo, and what happens over them: positions in the screen's points (402 × 874). */
+.live { position: absolute; inset: 0; }
+.frames { position: absolute; inset: 0; pointer-events: none; }
+.screen .frame { position: absolute; left: 0; top: 0; width: 100%; height: auto; border-radius: 0; object-fit: initial; opacity: 0; will-change: transform, opacity; }
+.fx { position: absolute; left: 0; top: 0; width: 100%; aspect-ratio: 402 / 874; z-index: 50; pointer-events: none; }
+.fx > * { position: absolute; opacity: 0; }
+.banner { left: calc(9 * var(--pt)); right: calc(9 * var(--pt)); top: calc(54 * var(--pt)); display: flex; gap: calc(11 * var(--pt)); align-items: center; padding: calc(12 * var(--pt)) calc(14 * var(--pt));
+    border-radius: calc(26 * var(--pt)); background: rgba(64, 57, 52, 0.82); border: 1px solid rgba(255, 255, 255, 0.10); -webkit-backdrop-filter: blur(18px) saturate(1.5); backdrop-filter: blur(18px) saturate(1.5);
+    box-shadow: 0 calc(10 * var(--pt)) calc(30 * var(--pt)) rgba(0, 0, 0, 0.45); color: #F6EBDD; font-family: -apple-system, "SF Pro Text", var(--text); line-height: 1.3; }
+.fx .banner img { width: calc(38 * var(--pt)); height: calc(38 * var(--pt)); border-radius: calc(9 * var(--pt)); flex: none; object-fit: cover; }
+.banner div { flex: 1; min-width: 0; }
+.banner b { display: flex; justify-content: space-between; font-size: calc(14 * var(--pt)); font-weight: 600; }
+.banner b span { font-weight: 400; color: #BEB2A6; font-size: calc(12.5 * var(--pt)); }
+.banner p { margin: 0; font-size: calc(14 * var(--pt)); }
+.banner .dim-line { color: #CDBFB2; font-size: calc(13 * var(--pt)); }
+.tap { width: calc(46 * var(--pt)); height: calc(46 * var(--pt)); margin: calc(-23 * var(--pt)) 0 0 calc(-23 * var(--pt)); border-radius: 50%;
+    background: rgba(255, 255, 255, 0.32); border: 2px solid rgba(255, 255, 255, 0.75); box-shadow: 0 0 calc(18 * var(--pt)) rgba(255, 255, 255, 0.35); }
+.hl { border-radius: calc(16 * var(--pt)); border: 2px solid var(--orange); box-shadow: 0 0 0 calc(4 * var(--pt)) rgba(255, 138, 61, 0.16), 0 0 calc(28 * var(--pt)) rgba(255, 138, 61, 0.4); }
+.app-toast { left: calc(14 * var(--pt)); right: calc(14 * var(--pt)); bottom: calc(108 * var(--pt)); display: flex; align-items: center; gap: calc(10 * var(--pt)); padding: calc(10 * var(--pt)) calc(14 * var(--pt));
+    border-radius: calc(22 * var(--pt)); background: rgba(48, 42, 38, 0.94); border: 1px solid rgba(255, 255, 255, 0.10); box-shadow: 0 calc(10 * var(--pt)) calc(30 * var(--pt)) rgba(0, 0, 0, 0.5);
+    font-family: -apple-system, "SF Pro Text", var(--text); color: #F6EBDD; }
+.fx .app-toast img { width: calc(38 * var(--pt)); height: auto; border-radius: 0; flex: none; object-fit: contain; }
+.app-toast b { display: block; font-size: calc(15 * var(--pt)); }
+.app-toast span { display: block; font-size: calc(13 * var(--pt)); color: #BEB2A6; }
+.cover { left: 0; right: 0; background: #0F0D0C; }
 .tilt { transition: transform .6s var(--ease); }
 .float-card { position: absolute; padding: 14px 16px; border-radius: 18px; background: rgba(29, 24, 21, 0.78); border: 1px solid var(--line-2);
     -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); box-shadow: 0 24px 50px rgba(0, 0, 0, 0.5); font-size: 14px; will-change: transform; }
@@ -332,7 +368,16 @@ footer { position: relative; z-index: 2; border-top: 1px solid var(--line); padd
 @media (max-width: 1080px) {
     .nav-links { display: none; }
     .rail { display: none; }
-    .hero-grid, .split, .split.top { grid-template-columns: minmax(0, 1fr); gap: 56px; }
+    .split, .split.top { grid-template-columns: minmax(0, 1fr); gap: 56px; }
+    /* One column: the phone sticks under the top edge, each step's text comes up below it and passes behind it. */
+    .journey { grid-template-columns: minmax(0, 1fr); }
+    .journey > .hero { min-height: 0; padding: 140px 0 48px; }
+    .journey-stage { grid-column: 1; grid-row: 2 / span 8; }
+    .journey-end { height: 0; }
+    .stage-sticky { top: 74px; height: auto; padding-top: 0; }
+    .hero-phone { --ph: min(56vh, 520px); }
+    .step { min-height: 0; display: block; padding: calc(56vh + 128px) 0 22vh; }
+    .journey > .scroll-hint { display: none; }
     .split.reverse .copy { order: 0; }
     .cards3 { grid-template-columns: minmax(0, 1fr); }
     .plans { grid-template-columns: minmax(0, 1fr); }
@@ -341,10 +386,7 @@ footer { position: relative; z-index: 2; border-top: 1px solid var(--line); padd
     .wrap { padding: 0 20px; }
     .nav-pill { gap: 10px; padding-left: 14px; }
     .lang, .pill.ghost { display: none; }
-    .hero { padding-top: 120px; }
-    .hero-stage { height: 540px; margin-top: -48px; }
-    .hero-grid { gap: 8px; }
-    .hero-phone { top: 0; width: 250px; height: 542px; margin-left: -125px; }
+    .journey > .hero { padding-top: 120px; }
     .c1 { left: -6px; top: 40px; width: 200px; }
     .c2 { right: -6px; top: 230px; width: 200px; }
     .c3 { left: 0; bottom: 20px; width: 190px; }

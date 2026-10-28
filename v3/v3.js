@@ -1,8 +1,7 @@
 // dibslyapp.com landing 3.0 (2026-10-28, owner: «пиздатые анимации, что у примеров… чтоб когда пользователи зашли на
 // сайт, они ахуели»): a WebGL field of grey particles with a few orange sparks, like the app's grain (owner: «согласен»), behind the page that follows the mouse and the scroll, a short
-// counting intro, smooth scrolling, titles that rise in word by word, a pinned horizontal gallery, a chart that draws
-// itself, phones and cards that tilt under the cursor, magnetic buttons, and the demo conversation with Dibsly (from
-// 2.0). With «reduce motion», on a missing library or without WebGL, the page is simply there.
+// counting intro, smooth scrolling, titles that rise in word by word, the hero's phone that stays and shows the app step
+// by step (owner's brother's idea), a pinned horizontal gallery, cards that tilt under the cursor and magnetic buttons. With «reduce motion», on a missing library or without WebGL, the page is simply there.
 (function () {
     var root = document.documentElement;
     var calm = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -239,33 +238,15 @@
         });
     });
 
-    // ---------------------------------------------------------------- hero: the phone tilts under the cursor and leaves with the scroll
+    // ---------------------------------------------------------------- hero: the phone tilts under the cursor
     var heroPhone = document.querySelector(".hero-phone");
-    var stage = document.querySelector(".hero-stage");
-    if (fine && heroPhone && stage) {
-        var cards = all(".hero .float-card");
+    if (fine && heroPhone) {
         window.addEventListener("pointermove", function (event) {
             var x = event.clientX / window.innerWidth - 0.5, y = event.clientY / window.innerHeight - 0.5;
-            gsap.to(heroPhone, { rotateY: x * 18, rotateX: -y * 14, duration: 1.2, ease: "power3.out" });
-            cards.forEach(function (card) {
-                var depth = parseFloat(card.getAttribute("data-depth") || "1");
-                gsap.to(card, { x: x * 40 * depth, y: y * 30 * depth, duration: 1.4, ease: "power3.out" });
-            });
+            gsap.to(heroPhone, { rotateY: x * 14, rotateX: -y * 10, duration: 1.2, ease: "power3.out" });
         }, { passive: true });
     }
-    // The whole Main of 1.0.2 scrolls slowly inside the hero phone, top to bottom and back, under its fixed bar and tab bar.
-    var strip = document.querySelector(".screen-long");
-    if (strip) {
-        var startStrip = function () {
-            var screen = strip.parentNode, tabs = screen.querySelector(".ios-tabbar");
-            // From under the fixed bar until the last block («Додати кредит») stands right above the tab bar; layout
-            // sizes, not the tilted phone's on-screen box.
-            var travel = strip.offsetTop + strip.offsetHeight - (screen.offsetHeight - tabs.offsetHeight * 0.95);
-            gsap.to(strip, { y: -travel, duration: 26, ease: "sine.inOut", yoyo: true, repeat: -1, repeatDelay: 1.6, delay: 2.4 });
-        };
-        if (strip.complete) startStrip(); else strip.addEventListener("load", startStrip);
-    }
-    gsap.to(".hero-stage", { yPercent: -18, scale: 0.92, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
+    var story = heroPhone ? journey(heroPhone.querySelector(".screen")) : null;
     gsap.to(".hero-copy", { yPercent: -10, opacity: 0.2, ease: "none", scrollTrigger: { trigger: ".hero", start: "40% top", end: "bottom top", scrub: true } });
     gsap.to(".scroll-hint", { opacity: 0, scrollTrigger: { trigger: ".hero", start: "5% top", end: "20% top", scrub: true } });
 
@@ -277,12 +258,7 @@
             onUpdate: function (self) { skew(Math.max(-10, Math.min(10, self.getVelocity() / -300))); } });
     }
 
-    // ---------------------------------------------------------------- 01: two phones drift apart, the toast pops
-    gsap.fromTo(".drift-a", { y: 80 }, { y: -60, ease: "none", scrollTrigger: { trigger: "#auto", start: "top bottom", end: "bottom top", scrub: true } });
-    gsap.fromTo(".drift-b", { y: -40 }, { y: 90, ease: "none", scrollTrigger: { trigger: "#auto", start: "top bottom", end: "bottom top", scrub: true } });
-    gsap.from(".toast", { y: 50, scale: 0.8, opacity: 0, duration: 1, ease: "back.out(1.8)", scrollTrigger: { trigger: ".duo", start: "60% 75%" } });
-
-    // ---------------------------------------------------------------- 03: the gallery scrolls sideways while pinned
+    // ---------------------------------------------------------------- 08: the gallery scrolls sideways while pinned
     var mm = gsap.matchMedia();
     mm.add("(min-width: 1081px)", function () {
         var trackEl = document.querySelector(".gallery-track");
@@ -300,15 +276,7 @@
         all(".shot").forEach(function (shot) { shot.style.scrollSnapAlign = "center"; });
     });
 
-    // ---------------------------------------------------------------- 04: the chart draws itself, the result counts up
-    var line = document.querySelector(".chart-line");
-    if (line) {
-        var length = line.getTotalLength();
-        gsap.set(line, { strokeDasharray: length, strokeDashoffset: length });
-        gsap.to(line, { strokeDashoffset: 0, ease: "none", scrollTrigger: { trigger: "#invest", start: "top 70%", end: "center center", scrub: true } });
-        gsap.from(".chart-area", { opacity: 0, scrollTrigger: { trigger: "#invest", start: "top 60%", end: "center center", scrub: true } });
-    }
-    gsap.from("#invest .phone", { rotate: 8, y: 120, ease: "none", scrollTrigger: { trigger: "#invest", start: "top bottom", end: "center center", scrub: true } });
+    // ---------------------------------------------------------------- the price counts up
     all(".count").forEach(function (cell) {
         var to = parseFloat(cell.getAttribute("data-to")), decimals = parseInt(cell.getAttribute("data-decimals") || "0", 10);
         var value = { v: 0 };
@@ -316,7 +284,7 @@
             onUpdate: function () { cell.textContent = value.v.toFixed(decimals).replace(".", decimals && root.lang === "uk" && cell.closest(".float-card") ? "," : "."); } });
     });
 
-    // ---------------------------------------------------------------- 05/06: cards light up under the cursor and tilt
+    // ---------------------------------------------------------------- 09: cards light up under the cursor and tilt
     if (fine) {
         all(".spot").forEach(function (card) {
             card.addEventListener("pointermove", function (event) {
@@ -368,6 +336,168 @@
     runChat();
     runMascots();
     window.addEventListener("load", function () { ScrollTrigger.refresh(); });
+
+    // ================================================================ the journey: the hero's phone shows the app
+    // Each step on the left plays its scene in the phone when it comes in: the app's own screens from the demo, cut,
+    // faded, pushed or raised as a sheet, with a finger's taps, a notification, a highlight and a toast drawn over them.
+    // Positions are the screen's points (402 × 874), as on the captures.
+    function journey(screen) {
+        if (!screen) return null;
+        var live = screen.querySelector(".live"), strip = screen.querySelector(".screen-long");
+        var frames = { live: live };
+        all(".frame", screen).forEach(function (frame) { frames[frame.getAttribute("data-frame")] = frame; });
+        var layers = Object.keys(frames).map(function (name) { return frames[name]; });
+        var fx = {};
+        ["banner", "cover", "hl", "tap", "app-toast"].forEach(function (name) { fx[name] = screen.querySelector(".fx ." + name); });
+        var current = live, timeline = null, loop = null, depth = 1, playing = null;
+
+        function travel() {
+            var tabs = live.querySelector(".ios-tabbar");
+            return strip.offsetTop + strip.offsetHeight - (screen.offsetHeight - tabs.offsetHeight * 0.95);
+        }
+        function startLoop() {
+            if (loop) loop.kill();
+            gsap.set(strip, { y: 0 });
+            loop = gsap.to(strip, { y: function () { return -travel(); }, duration: 26, ease: "sine.inOut", yoyo: true, repeat: -1, repeatDelay: 1.6, delay: 2.4 });
+        }
+        function stopLoop() { if (loop) { loop.kill(); loop = null; } }
+        function x(pt) { return pt / 402 * 100 + "%"; }
+        function y(pt) { return pt / 874 * 100 + "%"; }
+
+        // Shows a screen over the one in front: "fade", "cut", "push" (a page from the right) or "sheet" (from below).
+        function show(tl, name, how, at) {
+            var next = frames[name], last = current;
+            if (!next || next === last) return;
+            current = next;
+            depth += 1;
+            tl.set(next, { zIndex: depth, xPercent: 0, yPercent: 0 }, at);
+            if (how === "push") {
+                tl.fromTo(next, { xPercent: 100, opacity: 1 }, { xPercent: 0, duration: 0.6, ease: "power3.inOut" }, at)
+                    .to(last, { xPercent: -28, opacity: 0.4, duration: 0.6, ease: "power3.inOut" }, "<");
+            } else if (how === "sheet") {
+                tl.fromTo(next, { yPercent: 100, opacity: 1 }, { yPercent: 0, duration: 0.6, ease: "power3.out" }, at);
+            } else {
+                tl.fromTo(next, { opacity: 0 }, { opacity: 1, duration: how === "cut" ? 0.01 : 0.32, ease: "none" }, at);
+            }
+            tl.set(last, { opacity: 0, xPercent: 0, yPercent: 0 });
+        }
+        function tap(tl, px, py, at) {
+            tl.set(fx.tap, { left: x(px), top: y(py), scale: 0.5, opacity: 0 }, at)
+                .to(fx.tap, { scale: 1, opacity: 1, duration: 0.14, ease: "power2.out" }, at)
+                .to(fx.tap, { scale: 1.6, opacity: 0, duration: 0.45, ease: "power2.out" }, ">");
+        }
+        function mark(tl, px, py, width, height, at, hold) {
+            tl.set(fx.hl, { left: x(px), top: y(py), width: x(width), height: y(height), scale: 1.08, opacity: 0 }, at)
+                .to(fx.hl, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(2)" }, at)
+                .to(fx.hl, { opacity: 0, duration: 0.4 }, at + (hold || 1.6));
+        }
+        // Back to a still screen: what a cut-short scene left half way is put straight.
+        function settle() {
+            if (timeline) timeline.kill();
+            layers.forEach(function (layer) {
+                gsap.set(layer, layer === current ? { opacity: 1, xPercent: 0, yPercent: 0 } : { opacity: 0, xPercent: 0, yPercent: 0 });
+            });
+            gsap.set([fx.banner, fx.hl, fx.tap, fx["app-toast"], fx.cover], { opacity: 0 });
+        }
+
+        var scenes = {
+            hero: function (tl) {
+                show(tl, "live", "fade", 0);
+                tl.to(strip, { y: 0, duration: 0.9, ease: "power2.inOut" }, 0);
+                tl.call(startLoop, null, 0.9);
+            },
+            // A purchase with Apple Pay waits in «Активність»; one tap saves it and «Витрачено» grows.
+            auto: function (tl) {
+                if (current === live) {
+                    tl.to(strip, { y: 0, duration: 0.8, ease: "power2.inOut" }, 0);
+                    show(tl, "a-main", "fade", 0.8);
+                } else {
+                    show(tl, "a-main", "fade", 0);
+                }
+                tl.fromTo(fx.banner, { yPercent: -160, opacity: 1 }, { yPercent: 0, duration: 0.7, ease: "back.out(1.4)" }, 1.2);
+                mark(tl, 8, 545, 386, 46, 2.0, 1.6);
+                tl.to(fx.banner, { yPercent: -160, duration: 0.5, ease: "power2.in" }, 3.0);
+                tap(tl, 359, 568, 3.6);
+                show(tl, "a-after", "fade", 3.8);
+                mark(tl, 146, 418, 104, 46, 4.3, 1.8);
+            },
+            // «+» → «Операція» → 8, 5 → «Вибери категорію» → «Кафе й ресторани»: saved.
+            plus: function (tl) {
+                show(tl, "a-after", "fade", 0);
+                tap(tl, 348, 800, 0.6);
+                show(tl, "b-plus", "fade", 0.75);
+                tap(tl, 200, 602, 1.7);
+                show(tl, "b-form", "sheet", 1.85);
+                tap(tl, 131, 685, 2.9);
+                show(tl, "b-8", "cut", 3.0);
+                tap(tl, 131, 633, 3.45);
+                show(tl, "b-85", "cut", 3.55);
+                tap(tl, 201, 805, 4.4);
+                show(tl, "b-cats", "sheet", 4.55);
+                tap(tl, 71, 272, 5.7);
+                show(tl, "b-after", "fade", 5.85);
+                tl.fromTo(fx["app-toast"], { yPercent: 60, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.5, ease: "back.out(1.6)" }, 6.1)
+                    .to(fx["app-toast"], { opacity: 0, yPercent: 30, duration: 0.4 }, 8.6);
+                mark(tl, 146, 418, 104, 46, 6.4, 1.8);
+            },
+            // The chat rises as a sheet and its answer comes in part by part.
+            ask: function (tl) {
+                tl.set(fx.cover, { top: y(250), height: y(485), opacity: 1 }, 0);
+                show(tl, "c-chat", "sheet", 0);
+                [[332, 1.1], [385, 1.9], [582, 2.6], [655, 3.4], [735, 4.0]].forEach(function (step) {
+                    var top = step[0];
+                    tl.to(fx.cover, { top: y(top), height: y(735 - top), duration: 0.45, ease: "power2.out" }, step[1]);
+                });
+                tl.set(fx.cover, { opacity: 0 });
+                mark(tl, 16, 395, 370, 186, 4.6, 2.2);
+            },
+            // The plan with what went over it, then the goals with when they come.
+            plan: function (tl) {
+                show(tl, "c-plan", "push", 0);
+                mark(tl, 34, 375, 248, 116, 0.9, 2.0);
+                show(tl, "c-goals", "push", 3.3);
+                mark(tl, 66, 337, 254, 30, 4.2, 2.2);
+            },
+            invest: function (tl) {
+                show(tl, "c-invest", "push", 0);
+                mark(tl, 12, 196, 366, 32, 0.9, 2.4);
+            },
+            // Back on Main, down to «Борги» and «Кредити».
+            money: function (tl) {
+                stopLoop();
+                tl.set(strip, { y: function () { return -travel() + 260; } }, 0);
+                show(tl, "live", "fade", 0);
+                tl.to(strip, { y: function () { return -travel(); }, duration: 1.4, ease: "power2.inOut" }, 0.4);
+            },
+            fop: function (tl) {
+                show(tl, "c-fop", "push", 0);
+                mark(tl, 10, 116, 300, 104, 0.9, 2.0);
+                mark(tl, 22, 416, 360, 46, 3.2, 2.0);
+            }
+        };
+
+        function play(name) {
+            if (!scenes[name] || name === playing) return;
+            playing = name;
+            settle();
+            if (name !== "hero") stopLoop();
+            timeline = gsap.timeline();
+            scenes[name](timeline);
+        }
+        if (strip.complete) startLoop(); else strip.addEventListener("load", startLoop);
+
+        // Each step plays its scene as it comes in, and going back up plays the one before.
+        var order = all("[data-scene]");
+        order.forEach(function (section, index) {
+            if (index === 0) return;
+            var before = order[index - 1].getAttribute("data-scene");
+            var copy = section.querySelector(".step-copy") || section;
+            ScrollTrigger.create({ trigger: small ? copy : section, start: small ? "top 88%" : "top 55%",
+                onEnter: function () { play(section.getAttribute("data-scene")); },
+                onLeaveBack: function () { play(before); } });
+        });
+        return { play: play };
+    }
 
     // ================================================================ Dibsly himself and the demo conversation (2.0)
     function runMascots() {
