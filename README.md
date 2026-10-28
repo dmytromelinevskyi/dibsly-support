@@ -73,6 +73,10 @@ phone in front of it and Dibsly beside them; the second button opens the website
 platforms — iPhone and browser available, Android, iPad and Mac «скоро». The Premium section no longer repeats the
 browser shot.
 
+**Landing 3.0 in English (2026-10-28):** `en.html` is the Ukrainian `index.html` in English, block for block, on
+`v3/v3.css` and `v3/v3.js`; its scenes are `v3/scenes/en-*.jpg` (see `tools/scenes/README.md`). Both pages carry
+canonical, hreflang (uk, en, x-default), Open Graph and Twitter tags; crawlers are not sent from `/` to `en.html`.
+
 Since 2026-10-10 the same files are also served at **<https://dibslyapp.com>** by the Cloudflare Worker `dibsly-site`
 (`worker.js`, `wrangler.toml`; deploy with `npx wrangler deploy` on the owner's word), which also opens short split
 links `dibslyapp.com/s/<code>`: the bill is kept 30 days by Dibsly's server (`dibsly-sync`, service binding) and put

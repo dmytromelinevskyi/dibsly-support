@@ -13,3 +13,13 @@ The hero's phone on `index.html` shows real Dibsly screens (`v3/scenes/*.jpg`) a
   `BOT=2090 ./build_strip.sh <dir> <prefix> <full.jpg> <strip.jpg> <shifts…>` stacks them (BOT cuts above Dibsly's
   button, which the page draws live).
 - JPEGs go to `v3/scenes/` / `v3/shots/`; deploy with `npx wrangler deploy`, then commit and push `main`.
+
+## English frames (`en.html`)
+
+`en.html` plays the same timeline on `v3/scenes/en-*.jpg` and `v3/shots/en-main-long.jpg` (the strip is there; the
+13 frames are still to be shot with `shoot.sh <scene> en`): `en-a-main`, `en-a-after`, `en-b-plus`, `en-b-form`,
+`en-b-8`, `en-b-85`, `en-b-cats`, `en-b-after`, `en-c-chat`, `en-c-plan`, `en-c-goals`, `en-c-invest`, `en-c-fop`
+(750 × 1631, like the Ukrainian ones). The taps and highlights in `v3/v3.js` are the same points for both languages, so
+the English screens need the same layout. What the page draws over them in English: the banner
+«Lidl · −$42.13 from Chase» (the first purchase in Activity on the English strip), «+» → 8, 5 → «Cafés», and the toast
+«Expense saved · Cafés · −$85»; change those lines in `en.html` if the frames show something else.

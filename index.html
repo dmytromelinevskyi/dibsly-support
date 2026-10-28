@@ -7,11 +7,26 @@
     <title>Dibsly: усі твої гроші в одному місці</title>
     <meta name="description" content="Dibsly для iPhone і браузера: картки всіх банків, готівка, накопичення, інвестиції, ФОП, борги й кредити разом. Витрати записуються самі, а Dibsly відповідає на питання про гроші твоїми цифрами.">
     <meta name="theme-color" content="#0E0C0B">
+    <link rel="canonical" href="https://dibslyapp.com/">
+    <link rel="alternate" hreflang="uk" href="https://dibslyapp.com/">
+    <link rel="alternate" hreflang="en" href="https://dibslyapp.com/en.html">
+    <link rel="alternate" hreflang="x-default" href="https://dibslyapp.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Dibsly">
+    <meta property="og:url" content="https://dibslyapp.com/">
+    <meta property="og:locale" content="uk_UA">
+    <meta property="og:locale:alternate" content="en_US">
     <meta property="og:title" content="Dibsly: усі твої гроші в одному місці">
     <meta property="og:description" content="Усі банки, Apple Pay, готівка, цілі, інвестиції, ФОП, борги й кредити на iPhone і в браузері.">
     <meta property="og:image" content="https://dibslyapp.com/img/shots/uk-web.jpg">
-    <link rel="alternate" hreflang="uk" href="https://dibslyapp.com/">
-    <link rel="alternate" hreflang="en" href="https://dibslyapp.com/en.html">
+    <meta property="og:image:width" content="1440">
+    <meta property="og:image:height" content="900">
+    <meta property="og:image:alt" content="Сайт my.dibslyapp.com: гроші під рукою, заощадження, інвестиції, куди пішли гроші й найближчі платежі">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dibsly: усі твої гроші в одному місці">
+    <meta name="twitter:description" content="Усі банки, Apple Pay, готівка, цілі, інвестиції, ФОП, борги й кредити на iPhone і в браузері.">
+    <meta name="twitter:image" content="https://dibslyapp.com/img/shots/uk-web.jpg">
+    <meta name="twitter:image:alt" content="Сайт my.dibslyapp.com: гроші під рукою, заощадження, інвестиції, куди пішли гроші й найближчі платежі">
     <link rel="icon" type="image/png" href="img/favicon.png">
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,11 +36,12 @@
     <script>
         document.documentElement.classList.add("js");
         // A first visit from a browser that speaks neither Ukrainian nor Russian opens the English page; a language
-        // picked with the switch is kept.
+        // picked with the switch is kept. Search engines' crawlers stay: they find en.html through hreflang.
         try {
             var picked = localStorage.getItem("dibsly.site.lang");
             var speaks = (navigator.languages || [navigator.language || ""]).some(function (each) { return /^(uk|ru)\b/i.test(each); });
-            if (picked === "en" || (!picked && !speaks)) location.replace("en.html");
+            var crawler = /bot|crawl|spider|slurp|facebookexternalhit|lighthouse/i.test(navigator.userAgent);
+            if (picked === "en" || (!picked && !speaks && !crawler)) location.replace("en.html");
         } catch (error) { /* private mode: stay */ }
     </script>
 </head>
@@ -45,7 +61,7 @@
                 <a href="#faq">Питання</a>
             </div>
             <div class="nav-actions">
-                <a class="lang" href="en.html" hreflang="en" onclick="try { localStorage.setItem('dibsly.site.lang', 'en'); } catch (error) {}">EN</a>
+                <a class="lang" href="en.html" hreflang="en" lang="en" aria-label="English" onclick="try { localStorage.setItem('dibsly.site.lang', 'en'); } catch (error) {}">EN</a>
                 <a class="pill ghost" href="https://my.dibslyapp.com">Увійти</a>
                 <a class="pill hot" href="https://apps.apple.com/app/id6765870838">Завантажити</a>
             </div>
@@ -68,7 +84,7 @@
                     <div class="phone hero-phone">
                         <div class="screen">
                             <div class="live">
-                            <img class="screen-long" src="v3/shots/uk-main-long.jpg" alt="Головна Dibsly: гроші під рукою, кредитний ліміт, накопичення, місяць, активність, план, цілі, календар, борги й кредити" width="750" height="3541">
+                            <img class="screen-long" src="v3/shots/uk-main-long.jpg" alt="Головна Dibsly: гроші під рукою, кредитний ліміт, накопичення, місяць, активність, план, цілі, календар, борги й кредити" width="750" height="3541" fetchpriority="high">
                             <div class="ios-top" aria-hidden="true">
                                 <div class="ios-status"><b>09:41</b><span class="ios-icons"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"></rect><rect x="5" y="5.5" width="3" height="6.5" rx="1"></rect><rect x="10" y="3" width="3" height="9" rx="1"></rect><rect x="15" y="0" width="3" height="12" rx="1"></rect></svg><svg viewBox="0 0 16 12"><path d="M8 11.5l2.4-2.8a3.6 3.6 0 00-4.8 0L8 11.5zM3.7 6.6a6.2 6.2 0 018.6 0l1.6-1.8a8.6 8.6 0 00-11.8 0l1.6 1.8zM.6 3.1a10.9 10.9 0 0114.8 0L16 2.4A12 12 0 000 2.4l.6.7z"></path></svg><span class="ios-battery"><i></i></span></span></div>
                                 <div class="ios-header"><span>Середа, 28 жовтня</span><span class="ios-glass"><i class="ios-avatar">М</i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3.2"></circle><path d="M12 2.5l1.6 2.6 3-.6.6 3 2.6 1.6-1.4 2.9 1.4 2.9-2.6 1.6-.6 3-3-.6L12 21.5l-1.6-2.6-3 .6-.6-3-2.6-1.6 1.4-2.9-1.4-2.9 2.6-1.6.6-3 3 .6z"></path></svg></span></div>
@@ -84,19 +100,19 @@
                             </div>
                             </div>
                             <div class="frames" aria-hidden="true">
-                                <img class="frame" data-frame="a-main" src="v3/scenes/uk-a-main.jpg" alt="Головна: активність з покупкою Сільпо" width="750" height="1630" decoding="async">
-                                <img class="frame" data-frame="a-after" src="v3/scenes/uk-a-after.jpg" alt="Покупку збережено, «Витрачено» виросло" width="750" height="1630" decoding="async">
-                                <img class="frame" data-frame="b-plus" src="v3/scenes/uk-b-plus.jpg" alt="Меню плюса: операція, голос, чек" width="750" height="1630" decoding="async">
-                                <img class="frame" data-frame="b-form" src="v3/scenes/uk-b-form.jpg" alt="Нова витрата" width="750" height="1630" decoding="async">
-                                <img class="frame" data-frame="b-8" src="v3/scenes/uk-b-8.jpg" alt="Сума 8" width="750" height="1630" decoding="async">
-                                <img class="frame" data-frame="b-85" src="v3/scenes/uk-b-85.jpg" alt="Сума 85" width="750" height="1630" decoding="async">
-                                <img class="frame" data-frame="b-cats" src="v3/scenes/uk-b-cats.jpg" alt="Вибір категорії" width="750" height="1630" decoding="async">
-                                <img class="frame" data-frame="b-after" src="v3/scenes/uk-b-after.jpg" alt="Витрату збережено" width="750" height="1630" decoding="async">
-                                <img class="frame" data-frame="c-chat" src="v3/scenes/uk-c-chat.jpg" alt="Чат з Dibsly: найбільші витрати й запис кави" width="750" height="1630" decoding="async">
-                                <img class="frame" data-frame="c-plan" src="v3/scenes/uk-c-plan.jpg" alt="План місяця: три категорії понад план" width="750" height="1630" decoding="async">
-                                <img class="frame" data-frame="c-goals" src="v3/scenes/uk-c-goals.jpg" alt="Цілі з прогнозом" width="750" height="1630" decoding="async">
-                                <img class="frame" data-frame="c-invest" src="v3/scenes/uk-c-invest.jpg" alt="Портфель з історією вартості" width="750" height="1630" decoding="async">
-                                <img class="frame" data-frame="c-fop" src="v3/scenes/uk-c-fop.jpg" alt="ФОП: до сплати й найближчі строки" width="750" height="1630" decoding="async">
+                                <img class="frame" data-frame="a-main" src="v3/scenes/uk-a-main.jpg" alt="Головна: активність з покупкою Сільпо" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="a-after" src="v3/scenes/uk-a-after.jpg" alt="Покупку збережено, «Витрачено» виросло" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="b-plus" src="v3/scenes/uk-b-plus.jpg" alt="Меню плюса: операція, голос, чек" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="b-form" src="v3/scenes/uk-b-form.jpg" alt="Нова витрата" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="b-8" src="v3/scenes/uk-b-8.jpg" alt="Сума 8" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="b-85" src="v3/scenes/uk-b-85.jpg" alt="Сума 85" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="b-cats" src="v3/scenes/uk-b-cats.jpg" alt="Вибір категорії" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="b-after" src="v3/scenes/uk-b-after.jpg" alt="Витрату збережено" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="c-chat" src="v3/scenes/uk-c-chat.jpg" alt="Чат з Dibsly: найбільші витрати й запис кави" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="c-plan" src="v3/scenes/uk-c-plan.jpg" alt="План місяця: три категорії понад план" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="c-goals" src="v3/scenes/uk-c-goals.jpg" alt="Цілі з прогнозом" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="c-invest" src="v3/scenes/uk-c-invest.jpg" alt="Портфель з історією вартості" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="c-fop" src="v3/scenes/uk-c-fop.jpg" alt="ФОП: до сплати й найближчі строки" width="750" height="1631" decoding="async" fetchpriority="low">
                             </div>
                             <div class="fx" aria-hidden="true">
                                 <div class="banner"><img src="img/apple-touch-icon.png" alt="" width="38" height="38"><div><b>Dibsly <span>зараз</span></b><p>Сільпо · −842,50 ₴ з UKRSIBBANK</p><p class="dim-line">Збережи — і буде в історії та балансі</p></div></div>
@@ -298,7 +314,7 @@
         <section class="finale" id="get">
             <div class="wrap center">
                 <div class="mascot big" data-play="hello" data-loop aria-hidden="true">
-                    <img class="mascot-still" src="img/dibsly-dark.png" alt="" width="404" height="386">
+                    <img class="mascot-still" src="img/dibsly-dark.png" alt="" width="404" height="386" loading="lazy">
                     <div class="mascot-stage"></div>
                 </div>
                 <h2 class="giant">Dibsly<span class="hot">.</span></h2>
@@ -320,6 +336,7 @@
             <a href="privacy-uk.html">Конфіденційність</a>
             <a href="terms-uk.html">Умови</a>
             <a href="https://my.dibslyapp.com">my.dibslyapp.com</a>
+            <a href="en.html" hreflang="en" lang="en" onclick="try { localStorage.setItem('dibsly.site.lang', 'en'); } catch (error) {}">English</a>
             <span class="copy-r">© 2026 Dibsly</span>
         </div>
     </footer>
