@@ -1,5 +1,5 @@
 // dibslyapp.com landing 3.0 (2026-10-28, owner: «пиздатые анимации, что у примеров… чтоб когда пользователи зашли на
-// сайт, они ахуели»): a WebGL field of warm particles behind the page that follows the mouse and the scroll, a short
+// сайт, они ахуели»): a WebGL field of grey particles with a few orange sparks, like the app's grain (owner: «согласен»), behind the page that follows the mouse and the scroll, a short
 // counting intro, smooth scrolling, titles that rise in word by word, a pinned horizontal gallery, a chart that draws
 // itself, phones and cards that tilt under the cursor, magnetic buttons, and the demo conversation with Dibsly (from
 // 2.0). With «reduce motion», on a missing library or without WebGL, the page is simply there.
@@ -90,7 +90,7 @@
                 y = (rnd() - 0.5) * (0.5 + t * 1.2);
             }
             positions[i * 3] = x; positions[i * 3 + 1] = y; positions[i * 3 + 2] = z;
-            seeds[i * 4] = rnd(); seeds[i * 4 + 1] = rnd(); seeds[i * 4 + 2] = rnd(); seeds[i * 4 + 3] = rnd() < 0.62 ? 1 : 0;
+            seeds[i * 4] = rnd(); seeds[i * 4 + 1] = rnd(); seeds[i * 4 + 2] = rnd(); seeds[i * 4 + 3] = rnd() < 0.12 ? 1 : 0;
         }
         var geometry = new THREE.BufferGeometry();
         geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
@@ -130,7 +130,7 @@
                 "  float d = length(gl_PointCoord - 0.5);",
                 "  float a = smoothstep(0.5, 0.0, d);",
                 "  vec3 warm = vec3(1.0, 0.54, 0.24); vec3 cream = vec3(0.96, 0.92, 0.86);",
-                "  vec3 c = mix(cream * 0.75, warm, vWarm);",
+                "  vec3 c = mix(cream * 0.62, warm * 1.15, vWarm);",
                 "  gl_FragColor = vec4(c, a * vAlpha * uFade);",
                 "}"
             ].join("\n")
@@ -187,7 +187,6 @@
             .from(".hero-title .word", { yPercent: 115, rotate: 4, duration: 1.4, stagger: 0.07 }, "-=0.7")
             .to(".hero .fade-up", { y: 0, opacity: 1, duration: 1.2, stagger: 0.1 }, "-=1.0")
             .from(".hero-phone", { y: 160, rotateX: 28, rotateY: -18, opacity: 0, duration: 1.8 }, "-=1.5")
-            .from(".hero .float-card", { y: 60, opacity: 0, scale: 0.9, duration: 1.2, stagger: 0.12 }, "-=1.2")
             .from(".nav-pill", { y: -40, opacity: 0, duration: 1 }, "-=1.4");
     }
     function begin() {
@@ -254,9 +253,6 @@
             });
         }, { passive: true });
     }
-    all(".hero .float-card").forEach(function (card, index) {
-        gsap.to(card.firstElementChild ? card : card, { yPercent: index % 2 ? -6 : 6, duration: 3 + index, ease: "sine.inOut", yoyo: true, repeat: -1 });
-    });
     // The whole Main of 1.0.2 scrolls slowly inside the hero phone, top to bottom and back, under its fixed bar and tab bar.
     var strip = document.querySelector(".screen-long");
     if (strip) {
