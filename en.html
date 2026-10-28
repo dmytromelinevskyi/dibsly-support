@@ -2,345 +2,347 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Dibsly: all your money in one place</title>
-    <meta name="description" content="Dibsly for iPhone and the web: cards from different banks, cash, savings, goals and investments together. Apple Pay, Interactive Brokers and Freedom Finance for free. With Premium: any bank through your ChatGPT or Claude, the website, shared accounts.">
-    <meta name="theme-color" content="#F7F3EE">
-    <meta property="og:title" content="Dibsly: all your money in one place">
-    <meta property="og:description" content="Every bank, Apple Pay, cash, goals and investments on iPhone and in your browser.">
-    <meta property="og:image" content="https://dibslyapp.com/img/shots/en-web.jpg">
+    <meta name="description" content="Dibsly for iPhone and the web: cards from every bank, cash, savings, investments, FOP, debts and credits together. Spending records itself, and Dibsly answers your money questions in your own figures.">
+    <meta name="theme-color" content="#0E0C0B">
+    <link rel="canonical" href="https://dibslyapp.com/en.html">
     <link rel="alternate" hreflang="uk" href="https://dibslyapp.com/">
     <link rel="alternate" hreflang="en" href="https://dibslyapp.com/en.html">
+    <link rel="alternate" hreflang="x-default" href="https://dibslyapp.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Dibsly">
+    <meta property="og:url" content="https://dibslyapp.com/en.html">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="uk_UA">
+    <meta property="og:title" content="Dibsly: all your money in one place">
+    <meta property="og:description" content="Every bank, Apple Pay, cash, goals, investments, FOP, debts and credits on iPhone and in your browser.">
+    <meta property="og:image" content="https://dibslyapp.com/img/shots/en-web.jpg">
+    <meta property="og:image:width" content="2160">
+    <meta property="og:image:height" content="1350">
+    <meta property="og:image:alt" content="The website my.dibslyapp.com: money on hand, savings, investments, where the money went and upcoming payments">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dibsly: all your money in one place">
+    <meta name="twitter:description" content="Every bank, Apple Pay, cash, goals, investments, FOP, debts and credits on iPhone and in your browser.">
+    <meta name="twitter:image" content="https://dibslyapp.com/img/shots/en-web.jpg">
+    <meta name="twitter:image:alt" content="The website my.dibslyapp.com: money on hand, savings, investments, where the money went and upcoming payments">
     <link rel="icon" type="image/png" href="img/favicon.png">
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-    <link rel="stylesheet" href="v2/v2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="v3/v3.css">
     <script>
         document.documentElement.classList.add("js");
-        try { if (localStorage.getItem("dibsly.site.theme") === "dark") document.documentElement.dataset.theme = "dark"; } catch (error) {}
         // The Ukrainian page sends here browsers that speak neither Ukrainian nor Russian; a language picked with the
         // switch is kept.
     </script>
 </head>
 <body>
+    <div class="intro" aria-hidden="true"><span class="intro-count">0</span><span class="intro-word">Dibsly</span></div>
+    <canvas class="field" aria-hidden="true"></canvas>
+    <div class="cursor" aria-hidden="true"></div>
+
     <header class="nav">
-        <div class="wrap">
-            <a class="brand" href="./"><img src="img/apple-touch-icon.png" alt="" width="30" height="30">Dibsly</a>
-            <nav class="nav-links" aria-label="Sections">
-                <a href="#ask">Chat</a>
-                <a href="features.html">Features</a>
-                <a href="#invest">Investing</a>
+        <nav class="nav-pill" aria-label="Main menu">
+            <a class="brand" href="#top"><img src="img/apple-touch-icon.png" alt="" width="28" height="28">Dibsly</a>
+            <div class="nav-links">
+                <a href="#auto">Features</a>
+                <a href="#money">Debts, credits, FOP</a>
+                <a href="#everywhere">Website and AI</a>
                 <a href="#price">Price</a>
-                <a href="support.html">Support</a>
-            </nav>
-            <a class="lang" href="./" hreflang="uk" onclick="try { localStorage.setItem('dibsly.site.lang', 'uk'); } catch (error) {}">UK</a>
-            <button class="theme" type="button" aria-label="Dark or light theme">◐</button>
-            <a class="button quiet small signin" href="https://my.dibslyapp.com">Sign in</a>
-            <a class="button primary small" href="https://apps.apple.com/app/id6765870838">App Store</a>
-        </div>
+                <a href="#faq">Questions</a>
+            </div>
+            <div class="nav-actions">
+                <a class="lang" href="./" hreflang="uk" lang="uk" aria-label="Українська" onclick="try { localStorage.setItem('dibsly.site.lang', 'uk'); } catch (error) {}">UK</a>
+                <a class="pill ghost" href="https://my.dibslyapp.com">Sign in</a>
+                <a class="pill hot" href="https://apps.apple.com/app/id6765870838">Download</a>
+            </div>
+        </nav>
     </header>
 
+    <ol class="rail" aria-hidden="true">
+        <li data-for="top">00</li><li data-for="auto">01</li><li data-for="plus">02</li><li data-for="ask">03</li>
+        <li data-for="plan">04</li><li data-for="invest">05</li><li data-for="money">06</li><li data-for="fop">07</li>
+        <li data-for="analytics">08</li><li data-for="everywhere">09</li><li data-for="price">10</li>
+    </ol>
+
     <main>
-        <section class="hero" id="top">
-            <div class="wrap">
-                <div>
-                    <h1>All your money <em>in&nbsp;one place</em></h1>
-                    <p class="lead">Cards from every bank, cash, savings and investments. Dibsly records your spending and answers your money questions.</p>
-                    <div class="actions">
-                        <a class="button primary" href="https://apps.apple.com/app/id6765870838">Download on the App Store</a>
-                        <a class="button quiet" href="https://my.dibslyapp.com">Open in a browser</a>
+        <!-- 00–07: the phone of the hero stays and shows the app step by step (owner, 2026-10-28, his brother's idea:
+             «по мере скролла показываются функции приложения… с параллельным описанием» — on the 3.0 frame he likes) -->
+        <div class="journey wrap">
+            <div class="journey-stage">
+                <div class="stage-sticky">
+                  <div class="phone-lift">
+                    <div class="phone hero-phone">
+                        <div class="screen">
+                            <div class="live">
+                            <img class="screen-long" src="v3/shots/en-main-long.jpg" alt="Dibsly's Main: money on hand, credit still available, savings, the month, activity, plan, goals, calendar, debts and credits" width="750" height="3692" fetchpriority="high">
+                            <div class="ios-top" aria-hidden="true">
+                                <div class="ios-status"><b>09:41</b><span class="ios-icons"><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"></rect><rect x="5" y="5.5" width="3" height="6.5" rx="1"></rect><rect x="10" y="3" width="3" height="9" rx="1"></rect><rect x="15" y="0" width="3" height="12" rx="1"></rect></svg><svg viewBox="0 0 16 12"><path d="M8 11.5l2.4-2.8a3.6 3.6 0 00-4.8 0L8 11.5zM3.7 6.6a6.2 6.2 0 018.6 0l1.6-1.8a8.6 8.6 0 00-11.8 0l1.6 1.8zM.6 3.1a10.9 10.9 0 0114.8 0L16 2.4A12 12 0 000 2.4l.6.7z"></path></svg><span class="ios-battery"><i></i></span></span></div>
+                                <div class="ios-header"><span>Wednesday, October 28</span><span class="ios-glass"><i class="ios-avatar">M</i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3.2"></circle><path d="M12 2.5l1.6 2.6 3-.6.6 3 2.6 1.6-1.4 2.9 1.4 2.9-2.6 1.6-.6 3-3-.6L12 21.5l-1.6-2.6-3 .6-.6-3-2.6-1.6 1.4-2.9-1.4-2.9 2.6-1.6.6-3 3 .6z"></path></svg></span></div>
+                            </div>
+                            <div class="ios-tabbar" aria-hidden="true">
+                                <div class="ios-pill">
+                                    <span class="ios-tab on"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3.2L2.6 11.3l1.3 1.5 1.6-1.4V20h5v-5h3v5h5v-8.6l1.6 1.4 1.3-1.5z"></path></svg>Main</span>
+                                    <span class="ios-tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="3" width="14" height="18" rx="2.5"></rect><path d="M8.5 8h7M8.5 12h7M8.5 16h4"></path></svg>History</span>
+                                    <span class="ios-tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"></circle><path d="M12 3v9l6.4 6.4M12 12H3.2"></path></svg>Analytics</span>
+                                </div>
+                                <img class="ios-dibsly" src="v3/scenes/dibsly-button.png" alt="" width="184" height="184">
+                                <span class="ios-plus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg></span>
+                            </div>
+                            </div>
+                            <div class="frames" aria-hidden="true">
+                                <img class="frame" data-frame="a-main" src="v3/scenes/en-a-main.jpg" alt="Main: Activity with a Lidl purchase" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="a-after" src="v3/scenes/en-a-after.jpg" alt="The purchase saved, Spent has grown" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="b-plus" src="v3/scenes/en-b-plus.jpg" alt="The plus menu: operation, voice, receipt" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="b-form" src="v3/scenes/en-b-form.jpg" alt="A new expense" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="b-8" src="v3/scenes/en-b-8.jpg" alt="Amount 8" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="b-85" src="v3/scenes/en-b-85.jpg" alt="Amount 85" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="b-cats" src="v3/scenes/en-b-cats.jpg" alt="Picking a category" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="b-after" src="v3/scenes/en-b-after.jpg" alt="The expense saved" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="c-chat" src="v3/scenes/en-c-chat.jpg" alt="Chat with Dibsly: the biggest spending and a coffee added" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="c-plan" src="v3/scenes/en-c-plan.jpg" alt="The month's plan: categories over plan" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="c-goals" src="v3/scenes/en-c-goals.jpg" alt="Goals with a forecast" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="c-invest" src="v3/scenes/en-c-invest.jpg" alt="The portfolio with its value history" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="c-fop" src="v3/scenes/en-c-fop.jpg" alt="FOP: tax to pay and the next deadlines" width="750" height="1631" decoding="async" fetchpriority="low">
+                            </div>
+                            <div class="fx" aria-hidden="true">
+                                <div class="banner"><img src="img/apple-touch-icon.png" alt="" width="38" height="38"><div><b>Dibsly <span>now</span></b><p>Lidl · −$42.13 from Chase</p><p class="dim-line">Save it and it goes to History and the balance</p></div></div>
+                                <div class="cover"></div>
+                                <div class="hl"></div>
+                                <div class="tap"></div>
+                                <div class="touch"></div>
+                                <div class="app-toast"><img src="img/dibsly-dark.png" alt="" width="40" height="38"><div><b>Expense saved</b><span>Cafés · −$85</span></div></div>
+                            </div>
+                        </div>
                     </div>
-                    <ul class="platforms" aria-label="Platforms"><li class="ready">iPhone</li><li class="ready">Browser</li><li>Android <small>soon</small></li><li>iPad <small>soon</small></li><li>Mac <small>soon</small></li></ul>
+                  </div>
                 </div>
-                <div class="devices">
+            </div>
+
+            <section class="hero" id="top" data-section data-scene="hero">
+                <div class="hero-copy">
+                    <p class="kicker"><span class="dot"></span>Personal finance · iPhone and the web</p>
+                    <h1 class="hero-title"><span class="line">All your money.</span><span class="line hot">In one place.</span></h1>
+                    <p class="lead fade-up">Cards from every bank, cash, savings, investments, your FOP, debts and credits. Dibsly records your spending and answers your money questions in your own figures.</p>
+                    <div class="actions fade-up">
+                        <a class="button light magnetic" href="https://apps.apple.com/app/id6765870838">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8 1.5 0 1.9.8 3.2.8 1.3 0 2.1-1.2 2.9-2.4.9-1.4 1.3-2.7 1.3-2.8 0 0-2.4-1-2.4-3.9zM14 5.5c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1.1.1 2.1-.6 2.8-1.4z"></path></svg>
+                            Download on the App Store</a>
+                        <a class="button ghost magnetic" href="https://my.dibslyapp.com">Open in a browser <span aria-hidden="true">→</span></a>
+                    </div>
+                    <ul class="platforms fade-up" aria-label="Platforms">
+                        <li>iPhone</li><li>Browser</li><li class="soon">iPad · Mac — soon</li><li class="soon">Android — later</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="step" id="auto" data-section data-scene="auto" style="--row: 2">
+                <div class="step-copy">
+                    <p class="kicker">01 · Records itself</p>
+                    <h2 class="title"><span class="line">Paid.</span><span class="line dim">Already recorded.</span></h2>
+                    <p class="lead reveal">Pay with Apple Pay and the purchase waits in Activity with its amount and category. One tap and it is in History and the balance.</p>
+                    <ul class="step-tags reveal"><li>Apple Pay</li><li>monobank directly</li><li>Bank statements</li><li>Voice and receipts</li></ul>
+                </div>
+            </section>
+
+            <section class="step" id="plus" data-section data-scene="plus" style="--row: 3">
+                <div class="step-copy">
+                    <p class="kicker">02 · Add it yourself</p>
+                    <h2 class="title"><span class="line">Plus. Amount.</span><span class="line hot">Category.</span></h2>
+                    <p class="lead reveal">Cash, or something the bank never saw: three taps and the expense is in the month. Or just say it: “coffee 85”.</p>
+                </div>
+            </section>
+
+            <section class="step" id="ask" data-section data-scene="ask" style="--row: 4">
+                <div class="step-copy">
+                    <p class="kicker">03 · Chat with Dibsly</p>
+                    <h2 class="title"><span class="line">Ask.</span><span class="line hot">He knows.</span></h2>
+                    <p class="lead reveal">Dibsly knows your accounts, spending and goals, so he answers in your own figures. He changes nothing until you tap Save.</p>
+                    <p class="note reveal">20 questions a month free, more with Premium.</p>
+                </div>
+            </section>
+
+            <section class="step" id="plan" data-section data-scene="plan" style="--row: 5">
+                <div class="step-copy">
+                    <p class="kicker">04 · Plan and goals</p>
+                    <h2 class="title"><span class="line">How much is left.</span><span class="line dim">And when you get there.</span></h2>
+                    <p class="lead reveal">Limits per category and what is left until the month ends, with anything over plan in red. Goals tell you the month you get there at your pace.</p>
+                </div>
+            </section>
+
+            <section class="step" id="invest" data-section data-scene="invest" style="--row: 6">
+                <div class="step-copy">
+                    <p class="kicker">05 · Investments</p>
+                    <h2 class="title"><span class="line">Your portfolio.</span><span class="line green">Next to your spending.</span></h2>
+                    <p class="lead reveal">Interactive Brokers and Freedom Finance reports instead of typing. Dividends with the tax withheld, growth apart from deposits. Free.</p>
+                </div>
+            </section>
+
+            <section class="step" id="money" data-section data-scene="money" style="--row: 7">
+                <div class="step-copy">
+                    <p class="kicker">06 · Debts and credits</p>
+                    <h2 class="title"><span class="line">Who owes whom.</span><span class="line dim">And when to pay.</span></h2>
+                    <p class="lead reveal">Lent, paid back, split the bill at a café: all by person. A loan, a mortgage, instalments, a card’s limit: the next payment, the schedule and the overpayment. Free.</p>
+                </div>
+            </section>
+
+            <section class="step" id="fop" data-section data-scene="fop" style="--row: 8">
+                <div class="step-copy">
+                    <p class="kicker">07 · Sole traders (FOP)</p>
+                    <h2 class="title"><span class="line">The quarter’s taxes.</span><span class="line hot">Already worked out.</span></h2>
+                    <p class="lead reveal">For Ukrainian sole traders: FOP income apart from your personal money. The single tax and the military levy, deadlines and returns, a reminder before each is due.</p>
+                </div>
+            </section>
+
+            <div class="journey-end" style="--row: 9" aria-hidden="true"></div>
+            <a class="scroll-hint" href="#auto"><span>Scroll</span><i></i></a>
+        </div>
+
+        <section class="marquee" aria-label="How money gets into Dibsly">
+            <div class="marquee-track">
+                <span>monobank</span><span>PrivatBank</span><span>UKRSIBBANK</span><span>KredoBank</span><span>Apple Pay</span><span class="hot">any bank through AI</span><span>Interactive Brokers</span><span>Freedom Finance</span>
+                <span aria-hidden="true">monobank</span><span aria-hidden="true">PrivatBank</span><span aria-hidden="true">UKRSIBBANK</span><span aria-hidden="true">KredoBank</span><span aria-hidden="true">Apple Pay</span><span class="hot" aria-hidden="true">any bank through AI</span><span aria-hidden="true">Interactive Brokers</span><span aria-hidden="true">Freedom Finance</span>
+            </div>
+        </section>
+
+
+
+        <!-- 08 -->
+        <section class="block gallery" id="analytics" data-section>
+            <div class="wrap">
+                <p class="kicker">08 · Analytics, plan, calendar</p>
+                <h2 class="title"><span class="line">Where the money goes.</span><span class="line dim">And how much is left.</span></h2>
+            </div>
+            <div class="gallery-pin">
+                <div class="gallery-track">
+                    <figure class="shot"><div class="phone"><img src="v2/shots/en-an-1.jpg" alt="Analytics by category" width="750" height="1630" loading="lazy"></div><figcaption><b>Analytics</b><span>A month, a year or all time. No spreadsheets, no formulas.</span></figcaption></figure>
+                    <figure class="shot"><div class="phone"><img src="v2/shots/en-an-2.jpg" alt="Cash flow day by day" width="750" height="1630" loading="lazy"></div><figcaption><b>Cash flow</b><span>Spending day by day, payday marked.</span></figcaption></figure>
+                    <figure class="shot"><div class="phone"><img src="img/shots/en-plan.jpg" alt="The month’s plan with limits" width="550" height="1195" loading="lazy"></div><figcaption><b>Monthly plan</b><span>Limits per category and how much is left to spend.</span></figcaption></figure>
+                    <figure class="shot"><div class="phone"><img src="img/shots/en-calendar.jpg" alt="Bill calendar" width="550" height="1195" loading="lazy"></div><figcaption><b>Bill calendar</b><span>Rent, subscriptions and loans: what is charged and when.</span></figcaption></figure>
+                    <figure class="shot"><div class="phone"><img src="v2/shots/en-goals-full.jpg" alt="Goals with a forecast" width="750" height="1630" loading="lazy"></div><figcaption><b>Goals</b><span>Dibsly tells you the month you get there at your pace.</span></figcaption></figure>
+                    <figure class="shot"><div class="phone"><img src="v2/shots/en-an-3.jpg" alt="Trends over the year" width="750" height="1630" loading="lazy"></div><figcaption><b>Trends</b><span>The months side by side: what came in and what was left.</span></figcaption></figure>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- 09 -->
+        <section class="block glow" id="everywhere" data-section>
+            <div class="wrap">
+                <p class="kicker">09 · Your money everywhere · Premium</p>
+                <h2 class="title"><span class="line">Phone. Browser.</span><span class="line hot">Your ChatGPT or Claude.</span></h2>
+                <div class="browser-wrap">
                     <figure class="browser">
                         <div class="browser-bar" aria-hidden="true"><span></span><span></span><span></span><p>my.dibslyapp.com</p></div>
-                        <img src="img/shots/en-web.jpg" alt="my.dibslyapp.com home in a browser" width="1440" height="900">
+                        <img src="img/shots/en-web.jpg" alt="The website my.dibslyapp.com on a big screen" width="1440" height="900" loading="lazy">
                     </figure>
-                    <div class="phone"><div class="slides" data-hold="2300"><img class="on" src="v2/shots/en-main-a.jpg" alt="Dibsly's Main: money on hand, savings and investments" width="750" height="1631"><img src="v2/shots/en-an-1.jpg" alt="Analytics by category" width="750" height="1631" loading="lazy"><img src="v2/shots/en-inv-1.jpg" alt="Investment portfolio" width="750" height="1631" loading="lazy"><img src="v2/shots/en-goals-full.jpg" alt="Goals" width="750" height="1631" loading="lazy"></div></div>
-                    <div class="mascot" data-play="hello" data-then="idle" aria-hidden="true">
-                        <picture class="mascot-still"><img class="light-only" src="img/dibsly.png" alt="" width="404" height="386"><img class="dark-only" src="img/dibsly-dark.png" alt="" width="404" height="386"></picture>
-                        <div class="mascot-stage"></div>
-                    </div>
+                </div>
+                <div class="cards3">
+                    <article class="spot reveal"><h3>my.dibslyapp.com</h3><p>History with search, analytics, the plan and drafts on a big screen. Changes show up on your phone at once.</p><a class="foot link" href="https://my.dibslyapp.com">Open the website →</a></article>
+                    <article class="spot reveal"><h3>ChatGPT and Claude</h3><p>Import a statement from any bank, ask and set goals in your own assistant. Nothing is written until you say yes.</p><p class="foot">“Here is my Revolut statement, add it”</p></article>
+                    <article class="spot reveal"><h3>Money together</h3><p>Shared accounts for a couple or a family: who put in what, notifications and shared goals. One Premium is enough for both.</p><p class="foot">And a café bill? Split it with a link</p></article>
                 </div>
             </div>
         </section>
 
-        <section class="asksec" id="ask">
+        <!-- 10 -->
+        <section class="block" id="price" data-section>
             <div class="wrap">
-                <div class="reveal">
-                    <h2>Ask Dibsly about your money</h2>
-                    <p class="lead">He knows your accounts, spending and goals, so he answers in your own figures. And changes nothing until you tap Save.</p>
-                    <p class="note">20 questions a month free, more with Premium.</p>
+                <div class="center">
+                    <p class="kicker">10 · Price</p>
+                    <h2 class="title"><span class="line">Free.</span><span class="line hot">Premium when you want more.</span></h2>
                 </div>
-                <div class="ask">
-                    <div class="mascot" data-play="hello" data-then="idle" aria-hidden="true">
-                        <picture class="mascot-still"><img class="light-only" src="img/dibsly.png" alt="" width="404" height="386"><img class="dark-only" src="img/dibsly-dark.png" alt="" width="404" height="386"></picture>
-                        <div class="mascot-stage"></div>
-                    </div>
-                    <div class="chatbox">
-                        <div class="chat-head"><div><strong>Dibsly</strong>on demo data, try it</div></div>
-                        <div class="messages" aria-live="polite"></div>
-                        <div class="chips" aria-label="Questions"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="auto" id="auto">
-            <div class="wrap">
-                <div class="phone reveal"><div class="slides" data-hold="1800"><img class="on" src="v2/shots/en-main-a.jpg" alt="Main with three Apple Pay drafts" width="750" height="1631" loading="lazy"><img data-tap="89.6,71.1" src="v2/shots/en-main-b.jpg" alt="" width="750" height="1631" loading="lazy"><span class="tap" aria-hidden="true"></span></div></div>
-                <div class="reveal">
-                    <div class="mascot" data-play="expense" data-loop aria-hidden="true">
-                        <picture class="mascot-still"><img class="light-only" src="img/dibsly.png" alt="" width="404" height="386"><img class="dark-only" src="img/dibsly-dark.png" alt="" width="404" height="386"></picture>
-                        <div class="mascot-stage"></div>
-                    </div>
-                    <h2>Spending records itself</h2>
-                    <p class="lead">Pay with Apple Pay and the purchase is already waiting in Dibsly with its amount and category. One tap is all that is left.</p>
-                    <ul class="ways">
-                        <li><strong>monobank</strong> directly</li>
-                        <li>Statements from <strong>PrivatBank, UKRSIBBANK, KredoBank</strong></li>
-                        <li><strong>Apple Pay</strong> from any card</li>
-                        <li>By voice: <strong>“coffee 85”</strong></li>
-                        <li>A <strong>receipt</strong> photo, split with friends</li>
-                        <li>Any bank through your own AI <span class="tag">Premium</span></li>
-                    </ul>
-                    <p class="more-link"><a href="features.html">Everything Dibsly can do →</a></p>
-                </div>
-            </div>
-        </section>
-
-        <section class="where" id="where">
-            <div class="wrap">
-                <div class="head reveal">
-                    <h2>Where the money goes</h2>
-                    <p class="lead">A month, a year or all time. No spreadsheets, no formulas.</p>
-                </div>
-                <div class="tabs-stage">
-                    <ol class="left">
-                        <li data-slide="0"><h3>Categories</h3><p>Where most of it goes and what is over plan.</p></li>
-                        <li data-slide="1"><h3>Cash flow</h3><p>Spending day by day, payday marked.</p></li>
-                    </ol>
-                    <div class="phone"><div class="slides" data-hold="1700"><img class="on" data-tap="16.2,22.4" src="v2/shots/en-an-1.jpg" alt="Analytics: categories" width="750" height="1631" loading="lazy"><img data-tap="38.6,22.4" src="v2/shots/en-an-2.jpg" alt="" width="750" height="1631" loading="lazy"><img data-tap="61.2,22.4" src="v2/shots/en-an-3.jpg" alt="" width="750" height="1631" loading="lazy"><img data-tap="83.6,22.4" src="v2/shots/en-an-4.jpg" alt="" width="750" height="1631" loading="lazy"><span class="tap" aria-hidden="true"></span></div></div>
-                    <ol>
-                        <li data-slide="2"><h3>Trends</h3><p>The months side by side: what came in and what was left.</p></li>
-                        <li data-slide="3"><h3>Capital</h3><p>Savings and investments over the year, apart from deposits.</p></li>
-                    </ol>
-                </div>
-            </div>
-        </section>
-
-        <section class="plans-section">
-            <div class="wrap">
-                <h2 class="reveal">Plan, calendar and goals</h2>
-                <p class="lead reveal">Make it to payday, know what is charged tomorrow and see when you reach your goal.</p>
-                <div class="bento">
-                    <article class="tile big reveal">
-                        <div><h3>Goals</h3><p>A car, a flat or a safety cushion. Dibsly tells you the month you get there at your pace.</p></div>
-                        <div class="crop"><img src="v2/shots/en-goals.jpg" alt="Goals: a new car, capital and a cushion" width="1206" height="1725" loading="lazy"></div>
-                    </article>
-                    <article class="tile reveal">
-                        <div><h3>Monthly plan</h3><p>Limits per category and how much is left to spend.</p></div>
-                        <div class="crop"><img src="v2/shots/en-plan.jpg" alt="Monthly plan with limits" width="1206" height="780" loading="lazy"></div>
-                    </article>
-                    <article class="tile reveal">
-                        <div><h3>Bill calendar</h3><p>Rent, subscriptions and loans: what is charged and when.</p></div>
-                        <div class="crop"><img src="v2/shots/en-calendar.jpg" alt="Calendar of recurring payments" width="1206" height="1365" loading="lazy"></div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="invest" id="invest">
-            <div class="wrap">
-                <div class="reveal">
-                    <h2>Investments next to the rest of your money</h2>
-                    <p class="lead">Your portfolio and dividends in the same app as your spending. Free.</p>
-                    <ul>
-                        <li>Interactive Brokers and Freedom Finance reports instead of typing</li>
-                        <li>Dividends with the tax withheld</li>
-                        <li>Growth apart from deposits, so a deposit never looks like profit</li>
-                    </ul>
-                </div>
-                <div class="side reveal">
-                    <div class="phone"><div class="slides" data-hold="1500"><img class="on" data-tap="16.6,44.5" src="v2/shots/en-inv-1.jpg" alt="Portfolio value history" width="750" height="1631" loading="lazy"><img data-tap="33.1,44.5" src="v2/shots/en-inv-2.jpg" alt="" width="750" height="1631" loading="lazy"><img data-tap="66.2,44.5" src="v2/shots/en-inv-3.jpg" alt="" width="750" height="1631" loading="lazy"><img data-tap="82.8,44.5" src="v2/shots/en-inv-4.jpg" alt="" width="750" height="1631" loading="lazy"><span class="tap" aria-hidden="true"></span></div></div>
-                    <div class="mascot" data-play="invest" data-loop aria-hidden="true">
-                        <picture class="mascot-still"><img class="light-only" src="img/dibsly.png" alt="" width="404" height="386"><img class="dark-only" src="img/dibsly-dark.png" alt="" width="404" height="386"></picture>
-                        <div class="mascot-stage"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="everywhere where">
-            <div class="wrap">
-                <h2 class="reveal">Your money everywhere <span class="tag">Premium</span></h2>
-                <p class="lead reveal">The same data on the website, in your own ChatGPT or Claude, and in accounts shared with the people close to you.</p>
-                <div class="duo">
-                    <article class="reveal">
-                        <h3>Your ChatGPT or Claude knows your money</h3>
-                        <p>Import a statement from any bank, ask and set goals in your own assistant. Nothing is written until you say yes.</p>
-                        <div class="convo">
-                            <p class="me">Here is my Revolut statement, add it.</p>
-                            <p class="ai">48 operations, 3 of them transfers between your accounts. Add them?</p>
-                        </div>
-                    </article>
-                    <article class="reveal">
-                        <h3>my.dibslyapp.com</h3>
-                        <p>History with search, analytics, the plan and drafts on a big screen. Changes show up on your phone at once.</p>
-                        <p><a href="https://my.dibslyapp.com">Open the website</a></p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="wrap">
-                <h2 class="reveal">Money together</h2>
-                <p class="lead reveal">For a couple, a family, or friends you split the bill with.</p>
-                <div class="together">
-                    <article class="shared reveal">
-                        <h3>Shared accounts <span class="tag">Premium</span></h3>
-                        <div class="half" aria-hidden="true">
-                            <div><span class="who">O</span><i></i>₴10,700</div>
-                            <div><span class="who">D</span><i></i>₴10,700</div>
-                        </div>
-                        <p>Who put in what, a notification when the other adds something, and shared goals. One Premium is enough for both.</p>
-                    </article>
-                    <article class="split reveal">
-                        <img src="img/split-card.png" alt="A link to split a bill" width="1200" height="630" loading="lazy">
-                        <h3>Split a bill</h3>
-                        <p>Snap the receipt and send your friends a link: everyone ticks their part and Dibsly does the math.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="morefeat">
-            <div class="wrap">
-                <div class="moreband reveal">
-                    <div class="mascot" data-play="next" data-loop aria-hidden="true">
-                        <picture class="mascot-still"><img class="light-only" src="img/dibsly.png" alt="" width="404" height="386"><img class="dark-only" src="img/dibsly-dark.png" alt="" width="404" height="386"></picture>
-                        <div class="mascot-stage"></div>
-                    </div>
-                    <div>
-                        <h2>There is more</h2>
-                        <p>22 of Dibsly's features with examples: how money gets in, what the chat can do, analytics, goals and investments.</p>
-                    </div>
-                    <a class="button primary" href="features.html">Everything Dibsly can do</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="where" id="price">
-            <div class="wrap">
-                <h2 class="reveal">Free. Premium when you want more.</h2>
                 <div class="plans">
                     <article class="plan reveal">
                         <h3>Free</h3>
                         <p class="price">$0<small>forever</small></p>
-                        <ul>
+                        <ul class="checks green">
                             <li>Accounts, analytics, plan, calendar and goals</li>
                             <li>monobank, PrivatBank, UKRSIBBANK and KredoBank statements, Apple Pay</li>
                             <li>Investments: broker reports and dividends</li>
+                            <li>FOP, debts and credits</li>
                             <li>20 questions to Dibsly a month</li>
                             <li>10 receipts and splits a month</li>
                         </ul>
+                        <a class="button ghost wide" href="https://apps.apple.com/app/id6765870838">Download</a>
                     </article>
                     <article class="plan premium reveal">
-                        <h3>Dibsly Premium</h3>
-                        <p class="price">$2.99<small>a month or $29.99 a year</small></p>
-                        <ul>
+                        <h3>Dibsly Premium <span class="badge">all of it</span></h3>
+                        <p class="price">$<span class="count" data-to="2.99" data-decimals="2">2.99</span><small>a month · or $29.99 a year</small></p>
+                        <ul class="checks orange">
                             <li>More questions to Dibsly</li>
                             <li>Sync between iPhones and my.dibslyapp.com</li>
                             <li>ChatGPT and Claude with access to your data</li>
                             <li>Shared accounts and notifications from any bank</li>
-                            <li>AI sorting, up to 300 receipts a month</li>
+                            <li>AI sorts purchases, up to 300 receipts a month</li>
                         </ul>
-                        <a class="button primary" href="https://apps.apple.com/app/id6765870838">Get Premium</a>
+                        <a class="button hot wide" href="https://apps.apple.com/app/id6765870838">Get Premium</a>
                     </article>
                 </div>
-                <p class="price-note">Prices for Ukraine. The App Store shows the price in your country.</p>
+                <p class="center small">Prices for Ukraine. The App Store shows the price in your country.</p>
             </div>
         </section>
 
-        <section id="faq">
-            <div class="wrap">
-                <h2 class="reveal">Questions</h2>
-                <div class="faq reveal">
-                    <details>
-                        <summary>What does Dibsly send to the AI?</summary>
-                        <p>Only what an answer needs, and only after you allow it on its own page. Without it everything else works. Dibsly works out the answer on your phone from your data; the AI only puts it into words.</p>
-                    </details>
-                    <details>
-                        <summary>Which banks does Dibsly support?</summary>
-                        <p>Free: monobank directly with a read-only token, statements from PrivatBank, UKRSIBBANK, KredoBank and monobank, and Apple Pay from any card. With Premium your ChatGPT or Claude reads a statement from any bank.</p>
-                    </details>
-                    <details>
-                        <summary>Is it safe?</summary>
-                        <p>Dibsly never asks for a bank password and cannot move money. Without an account your data stays on your iPhone and in encrypted backups in your iCloud Drive or Google Drive. Details in the <a href="privacy.html">privacy policy</a>.</p>
-                    </details>
-                    <details>
-                        <summary>Do I need an account?</summary>
-                        <p>No. An account is for sync, the website, assistants and shared accounts.</p>
-                    </details>
-                    <details>
-                        <summary>Is there an Android version?</summary>
-                        <p>iPhone only for now. my.dibslyapp.com opens in any browser with Premium.</p>
-                    </details>
+        <!-- 11 -->
+        <section class="block" id="faq">
+            <div class="wrap split top">
+                <div class="copy narrow">
+                    <p class="kicker">11 · Questions</p>
+                    <h2 class="title small"><span class="line">Safe.</span><span class="line dim">No bank password.</span></h2>
+                </div>
+                <div class="faq">
+                    <details open><summary>Is it safe?</summary><p>Dibsly never asks for a bank password and cannot move money. Without an account your data stays on your iPhone and in encrypted backups in your iCloud Drive or Google Drive. Details in the <a href="privacy.html">privacy policy</a>.</p></details>
+                    <details><summary>What does Dibsly send to the AI?</summary><p>Only what an answer needs, and only after you allow it on its own page. Without it everything else works. Dibsly works out the answer on your phone from your data; the AI only puts it into words.</p></details>
+                    <details><summary>Which banks does Dibsly support?</summary><p>Free: monobank directly with a read-only token, statements from PrivatBank, UKRSIBBANK, KredoBank and monobank, and Apple Pay from any card. With Premium your ChatGPT or Claude reads a statement from any bank.</p></details>
+                    <details><summary>Do I need an account?</summary><p>No. An account is for sync, the website, assistants and shared accounts.</p></details>
+                    <details><summary>Is there an Android version?</summary><p>iPhone and the browser for now: my.dibslyapp.com opens in any browser with Premium. iPad and Mac are next.</p></details>
+                    <p class="more">Step-by-step <a href="help.html">guides</a>, or just write: <a href="mailto:dibslysupport@gmail.com">dibslysupport@gmail.com</a></p>
                 </div>
             </div>
         </section>
 
-        <section>
-            <div class="wrap">
-                <div class="help reveal">
-                    <div class="mascot" data-play="hello" data-loop aria-hidden="true">
-                        <picture class="mascot-still"><img class="light-only" src="img/dibsly.png" alt="" width="404" height="386"><img class="dark-only" src="img/dibsly-dark.png" alt="" width="404" height="386"></picture>
-                        <div class="mascot-stage"></div>
-                    </div>
-                    <div>
-                        <h3>Anything else?</h3>
-                        <p>Step-by-step <a href="help.html">guides</a>, or just write: <a href="mailto:dibslysupport@gmail.com">dibslysupport@gmail.com</a></p>
-                    </div>
-                    <a class="button quiet" href="support.html">Support</a>
+        <section class="finale" id="get">
+            <div class="wrap center">
+                <div class="mascot big" data-play="hello" data-loop aria-hidden="true">
+                    <img class="mascot-still" src="img/dibsly-dark.png" alt="" width="404" height="386" loading="lazy">
+                    <div class="mascot-stage"></div>
+                </div>
+                <h2 class="giant">Dibsly<span class="hot">.</span></h2>
+                <p class="lead">All your money in one place. Free to start.</p>
+                <div class="actions center">
+                    <a class="button light magnetic" href="https://apps.apple.com/app/id6765870838">Download on the App Store</a>
+                    <a class="button ghost magnetic" href="https://my.dibslyapp.com">Open in a browser</a>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="wrap">
-            <nav aria-label="Links">
-                <a href="features.html">Features</a>
-                <a href="help.html">Guides</a>
-                <a href="support.html">Support</a>
-                <a href="privacy.html">Privacy</a>
-                <a href="terms.html">Terms</a>
-                <a href="https://my.dibslyapp.com">my.dibslyapp.com</a>
-            </nav>
-            <p>© 2026 Dibsly</p>
+        <div class="wrap foot-row">
+            <b>Dibsly</b>
+            <a href="features.html">Features</a>
+            <a href="help.html">Guides</a>
+            <a href="support.html">Support</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="https://my.dibslyapp.com">my.dibslyapp.com</a>
+            <a href="./" hreflang="uk" lang="uk" onclick="try { localStorage.setItem('dibsly.site.lang', 'uk'); } catch (error) {}">Українська</a>
+            <span class="copy-r">© 2026 Dibsly</span>
         </div>
     </footer>
 
     <script>
         window.DIBSLY_ASSETS = "v2/";
         window.DIBSLY_IMAGES = "img/";
-        window.DIBSLY_CHAT = [
-            { q: "What did most of my money go on this month?", mood: "next",
-              a: "Rent, groceries and cafés. Cafés are already over plan, so maybe coffee at home this week? 😉",
-              bars: { title: "Spending since September 21", rows: [["Rent", 14000], ["Groceries", 12714], ["Cafés", 12482], ["Car", 4947]] } },
-            { q: "How much did I spend on taxis?", mood: "annoyed",
-              a: "₴3,403 since September 21. That is over your taxi plan. Walking is nice too 🙂" },
-            { q: "Add a coffee, 85", mood: "expense",
-              a: "Here is what I will add. Nothing changes until you tap Save.",
-              op: { icon: "☕", title: "Coffee", sub: "Cafés · monobank", sum: "−₴85", save: "Save", skip: "Never mind", done: "Saved ✓", thanks: "Done. Your café plan knows about it too 🙂" } },
-            { q: "How much have I saved?", mood: "savings",
-              a: "₴30,300, $12,190 and €500. Your new car is 61% there: at this pace you get it in September 2027." }
-        ];
-        window.DIBSLY_CHAT_AGAIN = "Start again";
-        window.DIBSLY_MONEY = "en";
     </script>
     <script src="js/lottie_light.min.js" defer></script>
-    <script src="v2/v2.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+    <script src="v3/v3.js" defer></script>
 </body>
 </html>
