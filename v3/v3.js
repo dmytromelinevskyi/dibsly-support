@@ -1,0 +1,519 @@
+// dibslyapp.com landing 3.0 (2026-10-28, owner: «пиздатые анимации, что у примеров… чтоб когда пользователи зашли на
+// сайт, они ахуели»): a WebGL field of warm particles behind the page that follows the mouse and the scroll, a short
+// counting intro, smooth scrolling, titles that rise in word by word, a pinned horizontal gallery, a chart that draws
+// itself, phones and cards that tilt under the cursor, magnetic buttons, and the demo conversation with Dibsly (from
+// 2.0). With «reduce motion», on a missing library or without WebGL, the page is simply there.
+(function () {
+    var root = document.documentElement;
+    var calm = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var fine = window.matchMedia && window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    var small = window.innerWidth < 760;
+    var gsap = window.gsap;
+    var ScrollTrigger = window.ScrollTrigger;
+    var animated = !calm && !!gsap && !!ScrollTrigger;
+    if (!animated) root.classList.add("no-motion");
+    if (gsap && ScrollTrigger) gsap.registerPlugin(ScrollTrigger);
+
+    function all(selector, scope) { return Array.prototype.slice.call((scope || document).querySelectorAll(selector)); }
+
+    // ---------------------------------------------------------------- smooth scroll
+    var lenis = null;
+    if (animated && window.Lenis && !small) {
+        lenis = new window.Lenis({ duration: 1.15, smoothWheel: true });
+        lenis.on("scroll", ScrollTrigger.update);
+        gsap.ticker.add(function (time) { lenis.raf(time * 1000); });
+        gsap.ticker.lagSmoothing(0);
+        all('a[href^="#"]').forEach(function (link) {
+            link.addEventListener("click", function (event) {
+                var target = document.querySelector(link.getAttribute("href"));
+                if (!target) return;
+                event.preventDefault();
+                lenis.scrollTo(target, { offset: -20 });
+            });
+        });
+    }
+
+    // ---------------------------------------------------------------- titles: words rise out of their lines
+    all(".hero-title .line, .title .line, .giant").forEach(function (line) {
+        if (!animated) return;
+        var nodes = Array.prototype.slice.call(line.childNodes);
+        line.textContent = "";
+        nodes.forEach(function (node) {
+            if (node.nodeType === 3) {
+                node.textContent.split(/(\s+)/).forEach(function (part) {
+                    if (!part) return;
+                    if (/^\s+$/.test(part)) { line.appendChild(document.createTextNode(part)); return; }
+                    var word = document.createElement("span");
+                    word.className = "word";
+                    word.textContent = part;
+                    line.appendChild(word);
+                });
+            } else {
+                node.classList.add("word");
+                line.appendChild(node);
+            }
+        });
+    });
+
+    // ---------------------------------------------------------------- the particle field
+    var field = null;
+    function startField() {
+        var canvas = document.querySelector(".field");
+        var THREE = window.THREE;
+        if (!canvas || !THREE || calm) return null;
+        var renderer;
+        try { renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: false, alpha: true, powerPreference: "high-performance" }); }
+        catch (error) { return null; }
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+        renderer.setSize(window.innerWidth, window.innerHeight, false);
+        var scene = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 100);
+        camera.position.set(0, 0, 9);
+
+        var count = small ? 2600 : 7000;
+        var positions = new Float32Array(count * 3);
+        var seeds = new Float32Array(count * 4);
+        var seed = 11;
+        function rnd() { seed = (seed * 16807) % 2147483647; return seed / 2147483647; }
+        for (var i = 0; i < count; i++) {
+            var x, y, z;
+            if (i % 3 === 0) {
+                // A loose sphere of coins.
+                var u = rnd() * 2 - 1, phi = rnd() * Math.PI * 2, r = 2.2 + Math.pow(rnd(), 0.6) * 1.6;
+                var s = Math.sqrt(1 - u * u);
+                x = r * s * Math.cos(phi); y = r * u * 0.85; z = r * s * Math.sin(phi);
+            } else {
+                // A spiral disc around it.
+                var arm = i % 2, t = rnd(), angle = t * Math.PI * 5 + arm * Math.PI, radius = 2.6 + t * 6.5;
+                x = Math.cos(angle) * radius + (rnd() - 0.5) * 1.4;
+                z = Math.sin(angle) * radius + (rnd() - 0.5) * 1.4;
+                y = (rnd() - 0.5) * (0.5 + t * 1.2);
+            }
+            positions[i * 3] = x; positions[i * 3 + 1] = y; positions[i * 3 + 2] = z;
+            seeds[i * 4] = rnd(); seeds[i * 4 + 1] = rnd(); seeds[i * 4 + 2] = rnd(); seeds[i * 4 + 3] = rnd() < 0.62 ? 1 : 0;
+        }
+        var geometry = new THREE.BufferGeometry();
+        geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+        geometry.setAttribute("seed", new THREE.BufferAttribute(seeds, 4));
+        var uniforms = {
+            uTime: { value: 0 }, uMouse: { value: new THREE.Vector2(0, 0) }, uScroll: { value: 0 },
+            uSpread: { value: 0 }, uFade: { value: 1 }, uPixel: { value: renderer.getPixelRatio() }
+        };
+        var material = new THREE.ShaderMaterial({
+            uniforms: uniforms, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+            vertexShader: [
+                "attribute vec4 seed;",
+                "uniform float uTime; uniform vec2 uMouse; uniform float uScroll; uniform float uSpread; uniform float uPixel;",
+                "varying float vWarm; varying float vAlpha;",
+                "void main(){",
+                "  vec3 p = position;",
+                "  float t = uTime * (0.12 + seed.x * 0.18);",
+                "  p += vec3(sin(t + seed.y * 6.28), cos(t * 1.3 + seed.z * 6.28), sin(t * 0.7 + seed.x * 6.28)) * (0.08 + seed.z * 0.18);",
+                "  p *= 1.0 + uSpread * (0.6 + seed.y * 1.6);",
+                "  p.y += uSpread * (seed.z - 0.5) * 6.0;",
+                "  vec4 mv = modelViewMatrix * vec4(p, 1.0);",
+                "  vec4 clip = projectionMatrix * mv;",
+                "  vec2 ndc = clip.xy / clip.w;",
+                "  vec2 away = ndc - uMouse;",
+                "  float d = length(away);",
+                "  float push = smoothstep(0.35, 0.0, d) * 0.12;",
+                "  clip.xy += normalize(away + 1e-4) * push * clip.w;",
+                "  gl_Position = clip;",
+                "  gl_PointSize = (1.2 + seed.w * 1.6 + seed.x * 2.2) * uPixel * (7.0 / -mv.z);",
+                "  vWarm = seed.w;",
+                "  vAlpha = 0.35 + seed.y * 0.65;",
+                "}"
+            ].join("\n"),
+            fragmentShader: [
+                "uniform float uFade; varying float vWarm; varying float vAlpha;",
+                "void main(){",
+                "  float d = length(gl_PointCoord - 0.5);",
+                "  float a = smoothstep(0.5, 0.0, d);",
+                "  vec3 warm = vec3(1.0, 0.54, 0.24); vec3 cream = vec3(0.96, 0.92, 0.86);",
+                "  vec3 c = mix(cream * 0.75, warm, vWarm);",
+                "  gl_FragColor = vec4(c, a * vAlpha * uFade);",
+                "}"
+            ].join("\n")
+        });
+        var points = new THREE.Points(geometry, material);
+        var group = new THREE.Group();
+        group.add(points);
+        group.rotation.x = 0.42;
+        group.position.x = small ? 0 : 2.2;
+        scene.add(group);
+
+        var mouse = { x: 0, y: 0, tx: 0, ty: 0 };
+        window.addEventListener("pointermove", function (event) {
+            mouse.tx = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.ty = -((event.clientY / window.innerHeight) * 2 - 1);
+        }, { passive: true });
+        window.addEventListener("resize", function () {
+            renderer.setSize(window.innerWidth, window.innerHeight, false);
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+        });
+
+        var state = { spread: 0, fade: 1, shiftX: small ? 0 : 2.2, zoom: 9 };
+        var running = true;
+        document.addEventListener("visibilitychange", function () { running = !document.hidden; if (running) loop(); });
+        var start = performance.now();
+        function loop() {
+            if (!running) return;
+            var now = performance.now();
+            uniforms.uTime.value = (now - start) / 1000;
+            mouse.x += (mouse.tx - mouse.x) * 0.06;
+            mouse.y += (mouse.ty - mouse.y) * 0.06;
+            uniforms.uMouse.value.set(mouse.x, mouse.y);
+            uniforms.uSpread.value += (state.spread - uniforms.uSpread.value) * 0.08;
+            uniforms.uFade.value += (state.fade - uniforms.uFade.value) * 0.08;
+            group.rotation.y += 0.0012;
+            group.rotation.x = 0.42 + mouse.y * 0.12;
+            group.rotation.z = mouse.x * 0.08;
+            group.position.x += (state.shiftX - group.position.x) * 0.05;
+            camera.position.z += (state.zoom - camera.position.z) * 0.05;
+            renderer.render(scene, camera);
+            requestAnimationFrame(loop);
+        }
+        loop();
+        canvas.classList.add("on");
+        return state;
+    }
+
+    // ---------------------------------------------------------------- intro, then the hero
+    function heroIn() {
+        if (!animated) return;
+        var tl = gsap.timeline({ defaults: { ease: "expo.out" } });
+        tl.from(".hero .kicker", { y: 20, opacity: 0, duration: 1 })
+            .from(".hero-title .word", { yPercent: 115, rotate: 4, duration: 1.4, stagger: 0.07 }, "-=0.7")
+            .to(".hero .fade-up", { y: 0, opacity: 1, duration: 1.2, stagger: 0.1 }, "-=1.0")
+            .from(".hero-phone", { y: 160, rotateX: 28, rotateY: -18, opacity: 0, duration: 1.8 }, "-=1.5")
+            .from(".hero .float-card", { y: 60, opacity: 0, scale: 0.9, duration: 1.2, stagger: 0.12 }, "-=1.2")
+            .from(".nav-pill", { y: -40, opacity: 0, duration: 1 }, "-=1.4");
+    }
+    function begin() {
+        field = startField();
+        heroIn();
+    }
+    var intro = document.querySelector(".intro");
+    var seen = false;
+    try { seen = sessionStorage.getItem("dibsly.intro") === "1"; sessionStorage.setItem("dibsly.intro", "1"); } catch (error) {}
+    if (animated && intro && !seen) {
+        intro.classList.add("run");
+        var counter = intro.querySelector(".intro-count");
+        var shown = { v: 0 };
+        gsap.timeline()
+            .to(shown, { v: 100, duration: 1.1, ease: "power2.inOut", onUpdate: function () { counter.textContent = Math.round(shown.v); } })
+            .to(intro, { yPercent: -100, duration: 0.9, ease: "expo.inOut", onStart: begin })
+            .set(intro, { display: "none" });
+    } else {
+        if (intro) intro.style.display = "none";
+        begin();
+    }
+
+    if (!animated) { runChat(); runMascots(); return; }
+
+    // ---------------------------------------------------------------- the field follows the page
+    ScrollTrigger.create({ trigger: ".hero", start: "top top", end: "bottom top", scrub: true,
+        onUpdate: function (self) { if (field) { field.spread = self.progress * 0.9; field.zoom = 9 + self.progress * 3; } } });
+    ScrollTrigger.create({ trigger: "#auto", start: "top bottom", endTrigger: "#price", end: "bottom top",
+        onToggle: function (self) { if (field) { field.fade = self.isActive ? 0.32 : 1; field.shiftX = self.isActive ? 0 : (small ? 0 : 2.2); } } });
+    ScrollTrigger.create({ trigger: ".finale", start: "top 80%", end: "bottom bottom", scrub: true,
+        onUpdate: function (self) { if (field) { field.spread = 0.9 - self.progress * 0.9; field.zoom = 12 - self.progress * 4.5; field.fade = 0.32 + self.progress * 0.9; field.shiftX = 0; } } });
+
+    // ---------------------------------------------------------------- titles and reveals
+    all(".title").forEach(function (title) {
+        gsap.from(title.querySelectorAll(".word"), { yPercent: 115, rotate: 3, duration: 1.3, ease: "expo.out", stagger: 0.06,
+            scrollTrigger: { trigger: title, start: "top 85%" } });
+    });
+    all(".kicker").forEach(function (kicker) {
+        if (kicker.closest(".hero")) return;
+        gsap.from(kicker, { x: -24, opacity: 0, duration: 1, ease: "expo.out", scrollTrigger: { trigger: kicker, start: "top 90%" } });
+    });
+    var showItems = function (items) { gsap.to(items, { y: 0, opacity: 1, duration: 1.1, ease: "expo.out", stagger: 0.08, overwrite: true }); };
+    ScrollTrigger.batch(".reveal", { start: "top 88%", onEnter: showItems, onEnterBack: showItems });
+    // Opened (or reloaded) further down the page: what is already above the screen is simply there.
+    window.addEventListener("load", function () {
+        var above = all(".reveal").filter(function (item) { return item.getBoundingClientRect().top < window.innerHeight * 0.88; });
+        if (above.length) showItems(above);
+        all(".title").forEach(function (title) {
+            if (title.getBoundingClientRect().bottom < 0) gsap.set(title.querySelectorAll(".word"), { yPercent: 0, rotate: 0 });
+        });
+    });
+
+    // ---------------------------------------------------------------- hero: the phone tilts under the cursor and leaves with the scroll
+    var heroPhone = document.querySelector(".hero-phone");
+    var stage = document.querySelector(".hero-stage");
+    if (fine && heroPhone && stage) {
+        var cards = all(".hero .float-card");
+        window.addEventListener("pointermove", function (event) {
+            var x = event.clientX / window.innerWidth - 0.5, y = event.clientY / window.innerHeight - 0.5;
+            gsap.to(heroPhone, { rotateY: x * 18, rotateX: -y * 14, duration: 1.2, ease: "power3.out" });
+            cards.forEach(function (card) {
+                var depth = parseFloat(card.getAttribute("data-depth") || "1");
+                gsap.to(card, { x: x * 40 * depth, y: y * 30 * depth, duration: 1.4, ease: "power3.out" });
+            });
+        }, { passive: true });
+    }
+    all(".hero .float-card").forEach(function (card, index) {
+        gsap.to(card.firstElementChild ? card : card, { yPercent: index % 2 ? -6 : 6, duration: 3 + index, ease: "sine.inOut", yoyo: true, repeat: -1 });
+    });
+    gsap.to(".hero-stage", { yPercent: -18, scale: 0.92, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
+    gsap.to(".hero-copy", { yPercent: -10, opacity: 0.2, ease: "none", scrollTrigger: { trigger: ".hero", start: "40% top", end: "bottom top", scrub: true } });
+    gsap.to(".scroll-hint", { opacity: 0, scrollTrigger: { trigger: ".hero", start: "5% top", end: "20% top", scrub: true } });
+
+    // ---------------------------------------------------------------- the marquee leans with the scroll's speed
+    var track = document.querySelector(".marquee-track");
+    if (track) {
+        var skew = gsap.quickTo(track, "skewX", { duration: 0.6, ease: "power3.out" });
+        ScrollTrigger.create({ trigger: ".marquee", start: "top bottom", end: "bottom top",
+            onUpdate: function (self) { skew(Math.max(-10, Math.min(10, self.getVelocity() / -300))); } });
+    }
+
+    // ---------------------------------------------------------------- 01: two phones drift apart, the toast pops
+    gsap.fromTo(".drift-a", { y: 80 }, { y: -60, ease: "none", scrollTrigger: { trigger: "#auto", start: "top bottom", end: "bottom top", scrub: true } });
+    gsap.fromTo(".drift-b", { y: -40 }, { y: 90, ease: "none", scrollTrigger: { trigger: "#auto", start: "top bottom", end: "bottom top", scrub: true } });
+    gsap.from(".toast", { y: 50, scale: 0.8, opacity: 0, duration: 1, ease: "back.out(1.8)", scrollTrigger: { trigger: ".duo", start: "60% 75%" } });
+
+    // ---------------------------------------------------------------- 03: the gallery scrolls sideways while pinned
+    var mm = gsap.matchMedia();
+    mm.add("(min-width: 1081px)", function () {
+        var trackEl = document.querySelector(".gallery-track");
+        var distance = function () { return Math.max(0, trackEl.scrollWidth - window.innerWidth); };
+        gsap.to(trackEl, { x: function () { return -distance(); }, ease: "none",
+            scrollTrigger: { trigger: ".gallery-pin", start: "center center", end: function () { return "+=" + distance(); }, pin: ".gallery", pinSpacing: true, scrub: 1, invalidateOnRefresh: true, anticipatePin: 1 } });
+        all(".shot .phone").forEach(function (phone, index) {
+            gsap.from(phone, { rotate: index % 2 ? 6 : -6, y: 60, opacity: 0.2, duration: 1.2, ease: "expo.out", scrollTrigger: { trigger: ".gallery-pin", start: "top 80%" }, delay: index * 0.06 });
+        });
+    });
+    mm.add("(max-width: 1080px)", function () {
+        var pin = document.querySelector(".gallery-pin");
+        pin.style.overflowX = "auto";
+        pin.style.scrollSnapType = "x mandatory";
+        all(".shot").forEach(function (shot) { shot.style.scrollSnapAlign = "center"; });
+    });
+
+    // ---------------------------------------------------------------- 04: the chart draws itself, the result counts up
+    var line = document.querySelector(".chart-line");
+    if (line) {
+        var length = line.getTotalLength();
+        gsap.set(line, { strokeDasharray: length, strokeDashoffset: length });
+        gsap.to(line, { strokeDashoffset: 0, ease: "none", scrollTrigger: { trigger: "#invest", start: "top 70%", end: "center center", scrub: true } });
+        gsap.from(".chart-area", { opacity: 0, scrollTrigger: { trigger: "#invest", start: "top 60%", end: "center center", scrub: true } });
+    }
+    gsap.from("#invest .phone", { rotate: 8, y: 120, ease: "none", scrollTrigger: { trigger: "#invest", start: "top bottom", end: "center center", scrub: true } });
+    all(".count").forEach(function (cell) {
+        var to = parseFloat(cell.getAttribute("data-to")), decimals = parseInt(cell.getAttribute("data-decimals") || "0", 10);
+        var value = { v: 0 };
+        gsap.to(value, { v: to, duration: 1.8, ease: "expo.out", scrollTrigger: { trigger: cell, start: "top 85%" },
+            onUpdate: function () { cell.textContent = value.v.toFixed(decimals).replace(".", decimals && root.lang === "uk" && cell.closest(".float-card") ? "," : "."); } });
+    });
+
+    // ---------------------------------------------------------------- 05/06: cards light up under the cursor and tilt
+    if (fine) {
+        all(".spot").forEach(function (card) {
+            card.addEventListener("pointermove", function (event) {
+                var box = card.getBoundingClientRect();
+                var x = (event.clientX - box.left) / box.width, y = (event.clientY - box.top) / box.height;
+                card.style.setProperty("--x", x * 100 + "%");
+                card.style.setProperty("--y", y * 100 + "%");
+                gsap.to(card, { rotateY: (x - 0.5) * 8, rotateX: -(y - 0.5) * 8, transformPerspective: 900, duration: 0.6, ease: "power3.out" });
+            });
+            card.addEventListener("pointerleave", function () { gsap.to(card, { rotateY: 0, rotateX: 0, duration: 0.9, ease: "expo.out" }); });
+        });
+    }
+    gsap.fromTo(".browser", { rotateX: 32, scale: 0.84, y: 40 }, { rotateX: 0, scale: 1, y: 0, ease: "none",
+        scrollTrigger: { trigger: ".browser-wrap", start: "top 95%", end: "top 25%", scrub: true } });
+
+    // ---------------------------------------------------------------- finale: the giant word gathers
+    gsap.from(".giant .word", { yPercent: 40, scale: 1.25, letterSpacing: "0.08em", opacity: 0, ease: "none",
+        scrollTrigger: { trigger: ".finale", start: "top 85%", end: "center center", scrub: true } });
+
+    // ---------------------------------------------------------------- the rail, the nav, magnetic buttons, the cursor
+    var railItems = all(".rail li");
+    all("[data-section]").forEach(function (section) {
+        ScrollTrigger.create({ trigger: section, start: "top 55%", end: "bottom 55%", onToggle: function (self) {
+            if (!self.isActive) return;
+            railItems.forEach(function (item) { item.classList.toggle("on", item.getAttribute("data-for") === section.id); });
+        } });
+    });
+    var nav = document.querySelector(".nav");
+    ScrollTrigger.create({ start: 0, end: "max", onUpdate: function (self) {
+        nav.classList.toggle("hide", self.direction === 1 && self.scroll() > 500);
+    } });
+    if (fine) {
+        all(".magnetic").forEach(function (button) {
+            button.addEventListener("pointermove", function (event) {
+                var box = button.getBoundingClientRect();
+                gsap.to(button, { x: (event.clientX - box.left - box.width / 2) * 0.3, y: (event.clientY - box.top - box.height / 2) * 0.4, duration: 0.5, ease: "power3.out" });
+            });
+            button.addEventListener("pointerleave", function () { gsap.to(button, { x: 0, y: 0, duration: 0.9, ease: "elastic.out(1, 0.4)" }); });
+        });
+        var cursor = document.querySelector(".cursor");
+        var cx = gsap.quickTo(cursor, "x", { duration: 0.35, ease: "power3.out" });
+        var cy = gsap.quickTo(cursor, "y", { duration: 0.35, ease: "power3.out" });
+        window.addEventListener("pointermove", function (event) { cursor.classList.add("on"); cx(event.clientX); cy(event.clientY); }, { passive: true });
+        document.addEventListener("pointerover", function (event) {
+            cursor.classList.toggle("hover", !!event.target.closest("a, button, summary, .spot, .shot"));
+        });
+    }
+
+    runChat();
+    runMascots();
+    window.addEventListener("load", function () { ScrollTrigger.refresh(); });
+
+    // ================================================================ Dibsly himself and the demo conversation (2.0)
+    function runMascots() {
+        var files = {};
+        var own = { expense: 1, next: 1, annoyed: 1 };
+        function path(name) {
+            var where = own[name] ? (window.DIBSLY_ASSETS || "v2/") + "mascot/" : (window.DIBSLY_IMAGES || "img/") + "mascot/";
+            return where + name + "-dark.json";
+        }
+        function data(name) {
+            var p = path(name);
+            if (!files[p]) files[p] = fetch(p).then(function (answer) { return answer.json(); });
+            return files[p];
+        }
+        window.dibslyPlay = function (box, name, then, loop) {
+            if (calm || !window.lottie || !box) return;
+            var ticket = (box._ticket || 0) + 1;
+            box._ticket = ticket;
+            data(name).then(function (json) {
+                if (box._ticket !== ticket) return;
+                var stageEl = box.querySelector(".mascot-stage");
+                var layer = document.createElement("div");
+                layer.className = "mascot-layer";
+                stageEl.appendChild(layer);
+                var animation = window.lottie.loadAnimation({ container: layer, renderer: "svg", autoplay: true, loop: !then && loop, animationData: json });
+                animation.addEventListener("DOMLoaded", function () {
+                    box.classList.add("alive");
+                    requestAnimationFrame(function () { layer.classList.add("shown"); });
+                    var old = box._animation, oldLayer = box._layer;
+                    box._animation = animation;
+                    box._layer = layer;
+                    if (old) setTimeout(function () { old.destroy(); if (oldLayer) oldLayer.remove(); }, 220);
+                });
+                if (then) animation.addEventListener("complete", function () { if (box._ticket === ticket) window.dibslyPlay(box, then, null, true); });
+            });
+        };
+        var boxes = all(".mascot[data-play]");
+        if (!("IntersectionObserver" in window)) return;
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                var box = entry.target;
+                if (entry.isIntersecting && !box._animation) window.dibslyPlay(box, box.getAttribute("data-play"), box.getAttribute("data-then"), box.hasAttribute("data-loop"));
+                else if (box._animation) entry.isIntersecting ? box._animation.play() : box._animation.pause();
+            });
+        }, { rootMargin: "0px 0px -10% 0px" });
+        boxes.forEach(function (box) { observer.observe(box); });
+    }
+
+    function runChat() {
+        var script = window.DIBSLY_CHAT || [];
+        var box = document.querySelector(".chatbox");
+        if (!box || !script.length) return;
+        var list = box.querySelector(".messages");
+        var chips = box.querySelector(".chips");
+        var hero = box.querySelector(".mascot");
+        var busy = false, asked = 0;
+        var wait = function (ms) { return new Promise(function (done) { setTimeout(done, calm ? 0 : ms); }); };
+        function add(node) { list.appendChild(node); list.scrollTop = list.scrollHeight; return node; }
+        function bubble(text, who) { var p = document.createElement("p"); p.className = "msg " + who; p.textContent = text; return add(p); }
+        function typeInto(node, text) {
+            if (calm) { node.textContent = text; return Promise.resolve(); }
+            var characters = Array.from(text), count = 0;
+            return new Promise(function (done) {
+                var timer = setInterval(function () {
+                    count += 3;
+                    node.textContent = characters.slice(0, count).join("");
+                    list.scrollTop = list.scrollHeight;
+                    if (count >= characters.length) { clearInterval(timer); done(); }
+                }, 16);
+            });
+        }
+        function money(value) { return value.toLocaleString("uk-UA").replace(/[  ,]/g, " ") + " ₴"; }
+        function barsCard(bars) {
+            var card = document.createElement("div");
+            card.className = "card";
+            var title = document.createElement("h4");
+            title.textContent = bars.title;
+            var rows = document.createElement("div");
+            rows.className = "bars";
+            var top = bars.rows[0][1];
+            bars.rows.forEach(function (row, index) {
+                var line = document.createElement("div");
+                var name = document.createElement("span"); name.textContent = row[0];
+                var bar = document.createElement("i"); bar.style.width = Math.round(row[1] / top * 100) + "%"; bar.style.animationDelay = index * 90 + "ms";
+                var sum = document.createElement("b"); sum.textContent = money(row[1]);
+                line.append(name, bar, sum);
+                rows.appendChild(line);
+            });
+            card.append(title, rows);
+            return add(card);
+        }
+        function operationCard(op) {
+            var card = document.createElement("div");
+            card.className = "card";
+            card.innerHTML = '<div class="op"><span class="icon"></span><div class="what"><strong></strong><span></span></div><span class="sum"></span></div>' +
+                '<div class="card-actions"><button class="skip" type="button"></button><button class="save" type="button"></button></div><p class="done"></p>';
+            card.querySelector(".icon").textContent = op.icon;
+            card.querySelector(".what strong").textContent = op.title;
+            card.querySelector(".what span").textContent = op.sub;
+            card.querySelector(".sum").textContent = op.sum;
+            card.querySelector(".save").textContent = op.save;
+            card.querySelector(".skip").textContent = op.skip;
+            card.querySelector(".done").textContent = op.done;
+            card.querySelector(".save").addEventListener("click", function () {
+                card.classList.add("saved");
+                if (window.dibslyPlay) window.dibslyPlay(hero, "celebrate", "idle");
+                wait(500).then(function () { bubble(op.thanks, "dibsly"); });
+            });
+            card.querySelector(".skip").addEventListener("click", function () { card.remove(); });
+            return add(card);
+        }
+        function setChips(disabled) {
+            all(".chip", chips).forEach(function (chip) { chip.disabled = disabled; });
+            again.hidden = asked < script.length;
+        }
+        function ask(index) {
+            if (busy) return;
+            busy = true;
+            var item = script[index];
+            setChips(true);
+            bubble(item.q, "me");
+            wait(250).then(function () {
+                var reply = bubble("•••", "dibsly typing");
+                return wait(650).then(function () { reply.classList.remove("typing"); return typeInto(reply, item.a); });
+            }).then(function () {
+                if (item.bars) barsCard(item.bars);
+                if (item.op) operationCard(item.op);
+                if (window.dibslyPlay) window.dibslyPlay(hero, item.mood || "idle", "idle");
+                asked += 1;
+                all(".chip", chips)[index].classList.add("asked");
+                busy = false;
+                setChips(false);
+            });
+        }
+        script.forEach(function (item, index) {
+            var chip = document.createElement("button");
+            chip.type = "button"; chip.className = "chip"; chip.textContent = item.q;
+            chip.addEventListener("click", function () { ask(index); });
+            chips.appendChild(chip);
+        });
+        var again = document.createElement("button");
+        again.type = "button"; again.className = "chip"; again.textContent = window.DIBSLY_CHAT_AGAIN || "Again"; again.hidden = true;
+        again.addEventListener("click", function () {
+            list.innerHTML = ""; asked = 0;
+            all(".chip", chips).forEach(function (chip) { chip.classList.remove("asked"); });
+            again.hidden = true;
+            ask(0);
+        });
+        chips.appendChild(again);
+        var started = false;
+        if (!("IntersectionObserver" in window)) { ask(0); return; }
+        var observer = new IntersectionObserver(function (entries) {
+            if (entries[0].isIntersecting && !started) { started = true; setTimeout(function () { ask(0); }, calm ? 0 : 600); observer.disconnect(); }
+        }, { threshold: 0.5 });
+        observer.observe(box);
+    }
+})();

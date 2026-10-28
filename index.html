@@ -3,21 +3,23 @@
 <head>
     <meta charset="utf-8">
     <meta name="google-site-verification" content="IwF6x4L8Xjpc7eMHUY-npoZ4KZqFXWN9hBXnf8rxMeE" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Dibsly: усі твої гроші в одному місці</title>
-    <meta name="description" content="Dibsly для iPhone і браузера: картки різних банків, готівка, накопичення, цілі й інвестиції разом. Безкоштовно чотири банки, Apple Pay, Interactive Brokers і Freedom Finance. З Premium: будь-який банк через твій ChatGPT чи Claude, сайт, спільні рахунки.">
-    <meta name="theme-color" content="#F7F3EE">
+    <meta name="description" content="Dibsly для iPhone і браузера: картки всіх банків, готівка, накопичення, інвестиції, ФОП, борги й кредити разом. Витрати записуються самі, а Dibsly відповідає на питання про гроші твоїми цифрами.">
+    <meta name="theme-color" content="#0E0C0B">
     <meta property="og:title" content="Dibsly: усі твої гроші в одному місці">
-    <meta property="og:description" content="Усі банки, Apple Pay, готівка, цілі й інвестиції на iPhone і в браузері.">
+    <meta property="og:description" content="Усі банки, Apple Pay, готівка, цілі, інвестиції, ФОП, борги й кредити на iPhone і в браузері.">
     <meta property="og:image" content="https://dibslyapp.com/img/shots/uk-web.jpg">
     <link rel="alternate" hreflang="uk" href="https://dibslyapp.com/">
     <link rel="alternate" hreflang="en" href="https://dibslyapp.com/en.html">
     <link rel="icon" type="image/png" href="img/favicon.png">
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-    <link rel="stylesheet" href="v2/v2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="v3/v3.css">
     <script>
         document.documentElement.classList.add("js");
-        try { if (localStorage.getItem("dibsly.site.theme") === "dark") document.documentElement.dataset.theme = "dark"; } catch (error) {}
         // A first visit from a browser that speaks neither Ukrainian nor Russian opens the English page; a language
         // picked with the switch is kept.
         try {
@@ -28,63 +30,122 @@
     </script>
 </head>
 <body>
+    <div class="intro" aria-hidden="true"><span class="intro-count">0</span><span class="intro-word">Dibsly</span></div>
+    <canvas class="field" aria-hidden="true"></canvas>
+    <div class="cursor" aria-hidden="true"></div>
+
     <header class="nav">
-        <div class="wrap">
-            <a class="brand" href="./"><img src="img/apple-touch-icon.png" alt="" width="30" height="30">Dibsly</a>
-            <nav class="nav-links" aria-label="Розділи">
-                <a href="#ask">Чат</a>
-                <a href="features-uk.html">Можливості</a>
-                <a href="#invest">Інвестиції</a>
+        <nav class="nav-pill" aria-label="Головне меню">
+            <a class="brand" href="#top"><img src="img/apple-touch-icon.png" alt="" width="28" height="28">Dibsly</a>
+            <div class="nav-links">
+                <a href="#auto">Можливості</a>
+                <a href="#money">ФОП, борги, кредити</a>
+                <a href="#everywhere">Портал і ШІ</a>
                 <a href="#price">Ціна</a>
-                <a href="support-uk.html">Підтримка</a>
-            </nav>
-            <a class="lang" href="en.html" hreflang="en" onclick="try { localStorage.setItem('dibsly.site.lang', 'en'); } catch (error) {}">EN</a>
-            <button class="theme" type="button" aria-label="Темна чи світла тема">◐</button>
-            <a class="button quiet small signin" href="https://my.dibslyapp.com">Увійти</a>
-            <a class="button primary small" href="https://apps.apple.com/app/id6765870838">App Store</a>
-        </div>
+                <a href="#faq">Питання</a>
+            </div>
+            <div class="nav-actions">
+                <a class="lang" href="en.html" hreflang="en" onclick="try { localStorage.setItem('dibsly.site.lang', 'en'); } catch (error) {}">EN</a>
+                <a class="pill ghost" href="https://my.dibslyapp.com">Увійти</a>
+                <a class="pill hot" href="https://apps.apple.com/app/id6765870838">Завантажити</a>
+            </div>
+        </nav>
     </header>
 
+    <ol class="rail" aria-hidden="true">
+        <li data-for="top">00</li><li data-for="auto">01</li><li data-for="ask">02</li><li data-for="analytics">03</li>
+        <li data-for="invest">04</li><li data-for="money">05</li><li data-for="everywhere">06</li><li data-for="price">07</li>
+    </ol>
+
     <main>
-        <section class="hero" id="top">
-            <div class="wrap">
-                <div>
-                    <h1>Усі твої гроші <em>в&nbsp;одному місці</em></h1>
-                    <p class="lead">Картки всіх банків, готівка, накопичення й інвестиції. Dibsly сам записує витрати й відповідає на питання про гроші.</p>
-                    <div class="actions">
-                        <a class="button primary" href="https://apps.apple.com/app/id6765870838">Завантажити в App Store</a>
-                        <a class="button quiet" href="https://my.dibslyapp.com">Відкрити в браузері</a>
+        <!-- 00 -->
+        <section class="hero" id="top" data-section>
+            <div class="wrap hero-grid">
+                <div class="hero-copy">
+                    <p class="kicker"><span class="dot"></span>Особисті фінанси · iPhone і браузер</p>
+                    <h1 class="hero-title"><span class="line">Усі гроші.</span><span class="line hot">В одному місці.</span></h1>
+                    <p class="lead fade-up">Картки всіх банків, готівка, накопичення, інвестиції, ФОП, борги й кредити. Dibsly сам записує витрати й відповідає на питання про гроші твоїми цифрами.</p>
+                    <div class="actions fade-up">
+                        <a class="button light magnetic" href="https://apps.apple.com/app/id6765870838">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3 2.4 1.2 0 1.7-.8 3.1-.8 1.5 0 1.9.8 3.2.8 1.3 0 2.1-1.2 2.9-2.4.9-1.4 1.3-2.7 1.3-2.8 0 0-2.4-1-2.4-3.9zM14 5.5c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1.1.1 2.1-.6 2.8-1.4z"></path></svg>
+                            Завантажити в App Store</a>
+                        <a class="button ghost magnetic" href="https://my.dibslyapp.com">Відкрити в браузері <span aria-hidden="true">→</span></a>
                     </div>
-                    <ul class="platforms" aria-label="Платформи"><li class="ready">iPhone</li><li class="ready">Браузер</li><li>Android <small>скоро</small></li><li>iPad <small>скоро</small></li><li>Mac <small>скоро</small></li></ul>
+                    <ul class="platforms fade-up" aria-label="Платформи">
+                        <li>iPhone</li><li>Браузер</li><li class="soon">iPad · Mac — скоро</li><li class="soon">Android — згодом</li>
+                    </ul>
                 </div>
-                <div class="devices">
-                    <figure class="browser">
-                        <div class="browser-bar" aria-hidden="true"><span></span><span></span><span></span><p>my.dibslyapp.com</p></div>
-                        <img src="img/shots/uk-web.jpg" alt="Головна my.dibslyapp.com у браузері" width="1440" height="900">
-                    </figure>
-                    <div class="phone"><div class="slides" data-hold="2300"><img class="on" src="v2/shots/uk-main-a.jpg" alt="Головна Dibsly: гроші під рукою, накопичення й інвестиції" width="750" height="1631"><img src="v2/shots/uk-an-1.jpg" alt="Аналітика за категоріями" width="750" height="1631" loading="lazy"><img src="v2/shots/uk-inv-1.jpg" alt="Портфель інвестицій" width="750" height="1631" loading="lazy"><img src="v2/shots/uk-goals-full.jpg" alt="Цілі" width="750" height="1631" loading="lazy"></div></div>
-                    <div class="mascot" data-play="hello" data-then="idle" aria-hidden="true">
-                        <picture class="mascot-still"><img class="light-only" src="img/dibsly.png" alt="" width="404" height="386"><img class="dark-only" src="img/dibsly-dark.png" alt="" width="404" height="386"></picture>
-                        <div class="mascot-stage"></div>
+                <div class="hero-stage">
+                    <div class="phone tilt hero-phone"><img src="v2/shots/uk-main-a.jpg" alt="Головна Dibsly: гроші під рукою, накопичення й інвестиції" width="750" height="1630"></div>
+                    <div class="float-card c1" data-depth="0.6">
+                        <p class="tiny">Apple Pay · щойно</p>
+                        <p class="row"><b>Сільпо</b><b>−1 448,57 ₴</b></p>
+                        <p class="sub">Продукти · записано саме</p>
+                    </div>
+                    <div class="float-card warm c2" data-depth="1.1">
+                        <p class="tiny">Dibsly</p>
+                        <p>На каву цього місяця 1 240 ₴ — на 18% менше, ніж у вересні.</p>
+                    </div>
+                    <div class="float-card c3" data-depth="0.8">
+                        <p class="tiny">Ціль · Подушка</p>
+                        <div class="bar"><i style="--to: 14%"></i></div>
+                        <p class="sub">2 800 $ з 20 000 $</p>
+                    </div>
+                </div>
+            </div>
+            <a class="scroll-hint" href="#auto"><span>Гортай</span><i></i></a>
+        </section>
+
+        <section class="marquee" aria-label="Звідки гроші потрапляють у Dibsly">
+            <div class="marquee-track">
+                <span>monobank</span><span>ПриватБанк</span><span>UKRSIBBANK</span><span>KredoBank</span><span>Apple Pay</span><span class="hot">будь-який банк через ШІ</span><span>Interactive Brokers</span><span>Freedom Finance</span>
+                <span aria-hidden="true">monobank</span><span aria-hidden="true">ПриватБанк</span><span aria-hidden="true">UKRSIBBANK</span><span aria-hidden="true">KredoBank</span><span aria-hidden="true">Apple Pay</span><span class="hot" aria-hidden="true">будь-який банк через ШІ</span><span aria-hidden="true">Interactive Brokers</span><span aria-hidden="true">Freedom Finance</span>
+            </div>
+        </section>
+
+        <!-- 01 -->
+        <section class="block" id="auto" data-section>
+            <div class="wrap split">
+                <div class="copy">
+                    <p class="kicker">01 · Записується саме</p>
+                    <h2 class="title"><span class="line">Заплатив.</span><span class="line dim">Уже записано.</span></h2>
+                    <p class="lead reveal">Оплатив Apple Pay — покупка чекає в Dibsly з сумою й категорією. monobank напряму, виписки інших банків, голос і фото чека. Тобі лишається один дотик.</p>
+                    <div class="tiles">
+                        <div class="tile reveal"><b>Apple Pay</b><span>з будь-якої картки</span></div>
+                        <div class="tile reveal"><b>monobank</b><span>напряму, лише читання</span></div>
+                        <div class="tile reveal"><b>Голосом</b><span>«кава 85» — і записано</span></div>
+                        <div class="tile reveal"><b>Чек з фото</b><span>і поділити з друзями</span></div>
+                    </div>
+                </div>
+                <div class="media duo">
+                    <div class="phone sm drift-a"><img src="v2/shots/uk-drafts.jpg" alt="Чернетки з Apple Pay чекають підтвердження" width="750" height="1630" loading="lazy"></div>
+                    <div class="phone sm drift-b"><img src="v2/shots/uk-voice.jpg" alt="Запис голосом" width="750" height="1630" loading="lazy"></div>
+                    <div class="toast">
+                        <img src="img/dibsly-dark.png" alt="" width="40" height="38">
+                        <div><b>Витрату збережено</b><span>Кава · −85 ₴</span></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="asksec" id="ask">
-            <div class="wrap">
-                <div class="reveal">
-                    <h2>Запитай Dibsly про свої гроші</h2>
-                    <p class="lead">Він знає твої рахунки, витрати й цілі, тож відповідає твоїми цифрами. А змінює щось тільки після твого «Зберегти».</p>
-                    <p class="note">20 питань на місяць безкоштовно, більше з Premium.</p>
+        <!-- 02 -->
+        <section class="block glow" id="ask" data-section>
+            <div class="wrap split reverse">
+                <div class="copy">
+                    <p class="kicker">02 · Чат з Dibsly</p>
+                    <h2 class="title"><span class="line">Запитай.</span><span class="line hot">Він знає.</span></h2>
+                    <p class="lead reveal">Dibsly знає твої рахунки, витрати й цілі, тож відповідає твоїми цифрами. Змінює щось тільки після твого «Зберегти».</p>
+                    <p class="note reveal">20 питань на місяць безкоштовно, більше з Premium.</p>
                 </div>
-                <div class="ask">
-                    <div class="mascot" data-play="hello" data-then="idle" aria-hidden="true">
-                        <picture class="mascot-still"><img class="light-only" src="img/dibsly.png" alt="" width="404" height="386"><img class="dark-only" src="img/dibsly-dark.png" alt="" width="404" height="386"></picture>
-                        <div class="mascot-stage"></div>
-                    </div>
-                    <div class="chatbox">
-                        <div class="chat-head"><div><strong>Dibsly</strong>на демо-даних, спробуй</div></div>
+                <div class="media">
+                    <div class="chatbox reveal">
+                        <div class="chat-head">
+                            <div class="mascot" data-play="hello" data-then="idle" aria-hidden="true">
+                                <img class="mascot-still" src="img/dibsly-dark.png" alt="" width="404" height="386">
+                                <div class="mascot-stage"></div>
+                            </div>
+                            <div><b>Dibsly</b><span>на демо-даних, спробуй</span></div>
+                        </div>
                         <div class="messages" aria-live="polite"></div>
                         <div class="chips" aria-label="Питання"></div>
                     </div>
@@ -92,239 +153,179 @@
             </div>
         </section>
 
-        <section class="auto" id="auto">
+        <!-- 03 -->
+        <section class="block gallery" id="analytics" data-section>
             <div class="wrap">
-                <div class="phone reveal"><div class="slides" data-hold="1800"><img class="on" src="v2/shots/uk-main-a.jpg" alt="Головна з трьома чернетками Apple Pay" width="750" height="1631" loading="lazy"><img data-tap="89.6,68.9" src="v2/shots/uk-main-b.jpg" alt="" width="750" height="1631" loading="lazy"><span class="tap" aria-hidden="true"></span></div></div>
-                <div class="reveal">
-                    <div class="mascot" data-play="expense" data-loop aria-hidden="true">
-                        <picture class="mascot-still"><img class="light-only" src="img/dibsly.png" alt="" width="404" height="386"><img class="dark-only" src="img/dibsly-dark.png" alt="" width="404" height="386"></picture>
-                        <div class="mascot-stage"></div>
-                    </div>
-                    <h2>Витрати записуються самі</h2>
-                    <p class="lead">Оплатив Apple Pay, і покупка вже чекає в Dibsly з сумою й категорією. Тобі лишається один дотик.</p>
-                    <ul class="ways">
-                        <li><strong>monobank</strong> напряму</li>
-                        <li>Виписки <strong>ПриватБанку, UKRSIBBANK, KredoBank</strong></li>
-                        <li><strong>Apple Pay</strong> з будь-якої картки</li>
-                        <li>Голосом: <strong>«кава 85»</strong></li>
-                        <li><strong>Чек</strong> з фото, поділити з друзями</li>
-                        <li>Будь-який банк через твій ШІ <span class="tag">Premium</span></li>
-                    </ul>
-                    <p class="more-link"><a href="features-uk.html">Усе, що вміє Dibsly →</a></p>
+                <p class="kicker">03 · Аналітика, план, цілі</p>
+                <h2 class="title"><span class="line">Куди йдуть гроші.</span><span class="line dim">І скільки ще можна.</span></h2>
+            </div>
+            <div class="gallery-pin">
+                <div class="gallery-track">
+                    <figure class="shot"><div class="phone"><img src="v2/shots/uk-an-1.jpg" alt="Аналітика за категоріями" width="750" height="1630" loading="lazy"></div><figcaption><b>Аналітика</b><span>Місяць, рік чи весь час. Без таблиць і формул.</span></figcaption></figure>
+                    <figure class="shot"><div class="phone"><img src="v2/shots/uk-an-2.jpg" alt="Грошовий потік по днях" width="750" height="1630" loading="lazy"></div><figcaption><b>Грошовий потік</b><span>Витрати по днях, зарплата позначкою.</span></figcaption></figure>
+                    <figure class="shot"><div class="phone"><img src="img/shots/uk-plan.jpg" alt="План місяця з лімітами" width="550" height="1195" loading="lazy"></div><figcaption><b>План місяця</b><span>Ліміти на категорії й скільки ще можна витратити.</span></figcaption></figure>
+                    <figure class="shot"><div class="phone"><img src="img/shots/uk-calendar.jpg" alt="Календар платежів" width="550" height="1195" loading="lazy"></div><figcaption><b>Календар</b><span>Оренда, підписки й кредити: що й коли спишеться.</span></figcaption></figure>
+                    <figure class="shot"><div class="phone"><img src="v2/shots/uk-goals-full.jpg" alt="Цілі з прогнозом" width="750" height="1630" loading="lazy"></div><figcaption><b>Цілі</b><span>Dibsly каже, в якому місяці дійдеш у такому темпі.</span></figcaption></figure>
+                    <figure class="shot"><div class="phone"><img src="v2/shots/uk-an-3.jpg" alt="Тренди за рік" width="750" height="1630" loading="lazy"></div><figcaption><b>Тренди</b><span>Місяці року поруч: скільки прийшло й скільки лишилось.</span></figcaption></figure>
                 </div>
             </div>
         </section>
 
-        <section class="where" id="where">
-            <div class="wrap">
-                <div class="head reveal">
-                    <h2>Куди йдуть гроші</h2>
-                    <p class="lead">Місяць, рік чи весь час. Без таблиць і формул.</p>
-                </div>
-                <div class="tabs-stage">
-                    <ol class="left">
-                        <li data-slide="0"><h3>Категорії</h3><p>Де найбільше і де вже понад план.</p></li>
-                        <li data-slide="1"><h3>Грошовий потік</h3><p>Витрати по днях, зарплата позначкою.</p></li>
-                    </ol>
-                    <div class="phone"><div class="slides" data-hold="1700"><img class="on" data-tap="16.2,22.4" src="v2/shots/uk-an-1.jpg" alt="Аналітика: категорії" width="750" height="1631" loading="lazy"><img data-tap="38.6,22.4" src="v2/shots/uk-an-2.jpg" alt="" width="750" height="1631" loading="lazy"><img data-tap="61.2,22.4" src="v2/shots/uk-an-3.jpg" alt="" width="750" height="1631" loading="lazy"><img data-tap="83.6,22.4" src="v2/shots/uk-an-4.jpg" alt="" width="750" height="1631" loading="lazy"><span class="tap" aria-hidden="true"></span></div></div>
-                    <ol>
-                        <li data-slide="2"><h3>Тренди</h3><p>Місяці року поруч: скільки прийшло і скільки лишилось.</p></li>
-                        <li data-slide="3"><h3>Капітал</h3><p>Накопичення й інвестиції за рік, окремо від поповнень.</p></li>
-                    </ol>
-                </div>
-            </div>
-        </section>
-
-        <section class="plans-section">
-            <div class="wrap">
-                <h2 class="reveal">План, календар і цілі</h2>
-                <p class="lead reveal">Дотягни до зарплати, знай, що спишеться завтра, і бач, коли дійдеш до мети.</p>
-                <div class="bento">
-                    <article class="tile big reveal">
-                        <div><h3>Цілі</h3><p>Авто, квартира чи подушка. Dibsly каже, в якому місяці дійдеш у такому темпі.</p></div>
-                        <div class="crop"><img src="v2/shots/uk-goals.jpg" alt="Цілі: нове авто, капітал і подушка" width="1206" height="1725" loading="lazy"></div>
-                    </article>
-                    <article class="tile reveal">
-                        <div><h3>План місяця</h3><p>Ліміти на категорії й скільки ще можна витратити.</p></div>
-                        <div class="crop"><img src="v2/shots/uk-plan.jpg" alt="План місяця з лімітами" width="1206" height="780" loading="lazy"></div>
-                    </article>
-                    <article class="tile reveal">
-                        <div><h3>Календар платежів</h3><p>Оренда, підписки й кредити: що й коли спишеться.</p></div>
-                        <div class="crop"><img src="v2/shots/uk-calendar.jpg" alt="Календар регулярних платежів" width="1206" height="1365" loading="lazy"></div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="invest" id="invest">
-            <div class="wrap">
-                <div class="reveal">
-                    <h2>Інвестиції поруч з рештою грошей</h2>
-                    <p class="lead">Портфель і дивіденди в тому самому застосунку, де твої витрати. Безкоштовно.</p>
-                    <ul>
-                        <li>Звіти Interactive Brokers і Freedom Finance замість ручного введення</li>
-                        <li>Дивіденди разом з утриманим податком</li>
-                        <li>Ріст окремо від поповнень, щоб депозит не виглядав прибутком</li>
+        <!-- 04 -->
+        <section class="block band" id="invest" data-section>
+            <div class="wrap split">
+                <div class="copy">
+                    <p class="kicker">04 · Інвестиції</p>
+                    <h2 class="title"><span class="line">Портфель.</span><span class="line green">Поруч з витратами.</span></h2>
+                    <p class="lead reveal">Портфель і дивіденди в тому самому застосунку, де твої витрати. Безкоштовно.</p>
+                    <ul class="checks green">
+                        <li class="reveal">Звіти Interactive Brokers і Freedom Finance замість ручного введення</li>
+                        <li class="reveal">Дивіденди разом з утриманим податком</li>
+                        <li class="reveal">Ріст окремо від поповнень, щоб депозит не виглядав прибутком</li>
                     </ul>
                 </div>
-                <div class="side reveal">
-                    <div class="phone"><div class="slides" data-hold="1500"><img class="on" data-tap="16.6,44.5" src="v2/shots/uk-inv-1.jpg" alt="Історія вартості портфеля" width="750" height="1631" loading="lazy"><img data-tap="33.1,44.5" src="v2/shots/uk-inv-2.jpg" alt="" width="750" height="1631" loading="lazy"><img data-tap="66.2,44.5" src="v2/shots/uk-inv-3.jpg" alt="" width="750" height="1631" loading="lazy"><img data-tap="82.8,44.5" src="v2/shots/uk-inv-4.jpg" alt="" width="750" height="1631" loading="lazy"><span class="tap" aria-hidden="true"></span></div></div>
-                    <div class="mascot" data-play="invest" data-loop aria-hidden="true">
-                        <picture class="mascot-still"><img class="light-only" src="img/dibsly.png" alt="" width="404" height="386"><img class="dark-only" src="img/dibsly-dark.png" alt="" width="404" height="386"></picture>
-                        <div class="mascot-stage"></div>
-                    </div>
+                <div class="media invest-stage">
+                    <svg class="chart" viewBox="0 0 600 260" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5BD08A" stop-opacity=".35"></stop><stop offset="1" stop-color="#5BD08A" stop-opacity="0"></stop></linearGradient></defs><path class="chart-area" d="M0 220 L60 200 L120 210 L180 170 L240 180 L300 130 L360 145 L420 95 L480 110 L540 60 L600 40 L600 260 L0 260 Z" fill="url(#g)"></path><path class="chart-line" d="M0 220 L60 200 L120 210 L180 170 L240 180 L300 130 L360 145 L420 95 L480 110 L540 60 L600 40" fill="none" stroke="#5BD08A" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"></path></svg>
+                    <div class="phone tilt"><img src="v2/shots/uk-inv-1.jpg" alt="Портфель з графіком вартості" width="750" height="1630" loading="lazy"></div>
+                    <div class="float-card c4"><p class="tiny">Загальний результат</p><p class="big-num green">+<span class="count" data-to="18.4" data-decimals="1">0</span>%</p></div>
                 </div>
             </div>
         </section>
 
-        <section class="everywhere where">
+        <!-- 05 -->
+        <section class="block" id="money" data-section>
             <div class="wrap">
-                <h2 class="reveal">Твої гроші всюди <span class="tag">Premium</span></h2>
-                <p class="lead reveal">Ті самі дані на сайті, у твоєму ChatGPT чи Claude і в рахунках, спільних з близькими.</p>
-                <div class="duo">
-                    <article class="reveal">
-                        <h3>Твій ChatGPT або Claude знає твої гроші</h3>
-                        <p>Імпортуй виписку будь-якого банку, питай і став цілі у своєму асистенті. Записує тільки після твого «так».</p>
-                        <div class="convo">
-                            <p class="me">Ось виписка Revolut, запиши.</p>
-                            <p class="ai">48 операцій, з них 3 перекази між твоїми рахунками. Записати?</p>
-                        </div>
-                    </article>
-                    <article class="reveal">
-                        <h3>my.dibslyapp.com</h3>
-                        <p>Історія з пошуком, аналітика, план і чернетки на великому екрані. Зміни одразу й на телефоні.</p>
-                        <p><a href="https://my.dibslyapp.com">Відкрити сайт</a></p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <div class="wrap">
-                <h2 class="reveal">Гроші разом</h2>
-                <p class="lead reveal">Для пари, сім'ї чи друзів, з якими ділите рахунок у кафе.</p>
-                <div class="together">
-                    <article class="shared reveal">
-                        <h3>Спільні рахунки <span class="tag">Premium</span></h3>
-                        <div class="half" aria-hidden="true">
-                            <div><span class="who">О</span><i></i>10 700 ₴</div>
-                            <div><span class="who">Д</span><i></i>10 700 ₴</div>
-                        </div>
-                        <p>Внески кожного, сповіщення, коли інший щось додає, і спільні цілі. Вистачить Premium в одного.</p>
-                    </article>
-                    <article class="split reveal">
-                        <img src="img/split-card.png" alt="Посилання, щоб розділити чек" width="1200" height="630" loading="lazy">
-                        <h3>Розділити чек</h3>
-                        <p>Сфотографуй чек і надішли друзям посилання: кожен відмітить своє, Dibsly порахує.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="morefeat">
-            <div class="wrap">
-                <div class="moreband reveal">
-                    <div class="mascot" data-play="next" data-loop aria-hidden="true">
-                        <picture class="mascot-still"><img class="light-only" src="img/dibsly.png" alt="" width="404" height="386"><img class="dark-only" src="img/dibsly-dark.png" alt="" width="404" height="386"></picture>
-                        <div class="mascot-stage"></div>
-                    </div>
+                <div class="head-row">
                     <div>
-                        <h2>Це ще не все</h2>
-                        <p>22 можливості Dibsly з прикладами: як гроші потрапляють у застосунок, що вміє чат, аналітика, цілі й інвестиції.</p>
+                        <p class="kicker">05 · Нове в Dibsly</p>
+                        <h2 class="title"><span class="line">ФОП. Борги. Кредити.</span><span class="line dim">Теж тут.</span></h2>
                     </div>
-                    <a class="button primary" href="features-uk.html">Усе, що вміє Dibsly</a>
+                    <p class="lead reveal">Усе, що зазвичай живе в окремих таблицях і нотатках, — поруч з рештою грошей. Безкоштовно.</p>
+                </div>
+                <div class="cards3">
+                    <article class="spot reveal">
+                        <div class="icon orange"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"></rect><path d="M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2"></path></svg></div>
+                        <h3>ФОП</h3>
+                        <p>Дохід ФОП окремо від особистих грошей. Податки кварталу й ЄСВ пораховані, нагадування до строку, скільки відкласти й цифри для декларації.</p>
+                        <p class="foot">Квартал, строки, «Сплачено» — в одному місці</p>
+                    </article>
+                    <article class="spot reveal">
+                        <div class="icon green"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 7h11l-3-3M17 17H6l3 3"></path></svg></div>
+                        <h3>Борги</h3>
+                        <p>Хто винен тобі й кому винен ти. Позичив, повернули, поділив рахунок у кафе — усе по людях, без «а скільки там було».</p>
+                        <p class="foot">«Паша — 1 500 ₴, з вересня»</p>
+                    </article>
+                    <article class="spot reveal">
+                        <div class="icon blue"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 10h18M7 15h4"></path></svg></div>
+                        <h3>Кредити</h3>
+                        <p>Кредит, іпотека, оплата частинами, мікрокредит, кредитний ліміт картки. Наступний платіж, графік і переплата, а нагадування — щоб не платити зайвого.</p>
+                        <p class="foot">Ліміт картки окремим рядком: «ще доступно 50 000 кредитних»</p>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <section class="where" id="price">
+        <!-- 06 -->
+        <section class="block glow" id="everywhere" data-section>
             <div class="wrap">
-                <h2 class="reveal">Безкоштовно. Premium, коли захочеш більше.</h2>
+                <p class="kicker">06 · Твої гроші всюди · Premium</p>
+                <h2 class="title"><span class="line">Телефон. Браузер.</span><span class="line hot">Твій ChatGPT чи Claude.</span></h2>
+                <div class="browser-wrap">
+                    <figure class="browser">
+                        <div class="browser-bar" aria-hidden="true"><span></span><span></span><span></span><p>my.dibslyapp.com</p></div>
+                        <img src="img/shots/uk-web.jpg" alt="Портал my.dibslyapp.com на великому екрані" width="1440" height="900" loading="lazy">
+                    </figure>
+                </div>
+                <div class="cards3">
+                    <article class="spot reveal"><h3>my.dibslyapp.com</h3><p>Історія з пошуком, аналітика, план і чернетки на великому екрані. Зміни одразу й на телефоні.</p><a class="foot link" href="https://my.dibslyapp.com">Відкрити сайт →</a></article>
+                    <article class="spot reveal"><h3>ChatGPT і Claude</h3><p>Імпортуй виписку будь-якого банку, питай і став цілі у своєму асистенті. Записує тільки після твого «так».</p><p class="foot">«Ось виписка Revolut, запиши»</p></article>
+                    <article class="spot reveal"><h3>Гроші разом</h3><p>Спільні рахунки для пари чи сім'ї, внески кожного, сповіщення й спільні цілі. Вистачить Premium в одного.</p><p class="foot">А чек з кафе — поділити посиланням</p></article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 07 -->
+        <section class="block" id="price" data-section>
+            <div class="wrap">
+                <div class="center">
+                    <p class="kicker">07 · Ціна</p>
+                    <h2 class="title"><span class="line">Безкоштовно.</span><span class="line hot">Premium — коли захочеш більше.</span></h2>
+                </div>
                 <div class="plans">
                     <article class="plan reveal">
                         <h3>Free</h3>
                         <p class="price">0 ₴<small>назавжди</small></p>
-                        <ul>
+                        <ul class="checks green">
                             <li>Рахунки, аналітика, план, календар і цілі</li>
                             <li>monobank, виписки ПриватБанку, UKRSIBBANK і KredoBank, Apple Pay</li>
                             <li>Інвестиції: звіти брокерів і дивіденди</li>
+                            <li>ФОП, борги й кредити</li>
                             <li>20 питань до Dibsly на місяць</li>
                             <li>10 чеків і поділів на місяць</li>
                         </ul>
+                        <a class="button ghost wide" href="https://apps.apple.com/app/id6765870838">Завантажити</a>
                     </article>
                     <article class="plan premium reveal">
-                        <h3>Dibsly Premium</h3>
-                        <p class="price">$2.99<small>на місяць або $29.99 на рік</small></p>
-                        <ul>
+                        <h3>Dibsly Premium <span class="badge">усе</span></h3>
+                        <p class="price">$<span class="count" data-to="2.99" data-decimals="2">0</span><small>на місяць · або $29.99 на рік</small></p>
+                        <ul class="checks orange">
                             <li>Більше питань до Dibsly</li>
                             <li>Синхронізація з iPhone і сайтом my.dibslyapp.com</li>
                             <li>ChatGPT і Claude з доступом до твоїх даних</li>
                             <li>Спільні рахунки й сповіщення будь-якого банку</li>
                             <li>ШІ розкладає покупки, до 300 чеків на місяць</li>
                         </ul>
-                        <a class="button primary" href="https://apps.apple.com/app/id6765870838">Обрати Premium</a>
+                        <a class="button hot wide" href="https://apps.apple.com/app/id6765870838">Обрати Premium</a>
                     </article>
                 </div>
-                <p class="price-note">Ціни для України. App Store покаже ціну у твоїй країні.</p>
+                <p class="center small">Ціни для України. App Store покаже ціну у твоїй країні.</p>
             </div>
         </section>
 
-        <section id="faq">
-            <div class="wrap">
-                <h2 class="reveal">Питання</h2>
-                <div class="faq reveal">
-                    <details>
-                        <summary>Що Dibsly надсилає ШІ?</summary>
-                        <p>Тільки те, що потрібно для відповіді, і тільки після твого дозволу на окремій сторінці. Без дозволу все інше працює. Відповіді рахує Dibsly на телефоні з твоїх даних, а ШІ лише формулює їх словами.</p>
-                    </details>
-                    <details>
-                        <summary>Які банки підтримує Dibsly?</summary>
-                        <p>Безкоштовно: monobank напряму за токеном лише для читання, виписки ПриватБанку, UKRSIBBANK, KredoBank і monobank, а також Apple Pay з будь-якої картки. З Premium твій ChatGPT чи Claude прочитає виписку будь-якого банку.</p>
-                    </details>
-                    <details>
-                        <summary>Це безпечно?</summary>
-                        <p>Dibsly не просить пароль від банку й не може переказати гроші. Без акаунта дані лежать тільки на твоєму iPhone і в зашифрованих копіях у твоєму iCloud Drive чи Google Drive. Деталі в <a href="privacy-uk.html">політиці конфіденційності</a>.</p>
-                    </details>
-                    <details>
-                        <summary>Потрібен акаунт?</summary>
-                        <p>Ні. Акаунт потрібен для синхронізації, сайту, асистентів і спільних рахунків.</p>
-                    </details>
-                    <details>
-                        <summary>Є версія для Android?</summary>
-                        <p>Поки що тільки iPhone. Сайт my.dibslyapp.com відкривається в будь-якому браузері з Premium.</p>
-                    </details>
+        <!-- 08 -->
+        <section class="block" id="faq">
+            <div class="wrap split top">
+                <div class="copy narrow">
+                    <p class="kicker">08 · Питання</p>
+                    <h2 class="title small"><span class="line">Безпечно.</span><span class="line dim">Без пароля від банку.</span></h2>
+                </div>
+                <div class="faq">
+                    <details open><summary>Це безпечно?</summary><p>Dibsly не просить пароль від банку й не може переказати гроші. Без акаунта дані лежать тільки на твоєму iPhone і в зашифрованих копіях у твоєму iCloud Drive чи Google Drive. Деталі в <a href="privacy-uk.html">політиці конфіденційності</a>.</p></details>
+                    <details><summary>Що Dibsly надсилає ШІ?</summary><p>Тільки те, що потрібно для відповіді, і тільки після твого дозволу на окремій сторінці. Без дозволу все інше працює. Відповіді рахує Dibsly на телефоні з твоїх даних, а ШІ лише формулює їх словами.</p></details>
+                    <details><summary>Які банки підтримує Dibsly?</summary><p>Безкоштовно: monobank напряму за токеном лише для читання, виписки ПриватБанку, UKRSIBBANK, KredoBank і monobank, а також Apple Pay з будь-якої картки. З Premium твій ChatGPT чи Claude прочитає виписку будь-якого банку.</p></details>
+                    <details><summary>Потрібен акаунт?</summary><p>Ні. Акаунт потрібен для синхронізації, сайту, асистентів і спільних рахунків.</p></details>
+                    <details><summary>Є версія для Android?</summary><p>Поки що iPhone і браузер: сайт my.dibslyapp.com відкривається в будь-якому браузері з Premium. iPad і Mac — наступні.</p></details>
+                    <p class="more">Покрокові <a href="help-uk.html">інструкції</a> або просто напиши: <a href="mailto:dibslysupport@gmail.com">dibslysupport@gmail.com</a></p>
                 </div>
             </div>
         </section>
 
-        <section>
-            <div class="wrap">
-                <div class="help reveal">
-                    <div class="mascot" data-play="hello" data-loop aria-hidden="true">
-                        <picture class="mascot-still"><img class="light-only" src="img/dibsly.png" alt="" width="404" height="386"><img class="dark-only" src="img/dibsly-dark.png" alt="" width="404" height="386"></picture>
-                        <div class="mascot-stage"></div>
-                    </div>
-                    <div>
-                        <h3>Є ще питання?</h3>
-                        <p>Покрокові <a href="help-uk.html">інструкції</a>, або просто напиши: <a href="mailto:dibslysupport@gmail.com">dibslysupport@gmail.com</a></p>
-                    </div>
-                    <a class="button quiet" href="support-uk.html">Підтримка</a>
+        <section class="finale" id="get">
+            <div class="wrap center">
+                <div class="mascot big" data-play="hello" data-loop aria-hidden="true">
+                    <img class="mascot-still" src="img/dibsly-dark.png" alt="" width="404" height="386">
+                    <div class="mascot-stage"></div>
+                </div>
+                <h2 class="giant">Dibsly<span class="hot">.</span></h2>
+                <p class="lead">Усі гроші в одному місці. Спробуй безкоштовно.</p>
+                <div class="actions center">
+                    <a class="button light magnetic" href="https://apps.apple.com/app/id6765870838">Завантажити в App Store</a>
+                    <a class="button ghost magnetic" href="https://my.dibslyapp.com">Відкрити в браузері</a>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="wrap">
-            <nav aria-label="Посилання">
-                <a href="features-uk.html">Можливості</a>
-                <a href="help-uk.html">Інструкції</a>
-                <a href="support-uk.html">Підтримка</a>
-                <a href="privacy-uk.html">Конфіденційність</a>
-                <a href="terms-uk.html">Умови</a>
-                <a href="https://my.dibslyapp.com">my.dibslyapp.com</a>
-            </nav>
-            <p>© 2026 Dibsly</p>
+        <div class="wrap foot-row">
+            <b>Dibsly</b>
+            <a href="features-uk.html">Можливості</a>
+            <a href="help-uk.html">Інструкції</a>
+            <a href="support-uk.html">Підтримка</a>
+            <a href="privacy-uk.html">Конфіденційність</a>
+            <a href="terms-uk.html">Умови</a>
+            <a href="https://my.dibslyapp.com">my.dibslyapp.com</a>
+            <span class="copy-r">© 2026 Dibsly</span>
         </div>
     </footer>
 
@@ -346,6 +347,10 @@
         window.DIBSLY_CHAT_AGAIN = "Почати спочатку";
     </script>
     <script src="js/lottie_light.min.js" defer></script>
-    <script src="v2/v2.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+    <script src="v3/v3.js" defer></script>
 </body>
 </html>
