@@ -333,7 +333,7 @@ main { position: relative; z-index: 2; overflow-x: clip; }
 .browser-bar { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--line); }
 .browser-bar span { width: 11px; height: 11px; border-radius: 50%; background: #3A332E; }
 .browser-bar p { margin: 0 0 0 16px; font-size: 13px; color: var(--muted); padding: 5px 14px; border-radius: 8px; background: #15110F; }
-.browser img { width: 100%; }
+.browser img { width: 100%; height: auto; }
 
 /* Price */
 .plans { display: grid; grid-template-columns: repeat(2, minmax(0, 480px)); gap: 24px; justify-content: center; margin-top: 64px; }
@@ -389,14 +389,19 @@ footer { position: relative; z-index: 2; border-top: 1px solid var(--line); padd
     .nav-links { display: none; }
     .rail { display: none; }
     .split, .split.top { grid-template-columns: minmax(0, 1fr); gap: 56px; }
-    /* One column: the phone sticks under the top edge, each step's text comes up below it and passes behind it. */
-    .journey { grid-template-columns: minmax(0, 1fr); }
+    /* One column: the phone sticks under the top edge, each step's text comes up below it and passes behind it —
+       behind a band of the page's colour as wide as the screen, so no half-hidden words stick out beside the phone.
+       The phone is sized by the small viewport (Safari with its bars), so a step's text fits under it. */
+    .journey { --ph-m: min(45vh, 480px); grid-template-columns: minmax(0, 1fr); }
+    @supports (height: 1svh) { .journey { --ph-m: min(45svh, 480px); } }
     .journey > .hero { min-height: 0; padding: 140px 0 48px; }
     .journey-stage { grid-column: 1; grid-row: 2 / span 8; }
     .journey-end { height: 0; }
     .stage-sticky { top: 74px; height: auto; padding-top: 0; }
-    .hero-phone { --ph: min(56vh, 520px); }
-    .step { min-height: 0; display: block; padding: calc(56vh + 128px) 0 22vh; }
+    .stage-sticky::before { content: ""; position: absolute; z-index: -1; top: -74px; bottom: -40px; left: 50%; width: 100vw; transform: translateX(-50%);
+        background: linear-gradient(rgba(14, 12, 11, 0), var(--bg) 74px, var(--bg) calc(100% - 40px), rgba(14, 12, 11, 0)); pointer-events: none; }
+    .hero-phone { --ph: var(--ph-m); }
+    .step { min-height: 0; display: block; padding: calc(var(--ph-m) + 150px) 0 24vh; }
     .journey > .scroll-hint { display: none; }
     .split.reverse .copy { order: 0; }
     .cards3 { grid-template-columns: minmax(0, 1fr); }
@@ -407,6 +412,11 @@ footer { position: relative; z-index: 2; border-top: 1px solid var(--line); padd
     .nav-pill { gap: 10px; padding-left: 14px; }
     .lang, .pill.ghost { display: none; }
     .journey > .hero { padding-top: 120px; }
+    .step .kicker { margin-bottom: 12px; }
+    .step .title { font-size: clamp(32px, 9vw, 40px); }
+    .step .lead { margin-top: 16px; font-size: 16px; }
+    .step-tags { margin-top: 16px; gap: 6px; font-size: 13px; }
+    .step-tags li { padding: 6px 12px; }
     .c1 { left: -6px; top: 40px; width: 200px; }
     .c2 { right: -6px; top: 230px; width: 200px; }
     .c3 { left: 0; bottom: 20px; width: 190px; }

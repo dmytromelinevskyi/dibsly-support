@@ -359,7 +359,13 @@
         if (!screen) return null;
         var live = screen.querySelector(".live"), strip = screen.querySelector(".screen-long");
         var frames = { live: live };
-        all(".frame", screen).forEach(function (frame) { frames[frame.getAttribute("data-frame")] = frame; });
+        // A page whose frames are not there yet (the English ones are shot later) keeps Main scrolling instead.
+        var missing = false;
+        function lost() { if (missing) return; missing = true; if (playing && playing !== "hero") play("hero"); }
+        all(".frame", screen).forEach(function (frame) {
+            frames[frame.getAttribute("data-frame")] = frame;
+            if (frame.complete && !frame.naturalWidth) lost(); else frame.addEventListener("error", lost);
+        });
         var layers = Object.keys(frames).map(function (name) { return frames[name]; });
         var fx = {};
         ["banner", "cover", "hl", "tap", "touch", "app-toast"].forEach(function (name) { fx[name] = screen.querySelector(".fx ." + name); });
@@ -379,6 +385,7 @@
         function y(pt) { return pt / 874 * 100 + "%"; }
 
         // Shows a screen over the one in front: "fade", "cut", "push" (a page from the right) or "sheet" (from below).
+        // A push or a sheet stays hidden until its moment (no immediate render: a later sheet peeked under the screen).
         function show(tl, name, how, at) {
             var next = frames[name], last = current;
             if (!next || next === last) return;
@@ -386,10 +393,10 @@
             depth += 1;
             tl.set(next, { zIndex: depth, xPercent: 0, yPercent: 0 }, at);
             if (how === "push") {
-                tl.fromTo(next, { xPercent: 100, opacity: 1 }, { xPercent: 0, duration: 0.6, ease: "power3.inOut" }, at)
+                tl.fromTo(next, { xPercent: 100, opacity: 1 }, { xPercent: 0, duration: 0.6, ease: "power3.inOut", immediateRender: false }, at)
                     .to(last, { xPercent: -28, opacity: 0.4, duration: 0.6, ease: "power3.inOut" }, "<");
             } else if (how === "sheet") {
-                tl.fromTo(next, { yPercent: 100, opacity: 1 }, { yPercent: 0, duration: 0.6, ease: "power3.out" }, at);
+                tl.fromTo(next, { yPercent: 100, opacity: 1 }, { yPercent: 0, duration: 0.6, ease: "power3.out", immediateRender: false }, at);
             } else {
                 tl.fromTo(next, { opacity: 0 }, { opacity: 1, duration: how === "cut" ? 0.14 : 0.5, ease: "power1.inOut" }, at);
             }
@@ -509,6 +516,7 @@
         };
 
         function play(name) {
+            if (missing) name = "hero";
             if (!scenes[name] || name === playing) return;
             playing = name;
             settle();
