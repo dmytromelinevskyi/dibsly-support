@@ -58,7 +58,7 @@ S = [
  ]),
  ("in", "Як гроші потрапляють у Dibsly", "How money gets into Dibsly", [
   ("banks", "free",
-   ("monobank і виписки банків", "monobank напряму за токеном лише для читання. Виписки ПриватБанку, UKRSIBBANK, KredoBank і monobank, і їхні виписки ФОП, у PDF, Excel чи CSV. Dibsly читає файл на телефоні, сам розкладає операції по категоріях і впізнає перекази між твоїми рахунками.", "Налаштування → Імпорт та експорт"),
+   ("monobank і виписки банків", "monobank напряму за токеном лише для читання. Виписки PrivatBank, UKRSIBBANK, KredoBank і monobank, і їхні виписки ФОП, у PDF, Excel чи CSV. Dibsly читає файл на телефоні, сам розкладає операції по категоріях і впізнає перекази між твоїми рахунками.", "Налаштування → Імпорт та експорт"),
    ("monobank and bank statements", "monobank directly with a read-only token. Statements from PrivatBank, UKRSIBBANK, KredoBank and monobank, their FOP statements too, as PDF, Excel or CSV. Dibsly reads the file on your phone, sorts operations into categories and spots transfers between your own accounts.", "Settings → Import & export"),
    ("phone", "banks"), "statements"),
   ("apple-pay", "free",
@@ -174,7 +174,7 @@ IDEAS = ("ideas", "Як Dibsly думає про гроші", "How Dibsly thinks
    ("live-ledger", ({"hand": 18400, "income": 0, "spending": 0, "savings": 50000}, [
                ("Зарплата", "Salary", "+40 000 ₴", "+₴40,000", "дохід", "income", "in", {"hand": 40000, "income": 40000}),
                ("Кава", "Coffee", "−85 ₴", "−₴85", "витрата", "spending", "out", {"hand": -85, "spending": 85}),
-               ("monobank → ПриватБанк", "monobank → PrivatBank", "5 000 ₴", "₴5,000", "не рахується", "not counted", "same", {}),
+               ("monobank → PrivatBank", "monobank → PrivatBank", "5 000 ₴", "₴5,000", "не рахується", "not counted", "same", {}),
                ("У «Заощадження»", "To Savings", "10 000 ₴", "₴10,000", "не витрата", "not spending", "same", {"hand": -10000, "savings": 10000}),
                ("Купівля акцій", "Buying shares", "500 $", "$500", "в Інвестиціях", "in Investments", "same", {})])), None, None),
   ("idea-balance",
