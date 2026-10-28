@@ -120,7 +120,10 @@ main { position: relative; z-index: 2; overflow-x: clip; }
 .phone { border-radius: 46px; padding: 5px; background: linear-gradient(160deg, #2A231F, #171310); border: 1px solid var(--line-2);
     box-shadow: 0 60px 120px rgba(0, 0, 0, 0.6), inset 0 0 0 1px rgba(255, 255, 255, 0.03); }
 .phone img { width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 41px; }
-.hero-phone { position: absolute; left: 50%; top: -40px; width: 300px; height: 650px; margin-left: -150px; transform-style: preserve-3d; }
+/* The phone starts just under the nav and ends above the fold on a laptop's screen too (owner, 2026-10-28: «сильно
+   низко опущен», then «можно еще поднять»): its height follows the window's, 650px at most. */
+.hero-phone { --ph: clamp(480px, calc(100vh - 180px), 650px); position: absolute; left: 50%; top: -50px; width: calc(var(--ph) * 300 / 650);
+    height: var(--ph); margin-left: calc(var(--ph) * -150 / 650); transform-style: preserve-3d; }
 /* The hero phone's screen: Main's long strip scrolls under the app's own bar and tab bar, drawn live so the soft edge
    above and the glass below show what passes under them, as in the app (owner, 2026-10-28). Sizes in the app's points:
    --pt is one of the 402 points of the screen's width. */
@@ -339,7 +342,7 @@ footer { position: relative; z-index: 2; border-top: 1px solid var(--line); padd
     .nav-pill { gap: 10px; padding-left: 14px; }
     .lang, .pill.ghost { display: none; }
     .hero { padding-top: 120px; }
-    .hero-stage { height: 560px; margin-top: -24px; }
+    .hero-stage { height: 540px; margin-top: -48px; }
     .hero-grid { gap: 8px; }
     .hero-phone { top: 0; width: 250px; height: 542px; margin-left: -125px; }
     .c1 { left: -6px; top: 40px; width: 200px; }
