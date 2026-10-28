@@ -117,10 +117,15 @@ main { position: relative; z-index: 2; overflow-x: clip; }
 .platforms li { padding: 7px 12px; border-radius: 999px; background: rgba(246, 235, 221, 0.08); }
 .platforms li.soon { background: none; border: 1px dashed rgba(246, 235, 221, 0.2); color: var(--muted); }
 .hero-stage { position: relative; height: 660px; perspective: 1200px; }
-.phone { border-radius: 48px; padding: 10px; background: linear-gradient(160deg, #2A231F, #171310); border: 1px solid var(--line-2);
+.phone { border-radius: 46px; padding: 5px; background: linear-gradient(160deg, #2A231F, #171310); border: 1px solid var(--line-2);
     box-shadow: 0 60px 120px rgba(0, 0, 0, 0.6), inset 0 0 0 1px rgba(255, 255, 255, 0.03); }
-.phone img { width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 39px; }
-.hero-phone { position: absolute; left: 50%; top: 10px; width: 300px; height: 640px; margin-left: -150px; transform-style: preserve-3d; }
+.phone img { width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 41px; }
+.hero-phone { position: absolute; left: 50%; top: 10px; width: 300px; height: 650px; margin-left: -150px; transform-style: preserve-3d; }
+.screen { position: relative; width: 100%; height: 100%; border-radius: 41px; overflow: hidden; background: #121010; }
+.screen img { position: absolute; left: 0; width: 100%; height: auto; border-radius: 0; object-fit: initial; }
+.screen .screen-long { top: 12.57%; will-change: transform; }
+.screen .screen-top { top: 0; z-index: 2; }
+.screen .screen-bottom { bottom: 0; z-index: 2; }
 .tilt { transition: transform .6s var(--ease); }
 .float-card { position: absolute; padding: 14px 16px; border-radius: 18px; background: rgba(29, 24, 21, 0.78); border: 1px solid var(--line-2);
     -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); box-shadow: 0 24px 50px rgba(0, 0, 0, 0.5); font-size: 14px; will-change: transform; }
@@ -160,8 +165,8 @@ main { position: relative; z-index: 2; overflow-x: clip; }
 .tile b { display: block; font-size: 16px; }
 .tile span { display: block; margin-top: 6px; font-size: 14px; color: var(--muted); }
 .duo { position: relative; display: flex; gap: 22px; justify-content: center; align-items: flex-start; min-height: 640px; }
-.phone.sm { width: 260px; height: 565px; border-radius: 42px; padding: 9px; }
-.phone.sm img { border-radius: 34px; }
+.phone.sm { width: 260px; height: 565px; border-radius: 42px; padding: 5px; }
+.phone.sm img { border-radius: 37px; }
 .drift-a { margin-top: 70px; }
 .toast { position: absolute; left: 50%; bottom: -10px; transform: translateX(-50%); display: flex; align-items: center; gap: 12px; padding: 12px 18px 12px 12px; border-radius: 20px; background: rgba(36, 30, 26, 0.92); border: 1px solid var(--line-2); box-shadow: 0 24px 50px rgba(0, 0, 0, 0.5); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); white-space: nowrap; }
 .toast img { width: 40px; height: auto; }
@@ -312,7 +317,7 @@ footer { position: relative; z-index: 2; border-top: 1px solid var(--line); padd
     .lang, .pill.ghost { display: none; }
     .hero { padding-top: 120px; }
     .hero-stage { height: 560px; }
-    .hero-phone { width: 250px; height: 540px; margin-left: -125px; }
+    .hero-phone { width: 250px; height: 542px; margin-left: -125px; }
     .c1 { left: -6px; top: 40px; width: 200px; }
     .c2 { right: -6px; top: 230px; width: 200px; }
     .c3 { left: 0; bottom: 20px; width: 190px; }

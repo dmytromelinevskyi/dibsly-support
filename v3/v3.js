@@ -107,7 +107,7 @@
                 "varying float vWarm; varying float vAlpha;",
                 "void main(){",
                 "  vec3 p = position;",
-                "  float t = uTime * (0.12 + seed.x * 0.18);",
+                "  float t = uTime * (0.05 + seed.x * 0.08);",
                 "  p += vec3(sin(t + seed.y * 6.28), cos(t * 1.3 + seed.z * 6.28), sin(t * 0.7 + seed.x * 6.28)) * (0.08 + seed.z * 0.18);",
                 "  p *= 1.0 + uSpread * (0.6 + seed.y * 1.6);",
                 "  p.y += uSpread * (seed.z - 0.5) * 6.0;",
@@ -166,7 +166,7 @@
             uniforms.uMouse.value.set(mouse.x, mouse.y);
             uniforms.uSpread.value += (state.spread - uniforms.uSpread.value) * 0.08;
             uniforms.uFade.value += (state.fade - uniforms.uFade.value) * 0.08;
-            group.rotation.y += 0.0012;
+            group.rotation.y += 0.00035;
             group.rotation.x = 0.42 + mouse.y * 0.12;
             group.rotation.z = mouse.x * 0.08;
             group.position.x += (state.shiftX - group.position.x) * 0.05;
@@ -257,6 +257,18 @@
     all(".hero .float-card").forEach(function (card, index) {
         gsap.to(card.firstElementChild ? card : card, { yPercent: index % 2 ? -6 : 6, duration: 3 + index, ease: "sine.inOut", yoyo: true, repeat: -1 });
     });
+    // The whole Main of 1.0.2 scrolls slowly inside the hero phone, top to bottom and back, under its fixed bar and tab bar.
+    var strip = document.querySelector(".screen-long");
+    if (strip) {
+        var startStrip = function () {
+            var screen = strip.parentNode, tabs = screen.querySelector(".screen-bottom");
+            // From under the fixed bar until the last block («Додати кредит») stands right above the tab bar; layout
+            // sizes, not the tilted phone's on-screen box.
+            var travel = strip.offsetTop + strip.offsetHeight - (screen.offsetHeight - tabs.offsetHeight);
+            gsap.to(strip, { y: -travel, duration: 26, ease: "sine.inOut", yoyo: true, repeat: -1, repeatDelay: 1.6, delay: 2.4 });
+        };
+        if (strip.complete) startStrip(); else strip.addEventListener("load", startStrip);
+    }
     gsap.to(".hero-stage", { yPercent: -18, scale: 0.92, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
     gsap.to(".hero-copy", { yPercent: -10, opacity: 0.2, ease: "none", scrollTrigger: { trigger: ".hero", start: "40% top", end: "bottom top", scrub: true } });
     gsap.to(".scroll-hint", { opacity: 0, scrollTrigger: { trigger: ".hero", start: "5% top", end: "20% top", scrub: true } });
