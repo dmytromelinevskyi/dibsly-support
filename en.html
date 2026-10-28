@@ -64,18 +64,18 @@
     <ol class="rail" aria-hidden="true">
         <li data-for="top">00</li><li data-for="auto">01</li><li data-for="plus">02</li><li data-for="ask">03</li>
         <li data-for="plan">04</li><li data-for="invest">05</li><li data-for="money">06</li><li data-for="fop">07</li>
-        <li data-for="analytics">08</li><li data-for="everywhere">09</li><li data-for="price">10</li>
+        <li data-for="analytics">08</li><li data-for="together">09</li><li data-for="everywhere">10</li><li data-for="price">11</li>
     </ol>
 
     <main>
-        <!-- 00–07: the phone of the hero stays and shows the app step by step (owner, 2026-10-28, his brother's idea:
+        <!-- 00–09: the phone of the hero stays and shows the app step by step (owner, 2026-10-28, his brother's idea:
              «по мере скролла показываются функции приложения… с параллельным описанием» — on the 3.0 frame he likes) -->
         <div class="journey wrap">
             <div class="journey-stage">
                 <div class="stage-sticky">
                   <div class="phone-lift">
                     <div class="phone hero-phone">
-                        <div class="screen" data-activity-shift="15">
+                        <div class="screen" data-activity-shift="15" data-tabs="173,251,340">
                             <div class="live">
                             <img class="screen-long" src="v3/shots/en-main-long.jpg" alt="Dibsly's Main: money on hand, credit still available, savings, the month, activity, plan, goals, calendar, debts and credits" width="750" height="3692" fetchpriority="high">
                             <div class="ios-top" aria-hidden="true">
@@ -93,6 +93,7 @@
                             </div>
                             </div>
                             <div class="frames" aria-hidden="true">
+                                <div class="sheet-dim"></div>
                                 <img class="frame" data-frame="a-main" src="v3/scenes/en-a-main.jpg" alt="Main: Activity with a Lidl purchase" width="750" height="1631" decoding="async" fetchpriority="low">
                                 <img class="frame" data-frame="a-after" src="v3/scenes/en-a-after.jpg" alt="The purchase saved, Spent has grown" width="750" height="1631" decoding="async" fetchpriority="low">
                                 <img class="frame" data-frame="b-plus" src="v3/scenes/en-b-plus.jpg" alt="The plus menu: operation, voice, receipt" width="750" height="1631" decoding="async" fetchpriority="low">
@@ -106,6 +107,14 @@
                                 <img class="frame" data-frame="c-goals" src="v3/scenes/en-c-goals.jpg" alt="Goals with a forecast" width="750" height="1631" decoding="async" fetchpriority="low">
                                 <img class="frame" data-frame="c-invest" src="v3/scenes/en-c-invest.jpg" alt="The portfolio with its value history" width="750" height="1631" decoding="async" fetchpriority="low">
                                 <img class="frame" data-frame="c-fop" src="v3/scenes/en-c-fop.jpg" alt="FOP: tax to pay and the next deadlines" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="d-analytics" src="v3/scenes/en-d-analytics.jpg" alt="Analytics: categories" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="d-cashflow" src="v3/scenes/en-d-cashflow.jpg" alt="Analytics: cash flow by day" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="d-trends" src="v3/scenes/en-d-trends.jpg" alt="Analytics: trends over the year" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="d-capital" src="v3/scenes/en-d-capital.jpg" alt="Analytics: capital" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="d-history" src="v3/scenes/en-d-history.jpg" alt="History with filters" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="d-calendar" src="v3/scenes/en-d-calendar.jpg" alt="Bill calendar for the month" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="d-calendar-list" src="v3/scenes/en-d-calendar-list.jpg" alt="Bill calendar as a list" width="750" height="1631" decoding="async" fetchpriority="low">
+                                <img class="frame" data-frame="e-shared" src="v3/scenes/en-e-shared.jpg" alt="Shared account “Holiday together” with contributions" width="750" height="1631" decoding="async" fetchpriority="low">
                             </div>
                             <div class="fx" aria-hidden="true">
                                 <div class="banner"><img src="img/apple-touch-icon.png" alt="" width="38" height="38"><div><b>Dibsly <span>now</span></b><p>Lidl · −$42.13 from Chase</p><p class="dim-line">Save it and it goes to History and the balance</p></div></div>
@@ -143,7 +152,7 @@
                 <div class="step-copy">
                     <p class="kicker">01 · Records itself</p>
                     <h2 class="title"><span class="line">Paid.</span><span class="line dim">Already recorded.</span></h2>
-                    <p class="lead reveal">Pay with Apple Pay and the purchase waits in Activity with its amount and category. One tap and it is in History and the balance.</p>
+                    <p class="lead reveal">Paid with Apple Pay or got a bank’s push: the purchase already waits in Activity. One tap and it’s in History and the balance.</p>
                     <ul class="step-tags reveal"><li>Apple Pay</li><li>monobank directly</li><li>Bank statements</li><li>Voice and receipts</li></ul>
                 </div>
             </section>
@@ -197,7 +206,23 @@
                 </div>
             </section>
 
-            <div class="journey-end" style="--row: 9" aria-hidden="true"></div>
+            <section class="step" id="analytics" data-section data-scene="analytics" style="--row: 9">
+                <div class="step-copy">
+                    <p class="kicker">08 · Analytics, history, calendar</p>
+                    <h2 class="title"><span class="line">Where the money goes.</span><span class="line dim">And what’s charged next.</span></h2>
+                    <p class="lead reveal">Four views of the month, history with search and a bill calendar.</p>
+                </div>
+            </section>
+
+            <section class="step" id="together" data-section data-scene="together" style="--row: 10">
+                <div class="step-copy">
+                    <p class="kicker">09 · Money together · Premium</p>
+                    <h2 class="title"><span class="line">Money together.</span><span class="line hot">For a couple or a family.</span></h2>
+                    <p class="lead reveal">A shared account: who put in what, shared goals and notifications. One Premium is enough.</p>
+                </div>
+            </section>
+
+            <div class="journey-end" style="--row: 11" aria-hidden="true"></div>
             <a class="scroll-hint" href="#auto"><span>Scroll</span><i></i></a>
         </div>
 
@@ -210,30 +235,10 @@
 
 
 
-        <!-- 08 -->
-        <section class="block gallery" id="analytics" data-section>
-            <div class="wrap">
-                <p class="kicker">08 · Analytics, plan, calendar</p>
-                <h2 class="title"><span class="line">Where the money goes.</span><span class="line dim">And how much is left.</span></h2>
-            </div>
-            <div class="gallery-pin">
-                <div class="gallery-track">
-                    <figure class="shot"><div class="phone"><img src="v2/shots/en-an-1.jpg" alt="Analytics by category" width="750" height="1630" loading="lazy"></div><figcaption><b>Analytics</b><span>A month, a year or all time. No spreadsheets, no formulas.</span></figcaption></figure>
-                    <figure class="shot"><div class="phone"><img src="v2/shots/en-an-2.jpg" alt="Cash flow day by day" width="750" height="1630" loading="lazy"></div><figcaption><b>Cash flow</b><span>Spending day by day, payday marked.</span></figcaption></figure>
-                    <figure class="shot"><div class="phone"><img src="img/shots/en-plan.jpg" alt="The month’s plan with limits" width="550" height="1195" loading="lazy"></div><figcaption><b>Monthly plan</b><span>Limits per category and how much is left to spend.</span></figcaption></figure>
-                    <figure class="shot"><div class="phone"><img src="img/shots/en-calendar.jpg" alt="Bill calendar" width="550" height="1195" loading="lazy"></div><figcaption><b>Bill calendar</b><span>Rent, subscriptions and loans: what is charged and when.</span></figcaption></figure>
-                    <figure class="shot"><div class="phone"><img src="v2/shots/en-goals-full.jpg" alt="Goals with a forecast" width="750" height="1630" loading="lazy"></div><figcaption><b>Goals</b><span>Dibsly tells you the month you get there at your pace.</span></figcaption></figure>
-                    <figure class="shot"><div class="phone"><img src="v2/shots/en-an-3.jpg" alt="Trends over the year" width="750" height="1630" loading="lazy"></div><figcaption><b>Trends</b><span>The months side by side: what came in and what was left.</span></figcaption></figure>
-                </div>
-            </div>
-        </section>
-
-
-
-        <!-- 09 -->
+        <!-- 10 -->
         <section class="block glow" id="everywhere" data-section>
             <div class="wrap">
-                <p class="kicker">09 · Your money everywhere · Premium</p>
+                <p class="kicker">10 · Your money everywhere · Premium</p>
                 <h2 class="title"><span class="line">Phone. Browser.</span><span class="line hot">Your ChatGPT or Claude.</span></h2>
                 <div class="browser-wrap">
                     <figure class="browser">
@@ -241,19 +246,18 @@
                         <img src="img/shots/en-web.jpg" alt="The website my.dibslyapp.com on a big screen" width="1440" height="900" loading="lazy">
                     </figure>
                 </div>
-                <div class="cards3">
+                <div class="cards3 two">
                     <article class="spot reveal"><h3>my.dibslyapp.com</h3><p>History with search, analytics, the plan and drafts on a big screen. Changes show up on your phone at once.</p><a class="foot link" href="https://my.dibslyapp.com">Open the website →</a></article>
                     <article class="spot reveal"><h3>ChatGPT and Claude</h3><p>Import a statement from any bank, ask and set goals in your own assistant. Nothing is written until you say yes.</p><p class="foot">“Here is my Revolut statement, add it”</p></article>
-                    <article class="spot reveal"><h3>Money together</h3><p>Shared accounts for a couple or a family: who put in what, notifications and shared goals. One Premium is enough for both.</p><p class="foot">And a café bill? Split it with a link</p></article>
                 </div>
             </div>
         </section>
 
-        <!-- 10 -->
+        <!-- 11 -->
         <section class="block" id="price" data-section>
             <div class="wrap">
                 <div class="center">
-                    <p class="kicker">10 · Price</p>
+                    <p class="kicker">11 · Price</p>
                     <h2 class="title"><span class="line">Free.</span><span class="line hot">Premium when you want more.</span></h2>
                 </div>
                 <div class="plans">
@@ -289,11 +293,11 @@
             </div>
         </section>
 
-        <!-- 11 -->
+        <!-- 12 -->
         <section class="block" id="faq">
             <div class="wrap split top">
                 <div class="copy narrow">
-                    <p class="kicker">11 · Questions</p>
+                    <p class="kicker">12 · Questions</p>
                     <h2 class="title small"><span class="line">Safe.</span><span class="line dim">No bank password.</span></h2>
                 </div>
                 <div class="faq">
