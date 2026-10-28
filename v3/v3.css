@@ -120,12 +120,35 @@ main { position: relative; z-index: 2; overflow-x: clip; }
 .phone { border-radius: 46px; padding: 5px; background: linear-gradient(160deg, #2A231F, #171310); border: 1px solid var(--line-2);
     box-shadow: 0 60px 120px rgba(0, 0, 0, 0.6), inset 0 0 0 1px rgba(255, 255, 255, 0.03); }
 .phone img { width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 41px; }
-.hero-phone { position: absolute; left: 50%; top: 10px; width: 300px; height: 650px; margin-left: -150px; transform-style: preserve-3d; }
-.screen { position: relative; width: 100%; height: 100%; border-radius: 41px; overflow: hidden; background: #121010; }
-.screen img { position: absolute; left: 0; width: 100%; height: auto; border-radius: 0; object-fit: initial; }
-.screen .screen-long { top: 12.57%; will-change: transform; }
-.screen .screen-top { top: 0; z-index: 2; }
-.screen .screen-bottom { bottom: 0; z-index: 2; }
+.hero-phone { position: absolute; left: 50%; top: -40px; width: 300px; height: 650px; margin-left: -150px; transform-style: preserve-3d; }
+/* The hero phone's screen: Main's long strip scrolls under the app's own bar and tab bar, drawn live so the soft edge
+   above and the glass below show what passes under them, as in the app (owner, 2026-10-28). Sizes in the app's points:
+   --pt is one of the 402 points of the screen's width. */
+.screen { position: relative; width: 100%; height: 100%; border-radius: 41px; overflow: hidden; background: #0F0D0C; container-type: inline-size; }
+.screen { --pt: calc(100cqw / 402); }
+.screen .screen-long { position: absolute; left: 0; top: 12.59%; width: 100%; height: auto; border-radius: 0; object-fit: initial; will-change: transform; }
+.ios-top { position: absolute; left: 0; right: 0; top: 0; height: calc(150 * var(--pt)); z-index: 2; color: #F6EBDD; pointer-events: none;
+    background: linear-gradient(rgba(15, 13, 12, 0.97) 0, rgba(15, 13, 12, 0.9) calc(80 * var(--pt)), rgba(15, 13, 12, 0.55) calc(112 * var(--pt)), rgba(15, 13, 12, 0) 100%); }
+.ios-top::before { content: ""; position: absolute; inset: 0; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+    -webkit-mask: linear-gradient(#000 60%, transparent); mask: linear-gradient(#000 60%, transparent); z-index: -1; }
+.ios-status { position: absolute; left: calc(50 * var(--pt)); right: calc(30 * var(--pt)); top: calc(20 * var(--pt)); display: flex; justify-content: space-between; align-items: center; font-family: -apple-system, "SF Pro Text", var(--text); }
+.ios-status b { font-size: calc(17 * var(--pt)); font-weight: 600; letter-spacing: -0.01em; }
+.ios-icons { display: flex; gap: calc(6 * var(--pt)); align-items: center; }
+.ios-icons svg { height: calc(12 * var(--pt)); width: auto; fill: #F6EBDD; }
+.ios-battery { position: relative; width: calc(26 * var(--pt)); height: calc(12.5 * var(--pt)); border-radius: calc(4 * var(--pt)); background: rgba(246, 235, 221, 0.35); }
+.ios-battery i { position: absolute; inset: calc(1.5 * var(--pt)); border-radius: calc(2.5 * var(--pt)); background: #F6EBDD; }
+.ios-header { position: absolute; left: calc(17 * var(--pt)); right: calc(17 * var(--pt)); top: calc(63 * var(--pt)); height: calc(42 * var(--pt)); display: flex; align-items: center; justify-content: space-between; }
+.ios-header > span:first-child { font-size: calc(16.5 * var(--pt)); color: #C9BDB1; font-family: -apple-system, "SF Pro Text", var(--text); font-weight: 500; }
+.ios-glass { display: flex; gap: calc(26 * var(--pt)); align-items: center; height: 100%; padding: 0 calc(15 * var(--pt)); border-radius: 999px; background: rgba(60, 55, 51, 0.55); border: 1px solid rgba(255, 255, 255, 0.08); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+.ios-glass svg { width: calc(25 * var(--pt)); height: calc(25 * var(--pt)); color: #F6EBDD; }
+.ios-tabbar { position: absolute; left: 0; right: 0; bottom: 0; height: calc(110 * var(--pt)); z-index: 2; pointer-events: none; }
+.ios-pill { position: absolute; left: calc(25 * var(--pt)); top: calc(10 * var(--pt)); width: calc(284 * var(--pt)); height: calc(57 * var(--pt)); border-radius: 999px; display: flex; align-items: center; padding: 0 calc(6 * var(--pt));
+    background: rgba(48, 44, 41, 0.42); border: 1px solid rgba(255, 255, 255, 0.10); -webkit-backdrop-filter: blur(10px) saturate(1.4); backdrop-filter: blur(10px) saturate(1.4); box-shadow: 0 calc(6 * var(--pt)) calc(20 * var(--pt)) rgba(0, 0, 0, 0.35); }
+.ios-tab { flex: 1; height: calc(46 * var(--pt)); border-radius: 999px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: calc(2 * var(--pt)); font-size: calc(11.5 * var(--pt)); font-weight: 600; color: #CFC5BB; font-family: -apple-system, "SF Pro Text", var(--text); }
+.ios-tab svg { width: calc(22 * var(--pt)); height: calc(22 * var(--pt)); }
+.ios-tab.on { color: #FF8A3D; background: rgba(120, 112, 104, 0.32); border: 1px solid rgba(255, 255, 255, 0.10); }
+.ios-plus { position: absolute; left: calc(319 * var(--pt)); top: calc(9 * var(--pt)); width: calc(58 * var(--pt)); height: calc(58 * var(--pt)); border-radius: 50%; background: #E86E1C; color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 calc(6 * var(--pt)) calc(18 * var(--pt)) rgba(232, 110, 28, 0.35); }
+.ios-plus svg { width: calc(28 * var(--pt)); height: calc(28 * var(--pt)); }
 .tilt { transition: transform .6s var(--ease); }
 .float-card { position: absolute; padding: 14px 16px; border-radius: 18px; background: rgba(29, 24, 21, 0.78); border: 1px solid var(--line-2);
     -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); box-shadow: 0 24px 50px rgba(0, 0, 0, 0.5); font-size: 14px; will-change: transform; }
@@ -316,8 +339,9 @@ footer { position: relative; z-index: 2; border-top: 1px solid var(--line); padd
     .nav-pill { gap: 10px; padding-left: 14px; }
     .lang, .pill.ghost { display: none; }
     .hero { padding-top: 120px; }
-    .hero-stage { height: 560px; }
-    .hero-phone { width: 250px; height: 542px; margin-left: -125px; }
+    .hero-stage { height: 560px; margin-top: -24px; }
+    .hero-grid { gap: 8px; }
+    .hero-phone { top: 0; width: 250px; height: 542px; margin-left: -125px; }
     .c1 { left: -6px; top: 40px; width: 200px; }
     .c2 { right: -6px; top: 230px; width: 200px; }
     .c3 { left: 0; bottom: 20px; width: 190px; }

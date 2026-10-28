@@ -257,10 +257,10 @@
     var strip = document.querySelector(".screen-long");
     if (strip) {
         var startStrip = function () {
-            var screen = strip.parentNode, tabs = screen.querySelector(".screen-bottom");
+            var screen = strip.parentNode, tabs = screen.querySelector(".ios-tabbar");
             // From under the fixed bar until the last block («Додати кредит») stands right above the tab bar; layout
             // sizes, not the tilted phone's on-screen box.
-            var travel = strip.offsetTop + strip.offsetHeight - (screen.offsetHeight - tabs.offsetHeight);
+            var travel = strip.offsetTop + strip.offsetHeight - (screen.offsetHeight - tabs.offsetHeight * 0.95);
             gsap.to(strip, { y: -travel, duration: 26, ease: "sine.inOut", yoyo: true, repeat: -1, repeatDelay: 1.6, delay: 2.4 });
         };
         if (strip.complete) startStrip(); else strip.addEventListener("load", startStrip);
