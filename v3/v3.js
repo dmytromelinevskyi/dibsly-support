@@ -368,7 +368,7 @@
         var layers = Object.keys(frames).map(function (name) { return frames[name]; });
         var fx = {};
         ["banner", "bank", "cover", "hl", "tap", "touch", "app-toast"].forEach(function (name) { fx[name] = screen.querySelector(".fx ." + name); });
-        var dim = screen.querySelector(".sheet-dim");
+        var dim = screen.querySelector(".sheet-dim"), bar = screen.querySelector(".push-bar");
         var current = live, timeline = null, loop = null, depth = 1, playing = null, hand = null;
         // A language whose «Activity» title takes two lines puts the first purchase lower (en: 15 points).
         var activity = parseFloat(screen.getAttribute("data-activity-shift")) || 0;
@@ -388,6 +388,8 @@
         function x(pt) { return pt / 402 * 100 + "%"; }
         function y(pt) { return pt / 874 * 100 + "%"; }
 
+        // A screen in a push without the status bar (the top 54 points).
+        function barless() { return "inset(" + 54 * screen.offsetWidth / 402 + "px 0px 0px 0px)"; }
         // A rising sheet without the status bar (the top 54 points), its top corners rounded.
         function sheetEdge() {
             var pt = screen.offsetWidth / 402;
@@ -402,8 +404,17 @@
             depth += 1;
             tl.set(next, { zIndex: depth, xPercent: 0, yPercent: 0 }, at);
             if (how === "push") {
-                tl.fromTo(next, { xPercent: 100, opacity: 1 }, { xPercent: 0, duration: 0.6, ease: "power3.inOut", immediateRender: false }, at)
-                    .to(last, { xPercent: -28, opacity: 0.4, duration: 0.6, ease: "power3.inOut" }, "<");
+                // As in iOS (owner, 2026-10-28): the status bar stays and only the screens under it slide — both have
+                // their own bar cut off while they move, and the arriving frame's bar (the same 09:41 on every frame)
+                // stands still over them; once in place, the whole frame.
+                depth += 1;
+                tl.call(function () { bar.src = next.getAttribute("src"); }, null, at)
+                    .set(bar, { zIndex: depth, opacity: 1 }, at)
+                    .set([next, last], { clipPath: barless }, at)
+                    .fromTo(next, { xPercent: 100, opacity: 1 }, { xPercent: 0, duration: 0.6, ease: "power3.inOut", immediateRender: false }, at)
+                    .to(last, { xPercent: -28, opacity: 0.4, duration: 0.6, ease: "power3.inOut" }, at)
+                    .set(next, { clipPath: "none" }, at + 0.6)
+                    .set(bar, { opacity: 0 }, at + 0.6);
             } else if (how === "sheet") {
                 // As in iOS (owner, 2026-10-28): the status bar stays, only the sheet rises — the frame's own bar is cut
                 // off while it moves, its top corners rounded — and the screen under it dims (a layer between them that
@@ -418,7 +429,7 @@
             } else {
                 tl.fromTo(next, { opacity: 0 }, { opacity: 1, duration: how === "cut" ? 0.14 : 0.5, ease: "power1.inOut" }, at);
             }
-            tl.set(last, { opacity: 0, xPercent: 0, yPercent: 0 });
+            tl.set(last, { opacity: 0, xPercent: 0, yPercent: 0, clipPath: "none" });
         }
         // The finger comes in a little below its first target, glides from tap to tap, presses (a ring spreads from
         // under it) and lifts away at the end.
@@ -452,7 +463,7 @@
             layers.forEach(function (layer) {
                 gsap.set(layer, { opacity: layer === current ? 1 : 0, xPercent: 0, yPercent: 0, clipPath: "none" });
             });
-            gsap.set([fx.banner, fx.bank, fx.hl, fx.tap, fx.touch, fx["app-toast"], fx.cover, dim], { opacity: 0 });
+            gsap.set([fx.banner, fx.bank, fx.hl, fx.tap, fx.touch, fx["app-toast"], fx.cover, dim, bar], { opacity: 0 });
             gsap.set(fx.cover, { y: 0 });
             hand = null;
         }
