@@ -54,6 +54,21 @@
         });
     });
 
+    // ---------------------------------------------------------------- the phone level with the hero's kicker (wide screens)
+    function alignStage() {
+        var kicker = document.querySelector(".hero .kicker"), sticky = document.querySelector(".stage-sticky");
+        if (!kicker || !sticky) return;
+        var wide = window.innerWidth > 1080;
+        sticky.classList.toggle("aligned", wide);
+        if (!wide) return;
+        var top = 0;
+        for (var node = kicker; node; node = node.offsetParent) top += node.offsetTop;
+        sticky.style.setProperty("--stage-top", top + "px");
+    }
+    alignStage();
+    window.addEventListener("resize", alignStage);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(alignStage);
+
     // ---------------------------------------------------------------- the particle field
     var field = null;
     function startField() {
