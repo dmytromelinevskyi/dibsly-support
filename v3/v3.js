@@ -155,21 +155,38 @@
         var state = { spread: 0, fade: 1, shiftX: small ? 0 : 2.2, zoom: 9 };
         var running = true;
         document.addEventListener("visibilitychange", function () { running = !document.hidden; if (running) loop(); });
-        var start = performance.now();
+        // The field's pace (owner, 2026-10-28: the stars sped up as the page went on, hard to read over them). On screen
+        // it stays within 1.3 times its start: the turn and the drift slow down as much as the spread and the camera
+        // make them look faster (a point twice as far from the centre moves twice as far), and the scroll's changes —
+        // the spread, the camera, the shift aside — move the points by at most a quarter of the start's speed, so a
+        // new section eases in over a minute instead of a second. Time-based, so a 120 Hz screen is no faster.
+        // Measured on the page: at the start the points move about 0.7% of the window's height a second; a unit of
+        // spread moves them up to 0.6 of it, a unit of camera 0.05, a unit of shift 0.13.
+        var last = performance.now(), clock = 0, START = 0.007;
+        function ease(rate, dt) { return 1 - Math.pow(1 - rate, dt * 60); }
         function loop() {
-            if (!running) return;
-            var now = performance.now();
-            uniforms.uTime.value = (now - start) / 1000;
-            mouse.x += (mouse.tx - mouse.x) * 0.06;
-            mouse.y += (mouse.ty - mouse.y) * 0.06;
+            if (!running) { last = performance.now(); return; }
+            var now = performance.now(), dt = Math.min(0.05, (now - last) / 1000);
+            last = now;
+            mouse.x += (mouse.tx - mouse.x) * ease(0.06, dt);
+            mouse.y += (mouse.ty - mouse.y) * ease(0.06, dt);
             uniforms.uMouse.value.set(mouse.x, mouse.y);
-            uniforms.uSpread.value += (state.spread - uniforms.uSpread.value) * 0.08;
-            uniforms.uFade.value += (state.fade - uniforms.uFade.value) * 0.08;
-            group.rotation.y += 0.00035;
+            uniforms.uFade.value += (state.fade - uniforms.uFade.value) * ease(0.05, dt);
+            var ds = (state.spread - uniforms.uSpread.value) * ease(0.025, dt);
+            var dz = (state.zoom - camera.position.z) * ease(0.025, dt);
+            var dx = (state.shiftX - group.position.x) * ease(0.025, dt);
+            var moves = Math.abs(ds) * 0.6 + Math.abs(dz) * 0.05 + Math.abs(dx) * 0.13, allowed = START * 0.25 * dt;
+            var share = moves > allowed ? allowed / moves : 1;
+            uniforms.uSpread.value += ds * share;
+            camera.position.z += dz * share;
+            group.position.x += dx * share;
+            var apparent = (1 + uniforms.uSpread.value * 1.4) * 9 / camera.position.z;
+            var pace = Math.min(apparent, 1.05) / apparent;
+            clock += dt * pace;
+            uniforms.uTime.value = clock;
+            group.rotation.y += 0.021 * dt * pace;
             group.rotation.x = 0.42 + mouse.y * 0.12;
             group.rotation.z = mouse.x * 0.08;
-            group.position.x += (state.shiftX - group.position.x) * 0.05;
-            camera.position.z += (state.zoom - camera.position.z) * 0.05;
             renderer.render(scene, camera);
             requestAnimationFrame(loop);
         }
@@ -213,7 +230,7 @@
     // ---------------------------------------------------------------- the field follows the page
     ScrollTrigger.create({ trigger: ".hero", start: "top top", end: "bottom top", scrub: true,
         onUpdate: function (self) { if (field) { field.spread = self.progress * 0.9; field.zoom = 9 + self.progress * 3; } } });
-    ScrollTrigger.create({ trigger: "#auto", start: "top bottom", endTrigger: "#price", end: "bottom top",
+    ScrollTrigger.create({ trigger: "#auto", start: "top bottom", endTrigger: "#faq", end: "bottom top",
         onToggle: function (self) { if (field) { field.fade = self.isActive ? 0.32 : 1; field.shiftX = self.isActive ? 0 : (small ? 0 : 2.2); } } });
     ScrollTrigger.create({ trigger: ".finale", start: "top 80%", end: "bottom bottom", scrub: true,
         onUpdate: function (self) { if (field) { field.spread = 0.9 - self.progress * 0.9; field.zoom = 12 - self.progress * 4.5; field.fade = 0.32 + self.progress * 0.9; field.shiftX = 0; } } });
@@ -368,7 +385,7 @@
         });
         var layers = Object.keys(frames).map(function (name) { return frames[name]; });
         var fx = {};
-        ["banner", "cover", "hl", "tap", "touch", "app-toast"].forEach(function (name) { fx[name] = screen.querySelector(".fx ." + name); });
+        ["banner", "bank", "cover", "hl", "tap", "touch", "app-toast"].forEach(function (name) { fx[name] = screen.querySelector(".fx ." + name); });
         var current = live, timeline = null, loop = null, depth = 1, playing = null, hand = null;
         // A language whose «Activity» title takes two lines puts the first purchase lower (en: 15 points).
         var activity = parseFloat(screen.getAttribute("data-activity-shift")) || 0;
@@ -435,7 +452,7 @@
             layers.forEach(function (layer) {
                 gsap.set(layer, layer === current ? { opacity: 1, xPercent: 0, yPercent: 0 } : { opacity: 0, xPercent: 0, yPercent: 0 });
             });
-            gsap.set([fx.banner, fx.hl, fx.tap, fx.touch, fx["app-toast"], fx.cover], { opacity: 0 });
+            gsap.set([fx.banner, fx.bank, fx.hl, fx.tap, fx.touch, fx["app-toast"], fx.cover], { opacity: 0 });
             hand = null;
         }
 
@@ -460,6 +477,10 @@
                 show(tl, "a-after", "fade", 4.75);
                 release(tl, 5.4);
                 mark(tl, 146, 418, 104, 46, 5.5, 2.0);
+                // Then a bank's own push (Premium, any bank, iOS 27): its purchase is the next draft in «Активність».
+                tl.fromTo(fx.bank, { yPercent: -160, opacity: 1 }, { yPercent: 0, duration: 0.8, ease: "back.out(1.3)", immediateRender: false }, 7.7);
+                mark(tl, 8, 545 + activity, 386, 46, 8.6, 2.2);
+                tl.to(fx.bank, { yPercent: -160, duration: 0.6, ease: "power2.in" }, 10.0);
             },
             // «+» → «Операція» → 8, 5 → «Вибери категорію» → «Кафе й ресторани»: saved.
             plus: function (tl) {
@@ -481,16 +502,21 @@
                     .to(fx["app-toast"], { opacity: 0, yPercent: 30, duration: 0.45 }, 10.8);
                 mark(tl, 146, 418, 104, 46, 8.5, 2.0);
             },
-            // The chat rises as a sheet and its answer comes in part by part.
+            // On Main the finger taps Dibsly's button above «+»; the chat rises as a sheet and its answer comes in part by part.
             ask: function (tl) {
-                tl.set(fx.cover, { top: y(250), height: y(485), opacity: 1 }, 0);
-                show(tl, "c-chat", "sheet", 0);
+                var open = 1.5;
+                tl.set(strip, { y: 0 }, 0);
+                show(tl, "live", "fade", 0);
+                tap(tl, 349, 731, 1.3);
+                release(tl, 1.8);
+                tl.set(fx.cover, { top: y(250), height: y(485), opacity: 1 }, open);
+                show(tl, "c-chat", "sheet", open);
                 [[332, 1.1], [385, 1.9], [582, 2.6], [655, 3.4], [735, 4.0]].forEach(function (step) {
                     var top = step[0];
-                    tl.to(fx.cover, { top: y(top), height: y(735 - top), duration: 0.45, ease: "power2.out" }, step[1]);
+                    tl.to(fx.cover, { top: y(top), height: y(735 - top), duration: 0.45, ease: "power2.out" }, open + step[1]);
                 });
                 tl.set(fx.cover, { opacity: 0 });
-                mark(tl, 16, 395, 370, 186, 4.6, 2.2);
+                mark(tl, 16, 395, 370, 186, open + 4.6, 2.2);
             },
             // The plan with what went over it, then the goals with when they come.
             plan: function (tl) {
