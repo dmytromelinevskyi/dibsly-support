@@ -181,15 +181,19 @@ main { position: relative; z-index: 2; overflow-x: clip; }
 .screen .frame { position: absolute; left: 0; top: 0; width: 100%; height: auto; border-radius: 0; object-fit: initial; opacity: 0; will-change: transform, opacity; }
 .fx { position: absolute; left: 0; top: 0; width: 100%; aspect-ratio: 402 / 874; z-index: 50; pointer-events: none; }
 .fx > * { position: absolute; opacity: 0; }
-.banner { left: calc(9 * var(--pt)); right: calc(9 * var(--pt)); top: calc(54 * var(--pt)); display: flex; gap: calc(11 * var(--pt)); align-items: center; padding: calc(12 * var(--pt)) calc(14 * var(--pt));
+.banner, .fx .bank { left: calc(9 * var(--pt)); right: calc(9 * var(--pt)); top: calc(54 * var(--pt)); display: flex; gap: calc(11 * var(--pt)); align-items: center; padding: calc(12 * var(--pt)) calc(14 * var(--pt));
     border-radius: calc(26 * var(--pt)); background: rgba(64, 57, 52, 0.82); border: 1px solid rgba(255, 255, 255, 0.10); -webkit-backdrop-filter: blur(18px) saturate(1.5); backdrop-filter: blur(18px) saturate(1.5);
     box-shadow: 0 calc(10 * var(--pt)) calc(30 * var(--pt)) rgba(0, 0, 0, 0.45); color: #F6EBDD; font-family: -apple-system, "SF Pro Text", var(--text); line-height: 1.3; }
 .fx .banner img { width: calc(38 * var(--pt)); height: calc(38 * var(--pt)); border-radius: calc(9 * var(--pt)); flex: none; object-fit: cover; }
-.banner div { flex: 1; min-width: 0; }
-.banner b { display: flex; justify-content: space-between; font-size: calc(14 * var(--pt)); font-weight: 600; }
-.banner b span { font-weight: 400; color: #BEB2A6; font-size: calc(12.5 * var(--pt)); }
-.banner p { margin: 0; font-size: calc(14 * var(--pt)); }
+.banner div, .bank > div { flex: 1; min-width: 0; }
+.banner b, .bank b { display: flex; justify-content: space-between; font-size: calc(14 * var(--pt)); font-weight: 600; }
+.banner b span, .bank b span { font-weight: 400; color: #BEB2A6; font-size: calc(12.5 * var(--pt)); }
+.banner p, .bank p { margin: 0; font-size: calc(14 * var(--pt)); }
 .banner .dim-line { color: #CDBFB2; font-size: calc(13 * var(--pt)); }
+/* A bank's own notification (Premium: one Shortcuts automation reads any bank's pushes, iOS 27): the same banner with
+   the bank's name and a plain bank glyph, no bank's logo. */
+.bank-icon { width: calc(38 * var(--pt)); height: calc(38 * var(--pt)); border-radius: calc(9 * var(--pt)); flex: none; display: flex; align-items: center; justify-content: center; background: #3A3532; color: #F6EBDD; }
+.bank-icon svg { width: calc(22 * var(--pt)); height: calc(22 * var(--pt)); }
 /* A finger on the screen, as a recording with touches shows it (owner's brother: «показывать явно на что клацается…
    точкой»): it glides to what is tapped, presses and lifts. */
 .touch { left: 0; top: 0; width: calc(44 * var(--pt)); height: calc(44 * var(--pt)); margin: calc(-22 * var(--pt)) 0 0 calc(-22 * var(--pt)); border-radius: 50%;
@@ -384,7 +388,7 @@ footer { position: relative; z-index: 2; border-top: 1px solid var(--line); padd
 @media (prefers-reduced-motion: reduce) {
     .marquee-track { animation: none; width: auto; flex-wrap: wrap; justify-content: center; gap: 10px 28px; padding: 0 24px; font-size: clamp(18px, 2.4vw, 30px); }
     .marquee-track span::after { margin-left: 28px; }
-    .marquee-track span:nth-last-child(9)::after, .marquee-track span[aria-hidden="true"] { display: none; }
+    .marquee-track span:nth-last-child(7)::after, .marquee-track span[aria-hidden="true"] { display: none; }
     .scroll-hint i, .plan.premium::before { animation: none; }
 }
 
