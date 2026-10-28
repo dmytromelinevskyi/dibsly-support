@@ -209,6 +209,8 @@ main { position: relative; z-index: 2; overflow-x: clip; }
 .app-toast b { display: block; font-size: calc(15 * var(--pt)); }
 .app-toast span { display: block; font-size: calc(13 * var(--pt)); color: #BEB2A6; }
 .cover { left: 0; right: 0; background: #0F0D0C; }
+/* Under a rising sheet the screen dims, the status bar barely. */
+.sheet-dim { position: absolute; inset: 0; opacity: 0; pointer-events: none; background: linear-gradient(rgba(0, 0, 0, 0.15), #000 calc(54 * var(--pt))); }
 .float-card { position: absolute; padding: 14px 16px; border-radius: 18px; background: rgba(29, 24, 21, 0.78); border: 1px solid var(--line-2);
     -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); box-shadow: 0 24px 50px rgba(0, 0, 0, 0.5); font-size: 14px; will-change: transform; }
 .float-card p { margin: 0; }
@@ -397,8 +399,8 @@ footer { position: relative; z-index: 2; border-top: 1px solid var(--line); padd
     .journey-stage { grid-column: 1; grid-row: 2 / span 10; }
     .journey-end { height: 0; }
     .stage-sticky { top: 74px; height: auto; padding-top: 0; }
-    .stage-sticky::before { content: ""; position: absolute; z-index: -1; top: -74px; bottom: -40px; left: 50%; width: 100vw; transform: translateX(-50%);
-        background: linear-gradient(rgba(14, 12, 11, 0), var(--bg) 74px, var(--bg) calc(100% - 40px), rgba(14, 12, 11, 0)); pointer-events: none; }
+    .stage-sticky::before { content: ""; position: absolute; z-index: -1; top: -74px; bottom: -24px; left: 50%; width: 100vw; transform: translateX(-50%);
+        background: linear-gradient(rgba(14, 12, 11, 0), var(--bg) 74px, var(--bg) calc(100% - 24px), rgba(14, 12, 11, 0)); pointer-events: none; }
     .hero-phone { --ph: var(--ph-m); }
     .step { min-height: 0; display: block; padding: calc(var(--ph-m) + 150px) 0 24vh; }
     .journey > .scroll-hint { display: none; }
@@ -411,10 +413,10 @@ footer { position: relative; z-index: 2; border-top: 1px solid var(--line); padd
     .nav-pill { gap: 10px; padding-left: 14px; }
     .lang, .pill.ghost { display: none; }
     .journey > .hero { padding-top: 120px; }
-    .step .kicker { margin-bottom: 12px; }
+    .step .kicker { margin-bottom: 8px; }
     .step .title { font-size: clamp(32px, 9vw, 40px); }
-    .step .lead { margin-top: 16px; font-size: 16px; }
-    .step-tags { margin-top: 16px; gap: 6px; font-size: 13px; }
+    .step .lead { margin-top: 12px; font-size: 16px; }
+    .step-tags { margin-top: 10px; gap: 6px; font-size: 13px; }
     .step-tags li { padding: 6px 12px; }
     .c1 { left: -6px; top: 40px; width: 200px; }
     .c2 { right: -6px; top: 230px; width: 200px; }

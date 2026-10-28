@@ -368,6 +368,7 @@
         var layers = Object.keys(frames).map(function (name) { return frames[name]; });
         var fx = {};
         ["banner", "bank", "cover", "hl", "tap", "touch", "app-toast"].forEach(function (name) { fx[name] = screen.querySelector(".fx ." + name); });
+        var dim = screen.querySelector(".sheet-dim");
         var current = live, timeline = null, loop = null, depth = 1, playing = null, hand = null;
         // A language whose «Activity» title takes two lines puts the first purchase lower (en: 15 points).
         var activity = parseFloat(screen.getAttribute("data-activity-shift")) || 0;
@@ -387,6 +388,11 @@
         function x(pt) { return pt / 402 * 100 + "%"; }
         function y(pt) { return pt / 874 * 100 + "%"; }
 
+        // A rising sheet without the status bar (the top 54 points), its top corners rounded.
+        function sheetEdge() {
+            var pt = screen.offsetWidth / 402;
+            return "inset(" + 54 * pt + "px 0px 0px 0px round " + 14 * pt + "px " + 14 * pt + "px 0px 0px)";
+        }
         // Shows a screen over the one in front: "fade", "cut", "push" (a page from the right) or "sheet" (from below).
         // A push or a sheet stays hidden until its moment (no immediate render: a later sheet peeked under the screen).
         function show(tl, name, how, at) {
@@ -399,7 +405,16 @@
                 tl.fromTo(next, { xPercent: 100, opacity: 1 }, { xPercent: 0, duration: 0.6, ease: "power3.inOut", immediateRender: false }, at)
                     .to(last, { xPercent: -28, opacity: 0.4, duration: 0.6, ease: "power3.inOut" }, "<");
             } else if (how === "sheet") {
-                tl.fromTo(next, { yPercent: 100, opacity: 1 }, { yPercent: 0, duration: 0.6, ease: "power3.out", immediateRender: false }, at);
+                // As in iOS (owner, 2026-10-28): the status bar stays, only the sheet rises — the frame's own bar is cut
+                // off while it moves, its top corners rounded — and the screen under it dims (a layer between them that
+                // fades out towards the bar); once up, the whole frame.
+                depth += 1;
+                tl.set(dim, { zIndex: depth - 1, opacity: 0 }, at)
+                    .set(next, { zIndex: depth, clipPath: sheetEdge }, at)
+                    .fromTo(next, { yPercent: 100, opacity: 1 }, { yPercent: 0, duration: 0.6, ease: "power3.out", immediateRender: false }, at)
+                    .to(dim, { opacity: 0.5, duration: 0.6, ease: "power1.out" }, at)
+                    .set(next, { clipPath: "none" }, at + 0.6)
+                    .set(dim, { opacity: 0 }, at + 0.6);
             } else {
                 tl.fromTo(next, { opacity: 0 }, { opacity: 1, duration: how === "cut" ? 0.14 : 0.5, ease: "power1.inOut" }, at);
             }
@@ -435,9 +450,10 @@
         function settle() {
             if (timeline) timeline.kill();
             layers.forEach(function (layer) {
-                gsap.set(layer, layer === current ? { opacity: 1, xPercent: 0, yPercent: 0 } : { opacity: 0, xPercent: 0, yPercent: 0 });
+                gsap.set(layer, { opacity: layer === current ? 1 : 0, xPercent: 0, yPercent: 0, clipPath: "none" });
             });
-            gsap.set([fx.banner, fx.bank, fx.hl, fx.tap, fx.touch, fx["app-toast"], fx.cover], { opacity: 0 });
+            gsap.set([fx.banner, fx.bank, fx.hl, fx.tap, fx.touch, fx["app-toast"], fx.cover, dim], { opacity: 0 });
+            gsap.set(fx.cover, { y: 0 });
             hand = null;
         }
 
@@ -494,7 +510,9 @@
                 show(tl, "live", "fade", 0);
                 tap(tl, 349, 731, 1.3);
                 release(tl, 1.8);
-                tl.set(fx.cover, { top: y(250), height: y(485), opacity: 1 }, open);
+                // The cover over the answer rises with the sheet, so it never shows over Main.
+                tl.fromTo(fx.cover, { top: y(250), height: y(485), opacity: 1, y: function () { return fx.cover.parentNode.offsetHeight; } },
+                    { y: 0, duration: 0.6, ease: "power3.out", immediateRender: false }, open);
                 show(tl, "c-chat", "sheet", open);
                 [[332, 1.1], [385, 1.9], [582, 2.6], [655, 3.4], [735, 4.0]].forEach(function (step) {
                     var top = step[0];
