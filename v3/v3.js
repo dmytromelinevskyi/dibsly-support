@@ -54,21 +54,6 @@
         });
     });
 
-    // ---------------------------------------------------------------- the phone level with the hero's kicker (wide screens)
-    function alignStage() {
-        var kicker = document.querySelector(".hero .kicker"), sticky = document.querySelector(".stage-sticky");
-        if (!kicker || !sticky) return;
-        var wide = window.innerWidth > 1080;
-        sticky.classList.toggle("aligned", wide);
-        if (!wide) return;
-        var top = 0;
-        for (var node = kicker; node; node = node.offsetParent) top += node.offsetTop;
-        sticky.style.setProperty("--stage-top", top + "px");
-    }
-    alignStage();
-    window.addEventListener("resize", alignStage);
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(alignStage);
-
     // ---------------------------------------------------------------- the particle field
     var field = null;
     function startField() {
@@ -262,6 +247,20 @@
         }, { passive: true });
     }
     var story = heroPhone ? journey(heroPhone.querySelector(".screen")) : null;
+    // In the hero the phone stands level with «Особисті фінанси» (owner, 2026-10-28); by the first step it has settled
+    // in the middle of the window, where the steps keep it. Never under the nav or past the window's bottom.
+    var lift = document.querySelector(".phone-lift");
+    if (lift && heroPhone) {
+        var liftOffset = function () {
+            if (window.innerWidth <= 1080) return 0;
+            var kicker = document.querySelector(".hero .kicker"), top = 0;
+            for (var node = kicker; node; node = node.offsetParent) top += node.offsetTop;
+            var height = heroPhone.offsetHeight, centred = (window.innerHeight - height) / 2;
+            return Math.max(84 - centred, Math.min(top - centred, centred - 16));
+        };
+        gsap.fromTo(lift, { y: liftOffset }, { y: 0, ease: "none", immediateRender: true,
+            scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom 30%", scrub: 0.6, invalidateOnRefresh: true } });
+    }
     gsap.to(".hero-copy", { yPercent: -10, opacity: 0.2, ease: "none", scrollTrigger: { trigger: ".hero", start: "40% top", end: "bottom top", scrub: true } });
     gsap.to(".scroll-hint", { opacity: 0, scrollTrigger: { trigger: ".hero", start: "5% top", end: "20% top", scrub: true } });
 
@@ -363,8 +362,8 @@
         all(".frame", screen).forEach(function (frame) { frames[frame.getAttribute("data-frame")] = frame; });
         var layers = Object.keys(frames).map(function (name) { return frames[name]; });
         var fx = {};
-        ["banner", "cover", "hl", "tap", "app-toast"].forEach(function (name) { fx[name] = screen.querySelector(".fx ." + name); });
-        var current = live, timeline = null, loop = null, depth = 1, playing = null;
+        ["banner", "cover", "hl", "tap", "touch", "app-toast"].forEach(function (name) { fx[name] = screen.querySelector(".fx ." + name); });
+        var current = live, timeline = null, loop = null, depth = 1, playing = null, hand = null;
 
         function travel() {
             var tabs = live.querySelector(".ios-tabbar");
@@ -392,14 +391,29 @@
             } else if (how === "sheet") {
                 tl.fromTo(next, { yPercent: 100, opacity: 1 }, { yPercent: 0, duration: 0.6, ease: "power3.out" }, at);
             } else {
-                tl.fromTo(next, { opacity: 0 }, { opacity: 1, duration: how === "cut" ? 0.01 : 0.32, ease: "none" }, at);
+                tl.fromTo(next, { opacity: 0 }, { opacity: 1, duration: how === "cut" ? 0.14 : 0.5, ease: "power1.inOut" }, at);
             }
             tl.set(last, { opacity: 0, xPercent: 0, yPercent: 0 });
         }
+        // The finger comes in a little below its first target, glides from tap to tap, presses (a ring spreads from
+        // under it) and lifts away at the end.
         function tap(tl, px, py, at) {
-            tl.set(fx.tap, { left: x(px), top: y(py), scale: 0.5, opacity: 0 }, at)
-                .to(fx.tap, { scale: 1, opacity: 1, duration: 0.14, ease: "power2.out" }, at)
-                .to(fx.tap, { scale: 1.6, opacity: 0, duration: 0.45, ease: "power2.out" }, ">");
+            if (!hand) {
+                hand = { x: Math.min(370, px + 40), y: Math.min(840, py + 90) };
+                tl.set(fx.touch, { left: x(hand.x), top: y(hand.y), scale: 1.25, opacity: 0 }, at - 1.0)
+                    .to(fx.touch, { opacity: 1, scale: 1, duration: 0.3, ease: "power2.out" }, at - 1.0);
+            }
+            var glide = Math.min(0.75, 0.35 + Math.hypot(px - hand.x, py - hand.y) / 900);
+            tl.to(fx.touch, { left: x(px), top: y(py), duration: glide, ease: "power2.inOut" }, at - glide - 0.06)
+                .to(fx.touch, { scale: 0.78, duration: 0.1, ease: "power2.in" }, at)
+                .to(fx.touch, { scale: 1, duration: 0.22, ease: "power2.out" }, at + 0.12)
+                .fromTo(fx.tap, { left: x(px), top: y(py), scale: 0.6, opacity: 0.9 }, { scale: 1.9, opacity: 0, duration: 0.6, ease: "power2.out" }, at + 0.02);
+            hand = { x: px, y: py };
+        }
+        function release(tl, at) {
+            if (!hand) return;
+            tl.to(fx.touch, { opacity: 0, scale: 1.2, duration: 0.4, ease: "power2.out" }, at);
+            hand = null;
         }
         function mark(tl, px, py, width, height, at, hold) {
             tl.set(fx.hl, { left: x(px), top: y(py), width: x(width), height: y(height), scale: 1.08, opacity: 0 }, at)
@@ -412,7 +426,8 @@
             layers.forEach(function (layer) {
                 gsap.set(layer, layer === current ? { opacity: 1, xPercent: 0, yPercent: 0 } : { opacity: 0, xPercent: 0, yPercent: 0 });
             });
-            gsap.set([fx.banner, fx.hl, fx.tap, fx["app-toast"], fx.cover], { opacity: 0 });
+            gsap.set([fx.banner, fx.hl, fx.tap, fx.touch, fx["app-toast"], fx.cover], { opacity: 0 });
+            hand = null;
         }
 
         var scenes = {
@@ -424,36 +439,38 @@
             // A purchase with Apple Pay waits in «Активність»; one tap saves it and «Витрачено» grows.
             auto: function (tl) {
                 if (current === live) {
-                    tl.to(strip, { y: 0, duration: 0.8, ease: "power2.inOut" }, 0);
-                    show(tl, "a-main", "fade", 0.8);
+                    tl.to(strip, { y: 0, duration: 0.9, ease: "power2.inOut" }, 0);
+                    show(tl, "a-main", "fade", 0.9);
                 } else {
                     show(tl, "a-main", "fade", 0);
                 }
-                tl.fromTo(fx.banner, { yPercent: -160, opacity: 1 }, { yPercent: 0, duration: 0.7, ease: "back.out(1.4)" }, 1.2);
-                mark(tl, 8, 545, 386, 46, 2.0, 1.6);
-                tl.to(fx.banner, { yPercent: -160, duration: 0.5, ease: "power2.in" }, 3.0);
-                tap(tl, 359, 568, 3.6);
-                show(tl, "a-after", "fade", 3.8);
-                mark(tl, 146, 418, 104, 46, 4.3, 1.8);
+                tl.fromTo(fx.banner, { yPercent: -160, opacity: 1 }, { yPercent: 0, duration: 0.8, ease: "back.out(1.3)" }, 1.5);
+                mark(tl, 8, 545, 386, 46, 2.5, 1.8);
+                tl.to(fx.banner, { yPercent: -160, duration: 0.6, ease: "power2.in" }, 3.7);
+                tap(tl, 359, 568, 4.6);
+                show(tl, "a-after", "fade", 4.75);
+                release(tl, 5.4);
+                mark(tl, 146, 418, 104, 46, 5.5, 2.0);
             },
             // «+» → «Операція» → 8, 5 → «Вибери категорію» → «Кафе й ресторани»: saved.
             plus: function (tl) {
                 show(tl, "a-after", "fade", 0);
-                tap(tl, 348, 800, 0.6);
-                show(tl, "b-plus", "fade", 0.75);
-                tap(tl, 200, 602, 1.7);
-                show(tl, "b-form", "sheet", 1.85);
-                tap(tl, 131, 685, 2.9);
-                show(tl, "b-8", "cut", 3.0);
-                tap(tl, 131, 633, 3.45);
-                show(tl, "b-85", "cut", 3.55);
-                tap(tl, 201, 805, 4.4);
-                show(tl, "b-cats", "sheet", 4.55);
-                tap(tl, 71, 272, 5.7);
-                show(tl, "b-after", "fade", 5.85);
-                tl.fromTo(fx["app-toast"], { yPercent: 60, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.5, ease: "back.out(1.6)" }, 6.1)
-                    .to(fx["app-toast"], { opacity: 0, yPercent: 30, duration: 0.4 }, 8.6);
-                mark(tl, 146, 418, 104, 46, 6.4, 1.8);
+                tap(tl, 348, 800, 1.3);
+                show(tl, "b-plus", "fade", 1.45);
+                tap(tl, 200, 602, 2.7);
+                show(tl, "b-form", "sheet", 2.85);
+                tap(tl, 131, 685, 4.2);
+                show(tl, "b-8", "cut", 4.3);
+                tap(tl, 131, 633, 4.95);
+                show(tl, "b-85", "cut", 5.05);
+                tap(tl, 201, 805, 6.1);
+                show(tl, "b-cats", "sheet", 6.25);
+                tap(tl, 71, 272, 7.6);
+                show(tl, "b-after", "fade", 7.75);
+                release(tl, 8.2);
+                tl.fromTo(fx["app-toast"], { yPercent: 60, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.55, ease: "back.out(1.5)" }, 8.2)
+                    .to(fx["app-toast"], { opacity: 0, yPercent: 30, duration: 0.45 }, 10.8);
+                mark(tl, 146, 418, 104, 46, 8.5, 2.0);
             },
             // The chat rises as a sheet and its answer comes in part by part.
             ask: function (tl) {
