@@ -225,7 +225,19 @@
         begin();
     }
 
-    if (!animated) { runChat(); runMascots(); return; }
+    // With «reduce motion» the rail still marks the step on screen (the numbers lead to their steps either way).
+    function railStill() {
+        if (!("IntersectionObserver" in window)) return;
+        var items = all(".rail li");
+        var seen = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) return;
+                items.forEach(function (item) { item.classList.toggle("on", item.getAttribute("data-for") === entry.target.id); });
+            });
+        }, { rootMargin: "-55% 0px -45% 0px" });
+        all("[data-section]").forEach(function (section) { seen.observe(section); });
+    }
+    if (!animated) { railStill(); runChat(); runMascots(); return; }
 
     // ---------------------------------------------------------------- the field follows the page
     ScrollTrigger.create({ trigger: ".hero", start: "top top", end: "bottom top", scrub: true,
