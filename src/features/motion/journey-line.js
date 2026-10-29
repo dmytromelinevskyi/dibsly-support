@@ -9,14 +9,15 @@ export function createJourneyLine(canvas) {
     last = 0,
     landed = -1,
     wasHome = false,
-    settled = true;
+    settled = true,
+    start = null;
   function circle(x, y, r) {
     context.beginPath();
     context.arc(x, y, Math.max(0.1, r), 0, Math.PI * 2);
     context.fill();
   }
   return {
-    measure(w, h, total, destination) {
+    measure(w, h, total, destination, origin) {
       width = w;
       height = h;
       // Drawn only while the page scrolls, so a sharp 2× line costs nothing at rest.
@@ -24,7 +25,8 @@ export function createJourneyLine(canvas) {
       canvas.width = w * dpr;
       canvas.height = h * dpr;
       context.setTransform(dpr, 0, 0, dpr, 0, 0);
-      path = createJourneyPath(w, h, total, destination);
+      path = createJourneyPath(w, h, total, destination, origin);
+      start = origin;
     },
     draw(scroll, exclude) {
       if (!path) return;
@@ -34,8 +36,12 @@ export function createJourneyLine(canvas) {
       last = now;
       // The head follows the scroll with a soft lag; at home it sits exactly on the period.
       const follow = 1 - Math.exp(-dt * 14);
+      // In flight from the hero's dot the head is exactly where its trail ends.
       shown =
-        !shown || aim.merge > 0.999 || Math.hypot(aim.x - shown.x, aim.y - shown.y) > height * 0.5
+        !shown ||
+        aim.flight < 1 ||
+        aim.merge > 0.999 ||
+        Math.hypot(aim.x - shown.x, aim.y - shown.y) > height * 0.5
           ? { x: aim.x, y: aim.y }
           : { x: shown.x + (aim.x - shown.x) * follow, y: shown.y + (aim.y - shown.y) * follow };
       // Nearly home, the head sits on the period itself (owner, 2026-10-29: «в точку криво»): on a phone the
@@ -74,7 +80,14 @@ export function createJourneyLine(canvas) {
       context.strokeStyle = '#d5ccae35';
       context.beginPath();
       let started = false;
-      for (const p of path.points) {
+      for (let i = 0; i < path.points.length; i++) {
+        const p = path.points[i];
+        // The way from the hero's dot is drawn behind the head only: a trail, not a road laid out ahead.
+        if (i < path.introCount && path.lengths[i] > aim.distance) {
+          if (started) context.lineTo(aim.x, aim.y);
+          started = false;
+          continue;
+        }
         if (p.y < scroll - 12 || p.y > scroll + height + 12) {
           started = false;
           continue;
@@ -85,7 +98,11 @@ export function createJourneyLine(canvas) {
         } else context.lineTo(p.x, p.y - scroll);
       }
       context.stroke();
-      const color = `rgb(${Math.round(236 + 4 * head.merge)},${Math.round(193 - 27 * head.merge)},${Math.round(139 - 41 * head.merge)})`;
+      // Leaving the hero it is still the kicker's orange dot; on the way it takes the line's warm cream.
+      const color =
+        head.flight < 1
+          ? `rgb(${Math.round(255 - 19 * head.flight)},${Math.round(138 + 55 * head.flight)},${Math.round(61 + 78 * head.flight)})`
+          : `rgb(${Math.round(236 + 4 * head.merge)},${Math.round(193 - 27 * head.merge)},${Math.round(139 - 41 * head.merge)})`;
       context.fillStyle = color;
       if (head.merge > 0.01) {
         const target = head.target,
@@ -141,6 +158,9 @@ export function createJourneyLine(canvas) {
           context.globalAlpha = 1;
         }
       }
+      // At the top the head is the kicker's dot, so it comes in with the kicker (the hero's entrance fades it in).
+      if (start && head.flight < 1)
+        context.globalAlpha = start.opacity + (1 - start.opacity) * head.flight;
       // The head's glow as a gradient (a canvas shadow blur every frame was expensive, Safari above all).
       const glow = 1 - head.merge;
       if (glow > 0.02) {

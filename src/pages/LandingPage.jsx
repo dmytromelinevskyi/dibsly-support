@@ -14,18 +14,21 @@ export default function LandingPage({ data }) {
     if (reduced || !routeCanvas.current) return;
     const wide = matchMedia('(min-width: 1081px)');
     let journey = null;
+    // While the line runs its head is the hero kicker's dot, drawn on the canvas; the dot in the page steps aside.
     const sync = () => {
       if (wide.matches && !journey) journey = attachJourney(routeCanvas.current);
       else if (!wide.matches && journey) {
         journey.destroy();
         journey = null;
       }
+      document.documentElement.classList.toggle('journey-flight', Boolean(journey));
     };
     sync();
     wide.addEventListener('change', sync);
     return () => {
       wide.removeEventListener('change', sync);
       journey?.destroy();
+      document.documentElement.classList.remove('journey-flight');
     };
   }, [reduced]);
   return (

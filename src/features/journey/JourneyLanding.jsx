@@ -267,7 +267,7 @@ export default function JourneyLanding({ lang }) {
         <section className="hero" id="top" data-section data-scene="hero">
           <div className="hero-copy">
             <p className="kicker">
-              <span className="dot" />
+              <span className="dot" data-journey-origin />
               {data.hero.kicker}
             </p>
             <Title as="h1" className="hero-title" lines={data.hero.title} />
