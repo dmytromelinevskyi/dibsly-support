@@ -19,40 +19,38 @@
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="img/favicon.png">
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* The landing's colours and type (2026-10-29: the site's pages in one style); the logic below is unchanged. */
         :root {
-            color-scheme: light dark;
-            --background: #f6f3ee;
-            --surface: #ffffff;
-            --text: #1c1a17;
-            --secondary: #6b665e;
-            --border: rgba(28, 26, 23, 0.1);
-            --accent: #f2a33a;
-            --accent-text: #b8640f;
-            --accent-soft: rgba(242, 163, 58, 0.16);
-        }
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --background: #0f0e0d;
-                --surface: #1d1b19;
-                --text: #f4f1ec;
-                --secondary: #a39d94;
-                --border: rgba(255, 255, 255, 0.09);
-                --accent-text: #f4b25c;
-                --accent-soft: rgba(242, 163, 58, 0.2);
-            }
+            color-scheme: dark;
+            --background: #0E0C0B;
+            --surface: #1D1815;
+            --text: #F6EBDD;
+            --secondary: #A89A8D;
+            --border: rgba(246, 235, 221, 0.10);
+            --accent: #FF8A3D;
+            --accent-text: #FFA153;
+            --accent-soft: rgba(255, 138, 61, 0.16);
+            --display: "Geologica", "SF Pro Display", system-ui, sans-serif;
         }
         * { box-sizing: border-box; }
         body {
             margin: 0;
-            background: var(--background);
+            background: radial-gradient(700px 420px at 80% -120px, rgba(232, 110, 28, 0.14), rgba(232, 110, 28, 0)) no-repeat, var(--background);
             color: var(--text);
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+            font-family: "Manrope", -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
             font-size: 17px;
             line-height: 1.45;
             -webkit-tap-highlight-color: transparent;
         }
-        main { width: min(560px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 190px; }
+        main { width: min(560px, calc(100% - 32px)); margin: 0 auto; padding: 8px 0 190px; }
+        .top { width: min(560px, calc(100% - 32px)); margin: 0 auto; padding: 18px 0 12px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+        .top .brand { display: flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font-family: var(--display); font-weight: 700; font-size: 18px; }
+        .top .brand img { border-radius: 8px; }
+        .top .get { padding: 9px 16px; border-radius: 999px; background: var(--accent); color: #1A0E06; text-decoration: none; font-weight: 600; font-size: 14px; white-space: nowrap; }
         .card {
             background: var(--surface);
             border: 1px solid var(--border);
@@ -61,8 +59,8 @@
             margin-bottom: 12px;
         }
         .head { text-align: center; }
-        .merchant { font-weight: 650; font-size: 17px; }
-        .part { font-size: 40px; font-weight: 750; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+        .merchant { font-family: var(--display); font-weight: 650; font-size: 18px; }
+        .part { font-family: var(--display); font-size: 44px; font-weight: 750; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
         .muted { color: var(--secondary); font-size: 14px; }
         .hint { color: var(--secondary); font-size: 14px; margin: 0 0 8px; }
         .row { border-top: 1px solid var(--border); }
@@ -75,7 +73,7 @@
         .check {
             flex: none; width: 26px; height: 26px; border-radius: 50%;
             border: 2px solid var(--secondary); display: grid; place-items: center;
-            color: #1c1a17; font-size: 15px; font-weight: 800;
+            color: #1A0E06; font-size: 15px; font-weight: 800;
         }
         .item.mine .check { background: var(--accent); border-color: var(--accent); }
         .name { flex: 1; }
@@ -108,7 +106,7 @@
             flex: 1; min-height: 50px; border-radius: 25px; border: 0;
             font: inherit; font-weight: 650; cursor: pointer;
         }
-        .primary { background: var(--accent); color: #1c1a17; }
+        .primary { background: var(--accent); color: #1A0E06; }
         .secondary { background: var(--accent-soft); color: var(--accent-text); }
         /* Tips on top of the friend's part (owner, 2026-10-04): the usual percents or their own. */
         .tiphead { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 10px; }
@@ -120,7 +118,7 @@
             background: none; color: inherit; font: inherit; font-size: 14px; cursor: pointer; white-space: nowrap;
             font-variant-numeric: tabular-nums;
         }
-        .chip.on { background: var(--accent); border-color: var(--accent); color: #1c1a17; font-weight: 650; }
+        .chip.on { background: var(--accent); border-color: var(--accent); color: #1A0E06; font-weight: 650; }
         /* Percent or amount (owner, 2026-10-10): one switch above, then the percents or the amount — as in the app. */
         .tipmode { display: flex; padding: 3px; gap: 2px; margin-bottom: 10px; border-radius: 12px; background: var(--accent-soft); }
         .tipmode button { flex: 1; height: 34px; border: 0; border-radius: 9px; background: none; color: var(--accent-text);
@@ -152,6 +150,7 @@
     </style>
 </head>
 <body>
+<header class="top"><a class="brand" href="https://dibslyapp.com/"><img src="img/apple-touch-icon.png" alt="" width="28" height="28">Dibsly</a><a class="get" href="https://apps.apple.com/app/id6765870838">App Store</a></header>
 <main id="app"><p class="error" id="loading">…</p></main>
 <div class="bar" id="bar" hidden>
     <div class="bar-part" id="barpart"><span></span><strong></strong></div>

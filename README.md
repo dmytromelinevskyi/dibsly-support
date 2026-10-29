@@ -79,6 +79,12 @@ browser shot.
 `v3/v3.css` and `v3/v3.js`; its scenes are `v3/scenes/en-*.jpg` (see `tools/scenes/README.md`). Both pages carry
 canonical, hreflang (uk, en, x-default), Open Graph and Twitter tags; crawlers are not sent from `/` to `en.html`.
 
+**The other pages on the landing's style (2026-10-29):** support, help, features, privacy, terms and split share
+`v3/pages.css` (and `v3/pages.js` for the soft rise and the sections' list); features adds `v3/features.css` and
+`v3/features.js` and is still built by `python3 tools/features.py .`. The privacy policy and the terms are the app's own
+texts, word for word: copy `PRIVACY*.md` / `TERMS*.md` from the app into `sources/app-1.0.2/` and run
+`python3 tools/legal.py .` (don't edit `privacy*.html` / `terms*.html` by hand).
+
 Since 2026-10-10 the same files are also served at **<https://dibslyapp.com>** by the Cloudflare Worker `dibsly-site`
 (`worker.js`, `wrangler.toml`; deploy with `npx wrangler deploy` on the owner's word), which also opens short split
 links `dibslyapp.com/s/<code>`: the bill is kept 30 days by Dibsly's server (`dibsly-sync`, service binding) and put
