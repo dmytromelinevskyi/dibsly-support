@@ -1,0 +1,560 @@
+{
+ "uk": {
+  "hero": {
+   "kicker": "Особисті фінанси · iPhone і браузер",
+   "title": [
+    {
+     "text": "Усі гроші.",
+     "tone": ""
+    },
+    {
+     "text": "В одному місці.",
+     "tone": "hot"
+    }
+   ],
+   "lead": "Картки всіх банків, готівка, накопичення, інвестиції, ФОП, борги й кредити. Dibsly сам записує витрати й відповідає на питання про гроші твоїми цифрами.",
+   "download": "Завантажити в App Store",
+   "web": "Відкрити в браузері",
+   "platforms": [
+    {
+     "text": "iPhone",
+     "soon": false
+    },
+    {
+     "text": "Браузер",
+     "soon": false
+    },
+    {
+     "text": "iPad · Mac — скоро",
+     "soon": true
+    },
+    {
+     "text": "Android — згодом",
+     "soon": true
+    }
+   ],
+   "platformsLabel": "Платформи"
+  },
+  "tabs": "161,244,337",
+  "stripAlt": "Головна Dibsly: гроші під рукою, кредитний ліміт, накопичення, місяць, план, цілі, календар, борги й кредити",
+  "tabLabels": [
+   "Головна",
+   "Історія",
+   "Аналітика"
+  ],
+  "frames": [
+   {
+    "name": "a-d0",
+    "alt": "Головна: «Активність» порожня"
+   },
+   {
+    "name": "a-d1",
+    "alt": "Покупка Сільпо чекає в «Активності»"
+   },
+   {
+    "name": "a-d2",
+    "alt": "Дві покупки в «Активності»: Сільпо й Uklon"
+   },
+   {
+    "name": "a-d2-saved",
+    "alt": "Сільпо збережено, «Витрачено» виросло"
+   },
+   {
+    "name": "b-plus",
+    "alt": "Меню плюса: операція, голос, чек"
+   },
+   {
+    "name": "b-form",
+    "alt": "Нова витрата"
+   },
+   {
+    "name": "b-8",
+    "alt": "Сума 8"
+   },
+   {
+    "name": "b-85",
+    "alt": "Сума 85"
+   },
+   {
+    "name": "b-cats",
+    "alt": "Вибір категорії"
+   },
+   {
+    "name": "b-after",
+    "alt": "Витрату збережено"
+   },
+   {
+    "name": "c-chat-top",
+    "alt": "Чат з Dibsly: на що пішло найбільше"
+   },
+   {
+    "name": "c-chat",
+    "alt": "Чат з Dibsly: найбільші витрати й запис кави"
+   },
+   {
+    "name": "c-chat-saved",
+    "alt": "Чат: витрату збережено, можна відмінити"
+   },
+   {
+    "name": "c-plan",
+    "alt": "План місяця: три категорії понад план"
+   },
+   {
+    "name": "c-goals",
+    "alt": "Цілі з прогнозом"
+   },
+   {
+    "name": "c-invest",
+    "alt": "Портфель з історією вартості"
+   },
+   {
+    "name": "c-fop",
+    "alt": "ФОП: до сплати й найближчі строки"
+   },
+   {
+    "name": "d-analytics",
+    "alt": "Аналітика: категорії"
+   },
+   {
+    "name": "d-cashflow",
+    "alt": "Аналітика: потік по днях"
+   },
+   {
+    "name": "d-trends",
+    "alt": "Аналітика: тренди за рік"
+   },
+   {
+    "name": "d-capital",
+    "alt": "Аналітика: капітал"
+   },
+   {
+    "name": "h-calendar",
+    "alt": "Календар платежів на місяць"
+   },
+   {
+    "name": "h-calendar-list",
+    "alt": "Календар платежів списком"
+   },
+   {
+    "name": "h-payment",
+    "alt": "Платіж MEGOGO: сума, рахунок, повторення"
+   },
+   {
+    "name": "i-savings",
+    "alt": "Заощадження: частки твоя й Насті, спільна ціль «Відпустка»"
+   },
+   {
+    "name": "i-savings-accounts",
+    "alt": "Рахунки заощаджень: разом, ти, Настя"
+   },
+   {
+    "name": "f-main-money",
+    "alt": "Головна: борги й кредити"
+   },
+   {
+    "name": "f-debt",
+    "alt": "Борг Саші з кнопкою «Нагадати»"
+   },
+   {
+    "name": "f-credits",
+    "alt": "Усі кредити й кредитні картки"
+   }
+  ],
+  "fx": {
+   "banner": [
+    "Dibsly",
+    "зараз",
+    "Сільпо · −842,50 ₴ з UKRSIBBANK",
+    "Збережи — і буде в історії та балансі"
+   ],
+   "bank": [
+    "monobank",
+    "зараз",
+    "Покупка 186 ₴ · Uklon"
+   ],
+   "toast": {
+    "auto": "Продукти · −842,50 ₴",
+    "plus": "Кафе й ресторани · −85 ₴",
+    "title": "Витрату збережено",
+    "line": "Кафе й ресторани · −85 ₴"
+   }
+  },
+  "steps": [
+   {
+    "id": "auto",
+    "kicker": "01 · Записується саме",
+    "title": [
+     {
+      "text": "Заплатив.",
+      "tone": ""
+     },
+     {
+      "text": "Уже записано.",
+      "tone": "dim"
+     }
+    ],
+    "lead": "Оплатив Apple Pay чи прийшов пуш банку — покупка вже чекає в «Активності». Один дотик, і вона в історії та балансі.",
+    "tags": [
+     "Apple Pay",
+     "Пуші будь-яких банків",
+     "Виписки банків",
+     "Голос і чек"
+    ]
+   },
+   {
+    "id": "plus",
+    "kicker": "02 · Додати самому",
+    "title": [
+     {
+      "text": "Олдскул?",
+      "tone": ""
+     },
+     {
+      "text": "Тисни «+».",
+      "tone": "hot"
+     }
+    ],
+    "lead": "Витрата, дохід, переказ чи борг — вручну за три дотики. Або скажи: «кава 85»."
+   },
+   {
+    "id": "ask",
+    "kicker": "03 · Чат з Dibsly",
+    "title": [
+     {
+      "text": "Запитай.",
+      "tone": ""
+     },
+     {
+      "text": "Він знає.",
+      "tone": "hot"
+     }
+    ],
+    "lead": "Відповідає твоїми цифрами й змінює щось тільки після «Зберегти».",
+    "note": "Про налаштування — без ліміту, про гроші — 20 питань на місяць безкоштовно."
+   },
+   {
+    "id": "together",
+    "kicker": "04 · Гроші разом · Premium",
+    "title": [
+     {
+      "text": "Гроші разом.",
+      "tone": ""
+     }
+    ],
+    "lead": "Спільні накопичення й цілі для пари: видно внесок кожного. Вистачить Premium в одного."
+   },
+   {
+    "id": "money",
+    "kicker": "05 · Борги й кредити",
+    "title": [
+     {
+      "text": "Хто кому винен.",
+      "tone": ""
+     },
+     {
+      "text": "І нагадування.",
+      "tone": "dim"
+     }
+    ],
+    "lead": "Позики, повернення, рахунок у кафе — по людях, нагадати в один дотик. Кредити: наступний платіж і переплата."
+   },
+   {
+    "id": "fop",
+    "kicker": "06 · ФОП",
+    "title": [
+     {
+      "text": "ФОП окремою кишенею.",
+      "tone": ""
+     },
+     {
+      "text": "Податки вже пораховані.",
+      "tone": "hot"
+     }
+    ],
+    "lead": "Єдиний податок, ЄСВ і військовий збір рахуються самі. Строки, декларації й нагадування."
+   }
+  ],
+  "scroll": "Гортай",
+  "railTop": "На початок",
+  "railLabel": "Кроки сторінки"
+ },
+ "en": {
+  "hero": {
+   "kicker": "Personal finance · iPhone and the web",
+   "title": [
+    {
+     "text": "All your money.",
+     "tone": ""
+    },
+    {
+     "text": "In one place.",
+     "tone": "hot"
+    }
+   ],
+   "lead": "Cards from every bank, cash, savings, investments, your FOP, debts and credits. Dibsly records your spending and answers your money questions in your own figures.",
+   "download": "Download on the App Store",
+   "web": "Open in a browser",
+   "platforms": [
+    {
+     "text": "iPhone",
+     "soon": false
+    },
+    {
+     "text": "Browser",
+     "soon": false
+    },
+    {
+     "text": "iPad · Mac — soon",
+     "soon": true
+    },
+    {
+     "text": "Android — later",
+     "soon": true
+    }
+   ],
+   "platformsLabel": "Platforms"
+  },
+  "tabs": "173,251,340",
+  "stripAlt": "Dibsly's Main: money on hand, credit still available, savings, the month, plan, goals, calendar, debts and credits",
+  "tabLabels": [
+   "Main",
+   "History",
+   "Analytics"
+  ],
+  "frames": [
+   {
+    "name": "a-d0",
+    "alt": "Main: Activity is empty"
+   },
+   {
+    "name": "a-d1",
+    "alt": "A Lidl purchase waits in Activity"
+   },
+   {
+    "name": "a-d2",
+    "alt": "Two purchases in Activity: Lidl and Lyft"
+   },
+   {
+    "name": "a-d2-saved",
+    "alt": "Lidl saved, Spent has grown"
+   },
+   {
+    "name": "b-plus",
+    "alt": "The plus menu: operation, voice, receipt"
+   },
+   {
+    "name": "b-form",
+    "alt": "A new expense"
+   },
+   {
+    "name": "b-8",
+    "alt": "Amount 8"
+   },
+   {
+    "name": "b-85",
+    "alt": "Amount 85"
+   },
+   {
+    "name": "b-cats",
+    "alt": "Picking a category"
+   },
+   {
+    "name": "b-after",
+    "alt": "The expense saved"
+   },
+   {
+    "name": "c-chat-top",
+    "alt": "Chat with Dibsly: where most of it went"
+   },
+   {
+    "name": "c-chat",
+    "alt": "Chat with Dibsly: the biggest spending and a coffee added"
+   },
+   {
+    "name": "c-chat-saved",
+    "alt": "The chat: the expense saved, with Undo"
+   },
+   {
+    "name": "c-plan",
+    "alt": "The month's plan: categories over plan"
+   },
+   {
+    "name": "c-goals",
+    "alt": "Goals with a forecast"
+   },
+   {
+    "name": "c-invest",
+    "alt": "The portfolio with its value history"
+   },
+   {
+    "name": "c-fop",
+    "alt": "FOP: tax to pay and the next deadlines"
+   },
+   {
+    "name": "d-analytics",
+    "alt": "Analytics: categories"
+   },
+   {
+    "name": "d-cashflow",
+    "alt": "Analytics: cash flow by day"
+   },
+   {
+    "name": "d-trends",
+    "alt": "Analytics: trends over the year"
+   },
+   {
+    "name": "d-capital",
+    "alt": "Analytics: capital"
+   },
+   {
+    "name": "h-calendar",
+    "alt": "Bill calendar for the month"
+   },
+   {
+    "name": "h-calendar-list",
+    "alt": "Bill calendar as a list"
+   },
+   {
+    "name": "h-payment",
+    "alt": "The Netflix payment: amount, account, repeat"
+   },
+   {
+    "name": "i-savings",
+    "alt": "Savings: your and Nastya’s parts, the shared goal “A holiday”"
+   },
+   {
+    "name": "i-savings-accounts",
+    "alt": "Savings accounts: together, yours, Nastya’s"
+   },
+   {
+    "name": "f-main-money",
+    "alt": "Main: debts and credits"
+   },
+   {
+    "name": "f-debt",
+    "alt": "Sasha’s debt with Remind"
+   },
+   {
+    "name": "f-credits",
+    "alt": "All credits and credit cards"
+   }
+  ],
+  "fx": {
+   "banner": [
+    "Dibsly",
+    "now",
+    "Lidl · −$42.13 from Chase",
+    "Save it and it goes to History and the balance"
+   ],
+   "bank": [
+    "Revolut",
+    "now",
+    "Payment $9.30 · Lyft"
+   ],
+   "toast": {
+    "auto": "Groceries · −$42.13",
+    "plus": "Eating out · −$85",
+    "title": "Expense saved",
+    "line": "Eating out · −$85"
+   }
+  },
+  "steps": [
+   {
+    "id": "auto",
+    "kicker": "01 · Records itself",
+    "title": [
+     {
+      "text": "Paid.",
+      "tone": ""
+     },
+     {
+      "text": "Already recorded.",
+      "tone": "dim"
+     }
+    ],
+    "lead": "Paid with Apple Pay or got a bank’s push: the purchase already waits in Activity. One tap and it’s in History and the balance.",
+    "tags": [
+     "Apple Pay",
+     "Any bank’s notifications",
+     "Bank statements",
+     "Voice and receipts"
+    ]
+   },
+   {
+    "id": "plus",
+    "kicker": "02 · Add it yourself",
+    "title": [
+     {
+      "text": "Old school?",
+      "tone": ""
+     },
+     {
+      "text": "Tap “+”.",
+      "tone": "hot"
+     }
+    ],
+    "lead": "Spending, income, a transfer or a debt: by hand in three taps. Or just say “coffee 5”."
+   },
+   {
+    "id": "ask",
+    "kicker": "03 · Chat with Dibsly",
+    "title": [
+     {
+      "text": "Ask.",
+      "tone": ""
+     },
+     {
+      "text": "He knows.",
+      "tone": "hot"
+     }
+    ],
+    "lead": "Answers in your own figures and changes nothing until you tap Save.",
+    "note": "Questions about settings: no limit. About money: 20 a month free."
+   },
+   {
+    "id": "together",
+    "kicker": "04 · Money together · Premium",
+    "title": [
+     {
+      "text": "Money together.",
+      "tone": ""
+     }
+    ],
+    "lead": "Shared savings and goals for a couple: everyone’s part in view. One Premium is enough."
+   },
+   {
+    "id": "money",
+    "kicker": "05 · Debts and credits",
+    "title": [
+     {
+      "text": "Who owes whom.",
+      "tone": ""
+     },
+     {
+      "text": "And reminders.",
+      "tone": "dim"
+     }
+    ],
+    "lead": "Loans, paybacks, the café bill: by person, a reminder in one tap. Credits: the next payment and the overpayment."
+   },
+   {
+    "id": "fop",
+    "kicker": "06 · Sole traders (FOP)",
+    "title": [
+     {
+      "text": "Your FOP in its own pocket.",
+      "tone": ""
+     },
+     {
+      "text": "Taxes already worked out.",
+      "tone": "hot"
+     }
+    ],
+    "lead": "Single tax, ESV and military levy work themselves out. Deadlines, returns and reminders."
+   }
+  ],
+  "scroll": "Scroll",
+  "railTop": "Back to the top",
+  "railLabel": "Page steps"
+ }
+}
