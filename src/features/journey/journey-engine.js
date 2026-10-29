@@ -270,6 +270,43 @@ export async function startJourney(root, { lang, reduced }) {
       gsap.set(lift, { x: across(side) });
     });
 
+    // ------------------------------------------------------------ phones and tablets: words fade under the phone
+    // The phone sticks under the header with the steps' words going up behind it. Main hid them with a band of the
+    // page's colour; over the particles that was a flat box, so here each step's words fade out as their top comes up
+    // to the phone's bottom edge, and back in when one scrolls down again.
+    var narrow = gsap.matchMedia();
+    narrow.add('(max-width: 1080px)', function () {
+      // Where the stuck phone ends: the sticky stage's top and the phone's height, whatever the scroll is now.
+      var sticky = root.querySelector('.stage-sticky');
+      var edge = function () {
+        return parseFloat(getComputedStyle(sticky).top) + heroPhone.offsetHeight;
+      };
+      all('.step-copy').forEach(function (copy) {
+        gsap.fromTo(
+          copy,
+          { opacity: 1 },
+          {
+            opacity: 0,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: copy,
+              start: function () {
+                return 'top ' + (edge() + 40) + 'px';
+              },
+              end: function () {
+                return 'top ' + (edge() - 60) + 'px';
+              },
+              scrub: true,
+              invalidateOnRefresh: true,
+            },
+          }
+        );
+      });
+    });
+    undo.push(function () {
+      narrow.revert();
+    });
+
     // ------------------------------------------------------------ the rail
     var railItems = all('.rail li');
     all('[data-section]').forEach(function (section) {

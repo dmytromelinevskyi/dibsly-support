@@ -668,23 +668,6 @@
     height: auto;
     padding-top: 0;
   }
-  .v3 .stage-sticky::before {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    top: -74px;
-    bottom: -24px;
-    left: 50%;
-    width: 100vw;
-    transform: translateX(-50%);
-    background: linear-gradient(
-      rgba(14, 12, 11, 0),
-      var(--bg) 74px,
-      var(--bg) calc(100% - 24px),
-      rgba(14, 12, 11, 0)
-    );
-    pointer-events: none;
-  }
   .v3 .hero-phone {
     --ph: var(--ph-m);
   }
@@ -783,3 +766,6 @@
   border-color: #ffb052;
   box-shadow: 0 0 calc(12 * var(--pt)) rgba(255, 176, 82, 0.45);
 }
+
+/* Phones and tablets: no band of the page's colour behind the phone (owner, 2026-10-29: over the particles it was a
+   flat dark box); a step's words fade out instead as they come up to the phone (journey-engine.js). */
