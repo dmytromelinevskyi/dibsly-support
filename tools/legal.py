@@ -5,7 +5,7 @@ import html, os, re, sys
 
 sys.dont_write_bytecode = True
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from pages import footer, nav  # the header and the footer, one copy for every page (tools/pages.py)
+from pages import CSS, JS, footer, nav  # the header and the footer, one copy for every page (tools/pages.py)
 
 ROOT = sys.argv[1] if len(sys.argv) > 1 else "."
 SRC = f"{ROOT}/sources/app-1.0.2"
@@ -89,6 +89,7 @@ def page(name, other, lang, md, kicker, desc):
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="v3/pages.css">
+    {CSS}
 </head>
 <body>
 {nav(lang, name)}
@@ -113,6 +114,7 @@ def page(name, other, lang, md, kicker, desc):
 
 {footer(lang, name)}
     <script src="v3/pages.js" defer></script>
+    {JS}
 </body>
 </html>
 '''

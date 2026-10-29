@@ -55,25 +55,7 @@ main { position: relative; z-index: 2; overflow-x: clip; }
 .cursor.hover { width: 72px; height: 72px; margin: -36px 0 0 -36px; background: rgba(255, 138, 61, 0.14); }
 @media (hover: none), (pointer: coarse) { .cursor { display: none; } }
 
-/* Nav */
-.nav { position: fixed; top: 16px; left: 0; right: 0; z-index: 50; display: flex; justify-content: center; padding: 0 16px; transition: transform .5s var(--ease); }
-.nav.hide { transform: translateY(-140%); }
-.nav-pill { display: flex; align-items: center; gap: 24px; width: 100%; max-width: 1040px; padding: 8px 8px 8px 18px; border-radius: 999px;
-    background: rgba(29, 24, 21, 0.66); border: 1px solid var(--line-2); -webkit-backdrop-filter: blur(18px) saturate(1.3); backdrop-filter: blur(18px) saturate(1.3); box-shadow: 0 18px 48px rgba(0, 0, 0, 0.35); }
-.brand { display: flex; align-items: center; gap: 10px; color: var(--ink); font-family: var(--display); font-weight: 700; font-size: 18px; }
-.brand img { border-radius: 8px; }
-.nav-links { display: flex; gap: 26px; flex: 1; justify-content: center; font-size: 14px; }
-.nav-links a { color: var(--soft); position: relative; }
-.nav-links a::after { content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 1px; background: var(--orange); transform: scaleX(0); transform-origin: right; transition: transform .4s var(--ease); }
-.nav-links a:hover { color: var(--ink); }
-.nav-links a:hover::after { transform: scaleX(1); transform-origin: left; }
-.nav-actions { display: flex; align-items: center; gap: 8px; margin-left: auto; }
-.lang { color: var(--soft); font-size: 13px; padding: 8px 10px; }
-.pill { font-size: 14px; padding: 10px 18px; border-radius: 999px; font-weight: 500; white-space: nowrap; transition: background .3s, transform .3s var(--ease); }
-.pill.ghost { color: var(--ink); border: 1px solid var(--line-2); }
-.pill.ghost:hover { background: rgba(246, 235, 221, 0.08); color: var(--ink); }
-.pill.hot { color: var(--orange-ink); background: var(--orange); font-weight: 600; }
-.pill.hot:hover { color: var(--orange-ink); background: #FF9B57; }
+/* The header: v3/nav.css (every page's, from tools/pages.py). */
 
 /* Section rail */
 .rail { position: fixed; right: 24px; top: 50%; transform: translateY(-50%); z-index: 40; list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
@@ -390,7 +372,6 @@ footer { position: relative; z-index: 2; border-top: 1px solid var(--line); padd
 
 /* Phones and tablets */
 @media (max-width: 1080px) {
-    .nav-links { display: none; }
     .rail { display: none; }
     .split, .split.top { grid-template-columns: minmax(0, 1fr); gap: 56px; }
     /* One column: the phone sticks under the top edge, each step's text comes up below it and passes behind it —
@@ -413,8 +394,6 @@ footer { position: relative; z-index: 2; border-top: 1px solid var(--line); padd
 }
 @media (max-width: 640px) {
     .wrap { padding: 0 20px; }
-    .nav-pill { gap: 10px; padding-left: 14px; }
-    .lang, .pill.ghost { display: none; }
     .journey > .hero { padding-top: 120px; }
     .step .kicker { margin-bottom: 8px; }
     .step .title { font-size: clamp(32px, 9vw, 40px); }

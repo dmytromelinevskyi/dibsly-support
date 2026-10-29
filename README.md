@@ -85,9 +85,12 @@ canonical, hreflang (uk, en, x-default), Open Graph and Twitter tags; crawlers a
 texts, word for word: copy `PRIVACY*.md` / `TERMS*.md` from the app into `sources/app-1.0.2/` and run
 `python3 tools/legal.py .` (don't edit `privacy*.html` / `terms*.html` by hand). **The header and the footer
 (2026-10-29)** — the menu, the UK / EN switch, «Увійти» / «Завантажити» and the footer's links — are kept once, in
-`tools/pages.py`: change them there, then run `python3 tools/pages.py .` (support, help and the landing's footer),
-`python3 tools/features.py .` and `python3 tools/legal.py .` (they take both from `pages.py`). The landing's own menu
-leads to its sections and stays in `index.html` / `en.html`.
+`tools/pages.py`: change them there, then run `python3 tools/pages.py .` (support, help, the landing and split),
+`python3 tools/features.py .` and `python3 tools/legal.py .` (they take both from `pages.py`). **Since task 15** the
+header is the same on every page, the landing and split included: «Можливості ▾» (how it works, all features, the
+website and AI), «Допомога ▾» (guides, support, privacy, terms), «Ціна», «Питання»; under 900 px a burger opens the
+menu as a sheet. Styles `v3/nav.css`, behaviour `v3/nav.js` (the landing pauses its smooth scroll while the sheet is
+open); split.html carries it in both languages and shows the one of the page.
 
 Since 2026-10-10 the same files are also served at **<https://dibslyapp.com>** by the Cloudflare Worker `dibsly-site`
 (`worker.js`, `wrangler.toml`; deploy with `npx wrangler deploy` on the owner's word), which also opens short split

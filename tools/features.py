@@ -3,7 +3,7 @@ import html, json, os, sys
 
 sys.dont_write_bytecode = True
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from pages import footer, nav  # the header and the footer, one copy for every page (tools/pages.py)
+from pages import CSS, JS, footer, nav  # the header and the footer, one copy for every page (tools/pages.py)
 
 ROOT = sys.argv[1]
 L = {
@@ -455,6 +455,7 @@ def build(lang):
     <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="v3/pages.css">
     <link rel="stylesheet" href="v3/features.css">
+    {CSS}
 </head>
 <body>
 {nav(lang, t["page"])}
@@ -488,6 +489,7 @@ def build(lang):
     <script src="v3/pages.js" defer></script>
     <script src="v3/features.js" defer></script>
     <script src="v2/ideas.js" defer></script>
+    {JS}
 </body>
 </html>
 '''

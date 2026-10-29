@@ -1,0 +1,96 @@
+/* dibslyapp.com's header on every page (2026-10-29, task 15; the markup comes from tools/pages.py, the behaviour from
+   v3/nav.js): the landing's dark pill with «Можливості ▾», «Допомога ▾», «Ціна», «Питання»; the two groups open as
+   cards in the same palette. Under 900 px a burger opens the whole menu as a sheet over the page. The colours fall back
+   to the site's own where a page (split.html) has no such variables. */
+.nav { position: fixed; top: 16px; left: 0; right: 0; z-index: 50; display: flex; justify-content: center; padding: 0 16px; transition: transform .5s var(--ease, cubic-bezier(0.16, 1, 0.3, 1)); }
+.nav.hide { transform: translateY(-140%); }
+.nav-pill { display: flex; align-items: center; gap: 18px; width: 100%; max-width: 1040px; padding: 8px 8px 8px 18px; border-radius: 999px;
+    background: rgba(29, 24, 21, 0.72); border: 1px solid var(--line-2, rgba(246, 235, 221, 0.16));
+    -webkit-backdrop-filter: blur(18px) saturate(1.3); backdrop-filter: blur(18px) saturate(1.3); box-shadow: 0 18px 48px rgba(0, 0, 0, 0.35); }
+.nav a { text-decoration: none; }
+.nav .brand, .nav-sheet .brand { display: flex; align-items: center; gap: 10px; flex: none; color: var(--ink, #F6EBDD); font-family: var(--display, "Geologica", system-ui, sans-serif); font-weight: 700; font-size: 18px; }
+.nav .brand:hover, .nav-sheet .brand:hover { color: var(--ink, #F6EBDD); }
+.nav .brand img, .nav-sheet .brand img { border-radius: 8px; }
+
+/* The menu: two groups and two links, in the middle of the pill. */
+.nav-menu { display: flex; align-items: center; justify-content: center; gap: 4px; flex: 1; min-width: 0; margin: 0; padding: 0; list-style: none; }
+.nav-group { position: relative; }
+.nav-top { display: inline-flex; align-items: center; gap: 6px; padding: 8px 12px; border: 0; border-radius: 999px; background: none; cursor: pointer;
+    color: var(--soft, #CDBFB2); font: inherit; font-size: 14px; line-height: 1.2; white-space: nowrap; transition: color .2s, background .2s; }
+.nav-top:hover, .nav-top[aria-expanded="true"] { color: var(--ink, #F6EBDD); background: rgba(246, 235, 221, 0.07); }
+.nav-top.current { color: var(--ink, #F6EBDD); }
+.nav-top.current span { box-shadow: 0 1px 0 var(--orange, #FF8A3D); }
+.nav-top svg { width: 10px; height: 10px; flex: none; opacity: .7; transition: transform .3s var(--ease, cubic-bezier(0.16, 1, 0.3, 1)); }
+.nav-top[aria-expanded="true"] svg { transform: rotate(180deg); }
+.nav-top:focus-visible, .nav-drop a:focus-visible, .nav-burger:focus-visible, .nav-close:focus-visible, .nav-sheet a:focus-visible,
+.nav .lang:focus-visible, .nav .pill:focus-visible { outline: 2px solid var(--orange, #FF8A3D); outline-offset: 2px; }
+
+/* A group's card: under the pill, in its colours; a strip above it keeps the hover while the pointer goes down. */
+.nav-drop { position: absolute; top: calc(100% + 16px); left: 50%; min-width: 220px; padding: 8px; border-radius: 20px;
+    background: rgba(29, 24, 21, 0.96); border: 1px solid var(--line-2, rgba(246, 235, 221, 0.16)); box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+    -webkit-backdrop-filter: blur(18px) saturate(1.3); backdrop-filter: blur(18px) saturate(1.3);
+    opacity: 0; visibility: hidden; transform: translate(-50%, -6px); transition: opacity .18s, transform .3s var(--ease, cubic-bezier(0.16, 1, 0.3, 1)), visibility .18s; }
+.nav-drop::before { content: ""; position: absolute; left: 0; right: 0; top: -18px; height: 18px; }
+.nav-group.open .nav-drop { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+.nav-drop a { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 12px; color: var(--soft, #CDBFB2); font-size: 14.5px; white-space: nowrap; transition: background .15s, color .15s; }
+.nav-drop a:hover, .nav-drop a:focus-visible { color: var(--ink, #F6EBDD); background: rgba(246, 235, 221, 0.07); }
+.nav-drop a::before { content: ""; width: 6px; height: 6px; border-radius: 50%; flex: none; background: transparent; }
+.nav-drop a[aria-current="page"] { color: var(--ink, #F6EBDD); }
+.nav-drop a[aria-current="page"]::before { background: var(--orange, #FF8A3D); }
+
+.nav-actions { display: flex; align-items: center; gap: 8px; margin-left: auto; flex: none; }
+.nav .lang { color: var(--soft, #CDBFB2); font-size: 13px; padding: 8px 10px; border-radius: 999px; }
+.nav .lang:hover { color: var(--ink, #F6EBDD); }
+.nav .pill, .nav-sheet .pill { display: inline-flex; align-items: center; justify-content: center; font-size: 14px; padding: 10px 18px; border-radius: 999px; font-weight: 500; white-space: nowrap; transition: background .3s; }
+.nav .pill.ghost, .nav-sheet .pill.ghost { color: var(--ink, #F6EBDD); border: 1px solid var(--line-2, rgba(246, 235, 221, 0.16)); }
+.nav .pill.ghost:hover, .nav-sheet .pill.ghost:hover { background: rgba(246, 235, 221, 0.08); color: var(--ink, #F6EBDD); }
+.nav .pill.hot, .nav-sheet .pill.hot { color: var(--orange-ink, #1A0E06); background: var(--orange, #FF8A3D); font-weight: 600; }
+.nav .pill.hot:hover, .nav-sheet .pill.hot:hover { color: var(--orange-ink, #1A0E06); background: #FF9B57; }
+
+/* The burger and the sheet's cross: round, as the pill's buttons. */
+.nav-burger, .nav-close { display: none; align-items: center; justify-content: center; width: 40px; height: 40px; flex: none; padding: 0; border-radius: 50%; cursor: pointer;
+    background: none; border: 1px solid var(--line-2, rgba(246, 235, 221, 0.16)); color: var(--ink, #F6EBDD); }
+.nav-burger:hover, .nav-close:hover { background: rgba(246, 235, 221, 0.08); }
+.nav-burger svg, .nav-close svg { width: 18px; height: 18px; }
+.nav-close { display: inline-flex; }
+
+/* The sheet: the whole window, the page's colour with the landing's warm glow; the pill on top turns into the cross. */
+.nav-sheet { position: fixed; inset: 0; z-index: 200; display: flex; flex-direction: column; overflow-y: auto; overscroll-behavior: contain;
+    padding: 16px 16px calc(24px + env(safe-area-inset-bottom)); color: var(--ink, #F6EBDD);
+    background: radial-gradient(640px 420px at 85% -80px, rgba(232, 110, 28, 0.18), rgba(232, 110, 28, 0)) no-repeat, var(--bg, #0E0C0B);
+    opacity: 0; transform: translateY(-10px); transition: opacity .24s, transform .4s var(--ease, cubic-bezier(0.16, 1, 0.3, 1)); }
+.nav-sheet[hidden] { display: none; }
+.nav-sheet.open { opacity: 1; transform: none; }
+.nav-sheet a { text-decoration: none; }
+.nav-sheet-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 8px 8px 8px 18px; border-radius: 999px;
+    background: rgba(29, 24, 21, 0.72); border: 1px solid var(--line-2, rgba(246, 235, 221, 0.16)); }
+.nav-sheet-body { display: grid; gap: 28px; padding: 32px 6px 0; }
+.nav-sheet-group p { margin: 0 0 6px; font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--dim, #8C7F74); }
+.nav-sheet-group a { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--line, rgba(246, 235, 221, 0.10));
+    color: var(--ink, #F6EBDD); font-family: var(--display, "Geologica", system-ui, sans-serif); font-weight: 600; font-size: 24px; line-height: 1.2; }
+.nav-sheet-group a::after { content: "→"; font-family: var(--text, system-ui, sans-serif); font-size: 18px; color: var(--dim, #8C7F74); transition: transform .3s var(--ease, cubic-bezier(0.16, 1, 0.3, 1)), color .2s; }
+.nav-sheet-group a:hover::after { transform: translateX(4px); color: var(--orange, #FF8A3D); }
+.nav-sheet-group a[aria-current="page"] { color: var(--orange-soft, #FFA153); }
+.nav-sheet-foot { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; padding: 32px 6px 0; }
+.nav-sheet-foot .pill { flex: 1 1 140px; padding: 14px 18px; font-size: 15px; }
+.nav-sheet-foot .lang { flex-basis: 100%; padding: 4px 0 6px; color: var(--soft, #CDBFB2); font-size: 15px; }
+.nav-sheet-foot .lang:hover { color: var(--ink, #F6EBDD); }
+html.nav-locked, html.nav-locked body { overflow: hidden; }
+
+/* Under 900 px: the burger instead of the menu; «Увійти» and the language move into the sheet. */
+@media (max-width: 899px) {
+    .nav-menu, .nav .lang, .nav .pill.ghost { display: none; }
+    .nav-burger { display: inline-flex; }
+}
+@media (max-width: 640px) {
+    .nav-pill { gap: 10px; padding-left: 14px; }
+}
+@media (max-width: 359px) {
+    .nav { padding: 0 10px; }
+    .nav-pill { padding: 6px 6px 6px 12px; }
+    .nav .brand { font-size: 17px; gap: 8px; }
+    .nav .pill.hot { padding: 9px 14px; font-size: 13px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .nav, .nav-drop, .nav-top svg, .nav-sheet, .nav-sheet-group a::after { transition: none; }
+}
