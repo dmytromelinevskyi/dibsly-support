@@ -831,7 +831,7 @@
 @media (max-width: 1080px) {
   .v3 .journey {
     --stage-top: 82px;
-    --copy-room: 178px;
+    --copy-room: 162px;
     --ph-m: min(calc(100svh - var(--stage-top) - var(--copy-room)), 640px);
   }
   .v3 .stage-sticky {
@@ -841,9 +841,10 @@
     min-height: 100svh;
     padding: 0;
   }
+  /* Under the phone's real bottom, measured on the device (journey-engine.js sets --phone-bottom). */
   .v3 .step-copy {
     position: sticky;
-    top: calc(var(--stage-top) + var(--ph-m) + 12px);
+    top: calc(var(--phone-bottom, calc(var(--stage-top) + var(--ph-m))) + 14px);
   }
   .v3 .step .kicker,
   .v3 .step .reveal {

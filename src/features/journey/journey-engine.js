@@ -321,11 +321,24 @@ export async function startJourney(root, { lang, reduced }) {
       undo.push(function () {
         html.classList.remove('snap-steps');
       });
-      // Where the stuck phone ends: the sticky stage's top and the phone's height, whatever the scroll is now.
-      var sticky = root.querySelector('.stage-sticky');
+      var sticky = root.querySelector('.stage-sticky'),
+        box = root.querySelector('.journey');
+      // Where the stuck phone really ends, measured on the device (owner, 2026-10-29: on his iPhone the phone stood
+      // ~28 px lower than the CSS reckoned and covered the words): the sticky stage's top plus the phone's own place
+      // in it, without the moves the scripts give it. The words stick under it (journey.css, --phone-bottom).
       var edge = function () {
-        return parseFloat(getComputedStyle(sticky).top) + heroPhone.offsetHeight;
+        var inside =
+          heroPhone.getBoundingClientRect().top -
+          sticky.getBoundingClientRect().top -
+          gsap.getProperty(heroPhone, 'y') -
+          gsap.getProperty(lift, 'y');
+        return parseFloat(getComputedStyle(sticky).top) + inside + heroPhone.offsetHeight;
       };
+      var place = function () {
+        box.style.setProperty('--phone-bottom', edge().toFixed(1) + 'px');
+      };
+      place();
+      ScrollTrigger.addEventListener('refresh', place);
       all('.step-copy').forEach(function (copy) {
         gsap.fromTo(
           copy,
@@ -349,6 +362,10 @@ export async function startJourney(root, { lang, reduced }) {
           }
         );
       });
+      return function () {
+        ScrollTrigger.removeEventListener('refresh', place);
+        box.style.removeProperty('--phone-bottom');
+      };
     });
     undo.push(function () {
       narrow.revert();
