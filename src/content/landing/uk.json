@@ -34,7 +34,7 @@
               "children": [
                 {
                   "tag": "figure",
-                  "attrs": { "class": "browser" },
+                  "attrs": { "class": "browser", "data-journey-hole": "" },
                   "children": [
                     {
                       "tag": "div",

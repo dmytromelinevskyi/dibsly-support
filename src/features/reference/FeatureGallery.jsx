@@ -2,13 +2,14 @@ import { useState, useEffect, useRef } from 'react';
 import IPhoneFrame from '../../components/device/IPhoneFrame.jsx';
 import Icon from '../../components/site/Icon.jsx';
 import '../../styles/gallery.css';
-// What the steps above do not show (owner, 2026-10-29): «Олдскул» came here from the steps, with the brands, the
-// currencies and the move from Monefy; the chat, the portfolio, debts, credits, the FOP and «Гроші разом» are steps.
+// What the steps above do not show (owner, 2026-10-29): «Олдскул» came here from the steps, with the brands (every
+// day), the currencies and the move from Monefy; «Перевірити. Підтвердити.» went; the chat, the portfolio, debts,
+// credits, the FOP and «Гроші разом» are steps.
 const groups = [
   {
     id: 'daily',
     label: ['Щодня', 'Every day'],
-    scenes: ['plus', 'voice', 'receipt', 'drafts', 'premium', 'banks'],
+    scenes: ['plus', 'voice', 'receipt', 'brands', 'premium', 'banks'],
   },
   {
     id: 'future',
@@ -18,7 +19,7 @@ const groups = [
   {
     id: 'picture',
     label: ['Аналітика', 'The bigger picture'],
-    scenes: ['analytics', 'cashflow', 'trends', 'capital', 'brands'],
+    scenes: ['analytics', 'cashflow', 'trends', 'capital'],
   },
   {
     id: 'accounts',
@@ -30,7 +31,6 @@ const labels = {
   plus: ['Олдскул? Тисни «+».', 'Old school? Tap “+”.'],
   voice: ['Сказати. І записати.', 'Say it. Save it.'],
   receipt: ['Сфоткай чек. Розділи.', 'Snap the receipt. Split it.'],
-  drafts: ['Перевірити. Підтвердити.', 'Review. Confirm.'],
   premium: ['Розкласти покупки з ШІ.', 'Let AI sort the purchases.'],
   banks: ['Твої банки поруч.', 'Your banks, together.'],
   plan: ['Місяць за твоїм планом.', 'A month on your terms.'],
@@ -45,7 +45,7 @@ const labels = {
   accounts: ['Кожним грошам своє місце.', 'A place for every penny.'],
   accountEditor: ['Баланс за твоїми правилами.', 'Balance, by your rules.'],
   converter: ['Будь-яка валюта. Курс НБУ.', 'Any currency, at the official rate.'],
-  data: ['Переїзд з Monefy і CSV.', 'Move from Monefy or a CSV.'],
+  data: ['Переїзд з Monefy. Згодом — з інших трекерів.', 'Move from Monefy. Other trackers next.'],
 };
 /** A screen of the gallery: the app's captures, and «Олдскул» the steps' own frame of the «+» menu. */
 const screen = (lang, scene) =>

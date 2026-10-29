@@ -6,12 +6,8 @@
   <!--page-head-->
   <meta name="theme-color" content="#100f0d">
   <script>
-    // The landing's reveals wait for its script (main's .js); with «reduce motion» they are simply there.
+    // The landing's reveals wait for its script (main's .js); without it (.no-motion) they are simply there.
     document.documentElement.classList.add('js');
-    try {
-      if (matchMedia('(prefers-reduced-motion: reduce)').matches || localStorage.getItem('dibsly.motion.v2') === 'reduced')
-        document.documentElement.classList.add('no-motion');
-    } catch (error) {}
   </script>
   <link rel="icon" type="image/png" href="./assets/brand/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">

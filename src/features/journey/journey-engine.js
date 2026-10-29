@@ -72,6 +72,11 @@ export async function startJourney(root, { lang, reduced }) {
       };
       gsap.ticker.add(raf);
       gsap.ticker.lagSmoothing(0);
+      // The header's sheet (nav-menu.js) holds the page still while it is open.
+      listen(document, 'dibsly:nav', function (event) {
+        if (event.detail.open) lenis.stop();
+        else lenis.start();
+      });
       undo.push(function () {
         gsap.ticker.remove(raf);
         gsap.ticker.lagSmoothing(500, 33);
@@ -312,11 +317,12 @@ export async function startJourney(root, { lang, reduced }) {
             ease: 'none',
             scrollTrigger: {
               trigger: copy,
+              // Whole while they sit under the phone, gone once they are behind it.
               start: function () {
-                return 'top ' + (edge() + 40) + 'px';
+                return 'top ' + (edge() + 6) + 'px';
               },
               end: function () {
-                return 'top ' + (edge() - 60) + 'px';
+                return 'top ' + (edge() - 80) + 'px';
               },
               scrub: true,
               invalidateOnRefresh: true,

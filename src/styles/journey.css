@@ -788,11 +788,16 @@
 /* Phones and tablets (owner, 2026-10-29: «телефон побольше сделать, а текст поменьше и ненужное убрать (например
    пилы)»): a larger phone, smaller words under it, no pills — neither the step's tags nor the hero's platforms. */
 @media (max-width: 1080px) {
+  /* Owner, 2026-10-29 (again): «телефон сделать больше прям прилично», the words lower, right under it. */
   .v3 .journey {
-    --ph-m: min(58svh, 560px);
+    --ph-m: min(70svh, 680px);
+  }
+  /* Under the header's pill (16 + 56 px), not behind it. */
+  .v3 .stage-sticky {
+    top: 82px;
   }
   .v3 .step {
-    padding: calc(var(--ph-m) + 118px) 0 22vh;
+    padding: calc(var(--ph-m) + 108px) 0 22vh;
   }
   .v3 .step-tags,
   .v3 .hero .platforms {
@@ -804,12 +809,12 @@
     font-size: 11px;
   }
   .v3 .step .title {
-    font-size: clamp(26px, 7.4vw, 32px);
+    font-size: clamp(24px, 6.8vw, 30px);
   }
   .v3 .step .lead {
-    margin-top: 10px;
-    font-size: 15px;
-    line-height: 1.5;
+    margin-top: 8px;
+    font-size: 14.5px;
+    line-height: 1.45;
   }
   .v3 .step .note {
     margin-top: 8px;

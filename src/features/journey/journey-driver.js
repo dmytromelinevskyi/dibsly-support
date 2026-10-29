@@ -7,7 +7,16 @@ export function attachJourney(canvas) {
   const line = createJourneyLine(canvas);
   let raf = 0,
     dirty = true;
+  let goal = '';
+  /** The footer's period in the page's coordinates: fonts and late layout move it without changing the body's size. */
+  function destination() {
+    const rect = document.querySelector('[data-journey-destination]')?.getBoundingClientRect();
+    return rect
+      ? `${(rect.x + scrollX).toFixed(1)},${(rect.y + scrollY).toFixed(1)},${rect.width.toFixed(1)}`
+      : '';
+  }
   function measure() {
+    goal = destination();
     const rect = document.querySelector('[data-journey-destination]')?.getBoundingClientRect();
     line.measure(
       innerWidth,
@@ -34,7 +43,8 @@ export function attachJourney(canvas) {
   }
   function frame() {
     raf = 0;
-    if (dirty) measure();
+    // The head lands on the period itself (owner, 2026-10-29: «кнопка в точку криво встает»).
+    if (dirty || destination() !== goal) measure();
     const cut = holes(),
       key = cut.map((rect) => `${rect.left | 0},${rect.top | 0},${rect.width | 0}`).join(';');
     line.draw(scrollY, cut);
