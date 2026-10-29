@@ -92,6 +92,8 @@ export function createCinema({
     captionKey = '',
     pressedAction = '',
     override = false,
+    // The chapter whose film already started by itself: a film plays once on arrival, not on every scroll.
+    autoplayed = -1,
     lastScroll = scrollY,
     ready = false,
     poster = null,
@@ -156,6 +158,18 @@ export function createCinema({
     still.src = chapters[index].film.poster;
   }
   loadPoster(0);
+  // The next chapter's film is fetched while this one plays, so it is ready on arrival.
+  const prefetched = new Set();
+  function prefetch(index) {
+    const film = chapters[index]?.film;
+    if (!film || prefetched.has(film.src)) return;
+    prefetched.add(film.src);
+    const link = document.createElement('link');
+    link.rel = 'prefetch';
+    link.as = 'video';
+    link.href = film.src;
+    document.head.append(link);
+  }
   function schedule() {
     if (!raf && !destroyed && !document.hidden) raf = requestAnimationFrame(tick);
   }
@@ -237,7 +251,8 @@ export function createCinema({
     if (needsMeasure) measure();
     const scroll = driver.step(dt),
       moved = Math.abs(scroll - lastScroll) > 0.35;
-    if (moved) {
+    // A film playing by itself keeps playing while the page scrolls; scrolling seeks only a stopped film.
+    if (moved && !(player.playing && autoplayed === active)) {
       player.manual();
       override = false;
     }
@@ -262,10 +277,10 @@ export function createCinema({
       onChapter(index);
       element.dataset.activeChapter = index < 0 ? 'hero' : chapters[index].id;
       if (index >= 0) {
-        player.setFilm(
-          chapters[index].film,
-          chapterProgress(metrics[index], scroll, height) * chapters[index].film.duration
-        );
+        // Every chapter starts its film from the beginning and plays it (seeking on each scroll stuttered on phones).
+        player.setFilm(chapters[index].film, 0);
+        autoplayed = -1;
+        prefetch(index + 1);
         loadPoster(index);
         loadPoster(index + 1);
         field.completeUntil(offsets[index], elapsed);
@@ -275,7 +290,11 @@ export function createCinema({
       filmBusy = false;
     if (index >= 0 && after < 1) {
       const film = chapters[index].film;
-      if (!override && !player.playing)
+      if (player.ready && autoplayed !== index && !override) {
+        autoplayed = index;
+        if (!player.playing) player.toggle();
+      }
+      if (!override && !player.playing && autoplayed !== index)
         player.target(chapterProgress(metrics[index], scroll, height) * film.duration);
       filmBusy = player.tick(dt);
       if (!phone.hasFrame) {
