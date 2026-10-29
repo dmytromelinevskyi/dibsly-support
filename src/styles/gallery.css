@@ -411,11 +411,19 @@
 }
 @media (max-width: 900px) {
   /* The whole block fits one screen from its title to the arrows (owner, 2026-10-29: scrolled to it on the phone, the
-     arrows were under the window's edge): little room above, a smaller title, and the phone takes what is left. */
+     arrows were under the window's edge): little room above, a smaller title, and the phone takes what is left. The
+     phone is sized for Safari with its bars out; with them hidden the block still fills the whole screen, the spare
+     room above and below, so the next block does not peek in (owner: «снизу уже часть следующего скрина»). */
   .feature-gallery {
+    box-sizing: border-box;
+    min-height: 100lvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 28px 20px 36px;
   }
   .gallery-layout {
+    width: 100%;
     grid-template-rows: auto auto minmax(0, 1fr) auto 52px;
     height: calc(100svh - 28px - 14px + 52px);
   }
