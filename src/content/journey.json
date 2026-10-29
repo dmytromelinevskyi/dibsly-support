@@ -189,23 +189,8 @@
         "tags": ["Apple Pay", "Пуші будь-яких банків", "Виписки банків", "Голос і чек"]
       },
       {
-        "id": "plus",
-        "kicker": "02 · Додати самому",
-        "title": [
-          {
-            "text": "Олдскул?",
-            "tone": ""
-          },
-          {
-            "text": "Тисни «+».",
-            "tone": "hot"
-          }
-        ],
-        "lead": "Витрата, дохід, переказ чи борг — вручну за три дотики. Або скажи: «кава 85»."
-      },
-      {
         "id": "ask",
-        "kicker": "03 · Чат з Dibsly",
+        "kicker": "02 · Чат з Dibsly",
         "title": [
           {
             "text": "Запитай.",
@@ -221,7 +206,7 @@
       },
       {
         "id": "money",
-        "kicker": "04 · Борги й кредити",
+        "kicker": "03 · Борги й кредити",
         "title": [
           {
             "text": "Хто кому винен.",
@@ -236,7 +221,7 @@
       },
       {
         "id": "invest",
-        "kicker": "05 · Інвестиції",
+        "kicker": "04 · Інвестиції",
         "title": [
           {
             "text": "Портфель.",
@@ -251,7 +236,7 @@
       },
       {
         "id": "fop",
-        "kicker": "06 · ФОП",
+        "kicker": "05 · ФОП",
         "title": [
           {
             "text": "ФОП окремою кишенею.",
@@ -263,6 +248,17 @@
           }
         ],
         "lead": "Єдиний податок, ЄСВ і військовий збір рахуються самі. Строки, декларації й нагадування."
+      },
+      {
+        "id": "together",
+        "kicker": "06 · Гроші разом · Premium",
+        "title": [
+          {
+            "text": "Гроші разом.",
+            "tone": ""
+          }
+        ],
+        "lead": "Спільні накопичення й цілі для пари: видно внесок кожного. Вистачить Premium в одного."
       }
     ],
     "scroll": "Гортай",
@@ -459,23 +455,8 @@
         "tags": ["Apple Pay", "Any bank’s notifications", "Bank statements", "Voice and receipts"]
       },
       {
-        "id": "plus",
-        "kicker": "02 · Add it yourself",
-        "title": [
-          {
-            "text": "Old school?",
-            "tone": ""
-          },
-          {
-            "text": "Tap “+”.",
-            "tone": "hot"
-          }
-        ],
-        "lead": "Spending, income, a transfer or a debt: by hand in three taps. Or just say “coffee 5”."
-      },
-      {
         "id": "ask",
-        "kicker": "03 · Chat with Dibsly",
+        "kicker": "02 · Chat with Dibsly",
         "title": [
           {
             "text": "Ask.",
@@ -491,7 +472,7 @@
       },
       {
         "id": "money",
-        "kicker": "04 · Debts and credits",
+        "kicker": "03 · Debts and credits",
         "title": [
           {
             "text": "Who owes whom.",
@@ -506,7 +487,7 @@
       },
       {
         "id": "invest",
-        "kicker": "05 · Investments",
+        "kicker": "04 · Investments",
         "title": [
           {
             "text": "Your portfolio.",
@@ -521,7 +502,7 @@
       },
       {
         "id": "fop",
-        "kicker": "06 · Sole traders (FOP)",
+        "kicker": "05 · Sole traders (FOP)",
         "title": [
           {
             "text": "Your FOP in its own pocket.",
@@ -533,6 +514,17 @@
           }
         ],
         "lead": "Single tax, ESV and military levy work themselves out. Deadlines, returns and reminders."
+      },
+      {
+        "id": "together",
+        "kicker": "06 · Money together · Premium",
+        "title": [
+          {
+            "text": "Money together.",
+            "tone": ""
+          }
+        ],
+        "lead": "Shared savings and goals for a couple: everyone’s part in view. One Premium is enough."
       }
     ],
     "scroll": "Scroll",

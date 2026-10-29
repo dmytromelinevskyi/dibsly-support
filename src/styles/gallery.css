@@ -396,3 +396,9 @@
     opacity: 1;
   }
 }
+
+/* The frame's 1.65% is of the stage's width here, not the phone's: a fixed edge, as thin as the steps' phone
+   (owner, 2026-10-29: «рамки телефона шире чем на других скринах»). */
+.gallery-device.iphone-frame {
+  padding: 5px;
+}

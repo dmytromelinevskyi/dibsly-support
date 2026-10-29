@@ -2,13 +2,13 @@ import { useState, useEffect, useRef } from 'react';
 import IPhoneFrame from '../../components/device/IPhoneFrame.jsx';
 import Icon from '../../components/site/Icon.jsx';
 import '../../styles/gallery.css';
-// What the steps above do not show (owner, 2026-10-29): «Гроші разом» came here from the steps; the chat, the
-// portfolio, debts, credits and the FOP left (the steps show them).
+// What the steps above do not show (owner, 2026-10-29): «Олдскул» came here from the steps, with the brands, the
+// currencies and the move from Monefy; the chat, the portfolio, debts, credits, the FOP and «Гроші разом» are steps.
 const groups = [
   {
     id: 'daily',
     label: ['Щодня', 'Every day'],
-    scenes: ['voice', 'receipt', 'drafts', 'premium', 'banks'],
+    scenes: ['plus', 'voice', 'receipt', 'drafts', 'premium', 'banks'],
   },
   {
     id: 'future',
@@ -18,15 +18,16 @@ const groups = [
   {
     id: 'picture',
     label: ['Аналітика', 'The bigger picture'],
-    scenes: ['analytics', 'cashflow', 'trends', 'capital'],
+    scenes: ['analytics', 'cashflow', 'trends', 'capital', 'brands'],
   },
   {
     id: 'accounts',
     label: ['Рахунки', 'Your accounts'],
-    scenes: ['accounts', 'accountEditor', 'together'],
+    scenes: ['accounts', 'accountEditor', 'converter', 'data'],
   },
 ];
 const labels = {
+  plus: ['Олдскул? Тисни «+».', 'Old school? Tap “+”.'],
   voice: ['Сказати. І записати.', 'Say it. Save it.'],
   receipt: ['Сфоткай чек. Розділи.', 'Snap the receipt. Split it.'],
   drafts: ['Перевірити. Підтвердити.', 'Review. Confirm.'],
@@ -40,14 +41,16 @@ const labels = {
   cashflow: ['Прийшло. Пішло. Залишилось.', 'In. Out. Left over.'],
   trends: ['Твої звички у цифрах.', 'Your habits in numbers.'],
   capital: ['Бачити свій капітал.', 'See your net worth.'],
+  brands: ['Бренд раз — категорія назавжди.', 'One brand, one category, for good.'],
   accounts: ['Кожним грошам своє місце.', 'A place for every penny.'],
   accountEditor: ['Баланс за твоїми правилами.', 'Balance, by your rules.'],
-  together: ['Гроші разом.', 'Money together.'],
+  converter: ['Будь-яка валюта. Курс НБУ.', 'Any currency, at the official rate.'],
+  data: ['Переїзд з Monefy і CSV.', 'Move from Monefy or a CSV.'],
 };
-/** A screen of the gallery: Roma's captures, and «Гроші разом» the steps' own frame of shared savings. */
+/** A screen of the gallery: the app's captures, and «Олдскул» the steps' own frame of the «+» menu. */
 const screen = (lang, scene) =>
-  scene === 'together'
-    ? `/assets/journey/${lang}-i-savings.jpg`
+  scene === 'plus'
+    ? `/assets/journey/${lang}-b-plus.jpg`
     : `/assets/cinema/${lang}/screens/${scene}.webp`;
 export default function FeatureGallery({ lang }) {
   const section = useRef(null);
@@ -74,7 +77,7 @@ export default function FeatureGallery({ lang }) {
     };
   }, []);
   const [group, setGroup] = useState(0),
-    [selected, setSelected] = useState('voice');
+    [selected, setSelected] = useState('plus');
   const uk = lang === 'uk',
     column = uk ? 0 : 1,
     scenes = groups[group].scenes;
