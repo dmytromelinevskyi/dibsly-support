@@ -18,7 +18,8 @@ export function createJourneyLine(canvas) {
     measure(w, h, total, destination) {
       width = w;
       height = h;
-      const dpr = Math.min(devicePixelRatio || 1, 1.5);
+      // A thin line and a dot: 1× is enough, and it is redrawn every frame.
+      const dpr = 1;
       canvas.width = w * dpr;
       canvas.height = h * dpr;
       context.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -131,10 +132,25 @@ export function createJourneyLine(canvas) {
           context.globalAlpha = 1;
         }
       }
-      context.shadowColor = '#e6ad6855';
-      context.shadowBlur = 10 * (1 - head.merge);
+      // The head's glow as a gradient (a canvas shadow blur every frame was expensive, Safari above all).
+      const glow = 1 - head.merge;
+      if (glow > 0.02) {
+        const halo = context.createRadialGradient(
+          head.x,
+          head.y,
+          head.radius,
+          head.x,
+          head.y,
+          head.radius + 10
+        );
+        halo.addColorStop(0, `rgba(230,173,104,${0.33 * glow})`);
+        halo.addColorStop(1, 'rgba(230,173,104,0)');
+        const fill = context.fillStyle;
+        context.fillStyle = halo;
+        circle(head.x, head.y, head.radius + 10);
+        context.fillStyle = fill;
+      }
       circle(head.x, head.y, head.radius);
-      context.shadowBlur = 0;
       context.restore();
       canvas.dataset.merge = head.merge.toFixed(4);
       canvas.dataset.headX = head.x.toFixed(2);

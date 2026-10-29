@@ -95,6 +95,10 @@ export function createCinema({
     // The chapter whose film already started by itself: a film plays once on arrival, not on every scroll.
     autoplayed = -1,
     lastScroll = scrollY,
+    // The 3D world's resolution steps down while frames take too long (big Retina windows, older Macs, phones).
+    quality = 1,
+    slowFrames = 0,
+    sampledFrames = 0,
     ready = false,
     poster = null,
     screenFrames = 0,
@@ -215,7 +219,7 @@ export function createCinema({
     mobileLayout = innerWidth <= 900;
     height = innerHeight;
     // Phones draw the 3D scene at 1×: a third fewer pixels a frame while a film plays.
-    renderer.setPixelRatio(Math.min(devicePixelRatio || 1, mobileLayout ? 1 : 1.6));
+    renderer.setPixelRatio(Math.min(devicePixelRatio || 1, mobileLayout ? 1 : 1.25) * quality);
     renderer.setSize(width, height, false);
     camera.left = -width / 2;
     camera.right = width / 2;
@@ -284,6 +288,20 @@ export function createCinema({
     if (destroyed || document.hidden) return;
     const tickStart = performance.now();
     const dt = Math.min(50, last ? now - last : 16.7);
+    if (last && (player.playing || nativeOn)) {
+      sampledFrames++;
+      if (now - last > 22) slowFrames++;
+      if (sampledFrames >= 90) {
+        if (slowFrames > 18 && quality > 0.6) {
+          quality = Math.max(0.6, quality * 0.8);
+          renderer.setPixelRatio(
+            Math.min(devicePixelRatio || 1, mobileLayout ? 1 : 1.25) * quality
+          );
+          renderer.setSize(width, height, false);
+        }
+        sampledFrames = slowFrames = 0;
+      }
+    }
     last = now;
     elapsed += dt / 1000;
     if (needsMeasure) measure();
