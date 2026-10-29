@@ -23,6 +23,7 @@ export function attachJourney(canvas) {
     );
     dirty = false;
   }
+  let drawn = '';
   function holes() {
     const result = [];
     for (const phone of document.querySelectorAll('[data-journey-hole]')) {
@@ -34,8 +35,13 @@ export function attachJourney(canvas) {
   function frame() {
     raf = 0;
     if (dirty) measure();
-    line.draw(scrollY, holes());
-    if (!line.settled) raf = requestAnimationFrame(frame);
+    const cut = holes(),
+      key = cut.map((rect) => `${rect.left | 0},${rect.top | 0},${rect.width | 0}`).join(';');
+    line.draw(scrollY, cut);
+    // Keep drawing while the head catches up or a phone still moves (it comes in, lifts, travels by itself).
+    const moving = key !== drawn;
+    drawn = key;
+    if (!line.settled || moving) raf = requestAnimationFrame(frame);
   }
   const schedule = () => {
       if (!raf) raf = requestAnimationFrame(frame);
@@ -49,6 +55,8 @@ export function attachJourney(canvas) {
   resize.observe(document.body);
   addEventListener('scroll', schedule, { passive: true });
   addEventListener('resize', remeasure, { passive: true });
+  // The landing's engine says when it moves the phone without a scroll.
+  addEventListener('dibsly:phone', schedule);
   schedule();
   return {
     destroy() {
@@ -56,6 +64,7 @@ export function attachJourney(canvas) {
       resize.disconnect();
       removeEventListener('scroll', schedule);
       removeEventListener('resize', remeasure);
+      removeEventListener('dibsly:phone', schedule);
       line.destroy();
     },
   };

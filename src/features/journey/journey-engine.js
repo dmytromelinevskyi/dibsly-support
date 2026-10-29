@@ -51,6 +51,10 @@ export async function startJourney(root, { lang, reduced }) {
     undo = [],
     field = loaded[4].startField(loaded[3], document.querySelector('.field'), small);
   if (field) undo.push(field.destroy);
+  // The journey line cuts a hole for the phone: it redraws whenever the phone moves without a scroll.
+  function moved() {
+    window.dispatchEvent(new Event('dibsly:phone'));
+  }
   function listen(target, type, handler, options) {
     target.addEventListener(type, handler, options);
     undo.push(function () {
@@ -93,7 +97,7 @@ export async function startJourney(root, { lang, reduced }) {
         '-=0.7'
       )
       .to('.hero .fade-up', { y: 0, opacity: 1, duration: 1.2, stagger: 0.1 }, '-=1.0')
-      .from('.hero-phone', { y: 160, opacity: 0, duration: 1.8 }, '-=1.5');
+      .from('.hero-phone', { y: 160, opacity: 0, duration: 1.8, onUpdate: moved }, '-=1.5');
 
     // ------------------------------------------------------------ the field follows the page
     if (field) {
@@ -207,6 +211,7 @@ export async function startJourney(root, { lang, reduced }) {
           start: 'top top',
           end: 'bottom 30%',
           scrub: 0.6,
+          onUpdate: moved,
           invalidateOnRefresh: true,
         },
       }
@@ -259,6 +264,7 @@ export async function startJourney(root, { lang, reduced }) {
           .join(':');
       if (key === shown) return;
       shown = key;
+      moved();
       gsap.set(magnet, {
         x: at.x,
         y: at.y,

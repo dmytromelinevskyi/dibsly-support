@@ -292,7 +292,8 @@ export default function JourneyLanding({ lang }) {
             id={step.id}
             data-section
             data-scene={step.id}
-            data-side={index % 2 ? 'left' : 'right'}
+            // The hero's phone is on the right; step 01 flies it to the left, then in turn (owner, 2026-10-29).
+            data-side={index % 2 ? 'right' : 'left'}
             style={{ '--row': index + 2 }}
           >
             <div className="step-copy">
