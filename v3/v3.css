@@ -134,22 +134,27 @@ main { position: relative; z-index: 2; overflow-x: clip; }
 .screen { position: relative; width: 100%; height: 100%; border-radius: 41px; overflow: hidden; background: #151412; container-type: inline-size; }
 .screen { --pt: calc(100cqw / 402); }
 .screen .screen-long { position: absolute; left: 0; top: calc(110.2 * var(--pt)); width: 100%; height: auto; border-radius: 0; object-fit: initial; will-change: transform; }
-/* Main's bar and header are the frame's own picture (v3/scenes/<lang>-main-head.jpg, the top 118 pt of a-main.jpg,
+/* Main's bar and header are the frame's own picture (v3/scenes/<lang>-main-head.jpg, the top 118 pt of a-d0.jpg,
    task 16; owner: the drawn one had «no soft border and no grain»): the app's grained background, the date, the glass
    capsule with its soft rim, «М» and the gear, as on every frame. Its last 10 pt melt into the strip, which starts where
-   it does on a-main (110.2 pt; the strip's own background under the header is the same colour). */
+   it does on the frames (110.2 pt; the strip's own background under the header is the same colour). The strip is
+   v3/shots/<lang>-main-empty.jpg: Main with «Активність» empty, as step 01 starts (tools/scenes/empty_strip.py). */
 .ios-top { position: absolute; left: 0; right: 0; top: 0; height: calc(118 * var(--pt)); z-index: 2; pointer-events: none;
     -webkit-mask: linear-gradient(#000 calc(100% - 10 * var(--pt)), transparent); mask: linear-gradient(#000 calc(100% - 10 * var(--pt)), transparent); }
 .screen .ios-head { position: absolute; left: 0; top: 0; width: 100%; height: auto; border-radius: 0; object-fit: initial; }
 /* Dibsly's own button above «+», as on Main. */
-.screen .ios-dibsly { position: absolute; left: calc(318.5 * var(--pt)); top: calc(-62 * var(--pt)); width: calc(61 * var(--pt)); height: calc(61 * var(--pt)); border-radius: 50%; object-fit: cover; }
-.ios-tabbar { position: absolute; left: 0; right: 0; bottom: 0; height: calc(110 * var(--pt)); z-index: 2; pointer-events: none; }
-.ios-pill { position: absolute; left: calc(25 * var(--pt)); top: calc(10 * var(--pt)); width: calc(284 * var(--pt)); height: calc(57 * var(--pt)); border-radius: 999px; display: flex; align-items: center; padding: 0 calc(6 * var(--pt));
+.screen .ios-dibsly { position: absolute; left: calc(320.1 * var(--pt)); top: calc(-60.8 * var(--pt)); width: calc(61 * var(--pt)); height: calc(61 * var(--pt)); border-radius: 50%; object-fit: cover; }
+/* The tab bar where the frames have it (task 17, measured by overlay on a-d0): the screen is 16 points taller than a
+   frame, so pinned to its bottom it sat ~18.6 points lower and jumped at every frame. */
+.ios-tabbar { position: absolute; left: 0; right: 0; top: calc(761.7 * var(--pt)); height: calc(110 * var(--pt)); z-index: 2; pointer-events: none; }
+/* The home indicator, as on the frames (131–271 × 861–866 points). */
+.ios-home { position: absolute; left: calc(131 * var(--pt)); top: calc(861 * var(--pt)); width: calc(140 * var(--pt)); height: calc(5 * var(--pt)); border-radius: 999px; background: rgba(255, 255, 255, 0.14); z-index: 2; pointer-events: none; }
+.ios-pill { position: absolute; left: calc(26.6 * var(--pt)); top: calc(10 * var(--pt)); width: calc(284 * var(--pt)); height: calc(57 * var(--pt)); border-radius: 999px; display: flex; align-items: center; padding: 0 calc(6 * var(--pt));
     background: rgba(48, 44, 41, 0.42); border: 1px solid rgba(255, 255, 255, 0.10); -webkit-backdrop-filter: blur(10px) saturate(1.4); backdrop-filter: blur(10px) saturate(1.4); box-shadow: 0 calc(6 * var(--pt)) calc(20 * var(--pt)) rgba(0, 0, 0, 0.35); }
 .ios-tab { flex: 1; height: calc(46 * var(--pt)); border-radius: 999px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: calc(2 * var(--pt)); font-size: calc(11.5 * var(--pt)); font-weight: 600; color: #CFC5BB; font-family: -apple-system, "SF Pro Text", var(--text); }
 .ios-tab svg { width: calc(22 * var(--pt)); height: calc(22 * var(--pt)); }
 .ios-tab.on { color: #FF8A3D; background: rgba(120, 112, 104, 0.32); border: 1px solid rgba(255, 255, 255, 0.10); }
-.ios-plus { position: absolute; left: calc(319 * var(--pt)); top: calc(9 * var(--pt)); width: calc(58 * var(--pt)); height: calc(58 * var(--pt)); border-radius: 50%; background: #E86E1C; color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 calc(6 * var(--pt)) calc(18 * var(--pt)) rgba(232, 110, 28, 0.35); }
+.ios-plus { position: absolute; left: calc(319.5 * var(--pt)); top: calc(9 * var(--pt)); width: calc(58 * var(--pt)); height: calc(58 * var(--pt)); border-radius: 50%; background: #E86E1C; color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 calc(6 * var(--pt)) calc(18 * var(--pt)) rgba(232, 110, 28, 0.35); }
 .ios-plus svg { width: calc(28 * var(--pt)); height: calc(28 * var(--pt)); }
 /* The app's own screens, captured on the demo, and what happens over them: positions in the screen's points (402 × 874). */
 .live { position: absolute; inset: 0; background: #0D0C0A; } /* the strip's bottom colour (the script reads it) */
