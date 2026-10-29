@@ -144,8 +144,8 @@ part.hero = {
       frame: 0,
       text:
         lang === 'uk'
-          ? 'Справжній Dibsly. Гортай, щоб пройти всі дев’ять історій.'
-          : 'The real Dibsly. Scroll to explore all nine stories.',
+          ? 'Справжній Dibsly. Гортай, щоб пройти всі десять історій.'
+          : 'The real Dibsly. Scroll to explore all ten stories.',
     },
   ],
   source: 'native-simulator-screenshot',
