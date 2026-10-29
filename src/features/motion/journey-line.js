@@ -4,7 +4,11 @@ export function createJourneyLine(canvas) {
   const context = canvas.getContext('2d');
   let width = 1,
     height = 1,
-    path = null;
+    path = null,
+    shown = null,
+    last = 0,
+    landed = -1,
+    wasHome = false;
   function circle(x, y, r) {
     context.beginPath();
     context.arc(x, y, Math.max(0.1, r), 0, Math.PI * 2);
@@ -22,7 +26,22 @@ export function createJourneyLine(canvas) {
     },
     draw(scroll, exclude) {
       if (!path) return;
-      const head = path.sample(scroll);
+      const now = performance.now(),
+        dt = Math.min(0.1, (now - (last || now)) / 1000),
+        aim = path.sample(scroll);
+      last = now;
+      // The head follows the scroll with a soft lag; at home it sits exactly on the period.
+      const follow = 1 - Math.exp(-dt * 14);
+      shown =
+        !shown || aim.merge > 0.999 || Math.hypot(aim.x - shown.x, aim.y - shown.y) > height * 0.5
+          ? { x: aim.x, y: aim.y }
+          : { x: shown.x + (aim.x - shown.x) * follow, y: shown.y + (aim.y - shown.y) * follow };
+      const head = { ...aim, x: shown.x, y: shown.y };
+      // Landing: the period answers with a bounce and two rings, once per arrival.
+      const home = aim.merge > 0.995;
+      if (home && !wasHome) landed = now;
+      wasHome = home;
+      const landing = landed < 0 ? 1 : Math.min(1, (now - landed) / 1100);
       context.clearRect(0, 0, width, height);
       context.save();
       if (
@@ -64,7 +83,23 @@ export function createJourneyLine(canvas) {
           dy = target.y - head.y,
           d = Math.hypot(dx, dy),
           sum = head.radius + target.radius;
-        circle(target.x, target.y, target.radius);
+        const bounce =
+          landing < 1 ? Math.sin(Math.PI * Math.min(1, landing * 1.6)) * (1 - landing) * 0.55 : 0;
+        circle(target.x, target.y, target.radius * (1 + bounce));
+        if (landing < 1) {
+          context.save();
+          context.strokeStyle = color;
+          for (const delay of [0, 0.22]) {
+            const p = Math.max(0, (landing - delay) / (1 - delay));
+            if (p <= 0) continue;
+            context.globalAlpha = (1 - p) * 0.7;
+            context.lineWidth = 1.5 * (1 - p) + 0.5;
+            context.beginPath();
+            context.arc(target.x, target.y, target.radius * (1 + p * 5.5), 0, Math.PI * 2);
+            context.stroke();
+          }
+          context.restore();
+        }
         if (d > 1 && d < sum * 3) {
           const nx = -dy / d,
             ny = dx / d,

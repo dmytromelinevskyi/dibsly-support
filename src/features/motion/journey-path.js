@@ -18,8 +18,10 @@ export function createJourneyPath(width, height, total, destination) {
     lengths.push(length);
   };
   for (let y = 0; y < finishStart; y += 10) add({ x: curveX(y), y });
-  const start = { x: curveX(finishStart), y: finishStart },
-    c1 = { x: start.x, y: start.y + height * 0.45 },
+  // The finish leaves the wave along the wave's own direction, so the line has no corner there.
+  const slope = (curveX(finishStart + 1) - curveX(finishStart - 1)) / 2,
+    start = { x: curveX(finishStart), y: finishStart },
+    c1 = { x: start.x + slope * height * 0.45, y: start.y + height * 0.45 },
     c2 = { x: goal.x, y: goal.y - height * 0.44 };
   for (let i = 0; i <= 100; i++) {
     const t = i / 100,
@@ -48,7 +50,16 @@ export function createJourneyPath(width, height, total, destination) {
         headY = Math.min(goal.y, scroll + height * 0.56);
       let index = points.findIndex((p) => p.y >= headY);
       if (index < 0) index = points.length - 1;
-      const normal = lengths[index];
+      // Between two samples, not on them: the head moves continuously with the scroll.
+      const previous = points[index - 1],
+        normal =
+          previous && points[index].y > previous.y
+            ? mix(
+                lengths[index - 1],
+                lengths[index],
+                clamp((headY - previous.y) / (points[index].y - previous.y))
+              )
+            : lengths[index];
       const point = atDistance(mix(normal, length, merge));
       return {
         ...point,
