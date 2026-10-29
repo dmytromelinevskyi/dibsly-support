@@ -290,20 +290,37 @@ export function createCinema({
         f.control.textContent = cue.step.control;
         f.caption.textContent = cue.step.description;
         f.step.textContent = `${String(cue.index + 1).padStart(2, '0')} / ${String(film.steps.length).padStart(2, '0')}`;
-        f.phase.textContent = {
-          uk: {
-            focus: 'Знайди кнопку',
-            press: 'Натискаємо',
-            transition: 'Відкривається',
-            result: 'Результат',
-          },
-          en: {
-            focus: 'Find the control',
-            press: 'Tap',
-            transition: 'Opening',
-            result: 'The result',
-          },
-        }[lang][cue.phase];
+        f.phase.textContent = (
+          cue.watch
+            ? {
+                uk: {
+                  focus: 'Чекаємо',
+                  press: 'Приходить',
+                  transition: 'Приходить',
+                  result: 'Уже тут',
+                },
+                en: {
+                  focus: 'Waiting',
+                  press: 'Arriving',
+                  transition: 'Arriving',
+                  result: 'Already here',
+                },
+              }
+            : {
+                uk: {
+                  focus: 'Знайди кнопку',
+                  press: 'Натискаємо',
+                  transition: 'Відкривається',
+                  result: 'Результат',
+                },
+                en: {
+                  focus: 'Find the control',
+                  press: 'Tap',
+                  transition: 'Opening',
+                  result: 'The result',
+                },
+              }
+        )[lang][cue.phase];
         f.previous.disabled = cue.index === 0;
         f.next.disabled = cue.index === film.steps.length - 1;
         captions[index].dataset.phase = cue.phase;
@@ -345,7 +362,7 @@ export function createCinema({
     if (cue && player.ready && after < 1) {
       const completed = offsets[index] + cue.index;
       field.completeUntil(completed, elapsed);
-      if (cue.phase === 'press' && cue.pulse > 0.02) {
+      if (cue.phase === 'press' && (cue.pulse > 0.02 || cue.watch)) {
         const id = `${index}:${cue.index}`;
         if (pressedAction !== id) {
           pressedAction = id;

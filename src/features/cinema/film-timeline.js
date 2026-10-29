@@ -23,6 +23,10 @@ export function filmAt(film, time) {
         ? 1
         : 1 - smooth(step.transition, step.transition + 0.25, t);
   const pulse = phase === 'press' ? clamp((t - step.press) / (step.transition - step.press)) : 0;
+  // Something that arrives by itself: no hand; the outline marks it once it is there.
+  const watched = step.watch
+    ? smooth(step.transition, step.transition + 0.35, t) * (1 - smooth(step.end - 0.3, step.end, t))
+    : null;
   return {
     index,
     step,
@@ -31,9 +35,11 @@ export function filmAt(film, time) {
       mix(index ? previous[0] : step.target[0] - 0.12, step.target[0], arrival),
       mix(index ? previous[1] : step.target[1] + 0.08, step.target[1], arrival),
     ],
-    opacity,
-    pulse,
-    emphasis: opacity * 0.8,
+    opacity: watched ?? opacity,
+    hand: watched === null ? opacity : 0,
+    pulse: watched === null ? pulse : 0,
+    watch: Boolean(step.watch),
+    emphasis: (watched ?? opacity) * 0.8,
     progress: clamp(t / film.duration),
   };
 }

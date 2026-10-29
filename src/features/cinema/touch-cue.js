@@ -69,7 +69,7 @@ export function createTouchCue(width, height) {
       material.uniforms.uTarget.value.fromArray(target);
       material.uniforms.uOpacity.value = cue?.opacity || 0;
       material.uniforms.uPulse.value = cue?.pulse || 0;
-      handMaterial.opacity = cue?.opacity || 0;
+      handMaterial.opacity = cue?.hand ?? cue?.opacity ?? 0;
       hand.position.x = ((cue?.pointer[0] || 0) - 0.5) * width;
       hand.position.y = (0.5 - (cue?.pointer[1] || 0)) * height;
       hand.scale.setScalar(1 - (cue?.pulse || 0) * 0.1);

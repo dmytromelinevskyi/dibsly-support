@@ -68,7 +68,8 @@ for (const lang of ['uk', 'en']) {
     }
   const folder = `public/assets/cinema/${lang}/screens`;
   await mkdir(folder, { recursive: true });
-  for (const file of await readdir(`${raw}/${lang}/showcase`))
+  // The screen library keeps its published images when this machine has no showcase captures.
+  for (const file of await readdir(`${raw}/${lang}/showcase`).catch(() => []))
     if (file.endsWith('.png')) {
       await sharp(`${raw}/${lang}/showcase/${file}`)
         .resize(750)

@@ -5,20 +5,61 @@
     "uk": {
       "auto": {
         "src": "assets/cinema/uk/films/auto.mp4",
-        "duration": 5.620000000000003,
+        "duration": 16.393333333333306,
         "poster": "assets/cinema/uk/auto/0001.webp",
         "steps": [
           {
             "start": 0,
             "press": 1.4,
             "transition": 1.8499999999999999,
-            "settle": 3.0200000000000027,
-            "end": 4.520000000000003,
-            "target": [0.895, 0.647, 0.1, 0.05],
-            "control": "Галочка",
-            "description": "Покупка переходить в історію. Баланс одразу оновлюється.",
+            "settle": 3.1066666666666696,
+            "end": 4.606666666666669,
+            "target": [
+              0.5,
+              0.647,
+              0.94,
+              0.05
+            ],
+            "watch": true,
+            "control": "Apple Pay",
+            "description": "Оплатив телефоном — Dibsly одразу кладе покупку в «Активність» і каже про це.",
             "before": "assets/cinema/uk/auto/0001.webp",
             "after": "assets/cinema/uk/auto/0021.webp"
+          },
+          {
+            "start": 4.606666666666669,
+            "press": 6.0066666666666695,
+            "transition": 6.45666666666667,
+            "settle": 8.363333333333323,
+            "end": 9.863333333333323,
+            "target": [
+              0.5,
+              0.647,
+              0.94,
+              0.05
+            ],
+            "watch": true,
+            "control": "Пуш monobank",
+            "description": "Прийшов пуш банку — ще одна покупка вже чекає.",
+            "before": "assets/cinema/uk/auto/0029.webp",
+            "after": "assets/cinema/uk/auto/0061.webp"
+          },
+          {
+            "start": 9.863333333333323,
+            "press": 11.263333333333323,
+            "transition": 11.713333333333322,
+            "settle": 13.793333333333306,
+            "end": 15.293333333333306,
+            "target": [
+              0.895,
+              0.709,
+              0.1,
+              0.05
+            ],
+            "control": "Галочка",
+            "description": "Один дотик — покупка в історії, а «Витрачено» вже більше.",
+            "before": "assets/cinema/uk/auto/0065.webp",
+            "after": "assets/cinema/uk/auto/0101.webp"
           }
         ],
         "source": "native-ios-edited-film"
@@ -34,7 +75,12 @@
             "transition": 1.8499999999999999,
             "settle": 2.8033333333333355,
             "end": 4.3033333333333355,
-            "target": [0.866, 0.915, 0.14, 0.068],
+            "target": [
+              0.866,
+              0.915,
+              0.14,
+              0.068
+            ],
             "control": "+",
             "description": "Відкриваємо способи запису.",
             "before": "assets/cinema/uk/plus/0001.webp",
@@ -46,7 +92,12 @@
             "transition": 6.153333333333335,
             "settle": 7.063333333333328,
             "end": 8.563333333333329,
-            "target": [0.62, 0.694, 0.62, 0.065],
+            "target": [
+              0.62,
+              0.694,
+              0.62,
+              0.065
+            ],
             "control": "Операція",
             "description": "Відкривається форма витрати з калькулятором.",
             "before": "assets/cinema/uk/plus/0017.webp",
@@ -58,7 +109,12 @@
             "transition": 10.413333333333329,
             "settle": 10.71666666666666,
             "end": 12.21666666666666,
-            "target": [0.325, 0.787, 0.16, 0.055],
+            "target": [
+              0.325,
+              0.787,
+              0.16,
+              0.055
+            ],
             "control": "8",
             "description": "Перший дотик вводить 8.",
             "before": "assets/cinema/uk/plus/0031.webp",
@@ -70,7 +126,12 @@
             "transition": 14.06666666666666,
             "settle": 14.629999999999988,
             "end": 16.12999999999999,
-            "target": [0.325, 0.728, 0.16, 0.055],
+            "target": [
+              0.325,
+              0.728,
+              0.16,
+              0.055
+            ],
             "control": "5",
             "description": "Другий дотик. Сума вже 85 ₴.",
             "before": "assets/cinema/uk/plus/0034.webp",
@@ -82,7 +143,12 @@
             "transition": 17.979999999999986,
             "settle": 18.976666666666645,
             "end": 20.476666666666645,
-            "target": [0.5, 0.232, 0.13, 0.064],
+            "target": [
+              0.5,
+              0.232,
+              0.13,
+              0.064
+            ],
             "control": "Категорія",
             "description": "Відкривається список категорій.",
             "before": "assets/cinema/uk/plus/0042.webp",
@@ -94,7 +160,12 @@
             "transition": 22.326666666666643,
             "settle": 23.27999999999997,
             "end": 24.77999999999997,
-            "target": [0.177, 0.313, 0.16, 0.105],
+            "target": [
+              0.177,
+              0.313,
+              0.16,
+              0.105
+            ],
             "control": "Кафе й ресторани",
             "description": "Покупка отримує свою категорію.",
             "before": "assets/cinema/uk/plus/0054.webp",
@@ -106,7 +177,12 @@
             "transition": 26.629999999999967,
             "settle": 28.796666666666617,
             "end": 30.296666666666617,
-            "target": [0.5, 0.924, 0.9, 0.058],
+            "target": [
+              0.5,
+              0.924,
+              0.9,
+              0.058
+            ],
             "control": "Зберегти витрату",
             "description": "Витрату записано. Гроші враховано в балансі.",
             "before": "assets/cinema/uk/plus/0066.webp",
@@ -126,7 +202,12 @@
             "transition": 1.8499999999999999,
             "settle": 3.063333333333336,
             "end": 4.563333333333336,
-            "target": [0.865, 0.844, 0.14, 0.066],
+            "target": [
+              0.865,
+              0.844,
+              0.14,
+              0.066
+            ],
             "control": "Dibsly",
             "description": "Чат відкриває відповідь та картку нової витрати.",
             "before": "assets/cinema/uk/ask/0001.webp",
@@ -138,7 +219,12 @@
             "transition": 6.413333333333337,
             "settle": 9.359999999999982,
             "end": 10.859999999999982,
-            "target": [0.716, 0.614, 0.4, 0.06],
+            "target": [
+              0.716,
+              0.614,
+              0.4,
+              0.06
+            ],
             "control": "Зберегти",
             "description": "Тільки цей дотик підтверджує зміну. Є можливість відмінити.",
             "before": "assets/cinema/uk/ask/0093.webp",
@@ -158,7 +244,12 @@
             "transition": 1.8499999999999999,
             "settle": 3.323333333333337,
             "end": 4.823333333333337,
-            "target": [0.25, 0.795, 0.43, 0.05],
+            "target": [
+              0.25,
+              0.795,
+              0.43,
+              0.05
+            ],
             "control": "План",
             "description": "Відкривається місячний план.",
             "before": "assets/cinema/uk/plan/0001.webp",
@@ -170,7 +261,12 @@
             "transition": 6.6733333333333364,
             "settle": 7.4533333333333305,
             "end": 8.95333333333333,
-            "target": [0.172, 0.493, 0.18, 0.13],
+            "target": [
+              0.172,
+              0.493,
+              0.18,
+              0.13
+            ],
             "control": "Кафе й ресторани",
             "description": "Відкриваємо ліміт саме цієї категорії.",
             "before": "assets/cinema/uk/plan/0022.webp",
@@ -182,7 +278,12 @@
             "transition": 10.80333333333333,
             "settle": 11.799999999999988,
             "end": 13.299999999999988,
-            "target": [0.855, 0.37, 0.14, 0.035],
+            "target": [
+              0.855,
+              0.37,
+              0.14,
+              0.035
+            ],
             "control": "Взяти",
             "description": "Фактичні витрати стають новим лімітом.",
             "before": "assets/cinema/uk/plan/0036.webp",
@@ -194,7 +295,12 @@
             "transition": 15.149999999999988,
             "settle": 16.05999999999998,
             "end": 17.55999999999998,
-            "target": [0.5, 0.924, 0.9, 0.06],
+            "target": [
+              0.5,
+              0.924,
+              0.9,
+              0.06
+            ],
             "control": "Зберегти",
             "description": "План перераховується з новим лімітом.",
             "before": "assets/cinema/uk/plan/0050.webp",
@@ -214,7 +320,12 @@
             "transition": 1.8499999999999999,
             "settle": 2.5000000000000013,
             "end": 4.000000000000002,
-            "target": [0.74, 0.806, 0.42, 0.066],
+            "target": [
+              0.74,
+              0.806,
+              0.42,
+              0.066
+            ],
             "control": "Дивіденди за рік",
             "description": "Від портфеля переходимо до кожної виплати.",
             "before": "assets/cinema/uk/invest/0001.webp",
@@ -226,7 +337,12 @@
             "transition": 5.850000000000002,
             "settle": 6.716666666666662,
             "end": 8.216666666666661,
-            "target": [0.5, 0.392, 0.9, 0.066],
+            "target": [
+              0.5,
+              0.392,
+              0.9,
+              0.066
+            ],
             "control": "Дивіденд BIL",
             "description": "Видно рахунок, податок і комісію виплати.",
             "before": "assets/cinema/uk/invest/0013.webp",
@@ -246,7 +362,12 @@
             "transition": 1.8499999999999999,
             "settle": 2.5866666666666682,
             "end": 4.086666666666668,
-            "target": [0.5, 0.398, 0.9, 0.064],
+            "target": [
+              0.5,
+              0.398,
+              0.9,
+              0.064
+            ],
             "control": "Саша",
             "description": "Відкриваємо домовленість та історію повернень.",
             "before": "assets/cinema/uk/money/0026.webp",
@@ -258,7 +379,12 @@
             "transition": 5.936666666666668,
             "settle": 6.846666666666661,
             "end": 8.34666666666666,
-            "target": [0.71, 0.412, 0.42, 0.06],
+            "target": [
+              0.71,
+              0.412,
+              0.42,
+              0.06
+            ],
             "control": "Повернули",
             "description": "З’являється форма повернення боргу.",
             "before": "assets/cinema/uk/money/0038.webp",
@@ -270,7 +396,12 @@
             "transition": 10.19666666666666,
             "settle": 11.019999999999987,
             "end": 12.519999999999987,
-            "target": [0.5, 0.397, 0.9, 0.05],
+            "target": [
+              0.5,
+              0.397,
+              0.9,
+              0.05
+            ],
             "control": "На рахунок",
             "description": "Обираємо, куди записати гроші.",
             "before": "assets/cinema/uk/money/0051.webp",
@@ -290,7 +421,12 @@
             "transition": 1.8499999999999999,
             "settle": 2.456666666666668,
             "end": 3.956666666666668,
-            "target": [0.905, 0.167, 0.1, 0.042],
+            "target": [
+              0.905,
+              0.167,
+              0.1,
+              0.042
+            ],
             "control": "Наступний квартал",
             "description": "Змінюються квартал, податки та найближчі строки.",
             "before": "assets/cinema/uk/fop/0140.webp",
@@ -310,7 +446,12 @@
             "transition": 1.8499999999999999,
             "settle": 2.760000000000002,
             "end": 4.260000000000002,
-            "target": [0.846, 0.588, 0.17, 0.09],
+            "target": [
+              0.846,
+              0.588,
+              0.17,
+              0.09
+            ],
             "control": "Продукти",
             "description": "Із загальної картини переходимо до категорії.",
             "before": "assets/cinema/uk/analytics/0019.webp",
@@ -322,7 +463,12 @@
             "transition": 6.110000000000002,
             "settle": 7.323333333333326,
             "end": 8.823333333333327,
-            "target": [0.5, 0.72, 0.92, 0.06],
+            "target": [
+              0.5,
+              0.72,
+              0.92,
+              0.06
+            ],
             "control": "Показати операції",
             "description": "Відкриваються саме ті покупки, з яких складається сума.",
             "before": "assets/cinema/uk/analytics/0035.webp",
@@ -342,7 +488,12 @@
             "transition": 1.8499999999999999,
             "settle": 3.4966666666666706,
             "end": 4.996666666666671,
-            "target": [0.907, 0.095, 0.1, 0.05],
+            "target": [
+              0.907,
+              0.095,
+              0.1,
+              0.05
+            ],
             "control": "Налаштування",
             "description": "Бачимо учасника та внесок кожного.",
             "before": "assets/cinema/uk/together/0001.webp",
@@ -354,7 +505,12 @@
             "transition": 6.84666666666667,
             "settle": 7.886666666666662,
             "end": 9.386666666666663,
-            "target": [0.09, 0.128, 0.1, 0.05],
+            "target": [
+              0.09,
+              0.128,
+              0.1,
+              0.05
+            ],
             "control": "Закрити",
             "description": "Повертаємося до спільної історії.",
             "before": "assets/cinema/uk/together/0027.webp",
@@ -376,7 +532,12 @@
             "transition": 1.8499999999999999,
             "settle": 3.063333333333336,
             "end": 4.563333333333336,
-            "target": [0.895, 0.647, 0.1, 0.05],
+            "target": [
+              0.895,
+              0.647,
+              0.1,
+              0.05
+            ],
             "control": "Confirm",
             "description": "The purchase moves to History. The balance updates immediately.",
             "before": "assets/cinema/en/auto/0001.webp",
@@ -396,7 +557,12 @@
             "transition": 1.8499999999999999,
             "settle": 2.933333333333336,
             "end": 4.433333333333335,
-            "target": [0.866, 0.915, 0.14, 0.068],
+            "target": [
+              0.866,
+              0.915,
+              0.14,
+              0.068
+            ],
             "control": "+",
             "description": "Open the entry options.",
             "before": "assets/cinema/en/plus/0001.webp",
@@ -408,7 +574,12 @@
             "transition": 6.283333333333336,
             "settle": 7.279999999999995,
             "end": 8.779999999999994,
-            "target": [0.62, 0.694, 0.62, 0.065],
+            "target": [
+              0.62,
+              0.694,
+              0.62,
+              0.065
+            ],
             "control": "Operation",
             "description": "The expense form opens with its calculator.",
             "before": "assets/cinema/en/plus/0018.webp",
@@ -420,7 +591,12 @@
             "transition": 10.629999999999994,
             "settle": 11.14999999999999,
             "end": 12.64999999999999,
-            "target": [0.325, 0.787, 0.16, 0.055],
+            "target": [
+              0.325,
+              0.787,
+              0.16,
+              0.055
+            ],
             "control": "8",
             "description": "The first tap enters 8.",
             "before": "assets/cinema/en/plus/0033.webp",
@@ -432,7 +608,12 @@
             "transition": 14.49999999999999,
             "settle": 15.019999999999985,
             "end": 16.519999999999985,
-            "target": [0.325, 0.728, 0.16, 0.055],
+            "target": [
+              0.325,
+              0.728,
+              0.16,
+              0.055
+            ],
             "control": "5",
             "description": "One more tap. The amount is now $85.",
             "before": "assets/cinema/en/plus/0038.webp",
@@ -444,7 +625,12 @@
             "transition": 18.369999999999983,
             "settle": 19.583333333333307,
             "end": 21.083333333333307,
-            "target": [0.5, 0.232, 0.13, 0.064],
+            "target": [
+              0.5,
+              0.232,
+              0.13,
+              0.064
+            ],
             "control": "Category",
             "description": "The category list opens.",
             "before": "assets/cinema/en/plus/0045.webp",
@@ -456,7 +642,12 @@
             "transition": 22.933333333333305,
             "settle": 23.929999999999964,
             "end": 25.429999999999964,
-            "target": [0.177, 0.313, 0.16, 0.105],
+            "target": [
+              0.177,
+              0.313,
+              0.16,
+              0.105
+            ],
             "control": "Eating out",
             "description": "The purchase gets its category.",
             "before": "assets/cinema/en/plus/0060.webp",
@@ -468,7 +659,12 @@
             "transition": 27.279999999999962,
             "settle": 29.316666666666613,
             "end": 30.816666666666613,
-            "target": [0.5, 0.924, 0.9, 0.058],
+            "target": [
+              0.5,
+              0.924,
+              0.9,
+              0.058
+            ],
             "control": "Save expense",
             "description": "Expense saved. The balance now includes it.",
             "before": "assets/cinema/en/plus/0073.webp",
@@ -488,7 +684,12 @@
             "transition": 1.8499999999999999,
             "settle": 2.673333333333335,
             "end": 4.173333333333336,
-            "target": [0.865, 0.844, 0.14, 0.066],
+            "target": [
+              0.865,
+              0.844,
+              0.14,
+              0.066
+            ],
             "control": "Dibsly",
             "description": "The chat opens its answer and a proposed expense.",
             "before": "assets/cinema/en/ask/0001.webp",
@@ -500,7 +701,12 @@
             "transition": 6.023333333333336,
             "settle": 9.056666666666647,
             "end": 10.556666666666647,
-            "target": [0.716, 0.638, 0.4, 0.06],
+            "target": [
+              0.716,
+              0.638,
+              0.4,
+              0.06
+            ],
             "control": "Save",
             "description": "This tap confirms the change. Undo remains available.",
             "before": "assets/cinema/en/ask/0089.webp",
@@ -520,7 +726,12 @@
             "transition": 1.8499999999999999,
             "settle": 3.626666666666671,
             "end": 5.1266666666666705,
-            "target": [0.25, 0.795, 0.43, 0.05],
+            "target": [
+              0.25,
+              0.795,
+              0.43,
+              0.05
+            ],
             "control": "Plan",
             "description": "The monthly plan opens.",
             "before": "assets/cinema/en/plan/0001.webp",
@@ -532,7 +743,12 @@
             "transition": 6.976666666666671,
             "settle": 7.799999999999998,
             "end": 9.299999999999997,
-            "target": [0.172, 0.493, 0.18, 0.13],
+            "target": [
+              0.172,
+              0.493,
+              0.18,
+              0.13
+            ],
             "control": "Eating out",
             "description": "Open the limit for this category.",
             "before": "assets/cinema/en/plan/0025.webp",
@@ -544,7 +760,12 @@
             "transition": 11.149999999999997,
             "settle": 11.19333333333333,
             "end": 12.69333333333333,
-            "target": [0.855, 0.37, 0.14, 0.035],
+            "target": [
+              0.855,
+              0.37,
+              0.14,
+              0.035
+            ],
             "control": "Use",
             "description": "Actual spending becomes the new limit.",
             "before": "assets/cinema/en/plan/0041.webp",
@@ -556,7 +777,12 @@
             "transition": 14.54333333333333,
             "settle": 15.40999999999999,
             "end": 16.90999999999999,
-            "target": [0.5, 0.924, 0.9, 0.06],
+            "target": [
+              0.5,
+              0.924,
+              0.9,
+              0.06
+            ],
             "control": "Save",
             "description": "The plan recalculates with the new limit.",
             "before": "assets/cinema/en/plan/0042.webp",
@@ -576,7 +802,12 @@
             "transition": 1.8499999999999999,
             "settle": 3.1066666666666696,
             "end": 4.606666666666669,
-            "target": [0.74, 0.806, 0.42, 0.066],
+            "target": [
+              0.74,
+              0.806,
+              0.42,
+              0.066
+            ],
             "control": "Dividends this year",
             "description": "Move from the portfolio to its individual payments.",
             "before": "assets/cinema/en/invest/0001.webp",
@@ -588,7 +819,12 @@
             "transition": 6.45666666666667,
             "settle": 7.279999999999997,
             "end": 8.779999999999998,
-            "target": [0.5, 0.392, 0.9, 0.066],
+            "target": [
+              0.5,
+              0.392,
+              0.9,
+              0.066
+            ],
             "control": "Dividend BIL",
             "description": "See the payment account, tax and fee.",
             "before": "assets/cinema/en/invest/0019.webp",
@@ -608,7 +844,12 @@
             "transition": 1.8499999999999999,
             "settle": 2.5866666666666682,
             "end": 4.086666666666668,
-            "target": [0.5, 0.398, 0.9, 0.064],
+            "target": [
+              0.5,
+              0.398,
+              0.9,
+              0.064
+            ],
             "control": "Sasha",
             "description": "Open the agreement and its repayment history.",
             "before": "assets/cinema/en/money/0024.webp",
@@ -620,7 +861,12 @@
             "transition": 5.936666666666668,
             "settle": 6.803333333333328,
             "end": 8.303333333333327,
-            "target": [0.71, 0.412, 0.42, 0.06],
+            "target": [
+              0.71,
+              0.412,
+              0.42,
+              0.06
+            ],
             "control": "Paid back",
             "description": "The repayment form appears.",
             "before": "assets/cinema/en/money/0036.webp",
@@ -632,7 +878,12 @@
             "transition": 10.153333333333327,
             "settle": 10.976666666666654,
             "end": 12.476666666666654,
-            "target": [0.5, 0.397, 0.9, 0.05],
+            "target": [
+              0.5,
+              0.397,
+              0.9,
+              0.05
+            ],
             "control": "To account",
             "description": "Choose where to record the money.",
             "before": "assets/cinema/en/money/0049.webp",
@@ -652,7 +903,12 @@
             "transition": 1.8499999999999999,
             "settle": 2.6300000000000017,
             "end": 4.130000000000002,
-            "target": [0.905, 0.167, 0.1, 0.042],
+            "target": [
+              0.905,
+              0.167,
+              0.1,
+              0.042
+            ],
             "control": "Next quarter",
             "description": "The quarter, taxes and upcoming dates change together.",
             "before": "assets/cinema/en/fop/0015.webp",
@@ -672,7 +928,12 @@
             "transition": 1.8499999999999999,
             "settle": 2.5866666666666682,
             "end": 4.086666666666668,
-            "target": [0.846, 0.588, 0.17, 0.09],
+            "target": [
+              0.846,
+              0.588,
+              0.17,
+              0.09
+            ],
             "control": "Groceries",
             "description": "Move from the overview into a category.",
             "before": "assets/cinema/en/analytics/0020.webp",
@@ -684,7 +945,12 @@
             "transition": 5.936666666666668,
             "settle": 7.106666666666659,
             "end": 8.606666666666658,
-            "target": [0.5, 0.72, 0.92, 0.06],
+            "target": [
+              0.5,
+              0.72,
+              0.92,
+              0.06
+            ],
             "control": "View transactions",
             "description": "Open the exact purchases behind the total.",
             "before": "assets/cinema/en/analytics/0034.webp",
@@ -704,7 +970,12 @@
             "transition": 1.8499999999999999,
             "settle": 3.3666666666666702,
             "end": 4.866666666666671,
-            "target": [0.907, 0.095, 0.1, 0.05],
+            "target": [
+              0.907,
+              0.095,
+              0.1,
+              0.05
+            ],
             "control": "Settings",
             "description": "See the participant and both contributions.",
             "before": "assets/cinema/en/together/0001.webp",
@@ -716,7 +987,12 @@
             "transition": 6.716666666666671,
             "settle": 7.669999999999997,
             "end": 9.169999999999998,
-            "target": [0.09, 0.128, 0.1, 0.05],
+            "target": [
+              0.09,
+              0.128,
+              0.1,
+              0.05
+            ],
             "control": "Close",
             "description": "Return to the shared history.",
             "before": "assets/cinema/en/together/0026.webp",

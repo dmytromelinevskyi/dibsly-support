@@ -1,22 +1,45 @@
 /** Audited native frame boundaries. Each target is [center x, center y, width, height] in screen space. */
-const b = (from, to, target, uk, en, descriptionUk, descriptionEn) => ({
+const b = (from, to, target, uk, en, descriptionUk, descriptionEn, options = {}) => ({
   from,
   to,
   target,
   control: { uk, en },
   description: { uk: descriptionUk, en: descriptionEn },
+  ...options,
 });
+/** Something arrives by itself (a notification): no hand, the outline marks what came. */
+const watch = { watch: true };
 export const edits = {
   uk: {
     auto: [
       b(
         0,
         20,
-        [0.895, 0.647, 0.1, 0.05],
+        [0.5, 0.647, 0.94, 0.05],
+        'Apple Pay',
+        'Apple Pay',
+        'Оплатив телефоном — Dibsly одразу кладе покупку в «Активність» і каже про це.',
+        'You paid with your phone: Dibsly puts the purchase in Activity at once and tells you.',
+        watch
+      ),
+      b(
+        28,
+        60,
+        [0.5, 0.647, 0.94, 0.05],
+        'Пуш monobank',
+        'monobank push',
+        'Прийшов пуш банку — ще одна покупка вже чекає.',
+        'A bank push came in: one more purchase already waits.',
+        watch
+      ),
+      b(
+        64,
+        100,
+        [0.895, 0.709, 0.1, 0.05],
         'Галочка',
         'Confirm',
-        'Покупка переходить в історію. Баланс одразу оновлюється.',
-        'The purchase moves to History. The balance updates immediately.'
+        'Один дотик — покупка в історії, а «Витрачено» вже більше.',
+        'One tap: the purchase is in History and Spent has grown.'
       ),
     ],
     plus: [

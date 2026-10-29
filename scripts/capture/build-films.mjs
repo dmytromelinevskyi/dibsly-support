@@ -110,6 +110,7 @@ for (const lang of ['uk', 'en'])
         settle,
         end: time,
         target: beat.target,
+        ...(beat.watch ? { watch: true } : {}),
         control: beat.control[lang],
         description: beat.description[lang],
         before: frames[beat.from],
