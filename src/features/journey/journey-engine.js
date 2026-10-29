@@ -333,8 +333,10 @@ export async function startJourney(root, { lang, reduced }) {
         // On from the very top: switched on only once the page moved, the first flick from the hero ran on unsnapped
         // and stopped short of step 01 with the hero's buttons still in view (owner, 2026-10-29).
         start: 'top bottom',
-        // Off well before the gallery's top (not at it): a snap left on there took the sideways swipes of its rows.
-        end: 'bottom 50%',
+        // On through «Придивись ближче» (its rows no longer scroll sideways): switched off before it, the flick from
+        // step 06 ran on unsnapped past its title (owner, 2026-10-30).
+        endTrigger: document.querySelector('#closer'),
+        end: 'bottom bottom',
         onToggle: function (self) {
           html.classList.toggle('snap-steps', self.isActive);
         },

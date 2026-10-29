@@ -899,6 +899,11 @@
     min-height: 100svh;
     padding: 0;
   }
+  /* The last one fills the screen with Safari's bars hidden too, so «Придивись ближче» does not show under step 06
+     (owner, 2026-10-30). */
+  .v3 .step:last-of-type {
+    min-height: 100lvh;
+  }
   .v3 .step-copy {
     visibility: hidden;
   }
@@ -913,7 +918,13 @@
     scroll-snap-align: start;
     scroll-snap-stop: always;
   }
+  /* The gallery's -110 px (for its anchor under the header) made the snap stop that far into it, its title cut off
+     (owner, 2026-10-30); the next block is a snap point too, so a flick past the gallery is not pulled back. */
   html.snap-steps .feature-gallery {
+    scroll-snap-align: start;
+    scroll-margin-top: 0;
+  }
+  html.snap-steps .landing-details {
     scroll-snap-align: start;
   }
 }
