@@ -207,11 +207,11 @@ main { position: relative; z-index: 2; overflow-x: clip; }
 .fx .app-toast img { width: calc(38 * var(--pt)); height: auto; border-radius: 0; flex: none; object-fit: contain; }
 .app-toast b { display: block; font-size: calc(15 * var(--pt)); }
 .app-toast span { display: block; font-size: calc(13 * var(--pt)); color: #BEB2A6; }
-.cover { left: 0; right: 0; background: #0F0D0C; }
 /* Under a rising sheet the screen dims, the status bar not (it stays as bright as on the sheet’s own frame). */
 .sheet-dim { position: absolute; inset: 0; opacity: 0; pointer-events: none; background: linear-gradient(rgba(0, 0, 0, 0), #000 calc(54 * var(--pt))); }
-/* In a push the status bar stands still: the arriving frame's top 54 points over the two sliding screens. */
-.screen .push-bar { position: absolute; left: 0; top: 0; width: 100%; height: auto; border-radius: 0; object-fit: initial; opacity: 0; pointer-events: none;
+/* In a push the status bar stands still: the arriving frame's top 54 points over the two sliding screens; in a scroll
+   the leaving frame's top and bottom bars (the script cuts it to them, its bottom going on like a frame's). */
+.screen .push-bar { position: absolute; left: 0; top: 0; width: 100%; height: auto; padding-bottom: calc(60 * var(--pt)); border-radius: 0; object-fit: initial; opacity: 0; pointer-events: none;
     clip-path: inset(0 0 calc(100% - 54 * var(--pt)) 0); }
 .float-card { position: absolute; padding: 14px 16px; border-radius: 18px; background: rgba(29, 24, 21, 0.78); border: 1px solid var(--line-2);
     -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); box-shadow: 0 24px 50px rgba(0, 0, 0, 0.5); font-size: 14px; will-change: transform; }

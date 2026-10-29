@@ -384,13 +384,19 @@
         });
         var layers = Object.keys(frames).map(function (name) { return frames[name]; });
         var fx = {};
-        ["banner", "bank", "cover", "hl", "tap", "touch", "app-toast"].forEach(function (name) { fx[name] = screen.querySelector(".fx ." + name); });
+        ["banner", "bank", "hl", "tap", "touch", "app-toast"].forEach(function (name) { fx[name] = screen.querySelector(".fx ." + name); });
         var dim = screen.querySelector(".sheet-dim"), bar = screen.querySelector(".push-bar");
         var current = live, timeline = null, loop = null, depth = 1, playing = null, hand = null;
         // A language whose «Activity» title takes two lines puts the first purchase lower (en: 15 points).
         var activity = parseFloat(screen.getAttribute("data-activity-shift")) || 0;
         // Analytics' Flow, Trends and Capital tabs, x in points (their widths follow the language's words).
         var tabs = (screen.getAttribute("data-tabs") || "161,244,337").split(",").map(Number);
+        // What sits elsewhere on the English frames (points, measured on the captures); the rest is the same for both:
+        // «Борги» on Main's long strip, how far the chat scrolls from its top, its «Нова витрата» card, the width of
+        // «Скинути фільтри» and the left and width of «Нагадати».
+        var spot = document.documentElement.lang === "en"
+            ? { debts: 1293.9, chat: 106.7, card: 416, reset: 142, remind: [47, 144] }
+            : { debts: 1275.7, chat: 128.7, card: 395, reset: 180, remind: [31, 162] };
 
         function travel() {
             var tabs = live.querySelector(".ios-tabbar");
@@ -409,14 +415,15 @@
         function barless() { return "inset(" + 54 * screen.offsetWidth / 402 + "px 0px 0px 0px)"; }
         // A rising sheet is cut along its own top edge on its frame (the points measured on the captures, the corners'
         // radius 40), so it rides exactly as it lands: no step when the whole frame comes in (owner: it jumped ~7 px).
-        var sheetTops = { "b-form": 61.5, "b-cats": 71.5, "c-chat": 61.5 };
+        var sheetTops = { "b-form": 61.5, "b-cats": 71.5, "c-chat-top": 61.5, "g-history-filter": 61.5, "h-payment": 61.5 };
         function sheetEdge(name) {
             return function () {
                 var pt = screen.offsetWidth / 402, top = (sheetTops[name] || 61.5) * pt;
                 return "inset(" + top + "px 0px 0px 0px round " + 40 * pt + "px " + 40 * pt + "px 0px 0px)";
             };
         }
-        // Shows a screen over the one in front: "fade", "cut", "push" (a page from the right) or "sheet" (from below).
+        // Shows a screen over the one in front: "fade", "cut", "push" (a page from the right), "pop" (back: the page
+        // leaves to the right), "sheet" (from below) or "drop" (the sheet in front closes down onto the screen).
         // A push or a sheet stays hidden until its moment (no immediate render: a later sheet peeked under the screen).
         function show(tl, name, how, at) {
             var next = frames[name], last = current;
@@ -436,6 +443,26 @@
                     .to(last, { xPercent: -28, opacity: 0.4, duration: 0.6, ease: "power3.inOut" }, at)
                     .set(next, { clipPath: "none" }, at + 0.6)
                     .set(bar, { opacity: 0 }, at + 0.6);
+            } else if (how === "pop") {
+                // Back, as in iOS: the page goes off to the right over the one it came from, which slides back in
+                // from the left, both under the same still status bar.
+                depth += 2;
+                tl.call(function () { bar.src = next.getAttribute("src"); }, null, at)
+                    .set(last, { zIndex: depth - 1 }, at)
+                    .set(bar, { zIndex: depth, opacity: 1 }, at)
+                    .set([next, last], { clipPath: barless }, at)
+                    .fromTo(next, { xPercent: -28, opacity: 0.4 }, { xPercent: 0, opacity: 1, duration: 0.6, ease: "power3.inOut", immediateRender: false }, at)
+                    .to(last, { xPercent: 100, duration: 0.6, ease: "power3.inOut" }, at)
+                    .set(next, { clipPath: "none" }, at + 0.6)
+                    .set(bar, { opacity: 0 }, at + 0.6);
+            } else if (how === "drop") {
+                // A sheet closing: it goes down along its own edge, and the screen under it comes out of the dimming.
+                depth += 2;
+                tl.set(next, { opacity: 1 }, at)
+                    .set(dim, { zIndex: depth - 1, opacity: 0.5 }, at)
+                    .set(last, { zIndex: depth, clipPath: sheetEdge(last.getAttribute("data-frame")) }, at)
+                    .to(last, { yPercent: 100, duration: 0.5, ease: "power3.in" }, at)
+                    .to(dim, { opacity: 0, duration: 0.5, ease: "power1.in" }, at);
             } else if (how === "sheet") {
                 // As in iOS (owner, 2026-10-28): the status bar stays, only the sheet rises — the frame's own bar is cut
                 // off while it moves, its top corners rounded — and the screen under it dims (a layer between them that
@@ -451,6 +478,32 @@
                 tl.fromTo(next, { opacity: 0 }, { opacity: 1, duration: how === "cut" ? 0.14 : 0.5, ease: "power1.inOut" }, at);
             }
             tl.set(last, { opacity: 0, xPercent: 0, yPercent: 0, clipPath: "none" });
+        }
+        // Scrolls a screen to another capture of it: the content between its fixed top and bottom (points) moves up by
+        // the distance measured between the two frames, the old one's bars stay still over it; then the whole new frame.
+        // Each frame is cut to the part of the band it fills, the cut kept still on the screen while the frame moves.
+        function scroll(tl, name, at, distance, top, bottom) {
+            var next = frames[name], last = current, move = { done: 0 };
+            if (!next || next === last) return;
+            current = next;
+            depth += 2;
+            function place() {
+                var pt = screen.offsetWidth / 402, height = next.offsetHeight, gone = distance * move.done;
+                gsap.set(last, { y: -gone * pt, clipPath: "inset(" + (top + gone) * pt + "px 0px " + (height - bottom * pt) + "px 0px)" });
+                gsap.set(next, { y: (distance - gone) * pt, clipPath: "inset(" + top * pt + "px 0px " + (height - (bottom - distance + gone) * pt) + "px 0px)" });
+            }
+            function bars() {
+                var pt = screen.offsetWidth / 402, w = bar.offsetWidth + "px", h = bar.offsetHeight + "px", t = top * pt + "px", b = bottom * pt + "px";
+                return "polygon(0px 0px, " + w + " 0px, " + w + " " + t + ", 0px " + t + ", 0px " + b + ", " + w + " " + b + ", " + w + " " + h + ", 0px " + h + ")";
+            }
+            tl.call(function () { bar.src = last.getAttribute("src"); bar.style.backgroundColor = last.style.backgroundColor; }, null, at)
+                .set(last, { zIndex: depth - 1 }, at)
+                .set(next, { zIndex: depth - 2, xPercent: 0, yPercent: 0, opacity: 1 }, at)
+                .set(bar, { zIndex: depth, opacity: 1, clipPath: bars }, at)
+                .fromTo(move, { done: 0 }, { done: 1, duration: 0.9, ease: "power2.inOut", immediateRender: false, onStart: place, onUpdate: place }, at)
+                .set(next, { y: 0, clipPath: "none" }, at + 0.9)
+                .set(bar, { opacity: 0, clearProps: "clipPath" }, at + 0.9)
+                .set(last, { opacity: 0, y: 0, clipPath: "none" }, at + 0.9);
         }
         // The finger comes in a little below its first target, glides from tap to tap, presses (a ring spreads from
         // under it) and lifts away at the end.
@@ -486,9 +539,10 @@
             var effects = Object.keys(fx).map(function (name) { return fx[name]; }).concat([dim, bar]);
             gsap.killTweensOf(layers.concat(effects));
             layers.forEach(function (layer) {
-                gsap.set(layer, { opacity: layer === current ? 1 : 0, xPercent: 0, yPercent: 0, clipPath: "none" });
+                gsap.set(layer, { opacity: layer === current ? 1 : 0, xPercent: 0, yPercent: 0, y: 0, clipPath: "none" });
             });
             gsap.set(effects, { opacity: 0, xPercent: 0, yPercent: 0, y: 0, scale: 1 });
+            gsap.set(bar, { clearProps: "clipPath" });
             hand = null;
         }
 
@@ -540,23 +594,47 @@
                     .to(fx["app-toast"], { opacity: 0, yPercent: 30, duration: 0.45 }, 10.8);
                 mark(tl, 146, 418, 104, 46, 8.5, 2.0);
             },
-            // On Main the finger taps Dibsly's button above «+»; the chat rises as a sheet and its answer comes in part by part.
+            // On Main the finger taps Dibsly's button above «+»; the chat rises as a sheet at its top (what went where, the
+            // card marked), then scrolls down to the answer and the expense it is ready to save.
             ask: function (tl) {
                 var open = 1.5;
                 tl.set(strip, { y: 0 }, 0);
                 show(tl, "live", "fade", 0);
                 tap(tl, 349, 731, 1.3);
                 release(tl, 1.8);
-                // The cover over the answer rises with the sheet, so it never shows over Main.
-                tl.fromTo(fx.cover, { top: y(250), height: y(485), opacity: 1, y: function () { return frames["c-chat"].offsetHeight; } },
-                    { y: 0, duration: 0.6, ease: "power3.out", immediateRender: false }, open);
-                show(tl, "c-chat", "sheet", open);
-                [[332, 1.1], [385, 1.9], [582, 2.6], [655, 3.4], [735, 4.0]].forEach(function (step) {
-                    var top = step[0];
-                    tl.to(fx.cover, { top: y(top), height: y(735 - top), duration: 0.45, ease: "power2.out" }, open + step[1]);
+                show(tl, "c-chat-top", "sheet", open);
+                mark(tl, 14, 200, 374, 185, open + 0.9, 1.8);
+                scroll(tl, "c-chat", open + 3.4, spot.chat, 122, 712);
+                mark(tl, 16, spot.card, 370, 186, open + 4.6, 2.2);
+            },
+            // Analytics' four tabs one by one (Categories → Flow → Trends → Capital, the tabs measured on the frames: the
+            // screen's data-tabs, as wide as their words).
+            analytics: function (tl) {
+                show(tl, "d-analytics", "push", 0);
+                [["d-cashflow", 1.6], ["d-trends", 3.0], ["d-capital", 4.4]].forEach(function (step, index) {
+                    tap(tl, tabs[index], 195, step[1]);
+                    show(tl, step[0], "cut", step[1] + 0.12);
                 });
-                tl.set(fx.cover, { opacity: 0 });
-                mark(tl, 16, 395, 370, 186, open + 4.6, 2.2);
+                release(tl, 4.9);
+            },
+            // History: the «Категорія» filter opens as a sheet, «Кафе й ресторани» closes it on the filtered list.
+            history: function (tl) {
+                show(tl, "g-history", "push", 0);
+                tap(tl, 295, 145, 1.6);
+                show(tl, "g-history-filter", "sheet", 1.75);
+                tap(tl, 154, 245, 3.3);
+                show(tl, "g-history-filtered", "drop", 3.45);
+                release(tl, 3.9);
+                mark(tl, 18, 712, spot.reset, 46, 4.3, 2.2);
+            },
+            // The calendar: the month, then as a list, then a payment (MEGOGO) opened.
+            calendar: function (tl) {
+                show(tl, "h-calendar", "push", 0);
+                tap(tl, 306, 84, 1.5);
+                show(tl, "h-calendar-list", "fade", 1.65);
+                tap(tl, 200, 376, 3.2);
+                show(tl, "h-payment", "sheet", 3.35);
+                release(tl, 3.8);
             },
             // The plan with what went over it, then the goals with when they come.
             plan: function (tl) {
@@ -565,17 +643,38 @@
                 show(tl, "c-goals", "push", 3.3);
                 mark(tl, 66, 337, 254, 30, 4.2, 2.2);
             },
-            invest: function (tl) {
-                show(tl, "c-invest", "push", 0);
-                // «Загальний результат … +32,67 %» (its line 198–211.5 points on the frames, «Нереалізовано» from 221.5).
-                mark(tl, 10, 192, 362, 26, 0.9, 2.4);
+            // Savings shared with Настя: the shares, the shared goal, then down to the accounts: whose, and the shared one.
+            together: function (tl) {
+                show(tl, "i-savings", "push", 0);
+                mark(tl, 16, 200, 370, 80, 0.9, 1.8);
+                mark(tl, 24, 464, 364, 68, 3.1, 1.8);
+                scroll(tl, "i-savings-accounts", 5.3, 383.8, 108, 874);
+                mark(tl, 24, 512, 354, 48, 6.4, 1.8);
+                mark(tl, 22, 764, 358, 52, 8.6, 1.8);
             },
-            // Back on Main, down to «Борги» and «Кредити».
+            // Main scrolls down to «Борги» and «Кредити» (the strip stops where they stand on the frame), one mark each;
+            // Саша's debt with «Нагадати», back, then all the credits.
             money: function (tl) {
                 stopLoop();
                 tl.set(strip, { y: function () { return -travel() + 260; } }, 0);
                 show(tl, "live", "fade", 0);
-                tl.to(strip, { y: function () { return -travel(); }, duration: 1.4, ease: "power2.inOut" }, 0.4);
+                tl.to(strip, { y: function () { var pt = screen.offsetWidth / 402; return (120 - spot.debts) * pt - strip.offsetTop; }, duration: 1.4, ease: "power2.inOut" }, 0.4);
+                show(tl, "f-main-money", "fade", 1.8);
+                mark(tl, 14, 114, 374, 263, 2.5, 1.4);
+                mark(tl, 14, 397, 374, 332, 4.4, 1.4);
+                tap(tl, 170, 291, 6.6);
+                show(tl, "f-debt", "push", 6.75);
+                mark(tl, spot.remind[0], 331, spot.remind[1], 60, 7.6, 1.6);
+                tap(tl, 38, 84, 10.0);
+                show(tl, "f-main-money", "pop", 10.15);
+                tap(tl, 352, 423, 11.4);
+                show(tl, "f-credits", "push", 11.55);
+                release(tl, 12.0);
+            },
+            invest: function (tl) {
+                show(tl, "c-invest", "push", 0);
+                // «Загальний результат … +32,67 %» (its line 198–211.5 points on the frames, «Нереалізовано» from 221.5).
+                mark(tl, 10, 192, 362, 26, 0.9, 2.4);
             },
             fop: function (tl) {
                 show(tl, "c-fop", "push", 0);
@@ -583,31 +682,6 @@
                 // (between its lines at 374.5 and 419 points on the frames).
                 mark(tl, 10, 117, 300, 107, 0.9, 2.0);
                 mark(tl, 24, 376, 356, 42, 3.2, 2.0);
-            },
-            // Analytics' four tabs one by one (Categories → Flow → Trends → Capital, the tabs measured on the frames: the
-            // screen's data-tabs, as wide as their words), History from the tab bar, then the calendar: month ↔ list.
-            analytics: function (tl) {
-                show(tl, "d-analytics", "push", 0);
-                [["d-cashflow", 1.6], ["d-trends", 3.0], ["d-capital", 4.4]].forEach(function (step, index) {
-                    tap(tl, tabs[index], 195, step[1]);
-                    show(tl, step[0], "cut", step[1] + 0.12);
-                });
-                tap(tl, 167, 800, 6.0);
-                show(tl, "d-history", "fade", 6.15);
-                release(tl, 6.6);
-                show(tl, "d-calendar", "push", 8.0);
-                tap(tl, 306, 84, 9.4);
-                show(tl, "d-calendar-list", "fade", 9.55);
-                tap(tl, 306, 84, 11.2);
-                show(tl, "d-calendar", "fade", 11.35);
-                release(tl, 11.8);
-            },
-            // A shared account: who shares it, then each one's contribution.
-            together: function (tl) {
-                show(tl, "e-shared", "push", 0);
-                mark(tl, 10, 176, 360, 26, 0.9, 1.8);
-                mark(tl, 8, 272, 386, 48, 3.0, 1.8);
-                mark(tl, 8, 374, 386, 48, 5.0, 1.8);
             }
         };
 
