@@ -171,30 +171,31 @@ export const edits = {
     money: [
       b(
         0,
-        12,
-        [0.5, 0.398, 0.9, 0.064],
+        78,
+        [0.5, 0.55, 0.9, 0.3],
+        'Головна',
+        'Main',
+        'Борги й кредити — прямо на Головній.',
+        'Debts and credits, right on Main.'
+      ),
+      b(
+        78,
+        98,
+        [0.4, 0.628, 0.75, 0.05],
         'Саша',
         'Sasha',
-        'Відкриваємо домовленість та історію повернень.',
-        'Open the agreement and its repayment history.'
+        'Хто кому винен, до коли, історія — і «Нагадати» в один дотик. Саша бачить борг у своєму Dibsly.',
+        'Who owes whom, by when, the history, and Remind in one tap. Sasha sees the debt in their own Dibsly.'
       ),
+      b(98, 114, [0.092, 0.097, 0.1, 0.05], 'Назад', 'Back', 'Назад на Головну.', 'Back to Main.'),
       b(
-        12,
-        24,
-        [0.71, 0.412, 0.42, 0.06],
-        'Повернули',
-        'Paid back',
-        'З’являється форма повернення боргу.',
-        'The repayment form appears.'
-      ),
-      b(
-        25,
-        38,
-        [0.5, 0.397, 0.9, 0.05],
-        'На рахунок',
-        'To account',
-        'Обираємо, куди записати гроші.',
-        'Choose where to record the money.'
+        114,
+        133,
+        [0.861, 0.801, 0.1, 0.04],
+        'Кредити',
+        'Credits',
+        'Скільки лишилося, наступний платіж і кредитки окремо від своїх грошей.',
+        'What is left, the next payment, and credit cards apart from your own money.'
       ),
     ],
     fop: [
@@ -448,31 +449,32 @@ export const edits = {
     ],
     money: [
       b(
-        0,
-        12,
-        [0.5, 0.398, 0.9, 0.064],
+        7,
+        84,
+        [0.5, 0.55, 0.9, 0.3],
+        'Головна',
+        'Main',
+        'Борги й кредити — прямо на Головній.',
+        'Debts and credits, right on Main.'
+      ),
+      b(
+        84,
+        104,
+        [0.4, 0.682, 0.75, 0.05],
         'Саша',
         'Sasha',
-        'Борг.',
-        'Open the agreement and its repayment history.'
+        'Хто кому винен, до коли, історія — і «Нагадати» в один дотик. Саша бачить борг у своєму Dibsly.',
+        'Who owes whom, by when, the history, and Remind in one tap. Sasha sees the debt in their own Dibsly.'
       ),
+      b(104, 123, [0.092, 0.097, 0.1, 0.05], 'Назад', 'Back', 'Назад на Головну.', 'Back to Main.'),
       b(
-        12,
-        24,
-        [0.71, 0.412, 0.42, 0.06],
-        'Повернули',
-        'Paid back',
-        'Повернення.',
-        'The repayment form appears.'
-      ),
-      b(
-        25,
-        37,
-        [0.5, 0.397, 0.9, 0.05],
-        'На рахунок',
-        'To account',
-        'Рахунок.',
-        'Choose where to record the money.'
+        146,
+        160,
+        [0.4, 0.967, 0.75, 0.04],
+        'Іпотека',
+        'Mortgage',
+        'Кредит: наступний платіж, скільки лишилося й переплата за весь строк.',
+        'A loan: the next payment, what is left and the overpayment over the whole term.'
       ),
     ],
     fop: [

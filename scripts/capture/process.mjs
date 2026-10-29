@@ -2,6 +2,7 @@
 import { spawn } from 'node:child_process';
 import { readFile, writeFile, mkdir, readdir, rm } from 'node:fs/promises';
 import { resolve } from 'node:path';
+import { existsSync } from 'node:fs';
 import ffmpeg from '@ffmpeg-installer/ffmpeg';
 import sharp from 'sharp';
 const raw = resolve(process.env.DIBSLY_CAPTURE_DIR || '.qa/capture-sources');
@@ -57,7 +58,8 @@ for (const id of ids) {
       )
     );
   let files = pngs.map((file) => file.replace('.png', '.webp'));
-  if (id === 'money') {
+  // Roma's debts showcase opened late; a recording that starts on Main has no such capture to align to.
+  if (id === 'money' && existsSync(`${raw}/${lang}/showcase/debts.png`)) {
     // A debug showcase may still be opening when recording starts. Begin at its real settled list.
     const reference = await sharp(`${raw}/${lang}/showcase/debts.png`)
       .resize(64, 140)

@@ -336,59 +336,76 @@
       },
       "money": {
         "src": "assets/cinema/uk/films/money.mp4",
-        "duration": 13.619999999999987,
-        "poster": "assets/cinema/uk/money/0026.webp",
+        "duration": 21.996666666666627,
+        "poster": "assets/cinema/uk/money/0001.webp",
         "steps": [
           {
             "start": 0,
             "press": 1.4,
             "transition": 1.8499999999999999,
-            "settle": 2.5866666666666682,
-            "end": 4.086666666666668,
+            "settle": 5.663333333333326,
+            "end": 7.163333333333326,
             "target": [
               0.5,
-              0.398,
+              0.55,
               0.9,
-              0.064
+              0.3
             ],
-            "control": "Саша",
-            "description": "Відкриваємо домовленість та історію повернень.",
-            "before": "assets/cinema/uk/money/0026.webp",
-            "after": "assets/cinema/uk/money/0038.webp"
+            "control": "Головна",
+            "description": "Борги й кредити — прямо на Головній.",
+            "before": "assets/cinema/uk/money/0001.webp",
+            "after": "assets/cinema/uk/money/0079.webp"
           },
           {
-            "start": 4.086666666666668,
-            "press": 5.486666666666668,
-            "transition": 5.936666666666668,
-            "settle": 6.846666666666661,
-            "end": 8.34666666666666,
+            "start": 7.163333333333326,
+            "press": 8.563333333333325,
+            "transition": 9.013333333333325,
+            "settle": 10.313333333333315,
+            "end": 11.813333333333315,
             "target": [
-              0.71,
-              0.412,
-              0.42,
-              0.06
-            ],
-            "control": "Повернули",
-            "description": "З’являється форма повернення боргу.",
-            "before": "assets/cinema/uk/money/0038.webp",
-            "after": "assets/cinema/uk/money/0050.webp"
-          },
-          {
-            "start": 8.34666666666666,
-            "press": 9.74666666666666,
-            "transition": 10.19666666666666,
-            "settle": 11.019999999999987,
-            "end": 12.519999999999987,
-            "target": [
-              0.5,
-              0.397,
-              0.9,
+              0.4,
+              0.628,
+              0.75,
               0.05
             ],
-            "control": "На рахунок",
-            "description": "Обираємо, куди записати гроші.",
-            "before": "assets/cinema/uk/money/0051.webp",
-            "after": "assets/cinema/uk/money/0064.webp"
+            "control": "Саша",
+            "description": "Хто кому винен, до коли, історія — і «Нагадати» в один дотик. Саша бачить борг у своєму Dibsly.",
+            "before": "assets/cinema/uk/money/0079.webp",
+            "after": "assets/cinema/uk/money/0099.webp"
+          },
+          {
+            "start": 11.813333333333315,
+            "press": 13.213333333333315,
+            "transition": 13.663333333333314,
+            "settle": 14.61666666666664,
+            "end": 16.11666666666664,
+            "target": [
+              0.092,
+              0.097,
+              0.1,
+              0.05
+            ],
+            "control": "Назад",
+            "description": "Назад на Головну.",
+            "before": "assets/cinema/uk/money/0099.webp",
+            "after": "assets/cinema/uk/money/0115.webp"
+          },
+          {
+            "start": 16.11666666666664,
+            "press": 17.516666666666637,
+            "transition": 17.966666666666637,
+            "settle": 19.396666666666626,
+            "end": 20.896666666666626,
+            "target": [
+              0.861,
+              0.801,
+              0.1,
+              0.04
+            ],
+            "control": "Кредити",
+            "description": "Скільки лишилося, наступний платіж і кредитки окремо від своїх грошей.",
+            "before": "assets/cinema/uk/money/0115.webp",
+            "after": "assets/cinema/uk/money/0134.webp"
           }
         ],
         "source": "native-ios-edited-film"
@@ -930,59 +947,76 @@
       },
       "money": {
         "src": "assets/cinema/en/films/money.mp4",
-        "duration": 13.576666666666654,
-        "poster": "assets/cinema/en/money/0024.webp",
+        "duration": 22.646666666666622,
+        "poster": "assets/cinema/en/money/0008.webp",
         "steps": [
           {
             "start": 0,
             "press": 1.4,
             "transition": 1.8499999999999999,
-            "settle": 2.5866666666666682,
-            "end": 4.086666666666668,
+            "settle": 6.44333333333332,
+            "end": 7.94333333333332,
             "target": [
               0.5,
-              0.398,
+              0.55,
               0.9,
-              0.064
+              0.3
             ],
-            "control": "Sasha",
-            "description": "Open the agreement and its repayment history.",
-            "before": "assets/cinema/en/money/0024.webp",
-            "after": "assets/cinema/en/money/0036.webp"
+            "control": "Main",
+            "description": "Debts and credits, right on Main.",
+            "before": "assets/cinema/en/money/0008.webp",
+            "after": "assets/cinema/en/money/0085.webp"
           },
           {
-            "start": 4.086666666666668,
-            "press": 5.486666666666668,
-            "transition": 5.936666666666668,
-            "settle": 6.803333333333328,
-            "end": 8.303333333333327,
+            "start": 7.94333333333332,
+            "press": 9.34333333333332,
+            "transition": 9.793333333333319,
+            "settle": 11.179999999999975,
+            "end": 12.679999999999975,
             "target": [
-              0.71,
-              0.412,
-              0.42,
-              0.06
-            ],
-            "control": "Paid back",
-            "description": "The repayment form appears.",
-            "before": "assets/cinema/en/money/0036.webp",
-            "after": "assets/cinema/en/money/0048.webp"
-          },
-          {
-            "start": 8.303333333333327,
-            "press": 9.703333333333328,
-            "transition": 10.153333333333327,
-            "settle": 10.976666666666654,
-            "end": 12.476666666666654,
-            "target": [
-              0.5,
-              0.397,
-              0.9,
+              0.4,
+              0.682,
+              0.75,
               0.05
             ],
-            "control": "To account",
-            "description": "Choose where to record the money.",
-            "before": "assets/cinema/en/money/0049.webp",
-            "after": "assets/cinema/en/money/0061.webp"
+            "control": "Sasha",
+            "description": "Who owes whom, by when, the history, and Remind in one tap. Sasha sees the debt in their own Dibsly.",
+            "before": "assets/cinema/en/money/0085.webp",
+            "after": "assets/cinema/en/money/0105.webp"
+          },
+          {
+            "start": 12.679999999999975,
+            "press": 14.079999999999975,
+            "transition": 14.529999999999974,
+            "settle": 15.743333333333299,
+            "end": 17.243333333333297,
+            "target": [
+              0.092,
+              0.097,
+              0.1,
+              0.05
+            ],
+            "control": "Back",
+            "description": "Back to Main.",
+            "before": "assets/cinema/en/money/0105.webp",
+            "after": "assets/cinema/en/money/0124.webp"
+          },
+          {
+            "start": 17.243333333333297,
+            "press": 18.643333333333295,
+            "transition": 19.093333333333295,
+            "settle": 20.04666666666662,
+            "end": 21.54666666666662,
+            "target": [
+              0.4,
+              0.967,
+              0.75,
+              0.04
+            ],
+            "control": "Mortgage",
+            "description": "A loan: the next payment, what is left and the overpayment over the whole term.",
+            "before": "assets/cinema/en/money/0147.webp",
+            "after": "assets/cinema/en/money/0161.webp"
           }
         ],
         "source": "native-ios-edited-film"

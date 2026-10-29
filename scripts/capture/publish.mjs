@@ -24,8 +24,8 @@ const outcomes = {
     'All the payment details together: account, tax and fee.',
   ],
   money: [
-    'У кожного повернення — свій рахунок. Запис лише після збереження.',
-    'Every repayment has an account. It is recorded only after Save.',
+    'Борги по людях і кредити з наступним платежем — на одному екрані.',
+    'Debts by person and credits with the next payment, on one screen.',
   ],
   fop: [
     'Квартал змінився — доходи, податки та строки теж.',

@@ -27,9 +27,10 @@ export const captions = {
       'Дотик до виплати BIL показує рахунок, податок і комісію.',
     ],
     money: [
-      'Саша у списку боргів відкриває суму, строк та попередні повернення.',
-      '«Повернули» відкриває повне або часткове повернення.',
-      '«На рахунок» показує, куди можна записати повернення.',
+      'Нижче на Головній — борги й кредити.',
+      'Саша у «Боргах» відкриває борг із «Нагадати».',
+      'Стрілка повертає на Головну.',
+      '«Усе» біля кредитів відкриває кредити й кредитки.',
     ],
     fop: [
       'Кишеня «ФОП» на головній відкриває робочі гроші.',
@@ -79,9 +80,10 @@ export const captions = {
       'Tapping the BIL payment shows its account, tax and fee.',
     ],
     money: [
-      'Sasha in the debt list opens the amount, date and earlier repayments.',
-      'Paid back opens a full or partial repayment.',
-      'To account shows where the repayment can be recorded.',
+      'Further down Main: debts and credits.',
+      'Sasha in Debts opens the debt with Remind.',
+      'The arrow goes back to Main.',
+      'The mortgage opens with its next payment and overpayment.',
     ],
     fop: [
       'A quarter opens its income, taxes and declaration figures.',
