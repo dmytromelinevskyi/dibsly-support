@@ -1,0 +1,754 @@
+{
+ "help.account.1.body": {
+  "uk": "Профіль (кружок біля шестерні) → увійди через Apple, Google чи пошту. Без акаунта все працює на одному iPhone.",
+  "en": "Profile (the circle next to the gear) → sign in with Apple, Google or e-mail. Without an account everything works on one iPhone."
+ },
+ "help.account.1.title": {
+  "uk": "Акаунт",
+  "en": "The account"
+ },
+ "help.account.2.body": {
+  "uk": "З Premium дані однакові на всіх твоїх iPhone і на сайті my.dibslyapp.com.",
+  "en": "With Premium your data is the same on all your iPhones and on my.dibslyapp.com."
+ },
+ "help.account.2.title": {
+  "uk": "Синхронізація",
+  "en": "Sync"
+ },
+ "help.account.3.body": {
+  "uk": "Профіль → «Спільний доступ»: спільні рахунки й цілі з близькими, кожен бачить своє й спільне.",
+  "en": "Profile → «Sharing»: shared accounts and goals with your family; each sees their own and the shared."
+ },
+ "help.account.3.title": {
+  "uk": "Спільний доступ",
+  "en": "Sharing"
+ },
+ "help.account.4.body": {
+  "uk": "Підключи Dibsly у Claude чи ChatGPT (https://my.dibslyapp.com/mcp) — і питай про свої гроші там. Підключення видно в Профіль → «Пристрої та AI».",
+  "en": "Connect Dibsly in Claude or ChatGPT (https://my.dibslyapp.com/mcp) and ask about your money there. The connections are in Profile → «Devices and AI»."
+ },
+ "help.account.4.title": {
+  "uk": "Claude і ChatGPT",
+  "en": "Claude and ChatGPT"
+ },
+ "help.account.subtitle": {
+  "uk": "Кілька iPhone, сайт, Claude і ChatGPT",
+  "en": "Several iPhones, the website, Claude and ChatGPT"
+ },
+ "help.account.title": {
+  "uk": "Акаунт і синхронізація",
+  "en": "Account and sync"
+ },
+ "help.automation.1.body": {
+  "uk": "Нічого не записується без тебе: кожен спійманий платіж стає чернеткою в «Активності», а баланс змінюється, лише коли ти її збережеш.",
+  "en": "Nothing is saved behind your back: each captured payment becomes a draft in Activity, and the balance changes only when you save it."
+ },
+ "help.automation.1.title": {
+  "uk": "Спершу чернетка",
+  "en": "Drafts first"
+ },
+ "help.automation.2.body": {
+  "uk": "Одна автоматизація «Команд» на сповіщення Wallet працює для всіх карток. Перший платіж кожної картки збережи з її рахунком — Dibsly запам’ятає.",
+  "en": "One Shortcuts automation on Wallet notifications covers every card. Save each card's first payment with its account — Dibsly remembers it."
+ },
+ "help.automation.2.title": {
+  "uk": "Apple Pay",
+  "en": "Apple Pay"
+ },
+ "help.automation.3.body": {
+  "uk": "З Premium я читаю сповіщення будь-якого банку через одну автоматизацію в Командах і зберігаю кожен платіж чернеткою (iOS 27 або новіша). Перший платіж кожної картки питає рахунок.",
+  "en": "With Premium I read the notifications of any bank through one Shortcuts automation and save each payment as a draft (iOS 27 or later). The first payment of each card asks for its account."
+ },
+ "help.automation.3.title": {
+  "uk": "Сповіщення банків",
+  "en": "Bank notifications"
+ },
+ "help.automation.4.body": {
+  "uk": "З токеном із застосунку monobank Dibsly сам підтягує картки й банки. Він може лише читати, а токен зберігається у «Зв’язці ключів» цього пристрою.",
+  "en": "With a token from the monobank app, Dibsly syncs your cards and jars by itself. It can only read, and the token stays in this device's Keychain."
+ },
+ "help.automation.4.title": {
+  "uk": "monobank напряму",
+  "en": "monobank directly"
+ },
+ "help.automation.5.body": {
+  "uk": "Платіж у доларах з гривневої картки перераховується за курсом застосунку; натисни на суму, щоб вказати списання банку. Виписка згодом принесе точну суму.",
+  "en": "A payment in dollars on a hryvnia card is converted at the app's rate; tap the amount to enter what the bank charged. The statement later brings the exact amount."
+ },
+ "help.automation.5.title": {
+  "uk": "Інша валюта",
+  "en": "Another currency"
+ },
+ "help.automation.subtitle": {
+  "uk": "Apple Pay, сповіщення банків, monobank",
+  "en": "Apple Pay, bank notifications, monobank"
+ },
+ "help.automation.title": {
+  "uk": "Автоматизація",
+  "en": "Automation"
+ },
+ "help.backup.1.body": {
+  "uk": "Копія шифрується твоїм паролем. Відновити пароль не зможе ніхто, тому зберігай його надійно.",
+  "en": "A backup is encrypted with your password. Nobody can recover the password, so keep it somewhere safe."
+ },
+ "help.backup.1.title": {
+  "uk": "Зашифровано",
+  "en": "Encrypted"
+ },
+ "help.backup.2.body": {
+  "uk": "Вибери iCloud Drive або Google Drive. Автокопії створюються раз на день чи тиждень, зазвичай уночі, зберігаються п’ять останніх; ручні не видаляються.",
+  "en": "Choose iCloud Drive or Google Drive. Automatic backups run daily or weekly, usually at night; the last five are kept, manual ones are never deleted."
+ },
+ "help.backup.2.title": {
+  "uk": "Де і коли",
+  "en": "Where and when"
+ },
+ "help.backup.3.body": {
+  "uk": "«Відкрити файл копії» відновить будь-який .dibslybackup. На новому iPhone — «Відновити мої дані» під час першого запуску. Спершу створюється страхувальна копія поточних даних.",
+  "en": "«Open backup file» restores any .dibslybackup. On a new iPhone, tap «Restore my data» when Dibsly first opens. A safety copy of the current data is made first."
+ },
+ "help.backup.3.title": {
+  "uk": "Відновлення",
+  "en": "Restoring"
+ },
+ "help.backup.4.body": {
+  "uk": "У копії є все, включно з чернетками й більшістю налаштувань. У CSV — операції, рахунки, плани й календар, але без чернеток і налаштувань.",
+  "en": "A backup holds everything, drafts and most settings included. A CSV holds operations, accounts, plans and the calendar, but no drafts or settings."
+ },
+ "help.backup.4.title": {
+  "uk": "Копія чи CSV",
+  "en": "Backup or CSV"
+ },
+ "help.backup.subtitle": {
+  "uk": "Зашифровані копії в iCloud або Google Drive",
+  "en": "Encrypted copies in iCloud or Google Drive"
+ },
+ "help.backup.title": {
+  "uk": "Копії та відновлення",
+  "en": "Backup and recovery"
+ },
+ "help.chat.1.body": {
+  "uk": "На Головній — кнопка над «+», на інших сторінках — помаранчевий язичок справа. Чат знає, з якої сторінки ти його відкрив.",
+  "en": "On Main — the button above «+»; on other pages — the orange tab on the right. The chat knows which page you opened it from."
+ },
+ "help.chat.1.title": {
+  "uk": "Де він",
+  "en": "Where it is"
+ },
+ "help.chat.2.body": {
+  "uk": "Рахує витрати, знаходить операції, записує («запиши каву 85»), переносить у категорії, ставить ліміти, імпортує виписку через 📎. Нічого не зберігається, доки не натиснеш «Зберегти».",
+  "en": "It counts spending, finds operations, records («record coffee 85»), moves them to categories, sets limits and imports a statement with 📎. Nothing is saved until you tap «Save»."
+ },
+ "help.chat.2.title": {
+  "uk": "Що вміє",
+  "en": "What it can do"
+ },
+ "help.chat.3.body": {
+  "uk": "«Де увімкнути ФОП?» чи «як приховати суми» — відповідаю сам із довідки, без ШІ й без ліку. «Запитати ШІ» під такою відповіддю спитає ШІ.",
+  "en": "«Where do I turn on FOP?» or «how do I hide the amounts» — I answer myself from the help, without the AI and not counted. «Ask the AI» under such an answer asks the AI."
+ },
+ "help.chat.3.title": {
+  "uk": "Безкоштовні відповіді",
+  "en": "Free answers"
+ },
+ "help.chat.4.body": {
+  "uk": "20 питань до ШІ на місяць безкоштовно, з Premium — до 40 на день. Розмова лишається на цьому iPhone; «Очистити розмову» — у ШІ в Dibsly.",
+  "en": "20 questions to the AI a month are free, up to 40 a day with Premium. The conversation stays on this iPhone; «Clear conversation» is in AI in Dibsly."
+ },
+ "help.chat.4.title": {
+  "uk": "Скільки питань",
+  "en": "How many questions"
+ },
+ "help.chat.subtitle": {
+  "uk": "Чат про твої гроші",
+  "en": "A chat about your money"
+ },
+ "help.chat.title": {
+  "uk": "Запитай Dibsly",
+  "en": "Ask Dibsly"
+ },
+ "help.credits.1.body": {
+  "uk": "Увімкни «Кредити» в «Налаштуваннях», розділ «Функції»: внизу Головної з’явиться блок «Кредити». Кредит додаєш за «Усе ›» у ньому, кнопкою «+»: кредит, іпотека, розстрочка, мікрозайм чи ліміт картки. Іпотеку чи давній кредит вводиш за залишком на дату.",
+  "en": "Turn on «Credits» in Settings, section Features: the «Credits» block appears at the bottom of Main. A credit is added behind its «All ›», with «+»: a loan, a mortgage, an instalment, a microloan or a card’s limit. A mortgage or an old loan is entered by what is left on a day."
+ },
+ "help.credits.1.title": {
+  "uk": "Як додати кредит",
+  "en": "How to add a credit"
+ },
+ "help.credits.2.body": {
+  "uk": "У картці збереженої витрати «Купив частинами»: покупка лишається в Аналітиці цілою, частина банку повертається на картку, а кожна частина гасить розстрочку.",
+  "en": "In a saved expense’s card «Bought in instalments»: the purchase stays whole in Analytics, the bank’s part comes back to the card, and each month’s part pays the instalment off."
+ },
+ "help.credits.2.title": {
+  "uk": "Покупка частинами",
+  "en": "Bought in instalments"
+ },
+ "help.credits.3.body": {
+  "uk": "На сторінці кредиту «Сплатити» ділить платіж на тіло й відсотки (витрата у «Відсотки й комісії»). «Достроково» показує, скільки заощадить менший строк чи платіж. Платіж із виписки — «Це платіж за кредитом» у його картці.",
+  "en": "On a credit’s page «Pay» splits the payment into the body and interest (an expense in «Interest and fees»). «Early» shows what a shorter term or a lower payment saves. A payment from a statement: «This is a credit payment» in its card."
+ },
+ "help.credits.3.title": {
+  "uk": "Платіж і достроково",
+  "en": "Paying and paying early"
+ },
+ "help.credits.4.body": {
+  "uk": "«Під рукою» показує лише свої гроші, а під ним «ще доступно … кредитних». Платежі — у календарі, з нагадуванням за три дні й у день платежу.",
+  "en": "«On hand» shows only your own money and «… of credit still available» under it. Payments show in the calendar with reminders three days before and on the day."
+ },
+ "help.credits.4.title": {
+  "uk": "Кредитка й нагадування",
+  "en": "Credit card and reminders"
+ },
+ "help.credits.subtitle": {
+  "uk": "Кредити, іпотека, розстрочка, ліміт картки",
+  "en": "Loans, mortgage, instalments, card limits"
+ },
+ "help.credits.title": {
+  "uk": "Кредити",
+  "en": "Credits"
+ },
+ "help.debts.1.body": {
+  "uk": "Головна → «Борги» внизу або «+» → «Операція» → «Борг». Позичив, узяв у борг чи повернув — це переказ між твоїм рахунком і людиною, тож не витрата й не дохід.",
+  "en": "Main → Debts at the bottom, or + → Operation → Debt. Lent, borrowed or paid back is a transfer between your account and the person, so it is neither an expense nor an income."
+ },
+ "help.debts.1.title": {
+  "uk": "Як записати борг",
+  "en": "How to record a debt"
+ },
+ "help.debts.2.body": {
+  "uk": "У картці витрати «Розділити з…»: твоя частина лишається витратою, частини друзів стають боргами. У чеку — «Поділити рахунок» з «Я заплатив за весь рахунок».",
+  "en": "In an expense’s card, Split with…: your part stays an expense, your friends’ parts become debts. For a receipt: Split the bill with I paid the whole bill."
+ },
+ "help.debts.2.title": {
+  "uk": "Поділити витрату",
+  "en": "Split an expense"
+ },
+ "help.debts.3.body": {
+  "uk": "На сторінці людини «Повернули» чи «Віддати». Переказ від людини в сповіщенні банку Dibsly підкаже сам; збережений дохід — «Це повернення боргу» в його картці.",
+  "en": "On the person’s page, Paid back or Pay back. Money from them in a bank notification is suggested as a return; a saved income becomes one with It is a debt paid back in its card."
+ },
+ "help.debts.3.title": {
+  "uk": "Повернення боргу",
+  "en": "A debt paid back"
+ },
+ "help.debts.4.body": {
+  "uk": "Поки друг не прийняв борг, «Поділитися» надсилає йому посилання: друг із Dibsly приймає борг у себе, і кожен ваш запис приходить іншому на підтвердження. Після цього «Нагадати» надсилає йому пуш.",
+  "en": "Until a friend accepts the debt, Share sends them its link: a friend with Dibsly accepts it in their app, and every record either of you makes reaches the other to confirm. Then Remind sends them a push."
+ },
+ "help.debts.4.title": {
+  "uk": "Посилання на борг",
+  "en": "A link to the debt"
+ },
+ "help.debts.5.body": {
+  "uk": "«Повернули» → «Гроші не прийшли на рахунок»: борг закривається, а сума йде у витрати «Подарунки».",
+  "en": "Paid back → Money did not come to an account: the debt closes and the sum goes to Gifts in your expenses."
+ },
+ "help.debts.5.title": {
+  "uk": "Прощений борг",
+  "en": "A debt let go"
+ },
+ "help.debts.subtitle": {
+  "uk": "Хто кому винен, поділ і повернення",
+  "en": "Who owes whom, splits and returns"
+ },
+ "help.debts.title": {
+  "uk": "Борги",
+  "en": "Debts"
+ },
+ "help.entry.1.body": {
+  "uk": "Спершу відкривається клавіатура, вона вміє рахувати + − × ÷. Потім вибери категорію — натискання одразу зберігає операцію.",
+  "en": "The keypad opens first and can count + − × ÷. Then pick a category — tapping it saves the operation."
+ },
+ "help.entry.1.title": {
+  "uk": "Спершу сума",
+  "en": "Amount first"
+ },
+ "help.entry.2.body": {
+  "uk": "Дату змінюй натисканням угорі; майбутня дата не враховується, доки не настане. «Після витрати» — введи залишок, який бачиш у банку, і сума порахується сама.",
+  "en": "Tap the date at the top to change it; a future date isn't counted until it comes. After expense lets you type the balance you see in the bank, and the amount is worked out."
+ },
+ "help.entry.2.title": {
+  "uk": "Рахунок і дата",
+  "en": "Account and date"
+ },
+ "help.entry.3.body": {
+  "uk": "Минулі нотатки підказуються під час введення; вибрана підставляє й свою категорію.",
+  "en": "Your past notes are suggested as you type; picking one sets its category too."
+ },
+ "help.entry.3.title": {
+  "uk": "Нотатки",
+  "en": "Notes"
+ },
+ "help.entry.4.body": {
+  "uk": "Переказ переносить гроші між твоїми рахунками й не вважається витратою. Між валютами вкажи, скільки надійшло; курс береться з «Валют».",
+  "en": "A transfer moves money between your own accounts and is never spending. Between currencies, enter what arrived; the rate comes from Currencies."
+ },
+ "help.entry.4.title": {
+  "uk": "Перекази",
+  "en": "Transfers"
+ },
+ "help.entry.5.body": {
+  "uk": "В історії натисни на операцію, щоб змінити її, — зміни зберігаються одразу. Утримання: змінити категорію, дублювати, вибрати кілька або видалити.",
+  "en": "In History, tap an operation to change it — changes save at once. Hold it to change the category, duplicate, select several or delete."
+ },
+ "help.entry.5.title": {
+  "uk": "Зміна",
+  "en": "Editing"
+ },
+ "help.entry.subtitle": {
+  "uk": "Витрата, дохід і переказ",
+  "en": "Expense, income and transfer"
+ },
+ "help.entry.title": {
+  "uk": "Запис операцій",
+  "en": "Recording operations"
+ },
+ "help.footer": {
+  "uk": "Покрокові інструкції — на самих сторінках: відкрий потрібну під темою.",
+  "en": "Step-by-step guides are on the pages themselves: open one under a topic."
+ },
+ "help.fop.1.body": {
+  "uk": "«Налаштування», розділ «Функції» → ФОП → «Увімкнути ФОП». Коротка анкета: група, ставка, ЄСВ, громада, рахунки ФОП. Усе безкоштовно.",
+  "en": "Settings, section Features → FOP → «Turn on FOP». A short questionnaire: the group, the rate, ESV, your community, the FOP accounts. All of it is free."
+ },
+ "help.fop.1.title": {
+  "uk": "Як увімкнути",
+  "en": "Turning it on"
+ },
+ "help.fop.2.body": {
+  "uk": "Дохід на рахунок ФОП рахується за курсом НБУ на день зарахування. Повернення чи свій переказ: вимкни «Дохід ФОП» у картці операції або утримуй його на сторінці ФОП → «Не дохід».",
+  "en": "Income on a FOP account counts at the NBU rate of the day it arrived. A refund or your own transfer: turn off «FOP income» in the operation’s card, or hold it on the FOP page → «Not income»."
+ },
+ "help.fop.2.title": {
+  "uk": "Доходи",
+  "en": "Income"
+ },
+ "help.fop.3.body": {
+  "uk": "Сторінка ФОП показує єдиний податок, військовий збір і ЄСВ за квартал, скільки до сплати й до коли. Строки — у календарі з нагадуваннями.",
+  "en": "The FOP page shows the single tax, the military levy and ESV by quarter, how much is due and by when. The deadlines are in the calendar with reminders."
+ },
+ "help.fop.3.title": {
+  "uk": "Податки й строки",
+  "en": "Taxes and deadlines"
+ },
+ "help.fop.4.body": {
+  "uk": "«Показати реквізити» під строками відкриває суми й реквізити податкової для твоєї громади — кожне поле копіюється дотиком.",
+  "en": "«Show payment details» under the deadlines opens the amounts and the tax service’s details for your community — every field copies with a tap."
+ },
+ "help.fop.4.title": {
+  "uk": "Сплата",
+  "en": "Paying"
+ },
+ "help.fop.subtitle": {
+  "uk": "Податки 3 групи, строки й сплата",
+  "en": "3rd group taxes, deadlines and paying"
+ },
+ "help.fop.title": {
+  "uk": "ФОП",
+  "en": "FOP"
+ },
+ "help.goals.1.body": {
+  "uk": "Ціль — на що ти відкладаєш: квартира, машина, подушка. Гроші лишаються на рахунках заощаджень та інвестицій, а ціль показує, скільки з них уже її.",
+  "en": "A goal is what you save for: a flat, a car, a cushion. The money stays on savings and investment accounts; the goal shows how much of it is already its."
+ },
+ "help.goals.1.title": {
+  "uk": "Що це",
+  "en": "What a goal is"
+ },
+ "help.goals.2.body": {
+  "uk": "Цілі вмикаються в «Налаштуваннях», розділ «Функції». Потім «Цілі» на Головній → «Додати ціль»: сума, строк, рахунки.",
+  "en": "Turn Goals on in Settings, section Features. Then «Goals» on Main → «Add goal»: the amount, the date and the accounts."
+ },
+ "help.goals.2.title": {
+  "uk": "Як додати",
+  "en": "Adding one"
+ },
+ "help.goals.3.body": {
+  "uk": "«Черга цілей» вирішує, яка ціль наповнюється першою; подушка — завжди першою.",
+  "en": "«Goals’ order» decides which goal fills first; the cushion always comes first."
+ },
+ "help.goals.3.title": {
+  "uk": "Черга",
+  "en": "The queue"
+ },
+ "help.goals.subtitle": {
+  "uk": "На що відкладаєш",
+  "en": "What you are saving for"
+ },
+ "help.goals.title": {
+  "uk": "Цілі",
+  "en": "Goals"
+ },
+ "help.guide": {
+  "uk": "Інструкції на сайті",
+  "en": "Guide on the website"
+ },
+ "help.guide.subtitle": {
+  "uk": "Apple Pay, сповіщення банку, ChatGPT і Claude",
+  "en": "Apple Pay, bank notifications, ChatGPT and Claude"
+ },
+ "help.imports.1.body": {
+  "uk": "Імпорт та експорт → «Виписка банку» (або ФОП) → вибери файли: PDF, CSV, XLS або XLSX. monobank, UKRSIBBANK, PrivatBank і KredoBank — і їхні виписки ФОП — Dibsly читає сам, безкоштовно; будь-який інший банк читає ШІ: 3 виписки безкоштовно, з Premium — до 25 на місяць. Суми виписки, прочитаної ШІ, перевір. «Як зробити виписку» підкаже, де її взяти.",
+  "en": "Import & export → «Bank statement» (or ФОП) → choose the files: PDF, CSV, XLS or XLSX. monobank, UKRSIBBANK, PrivatBank and KredoBank — and their ФОП statements — Dibsly reads itself, free; any other bank is read by the AI: 3 statements free, up to 25 a month with Premium. Check the amounts of a statement the AI read. «How to export» shows where to get one."
+ },
+ "help.imports.1.title": {
+  "uk": "Виписка будь-якого банку",
+  "en": "Any bank's statement"
+ },
+ "help.imports.2.body": {
+  "uk": "Повторний імпорт того самого періоду додасть лише нові операції, а перевірка балансу звірить твій залишок із банківським.",
+  "en": "Importing the same period again adds only new operations, and the balance check compares your balance with the bank's."
+ },
+ "help.imports.2.title": {
+  "uk": "Без повторів",
+  "en": "Nothing twice"
+ },
+ "help.imports.3.body": {
+  "uk": "Перекази між твоїми рахунками розпізнаються; рахунок чи картку, куди часто йдуть гроші, Dibsly запропонує як твій («Це твій рахунок?»). Категорії беруться з історії, твоїх правил і банку. Решта потрапить у «Без категорії» — розбереш згодом.",
+  "en": "Transfers between your accounts are recognised; an account or card money often goes to is offered as yours («Is this your account?»). Categories come from your history, your rules and the bank. The rest lands in «Uncategorized» to sort later."
+ },
+ "help.imports.3.title": {
+  "uk": "Перекази та категорії",
+  "en": "Transfers and categories"
+ },
+ "help.imports.4.body": {
+  "uk": "CSV з Dibsly чи Monefy додається до даних або замінює їх (спершу створюється страхувальна копія). Звіти Freedom Finance та Interactive Brokers заповнюють інвестиції.",
+  "en": "A Dibsly or Monefy CSV adds to your data or replaces it (a safety copy is made first). Freedom Finance and Interactive Brokers reports fill your investments."
+ },
+ "help.imports.4.title": {
+  "uk": "CSV і брокери",
+  "en": "CSV and brokers"
+ },
+ "help.imports.subtitle": {
+  "uk": "Будь-який банк, CSV і звіти брокерів",
+  "en": "Any bank, CSV and broker reports"
+ },
+ "help.imports.title": {
+  "uk": "Виписки та імпорт",
+  "en": "Statements and import"
+ },
+ "help.open": {
+  "uk": "Відкрити",
+  "en": "Open"
+ },
+ "help.plan.1.body": {
+  "uk": "Спершу планування вимкнено: увімкни його в «Налаштуваннях», розділ «Функції» → «Планування». Якщо вимкнути, плани збережуться.",
+  "en": "Planning is off at first: turn it on in Settings, section Features → Planning. Turning it off keeps your plans."
+ },
+ "help.plan.1.title": {
+  "uk": "Як увімкнути",
+  "en": "Turn it on"
+ },
+ "help.plan.2.body": {
+  "uk": "Один план на місяць в основній валюті. Натисни на категорію, щоб задати ліміт; сторінка покаже залишок і приблизно скільки можна витрачати на день.",
+  "en": "One plan a month in your main currency. Tap a category to set its limit; the page shows what's left and about how much you can spend a day."
+ },
+ "help.plan.2.title": {
+  "uk": "Ліміти",
+  "en": "Limits"
+ },
+ "help.plan.3.body": {
+  "uk": "Картка плану показує залишок і до чотирьох категорій, за якими ти стежиш. Помаранчевий — витрачено 90%, червоний — ліміт перевищено.",
+  "en": "The Plan card shows what's left and up to four categories you watch. Orange means 90% used, red — over the limit."
+ },
+ "help.plan.3.title": {
+  "uk": "На Головній",
+  "en": "On Main"
+ },
+ "help.plan.4.body": {
+  "uk": "У редакторі плану натисни на назву категорії: побачиш кожну витрату минулого місяця й цього місяця, щоб ліміт виходив із реальних витрат.",
+  "en": "In the plan editor tap a category's name: you see each expense of last month and so far this month, so a limit starts from what really went out."
+ },
+ "help.plan.4.title": {
+  "uk": "План за витратами",
+  "en": "Plan from what you spent"
+ },
+ "help.plan.5.body": {
+  "uk": "Довге натискання на категорію — сума минулого місяця або «Прибрати ліміт»; око показує її на Головній. Сховай клавіатуру клавішею ⌄ або свайпом униз — так на будь-якій клавіатурі Dibsly.",
+  "en": "Touch and hold a category for last month's amount or Remove limit; the eye shows it on Main. Hide the keypad with its ⌄ key or a swipe down — it works on every keypad in Dibsly."
+ },
+ "help.plan.5.title": {
+  "uk": "Швидше вводити",
+  "en": "Faster typing"
+ },
+ "help.plan.subtitle": {
+  "uk": "Ліміти за категоріями",
+  "en": "Limits for your categories"
+ },
+ "help.plan.title": {
+  "uk": "План",
+  "en": "Plan"
+ },
+ "help.privacy.1.body": {
+  "uk": "Без акаунта дані лишаються лише на цьому iPhone. Виписки читаються тут і нікуди не завантажуються.",
+  "en": "Without an account your data stays on this iPhone only. Statements are read here and are never uploaded."
+ },
+ "help.privacy.1.title": {
+  "uk": "На твоєму iPhone",
+  "en": "On your iPhone"
+ },
+ "help.privacy.2.body": {
+  "uk": "Акаунт і синхронізація (Premium) зберігають дані на сервері Dibsly. ШІ працює лише з твоєї згоди: потрібне для відповіді йде до OpenAI через сервер Dibsly. А ще курси НБУ, котирування інвестицій, monobank, твої копії в iCloud чи Google Drive і анонімна статистика, яку можна вимкнути в Параметрах.",
+  "en": "An account and sync (Premium) keep your data on Dibsly’s server. The AI works only with your consent: what an answer needs goes to OpenAI through Dibsly’s server. Also NBU rates, investment quotes, monobank, your backups in iCloud or Google Drive, and anonymous usage statistics you can turn off in Preferences."
+ },
+ "help.privacy.2.title": {
+  "uk": "Що виходить назовні",
+  "en": "What goes out"
+ },
+ "help.privacy.3.body": {
+  "uk": "«Приховувати суми» показує •••• замість сум, а блокування застосунку просить Face ID під час повернення. Сповіщення все одно показують суми — сховай прев’ю в налаштуваннях iOS.",
+  "en": "Hide amounts shows •••• instead of sums, and App Lock asks for Face ID when you come back. Notifications still show amounts — hide previews in iOS Settings."
+ },
+ "help.privacy.3.title": {
+  "uk": "Приховати",
+  "en": "Hiding"
+ },
+ "help.privacy.subtitle": {
+  "uk": "Що лишається на iPhone, а що — ні",
+  "en": "What stays on your iPhone and what goes out"
+ },
+ "help.privacy.title": {
+  "uk": "Приватність",
+  "en": "Privacy"
+ },
+ "help.recurring.1.body": {
+  "uk": "Платежі, на які ти чекаєш: підписки, оренда, разові нагадування. Баланс вони не змінюють, доки ти не запишеш або не пов’яжеш витрату.",
+  "en": "Payments you expect: subscriptions, rent, one-off reminders. They don't change the balance until you record or link an expense."
+ },
+ "help.recurring.1.title": {
+  "uk": "Що це",
+  "en": "What it is"
+ },
+ "help.recurring.2.body": {
+  "uk": "Відкрий платіж: «Записати витрату» запише його, «Пов’язати» прив’яже вже записану витрату. Чернетка, схожа на платіж, запропонує «Позначити як оплачений».",
+  "en": "Open a payment: Record expense writes it, Link attaches an expense you already have. A draft that matches a payment offers Mark as paid."
+ },
+ "help.recurring.2.title": {
+  "uk": "Оплата",
+  "en": "Paying"
+ },
+ "help.recurring.3.body": {
+  "uk": "Нагадування — у день платежу або за 1, 3 чи 7 днів. «У календар» у витраті створює новий платіж. Увесь календар вимикається в «Налаштуваннях», розділ «Функції».",
+  "en": "Get a reminder on the day or 1, 3 or 7 days before. Add to calendar in an expense creates a new payment. The whole calendar can be turned off in Settings, section Features."
+ },
+ "help.recurring.3.title": {
+  "uk": "Нагадування",
+  "en": "Reminders"
+ },
+ "help.recurring.subtitle": {
+  "uk": "Підписки й рахунки наперед",
+  "en": "Subscriptions and bills ahead"
+ },
+ "help.recurring.title": {
+  "uk": "Календар",
+  "en": "Calendar"
+ },
+ "help.row.subtitle": {
+  "uk": "Підказки, перше налаштування, написати нам",
+  "en": "Tips, first setup and writing to us"
+ },
+ "help.row.title": {
+  "uk": "Допомога",
+  "en": "Help"
+ },
+ "help.search": {
+  "uk": "Пошук у довідці",
+  "en": "Search help"
+ },
+ "help.shops.1.body": {
+  "uk": "Записуючи витрату, відкрий категорію й перемкнись на «Бренди». Дотик пише назву бренду й вибирає твою категорію для нього.",
+  "en": "When recording an expense, open the category and switch to Brands. A tap writes the brand's name and picks your category for it."
+ },
+ "help.shops.1.title": {
+  "uk": "Бренд одним дотиком",
+  "en": "A brand in one tap"
+ },
+ "help.shops.2.body": {
+  "uk": "Бренд іде туди, куди пішло найбільше твоїх операцій із ним, а в назві лишається твоє написання. Одна інша категорія разово його не змінює.",
+  "en": "A brand goes where most of your operations with it went, and the note keeps your own way of writing it. One different category once does not change it."
+ },
+ "help.shops.2.title": {
+  "uk": "Вчиться на твоїх записах",
+  "en": "It learns from you"
+ },
+ "help.shops.3.body": {
+  "uk": "Почни писати назву бренду в нотатці — він з’явиться по разу на кожну категорію, куди ти його записував. Утримуй бренд у вкладці «Бренди», щоб побачити інші категорії.",
+  "en": "Type the beginning of a brand's name in the note: it comes once per category you used it with. Hold a brand on the Brands tab for its other categories."
+ },
+ "help.shops.3.title": {
+  "uk": "Бренд і категорія одразу",
+  "en": "Brand and category at once"
+ },
+ "help.shops.4.body": {
+  "uk": "Налаштування → Бренди: торкнись бренду й вибери категорію. Далі він завжди йде туди, і з виписок, і з чернеток, і зберігається в бекапах, синхронізації та експорті CSV.",
+  "en": "Settings → Brands: tap a brand and pick a category. It always goes there then, from statements and drafts too, and travels with backups, sync and the CSV export."
+ },
+ "help.shops.4.title": {
+  "uk": "Перенести бренд назавжди",
+  "en": "Move a brand for good"
+ },
+ "help.shops.subtitle": {
+  "uk": "Логотипи, твої категорії, перенесення",
+  "en": "Logos, your categories, moving brands"
+ },
+ "help.shops.title": {
+  "uk": "Бренди",
+  "en": "Brands"
+ },
+ "help.start.1.body": {
+  "uk": "Велике число на Головній — гроші на щодень: картки й готівка. Заощадження та інвестиції до нього не входять, як і рахунок з вимкненим «Враховувати в балансі».",
+  "en": "The big number on Main is your money for everyday life: cards and cash. Savings and investments are never counted in it, and an account with Count in balance off stays out too."
+ },
+ "help.start.1.title": {
+  "uk": "Під рукою",
+  "en": "On hand"
+ },
+ "help.start.2.body": {
+  "uk": "Заощадження — по плитці на валюту зі зміною за місяць; плитка «Інвестиції» з’являється, коли їх увімкнено. Переказ між своїми рахунками — не витрата й не дохід.",
+  "en": "Savings show one tile per currency with this month's change; the Investments tile appears when investments are on. Moving money between your accounts is never spending or income."
+ },
+ "help.start.2.title": {
+  "uk": "Заощадження та інвестиції",
+  "en": "Savings and investments"
+ },
+ "help.start.3.body": {
+  "uk": "Картка місяця показує доходи, витрати й підсумок. Нижче — «Активність» з чернетками, план і календар; кожен розділ відкривається через «Усе ›».",
+  "en": "The month card shows Income, Spent and Net. Below it: Activity with drafts, the Plan and the Calendar — each opens with All ›."
+ },
+ "help.start.3.title": {
+  "uk": "Твій місяць",
+  "en": "Your month"
+ },
+ "help.start.4.body": {
+  "uk": "Кнопка + записує операцію (витрату, дохід, переказ між своїми рахунками чи борг), фразу («Сказати»), чек або кредит; на вкладці «Інвестиції» — ще й інвестицію. Шестерня вгорі відкриває налаштування, унизу там пошук.",
+  "en": "The + button records an operation (an expense, income, a transfer between your accounts or a debt), a phrase («Say it»), a receipt or a credit; on the Investments tab, an investment too. The gear at the top opens Settings, with a search at the bottom."
+ },
+ "help.start.4.title": {
+  "uk": "Запис і налаштування",
+  "en": "Adding and settings"
+ },
+ "help.start.subtitle": {
+  "uk": "Головна, «Під рукою» і заощадження",
+  "en": "Main, On hand and Savings"
+ },
+ "help.start.title": {
+  "uk": "Початок",
+  "en": "Getting started"
+ },
+ "help.title": {
+  "uk": "Як користуватися Dibsly",
+  "en": "How to use Dibsly"
+ },
+ "help.voice.1.body": {
+  "uk": "+ → «Сказати»: «кава 85», «моно 100 продукти», «вчора готівкою 1 200 транспорт» — і операцію записано. Що не зрозумів телефон, дочитує ШІ (Premium).",
+  "en": "+ → «Say it»: «coffee 85», «mono 100 groceries», «yesterday cash 1 200 transport» — and it is recorded. What the phone cannot read, the AI finishes (Premium)."
+ },
+ "help.voice.1.title": {
+  "uk": "Сказати",
+  "en": "Say it"
+ },
+ "help.voice.2.body": {
+  "uk": "Скажи Siri «Записати в Dibsly» або признач це кнопці дії. Налаштування → Параметри → Введення → «Голосове введення».",
+  "en": "Say «Record in Dibsly» to Siri or put it on the Action button. Settings → Preferences → Input → «Voice entry»."
+ },
+ "help.voice.2.title": {
+  "uk": "Siri і кнопка дії",
+  "en": "Siri and the Action button"
+ },
+ "help.voice.3.body": {
+  "uk": "+ → «Чек»: фото або до трьох скріншотів — позиції й сума з’являться самі. 10 чеків на місяць безкоштовно, з Premium — до 300.",
+  "en": "+ → «Receipt»: a photo or up to three screenshots — the items and the total fill in themselves. 10 receipts a month are free, up to 300 with Premium."
+ },
+ "help.voice.3.title": {
+  "uk": "Чек",
+  "en": "Receipt"
+ },
+ "help.voice.4.body": {
+  "uk": "У чеку відміть свої позиції, а друзям надішли їхню частину посиланням — вони виберуть своє.",
+  "en": "In a receipt mark your items and send your friends their part by a link — they pick their own."
+ },
+ "help.voice.4.title": {
+  "uk": "Поділити рахунок",
+  "en": "Split the bill"
+ },
+ "help.voice.subtitle": {
+  "uk": "«Кава 85» і фото чека",
+  "en": "«Coffee 85» and a receipt photo"
+ },
+ "help.voice.title": {
+  "uk": "Голос і чеки",
+  "en": "Voice and receipts"
+ },
+ "help.website": {
+  "uk": "Сайт підтримки",
+  "en": "Support website"
+ },
+ "help.where": {
+  "uk": "Де налаштувати",
+  "en": "Where to set it up"
+ },
+ "help.write": {
+  "uk": "Написати нам",
+  "en": "Write to us"
+ },
+ "help.write.subtitle": {
+  "uk": "Версії Dibsly та iOS додадуться самі",
+  "en": "Your Dibsly and iOS versions are added for you"
+ },
+ "whatsnew.1.0.2.chat.detail": {
+  "uk": "Dibsly над «+» на Головній, язичок праворуч на інших сторінках: чат одним дотиком, а Dibsly знає, звідки ти питаєш. 20 питань на місяць — безкоштовно.",
+  "en": "Dibsly above + on Main, the tab on the right elsewhere: the chat in one tap, and Dibsly knows which page you ask from. 20 questions a month for free."
+ },
+ "whatsnew.1.0.2.chat.title": {
+  "uk": "Dibsly на кожній сторінці",
+  "en": "Dibsly on every page"
+ },
+ "whatsnew.1.0.2.credits.detail": {
+  "uk": "Кредит, іпотека, розстрочка й мікрозайм: скільки лишилося, наступний платіж у календарі з нагадуванням, переплата і скільки заощадить дострокове погашення. Ліміт кредитки — окремо від своїх грошей. Вмикаються в «Налаштуваннях», розділ «Функції».",
+  "en": "Loans, a mortgage, instalments and microloans: what is left, the next payment in the calendar with a reminder, the overpayment and what an early repayment saves. A credit card’s limit stays apart from your own money. Turn them on in Settings, section Features."
+ },
+ "whatsnew.1.0.2.credits.title": {
+  "uk": "Кредити",
+  "en": "Credits"
+ },
+ "whatsnew.1.0.2.debts.detail": {
+  "uk": "Головна або «+» → «Операція» → «Борг»: хто винен тобі і кому ти — позики, поділ рахунку, повернення покупки, термін у календарі. «Поділитися» надсилає посилання, друг приймає борг у своєму Dibsly, а «Нагадати» шле йому пуш.",
+  "en": "Main or + → Operation → Debt: who owes you and whom you owe — loans, split bills, returned purchases, the due date in the calendar. Share a link, your friend accepts the debt in their Dibsly, and Remind sends them a push."
+ },
+ "whatsnew.1.0.2.debts.title": {
+  "uk": "Борги",
+  "en": "Debts"
+ },
+ "whatsnew.1.0.2.fop.detail": {
+  "uk": "Налаштування → Функції → ФОП: кожен дохід за курсом НБУ, податки й ЄСВ по кварталах, скільки до сплати й до коли, строки в календарі з нагадуваннями й реквізити для сплати. Безкоштовно.",
+  "en": "Settings → Features → FOP: every income at the NBU rate, taxes and ESV by quarter, what is due and by when, the deadlines in the calendar with reminders, and the payment details to copy. Free."
+ },
+ "whatsnew.1.0.2.fop.title": {
+  "uk": "ФОП 3 групи",
+  "en": "FOP, 3rd group"
+ },
+ "whatsnew.1.0.2.settings.detail": {
+  "uk": "Усі функції — на першій сторінці Налаштувань у «Функціях», а пошук знаходить будь-яке налаштування за назвою й показує шлях до нього.",
+  "en": "Every feature is on Settings’ first page under Features, and the search finds any setting by its name and shows the way to it."
+ },
+ "whatsnew.1.0.2.settings.title": {
+  "uk": "Налаштування — легше знайти",
+  "en": "Settings, easier to find"
+ },
+ "whatsnew.1.0.2.statements.detail": {
+  "uk": "Імпорт та експорт → «Виписка банку»: файл будь-якого банку — банк я впізнаю сам. Інші банки читає ШІ: 3 виписки безкоштовно, з Premium — до 25 на місяць. А рахунок, куди часто йдуть гроші, запропоную як твій.",
+  "en": "Import & export → «Bank statement»: a file of any bank — I'll tell the bank myself. Other banks are read by the AI: 3 statements free, up to 25 a month with Premium. And an account money often goes to I'll offer as yours."
+ },
+ "whatsnew.1.0.2.statements.title": {
+  "uk": "Виписка будь-якого банку",
+  "en": "Any bank's statement"
+ },
+ "whatsnew.1.0.2.undo.detail": {
+  "uk": "Видалив випадково? «Скасувати» в повідомленні поверне операції, перекази, цілі й платежі.",
+  "en": "Deleted by mistake? “Undo” in the message brings back operations, transfers, goals and payments."
+ },
+ "whatsnew.1.0.2.undo.title": {
+  "uk": "Скасування після видалення",
+  "en": "Undo after deleting"
+ }
+}
