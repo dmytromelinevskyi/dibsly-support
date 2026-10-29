@@ -333,14 +333,15 @@ export async function startJourney(root, { lang, reduced }) {
           {
             opacity: 0,
             ease: 'none',
+            // The words stick under the phone (journey.css): they leave when their step's end pushes them up,
+            // so the fade follows the step's bottom — whole while they stick, gone once they are behind the phone.
             scrollTrigger: {
-              trigger: copy,
-              // Whole while they sit under the phone, gone once they are behind it.
+              trigger: copy.closest('.step'),
               start: function () {
-                return 'top ' + (edge() + 6) + 'px';
+                return 'bottom ' + (edge() + 12 + copy.offsetHeight) + 'px';
               },
               end: function () {
-                return 'top ' + (edge() - 80) + 'px';
+                return 'bottom ' + (edge() + copy.offsetHeight - 80) + 'px';
               },
               scrub: true,
               invalidateOnRefresh: true,

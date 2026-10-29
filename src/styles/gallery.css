@@ -402,3 +402,73 @@
 .gallery-device.iphone-frame {
   padding: 5px;
 }
+
+/* Phones (owner, 2026-10-29: «не видно телефона, не понятно на что придивлятися. Табы… стали списками, выглядит
+   ужасно»): the groups stay pills and the screens become chips, each in one row that scrolls sideways, so the phone
+   comes right under them on the first screen; no native select. */
+@media (max-width: 900px) {
+  .feature-gallery {
+    padding: 104px 20px 48px;
+  }
+  .gallery-lead,
+  .gallery-select {
+    display: none;
+  }
+  .gallery-groups,
+  .gallery-features {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+    margin: 0 -20px;
+    padding: 0 20px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .gallery-groups::-webkit-scrollbar,
+  .gallery-features::-webkit-scrollbar {
+    display: none;
+  }
+  .gallery-groups {
+    grid-row: 2;
+    margin-top: 22px;
+  }
+  .gallery-groups button {
+    flex: none;
+  }
+  .gallery-features {
+    grid-row: 3;
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+  .gallery-features button,
+  .gallery-features button:last-child {
+    flex: none;
+    width: auto;
+    min-height: 40px;
+    padding: 8px 14px;
+    gap: 8px;
+    border: 1px solid var(--g-line);
+    border-radius: 999px;
+    background: rgba(26, 20, 16, 0.04);
+    font-size: 14px;
+    white-space: nowrap;
+  }
+  .gallery-features button > svg {
+    display: none;
+  }
+  .gallery-features button[aria-pressed='true'] {
+    background: var(--g-ink);
+    border-color: var(--g-ink);
+    color: #f6ebdd;
+  }
+  .gallery-features button[aria-pressed='true'] > span {
+    color: var(--orange);
+  }
+  .gallery-stage {
+    padding: 22px 0 36px;
+  }
+  .gallery-device {
+    width: min(68vw, 300px);
+  }
+}

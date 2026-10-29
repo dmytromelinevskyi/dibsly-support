@@ -38,9 +38,16 @@ export function createJourneyLine(canvas) {
         !shown || aim.merge > 0.999 || Math.hypot(aim.x - shown.x, aim.y - shown.y) > height * 0.5
           ? { x: aim.x, y: aim.y }
           : { x: shown.x + (aim.x - shown.x) * follow, y: shown.y + (aim.y - shown.y) * follow };
-      const head = { ...aim, x: shown.x, y: shown.y };
+      // Nearly home, the head sits on the period itself (owner, 2026-10-29: «в точку криво»): on a phone the
+      // window's height changes with Safari's bars, the last few pixels of scroll may never come, and a head a little
+      // short of the period drew a lopsided drop with it.
+      const arrived = aim.merge > 0.94;
+      if (arrived) shown = { x: aim.target.x, y: aim.target.y };
+      const head = arrived
+        ? { ...aim, x: aim.target.x, y: aim.target.y, radius: aim.target.radius, merge: 1 }
+        : { ...aim, x: shown.x, y: shown.y };
       // Landing: the period answers with a bounce and two rings, once per arrival.
-      const home = aim.merge > 0.995;
+      const home = arrived;
       if (home && !wasHome) landed = now;
       wasHome = home;
       const landing = landed < 0 ? 1 : Math.min(1, (now - landed) / 1100);

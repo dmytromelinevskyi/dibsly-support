@@ -822,19 +822,53 @@
   }
 }
 
-/* Phones and tablets: one flick, one step (journey-engine.js turns html.snap-steps on while the steps are on screen).
-   Each step's words stop right under the stuck phone; the hero and the gallery are the snaps before and after. */
+/* Phones and tablets, one step a screen (owner, 2026-10-29, his recording: the titles never showed, the words sat
+   under Safari's bar, a flick went too far): each step is a screen of scroll; its words stick right under the stuck
+   phone while it is on screen, then rise behind the phone as the next step's words take their place. The phone takes
+   all the height the words leave. The words are there at once — the reveals waited for a height they never reached —
+   and the lead keeps to three lines. While the steps are on screen the page snaps to each step
+   (journey-engine.js turns html.snap-steps on); past them, to the gallery, then it scrolls freely. */
 @media (max-width: 1080px) {
+  .v3 .journey {
+    --stage-top: 82px;
+    --copy-room: 178px;
+    --ph-m: min(calc(100svh - var(--stage-top) - var(--copy-room)), 640px);
+  }
+  .v3 .stage-sticky {
+    top: var(--stage-top);
+  }
+  .v3 .step {
+    min-height: 100svh;
+    padding: 0;
+  }
+  .v3 .step-copy {
+    position: sticky;
+    top: calc(var(--stage-top) + var(--ph-m) + 12px);
+  }
+  .v3 .step .kicker,
+  .v3 .step .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .v3 .step .title .word {
+    transform: none !important;
+  }
+  .v3 .step .lead {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+  .v3 .step .note {
+    display: none;
+  }
   html.snap-steps {
     scroll-snap-type: y mandatory;
   }
-  .v3 .hero {
-    scroll-snap-align: start;
-  }
-  .v3 .step-copy {
+  .v3 .hero,
+  .v3 .step {
     scroll-snap-align: start;
     scroll-snap-stop: always;
-    scroll-margin-top: calc(82px + var(--ph-m) + 14px);
   }
   html.snap-steps .feature-gallery {
     scroll-snap-align: start;

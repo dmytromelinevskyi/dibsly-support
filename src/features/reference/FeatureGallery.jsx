@@ -132,7 +132,10 @@ export default function FeatureGallery({ lang }) {
               key={scene}
               type="button"
               aria-pressed={selected === scene}
-              onClick={() => setSelected(scene)}
+              onClick={(event) => {
+                setSelected(scene);
+                event.currentTarget.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+              }}
             >
               <span>{String(index + 1).padStart(2, '0')}</span>
               {labels[scene][column]}
