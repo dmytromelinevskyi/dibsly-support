@@ -310,7 +310,8 @@ export async function startJourney(root, { lang, reduced }) {
       ScrollTrigger.create({
         trigger: root.querySelector('.journey'),
         start: 'top top',
-        end: 'bottom top',
+        // Off well before the gallery's top (not at it): a snap left on there took the sideways swipes of its rows.
+        end: 'bottom 50%',
         onToggle: function (self) {
           html.classList.toggle('snap-steps', self.isActive);
         },

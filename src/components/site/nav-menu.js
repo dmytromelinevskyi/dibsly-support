@@ -141,6 +141,26 @@ export function attachNav(root) {
     { passive: true }
   );
 
+  // ---------------------------------------------------------------- hidden going down, back going up
+  // As on main (owner, 2026-10-29: «хедер скрытым и показывать когда пользователь вверх проскролил»): the pill slips
+  // away while the page goes down past its first screen and comes back as soon as it goes up, or at the top.
+  var nav = root.querySelector('.nav'),
+    lastY = window.scrollY;
+  on(
+    window,
+    'scroll',
+    function () {
+      var y = window.scrollY;
+      if (Math.abs(y - lastY) < 6) return;
+      var open = groups.some(function (group) {
+        return group.classList.contains('open');
+      });
+      nav.classList.toggle('hide', y > lastY && y > 120 && !open);
+      lastY = y;
+    },
+    { passive: true }
+  );
+
   // ---------------------------------------------------------------- the sheet (under 900 px)
   all('.nav-burger').forEach(function (burger) {
     var sheet = document.getElementById(burger.getAttribute('aria-controls'));
