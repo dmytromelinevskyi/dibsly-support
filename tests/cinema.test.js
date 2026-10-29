@@ -12,7 +12,7 @@ const films = JSON.parse(await readFile(new URL('../src/content/films.json', imp
 test('every native action has a visible target, a press before native motion, and time to read the result', async () => {
   const paths = new Set();
   for (const lang of ['uk', 'en']) {
-    assert.equal(Object.keys(films.languages[lang]).length, 9);
+    assert.equal(Object.keys(films.languages[lang]).length, 10);
     for (const [id, film] of Object.entries(films.languages[lang])) {
       assert.equal(film.source, 'native-ios-edited-film');
       paths.add(film.src);
@@ -41,7 +41,11 @@ test('every native action has a visible target, a press before native motion, an
           assert.equal(filmAt(film, time).phase, phase);
         const press = filmAt(film, step.press + 0.01);
         assert.ok(Math.hypot(press.pointer[0] - x, press.pointer[1] - y) < 1e-9);
-        assert.ok(press.opacity > 0.95);
+        // A step that arrives by itself (a notification) shows no hand; its outline comes once it is there.
+        if (step.watch) {
+          assert.equal(press.hand, 0);
+          assert.ok(filmAt(film, step.settle + 0.5).opacity > 0.95);
+        } else assert.ok(press.opacity > 0.95 && press.hand > 0.95);
         assert.ok(step.control && step.description);
         paths.add(step.before);
         paths.add(step.after);
