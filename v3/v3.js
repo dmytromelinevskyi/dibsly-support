@@ -395,8 +395,8 @@
         // «Борги» on Main's long strip, how far the chat scrolls from its top, its «Нова витрата» card, the width of
         // «Скинути фільтри» and the left and width of «Нагадати».
         var spot = document.documentElement.lang === "en"
-            ? { debts: 1293.9, chat: 106.7, card: 416, reset: 142, remind: [47, 144] }
-            : { debts: 1275.7, chat: 128.7, card: 395, reset: 180, remind: [31, 162] };
+            ? { debts: 1319.1, chat: 106.7, card: 416, reset: 142, remind: [47, 144] }
+            : { debts: 1301.4, chat: 128.7, card: 395, reset: 180, remind: [31, 162] };
 
         function travel() {
             var tabs = live.querySelector(".ios-tabbar");
@@ -538,10 +538,14 @@
             timeline = null;
             var effects = Object.keys(fx).map(function (name) { return fx[name]; }).concat([dim, bar]);
             gsap.killTweensOf(layers.concat(effects));
+            // The layers' order starts again from the screen in front: it only ever grew, and after a run through the
+            // page the frames rose above the effects (z-index 50), hiding the marks and the finger on the last steps.
+            depth = 1;
             layers.forEach(function (layer) {
-                gsap.set(layer, { opacity: layer === current ? 1 : 0, xPercent: 0, yPercent: 0, y: 0, clipPath: "none" });
+                gsap.set(layer, { opacity: layer === current ? 1 : 0, xPercent: 0, yPercent: 0, y: 0, clipPath: "none", zIndex: layer === current ? 1 : 0 });
             });
             gsap.set(effects, { opacity: 0, xPercent: 0, yPercent: 0, y: 0, scale: 1 });
+            gsap.set([dim, bar], { zIndex: 0 });
             gsap.set(bar, { clearProps: "clipPath" });
             hand = null;
         }
@@ -636,12 +640,13 @@
                 show(tl, "h-payment", "sheet", 3.35);
                 release(tl, 3.8);
             },
-            // The plan with what went over it, then the goals with when they come.
+            // The plan with what went over it (the two red tiles, «Підписки» and «Доставка»), then the goals with when
+            // they come («Відпустка» first: its «У такому темпі» line).
             plan: function (tl) {
                 show(tl, "c-plan", "push", 0);
-                mark(tl, 34, 375, 248, 116, 0.9, 2.0);
+                mark(tl, 22, 388, 170, 110, 0.9, 2.0);
                 show(tl, "c-goals", "push", 3.3);
-                mark(tl, 66, 337, 254, 30, 4.2, 2.2);
+                mark(tl, 66, 366, 236, 28, 4.2, 2.2);
             },
             // Savings shared with Настя: the shares, the shared goal, then down to the accounts: whose, and the shared one.
             together: function (tl) {
