@@ -326,6 +326,8 @@
         } });
     });
     var nav = document.querySelector(".nav");
+    // The header's sheet (v3/nav.js) holds the page still while it is open.
+    document.addEventListener("dibsly:nav", function (event) { if (lenis) { if (event.detail.open) lenis.stop(); else lenis.start(); } });
     ScrollTrigger.create({ start: 0, end: "max", onUpdate: function (self) {
         nav.classList.toggle("hide", self.direction === 1 && self.scroll() > 500);
     } });
