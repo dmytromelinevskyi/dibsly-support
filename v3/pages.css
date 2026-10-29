@@ -157,6 +157,14 @@ code, kbd { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0
 .toc a { color: var(--muted); padding: 7px 12px; border-radius: 10px; }
 .toc a:hover, .toc a.on { color: var(--ink); background: var(--card); }
 
+/* The guides: a column of sections beside the list */
+.guide .section { padding: 48px 0 0; }
+.guide .section:first-child { padding-top: 16px; }
+.guide .section > h2 { font-size: clamp(26px, 2.8vw, 34px); display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.guide h2 + .card { margin-top: 20px; }
+.guide .card + .card { margin-top: 12px; }
+.guide > .section-lead { margin-top: 48px; }
+
 /* Footer, as on the landing */
 footer { border-top: 1px solid var(--line); padding: 32px 0 48px; margin-top: 96px; }
 .foot-row { display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: center; font-size: 14px; }
@@ -178,7 +186,7 @@ footer { border-top: 1px solid var(--line); padding: 32px 0 48px; margin-top: 96
     .nav-links { display: none; }
     .with-toc { grid-template-columns: minmax(0, 1fr); gap: 8px; }
     .toc { position: sticky; top: 76px; z-index: 5; flex-direction: row; overflow-x: auto; overflow-y: hidden; max-height: none; gap: 6px; padding: 10px 0;
-        background: linear-gradient(var(--bg) 70%, rgba(14, 12, 11, 0)); scrollbar-width: none; }
+        background: var(--bg); box-shadow: 0 14px 16px -6px var(--bg); scrollbar-width: none; }
     .toc::-webkit-scrollbar { display: none; }
     .toc a { white-space: nowrap; background: var(--card); }
 }
