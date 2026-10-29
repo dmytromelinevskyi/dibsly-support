@@ -174,7 +174,10 @@ main { position: relative; z-index: 2; overflow-x: clip; }
 /* The app's own screens, captured on the demo, and what happens over them: positions in the screen's points (402 × 874). */
 .live { position: absolute; inset: 0; }
 .frames { position: absolute; inset: 0; pointer-events: none; }
-.screen .frame { position: absolute; left: 0; top: 0; width: 100%; height: auto; border-radius: 0; object-fit: initial; opacity: 0; will-change: transform, opacity; }
+/* A frame (402 × 874) is a little shorter than the screen: it goes on below its picture in its bottom row's colour
+   (the script reads it), so a sheet or a screen over another leaves no strip of the one under it at the bottom. */
+.screen .frame { position: absolute; left: 0; top: 0; width: 100%; height: auto; padding-bottom: calc(60 * var(--pt)); background: #0E0D0B;
+    border-radius: 0; object-fit: initial; opacity: 0; will-change: transform, opacity; }
 .fx { position: absolute; left: 0; top: 0; width: 100%; aspect-ratio: 402 / 874; z-index: 50; pointer-events: none; }
 .fx > * { position: absolute; opacity: 0; }
 .banner, .fx .bank { left: calc(9 * var(--pt)); right: calc(9 * var(--pt)); top: calc(54 * var(--pt)); display: flex; gap: calc(11 * var(--pt)); align-items: center; padding: calc(12 * var(--pt)) calc(14 * var(--pt));
@@ -205,8 +208,8 @@ main { position: relative; z-index: 2; overflow-x: clip; }
 .app-toast b { display: block; font-size: calc(15 * var(--pt)); }
 .app-toast span { display: block; font-size: calc(13 * var(--pt)); color: #BEB2A6; }
 .cover { left: 0; right: 0; background: #0F0D0C; }
-/* Under a rising sheet the screen dims, the status bar barely. */
-.sheet-dim { position: absolute; inset: 0; opacity: 0; pointer-events: none; background: linear-gradient(rgba(0, 0, 0, 0.15), #000 calc(54 * var(--pt))); }
+/* Under a rising sheet the screen dims, the status bar not (it stays as bright as on the sheet’s own frame). */
+.sheet-dim { position: absolute; inset: 0; opacity: 0; pointer-events: none; background: linear-gradient(rgba(0, 0, 0, 0), #000 calc(54 * var(--pt))); }
 /* In a push the status bar stands still: the arriving frame's top 54 points over the two sliding screens. */
 .screen .push-bar { position: absolute; left: 0; top: 0; width: 100%; height: auto; border-radius: 0; object-fit: initial; opacity: 0; pointer-events: none;
     clip-path: inset(0 0 calc(100% - 54 * var(--pt)) 0); }

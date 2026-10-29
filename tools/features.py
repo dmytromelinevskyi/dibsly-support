@@ -1,12 +1,16 @@
 """Builds dibslyapp.com's «What Dibsly can do» pages (features-uk.html, features.html) from one list."""
-import html, json, sys
+import html, json, os, sys
+
+sys.dont_write_bytecode = True
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from pages import footer, nav  # the header and the footer, one copy for every page (tools/pages.py)
 
 ROOT = sys.argv[1]
 L = {
-    "uk": dict(page="features-uk.html", other="features.html", other_lang="en", other_label="EN", home="./",
+    "uk": dict(page="features-uk.html",
                title="Що вміє Dibsly", h1="Усе, що вміє Dibsly",
                lead="Ідеї, на яких стоїть Dibsly, і кожна можливість коротко: з прикладом і з тим, де її знайти в застосунку.",
-               free="Безкоштовно", pro="Premium", where="Де", guide="Інструкція", toc="Розділи", more_link="Докладніше", signin="Увійти",
+               free="Безкоштовно", pro="Premium", where="Де", guide="Інструкція", toc="Розділи", more_link="Докладніше",
                want="Хочу це", next="Що далі",
                next_intro="Що ми робимо зараз і що буде потім. Дат не обіцяємо: робимо, поки не стане добре. Натисни «Хочу це» на тому, що тобі потрібно найбільше, і ми знатимемо, з чого почати.",
                form=dict(title="Чого тобі не вистачає?", lead="Розкажи, а ми подумаємо, як зробити це круто.",
@@ -16,16 +20,14 @@ L = {
                          later="Забагато повідомлень за годину. Спробуй трохи пізніше.",
                          email_bad="Схоже, в пошті помилка. Перевір її або залиш поле порожнім.",
                          note="Текст і пошту бачить лише команда Dibsly.", privacy="Конфіденційність"),
-               nav=[("features-uk.html", "Можливості"), ("help-uk.html", "Інструкції"), ("support-uk.html", "Підтримка"), ("./#price", "Ціна")],
-               main="Головне меню", get="Завантажити", other_name="English", kicker="Можливості",
+               kicker="Можливості",
                store="Завантажити в App Store", more="Є питання? Напиши: ",
-               foot=[("features-uk.html", "Можливості"), ("help-uk.html", "Інструкції"), ("support-uk.html", "Підтримка"),
-                     ("privacy-uk.html", "Конфіденційність"), ("terms-uk.html", "Умови")], help="help-uk.html", privacy="privacy-uk.html",
+               help="help-uk.html", privacy="privacy-uk.html",
                desc="Що вміє Dibsly і навіщо: кармани, що таке дохід і витрата, рахунки, імпорт банків і Apple Pay, чат з Dibsly, аналітика, план, цілі, інвестиції, сайт і ChatGPT чи Claude."),
-    "en": dict(page="features.html", other="features-uk.html", other_lang="uk", other_label="UK", home="en.html",
+    "en": dict(page="features.html",
                title="What Dibsly can do", h1="Everything Dibsly can do",
                lead="The ideas Dibsly stands on, and every feature in short: with an example and where to find it in the app.",
-               free="Free", pro="Premium", where="Where", guide="Guide", toc="Sections", more_link="More", signin="Sign in",
+               free="Free", pro="Premium", where="Where", guide="Guide", toc="Sections", more_link="More",
                want="I want this", next="What's next",
                next_intro="What we're building now and what comes later. No dates promised: we build until it's good. Tap “I want this” on what you need most, and we'll know where to start.",
                form=dict(title="What are you missing?", lead="Tell us, and we'll think about how to make it great.",
@@ -35,10 +37,8 @@ L = {
                          later="Too many messages this hour. Try again a bit later.",
                          email_bad="The e-mail looks wrong. Check it or leave the field empty.",
                          note="Only the Dibsly team sees the text and the e-mail.", privacy="Privacy"),
-               nav=[("features.html", "Features"), ("help.html", "Guides"), ("support.html", "Support"), ("en.html#price", "Price")],
-               main="Main menu", get="Download", other_name="Українська", kicker="Features",
+               kicker="Features",
                store="Download on the App Store", more="Questions? Write to ",
-               foot=[("features.html", "Features"), ("help.html", "Guides"), ("support.html", "Support"), ("privacy.html", "Privacy"), ("terms.html", "Terms")],
                help="help.html", privacy="privacy.html",
                desc="What Dibsly can do and why: pockets, what counts as income and spending, accounts, bank imports and Apple Pay, the chat with Dibsly, analytics, plan, goals, investments, the website and ChatGPT or Claude."),
 }
@@ -428,9 +428,6 @@ def build(lang):
         body.append(f'<section class="fsection" id="{sid}"><h2>{e(title)}</h2>' + "".join(items) + "</section>")
     toc.append(f'<a href="#next">{e(t["next"])}</a>')
     body.append(roadmap(lang))
-    nav = "\n".join(f'                <a href="{h}"{" aria-current=" + chr(34) + "page" + chr(34) if h == t["page"] else ""}>{e(x)}</a>' for h, x in t["nav"])
-    foot = "\n".join(f'            <a href="{h}">{e(x)}</a>' for h, x in t["foot"])
-    remember = f"try {{ localStorage.setItem('dibsly.site.lang', '{t['other_lang']}'); }} catch (error) {{}}"
     links = "\n".join(f"                {x}" for x in toc)
     page = f'''<!doctype html>
 <html lang="{lang}">
@@ -459,19 +456,7 @@ def build(lang):
     <link rel="stylesheet" href="v3/features.css">
 </head>
 <body>
-    <header class="nav">
-        <nav class="nav-pill" aria-label="{t["main"]}">
-            <a class="brand" href="{t["home"]}"><img src="img/apple-touch-icon.png" alt="" width="28" height="28">Dibsly</a>
-            <div class="nav-links">
-{nav}
-            </div>
-            <div class="nav-actions">
-                <a class="lang" href="{t["other"]}" hreflang="{t["other_lang"]}" lang="{t["other_lang"]}" aria-label="{t["other_name"]}" onclick="{remember}">{t["other_label"]}</a>
-                <a class="pill ghost" href="https://my.dibslyapp.com">{t["signin"]}</a>
-                <a class="pill hot" href="https://apps.apple.com/app/id6765870838">{t["get"]}</a>
-            </div>
-        </nav>
-    </header>
+{nav(lang, t["page"])}
 
     <main>
         <section class="page-hero fhero">
@@ -498,15 +483,7 @@ def build(lang):
         </div>
     </main>
 
-    <footer>
-        <div class="wrap foot-row">
-            <b>Dibsly</b>
-{foot}
-            <a href="https://my.dibslyapp.com">my.dibslyapp.com</a>
-            <a href="{t["other"]}" hreflang="{t["other_lang"]}" lang="{t["other_lang"]}" onclick="{remember}">{t["other_name"]}</a>
-            <span class="copy-r">© 2026 Dibsly</span>
-        </div>
-    </footer>
+{footer(lang, t["page"])}
     <script src="v3/pages.js" defer></script>
     <script src="v3/features.js" defer></script>
     <script src="v2/ideas.js" defer></script>

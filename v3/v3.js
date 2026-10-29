@@ -361,9 +361,26 @@
         // A page whose frames are not there yet (the English ones are shot later) keeps Main scrolling instead.
         var missing = false;
         function lost() { if (missing) return; missing = true; if (playing && playing !== "hero") play("hero"); }
+        // The frames are a little shorter than the phone's screen: each one goes on below its picture in the colour of
+        // its own bottom row (read once it has loaded), so nothing of the screen under it shows at the bottom edge.
+        function floor(frame) {
+            try {
+                var canvas = document.createElement("canvas"), width = frame.naturalWidth;
+                canvas.width = width;
+                canvas.height = 1;
+                var context = canvas.getContext("2d");
+                context.drawImage(frame, 0, frame.naturalHeight - 1, width, 1, 0, 0, width, 1);
+                // The row's background, not what is cut there: of its pixels by brightness, the one a quarter up.
+                var row = context.getImageData(0, 0, width, 1).data, pixels = [];
+                for (var i = 0; i < row.length; i += 4) pixels.push([row[i], row[i + 1], row[i + 2]]);
+                pixels.sort(function (a, b) { return a[0] + a[1] + a[2] - b[0] - b[1] - b[2]; });
+                frame.style.backgroundColor = "rgb(" + pixels[Math.floor(pixels.length / 4)].join(",") + ")";
+            } catch (error) {}
+        }
         all(".frame", screen).forEach(function (frame) {
             frames[frame.getAttribute("data-frame")] = frame;
             if (frame.complete && !frame.naturalWidth) lost(); else frame.addEventListener("error", lost);
+            if (frame.complete && frame.naturalWidth) floor(frame); else frame.addEventListener("load", function () { floor(frame); });
         });
         var layers = Object.keys(frames).map(function (name) { return frames[name]; });
         var fx = {};
@@ -390,10 +407,14 @@
 
         // A screen in a push without the status bar (the top 54 points).
         function barless() { return "inset(" + 54 * screen.offsetWidth / 402 + "px 0px 0px 0px)"; }
-        // A rising sheet without the status bar (the top 54 points), its top corners rounded.
-        function sheetEdge() {
-            var pt = screen.offsetWidth / 402;
-            return "inset(" + 54 * pt + "px 0px 0px 0px round " + 14 * pt + "px " + 14 * pt + "px 0px 0px)";
+        // A rising sheet is cut along its own top edge on its frame (the points measured on the captures, the corners'
+        // radius 40), so it rides exactly as it lands: no step when the whole frame comes in (owner: it jumped ~7 px).
+        var sheetTops = { "b-form": 61.5, "b-cats": 71.5, "c-chat": 61.5 };
+        function sheetEdge(name) {
+            return function () {
+                var pt = screen.offsetWidth / 402, top = (sheetTops[name] || 61.5) * pt;
+                return "inset(" + top + "px 0px 0px 0px round " + 40 * pt + "px " + 40 * pt + "px 0px 0px)";
+            };
         }
         // Shows a screen over the one in front: "fade", "cut", "push" (a page from the right) or "sheet" (from below).
         // A push or a sheet stays hidden until its moment (no immediate render: a later sheet peeked under the screen).
@@ -421,7 +442,7 @@
                 // fades out towards the bar); once up, the whole frame.
                 depth += 1;
                 tl.set(dim, { zIndex: depth - 1, opacity: 0 }, at)
-                    .set(next, { zIndex: depth, clipPath: sheetEdge }, at)
+                    .set(next, { zIndex: depth, clipPath: sheetEdge(name) }, at)
                     .fromTo(next, { yPercent: 100, opacity: 1 }, { yPercent: 0, duration: 0.6, ease: "power3.out", immediateRender: false }, at)
                     .to(dim, { opacity: 0.5, duration: 0.6, ease: "power1.out" }, at)
                     .set(next, { clipPath: "none" }, at + 0.6)
@@ -457,14 +478,17 @@
                 .to(fx.hl, { scale: 1, opacity: 1, duration: 0.4, ease: "back.out(2)" }, at)
                 .to(fx.hl, { opacity: 0, duration: 0.4 }, at + (hold || 1.6));
         }
-        // Back to a still screen: what a cut-short scene left half way is put straight.
+        // Back to a still screen: what a cut-short scene left half way is put straight — its timeline and every tween
+        // still running on the screens and the effects are stopped, the notifications, toast, highlight and finger gone.
         function settle() {
             if (timeline) timeline.kill();
+            timeline = null;
+            var effects = Object.keys(fx).map(function (name) { return fx[name]; }).concat([dim, bar]);
+            gsap.killTweensOf(layers.concat(effects));
             layers.forEach(function (layer) {
                 gsap.set(layer, { opacity: layer === current ? 1 : 0, xPercent: 0, yPercent: 0, clipPath: "none" });
             });
-            gsap.set([fx.banner, fx.bank, fx.hl, fx.tap, fx.touch, fx["app-toast"], fx.cover, dim, bar], { opacity: 0 });
-            gsap.set(fx.cover, { y: 0 });
+            gsap.set(effects, { opacity: 0, xPercent: 0, yPercent: 0, y: 0, scale: 1 });
             hand = null;
         }
 
@@ -482,9 +506,11 @@
                 } else {
                     show(tl, "a-main", "fade", 0);
                 }
-                tl.fromTo(fx.banner, { yPercent: -160, opacity: 1 }, { yPercent: 0, duration: 0.8, ease: "back.out(1.3)" }, 1.5);
+                // The notifications come in from above the screen and leave fading out: a part of one left at the top
+                // edge stayed on screen (owner: they «stuck»).
+                tl.fromTo(fx.banner, { yPercent: -160, opacity: 1 }, { yPercent: 0, duration: 0.8, ease: "back.out(1.3)", immediateRender: false }, 1.5);
                 mark(tl, 8, 545 + activity, 386, 46, 2.5, 1.8);
-                tl.to(fx.banner, { yPercent: -160, duration: 0.6, ease: "power2.in" }, 3.7);
+                tl.to(fx.banner, { yPercent: -160, opacity: 0, duration: 0.6, ease: "power2.in" }, 3.7);
                 tap(tl, 359, 568 + activity, 4.6);
                 show(tl, "a-after", "fade", 4.75);
                 release(tl, 5.4);
@@ -492,7 +518,7 @@
                 // Then a bank's own push (Premium, any bank, iOS 27): its purchase is the next draft in «Активність».
                 tl.fromTo(fx.bank, { yPercent: -160, opacity: 1 }, { yPercent: 0, duration: 0.8, ease: "back.out(1.3)", immediateRender: false }, 7.7);
                 mark(tl, 8, 545 + activity, 386, 46, 8.6, 2.2);
-                tl.to(fx.bank, { yPercent: -160, duration: 0.6, ease: "power2.in" }, 10.0);
+                tl.to(fx.bank, { yPercent: -160, opacity: 0, duration: 0.6, ease: "power2.in" }, 10.0);
             },
             // «+» → «Операція» → 8, 5 → «Вибери категорію» → «Кафе й ресторани»: saved.
             plus: function (tl) {
@@ -522,7 +548,7 @@
                 tap(tl, 349, 731, 1.3);
                 release(tl, 1.8);
                 // The cover over the answer rises with the sheet, so it never shows over Main.
-                tl.fromTo(fx.cover, { top: y(250), height: y(485), opacity: 1, y: function () { return fx.cover.parentNode.offsetHeight; } },
+                tl.fromTo(fx.cover, { top: y(250), height: y(485), opacity: 1, y: function () { return frames["c-chat"].offsetHeight; } },
                     { y: 0, duration: 0.6, ease: "power3.out", immediateRender: false }, open);
                 show(tl, "c-chat", "sheet", open);
                 [[332, 1.1], [385, 1.9], [582, 2.6], [655, 3.4], [735, 4.0]].forEach(function (step) {
@@ -541,7 +567,8 @@
             },
             invest: function (tl) {
                 show(tl, "c-invest", "push", 0);
-                mark(tl, 12, 196, 366, 32, 0.9, 2.4);
+                // «Загальний результат … +32,67 %» (its line 198–211.5 points on the frames, «Нереалізовано» from 221.5).
+                mark(tl, 10, 192, 362, 26, 0.9, 2.4);
             },
             // Back on Main, down to «Борги» and «Кредити».
             money: function (tl) {
@@ -552,8 +579,10 @@
             },
             fop: function (tl) {
                 show(tl, "c-fop", "push", 0);
-                mark(tl, 10, 116, 300, 104, 0.9, 2.0);
-                mark(tl, 22, 416, 360, 46, 3.2, 2.0);
+                // «До сплати … до 19 лист.», then «Найближчі строки»' second row, «ЄП і ВЗ за III кв. 16 290,00 ₴»
+                // (between its lines at 374.5 and 419 points on the frames).
+                mark(tl, 10, 117, 300, 107, 0.9, 2.0);
+                mark(tl, 24, 376, 356, 42, 3.2, 2.0);
             },
             // Analytics' four tabs one by one (Categories → Flow → Trends → Capital, the tabs measured on the frames: the
             // screen's data-tabs, as wide as their words), History from the tab bar, then the calendar: month ↔ list.
