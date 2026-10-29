@@ -2,8 +2,14 @@ import { useState, useEffect, useRef } from 'react';
 import IPhoneFrame from '../../components/device/IPhoneFrame.jsx';
 import Icon from '../../components/site/Icon.jsx';
 import '../../styles/gallery.css';
+// What the steps above do not show (owner, 2026-10-29): «Гроші разом» came here from the steps; the chat, the
+// portfolio, debts, credits and the FOP left (the steps show them).
 const groups = [
-  { id: 'daily', label: ['Щодня', 'Every day'], scenes: ['voice', 'receipt', 'drafts', 'banks'] },
+  {
+    id: 'daily',
+    label: ['Щодня', 'Every day'],
+    scenes: ['voice', 'receipt', 'drafts', 'premium', 'banks'],
+  },
   {
     id: 'future',
     label: ['Плани', 'Looking ahead'],
@@ -17,18 +23,14 @@ const groups = [
   {
     id: 'accounts',
     label: ['Рахунки', 'Your accounts'],
-    scenes: ['accounts', 'accountEditor', 'shared', 'invest'],
-  },
-  {
-    id: 'more',
-    label: ['Ще більше', 'More possibilities'],
-    scenes: ['chat', 'premium', 'debts', 'credits', 'fop'],
+    scenes: ['accounts', 'accountEditor', 'together'],
   },
 ];
 const labels = {
   voice: ['Сказати. І записати.', 'Say it. Save it.'],
-  receipt: ['Кожному свою частину.', 'Everyone’s own share.'],
+  receipt: ['Сфоткай чек. Розділи.', 'Snap the receipt. Split it.'],
   drafts: ['Перевірити. Підтвердити.', 'Review. Confirm.'],
+  premium: ['Розкласти покупки з ШІ.', 'Let AI sort the purchases.'],
   banks: ['Твої банки поруч.', 'Your banks, together.'],
   plan: ['Місяць за твоїм планом.', 'A month on your terms.'],
   goals: ['Великі плани ближче.', 'Bigger plans, closer.'],
@@ -40,14 +42,13 @@ const labels = {
   capital: ['Бачити свій капітал.', 'See your net worth.'],
   accounts: ['Кожним грошам своє місце.', 'A place for every penny.'],
   accountEditor: ['Баланс за твоїми правилами.', 'Balance, by your rules.'],
-  shared: ['Робити плани разом.', 'Make plans together.'],
-  invest: ['Портфель у повній картині.', 'Your portfolio, in context.'],
-  chat: ['Запитати своїми словами.', 'Ask in your own words.'],
-  premium: ['Розкласти покупки з ШІ.', 'Let AI sort the purchases.'],
-  debts: ['Не губити домовленостей.', 'Keep every agreement.'],
-  credits: ['Наступний платіж відомий.', 'Know the next payment.'],
-  fop: ['Окрема кишеня для справи.', 'A pocket for your business.'],
+  together: ['Гроші разом.', 'Money together.'],
 };
+/** A screen of the gallery: Roma's captures, and «Гроші разом» the steps' own frame of shared savings. */
+const screen = (lang, scene) =>
+  scene === 'together'
+    ? `/assets/journey/${lang}-i-savings.jpg`
+    : `/assets/cinema/${lang}/screens/${scene}.webp`;
 export default function FeatureGallery({ lang }) {
   const section = useRef(null);
   // The header turns cream while it is over this section.
@@ -143,7 +144,7 @@ export default function FeatureGallery({ lang }) {
           <IPhoneFrame className="gallery-device" data-journey-hole>
             <img
               key={selected}
-              src={`/assets/cinema/${lang}/screens/${selected}.webp`}
+              src={screen(lang, selected)}
               width="750"
               height="1631"
               alt={labels[selected][column]}

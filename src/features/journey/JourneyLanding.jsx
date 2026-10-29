@@ -4,7 +4,8 @@ import { STORE_URL } from '../../components/site/Header.jsx';
 import IPhoneFrame from '../../components/device/IPhoneFrame.jsx';
 import { useMotion } from '../motion/MotionProvider.jsx';
 import '../../styles/journey.css';
-/** The frames the six steps' scenes show (main's journey() in journey-engine.js names them). */
+/** The frames the six steps' scenes show (main's journey() in journey-engine.js names them). «Гроші разом» went to
+ * the gallery and the investments came before the FOP (owner, 2026-10-29). */
 const used = new Set([
   'a-d0',
   'a-d1',
@@ -19,8 +20,7 @@ const used = new Set([
   'c-chat-top',
   'c-chat',
   'c-chat-saved',
-  'i-savings',
-  'i-savings-accounts',
+  'c-invest',
   'f-main-money',
   'f-debt',
   'f-credits',

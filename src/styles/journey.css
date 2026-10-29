@@ -784,3 +784,35 @@
 .js:not(.no-motion) .v3 .hero-title .word {
   transform: translateY(115%);
 }
+
+/* Phones and tablets (owner, 2026-10-29: «телефон побольше сделать, а текст поменьше и ненужное убрать (например
+   пилы)»): a larger phone, smaller words under it, no pills — neither the step's tags nor the hero's platforms. */
+@media (max-width: 1080px) {
+  .v3 .journey {
+    --ph-m: min(58svh, 560px);
+  }
+  .v3 .step {
+    padding: calc(var(--ph-m) + 118px) 0 22vh;
+  }
+  .v3 .step-tags,
+  .v3 .hero .platforms {
+    display: none;
+  }
+}
+@media (max-width: 640px) {
+  .v3 .step .kicker {
+    font-size: 11px;
+  }
+  .v3 .step .title {
+    font-size: clamp(26px, 7.4vw, 32px);
+  }
+  .v3 .step .lead {
+    margin-top: 10px;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .v3 .step .note {
+    margin-top: 8px;
+    font-size: 13px;
+  }
+}
