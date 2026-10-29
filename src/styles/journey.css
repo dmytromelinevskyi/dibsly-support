@@ -107,8 +107,15 @@
   padding-bottom: 0.08em;
   margin-bottom: -0.08em;
 }
+.v3 .line .word-mask,
 .v3 .line .word {
   display: inline-block;
+}
+.js .v3 .line .word-mask {
+  overflow: hidden;
+  vertical-align: top;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
 }
 .v3 .hot {
   color: var(--orange);
@@ -833,8 +840,10 @@
 }
 @media (max-width: 1080px) {
   .v3 .journey {
-    --stage-top: 82px;
-    --caption-room: 150px;
+    /* The header is away while the steps snap (nav-menu.js), so the phone starts near the top; smaller words under it
+       (owner, 2026-10-29: «заголовки поменьше, а скрин телефона побольше»). */
+    --stage-top: 20px;
+    --caption-room: 118px;
     --ph-m: min(calc(100svh - var(--stage-top) - var(--caption-room) - 24px), 640px);
   }
   .v3 .stage-sticky {
@@ -864,12 +873,12 @@
     transform: none;
   }
   .v3 .stage-caption .kicker {
-    margin: 0 0 6px;
+    margin: 0 0 5px;
     font-size: 11px;
   }
   .v3 .caption-title {
     margin: 0;
-    font: 700 clamp(24px, 6.6vw, 30px) / 1 var(--display);
+    font: 700 clamp(20px, 5.6vw, 23px) / 1.02 var(--display);
     letter-spacing: -0.035em;
   }
   .v3 .caption-title .line {
@@ -879,9 +888,9 @@
   .v3 .caption-lead {
     display: -webkit-box;
     overflow: hidden;
-    margin: 8px 0 0;
-    font-size: 14.5px;
-    line-height: 1.4;
+    margin: 6px 0 0;
+    font-size: 13px;
+    line-height: 1.35;
     color: var(--soft);
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;

@@ -14,7 +14,8 @@ export function startField(THREE, canvas, small) {
   } catch (error) {
     return null;
   }
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  // Phones draw the soft points at 1.5 rather than 3 pixels a point: the same look at half the work while scrolling.
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, small ? 1.5 : 2));
   renderer.setSize(window.innerWidth, window.innerHeight, false);
   var scene = new THREE.Scene();
   var camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 100);

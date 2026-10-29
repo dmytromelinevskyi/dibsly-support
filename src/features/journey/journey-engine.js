@@ -36,21 +36,39 @@ export async function startJourney(root, { lang, reduced }) {
     };
   }
   html.classList.remove('no-motion');
-  var loaded = await Promise.all([
-    import('gsap'),
-    import('gsap/ScrollTrigger'),
-    import('lenis'),
-    import('three'),
-    import('./field.js'),
-  ]);
+  // The hero comes in as soon as GSAP is here; three.js and the field load meanwhile and start after it (below): on a
+  // phone their start held the entrance back and made it stutter (owner, 2026-10-29: «подлагивания… первый скрин»).
+  var stars = Promise.all([import('three'), import('./field.js')]);
+  var loaded = await Promise.all([import('gsap'), import('gsap/ScrollTrigger'), import('lenis')]);
   var gsap = loaded[0].gsap,
     ScrollTrigger = loaded[1].ScrollTrigger,
     Lenis = loaded[2].default;
   gsap.registerPlugin(ScrollTrigger);
   var lenis = null,
     undo = [],
-    field = loaded[4].startField(loaded[3], document.querySelector('.field'), small);
-  if (field) undo.push(field.destroy);
+    stopped = false,
+    // What the scroll asks of the field; the field takes it over once it runs.
+    field = { spread: 0, fade: 1, shiftX: small ? 0 : 2.2, zoom: 9 };
+  function startStars() {
+    stars
+      .then(function (modules) {
+        if (stopped) return;
+        var running = modules[1].startField(modules[0], document.querySelector('.field'), small);
+        if (!running) return;
+        Object.assign(running, {
+          spread: field.spread,
+          fade: field.fade,
+          shiftX: field.shiftX,
+          zoom: field.zoom,
+        });
+        field = running;
+        undo.push(running.destroy);
+      })
+      .catch(function () {});
+  }
+  undo.push(function () {
+    stopped = true;
+  });
   // The journey line cuts a hole for the phone: it redraws whenever the phone moves without a scroll.
   function moved() {
     window.dispatchEvent(new Event('dibsly:phone'));
@@ -113,6 +131,9 @@ export async function startJourney(root, { lang, reduced }) {
         { y: 0, opacity: 1, duration: 1.8, onUpdate: moved },
         '-=1.5'
       );
+    // Wide screens light the field at once; phones once the words are up, so its start does not cut into them.
+    if (small) tl.call(startStars, null, 2.1);
+    else startStars();
 
     // ------------------------------------------------------------ the field follows the page
     if (field) {

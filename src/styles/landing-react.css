@@ -340,6 +340,11 @@
 .reduce-motion .journey-line {
   display: none;
 }
+@media (max-width: 1080px) {
+  .journey-line {
+    display: none;
+  }
+}
 .landing-react .landing-details {
   background: oklch(16% 0.008 65 / 0.72);
 }

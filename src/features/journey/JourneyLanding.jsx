@@ -24,13 +24,15 @@ const used = new Set([
 ]);
 const asset = (name) => `/assets/journey/${name}`;
 /** A title's words, each its own span, so the engine raises them without touching React's nodes. */
+// Each word rises inside its own mask: on a phone a title's line wraps, and a word hidden under a line's mask showed in
+// the row below it (owner, 2026-10-29: «В одному» stood alone before the hero came in).
 function Words({ text }) {
   return text.split(/(\s+)/).map((part, index) =>
     /^\s+$/.test(part) ? (
       part
     ) : part ? (
-      <span className="word" key={index}>
-        {part}
+      <span className="word-mask" key={index}>
+        <span className="word">{part}</span>
       </span>
     ) : null
   );

@@ -385,10 +385,30 @@ html.nav-locked body {
     display: inline-flex;
   }
 }
+/* Phones: a slimmer pill (owner, 2026-10-29: «верхний бар можно сделать чуть уже»), 46 px instead of 56. */
 @media (max-width: 640px) {
+  .nav {
+    top: 12px;
+  }
   .nav-pill {
     gap: 10px;
-    padding-left: 14px;
+    padding: 5px 5px 5px 14px;
+  }
+  .nav .brand {
+    font-size: 17px;
+    gap: 8px;
+  }
+  .nav .brand img {
+    width: 24px;
+    height: 24px;
+  }
+  .nav .pill.hot {
+    padding: 8px 15px;
+    font-size: 13px;
+  }
+  .nav-burger {
+    width: 36px;
+    height: 36px;
   }
 }
 @media (max-height: 720px) {

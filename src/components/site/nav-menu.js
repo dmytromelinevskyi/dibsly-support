@@ -155,7 +155,10 @@ export function attachNav(root) {
       var open = groups.some(function (group) {
         return group.classList.contains('open');
       });
-      nav.classList.toggle('hide', y > lastY && y > 120 && !open);
+      // While a phone's steps snap under the stuck phone (html.snap-steps) the header stays away, so the phone can sit
+      // at the top of the screen and be larger (owner, 2026-10-29: «скрин телефона побольше»).
+      var steps = document.documentElement.classList.contains('snap-steps');
+      nav.classList.toggle('hide', !open && ((y > lastY && y > 120) || steps));
       lastY = y;
     },
     { passive: true }

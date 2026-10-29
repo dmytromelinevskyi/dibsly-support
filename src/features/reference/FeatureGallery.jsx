@@ -119,7 +119,7 @@ export default function FeatureGallery({ lang }) {
         <div className="gallery-intro">
           <p className="eyebrow">{uk ? 'Твій простір можливостей' : 'Your possibilities'}</p>
           <h2 id="gallery-title">
-            <span>{uk ? 'Придивись' : 'Take a'}</span>
+            <span>{uk ? 'Придивись' : 'Take a'}</span>{' '}
             <span className="hot">{uk ? 'ближче.' : 'closer look.'}</span>
           </h2>
           <p className="gallery-lead">
