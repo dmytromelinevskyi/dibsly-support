@@ -1,20 +1,15 @@
 """Builds dibslyapp.com's privacy policy and terms (privacy.html, privacy-uk.html, terms.html, terms-uk.html) from the
 app's own texts in sources/app-1.0.2 (PRIVACY.md, PRIVACY.uk.md, TERMS.md, TERMS.uk.md), word for word, on the shared
 style (v3/pages.css). Run: python3 tools/legal.py .   — edit the .md in the app's repository, copy it here, rebuild."""
-import html, re, sys
+import html, os, re, sys
+
+sys.dont_write_bytecode = True
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from pages import footer, nav  # the header and the footer, one copy for every page (tools/pages.py)
 
 ROOT = sys.argv[1] if len(sys.argv) > 1 else "."
 SRC = f"{ROOT}/sources/app-1.0.2"
-APP = "https://apps.apple.com/app/id6765870838"
-
-CHROME = {
-    "uk": dict(home="./", main="Головне меню", signin="Увійти", get="Завантажити", other_label="EN", other_lang="en", other_name="English",
-               toc="Розділи", nav=[("features-uk.html", "Можливості"), ("help-uk.html", "Інструкції"), ("support-uk.html", "Підтримка"), ("./#price", "Ціна")],
-               foot=[("features-uk.html", "Можливості"), ("help-uk.html", "Інструкції"), ("support-uk.html", "Підтримка"), ("privacy-uk.html", "Конфіденційність"), ("terms-uk.html", "Умови")]),
-    "en": dict(home="en.html", main="Main menu", signin="Sign in", get="Download", other_label="UK", other_lang="uk", other_name="Українська",
-               toc="Sections", nav=[("features.html", "Features"), ("help.html", "Guides"), ("support.html", "Support"), ("en.html#price", "Price")],
-               foot=[("features.html", "Features"), ("help.html", "Guides"), ("support.html", "Support"), ("privacy.html", "Privacy"), ("terms.html", "Terms")]),
-}
+TOC = {"uk": "Розділи", "en": "Sections"}
 PAGES = [
     ("privacy.html", "privacy-uk.html", "en", "PRIVACY.md", "Privacy", "How Dibsly handles your data: what stays on your iPhone, what an account, sync, the AI and backups send, and your choices."),
     ("privacy-uk.html", "privacy.html", "uk", "PRIVACY.uk.md", "Конфіденційність", "Як Dibsly поводиться з твоїми даними: що лишається на iPhone, що надсилають акаунт, синхронізація, ШІ й копії, і твій вибір."),
@@ -62,7 +57,6 @@ def read(md, lang):
 
 
 def page(name, other, lang, md, kicker, desc):
-    t = CHROME[lang]
     title, updated, blocks = read(md, lang)
     uk, en = (name, other) if lang == "uk" else (other, name)
     sections = [(slug(v), v) for k, v in blocks if k == "h2"]
@@ -72,9 +66,6 @@ def page(name, other, lang, md, kicker, desc):
             body.append(f'                    <h2 id="{slug(v)}">{html.escape(v, quote=False)}</h2>')
         else:
             body.append(f"                    <p>{inline(v)}</p>")
-    remember = f"try {{ localStorage.setItem('dibsly.site.lang', '{t['other_lang']}'); }} catch (error) {{}}"
-    nav = "\n".join(f'                <a href="{h}">{x}</a>' for h, x in t["nav"])
-    foot = "\n".join(f'            <a href="{h}">{x}</a>' for h, x in t["foot"])
     toc = "\n".join(f'                <a href="#{i}">{html.escape(x, quote=False)}</a>' for i, x in sections)
     out = f'''<!doctype html>
 <html lang="{lang}">
@@ -100,19 +91,7 @@ def page(name, other, lang, md, kicker, desc):
     <link rel="stylesheet" href="v3/pages.css">
 </head>
 <body>
-    <header class="nav">
-        <nav class="nav-pill" aria-label="{t["main"]}">
-            <a class="brand" href="{t["home"]}"><img src="img/apple-touch-icon.png" alt="" width="28" height="28">Dibsly</a>
-            <div class="nav-links">
-{nav}
-            </div>
-            <div class="nav-actions">
-                <a class="lang" href="{other}" hreflang="{t["other_lang"]}" lang="{t["other_lang"]}" aria-label="{t["other_name"]}" onclick="{remember}">{t["other_label"]}</a>
-                <a class="pill ghost" href="https://my.dibslyapp.com">{t["signin"]}</a>
-                <a class="pill hot" href="{APP}">{t["get"]}</a>
-            </div>
-        </nav>
-    </header>
+{nav(lang, name)}
 
     <main>
         <section class="page-hero">
@@ -123,7 +102,7 @@ def page(name, other, lang, md, kicker, desc):
             </div>
         </section>
         <div class="wrap with-toc">
-            <nav class="toc" aria-label="{t["toc"]}">
+            <nav class="toc" aria-label="{TOC[lang]}">
 {toc}
             </nav>
             <article class="prose">
@@ -132,15 +111,7 @@ def page(name, other, lang, md, kicker, desc):
         </div>
     </main>
 
-    <footer>
-        <div class="wrap foot-row">
-            <b>Dibsly</b>
-{foot}
-            <a href="https://my.dibslyapp.com">my.dibslyapp.com</a>
-            <a href="{other}" hreflang="{t["other_lang"]}" lang="{t["other_lang"]}" onclick="{remember}">{t["other_name"]}</a>
-            <span class="copy-r">© 2026 Dibsly</span>
-        </div>
-    </footer>
+{footer(lang, name)}
     <script src="v3/pages.js" defer></script>
 </body>
 </html>

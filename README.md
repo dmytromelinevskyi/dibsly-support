@@ -83,7 +83,11 @@ canonical, hreflang (uk, en, x-default), Open Graph and Twitter tags; crawlers a
 `v3/pages.css` (and `v3/pages.js` for the soft rise and the sections' list); features adds `v3/features.css` and
 `v3/features.js` and is still built by `python3 tools/features.py .`. The privacy policy and the terms are the app's own
 texts, word for word: copy `PRIVACY*.md` / `TERMS*.md` from the app into `sources/app-1.0.2/` and run
-`python3 tools/legal.py .` (don't edit `privacy*.html` / `terms*.html` by hand).
+`python3 tools/legal.py .` (don't edit `privacy*.html` / `terms*.html` by hand). **The header and the footer
+(2026-10-29)** — the menu, the UK / EN switch, «Увійти» / «Завантажити» and the footer's links — are kept once, in
+`tools/pages.py`: change them there, then run `python3 tools/pages.py .` (support, help and the landing's footer),
+`python3 tools/features.py .` and `python3 tools/legal.py .` (they take both from `pages.py`). The landing's own menu
+leads to its sections and stays in `index.html` / `en.html`.
 
 Since 2026-10-10 the same files are also served at **<https://dibslyapp.com>** by the Cloudflare Worker `dibsly-site`
 (`worker.js`, `wrangler.toml`; deploy with `npx wrangler deploy` on the owner's word), which also opens short split
