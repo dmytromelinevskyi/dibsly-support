@@ -791,10 +791,6 @@
       "assets/cinema/en/money/0001.webp",
       "assets/cinema/en/money/0002.webp",
       "assets/cinema/en/money/0003.webp",
-      "assets/cinema/en/money/0003.webp",
-      "assets/cinema/en/money/0003.webp",
-      "assets/cinema/en/money/0003.webp",
-      "assets/cinema/en/money/0003.webp",
       "assets/cinema/en/money/0004.webp",
       "assets/cinema/en/money/0005.webp",
       "assets/cinema/en/money/0006.webp",
@@ -892,16 +888,16 @@
       "assets/cinema/en/money/0098.webp",
       "assets/cinema/en/money/0099.webp",
       "assets/cinema/en/money/0100.webp",
-      "assets/cinema/en/money/0100.webp",
-      "assets/cinema/en/money/0100.webp",
-      "assets/cinema/en/money/0100.webp",
-      "assets/cinema/en/money/0100.webp",
       "assets/cinema/en/money/0101.webp",
       "assets/cinema/en/money/0102.webp",
       "assets/cinema/en/money/0103.webp",
       "assets/cinema/en/money/0104.webp",
       "assets/cinema/en/money/0105.webp",
       "assets/cinema/en/money/0106.webp",
+      "assets/cinema/en/money/0107.webp",
+      "assets/cinema/en/money/0107.webp",
+      "assets/cinema/en/money/0107.webp",
+      "assets/cinema/en/money/0107.webp",
       "assets/cinema/en/money/0107.webp",
       "assets/cinema/en/money/0108.webp",
       "assets/cinema/en/money/0109.webp",
@@ -967,16 +963,23 @@
       "assets/cinema/en/money/0169.webp",
       "assets/cinema/en/money/0170.webp",
       "assets/cinema/en/money/0171.webp",
-      "assets/cinema/en/money/0171.webp",
-      "assets/cinema/en/money/0171.webp",
-      "assets/cinema/en/money/0171.webp",
-      "assets/cinema/en/money/0171.webp",
-      "assets/cinema/en/money/0171.webp",
-      "assets/cinema/en/money/0171.webp",
-      "assets/cinema/en/money/0171.webp",
-      "assets/cinema/en/money/0171.webp",
-      "assets/cinema/en/money/0171.webp",
-      "assets/cinema/en/money/0171.webp"
+      "assets/cinema/en/money/0172.webp",
+      "assets/cinema/en/money/0173.webp",
+      "assets/cinema/en/money/0174.webp",
+      "assets/cinema/en/money/0175.webp",
+      "assets/cinema/en/money/0176.webp",
+      "assets/cinema/en/money/0177.webp",
+      "assets/cinema/en/money/0178.webp",
+      "assets/cinema/en/money/0178.webp",
+      "assets/cinema/en/money/0178.webp",
+      "assets/cinema/en/money/0178.webp",
+      "assets/cinema/en/money/0178.webp",
+      "assets/cinema/en/money/0178.webp",
+      "assets/cinema/en/money/0178.webp",
+      "assets/cinema/en/money/0178.webp",
+      "assets/cinema/en/money/0178.webp",
+      "assets/cinema/en/money/0178.webp",
+      "assets/cinema/en/money/0178.webp"
     ],
     "actions": [
       {
@@ -985,23 +988,23 @@
         "text": "Main"
       },
       {
-        "at": 0.453125,
-        "frame": 87,
+        "at": 0.46153846153846156,
+        "frame": 90,
         "text": "Sasha"
       },
       {
-        "at": 0.5520833333333334,
-        "frame": 106,
+        "at": 0.558974358974359,
+        "frame": 109,
         "text": "Back"
       },
       {
-        "at": 0.7916666666666666,
-        "frame": 152,
+        "at": 0.7948717948717948,
+        "frame": 155,
         "text": "Mortgage"
       }
     ],
     "source": "native-simulator-recording",
-    "uniqueFrames": 171
+    "uniqueFrames": 178
   },
   "fop": {
     "poster": "assets/cinema/en/fop/0001.webp",
