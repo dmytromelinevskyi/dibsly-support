@@ -95,8 +95,9 @@ export async function startJourney(root, { lang, reduced }) {
     tl.fromTo('.hero .kicker', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 1 })
       .fromTo(
         '.hero-title .word',
-        { yPercent: 115, rotate: 4 },
-        { yPercent: 0, rotate: 0, duration: 1.4, stagger: 0.07 },
+        // y as well: GSAP reads the CSS translateY(115%) that hides them as y in pixels (the words stayed down).
+        { yPercent: 115, y: 0, rotate: 4 },
+        { yPercent: 0, y: 0, rotate: 0, duration: 1.4, stagger: 0.07 },
         '-=0.7'
       )
       .to('.hero .fade-up', { y: 0, opacity: 1, duration: 1.2, stagger: 0.1 }, '-=1.0')
@@ -1005,8 +1006,9 @@ export async function startJourney(root, { lang, reduced }) {
       var before = order[index - 1].getAttribute('data-scene');
       var copy = section.querySelector('.step-copy') || section;
       ScrollTrigger.create({
-        trigger: small ? copy : section,
-        start: small ? 'top 88%' : 'top 55%',
+        // One column up to 1080 px (the layout's own break, not main's 760): a scene starts with its words.
+        trigger: window.innerWidth <= 1080 ? copy : section,
+        start: window.innerWidth <= 1080 ? 'top 88%' : 'top 55%',
         onEnter: function () {
           play(section.getAttribute('data-scene'));
         },
