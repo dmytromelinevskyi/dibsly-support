@@ -299,7 +299,7 @@ def visual(v, lang, alt):
         return (f'<div class="fvisual"><div class="phone"><div class="slides"><img class="on" src="v3/scenes/{lang}-{data}.jpg" alt="{e(alt)}" '
                 f'width="750" height="1631" loading="lazy"></div></div></div>')
     if kind == "slides":
-        # The first draft's ✓ on main-a (the landing's a-main: 359, 568 points; English 583, its «Activity» on two lines).
+        # The first draft's ✓ on main-a (the landing's former a-main: 359, 568 points; English 583, its «Activity» on two lines).
         dy = "65.0" if lang == "uk" else "66.7"
         imgs = []
         for k, (name, tap) in enumerate(data):

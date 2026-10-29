@@ -397,16 +397,15 @@
         ["banner", "bank", "hl", "tap", "touch", "app-toast"].forEach(function (name) { fx[name] = screen.querySelector(".fx ." + name); });
         var dim = screen.querySelector(".sheet-dim"), bar = screen.querySelector(".push-bar");
         var current = live, timeline = null, loop = null, depth = 1, playing = null, hand = null;
-        // A language whose «Activity» title takes two lines puts the first purchase lower (en: 15 points).
-        var activity = parseFloat(screen.getAttribute("data-activity-shift")) || 0;
         // Analytics' Flow, Trends and Capital tabs, x in points (their widths follow the language's words).
         var tabs = (screen.getAttribute("data-tabs") || "161,244,337").split(",").map(Number);
         // What sits elsewhere on the English frames (points, measured on the captures); the rest is the same for both:
-        // «Борги» on Main's long strip, how far the chat scrolls from its top, its «Нова витрата» card and the left and
-        // width of «Нагадати».
+        // «Борги» on Main's long strip, how far the chat scrolls from its top, its «Нова витрата» card, the left and
+        // width of «Нагадати», step 01's two drafts (top, height) and the first one's ✓, the chat's «Зберегти» and its
+        // «Збережено» row (y; the English «Activity» title takes two lines, the chat's card sits lower).
         var spot = document.documentElement.lang === "en"
-            ? { debts: 1319.1, chat: 106.7, card: 416, remind: [47, 144] }
-            : { debts: 1301.4, chat: 128.7, card: 395, remind: [31, 162] };
+            ? { debts: 1075.9, chat: 106.7, card: 416, remind: [47, 144], row1: [558, 49], row2: [612, 50], tick: 583, save: 559, saved: 567 }
+            : { debts: 1075.9, chat: 128.7, card: 395, remind: [31, 162], row1: [543, 47], row2: [597, 46], tick: 565, save: 537, saved: 545 };
 
         function travel() {
             var tabs = live.querySelector(".ios-tabbar");
@@ -432,7 +431,7 @@
                 return "inset(" + top + "px 0px 0px 0px round " + 40 * pt + "px " + 40 * pt + "px 0px 0px)";
             };
         }
-        // Shows a screen over the one in front: "fade", "cut", "push" (a page from the right), "pop" (back: the page
+        // Shows a screen over the one in front: "fade", "soft" (a slower fade, where a list grows or shrinks), "cut", "push" (a page from the right), "pop" (back: the page
         // leaves to the right), "sheet" (from below) or "drop" (the sheet in front closes down onto the screen).
         // A push or a sheet stays hidden until its moment (no immediate render: a later sheet peeked under the screen).
         function show(tl, name, how, at) {
@@ -485,9 +484,16 @@
                     .set(next, { clipPath: "none" }, at + 0.6)
                     .set(dim, { opacity: 0 }, at + 0.6);
             } else {
-                tl.fromTo(next, { opacity: 0 }, { opacity: 1, duration: how === "cut" ? 0.14 : 0.5, ease: "power1.inOut" }, at);
+                tl.fromTo(next, { opacity: 0 }, { opacity: 1, duration: how === "cut" ? 0.14 : how === "soft" ? 0.8 : 0.5, ease: "power1.inOut" }, at);
             }
             tl.set(last, { opacity: 0, xPercent: 0, yPercent: 0, clipPath: "none" });
+        }
+        // The «Витрату збережено» toast over the tab bar, its line the scene's own (the .app-toast's data-<scene>).
+        function toast(tl, scene, at, until) {
+            var box = fx["app-toast"], line = box.querySelector("span"), text = box.getAttribute("data-" + scene);
+            if (text) tl.call(function () { line.textContent = text; }, null, at);
+            tl.fromTo(box, { yPercent: 60, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.55, ease: "back.out(1.5)", immediateRender: false }, at)
+                .to(box, { opacity: 0, yPercent: 30, duration: 0.45 }, until);
         }
         // Scrolls a screen to another capture of it: the content between its fixed top and bottom (points) moves up by
         // the distance measured between the two frames, the old one's bars stay still over it; then the whole new frame.
@@ -567,30 +573,36 @@
                 tl.call(startLoop, null, 0.9);
             },
             // A purchase with Apple Pay waits in «Активність»; one tap saves it and «Витрачено» grows.
+            // «Активність» starts empty (the live Main is a-d0's state, so its first frame comes in unseen); Apple Pay's
+            // notification brings a draft, a bank's push a second one; the ✓ on the first saves it: it leaves, the toast
+            // says so and «Витрачено» grows (owner, task 17).
             auto: function (tl) {
                 if (current === live) {
                     tl.to(strip, { y: 0, duration: 0.9, ease: "power2.inOut" }, 0);
-                    show(tl, "a-main", "fade", 0.9);
+                    show(tl, "a-d0", "cut", 0.9);
                 } else {
-                    show(tl, "a-main", "fade", 0);
+                    show(tl, "a-d0", "fade", 0);
                 }
                 // The notifications come in from above the screen and leave fading out: a part of one left at the top
                 // edge stayed on screen (owner: they «stuck»).
-                tl.fromTo(fx.banner, { yPercent: -160, opacity: 1 }, { yPercent: 0, duration: 0.8, ease: "back.out(1.3)", immediateRender: false }, 1.5);
-                mark(tl, 8, 545 + activity, 386, 46, 2.5, 1.8);
-                tl.to(fx.banner, { yPercent: -160, opacity: 0, duration: 0.6, ease: "power2.in" }, 3.7);
-                tap(tl, 359, 568 + activity, 4.6);
-                show(tl, "a-after", "fade", 4.75);
-                release(tl, 5.4);
-                mark(tl, 146, 418, 104, 46, 5.5, 2.0);
+                tl.fromTo(fx.banner, { yPercent: -160, opacity: 1 }, { yPercent: 0, duration: 0.8, ease: "back.out(1.3)", immediateRender: false }, 1.4);
+                show(tl, "a-d1", "soft", 2.3);
+                mark(tl, 8, spot.row1[0], 386, spot.row1[1], 3.1, 1.6);
+                tl.to(fx.banner, { yPercent: -160, opacity: 0, duration: 0.6, ease: "power2.in" }, 3.6);
                 // Then a bank's own push (Premium, any bank, iOS 27): its purchase is the next draft in «Активність».
-                tl.fromTo(fx.bank, { yPercent: -160, opacity: 1 }, { yPercent: 0, duration: 0.8, ease: "back.out(1.3)", immediateRender: false }, 7.7);
-                mark(tl, 8, 545 + activity, 386, 46, 8.6, 2.2);
-                tl.to(fx.bank, { yPercent: -160, opacity: 0, duration: 0.6, ease: "power2.in" }, 10.0);
+                tl.fromTo(fx.bank, { yPercent: -160, opacity: 1 }, { yPercent: 0, duration: 0.8, ease: "back.out(1.3)", immediateRender: false }, 5.1);
+                show(tl, "a-d2", "soft", 6.0);
+                mark(tl, 8, spot.row2[0], 386, spot.row2[1], 6.8, 1.6);
+                tl.to(fx.bank, { yPercent: -160, opacity: 0, duration: 0.6, ease: "power2.in" }, 7.3);
+                tap(tl, 361, spot.tick, 9.2);
+                show(tl, "a-d2-saved", "soft", 9.35);
+                release(tl, 9.9);
+                toast(tl, "auto", 9.8, 12.2);
+                mark(tl, 146, 418, 104, 46, 10.2, 2.0);
             },
             // «+» → «Операція» → 8, 5 → «Вибери категорію» → «Кафе й ресторани»: saved.
             plus: function (tl) {
-                show(tl, "a-after", "fade", 0);
+                show(tl, "a-d2-saved", "fade", 0);
                 tap(tl, 348, 800, 1.3);
                 show(tl, "b-plus", "fade", 1.45);
                 tap(tl, 200, 602, 2.7);
@@ -604,12 +616,12 @@
                 tap(tl, 71, 272, 7.6);
                 show(tl, "b-after", "fade", 7.75);
                 release(tl, 8.2);
-                tl.fromTo(fx["app-toast"], { yPercent: 60, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.55, ease: "back.out(1.5)" }, 8.2)
-                    .to(fx["app-toast"], { opacity: 0, yPercent: 30, duration: 0.45 }, 10.8);
+                toast(tl, "plus", 8.2, 10.8);
                 mark(tl, 146, 418, 104, 46, 8.5, 2.0);
             },
             // On Main the finger taps Dibsly's button above «+»; the chat rises as a sheet at its top (what went where, the
-            // card marked), then scrolls down to the answer and the expense it is ready to save.
+            // card marked), then scrolls down to the answer and the expense it is ready to save; «Зберегти» saves it:
+            // «✓ Збережено» and «Відмінити» on the card (that frame's chat sits 20 points lower: a slow fade, no jump).
             ask: function (tl) {
                 var open = 1.5;
                 tl.set(strip, { y: 0 }, 0);
@@ -620,6 +632,10 @@
                 mark(tl, 14, 200, 374, 185, open + 0.9, 1.8);
                 scroll(tl, "c-chat", open + 3.4, spot.chat, 122, 712);
                 mark(tl, 16, spot.card, 370, 186, open + 4.6, 2.2);
+                tap(tl, 288, spot.save, open + 7.2);
+                show(tl, "c-chat-saved", "soft", open + 7.35);
+                release(tl, 7.9 + open);
+                mark(tl, 22, spot.saved - 19, 358, 38, open + 8.2, 2.2);
             },
             // Analytics' four tabs one by one (Categories → Flow → Trends → Capital, the tabs measured on the frames: the
             // screen's data-tabs, as wide as their words).

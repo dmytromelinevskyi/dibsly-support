@@ -24,10 +24,12 @@ the English screens need the same layout. What the page draws over them in Engli
 «Lidl · −$42.13 from Chase» (the first purchase in Activity on the English strip), «+» → 8, 5 → «Cafés», and the toast
 «Expense saved · Cafés · −$85»; change those lines in `en.html` if the frames show something else.
 
-## The steps and their frames (2026-10-29, task 13; task 16 took History out)
+## The steps and their frames (2026-10-29, task 13; task 16 took History out, task 17 redid 01 and 03)
 
-01 «Записується саме» (`a-main`, `a-after`), 02 «+» (`b-*`), 03 the chat (`c-chat-top` rises as a sheet, scrolls to
-`c-chat`), 04 analytics (`d-analytics`, `d-cashflow`, `d-trends`, `d-capital`), 05 the calendar (`h-calendar`,
+01 «Записується саме» (`a-d0` with «Активність» empty, `a-d1` one draft, `a-d2` two, `a-d2-saved` after saving the
+first; the live Main is `v3/shots/<lang>-main-empty.jpg`, built by `empty_strip.py` from `a-d0` and the long strip, so
+the step starts unseen), 02 «+» (`b-*`), 03 the chat (`c-chat-top` rises as a sheet, scrolls to `c-chat`, «Зберегти»
+→ `c-chat-saved`), 04 analytics (`d-analytics`, `d-cashflow`, `d-trends`, `d-capital`), 05 the calendar (`h-calendar`,
 `h-calendar-list`, the `h-payment` sheet), 06 plan and goals (`c-plan`, `c-goals`), 07 money together (`i-savings`,
 scrolling to `i-savings-accounts`), 08 debts and credits (Main's strip, then `f-main-money`, `f-debt`, back,
 `f-credits`), 09 investments (`c-invest`), 10 FOP (`c-fop`). A scroll between two captures of one screen moves by the
