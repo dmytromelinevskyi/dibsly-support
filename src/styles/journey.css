@@ -821,3 +821,22 @@
     font-size: 13px;
   }
 }
+
+/* Phones and tablets: one flick, one step (journey-engine.js turns html.snap-steps on while the steps are on screen).
+   Each step's words stop right under the stuck phone; the hero and the gallery are the snaps before and after. */
+@media (max-width: 1080px) {
+  html.snap-steps {
+    scroll-snap-type: y mandatory;
+  }
+  .v3 .hero {
+    scroll-snap-align: start;
+  }
+  .v3 .step-copy {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    scroll-margin-top: calc(82px + var(--ph-m) + 14px);
+  }
+  html.snap-steps .feature-gallery {
+    scroll-snap-align: start;
+  }
+}

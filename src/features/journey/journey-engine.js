@@ -64,7 +64,8 @@ export async function startJourney(root, { lang, reduced }) {
 
   var context = gsap.context(function () {
     // ------------------------------------------------------------ smooth scroll
-    if (!small) {
+    // Wide screens only: on phones and tablets the steps snap (below), which a smoothed scroll would fight.
+    if (window.innerWidth > 1080) {
       lenis = new Lenis({ duration: 1.15, smoothWheel: true });
       lenis.on('scroll', ScrollTrigger.update);
       var raf = function (time) {
@@ -303,6 +304,23 @@ export async function startJourney(root, { lang, reduced }) {
     // to the phone's bottom edge, and back in when one scrolls down again.
     var narrow = gsap.matchMedia();
     narrow.add('(max-width: 1080px)', function () {
+      // One flick, one step (owner, 2026-10-29: «быстро листаю и текст быстро пролистывается… когда я листнул, идет
+      // пролистывание до следующего скрина»): while the steps are on screen the page snaps to each step's words under
+      // the phone (journey.css, html.snap-steps); past them, to the gallery, then it scrolls freely again.
+      ScrollTrigger.create({
+        trigger: root.querySelector('.journey'),
+        start: 'top top',
+        end: 'bottom top',
+        onToggle: function (self) {
+          html.classList.toggle('snap-steps', self.isActive);
+        },
+        onRefresh: function (self) {
+          html.classList.toggle('snap-steps', self.isActive);
+        },
+      });
+      undo.push(function () {
+        html.classList.remove('snap-steps');
+      });
       // Where the stuck phone ends: the sticky stage's top and the phone's height, whatever the scroll is now.
       var sticky = root.querySelector('.stage-sticky');
       var edge = function () {
