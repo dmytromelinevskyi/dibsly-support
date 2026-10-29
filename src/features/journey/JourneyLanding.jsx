@@ -217,7 +217,11 @@ export default function JourneyLanding({ lang }) {
                     </div>
                     <div className="hl" />
                     <div className="tap" />
-                    <div className="touch" />
+                    <div className="touch">
+                      <svg viewBox="0 0 86 107">
+                        <path d="M28 56L28 16C28 5 42 5 42 16L42 43C45 35 55 36 56 45C63 39 71 43 71 52C80 48 84 55 82 65L78 85C76 99 55 103 44 94L17 68C8 57 18 49 28 61Z" />
+                      </svg>
+                    </div>
                     <div
                       className="app-toast"
                       data-auto={data.fx.toast.auto}
@@ -281,6 +285,7 @@ export default function JourneyLanding({ lang }) {
             id={step.id}
             data-section
             data-scene={step.id}
+            data-side={index % 2 ? 'right' : 'left'}
             style={{ '--row': index + 2 }}
           >
             <div className="step-copy">

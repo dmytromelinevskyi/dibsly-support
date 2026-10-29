@@ -1,8 +1,9 @@
 // dibslyapp.com landing 3.0's engine (main's v3/v3.js, 2026-10-28), moved onto the React site (owner, 2026-10-29:
 // «просто взять со самого dibslyapp все анимации»). The hero and the steps as there: smooth scrolling, titles that rise
 // in word by word, reveals, the hero's phone that stays and plays each step's scene — the journey() below is main's,
-// unchanged but for the language, which comes from the page. Left out here: the particle field, the counting intro,
-// the phone's tilt, magnetic buttons and the cursor (Roma's frame does not turn; the rest is a later round).
+// unchanged but for the language, which comes from the page — and the particle field behind it (field.js). On a wide
+// screen the phone stands left and right in turn, gliding across as a step comes in (owner, 2026-10-29: «экраны слева
+// справа»). Left out: the counting intro, the phone's tilt, magnetic buttons and the cursor (Roma's frame does not turn).
 export async function startJourney(root, { lang, reduced }) {
   var html = document.documentElement;
   var small = window.innerWidth < 760;
@@ -34,13 +35,21 @@ export async function startJourney(root, { lang, reduced }) {
     };
   }
   html.classList.remove('no-motion');
-  var loaded = await Promise.all([import('gsap'), import('gsap/ScrollTrigger'), import('lenis')]);
+  var loaded = await Promise.all([
+    import('gsap'),
+    import('gsap/ScrollTrigger'),
+    import('lenis'),
+    import('three'),
+    import('./field.js'),
+  ]);
   var gsap = loaded[0].gsap,
     ScrollTrigger = loaded[1].ScrollTrigger,
     Lenis = loaded[2].default;
   gsap.registerPlugin(ScrollTrigger);
   var lenis = null,
-    undo = [];
+    undo = [],
+    field = loaded[4].startField(loaded[3], document.querySelector('.field'), small);
+  if (field) undo.push(field.destroy);
   function listen(target, type, handler, options) {
     target.addEventListener(type, handler, options);
     undo.push(function () {
@@ -84,6 +93,42 @@ export async function startJourney(root, { lang, reduced }) {
       )
       .to('.hero .fade-up', { y: 0, opacity: 1, duration: 1.2, stagger: 0.1 }, '-=1.0')
       .from('.hero-phone', { y: 160, opacity: 0, duration: 1.8 }, '-=1.5');
+
+    // ------------------------------------------------------------ the field follows the page
+    if (field) {
+      ScrollTrigger.create({
+        trigger: '.hero',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true,
+        onUpdate: function (self) {
+          field.spread = self.progress * 0.9;
+          field.zoom = 9 + self.progress * 3;
+        },
+      });
+      ScrollTrigger.create({
+        trigger: root.querySelector('.step'),
+        start: 'top bottom',
+        endTrigger: '#faq',
+        end: 'bottom top',
+        onToggle: function (self) {
+          field.fade = self.isActive ? 0.32 : 1;
+          field.shiftX = self.isActive ? 0 : small ? 0 : 2.2;
+        },
+      });
+      ScrollTrigger.create({
+        trigger: '.finale',
+        start: 'top 80%',
+        end: 'bottom bottom',
+        scrub: true,
+        onUpdate: function (self) {
+          field.spread = 0.9 - self.progress * 0.9;
+          field.zoom = 12 - self.progress * 4.5;
+          field.fade = 0.32 + self.progress * 0.9;
+          field.shiftX = 0;
+        },
+      });
+    }
 
     // ------------------------------------------------------------ titles and reveals
     all('.title').forEach(function (title) {
@@ -173,6 +218,56 @@ export async function startJourney(root, { lang, reduced }) {
     gsap.to('.scroll-hint', {
       opacity: 0,
       scrollTrigger: { trigger: '.hero', start: '5% top', end: '20% top', scrub: true },
+    });
+
+    // ------------------------------------------------------------ left and right
+    // A step's data-side says where its phone stands. The phone glides there as the step comes in (where its scene
+    // starts), back as one scrolls up; its place on the left mirrors the right one across the page's column.
+    var side = 'right';
+    function across(where) {
+      if (where !== 'left' || window.innerWidth <= 1080) return 0;
+      var box = root.querySelector('.journey'),
+        style = getComputedStyle(box),
+        rect = box.getBoundingClientRect(),
+        phone = heroPhone.getBoundingClientRect(),
+        centre = phone.left + phone.width / 2 - gsap.getProperty(lift, 'x');
+      return (
+        rect.left +
+        parseFloat(style.paddingLeft) +
+        rect.right -
+        parseFloat(style.paddingRight) -
+        2 * centre
+      );
+    }
+    function glide(where) {
+      side = where;
+      gsap.to(lift, {
+        x: across(where),
+        duration: 1.1,
+        ease: 'power3.inOut',
+        overwrite: 'auto',
+        onUpdate: function () {
+          window.dispatchEvent(new Event('dibsly:phone'));
+        },
+      });
+    }
+    var steps = all('[data-scene]');
+    steps.forEach(function (section, index) {
+      if (!index) return;
+      var before = steps[index - 1].getAttribute('data-side') || 'right';
+      ScrollTrigger.create({
+        trigger: section,
+        start: 'top 55%',
+        onEnter: function () {
+          glide(section.getAttribute('data-side') || 'right');
+        },
+        onLeaveBack: function () {
+          glide(before);
+        },
+      });
+    });
+    ScrollTrigger.addEventListener('refresh', function () {
+      gsap.set(lift, { x: across(side) });
     });
 
     // ------------------------------------------------------------ the rail

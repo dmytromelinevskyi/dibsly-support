@@ -15,6 +15,7 @@ export default function LandingPage({ data }) {
   }, [reduced]);
   return (
     <main id="main" className="landing-react">
+      <canvas className="field" aria-hidden="true" />
       <canvas ref={routeCanvas} className="journey-line" aria-hidden="true" />
       <JourneyLanding lang={data.lang} />
       <FeatureGallery lang={data.lang} />
