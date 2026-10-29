@@ -396,6 +396,10 @@
         var fx = {};
         ["banner", "bank", "hl", "tap", "touch", "app-toast"].forEach(function (name) { fx[name] = screen.querySelector(".fx ." + name); });
         var dim = screen.querySelector(".sheet-dim"), bar = screen.querySelector(".push-bar");
+        // A second still picture over the first: in a scroll, the arriving frame's own bars fade in over the leaving
+        // one's (the chat's opaque top bar turns into the translucent one over its scrolled answer, as in iOS).
+        var bar2 = bar.cloneNode(false);
+        bar.parentNode.insertBefore(bar2, bar.nextSibling);
         var current = live, timeline = null, loop = null, depth = 1, playing = null, hand = null;
         // Analytics' Flow, Trends and Capital tabs, x in points (their widths follow the language's words).
         var tabs = (screen.getAttribute("data-tabs") || "161,244,337").split(",").map(Number);
@@ -496,7 +500,9 @@
                 .to(box, { opacity: 0, yPercent: 30, duration: 0.45 }, until);
         }
         // Scrolls a screen to another capture of it: the content between its fixed top and bottom (points) moves up by
-        // the distance measured between the two frames, the old one's bars stay still over it; then the whole new frame.
+        // the distance measured between the two frames; the bars stay still over it and turn from the old frame's into
+        // the new one's during the scroll's second two thirds (owner: the chat's black bar jumped to the translucent
+        // one at the end); then the whole new frame.
         // Each frame is cut to the part of the band it fills, the cut kept still on the screen while the frame moves.
         function scroll(tl, name, at, distance, top, bottom) {
             var next = frames[name], last = current, move = { done: 0 };
@@ -512,13 +518,19 @@
                 var pt = screen.offsetWidth / 402, w = bar.offsetWidth + "px", h = bar.offsetHeight + "px", t = top * pt + "px", b = bottom * pt + "px";
                 return "polygon(0px 0px, " + w + " 0px, " + w + " " + t + ", 0px " + t + ", 0px " + b + ", " + w + " " + b + ", " + w + " " + h + ", 0px " + h + ")";
             }
-            tl.call(function () { bar.src = last.getAttribute("src"); bar.style.backgroundColor = last.style.backgroundColor; }, null, at)
-                .set(last, { zIndex: depth - 1 }, at)
-                .set(next, { zIndex: depth - 2, xPercent: 0, yPercent: 0, opacity: 1 }, at)
-                .set(bar, { zIndex: depth, opacity: 1, clipPath: bars }, at)
+            depth += 1;
+            tl.call(function () {
+                bar.src = last.getAttribute("src"); bar.style.backgroundColor = last.style.backgroundColor;
+                bar2.src = next.getAttribute("src"); bar2.style.backgroundColor = next.style.backgroundColor;
+            }, null, at)
+                .set(last, { zIndex: depth - 2 }, at)
+                .set(next, { zIndex: depth - 3, xPercent: 0, yPercent: 0, opacity: 1 }, at)
+                .set(bar, { zIndex: depth - 1, opacity: 1, clipPath: bars }, at)
+                .set(bar2, { zIndex: depth, opacity: 0, clipPath: bars }, at)
                 .fromTo(move, { done: 0 }, { done: 1, duration: 0.9, ease: "power2.inOut", immediateRender: false, onStart: place, onUpdate: place }, at)
+                .to(bar2, { opacity: 1, duration: 0.6, ease: "power1.inOut" }, at + 0.3)
                 .set(next, { y: 0, clipPath: "none" }, at + 0.9)
-                .set(bar, { opacity: 0, clearProps: "clipPath" }, at + 0.9)
+                .set([bar, bar2], { opacity: 0, clearProps: "clipPath" }, at + 0.9)
                 .set(last, { opacity: 0, y: 0, clipPath: "none" }, at + 0.9);
         }
         // The finger comes in a little below its first target, glides from tap to tap, presses (a ring spreads from
@@ -552,7 +564,7 @@
         function settle() {
             if (timeline) timeline.kill();
             timeline = null;
-            var effects = Object.keys(fx).map(function (name) { return fx[name]; }).concat([dim, bar]);
+            var effects = Object.keys(fx).map(function (name) { return fx[name]; }).concat([dim, bar, bar2]);
             gsap.killTweensOf(layers.concat(effects));
             // The layers' order starts again from the screen in front: it only ever grew, and after a run through the
             // page the frames rose above the effects (z-index 50), hiding the marks and the finger on the last steps.
@@ -561,8 +573,8 @@
                 gsap.set(layer, { opacity: layer === current ? 1 : 0, xPercent: 0, yPercent: 0, y: 0, clipPath: "none", zIndex: layer === current ? 1 : 0 });
             });
             gsap.set(effects, { opacity: 0, xPercent: 0, yPercent: 0, y: 0, scale: 1 });
-            gsap.set([dim, bar], { zIndex: 0 });
-            gsap.set(bar, { clearProps: "clipPath" });
+            gsap.set([dim, bar, bar2], { zIndex: 0 });
+            gsap.set([bar, bar2], { clearProps: "clipPath" });
             hand = null;
         }
 

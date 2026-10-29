@@ -8,3 +8,5 @@ wrangler.toml
 node_modules
 tools
 sources
+# Main's long strips: the source of v3/shots/<lang>-main-empty.jpg (tools/scenes/empty_strip.py), not shown by the site
+v3/shots/*-main-long.jpg
