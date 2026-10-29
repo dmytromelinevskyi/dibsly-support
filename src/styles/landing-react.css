@@ -343,9 +343,6 @@
 .landing-react .landing-details {
   background: oklch(16% 0.008 65 / 0.72);
 }
-.landing-react .feature-gallery {
-  background: oklch(92% 0.025 115 / 0.96);
-}
 html.lenis,
 html.lenis body {
   height: auto;

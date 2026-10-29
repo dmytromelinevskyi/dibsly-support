@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import IPhoneFrame from '../../components/device/IPhoneFrame.jsx';
 import Icon from '../../components/site/Icon.jsx';
 import '../../styles/gallery.css';
@@ -49,28 +49,6 @@ const labels = {
   fop: ['Окрема кишеня для справи.', 'A pocket for your business.'],
 };
 export default function FeatureGallery({ lang }) {
-  const section = useRef(null);
-  useEffect(() => {
-    let raf = 0;
-    const update = () => {
-      raf = 0;
-      const rect = section.current?.getBoundingClientRect();
-      document.documentElement.dataset.headerTone =
-        rect && rect.top <= 70 && rect.bottom > 70 ? 'light' : 'dark';
-    };
-    const schedule = () => {
-      if (!raf) raf = requestAnimationFrame(update);
-    };
-    addEventListener('scroll', schedule, { passive: true });
-    addEventListener('resize', schedule, { passive: true });
-    update();
-    return () => {
-      cancelAnimationFrame(raf);
-      removeEventListener('scroll', schedule);
-      removeEventListener('resize', schedule);
-      delete document.documentElement.dataset.headerTone;
-    };
-  }, []);
   const [group, setGroup] = useState(0),
     [selected, setSelected] = useState('voice');
   const uk = lang === 'uk',
@@ -81,21 +59,13 @@ export default function FeatureGallery({ lang }) {
     setSelected(groups[index].scenes[0]);
   };
   return (
-    <section ref={section} className="feature-gallery" id="closer" aria-labelledby="gallery-title">
+    <section className="feature-gallery" id="closer" aria-labelledby="gallery-title">
       <div className="gallery-layout">
         <div className="gallery-intro">
           <p className="eyebrow">{uk ? 'Твій простір можливостей' : 'Your possibilities'}</p>
           <h2 id="gallery-title">
-            {uk ? (
-              <>
-                Придивись
-                <br /> ближче.
-              </>
-            ) : (
-              <>
-                Take a<br /> closer look.
-              </>
-            )}
+            <span>{uk ? 'Придивись' : 'Take a'}</span>
+            <span className="hot">{uk ? 'ближче.' : 'closer look.'}</span>
           </h2>
           <p className="gallery-lead">
             {uk
@@ -147,7 +117,7 @@ export default function FeatureGallery({ lang }) {
           <span className="gallery-stage-word" aria-hidden="true">
             {String(group + 1).padStart(2, '0')}
           </span>
-          <IPhoneFrame className="gallery-device">
+          <IPhoneFrame className="gallery-device" data-journey-hole>
             <img
               key={selected}
               src={`/assets/cinema/${lang}/screens/${selected}.webp`}
