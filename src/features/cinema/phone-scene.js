@@ -71,6 +71,21 @@ export function createPhone(renderer) {
   screen.position.z = 0.117;
   group.add(screen);
   resources.push(screenGeometry, screenMaterial, texture);
+  // A native video can show through the screen instead (2026-10-29: copying every video frame into this texture
+  // stuttered): the screen then writes a transparent hole, the page's own <video> lies under the canvas.
+  const holeMaterial = new THREE.ShaderMaterial({
+    vertexShader:
+      'void main() { gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }',
+    fragmentShader: 'void main() { gl_FragColor = vec4(0.0); }',
+    blending: THREE.NoBlending,
+  });
+  resources.push(holeMaterial);
+  const corners = [
+    [-screenWidth / 2, screenHeight / 2],
+    [screenWidth / 2, screenHeight / 2],
+    [screenWidth / 2, -screenHeight / 2],
+    [-screenWidth / 2, -screenHeight / 2],
+  ].map(([x, y]) => new THREE.Vector3(x, y, 0.117));
   const cue = createTouchCue(screenWidth, screenHeight);
   group.add(cue.object);
   const presenter = createScreenPresenter({
@@ -113,6 +128,14 @@ export function createPhone(renderer) {
     },
     get screenSource() {
       return presenter.source;
+    },
+    /** The screen's corners in world space (top-left, top-right, bottom-right, bottom-left). */
+    screenCorners() {
+      group.updateMatrixWorld();
+      return corners.map((corner) => corner.clone().applyMatrix4(group.matrixWorld));
+    },
+    native(on) {
+      screen.material = on ? holeMaterial : screenMaterial;
     },
     present(video, source, time) {
       return presenter.accept(video, source, time);

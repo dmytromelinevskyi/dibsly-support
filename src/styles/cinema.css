@@ -11,6 +11,8 @@
   pointer-events: none;
 }
 .cinema-world canvas {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 100%;
   display: block;
@@ -22,6 +24,19 @@
   height: 100%;
   z-index: 6;
   pointer-events: none;
+}
+/* The phone's screen as the page's own video (under the canvas, seen through the screen's hole). */
+.cinema-screen {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 640px;
+  height: 1392px;
+  transform-origin: 0 0;
+  object-fit: fill;
+  background: #151412;
+  pointer-events: none;
+  z-index: 0;
 }
 .cinema-source {
   position: absolute;

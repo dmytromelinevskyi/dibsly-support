@@ -108,6 +108,11 @@ export function createCinema({
     onFrame: schedule,
     onDecoded({ video, film, time }) {
       if (active < 0 || film !== chapters[active].film) return false;
+      if (nativeOn) {
+        screenFrames++;
+        schedule();
+        return true;
+      }
       const accepted = phone.present(video, film.src, time);
       if (accepted) screenFrames++;
       schedule();
@@ -136,6 +141,38 @@ export function createCinema({
   player.video.setAttribute('aria-hidden', 'true');
   player.video.tabIndex = -1;
   element.append(player.video);
+  // Chapters whose film plays as the page's own video under the phone's screen (a trial on step 01).
+  const NATIVE = new Set(['auto']);
+  let nativeOn = false;
+  function setNative(on, film) {
+    if (on === nativeOn) return;
+    nativeOn = on;
+    phone.native(on);
+    const video = player.video;
+    if (on) {
+      canvas.parentElement.insertBefore(video, canvas);
+      video.className = 'cinema-screen';
+      video.poster = '/' + film.poster;
+    } else {
+      element.append(video);
+      video.className = 'cinema-source';
+      video.removeAttribute('poster');
+      video.style.transform = '';
+    }
+  }
+  const projected = new THREE.Vector3();
+  function placeNative() {
+    const video = player.video,
+      w = 640,
+      h = 1392;
+    video.style.visibility = phone.object.visible ? 'visible' : 'hidden';
+    if (!phone.object.visible) return;
+    const quad = phone.screenCorners().map((corner) => {
+      projected.copy(corner).project(camera);
+      return [((projected.x + 1) / 2) * width, ((1 - projected.y) / 2) * height];
+    });
+    video.style.transform = matrixFor(w, h, quad);
+  }
   copies.forEach((copy) => (copy.style.opacity = '1'));
   const driver = attachScrollDriver(schedule);
   const image = new Image();
@@ -279,13 +316,17 @@ export function createCinema({
       element.dataset.activeChapter = index < 0 ? 'hero' : chapters[index].id;
       if (index >= 0) {
         // Every chapter starts its film from the beginning and plays it (seeking on each scroll stuttered on phones).
+        setNative(NATIVE.has(chapters[index].id), chapters[index].film);
         player.setFilm(chapters[index].film, 0);
         autoplayed = -1;
         prefetch(index + 1);
         loadPoster(index);
         loadPoster(index + 1);
         field.completeUntil(offsets[index], elapsed);
-      } else player.manual();
+      } else {
+        setNative(false);
+        player.manual();
+      }
     }
     let cue = null,
       filmBusy = false;
@@ -470,7 +511,8 @@ export function createCinema({
       filmBusy ||
       blending ||
       Math.abs(pointer.tx - pointer.x) + Math.abs(pointer.ty - pointer.y) > 0.005;
-    if (interacting || width > 900 || now - lastRender >= 32) {
+    if (nativeOn) placeNative();
+    if (interacting || nativeOn || width > 900 || now - lastRender >= 32) {
       renderer.render(scene, camera);
       lastRender = now;
     }
@@ -505,7 +547,13 @@ export function createCinema({
     raf = 0;
     last = 0;
     if (document.hidden) player.manual();
-    else schedule();
+    else {
+      // Back on the tab: a film that was playing by itself goes on (not one the person paused or that ended).
+      const film = active >= 0 ? chapters[active].film : null;
+      if (film && autoplayed === active && !override && player.time < film.duration - 0.2)
+        autoplayed = -1;
+      schedule();
+    }
   };
   const onControl = (e) => {
     const button = e.target.closest('[data-play],[data-skip]');
@@ -576,4 +624,39 @@ export function createCinema({
     heroCopy.style.removeProperty('opacity');
   }
   return { destroy };
+}
+
+/** CSS matrix3d that maps a w×h element onto a quad (top-left, top-right, bottom-right, bottom-left), in pixels. */
+function matrixFor(w, h, quad) {
+  const source = [
+    [0, 0],
+    [w, 0],
+    [w, h],
+    [0, h],
+  ];
+  const rows = [],
+    values = [];
+  for (let i = 0; i < 4; i++) {
+    const [x, y] = source[i],
+      [u, v] = quad[i];
+    rows.push([x, y, 1, 0, 0, 0, -u * x, -u * y]);
+    values.push(u);
+    rows.push([0, 0, 0, x, y, 1, -v * x, -v * y]);
+    values.push(v);
+  }
+  // Gaussian elimination with partial pivoting.
+  for (let c = 0; c < 8; c++) {
+    let pivot = c;
+    for (let r = c + 1; r < 8; r++) if (Math.abs(rows[r][c]) > Math.abs(rows[pivot][c])) pivot = r;
+    [rows[c], rows[pivot]] = [rows[pivot], rows[c]];
+    [values[c], values[pivot]] = [values[pivot], values[c]];
+    for (let r = 0; r < 8; r++) {
+      if (r === c || !rows[c][c]) continue;
+      const f = rows[r][c] / rows[c][c];
+      for (let k = c; k < 8; k++) rows[r][k] -= f * rows[c][k];
+      values[r] -= f * values[c];
+    }
+  }
+  const [a, b, c, d, e, f, g, k] = values.map((value, i) => value / rows[i][i]);
+  return `matrix3d(${a},${d},0,${g},${b},${e},0,${k},0,0,1,0,${c},${f},0,1)`;
 }
