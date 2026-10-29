@@ -227,22 +227,31 @@ export const edits = {
     ],
     analytics: [
       b(
-        18,
-        33,
-        [0.846, 0.588, 0.17, 0.09],
-        'Продукти',
-        'Groceries',
-        'Із загальної картини переходимо до категорії.',
-        'Move from the overview into a category.'
+        0,
+        17,
+        [0.398, 0.225, 0.2, 0.045],
+        'Потік',
+        'Flow',
+        'Скільки прийшло й пішло — день за днем.',
+        'What came in and went out, day by day.'
       ),
       b(
-        34,
+        17,
+        32,
+        [0.609, 0.225, 0.2, 0.045],
+        'Тренди',
+        'Trends',
+        'Місяць за місяцем: скільки в середньому лишається від доходу.',
+        'Month by month: how much of your income you keep on average.'
+      ),
+      b(
+        32,
         50,
-        [0.5, 0.72, 0.92, 0.06],
-        'Показати операції',
-        'View transactions',
-        'Відкриваються саме ті покупки, з яких складається сума.',
-        'Open the exact purchases behind the total.'
+        [0.813, 0.225, 0.2, 0.045],
+        'Капітал',
+        'Capital',
+        'Заощадження й інвестиції разом — як росте твій капітал.',
+        'Savings and investments together: how your capital grows.'
       ),
     ],
     together: [

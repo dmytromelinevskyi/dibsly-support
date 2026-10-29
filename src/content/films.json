@@ -437,41 +437,58 @@
       },
       "analytics": {
         "src": "assets/cinema/uk/films/analytics.mp4",
-        "duration": 9.923333333333327,
-        "poster": "assets/cinema/uk/analytics/0019.webp",
+        "duration": 14.529999999999987,
+        "poster": "assets/cinema/uk/analytics/0001.webp",
         "steps": [
           {
             "start": 0,
             "press": 1.4,
             "transition": 1.8499999999999999,
-            "settle": 2.760000000000002,
-            "end": 4.260000000000002,
+            "settle": 3.1066666666666696,
+            "end": 4.606666666666669,
             "target": [
-              0.846,
-              0.588,
-              0.17,
-              0.09
+              0.398,
+              0.225,
+              0.2,
+              0.045
             ],
-            "control": "Продукти",
-            "description": "Із загальної картини переходимо до категорії.",
-            "before": "assets/cinema/uk/analytics/0019.webp",
-            "after": "assets/cinema/uk/analytics/0034.webp"
+            "control": "Потік",
+            "description": "Скільки прийшло й пішло — день за днем.",
+            "before": "assets/cinema/uk/analytics/0001.webp",
+            "after": "assets/cinema/uk/analytics/0018.webp"
           },
           {
-            "start": 4.260000000000002,
-            "press": 5.660000000000002,
-            "transition": 6.110000000000002,
-            "settle": 7.323333333333326,
-            "end": 8.823333333333327,
+            "start": 4.606666666666669,
+            "press": 6.0066666666666695,
+            "transition": 6.45666666666667,
+            "settle": 7.496666666666662,
+            "end": 8.996666666666663,
             "target": [
-              0.5,
-              0.72,
-              0.92,
-              0.06
+              0.609,
+              0.225,
+              0.2,
+              0.045
             ],
-            "control": "Показати операції",
-            "description": "Відкриваються саме ті покупки, з яких складається сума.",
-            "before": "assets/cinema/uk/analytics/0035.webp",
+            "control": "Тренди",
+            "description": "Місяць за місяцем: скільки в середньому лишається від доходу.",
+            "before": "assets/cinema/uk/analytics/0018.webp",
+            "after": "assets/cinema/uk/analytics/0033.webp"
+          },
+          {
+            "start": 8.996666666666663,
+            "press": 10.396666666666663,
+            "transition": 10.846666666666662,
+            "settle": 11.929999999999987,
+            "end": 13.429999999999987,
+            "target": [
+              0.813,
+              0.225,
+              0.2,
+              0.045
+            ],
+            "control": "Капітал",
+            "description": "Заощадження й інвестиції разом — як росте твій капітал.",
+            "before": "assets/cinema/uk/analytics/0033.webp",
             "after": "assets/cinema/uk/analytics/0051.webp"
           }
         ],

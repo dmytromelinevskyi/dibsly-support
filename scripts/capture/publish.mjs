@@ -32,8 +32,8 @@ const outcomes = {
     'A different quarter. Its income, taxes and deadlines, together.',
   ],
   analytics: [
-    'Тепер видно кожну покупку, з якої складається сума.',
-    'Now you can see every purchase behind the total.',
+    'Чотири погляди на ті самі гроші — від сьогодні до цілого року.',
+    'Four views of the same money, from today to the whole year.',
   ],
   together: [
     'Внески й витрати кожного — одна зрозуміла спільна історія.',
