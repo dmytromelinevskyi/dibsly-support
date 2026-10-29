@@ -1,7 +1,7 @@
 {
   "route": "features-uk.html",
   "lang": "uk",
-  "head": "<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\">\n<title>Що вміє Dibsly · Dibsly</title>\n<meta name=\"description\" content=\"Що вміє Dibsly і навіщо: кармани, що таке дохід і витрата, рахунки, імпорт банків і Apple Pay, чат з Dibsly, аналітика, план, цілі, інвестиції, сайт і ChatGPT чи Claude.\">\n<meta name=\"theme-color\" content=\"#0E0C0B\">\n<link rel=\"canonical\" href=\"https://dibslyapp.com/features-uk.html\">\n<link rel=\"alternate\" hreflang=\"uk\" href=\"https://dibslyapp.com/features-uk.html\">\n<link rel=\"alternate\" hreflang=\"en\" href=\"https://dibslyapp.com/features.html\">\n<meta property=\"og:type\" content=\"website\">\n<meta property=\"og:site_name\" content=\"Dibsly\">\n<meta property=\"og:title\" content=\"Що вміє Dibsly\">\n<meta property=\"og:description\" content=\"Що вміє Dibsly і навіщо: кармани, що таке дохід і витрата, рахунки, імпорт банків і Apple Pay, чат з Dibsly, аналітика, план, цілі, інвестиції, сайт і ChatGPT чи Claude.\">\n<meta property=\"og:url\" content=\"https://dibslyapp.com/features-uk.html\">\n<meta property=\"og:image\" content=\"https://dibslyapp.com/assets/screenshots/web/uk-web.jpg\">\n<meta name=\"twitter:card\" content=\"summary_large_image\">\n<link rel=\"icon\" type=\"image/png\" href=\"assets/brand/favicon.png\">\n<link rel=\"apple-touch-icon\" href=\"assets/brand/apple-touch-icon.png\">",
+  "head": "<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\">\n<title>Що вміє Dibsly · Dibsly</title>\n<meta name=\"description\" content=\"Що вміє Dibsly і навіщо: кармани, що таке дохід і витрата, рахунки, імпорт банків і Apple Pay, чат з Dibsly, аналітика, план, цілі, борги, кредити, ФОП, інвестиції, сайт і ChatGPT чи Claude.\">\n<meta name=\"theme-color\" content=\"#0E0C0B\">\n<link rel=\"canonical\" href=\"https://dibslyapp.com/features-uk.html\">\n<link rel=\"alternate\" hreflang=\"uk\" href=\"https://dibslyapp.com/features-uk.html\">\n<link rel=\"alternate\" hreflang=\"en\" href=\"https://dibslyapp.com/features.html\">\n<meta property=\"og:type\" content=\"website\">\n<meta property=\"og:site_name\" content=\"Dibsly\">\n<meta property=\"og:title\" content=\"Що вміє Dibsly\">\n<meta property=\"og:description\" content=\"Що вміє Dibsly і навіщо: кармани, що таке дохід і витрата, рахунки, імпорт банків і Apple Pay, чат з Dibsly, аналітика, план, цілі, борги, кредити, ФОП, інвестиції, сайт і ChatGPT чи Claude.\">\n<meta property=\"og:url\" content=\"https://dibslyapp.com/features-uk.html\">\n<meta property=\"og:image\" content=\"https://dibslyapp.com/assets/screenshots/web/uk-web.jpg\">\n<meta name=\"twitter:card\" content=\"summary_large_image\">\n<link rel=\"icon\" type=\"image/png\" href=\"assets/brand/favicon.png\">\n<link rel=\"apple-touch-icon\" href=\"assets/brand/apple-touch-icon.png\">",
   "main": {
     "tag": "main",
     "attrs": {},
@@ -78,6 +78,7 @@
               { "tag": "a", "attrs": { "href": "#chat" }, "children": ["Чат з Dibsly"] },
               { "tag": "a", "attrs": { "href": "#analytics" }, "children": ["Аналітика"] },
               { "tag": "a", "attrs": { "href": "#plan" }, "children": ["План, календар і цілі"] },
+              { "tag": "a", "attrs": { "href": "#money" }, "children": ["Борги, кредити й ФОП"] },
               { "tag": "a", "attrs": { "href": "#investments" }, "children": ["Інвестиції"] },
               { "tag": "a", "attrs": { "href": "#everywhere" }, "children": ["Скрізь"] },
               { "tag": "a", "attrs": { "href": "#privacy" }, "children": ["Приватність"] },
@@ -596,7 +597,7 @@
                             "tag": "p",
                             "attrs": { "class": "desc" },
                             "children": [
-                              "План починається з «Коштів на місяць»: скільки грошей у тебе на цей місяць, те, що під рукою, і зарплата, що прийшла. З них ти відкладаєш план заощаджень та інвестицій, а решту розкладаєш лімітами по категоріях. Так видно, скільки ще можна витратити до кінця місяця, а не тільки скільки вже пішло. Планування вмикається тут: Налаштування → Функції (у Dibsly 1.0.1: Налаштування → Параметри → Функції)."
+                              "План починається з «Коштів на місяць»: скільки грошей у тебе на цей місяць, те, що під рукою, і зарплата, що прийшла. З них ти відкладаєш план заощаджень та інвестицій, а решту розкладаєш лімітами по категоріях. Так видно, скільки ще можна витратити до кінця місяця, а не тільки скільки вже пішло. Планування вмикається тут: Налаштування → Функції."
                             ]
                           },
                           {
@@ -1127,7 +1128,7 @@
                             "tag": "p",
                             "attrs": { "class": "desc" },
                             "children": [
-                              "Чат з Dibsly, твій Claude чи ChatGPT спершу показують, що саме зміниться, і записують тільки після «Зберегти» чи твого «так». У чаті Dibsly зміну скасовує кнопка під карткою. Операції, виписки, угоди, категорії й рахунки, змінені через Claude чи ChatGPT, лежать у журналі ШІ на сайті, звідки їх можна скасувати."
+                              "Чат з Dibsly, твій Claude чи ChatGPT спершу показують, що саме зміниться, і записують тільки після «Зберегти» чи твого «так». У чаті Dibsly зміну скасовує кнопка під карткою. Операції, виписки, угоди, категорії, рахунки, план місяця, платежі календаря, цілі й борги, змінені через Claude, ChatGPT чи чат на сайті, лежать на сайті в «Історія → Журнал ШІ», звідки їх можна скасувати."
                             ]
                           },
                           {
@@ -1315,6 +1316,56 @@
                         ]
                       }
                     ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal textonly", "id": "rates" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Безкоштовно"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Курси валют і конвертер"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Курс НБУ поруч із «Під рукою» і конвертер між валютами: скільки це в гривнях чи доларах, видно одразу."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Де:"] },
+                              " Головна → «Під рукою»"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal textonly", "id": "undo" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Безкоштовно"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Скасування після видалення"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Видалив випадково? «Скасувати» в повідомленні поверне операції, перекази, цілі й платежі."
+                            ]
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ]
               },
@@ -1458,7 +1509,7 @@
                                   {
                                     "tag": "img",
                                     "attrs": {
-                                      "data-tap": "89.6,68.9",
+                                      "data-tap": "89.3,65.0",
                                       "src": "assets/screenshots/app/uk-main-b.jpg",
                                       "alt": "",
                                       "width": "750",
@@ -1785,7 +1836,7 @@
                             "tag": "p",
                             "attrs": { "class": "desc" },
                             "children": [
-                              "«На що пішло найбільше?», «Скільки я витратив на таксі цього року?», «Як там мої цілі?»: Dibsly рахує на телефоні з твоїх даних і відповідає твоїми цифрами, з картками й графіками. 20 питань на місяць безкоштовно, більше з Premium."
+                              "«На що пішло найбільше?», «Скільки я витратив на таксі цього року?», «Як там мої цілі?»: Dibsly рахує на телефоні з твоїх даних і відповідає твоїми цифрами, з картками й графіками. Чат відкривається з будь-якої сторінки й знає, звідки ти питаєш. 20 питань на місяць безкоштовно, більше з Premium."
                             ]
                           },
                           {
@@ -1793,7 +1844,7 @@
                             "attrs": { "class": "try" },
                             "children": [
                               { "tag": "b", "attrs": {}, "children": ["Де:"] },
-                              " кнопка Dibsly над «+» на Головній"
+                              " кнопка Dibsly над «+» на Головній, помаранчевий язичок праворуч на інших сторінках"
                             ]
                           },
                           {
@@ -2254,6 +2305,223 @@
               },
               {
                 "tag": "section",
+                "attrs": { "class": "fsection", "id": "money" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Борги, кредити й ФОП"] },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal", "id": "debts" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Безкоштовно"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Борги"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Хто винен тобі і кому ти: позики, поділ рахунку й чека, повернення покупки, термін у календарі. «Поділитися» надсилає посилання, друг приймає борг у своєму Dibsly, а «Нагадати» шле йому пуш. Позика й повернення не витрата й не дохід, а переказ між тобою й людиною."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Де:"] },
+                              " Головна → «Борги» або «+» → «Операція» → «Борг»"
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "help-uk.html#debts" },
+                                "children": ["Інструкція"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "phone" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "slides" },
+                                "children": [
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "class": "on",
+                                      "src": "assets/screenshots/app/uk-debts.jpg",
+                                      "alt": "Борги",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal", "id": "credits" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Безкоштовно"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Кредити"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Кредит, іпотека, розстрочка й мікрозайм: скільки лишилося, наступний платіж у календарі з нагадуванням, переплата і скільки заощадить дострокове погашення. Ліміт кредитки окремо від своїх грошей: «Під рукою» показує лише твої."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Де:"] },
+                              " Налаштування → Функції → «Кредити», потім Головна → «Кредити»"
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "help-uk.html#credits" },
+                                "children": ["Інструкція"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "phone" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "slides" },
+                                "children": [
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "class": "on",
+                                      "src": "assets/screenshots/app/uk-credits.jpg",
+                                      "alt": "Кредити",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal", "id": "fop" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Безкоштовно"] },
+                          { "tag": "h3", "attrs": {}, "children": ["ФОП 3 групи"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Кожен дохід за курсом НБУ на день зарахування, єдиний податок, військовий збір і ЄСВ по кварталах, скільки до сплати й до коли, строки в календарі з нагадуваннями й реквізити податкової, щоб скопіювати одним дотиком. І виплата від замовника: години, ставка й свої умови."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Де:"] },
+                              " Налаштування → Функції → ФОП"
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "help-uk.html#fop" },
+                                "children": ["Інструкція"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "phone" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "slides" },
+                                "children": [
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "class": "on",
+                                      "src": "assets/screenshots/app/uk-fop.jpg",
+                                      "alt": "ФОП 3 групи",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
                 "attrs": { "class": "fsection", "id": "investments" },
                 "children": [
                   { "tag": "h2", "attrs": {}, "children": ["Інвестиції"] },
@@ -2390,7 +2658,7 @@
                             "tag": "p",
                             "attrs": { "class": "desc" },
                             "children": [
-                              "Ті самі дані на великому екрані: історія з пошуком, аналітика, план, календар і чернетки. Зміни одразу з'являються на телефоні."
+                              "Ті самі дані на великому екрані: історія з пошуком, аналітика, план, календар, чернетки й усі бренди з логотипами, з пошуком. Зміни одразу з'являються на телефоні."
                             ]
                           },
                           {
@@ -2674,126 +2942,6 @@
                                       {
                                         "tag": "h4",
                                         "attrs": {},
-                                        "children": ["Чат з Dibsly на сайті"]
-                                      },
-                                      {
-                                        "tag": "p",
-                                        "attrs": {},
-                                        "children": [
-                                          "Знайти, порахувати чи змінити щось складне на великому екрані."
-                                        ]
-                                      }
-                                    ]
-                                  },
-                                  {
-                                    "tag": "button",
-                                    "attrs": {
-                                      "type": "button",
-                                      "class": "want",
-                                      "data-item": "web-chat",
-                                      "aria-pressed": "false"
-                                    },
-                                    "children": [
-                                      "Хочу це ",
-                                      { "tag": "b", "attrs": {}, "children": [] }
-                                    ]
-                                  }
-                                ]
-                              },
-                              {
-                                "tag": "li",
-                                "attrs": {},
-                                "children": [
-                                  {
-                                    "tag": "div",
-                                    "attrs": {},
-                                    "children": [
-                                      { "tag": "h4", "attrs": {}, "children": ["Бренди на сайті"] },
-                                      {
-                                        "tag": "p",
-                                        "attrs": {},
-                                        "children": [
-                                          "Усі бренди з логотипами й категоріями, з пошуком."
-                                        ]
-                                      }
-                                    ]
-                                  },
-                                  {
-                                    "tag": "button",
-                                    "attrs": {
-                                      "type": "button",
-                                      "class": "want",
-                                      "data-item": "web-brands",
-                                      "aria-pressed": "false"
-                                    },
-                                    "children": [
-                                      "Хочу це ",
-                                      { "tag": "b", "attrs": {}, "children": [] }
-                                    ]
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "tag": "div",
-                        "attrs": { "class": "rcol" },
-                        "children": [
-                          { "tag": "h3", "attrs": {}, "children": ["Далі"] },
-                          {
-                            "tag": "ul",
-                            "attrs": {},
-                            "children": [
-                              {
-                                "tag": "li",
-                                "attrs": {},
-                                "children": [
-                                  {
-                                    "tag": "div",
-                                    "attrs": {},
-                                    "children": [
-                                      {
-                                        "tag": "h4",
-                                        "attrs": {},
-                                        "children": ["Скасування для планів, календаря й цілей"]
-                                      },
-                                      {
-                                        "tag": "p",
-                                        "attrs": {},
-                                        "children": [
-                                          "Як уже є для операцій: змінив через ШІ, передумав, скасував."
-                                        ]
-                                      }
-                                    ]
-                                  },
-                                  {
-                                    "tag": "button",
-                                    "attrs": {
-                                      "type": "button",
-                                      "class": "want",
-                                      "data-item": "undo-plans",
-                                      "aria-pressed": "false"
-                                    },
-                                    "children": [
-                                      "Хочу це ",
-                                      { "tag": "b", "attrs": {}, "children": [] }
-                                    ]
-                                  }
-                                ]
-                              },
-                              {
-                                "tag": "li",
-                                "attrs": {},
-                                "children": [
-                                  {
-                                    "tag": "div",
-                                    "attrs": {},
-                                    "children": [
-                                      {
-                                        "tag": "h4",
-                                        "attrs": {},
                                         "children": ["monobank в один дотик"]
                                       },
                                       {
@@ -2833,39 +2981,6 @@
                             "tag": "ul",
                             "attrs": {},
                             "children": [
-                              {
-                                "tag": "li",
-                                "attrs": {},
-                                "children": [
-                                  {
-                                    "tag": "div",
-                                    "attrs": {},
-                                    "children": [
-                                      { "tag": "h4", "attrs": {}, "children": ["ФОП"] },
-                                      {
-                                        "tag": "p",
-                                        "attrs": {},
-                                        "children": [
-                                          "Дохід у валюті за курсом НБУ, єдиний податок і військовий збір, квартальні дедлайни."
-                                        ]
-                                      }
-                                    ]
-                                  },
-                                  {
-                                    "tag": "button",
-                                    "attrs": {
-                                      "type": "button",
-                                      "class": "want",
-                                      "data-item": "fop",
-                                      "aria-pressed": "false"
-                                    },
-                                    "children": [
-                                      "Хочу це ",
-                                      { "tag": "b", "attrs": {}, "children": [] }
-                                    ]
-                                  }
-                                ]
-                              },
                               {
                                 "tag": "li",
                                 "attrs": {},

@@ -182,6 +182,14 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Exchange rates."] },
+                          " The NBU rate is on the right of the On hand row; a tap opens the converter."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
                           { "tag": "b", "attrs": {}, "children": ["Savings"] },
                           " — one tile per currency with this month's change; the Investments tile appears when investments are on. Moving money between your accounts is never spending or income."
                         ]
@@ -253,6 +261,14 @@
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Editing."] },
                           " In History, tap an operation to change it — changes save at once. Hold it to change the category, duplicate, select several or delete."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Undo after deleting."] },
+                          " Deleted something by mistake? «Undo» in the message after deleting brings back operations, transfers, goals and payments."
                         ]
                       }
                     ]
@@ -923,6 +939,14 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Your client's payout."] },
+                          " Hours, rate and your own conditions — and how much should arrive each month. You type the hours each month on the FOP page."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
                           "Dibsly doesn't pay taxes or file returns — you do. Check the figures and details against the tax service's e-cabinet, especially before your first payment."
                         ]
                       }
@@ -1088,7 +1112,11 @@
                           "Open ",
                           {
                             "tag": "a",
-                            "attrs": { "href": "https://my.dibslyapp.com" },
+                            "attrs": {
+                              "href": "https://my.dibslyapp.com",
+                              "target": "_blank",
+                              "rel": "noopener"
+                            },
                             "children": ["my.dibslyapp.com"]
                           },
                           " on a computer and sign in to the same Dibsly account as on your iPhone. History with search, analytics, the plan, the calendar and drafts are there; changes show up on your phone at once."

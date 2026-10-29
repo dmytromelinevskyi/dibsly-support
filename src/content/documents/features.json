@@ -1,7 +1,7 @@
 {
   "route": "features.html",
   "lang": "en",
-  "head": "<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\">\n<title>What Dibsly can do · Dibsly</title>\n<meta name=\"description\" content=\"What Dibsly can do and why: pockets, what counts as income and spending, accounts, bank imports and Apple Pay, the chat with Dibsly, analytics, plan, goals, investments, the website and ChatGPT or Claude.\">\n<meta name=\"theme-color\" content=\"#0E0C0B\">\n<link rel=\"canonical\" href=\"https://dibslyapp.com/features.html\">\n<link rel=\"alternate\" hreflang=\"uk\" href=\"https://dibslyapp.com/features-uk.html\">\n<link rel=\"alternate\" hreflang=\"en\" href=\"https://dibslyapp.com/features.html\">\n<meta property=\"og:type\" content=\"website\">\n<meta property=\"og:site_name\" content=\"Dibsly\">\n<meta property=\"og:title\" content=\"What Dibsly can do\">\n<meta property=\"og:description\" content=\"What Dibsly can do and why: pockets, what counts as income and spending, accounts, bank imports and Apple Pay, the chat with Dibsly, analytics, plan, goals, investments, the website and ChatGPT or Claude.\">\n<meta property=\"og:url\" content=\"https://dibslyapp.com/features.html\">\n<meta property=\"og:image\" content=\"https://dibslyapp.com/assets/screenshots/web/en-web.jpg\">\n<meta name=\"twitter:card\" content=\"summary_large_image\">\n<link rel=\"icon\" type=\"image/png\" href=\"assets/brand/favicon.png\">\n<link rel=\"apple-touch-icon\" href=\"assets/brand/apple-touch-icon.png\">",
+  "head": "<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\">\n<title>What Dibsly can do · Dibsly</title>\n<meta name=\"description\" content=\"What Dibsly can do and why: pockets, what counts as income and spending, accounts, bank imports and Apple Pay, the chat with Dibsly, analytics, plan, goals, debts, credits, FOP, investments, the website and ChatGPT or Claude.\">\n<meta name=\"theme-color\" content=\"#0E0C0B\">\n<link rel=\"canonical\" href=\"https://dibslyapp.com/features.html\">\n<link rel=\"alternate\" hreflang=\"uk\" href=\"https://dibslyapp.com/features-uk.html\">\n<link rel=\"alternate\" hreflang=\"en\" href=\"https://dibslyapp.com/features.html\">\n<meta property=\"og:type\" content=\"website\">\n<meta property=\"og:site_name\" content=\"Dibsly\">\n<meta property=\"og:title\" content=\"What Dibsly can do\">\n<meta property=\"og:description\" content=\"What Dibsly can do and why: pockets, what counts as income and spending, accounts, bank imports and Apple Pay, the chat with Dibsly, analytics, plan, goals, debts, credits, FOP, investments, the website and ChatGPT or Claude.\">\n<meta property=\"og:url\" content=\"https://dibslyapp.com/features.html\">\n<meta property=\"og:image\" content=\"https://dibslyapp.com/assets/screenshots/web/en-web.jpg\">\n<meta name=\"twitter:card\" content=\"summary_large_image\">\n<link rel=\"icon\" type=\"image/png\" href=\"assets/brand/favicon.png\">\n<link rel=\"apple-touch-icon\" href=\"assets/brand/apple-touch-icon.png\">",
   "main": {
     "tag": "main",
     "attrs": {},
@@ -82,6 +82,7 @@
                 "attrs": { "href": "#plan" },
                 "children": ["Plan, calendar and goals"]
               },
+              { "tag": "a", "attrs": { "href": "#money" }, "children": ["Debts, credits and FOP"] },
               { "tag": "a", "attrs": { "href": "#investments" }, "children": ["Investments"] },
               { "tag": "a", "attrs": { "href": "#everywhere" }, "children": ["Everywhere"] },
               { "tag": "a", "attrs": { "href": "#privacy" }, "children": ["Privacy"] },
@@ -608,7 +609,7 @@
                             "tag": "p",
                             "attrs": { "class": "desc" },
                             "children": [
-                              "A plan starts with “Monthly funds”: the money you have for this month, what's on hand and the salary that came. From it you set aside the savings and investment plan and spread the rest as limits across categories. So you see how much you can still spend this month, not only how much has gone. Planning is switched on here: Settings → Features (in Dibsly 1.0.1, Settings → Preferences → Features)."
+                              "A plan starts with “Monthly funds”: the money you have for this month, what's on hand and the salary that came. From it you set aside the savings and investment plan and spread the rest as limits across categories. So you see how much you can still spend this month, not only how much has gone. Planning is switched on here: Settings → Features."
                             ]
                           },
                           {
@@ -1119,7 +1120,7 @@
                             "tag": "p",
                             "attrs": { "class": "desc" },
                             "children": [
-                              "The chat with Dibsly, your Claude or ChatGPT first show exactly what will change and write it only after Save or your yes. In the Dibsly chat a button under the card undoes the change. Operations, statements, trades, categories and accounts changed through Claude or ChatGPT are kept in the AI journal on the website, where they can be undone."
+                              "The chat with Dibsly, your Claude or ChatGPT first show exactly what will change and write it only after Save or your yes. In the Dibsly chat a button under the card undoes the change. Operations, statements, trades, categories, accounts, the month's plan, calendar payments, goals and debts changed through Claude, ChatGPT or the website's chat are kept on the website in History → AI journal, where they can be undone."
                             ]
                           },
                           {
@@ -1303,6 +1304,60 @@
                         ]
                       }
                     ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal textonly", "id": "rates" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Free"] },
+                          {
+                            "tag": "h3",
+                            "attrs": {},
+                            "children": ["Exchange rates and a converter"]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "The NBU rate next to “On hand” and a converter between currencies: what it is in hryvnias or dollars, at a glance."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Where:"] },
+                              " Main → On hand"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal textonly", "id": "undo" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Free"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Undo after deleting"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Deleted something by mistake? “Undo” in the message brings back operations, transfers, goals and payments."
+                            ]
+                          }
+                        ]
+                      }
+                    ]
                   }
                 ]
               },
@@ -1450,7 +1505,7 @@
                                   {
                                     "tag": "img",
                                     "attrs": {
-                                      "data-tap": "89.6,71.1",
+                                      "data-tap": "89.3,66.7",
                                       "src": "assets/screenshots/app/en-main-b.jpg",
                                       "alt": "",
                                       "width": "750",
@@ -1781,7 +1836,7 @@
                             "tag": "p",
                             "attrs": { "class": "desc" },
                             "children": [
-                              "“What did most of it go on?”, “How much did I spend on taxis this year?”, “How are my goals?”: Dibsly works it out on your phone from your data and answers in your own figures, with cards and charts. 20 questions a month free, more with Premium."
+                              "“What did most of it go on?”, “How much did I spend on taxis this year?”, “How are my goals?”: Dibsly works it out on your phone from your data and answers in your own figures, with cards and charts. The chat opens from any page and knows where you ask from. 20 questions a month free, more with Premium."
                             ]
                           },
                           {
@@ -1789,7 +1844,7 @@
                             "attrs": { "class": "try" },
                             "children": [
                               { "tag": "b", "attrs": {}, "children": ["Where:"] },
-                              " the Dibsly button above “+” on Main"
+                              " the Dibsly button above “+” on Main, the orange tab on the right on other pages"
                             ]
                           },
                           {
@@ -2250,6 +2305,223 @@
               },
               {
                 "tag": "section",
+                "attrs": { "class": "fsection", "id": "money" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Debts, credits and FOP"] },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal", "id": "debts" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Free"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Debts"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Who owes you and whom you owe: loans, split bills and receipts, returned purchases, a due date in the calendar. Share sends a link, your friend accepts the debt in their Dibsly, and Remind sends them a push. A loan or a payback is neither spending nor income: it is a transfer between you and the person."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Where:"] },
+                              " Main → Debts, or “+” → Operation → Debt"
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "help.html#debts" },
+                                "children": ["Guide"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "phone" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "slides" },
+                                "children": [
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "class": "on",
+                                      "src": "assets/screenshots/app/en-debts.jpg",
+                                      "alt": "Debts",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal", "id": "credits" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Free"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Credits"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Loans, a mortgage, instalments and microloans: what is left, the next payment in the calendar with a reminder, the overpayment and what an early repayment saves. A credit card's limit stays apart from your own money: “On hand” shows only yours."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Where:"] },
+                              " Settings → Features → Credits, then Main → Credits"
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "help.html#credits" },
+                                "children": ["Guide"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "phone" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "slides" },
+                                "children": [
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "class": "on",
+                                      "src": "assets/screenshots/app/en-credits.jpg",
+                                      "alt": "Credits",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal", "id": "fop" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Free"] },
+                          { "tag": "h3", "attrs": {}, "children": ["FOP, 3rd group"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Every income at the NBU rate of the day it arrived, the single tax, the military levy and ESV by quarter, what is due and by when, the deadlines in the calendar with reminders and the tax service's payment details to copy in one tap. And your client's payout: hours, rate and your own conditions."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Where:"] },
+                              " Settings → Features → FOP"
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "help.html#fop" },
+                                "children": ["Guide"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "phone" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "slides" },
+                                "children": [
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "class": "on",
+                                      "src": "assets/screenshots/app/en-fop.jpg",
+                                      "alt": "FOP, 3rd group",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
                 "attrs": { "class": "fsection", "id": "investments" },
                 "children": [
                   { "tag": "h2", "attrs": {}, "children": ["Investments"] },
@@ -2386,7 +2658,7 @@
                             "tag": "p",
                             "attrs": { "class": "desc" },
                             "children": [
-                              "The same data on a big screen: history with search, analytics, the plan, the calendar and drafts. Changes show up on your phone at once."
+                              "The same data on a big screen: history with search, analytics, the plan, the calendar, drafts and every brand with its logo, with search. Changes show up on your phone at once."
                             ]
                           },
                           {
@@ -2674,130 +2946,6 @@
                                       {
                                         "tag": "h4",
                                         "attrs": {},
-                                        "children": ["Chat with Dibsly on the website"]
-                                      },
-                                      {
-                                        "tag": "p",
-                                        "attrs": {},
-                                        "children": [
-                                          "Find, count or change something tricky on a big screen."
-                                        ]
-                                      }
-                                    ]
-                                  },
-                                  {
-                                    "tag": "button",
-                                    "attrs": {
-                                      "type": "button",
-                                      "class": "want",
-                                      "data-item": "web-chat",
-                                      "aria-pressed": "false"
-                                    },
-                                    "children": [
-                                      "I want this ",
-                                      { "tag": "b", "attrs": {}, "children": [] }
-                                    ]
-                                  }
-                                ]
-                              },
-                              {
-                                "tag": "li",
-                                "attrs": {},
-                                "children": [
-                                  {
-                                    "tag": "div",
-                                    "attrs": {},
-                                    "children": [
-                                      {
-                                        "tag": "h4",
-                                        "attrs": {},
-                                        "children": ["Brands on the website"]
-                                      },
-                                      {
-                                        "tag": "p",
-                                        "attrs": {},
-                                        "children": [
-                                          "Every brand with its logo and category, with search."
-                                        ]
-                                      }
-                                    ]
-                                  },
-                                  {
-                                    "tag": "button",
-                                    "attrs": {
-                                      "type": "button",
-                                      "class": "want",
-                                      "data-item": "web-brands",
-                                      "aria-pressed": "false"
-                                    },
-                                    "children": [
-                                      "I want this ",
-                                      { "tag": "b", "attrs": {}, "children": [] }
-                                    ]
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "tag": "div",
-                        "attrs": { "class": "rcol" },
-                        "children": [
-                          { "tag": "h3", "attrs": {}, "children": ["Next"] },
-                          {
-                            "tag": "ul",
-                            "attrs": {},
-                            "children": [
-                              {
-                                "tag": "li",
-                                "attrs": {},
-                                "children": [
-                                  {
-                                    "tag": "div",
-                                    "attrs": {},
-                                    "children": [
-                                      {
-                                        "tag": "h4",
-                                        "attrs": {},
-                                        "children": ["Undo for plans, the calendar and goals"]
-                                      },
-                                      {
-                                        "tag": "p",
-                                        "attrs": {},
-                                        "children": [
-                                          "As it already works for operations: changed through the AI, changed your mind, undone."
-                                        ]
-                                      }
-                                    ]
-                                  },
-                                  {
-                                    "tag": "button",
-                                    "attrs": {
-                                      "type": "button",
-                                      "class": "want",
-                                      "data-item": "undo-plans",
-                                      "aria-pressed": "false"
-                                    },
-                                    "children": [
-                                      "I want this ",
-                                      { "tag": "b", "attrs": {}, "children": [] }
-                                    ]
-                                  }
-                                ]
-                              },
-                              {
-                                "tag": "li",
-                                "attrs": {},
-                                "children": [
-                                  {
-                                    "tag": "div",
-                                    "attrs": {},
-                                    "children": [
-                                      {
-                                        "tag": "h4",
-                                        "attrs": {},
                                         "children": ["monobank in one tap"]
                                       },
                                       {
@@ -2835,43 +2983,6 @@
                             "tag": "ul",
                             "attrs": {},
                             "children": [
-                              {
-                                "tag": "li",
-                                "attrs": {},
-                                "children": [
-                                  {
-                                    "tag": "div",
-                                    "attrs": {},
-                                    "children": [
-                                      {
-                                        "tag": "h4",
-                                        "attrs": {},
-                                        "children": ["Sole traders (ФОП)"]
-                                      },
-                                      {
-                                        "tag": "p",
-                                        "attrs": {},
-                                        "children": [
-                                          "Foreign-currency income at the NBU rate, the single tax and the military levy, quarterly deadlines."
-                                        ]
-                                      }
-                                    ]
-                                  },
-                                  {
-                                    "tag": "button",
-                                    "attrs": {
-                                      "type": "button",
-                                      "class": "want",
-                                      "data-item": "fop",
-                                      "aria-pressed": "false"
-                                    },
-                                    "children": [
-                                      "I want this ",
-                                      { "tag": "b", "attrs": {}, "children": [] }
-                                    ]
-                                  }
-                                ]
-                              },
                               {
                                 "tag": "li",
                                 "attrs": {},

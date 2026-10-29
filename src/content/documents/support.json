@@ -366,7 +366,9 @@
                         "tag": "a",
                         "attrs": {
                           "class": "button hot",
-                          "href": "https://apps.apple.com/app/id6765870838"
+                          "href": "https://apps.apple.com/app/id6765870838",
+                          "target": "_blank",
+                          "rel": "noopener"
                         },
                         "children": ["Get Premium"]
                       }

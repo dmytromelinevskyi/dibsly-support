@@ -8,6 +8,8 @@ L = {
                title="Що вміє Dibsly", h1="Усе, що вміє Dibsly",
                lead="Ідеї, на яких стоїть Dibsly, і кожна можливість коротко: з прикладом і з тим, де її знайти в застосунку.",
                free="Безкоштовно", pro="Premium", where="Де", guide="Інструкція", toc="Розділи", more_link="Докладніше", signin="Увійти",
+               nav=[("features-uk.html", "Можливості"), ("help-uk.html", "Інструкції"), ("support-uk.html", "Підтримка"), ("./#price", "Ціна")],
+               main="Головне меню", get="Завантажити", other_name="English",
                want="Хочу це", next="Що далі",
                next_intro="Що ми робимо зараз і що буде потім. Дат не обіцяємо: робимо, поки не стане добре. Натисни «Хочу це» на тому, що тобі потрібно найбільше, і ми знатимемо, з чого почати.",
                form=dict(title="Чого тобі не вистачає?", lead="Розкажи, а ми подумаємо, як зробити це круто.",
@@ -17,16 +19,17 @@ L = {
                          later="Забагато повідомлень за годину. Спробуй трохи пізніше.",
                          email_bad="Схоже, в пошті помилка. Перевір її або залиш поле порожнім.",
                          note="Текст і пошту бачить лише команда Dibsly.", privacy="Конфіденційність"),
-               nav=[("features-uk.html", "Можливості"), ("help-uk.html", "Інструкції"), ("support-uk.html", "Підтримка"), ("./#price", "Ціна")],
-               main="Головне меню", get="Завантажити", other_name="English", kicker="Можливості",
+               kicker="Можливості",
                store="Завантажити в App Store", more="Є питання? Напиши: ",
                foot=[("features-uk.html", "Можливості"), ("help-uk.html", "Інструкції"), ("support-uk.html", "Підтримка"),
                      ("privacy-uk.html", "Конфіденційність"), ("terms-uk.html", "Умови")], help="help-uk.html", privacy="privacy-uk.html",
-               desc="Що вміє Dibsly і навіщо: кармани, що таке дохід і витрата, рахунки, імпорт банків і Apple Pay, чат з Dibsly, аналітика, план, цілі, інвестиції, сайт і ChatGPT чи Claude."),
+               desc="Що вміє Dibsly і навіщо: кармани, що таке дохід і витрата, рахунки, імпорт банків і Apple Pay, чат з Dibsly, аналітика, план, цілі, борги, кредити, ФОП, інвестиції, сайт і ChatGPT чи Claude."),
     "en": dict(page="features.html", other="features-uk.html", other_lang="uk", other_label="UK", home="en.html",
                title="What Dibsly can do", h1="Everything Dibsly can do",
                lead="The ideas Dibsly stands on, and every feature in short: with an example and where to find it in the app.",
                free="Free", pro="Premium", where="Where", guide="Guide", toc="Sections", more_link="More", signin="Sign in",
+               nav=[("features.html", "Features"), ("help.html", "Guides"), ("support.html", "Support"), ("en.html#price", "Price")],
+               main="Main menu", get="Download", other_name="Українська",
                want="I want this", next="What's next",
                next_intro="What we're building now and what comes later. No dates promised: we build until it's good. Tap “I want this” on what you need most, and we'll know where to start.",
                form=dict(title="What are you missing?", lead="Tell us, and we'll think about how to make it great.",
@@ -36,12 +39,11 @@ L = {
                          later="Too many messages this hour. Try again a bit later.",
                          email_bad="The e-mail looks wrong. Check it or leave the field empty.",
                          note="Only the Dibsly team sees the text and the e-mail.", privacy="Privacy"),
-               nav=[("features.html", "Features"), ("help.html", "Guides"), ("support.html", "Support"), ("en.html#price", "Price")],
-               main="Main menu", get="Download", other_name="Українська", kicker="Features",
+               kicker="Features",
                store="Download on the App Store", more="Questions? Write to ",
                foot=[("features.html", "Features"), ("help.html", "Guides"), ("support.html", "Support"), ("privacy.html", "Privacy"), ("terms.html", "Terms")],
                help="help.html", privacy="privacy.html",
-               desc="What Dibsly can do and why: pockets, what counts as income and spending, accounts, bank imports and Apple Pay, the chat with Dibsly, analytics, plan, goals, investments, the website and ChatGPT or Claude."),
+               desc="What Dibsly can do and why: pockets, what counts as income and spending, accounts, bank imports and Apple Pay, the chat with Dibsly, analytics, plan, goals, debts, credits, FOP, investments, the website and ChatGPT or Claude."),
 }
 
 # (section id, uk title, en title, [features])
@@ -56,6 +58,14 @@ S = [
    ("Спільні рахунки", "Рахунок для пари чи сім'ї: видно внески кожного, приходить сповіщення, коли інший щось додає, є спільні цілі. Вистачить Premium в одного з вас.", None),
    ("Shared accounts", "An account for a couple or a family: who put in what, a notification when the other adds something, shared goals. One Premium is enough for both of you.", None),
    ("half", None), "shared"),
+  ("rates", "free",
+   ("Курси валют і конвертер", "Курс НБУ поруч із «Під рукою» і конвертер між валютами: скільки це в гривнях чи доларах, видно одразу.", "Головна → «Під рукою»"),
+   ("Exchange rates and a converter", "The NBU rate next to “On hand” and a converter between currencies: what it is in hryvnias or dollars, at a glance.", "Main → On hand"),
+   None, None),
+  ("undo", "free",
+   ("Скасування після видалення", "Видалив випадково? «Скасувати» в повідомленні поверне операції, перекази, цілі й платежі.", None),
+   ("Undo after deleting", "Deleted something by mistake? “Undo” in the message brings back operations, transfers, goals and payments.", None),
+   None, None),
  ]),
  ("in", "Як гроші потрапляють у Dibsly", "How money gets into Dibsly", [
   ("banks", "free",
@@ -65,7 +75,7 @@ S = [
   ("apple-pay", "free",
    ("Apple Pay записується сам", "Автоматизація в «Командах» передає кожну покупку Apple Pay у Dibsly. Вона чекає чернеткою з сумою, магазином і категорією: глянь і підтверди одним дотиком.", "Головна → Активність"),
    ("Apple Pay records itself", "A Shortcuts automation hands every Apple Pay purchase to Dibsly. It waits as a draft with the amount, the shop and the category: look and confirm with one tap.", "Main → Activity"),
-   ("slides", [("main-a", None), ("main-b", "89.6,{dy}")]), "apple-pay"),
+   ("slides", [("main-a", None), ("main-b", "89.3,{dy}")]), "apple-pay"),
   ("notifications", "pro",
    ("Сповіщення будь-якого банку", "На iOS 27 сповіщення банківського застосунку стають чернетками: ШІ читає з них суму, магазин і рахунок.", None),
    ("Notifications from any bank", "On iOS 27 your banking app's notifications become drafts: the AI reads the amount, the shop and the account from them.", None),
@@ -90,8 +100,8 @@ S = [
  ]),
  ("chat", "Чат з Dibsly", "Chat with Dibsly", [
   ("ask", "free",
-   ("Питай про свої гроші", "«На що пішло найбільше?», «Скільки я витратив на таксі цього року?», «Як там мої цілі?»: Dibsly рахує на телефоні з твоїх даних і відповідає твоїми цифрами, з картками й графіками. 20 питань на місяць безкоштовно, більше з Premium.", "кнопка Dibsly над «+» на Головній"),
-   ("Ask about your money", "“What did most of it go on?”, “How much did I spend on taxis this year?”, “How are my goals?”: Dibsly works it out on your phone from your data and answers in your own figures, with cards and charts. 20 questions a month free, more with Premium.", "the Dibsly button above “+” on Main"),
+   ("Питай про свої гроші", "«На що пішло найбільше?», «Скільки я витратив на таксі цього року?», «Як там мої цілі?»: Dibsly рахує на телефоні з твоїх даних і відповідає твоїми цифрами, з картками й графіками. Чат відкривається з будь-якої сторінки й знає, звідки ти питаєш. 20 питань на місяць безкоштовно, більше з Premium.", "кнопка Dibsly над «+» на Головній, помаранчевий язичок праворуч на інших сторінках"),
+   ("Ask about your money", "“What did most of it go on?”, “How much did I spend on taxis this year?”, “How are my goals?”: Dibsly works it out on your phone from your data and answers in your own figures, with cards and charts. The chat opens from any page and knows where you ask from. 20 questions a month free, more with Premium.", "the Dibsly button above “+” on Main, the orange tab on the right on other pages"),
    ("phone", "chat"), "chat"),
   ("changes", "free",
    ("Змінює тільки після «Зберегти»", "«Запиши каву 85», «перенеси поїздки Uber у Таксі», «перейменуй рахунок»: Dibsly покаже картку зі змінами, а запише лише після твого «Зберегти». Кожну зміну можна скасувати.", None),
@@ -127,6 +137,20 @@ S = [
    ("Goals", "A car, a flat or a safety cushion. Savings and investments count toward the goal, and Dibsly tells you the month you reach it at your pace.", "Main → Goals"),
    ("crop", "goals"), None),
  ]),
+ ("money", "Борги, кредити й ФОП", "Debts, credits and FOP", [
+  ("debts", "free",
+   ("Борги", "Хто винен тобі і кому ти: позики, поділ рахунку й чека, повернення покупки, термін у календарі. «Поділитися» надсилає посилання, друг приймає борг у своєму Dibsly, а «Нагадати» шле йому пуш. Позика й повернення не витрата й не дохід, а переказ між тобою й людиною.", "Головна → «Борги» або «+» → «Операція» → «Борг»"),
+   ("Debts", "Who owes you and whom you owe: loans, split bills and receipts, returned purchases, a due date in the calendar. Share sends a link, your friend accepts the debt in their Dibsly, and Remind sends them a push. A loan or a payback is neither spending nor income: it is a transfer between you and the person.", "Main → Debts, or “+” → Operation → Debt"),
+   ("frame", "f-debt"), "debts"),
+  ("credits", "free",
+   ("Кредити", "Кредит, іпотека, розстрочка й мікрозайм: скільки лишилося, наступний платіж у календарі з нагадуванням, переплата і скільки заощадить дострокове погашення. Ліміт кредитки окремо від своїх грошей: «Під рукою» показує лише твої.", "Налаштування → Функції → «Кредити», потім Головна → «Кредити»"),
+   ("Credits", "Loans, a mortgage, instalments and microloans: what is left, the next payment in the calendar with a reminder, the overpayment and what an early repayment saves. A credit card's limit stays apart from your own money: “On hand” shows only yours.", "Settings → Features → Credits, then Main → Credits"),
+   ("frame", "f-credits"), "credits"),
+  ("fop", "free",
+   ("ФОП 3 групи", "Кожен дохід за курсом НБУ на день зарахування, єдиний податок, військовий збір і ЄСВ по кварталах, скільки до сплати й до коли, строки в календарі з нагадуваннями й реквізити податкової, щоб скопіювати одним дотиком. І виплата від замовника: години, ставка й свої умови.", "Налаштування → Функції → ФОП"),
+   ("FOP, 3rd group", "Every income at the NBU rate of the day it arrived, the single tax, the military levy and ESV by quarter, what is due and by when, the deadlines in the calendar with reminders and the tax service's payment details to copy in one tap. And your client's payout: hours, rate and your own conditions.", "Settings → Features → FOP"),
+   ("frame", "c-fop"), "fop"),
+ ]),
  ("investments", "Інвестиції", "Investments", [
   ("portfolio", "free",
    ("Портфель і дивіденди", "Звіти Interactive Brokers і Freedom Finance замість ручного введення. Історія вартості за місяць, рік чи весь час, дивіденди разом з утриманим податком і ріст окремо від поповнень, щоб депозит не виглядав прибутком.", "вкладка Інвестиції"),
@@ -135,8 +159,8 @@ S = [
  ]),
  ("everywhere", "Скрізь", "Everywhere", [
   ("website", "pro",
-   ("Сайт my.dibslyapp.com", "Ті самі дані на великому екрані: історія з пошуком, аналітика, план, календар і чернетки. Зміни одразу з'являються на телефоні.", None),
-   ("my.dibslyapp.com", "The same data on a big screen: history with search, analytics, the plan, the calendar and drafts. Changes show up on your phone at once.", None),
+   ("Сайт my.dibslyapp.com", "Ті самі дані на великому екрані: історія з пошуком, аналітика, план, календар, чернетки й усі бренди з логотипами, з пошуком. Зміни одразу з'являються на телефоні.", None),
+   ("my.dibslyapp.com", "The same data on a big screen: history with search, analytics, the plan, the calendar, drafts and every brand with its logo, with search. Changes show up on your phone at once.", None),
    ("browser", None), "website"),
   ("assistants", "pro",
    ("Dibsly у твоєму ChatGPT чи Claude", "Підключи Dibsly як конектор: питай про гроші, імпортуй виписки й став цілі просто у своєму асистенті. Записує тільки після твого «так», а кожну зміну видно в журналі, звідки її можна скасувати.", None),
@@ -187,8 +211,8 @@ IDEAS = ("ideas", "Як Dibsly думає про гроші", "How Dibsly thinks
    ("A month from payday to payday", "If your salary comes on a different day each time, a month from the 1st gets it wrong: part of the spending before payday lands in the wrong month. Choose “With the salary” and a month runs from one salary to the next. Salary late? The month just goes on until it comes. Main, History, Analytics and the plan all count the same way.", "Settings → Preferences → “Month starts on”"),
    None, ("phone", "salary"), None),
   ("idea-plan",
-   ("План з того, що прийшло", "План починається з «Коштів на місяць»: скільки грошей у тебе на цей місяць, те, що під рукою, і зарплата, що прийшла. З них ти відкладаєш план заощаджень та інвестицій, а решту розкладаєш лімітами по категоріях. Так видно, скільки ще можна витратити до кінця місяця, а не тільки скільки вже пішло. Планування вмикається тут: Налаштування → Функції (у Dibsly 1.0.1: Налаштування → Параметри → Функції).", "Головна → План"),
-   ("A plan from what came in", "A plan starts with “Monthly funds”: the money you have for this month, what's on hand and the salary that came. From it you set aside the savings and investment plan and spread the rest as limits across categories. So you see how much you can still spend this month, not only how much has gone. Planning is switched on here: Settings → Features (in Dibsly 1.0.1, Settings → Preferences → Features).", "Main → Plan"),
+   ("План з того, що прийшло", "План починається з «Коштів на місяць»: скільки грошей у тебе на цей місяць, те, що під рукою, і зарплата, що прийшла. З них ти відкладаєш план заощаджень та інвестицій, а решту розкладаєш лімітами по категоріях. Так видно, скільки ще можна витратити до кінця місяця, а не тільки скільки вже пішло. Планування вмикається тут: Налаштування → Функції.", "Головна → План"),
+   ("A plan from what came in", "A plan starts with “Monthly funds”: the money you have for this month, what's on hand and the salary that came. From it you set aside the savings and investment plan and spread the rest as limits across categories. So you see how much you can still spend this month, not only how much has gone. Planning is switched on here: Settings → Features.", "Main → Plan"),
    ("rows", [("Кошти на місяць", "Monthly funds", "52 000 ₴", "₴52,000", ""),
              ("На витрати (ліміти)", "For spending (limits)", "−30 000 ₴", "−₴30,000", ""),
              ("План заощаджень", "Savings plan", "−10 000 ₴", "−₴10,000", ""),
@@ -220,8 +244,8 @@ IDEAS = ("ideas", "Як Dibsly думає про гроші", "How Dibsly thinks
    ("A shared account for two", "You share one account, not your whole Dibsly: you both see it, who put in what and who spent what, and a notification comes when the other adds something. Your personal accounts stay yours alone. One Premium is enough for both of you.", "Profile → Sharing"),
    None, ("phone", "shared"), "shared"),
   ("idea-save",
-   ("Нічого без твого «так»", "Чат з Dibsly, твій Claude чи ChatGPT спершу показують, що саме зміниться, і записують тільки після «Зберегти» чи твого «так». У чаті Dibsly зміну скасовує кнопка під карткою. Операції, виписки, угоди, категорії й рахунки, змінені через Claude чи ChatGPT, лежать у журналі ШІ на сайті, звідки їх можна скасувати.", None),
-   ("Nothing without your yes", "The chat with Dibsly, your Claude or ChatGPT first show exactly what will change and write it only after Save or your yes. In the Dibsly chat a button under the card undoes the change. Operations, statements, trades, categories and accounts changed through Claude or ChatGPT are kept in the AI journal on the website, where they can be undone.", None),
+   ("Нічого без твого «так»", "Чат з Dibsly, твій Claude чи ChatGPT спершу показують, що саме зміниться, і записують тільки після «Зберегти» чи твого «так». У чаті Dibsly зміну скасовує кнопка під карткою. Операції, виписки, угоди, категорії, рахунки, план місяця, платежі календаря, цілі й борги, змінені через Claude, ChatGPT чи чат на сайті, лежать на сайті в «Історія → Журнал ШІ», звідки їх можна скасувати.", None),
+   ("Nothing without your yes", "The chat with Dibsly, your Claude or ChatGPT first show exactly what will change and write it only after Save or your yes. In the Dibsly chat a button under the card undoes the change. Operations, statements, trades, categories, accounts, the month's plan, calendar payments, goals and debts changed through Claude, ChatGPT or the website's chat are kept on the website in History → AI journal, where they can be undone.", None),
    None, ("convo", [("me", "Перенеси поїздки Uber у Таксі", "Move my Uber rides to Taxi"),
                     ("ai", "12 операцій з «Транспорт» у «Таксі». Зберегти?", "12 operations from Transport to Taxi. Save?"),
                     ("me", "Зберегти", "Save"),
@@ -232,21 +256,10 @@ IDEAS = ("ideas", "Як Dibsly думає про гроші", "How Dibsly thinks
 # (`Server/sync/src/siteFeedback.ts` in dibsly-ios). Column (uk, en), then items: id, uk title, en title, uk text, en text.
 ROADMAP = [
  (("Робимо зараз", "Building now"), [
-  ("web-chat", "Чат з Dibsly на сайті", "Chat with Dibsly on the website",
-   "Знайти, порахувати чи змінити щось складне на великому екрані.", "Find, count or change something tricky on a big screen."),
-  ("web-brands", "Бренди на сайті", "Brands on the website",
-   "Усі бренди з логотипами й категоріями, з пошуком.", "Every brand with its logo and category, with search."),
- ]),
- (("Далі", "Next"), [
-  ("undo-plans", "Скасування для планів, календаря й цілей", "Undo for plans, the calendar and goals",
-   "Як уже є для операцій: змінив через ШІ, передумав, скасував.", "As it already works for operations: changed through the AI, changed your mind, undone."),
   ("mono-one-tap", "monobank в один дотик", "monobank in one tap",
    "Підключення без токена, який треба копіювати руками.", "Connecting without a token copied by hand."),
  ]),
  (("Потім", "Later"), [
-  ("fop", "ФОП", "Sole traders (ФОП)",
-   "Дохід у валюті за курсом НБУ, єдиний податок і військовий збір, квартальні дедлайни.",
-   "Foreign-currency income at the NBU rate, the single tax and the military levy, quarterly deadlines."),
   ("ipad-mac", "iPad і Mac", "iPad and Mac", "", ""),
   ("android", "Android", "Android", "", ""),
  ]),
@@ -278,8 +291,13 @@ def visual(v, lang, alt):
     if kind == "phone":
         return (f'<div class="fvisual"><div class="phone"><div class="slides"><img class="on" src="assets/screenshots/app/{lang}-{data}.jpg" alt="{e(alt)}" '
                 f'width="750" height="1631" loading="lazy"></div></div></div>')
+    if kind == "frame":
+        # The native capture of debts, credits or FOP (capture-path.js maps it to the cinema's screens).
+        return (f'<div class="fvisual"><div class="phone"><div class="slides"><img class="on" src="assets/screenshots/app/{lang}-{ {"f-debt": "debts", "f-credits": "credits", "c-fop": "fop"}[data]}.jpg" alt="{e(alt)}" '
+                f'width="750" height="1631" loading="lazy"></div></div></div>')
     if kind == "slides":
-        dy = "68.9" if lang == "uk" else "71.1"
+        # The first draft's ✓ on main-a (the landing's former a-main: 359, 568 points; English 583, its «Activity» on two lines).
+        dy = "65.0" if lang == "uk" else "66.7"
         imgs = []
         for k, (name, tap) in enumerate(data):
             cls = ' class="on"' if k == 0 else ""
