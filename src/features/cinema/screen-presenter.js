@@ -41,6 +41,15 @@ export function createScreenPresenter({
     if ('readyState' in image && (image.readyState < 2 || image.seeking || !image.videoWidth))
       return false;
     try {
+      // The same film's next frame: straight onto the screen. Reading pixels back (the empty-loader probe) stalls
+      // the GPU on every frame — on phones and in Safari the films stuttered — so only a new source is probed.
+      if (key === source && hasFrame && !blending) {
+        context.globalAlpha = 1;
+        context.drawImage(image, 0, 0, canvas.width, canvas.height);
+        frameKey = frame;
+        onChange();
+        return true;
+      }
       if ('readyState' in image && probeContext.getImageData) {
         probeContext.drawImage(
           image,
@@ -54,6 +63,12 @@ export function createScreenPresenter({
           64
         );
         if (isEmptyScreen(probeContext.getImageData(0, 0, 32, 64).data)) return false;
+      }
+      if (key === source && blending) {
+        next.drawImage(image, 0, 0, canvas.width, canvas.height);
+        frameKey = frame;
+        dirty = true;
+        return true;
       }
       if (key !== source && hasFrame) {
         previous.drawImage(canvas, 0, 0);

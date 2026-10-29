@@ -177,7 +177,8 @@ export function createCinema({
     width = document.documentElement.clientWidth;
     mobileLayout = innerWidth <= 900;
     height = innerHeight;
-    renderer.setPixelRatio(Math.min(devicePixelRatio || 1, mobileLayout ? 1.35 : 1.6));
+    // Phones draw the 3D scene at 1×: a third fewer pixels a frame while a film plays.
+    renderer.setPixelRatio(Math.min(devicePixelRatio || 1, mobileLayout ? 1 : 1.6));
     renderer.setSize(width, height, false);
     camera.left = -width / 2;
     camera.right = width / 2;
