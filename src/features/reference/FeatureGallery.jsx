@@ -85,6 +85,34 @@ export default function FeatureGallery({ lang }) {
     setGroup(index);
     setSelected(groups[index].scenes[0]);
   };
+  // Phones (owner, 2026-10-29: «для мобилки другое глобальное решение»): one phone, a swipe or the arrows go to the
+  // next or the previous screen through all the groups, the segment follows; no row scrolls sideways.
+  const all = groups.flatMap((item, index) => item.scenes.map((scene) => [index, scene])),
+    at = all.findIndex(([, scene]) => scene === selected),
+    [direction, setDirection] = useState(0),
+    touch = useRef(null);
+  const step = (by) => {
+    const [next, scene] = all[(at + by + all.length) % all.length];
+    setDirection(by);
+    setGroup(next);
+    setSelected(scene);
+  };
+  const swipe = {
+    onTouchStart(event) {
+      const point = event.touches[0];
+      touch.current = { x: point.clientX, y: point.clientY };
+    },
+    onTouchEnd(event) {
+      const start = touch.current,
+        point = event.changedTouches[0];
+      touch.current = null;
+      if (!start) return;
+      const dx = point.clientX - start.x,
+        dy = point.clientY - start.y;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.2) step(dx < 0 ? 1 : -1);
+    },
+  };
+  const inGroup = groups[group].scenes.indexOf(selected);
   return (
     <section ref={section} className="feature-gallery" id="closer" aria-labelledby="gallery-title">
       <div className="gallery-layout">
@@ -132,9 +160,9 @@ export default function FeatureGallery({ lang }) {
               key={scene}
               type="button"
               aria-pressed={selected === scene}
-              onClick={(event) => {
+              onClick={() => {
+                setDirection(0);
                 setSelected(scene);
-                event.currentTarget.scrollIntoView({ block: 'nearest', inline: 'nearest' });
               }}
             >
               <span>{String(index + 1).padStart(2, '0')}</span>
@@ -143,13 +171,14 @@ export default function FeatureGallery({ lang }) {
             </button>
           ))}
         </nav>
-        <div className="gallery-stage">
+        <div className="gallery-stage" {...swipe}>
           <span className="gallery-stage-word" aria-hidden="true">
             {String(group + 1).padStart(2, '0')}
           </span>
           <IPhoneFrame className="gallery-device" data-journey-hole>
             <img
               key={selected}
+              className={direction > 0 ? 'from-right' : direction < 0 ? 'from-left' : undefined}
               src={screen(lang, selected)}
               width="750"
               height="1631"
@@ -161,6 +190,28 @@ export default function FeatureGallery({ lang }) {
           <span className="gallery-screen-label" aria-live="polite">
             {labels[selected][column]}
           </span>
+        </div>
+        <div className="gallery-pager">
+          <button
+            type="button"
+            onClick={() => step(-1)}
+            aria-label={uk ? 'Попередній екран' : 'Previous screen'}
+          >
+            <Icon name="previous" />
+          </button>
+          <p aria-live="polite">
+            <span>
+              {String(inGroup + 1).padStart(2, '0')} / {String(scenes.length).padStart(2, '0')}
+            </span>
+            {labels[selected][column]}
+          </p>
+          <button
+            type="button"
+            onClick={() => step(1)}
+            aria-label={uk ? 'Наступний екран' : 'Next screen'}
+          >
+            <Icon name="next" />
+          </button>
         </div>
         <a className="gallery-all" href={uk ? 'features-uk.html' : 'features.html'}>
           {uk ? 'Усі можливості та приклади' : 'All features and examples'}

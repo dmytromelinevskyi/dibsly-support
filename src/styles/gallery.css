@@ -403,72 +403,126 @@
   padding: 5px;
 }
 
-/* Phones (owner, 2026-10-29: «не видно телефона, не понятно на что придивлятися. Табы… стали списками, выглядит
-   ужасно»): the groups stay pills and the screens become chips, each in one row that scrolls sideways, so the phone
-   comes right under them on the first screen; no native select. */
+/* Phones (owner, 2026-10-29: the sideways rows did not scroll and the screen was awkward to look at — «для мобилки
+   другое глобальное решение»): the groups are four segments across the width, the phone is large in the middle and a
+   swipe on it or the arrows under it go through every screen, the segment following; nothing scrolls sideways. */
+.gallery-pager {
+  display: none;
+}
 @media (max-width: 900px) {
   .feature-gallery {
-    padding: 104px 20px 48px;
+    padding: 100px 20px 44px;
   }
   .gallery-lead,
-  .gallery-select {
-    display: none;
-  }
-  .gallery-groups,
-  .gallery-features {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 8px;
-    margin: 0 -20px;
-    padding: 0 20px;
-    overflow-x: auto;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-  }
-  .gallery-groups::-webkit-scrollbar,
-  .gallery-features::-webkit-scrollbar {
+  .gallery-select,
+  .gallery-features,
+  .gallery-screen-label,
+  .gallery-stage-word {
     display: none;
   }
   .gallery-groups {
     grid-row: 2;
-    margin-top: 22px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 4px;
+    margin: 20px 0 0;
+    padding: 4px;
+    border-radius: 18px;
+    background: rgba(26, 20, 16, 0.06);
   }
   .gallery-groups button {
-    flex: none;
-  }
-  .gallery-features {
-    grid-row: 3;
-    margin-top: 10px;
-    margin-bottom: 0;
-  }
-  .gallery-features button,
-  .gallery-features button:last-child {
-    flex: none;
-    width: auto;
+    min-width: 0;
     min-height: 40px;
-    padding: 8px 14px;
-    gap: 8px;
-    border: 1px solid var(--g-line);
-    border-radius: 999px;
-    background: rgba(26, 20, 16, 0.04);
-    font-size: 14px;
+    padding: 6px 4px;
+    border: 0;
+    border-radius: 14px;
+    background: transparent;
+    font-size: 13px;
     white-space: nowrap;
-  }
-  .gallery-features button > svg {
-    display: none;
-  }
-  .gallery-features button[aria-pressed='true'] {
-    background: var(--g-ink);
-    border-color: var(--g-ink);
-    color: #f6ebdd;
-  }
-  .gallery-features button[aria-pressed='true'] > span {
-    color: var(--orange);
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .gallery-stage {
-    padding: 22px 0 36px;
+    grid-row: 3;
+    padding: 18px 0 0;
+    touch-action: pan-y;
   }
+  /* With the segments at the top of the window, the phone and the pager under it fit. */
   .gallery-device {
-    width: min(68vw, 300px);
+    height: min(calc(100svh - 240px), 560px);
+    width: auto;
+    max-width: none;
+  }
+  .gallery-device img.from-right {
+    animation: gallery-from-right 0.42s var(--ease) both;
+  }
+  .gallery-device img.from-left {
+    animation: gallery-from-left 0.42s var(--ease) both;
+  }
+  .gallery-pager {
+    grid-row: 4;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 14px;
+  }
+  .gallery-pager p {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+    text-align: center;
+    font: 600 16px/1.3 var(--text);
+    color: var(--g-ink);
+  }
+  .gallery-pager p span {
+    display: block;
+    margin-bottom: 2px;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    font-variant-numeric: tabular-nums;
+    color: var(--g-orange);
+  }
+  .gallery-pager button {
+    display: grid;
+    flex: none;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--g-line);
+    border-radius: 50%;
+    background: rgba(26, 20, 16, 0.04);
+    color: var(--g-ink);
+  }
+  .gallery-pager button:active {
+    transform: scale(0.95);
+  }
+  .gallery-pager svg {
+    width: 16px;
+    height: 16px;
+  }
+  .gallery-all {
+    grid-row: 5;
+    justify-self: center;
+    padding-top: 18px;
+  }
+}
+@keyframes gallery-from-right {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes gallery-from-left {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
   }
 }
