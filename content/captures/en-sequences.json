@@ -659,41 +659,63 @@
       "assets/cinema/en/plan/0052.webp",
       "assets/cinema/en/plan/0053.webp",
       "assets/cinema/en/plan/0054.webp",
-      "assets/cinema/en/plan/0054.webp",
-      "assets/cinema/en/plan/0054.webp",
-      "assets/cinema/en/plan/0054.webp",
-      "assets/cinema/en/plan/0054.webp",
-      "assets/cinema/en/plan/0054.webp",
-      "assets/cinema/en/plan/0054.webp",
-      "assets/cinema/en/plan/0054.webp",
-      "assets/cinema/en/plan/0054.webp",
-      "assets/cinema/en/plan/0054.webp",
-      "assets/cinema/en/plan/0054.webp"
+      "assets/cinema/en/plan/0055.webp",
+      "assets/cinema/en/plan/0056.webp",
+      "assets/cinema/en/plan/0057.webp",
+      "assets/cinema/en/plan/0058.webp",
+      "assets/cinema/en/plan/0059.webp",
+      "assets/cinema/en/plan/0060.webp",
+      "assets/cinema/en/plan/0061.webp",
+      "assets/cinema/en/plan/0062.webp",
+      "assets/cinema/en/plan/0063.webp",
+      "assets/cinema/en/plan/0064.webp",
+      "assets/cinema/en/plan/0065.webp",
+      "assets/cinema/en/plan/0066.webp",
+      "assets/cinema/en/plan/0067.webp",
+      "assets/cinema/en/plan/0068.webp",
+      "assets/cinema/en/plan/0069.webp",
+      "assets/cinema/en/plan/0070.webp",
+      "assets/cinema/en/plan/0071.webp",
+      "assets/cinema/en/plan/0072.webp",
+      "assets/cinema/en/plan/0073.webp",
+      "assets/cinema/en/plan/0074.webp",
+      "assets/cinema/en/plan/0075.webp",
+      "assets/cinema/en/plan/0076.webp",
+      "assets/cinema/en/plan/0077.webp",
+      "assets/cinema/en/plan/0078.webp",
+      "assets/cinema/en/plan/0079.webp",
+      "assets/cinema/en/plan/0080.webp",
+      "assets/cinema/en/plan/0081.webp",
+      "assets/cinema/en/plan/0081.webp",
+      "assets/cinema/en/plan/0081.webp",
+      "assets/cinema/en/plan/0081.webp",
+      "assets/cinema/en/plan/0081.webp",
+      "assets/cinema/en/plan/0081.webp",
+      "assets/cinema/en/plan/0081.webp",
+      "assets/cinema/en/plan/0081.webp",
+      "assets/cinema/en/plan/0081.webp",
+      "assets/cinema/en/plan/0081.webp",
+      "assets/cinema/en/plan/0081.webp"
     ],
     "actions": [
       {
         "at": 0,
         "frame": 0,
-        "text": "Open the monthly plan from Main."
+        "text": "Plan"
       },
       {
-        "at": 0.43283582089552236,
-        "frame": 29,
-        "text": "Tap a category to change its limit."
+        "at": 0.2978723404255319,
+        "frame": 28,
+        "text": "Back"
       },
       {
-        "at": 0.6716417910447762,
-        "frame": 45,
-        "text": "Use actual spending as a starting point for the limit."
-      },
-      {
-        "at": 0.6865671641791045,
+        "at": 0.48936170212765956,
         "frame": 46,
-        "text": "Save it. The remaining amount recalculates immediately."
+        "text": "Goals"
       }
     ],
     "source": "native-simulator-recording",
-    "uniqueFrames": 54
+    "uniqueFrames": 81
   },
   "invest": {
     "poster": "assets/cinema/en/invest/0001.webp",

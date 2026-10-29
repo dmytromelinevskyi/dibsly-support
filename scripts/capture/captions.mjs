@@ -18,10 +18,9 @@ export const captions = {
       '«Зберегти» підтверджує запропоновану витрату. До цього дані не змінюються.',
     ],
     plan: [
-      'Картка «План» на головній відкриває місячні ліміти.',
-      'Дотик до категорії відкриває її ліміт.',
-      'Кнопка «Витрачено» підставляє фактичні витрати в ліміт.',
-      '«Зберегти» застосовує новий ліміт і перераховує план.',
+      '«Усе» біля плану відкриває ліміти місяця.',
+      'Стрілка повертає на Головну.',
+      '«Усе» біля цілей відкриває цілі з прогнозом.',
     ],
     invest: [
       '«Дивіденди за рік» відкривають історію виплат портфеля.',
@@ -70,10 +69,9 @@ export const captions = {
       'Save confirms the proposed expense. Until then, your data stays unchanged.',
     ],
     plan: [
-      'The Plan card on Main opens monthly limits.',
-      'Tapping a category opens its limit.',
-      'Spent uses actual spending as the new limit.',
-      'Save applies the limit and recalculates the plan.',
+      'All beside the plan opens the month’s limits.',
+      'The arrow goes back to Main.',
+      'All beside the goals opens them with a forecast.',
     ],
     invest: [
       'Dividends this year opens the portfolio’s payment history.',

@@ -130,39 +130,22 @@ export const edits = {
     plan: [
       b(
         0,
-        21,
-        [0.25, 0.795, 0.43, 0.05],
+        9,
+        [0.871, 0.594, 0.12, 0.04],
         'План',
         'Plan',
-        'Відкривається місячний план.',
-        'The monthly plan opens.'
+        'Ліміт на кожну категорію: скільки витрачено й скільки можна ще. Перевитрати — червоним.',
+        'A limit for each category: what was spent and what is left. Overspending in red.'
       ),
+      b(9, 15, [0.092, 0.097, 0.1, 0.05], 'Назад', 'Back', 'Назад на Головну.', 'Back to Main.'),
       b(
-        21,
-        35,
-        [0.172, 0.493, 0.18, 0.13],
-        'Кафе й ресторани',
-        'Eating out',
-        'Відкриваємо ліміт саме цієї категорії.',
-        'Open the limit for this category.'
-      ),
-      b(
-        35,
-        49,
-        [0.855, 0.37, 0.14, 0.035],
-        'Взяти',
-        'Use',
-        'Фактичні витрати стають новим лімітом.',
-        'Actual spending becomes the new limit.'
-      ),
-      b(
-        49,
-        62,
-        [0.5, 0.924, 0.9, 0.06],
-        'Зберегти',
-        'Save',
-        'План перераховується з новим лімітом.',
-        'The plan recalculates with the new limit.'
+        15,
+        36,
+        [0.876, 0.789, 0.12, 0.04],
+        'Цілі',
+        'Goals',
+        'Кожна ціль показує, коли ти до неї дійдеш у такому темпі.',
+        'Each goal shows when you get there at this pace.'
       ),
     ],
     invest: [
@@ -416,39 +399,22 @@ export const edits = {
     plan: [
       b(
         0,
-        24,
-        [0.25, 0.795, 0.43, 0.05],
+        20,
+        [0.883, 0.594, 0.1, 0.04],
         'План',
         'Plan',
-        'Відкриваємо план.',
-        'The monthly plan opens.'
+        'Ліміт на кожну категорію: скільки витрачено й скільки можна ще. Перевитрати — червоним.',
+        'A limit for each category: what was spent and what is left. Overspending in red.'
       ),
+      b(20, 30, [0.092, 0.097, 0.1, 0.05], 'Назад', 'Back', 'Назад на Головну.', 'Back to Main.'),
       b(
-        24,
-        40,
-        [0.172, 0.493, 0.18, 0.13],
-        'Кафе й ресторани',
-        'Eating out',
-        'Відкриваємо категорію.',
-        'Open the limit for this category.'
-      ),
-      b(
-        40,
-        41,
-        [0.855, 0.37, 0.14, 0.035],
-        'Взяти',
-        'Use',
-        'Змінюємо ліміт.',
-        'Actual spending becomes the new limit.'
-      ),
-      b(
-        41,
-        53,
-        [0.5, 0.924, 0.9, 0.06],
-        'Зберегти',
-        'Save',
-        'Зберігаємо.',
-        'The plan recalculates with the new limit.'
+        30,
+        60,
+        [0.883, 0.792, 0.1, 0.04],
+        'Цілі',
+        'Goals',
+        'Кожна ціль показує, коли ти до неї дійдеш у такому темпі.',
+        'Each goal shows when you get there at this pace.'
       ),
     ],
     invest: [

@@ -686,10 +686,6 @@
           "assets/cinema/uk/plan/0038.webp",
           "assets/cinema/uk/plan/0039.webp",
           "assets/cinema/uk/plan/0040.webp",
-          "assets/cinema/uk/plan/0040.webp",
-          "assets/cinema/uk/plan/0040.webp",
-          "assets/cinema/uk/plan/0040.webp",
-          "assets/cinema/uk/plan/0040.webp",
           "assets/cinema/uk/plan/0041.webp",
           "assets/cinema/uk/plan/0042.webp",
           "assets/cinema/uk/plan/0043.webp",
@@ -713,60 +709,60 @@
           "assets/cinema/uk/plan/0061.webp",
           "assets/cinema/uk/plan/0062.webp",
           "assets/cinema/uk/plan/0063.webp",
-          "assets/cinema/uk/plan/0063.webp",
-          "assets/cinema/uk/plan/0063.webp",
-          "assets/cinema/uk/plan/0063.webp",
-          "assets/cinema/uk/plan/0063.webp",
-          "assets/cinema/uk/plan/0063.webp",
-          "assets/cinema/uk/plan/0063.webp",
-          "assets/cinema/uk/plan/0063.webp",
-          "assets/cinema/uk/plan/0063.webp",
-          "assets/cinema/uk/plan/0063.webp",
-          "assets/cinema/uk/plan/0063.webp",
-          "assets/cinema/uk/plan/0063.webp",
-          "assets/cinema/uk/plan/0063.webp",
-          "assets/cinema/uk/plan/0063.webp",
-          "assets/cinema/uk/plan/0063.webp",
-          "assets/cinema/uk/plan/0063.webp",
-          "assets/cinema/uk/plan/0063.webp",
-          "assets/cinema/uk/plan/0063.webp",
-          "assets/cinema/uk/plan/0063.webp",
-          "assets/cinema/uk/plan/0063.webp",
-          "assets/cinema/uk/plan/0063.webp",
-          "assets/cinema/uk/plan/0063.webp",
-          "assets/cinema/uk/plan/0063.webp",
-          "assets/cinema/uk/plan/0063.webp",
-          "assets/cinema/uk/plan/0063.webp"
+          "assets/cinema/uk/plan/0064.webp",
+          "assets/cinema/uk/plan/0065.webp",
+          "assets/cinema/uk/plan/0066.webp",
+          "assets/cinema/uk/plan/0067.webp",
+          "assets/cinema/uk/plan/0068.webp",
+          "assets/cinema/uk/plan/0068.webp",
+          "assets/cinema/uk/plan/0068.webp",
+          "assets/cinema/uk/plan/0068.webp",
+          "assets/cinema/uk/plan/0068.webp",
+          "assets/cinema/uk/plan/0068.webp",
+          "assets/cinema/uk/plan/0068.webp",
+          "assets/cinema/uk/plan/0068.webp",
+          "assets/cinema/uk/plan/0068.webp",
+          "assets/cinema/uk/plan/0068.webp",
+          "assets/cinema/uk/plan/0068.webp",
+          "assets/cinema/uk/plan/0068.webp",
+          "assets/cinema/uk/plan/0068.webp",
+          "assets/cinema/uk/plan/0068.webp",
+          "assets/cinema/uk/plan/0068.webp",
+          "assets/cinema/uk/plan/0068.webp",
+          "assets/cinema/uk/plan/0068.webp",
+          "assets/cinema/uk/plan/0068.webp",
+          "assets/cinema/uk/plan/0068.webp",
+          "assets/cinema/uk/plan/0068.webp",
+          "assets/cinema/uk/plan/0068.webp",
+          "assets/cinema/uk/plan/0068.webp",
+          "assets/cinema/uk/plan/0068.webp",
+          "assets/cinema/uk/plan/0068.webp",
+          "assets/cinema/uk/plan/0068.webp"
         ],
         "actions": [
           {
             "at": 0,
             "frame": 0,
-            "text": "Картка «План» на головній відкриває місячні ліміти."
+            "text": "«Усе» біля плану відкриває ліміти місяця."
           },
           {
-            "at": 0.2765957446808511,
-            "frame": 26,
-            "text": "Дотик до категорії відкриває її ліміт."
+            "at": 0.3368421052631579,
+            "frame": 32,
+            "text": "Стрілка повертає на Головну."
           },
           {
-            "at": 0.425531914893617,
-            "frame": 40,
-            "text": "Кнопка «Витрачено» підставляє фактичні витрати в ліміт."
+            "at": 0.5263157894736842,
+            "frame": 50,
+            "text": "«Усе» біля цілей відкриває цілі з прогнозом."
           },
           {
-            "at": 0.6170212765957447,
-            "frame": 58,
-            "text": "«Зберегти» застосовує новий ліміт і перераховує план."
-          },
-          {
-            "at": 0.9042553191489362,
-            "frame": 94,
-            "text": "Ліміт оновився. План одразу показує новий залишок."
+            "at": 0.9052631578947369,
+            "frame": 95,
+            "text": "Бюджет на місяць і цілі з датою — в одному місці."
           }
         ],
         "source": "native-simulator-recording",
-        "uniqueFrames": 63
+        "uniqueFrames": 68
       },
       "invest": {
         "poster": "assets/cinema/uk/invest/0001.webp",
@@ -1394,7 +1390,9 @@
       },
       "hero": {
         "poster": "assets/cinema/uk/main.webp",
-        "frames": ["assets/cinema/uk/main.webp"],
+        "frames": [
+          "assets/cinema/uk/main.webp"
+        ],
         "actions": [
           {
             "at": 0,
@@ -1533,7 +1531,9 @@
     "en": {
       "hero": {
         "poster": "assets/cinema/en/main.webp",
-        "frames": ["assets/cinema/en/main.webp"],
+        "frames": [
+          "assets/cinema/en/main.webp"
+        ],
         "actions": [
           {
             "at": 0,
@@ -2246,60 +2246,82 @@
           "assets/cinema/en/plan/0052.webp",
           "assets/cinema/en/plan/0053.webp",
           "assets/cinema/en/plan/0054.webp",
-          "assets/cinema/en/plan/0054.webp",
-          "assets/cinema/en/plan/0054.webp",
-          "assets/cinema/en/plan/0054.webp",
-          "assets/cinema/en/plan/0054.webp",
-          "assets/cinema/en/plan/0054.webp",
-          "assets/cinema/en/plan/0054.webp",
-          "assets/cinema/en/plan/0054.webp",
-          "assets/cinema/en/plan/0054.webp",
-          "assets/cinema/en/plan/0054.webp",
-          "assets/cinema/en/plan/0054.webp",
-          "assets/cinema/en/plan/0054.webp",
-          "assets/cinema/en/plan/0054.webp",
-          "assets/cinema/en/plan/0054.webp",
-          "assets/cinema/en/plan/0054.webp",
-          "assets/cinema/en/plan/0054.webp",
-          "assets/cinema/en/plan/0054.webp",
-          "assets/cinema/en/plan/0054.webp",
-          "assets/cinema/en/plan/0054.webp",
-          "assets/cinema/en/plan/0054.webp",
-          "assets/cinema/en/plan/0054.webp",
-          "assets/cinema/en/plan/0054.webp",
-          "assets/cinema/en/plan/0054.webp",
-          "assets/cinema/en/plan/0054.webp",
-          "assets/cinema/en/plan/0054.webp"
+          "assets/cinema/en/plan/0055.webp",
+          "assets/cinema/en/plan/0056.webp",
+          "assets/cinema/en/plan/0057.webp",
+          "assets/cinema/en/plan/0058.webp",
+          "assets/cinema/en/plan/0059.webp",
+          "assets/cinema/en/plan/0060.webp",
+          "assets/cinema/en/plan/0061.webp",
+          "assets/cinema/en/plan/0062.webp",
+          "assets/cinema/en/plan/0063.webp",
+          "assets/cinema/en/plan/0064.webp",
+          "assets/cinema/en/plan/0065.webp",
+          "assets/cinema/en/plan/0066.webp",
+          "assets/cinema/en/plan/0067.webp",
+          "assets/cinema/en/plan/0068.webp",
+          "assets/cinema/en/plan/0069.webp",
+          "assets/cinema/en/plan/0070.webp",
+          "assets/cinema/en/plan/0071.webp",
+          "assets/cinema/en/plan/0072.webp",
+          "assets/cinema/en/plan/0073.webp",
+          "assets/cinema/en/plan/0074.webp",
+          "assets/cinema/en/plan/0075.webp",
+          "assets/cinema/en/plan/0076.webp",
+          "assets/cinema/en/plan/0077.webp",
+          "assets/cinema/en/plan/0078.webp",
+          "assets/cinema/en/plan/0079.webp",
+          "assets/cinema/en/plan/0080.webp",
+          "assets/cinema/en/plan/0081.webp",
+          "assets/cinema/en/plan/0081.webp",
+          "assets/cinema/en/plan/0081.webp",
+          "assets/cinema/en/plan/0081.webp",
+          "assets/cinema/en/plan/0081.webp",
+          "assets/cinema/en/plan/0081.webp",
+          "assets/cinema/en/plan/0081.webp",
+          "assets/cinema/en/plan/0081.webp",
+          "assets/cinema/en/plan/0081.webp",
+          "assets/cinema/en/plan/0081.webp",
+          "assets/cinema/en/plan/0081.webp",
+          "assets/cinema/en/plan/0081.webp",
+          "assets/cinema/en/plan/0081.webp",
+          "assets/cinema/en/plan/0081.webp",
+          "assets/cinema/en/plan/0081.webp",
+          "assets/cinema/en/plan/0081.webp",
+          "assets/cinema/en/plan/0081.webp",
+          "assets/cinema/en/plan/0081.webp",
+          "assets/cinema/en/plan/0081.webp",
+          "assets/cinema/en/plan/0081.webp",
+          "assets/cinema/en/plan/0081.webp",
+          "assets/cinema/en/plan/0081.webp",
+          "assets/cinema/en/plan/0081.webp",
+          "assets/cinema/en/plan/0081.webp",
+          "assets/cinema/en/plan/0081.webp"
         ],
         "actions": [
           {
             "at": 0,
             "frame": 0,
-            "text": "The Plan card on Main opens monthly limits."
+            "text": "All beside the plan opens the month’s limits."
           },
           {
-            "at": 0.35802469135802467,
-            "frame": 29,
-            "text": "Tapping a category opens its limit."
+            "at": 0.25925925925925924,
+            "frame": 28,
+            "text": "The arrow goes back to Main."
           },
           {
-            "at": 0.5555555555555556,
-            "frame": 45,
-            "text": "Spent uses actual spending as the new limit."
-          },
-          {
-            "at": 0.5679012345679012,
+            "at": 0.42592592592592593,
             "frame": 46,
-            "text": "Save applies the limit and recalculates the plan."
+            "text": "All beside the goals opens them with a forecast."
           },
           {
-            "at": 0.8888888888888888,
-            "frame": 81,
-            "text": "Limit updated. The plan shows the new amount left."
+            "at": 0.9166666666666666,
+            "frame": 108,
+            "text": "A budget for the month and goals with a date, in one place."
           }
         ],
         "source": "native-simulator-recording",
-        "uniqueFrames": 54
+        "uniqueFrames": 81
       },
       "invest": {
         "poster": "assets/cinema/en/invest/0001.webp",

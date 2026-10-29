@@ -623,10 +623,6 @@
       "assets/cinema/uk/plan/0038.webp",
       "assets/cinema/uk/plan/0039.webp",
       "assets/cinema/uk/plan/0040.webp",
-      "assets/cinema/uk/plan/0040.webp",
-      "assets/cinema/uk/plan/0040.webp",
-      "assets/cinema/uk/plan/0040.webp",
-      "assets/cinema/uk/plan/0040.webp",
       "assets/cinema/uk/plan/0041.webp",
       "assets/cinema/uk/plan/0042.webp",
       "assets/cinema/uk/plan/0043.webp",
@@ -650,41 +646,41 @@
       "assets/cinema/uk/plan/0061.webp",
       "assets/cinema/uk/plan/0062.webp",
       "assets/cinema/uk/plan/0063.webp",
-      "assets/cinema/uk/plan/0063.webp",
-      "assets/cinema/uk/plan/0063.webp",
-      "assets/cinema/uk/plan/0063.webp",
-      "assets/cinema/uk/plan/0063.webp",
-      "assets/cinema/uk/plan/0063.webp",
-      "assets/cinema/uk/plan/0063.webp",
-      "assets/cinema/uk/plan/0063.webp",
-      "assets/cinema/uk/plan/0063.webp",
-      "assets/cinema/uk/plan/0063.webp",
-      "assets/cinema/uk/plan/0063.webp"
+      "assets/cinema/uk/plan/0064.webp",
+      "assets/cinema/uk/plan/0065.webp",
+      "assets/cinema/uk/plan/0066.webp",
+      "assets/cinema/uk/plan/0067.webp",
+      "assets/cinema/uk/plan/0068.webp",
+      "assets/cinema/uk/plan/0068.webp",
+      "assets/cinema/uk/plan/0068.webp",
+      "assets/cinema/uk/plan/0068.webp",
+      "assets/cinema/uk/plan/0068.webp",
+      "assets/cinema/uk/plan/0068.webp",
+      "assets/cinema/uk/plan/0068.webp",
+      "assets/cinema/uk/plan/0068.webp",
+      "assets/cinema/uk/plan/0068.webp",
+      "assets/cinema/uk/plan/0068.webp",
+      "assets/cinema/uk/plan/0068.webp"
     ],
     "actions": [
       {
         "at": 0,
         "frame": 0,
-        "text": "Відкрий план із головного екрана."
+        "text": "План"
       },
       {
-        "at": 0.325,
-        "frame": 26,
-        "text": "Кольори одразу показують залишок і перевитрату. Торкнися категорії."
+        "at": 0.3950617283950617,
+        "frame": 32,
+        "text": "Назад"
       },
       {
-        "at": 0.5,
-        "frame": 40,
-        "text": "Можна взяти фактичні витрати за основу ліміту."
-      },
-      {
-        "at": 0.725,
-        "frame": 58,
-        "text": "Збережи зміни — категорія одразу перерахується."
+        "at": 0.6172839506172839,
+        "frame": 50,
+        "text": "Цілі"
       }
     ],
     "source": "native-simulator-recording",
-    "uniqueFrames": 63
+    "uniqueFrames": 68
   },
   "invest": {
     "poster": "assets/cinema/uk/invest/0001.webp",

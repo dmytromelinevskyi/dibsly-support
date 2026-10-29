@@ -16,8 +16,8 @@ const outcomes = {
     'Saved after your confirmation. You can undo the change.',
   ],
   plan: [
-    'Ліміт оновився. План одразу показує новий залишок.',
-    'Limit updated. The plan shows the new amount left.',
+    'Бюджет на місяць і цілі з датою — в одному місці.',
+    'A budget for the month and goals with a date, in one place.',
   ],
   invest: [
     'Усі подробиці виплати поруч: рахунок, податок і комісія.',
