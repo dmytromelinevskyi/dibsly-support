@@ -225,6 +225,35 @@ export const edits = {
         'The quarter, taxes and upcoming dates change together.'
       ),
     ],
+    calendar: [
+      b(
+        0,
+        18,
+        [0.903, 0.173, 0.1, 0.05],
+        'Наступний місяць',
+        'Next month',
+        'Листопад: оренда, кредит, підписки — усе на своїх днях.',
+        'November: rent, a loan, subscriptions, each on its day.'
+      ),
+      b(
+        18,
+        33,
+        [0.746, 0.097, 0.12, 0.05],
+        'Списком',
+        'As a list',
+        'Ті самі платежі списком: що, коли й з якого рахунку.',
+        'The same payments as a list: what, when and from which account.'
+      ),
+      b(
+        33,
+        47,
+        [0.5, 0.907, 0.9, 0.06],
+        'Оренда',
+        'Rent',
+        'Платіж: сума, рахунок, повторення й нагадування.',
+        'A payment: amount, account, repeat and reminder.'
+      ),
+    ],
     analytics: [
       b(
         0,
@@ -482,24 +511,62 @@ export const edits = {
         'The quarter, taxes and upcoming dates change together.'
       ),
     ],
-    analytics: [
+    calendar: [
       b(
-        19,
-        32,
-        [0.846, 0.588, 0.17, 0.09],
-        'Продукти',
-        'Groceries',
-        'Категорія.',
-        'Move from the overview into a category.'
+        0,
+        16,
+        [0.903, 0.173, 0.1, 0.05],
+        'Наступний місяць',
+        'Next month',
+        'Листопад: оренда, кредит, підписки — усе на своїх днях.',
+        'November: rent, a loan, subscriptions, each on its day.'
       ),
       b(
-        33,
-        48,
-        [0.5, 0.72, 0.92, 0.06],
-        'Показати операції',
-        'View transactions',
-        'Операції.',
-        'Open the exact purchases behind the total.'
+        16,
+        34,
+        [0.746, 0.097, 0.12, 0.05],
+        'Списком',
+        'As a list',
+        'Ті самі платежі списком: що, коли й з якого рахунку.',
+        'The same payments as a list: what, when and from which account.'
+      ),
+      b(
+        34,
+        50,
+        [0.5, 0.897, 0.9, 0.06],
+        'Оренда',
+        'Rent',
+        'Платіж: сума, рахунок, повторення й нагадування.',
+        'A payment: amount, account, repeat and reminder.'
+      ),
+    ],
+    analytics: [
+      b(
+        0,
+        15,
+        [0.433, 0.225, 0.18, 0.045],
+        'Потік',
+        'Flow',
+        'Скільки прийшло й пішло — день за днем.',
+        'What came in and went out, day by day.'
+      ),
+      b(
+        15,
+        32,
+        [0.624, 0.225, 0.18, 0.045],
+        'Тренди',
+        'Trends',
+        'Місяць за місяцем: скільки в середньому лишається від доходу.',
+        'Month by month: how much of your income you keep on average.'
+      ),
+      b(
+        32,
+        51,
+        [0.846, 0.225, 0.18, 0.045],
+        'Капітал',
+        'Capital',
+        'Заощадження й інвестиції разом — як росте твій капітал.',
+        'Savings and investments together: how your capital grows.'
       ),
     ],
     together: [

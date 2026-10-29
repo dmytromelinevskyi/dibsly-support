@@ -31,6 +31,10 @@ const outcomes = {
     'Квартал змінився — доходи, податки та строки теж.',
     'A different quarter. Its income, taxes and deadlines, together.',
   ],
+  calendar: [
+    'Видно наперед, що й коли спишеться — і з якого рахунку.',
+    'You see ahead what is charged and when, and from which account.',
+  ],
   analytics: [
     'Чотири погляди на ті самі гроші — від сьогодні до цілого року.',
     'Four views of the same money, from today to the whole year.',

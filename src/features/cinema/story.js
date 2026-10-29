@@ -54,6 +54,19 @@ export const chapterDefinitions = [
     pose: [1.85, 0.08, 0.06, 0.04, 0.06, -0.015],
   },
   {
+    id: 'calendar',
+    length: 240,
+    word: localized('НАПЕРЕД', 'AHEAD'),
+    title: localized(['Що спишеться', 'далі.'], ['What’s charged', 'next.']),
+    description: localized(
+      'Оренда, підписки, кредити — місяцем або списком. Нагадає заздалегідь.',
+      'Rent, subscriptions, loans: as a month or a list. A reminder ahead of time.'
+    ),
+    label: localized('Календар', 'Calendar'),
+    motif: 9,
+    pose: [1.85, 0.07, 0.12, -0.03, -0.09, 0.02],
+  },
+  {
     id: 'plan',
     length: 280,
     word: localized('ПОПЕРЕДУ', 'FORWARD'),
@@ -136,7 +149,8 @@ const guideAnchors = {
   invest: 'investments',
   money: 'debts',
   fop: 'fop',
-  analytics: 'calendar',
+  analytics: 'start',
+  calendar: 'calendar',
   together: 'shared',
 };
 export function getChapters(lang) {

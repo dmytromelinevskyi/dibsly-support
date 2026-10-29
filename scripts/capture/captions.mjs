@@ -37,6 +37,11 @@ export const captions = {
       'Квартал у списку відкриває доходи, податки й цифри для декларації.',
       'Стрілка перемикає квартали разом із сумами та строками.',
     ],
+    calendar: [
+      'Стрілка відкриває наступний місяць.',
+      'Кнопка вгорі показує платежі списком.',
+      'Дотик до платежу відкриває його картку.',
+    ],
     analytics: [
       '«Потік» показує доходи й витрати по днях.',
       '«Тренди» порівнюють місяці між собою.',
@@ -83,10 +88,15 @@ export const captions = {
       'A quarter opens its income, taxes and declaration figures.',
       'The arrow switches quarters, amounts and deadlines together.',
     ],
+    calendar: [
+      'The arrow opens the next month.',
+      'The button at the top shows the payments as a list.',
+      'A tap on a payment opens its card.',
+    ],
     analytics: [
-      'Analytics in the bottom bar opens the spending overview.',
-      'Tapping Groceries shows its share and monthly limit.',
-      'View transactions opens the exact purchases with the right filter.',
+      'Flow shows income and spending day by day.',
+      'Trends compare the months with each other.',
+      'Capital adds up savings and investments.',
     ],
     together: [
       'The gear on the shared account opens its settings.',
