@@ -1,0 +1,594 @@
+{
+  "route": "support.html",
+  "lang": "en",
+  "head": "<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\">\n<title>Dibsly Support</title>\n<meta name=\"description\" content=\"Dibsly support: Free and Premium, backups, imports, your data and how to reach us.\">\n<meta name=\"theme-color\" content=\"#0E0C0B\">\n<link rel=\"canonical\" href=\"https://dibslyapp.com/support.html\">\n<link rel=\"alternate\" hreflang=\"uk\" href=\"https://dibslyapp.com/support-uk.html\">\n<link rel=\"alternate\" hreflang=\"en\" href=\"https://dibslyapp.com/support.html\">\n<meta property=\"og:type\" content=\"website\">\n<meta property=\"og:site_name\" content=\"Dibsly\">\n<meta property=\"og:title\" content=\"Dibsly Support\">\n<meta property=\"og:description\" content=\"Dibsly support: Free and Premium, backups, imports, your data and how to reach us.\">\n<meta property=\"og:url\" content=\"https://dibslyapp.com/support.html\">\n<meta property=\"og:image\" content=\"https://dibslyapp.com/assets/screenshots/web/en-web.jpg\">\n<meta name=\"twitter:card\" content=\"summary_large_image\">\n<link rel=\"icon\" type=\"image/png\" href=\"assets/brand/favicon.png\">\n<link rel=\"apple-touch-icon\" href=\"assets/brand/apple-touch-icon.png\">",
+  "main": {
+    "tag": "main",
+    "attrs": {},
+    "children": [
+      {
+        "tag": "section",
+        "attrs": { "class": "page-hero" },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": { "class": "wrap" },
+            "children": [
+              {
+                "tag": "p",
+                "attrs": { "class": "kicker" },
+                "children": [
+                  { "tag": "span", "attrs": { "class": "dot" }, "children": [] },
+                  "Support"
+                ]
+              },
+              { "tag": "h1", "attrs": {}, "children": ["How can we help?"] },
+              {
+                "tag": "p",
+                "attrs": { "class": "lead" },
+                "children": [
+                  "Answers about Free and Premium, backups, imports and your data. Didn’t find yours? Write to us."
+                ]
+              },
+              {
+                "tag": "div",
+                "attrs": { "class": "actions" },
+                "children": [
+                  {
+                    "tag": "a",
+                    "attrs": { "class": "button hot", "href": "mailto:dibslysupport@gmail.com" },
+                    "children": ["Contact support"]
+                  },
+                  {
+                    "tag": "a",
+                    "attrs": { "class": "button ghost", "href": "help.html" },
+                    "children": ["Guides"]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "section",
+        "attrs": { "class": "section", "id": "faq" },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": { "class": "wrap narrow" },
+            "children": [
+              { "tag": "h2", "attrs": { "class": "reveal" }, "children": ["Questions"] },
+              {
+                "tag": "div",
+                "attrs": { "class": "faq reveal" },
+                "children": [
+                  {
+                    "tag": "details",
+                    "attrs": { "open": null },
+                    "children": [
+                      { "tag": "summary", "attrs": {}, "children": ["Is it safe?"] },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Yes. Dibsly never asks for your bank password and can’t move money, and without an account ",
+                          {
+                            "tag": "a",
+                            "attrs": { "href": "privacy.html" },
+                            "children": ["your data stays"]
+                          },
+                          " on your iPhone and in your own encrypted backups."
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "details",
+                    "attrs": {},
+                    "children": [
+                      { "tag": "summary", "attrs": {}, "children": ["How much is it?"] },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "The basics are free. Premium is $2.99 a month or $29.99 a year."
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "details",
+                    "attrs": {},
+                    "children": [
+                      { "tag": "summary", "attrs": {}, "children": ["Which banks?"] },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "monobank directly, PrivatBank, UKRSIBBANK, KredoBank and monobank statements (FOP too) and Apple Pay from any card, all free. Any other bank’s statement is read by the AI: 3 in all free, up to 25 a month with Premium."
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "details",
+                    "attrs": {},
+                    "children": [
+                      { "tag": "summary", "attrs": {}, "children": ["What does the AI see?"] },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Only what an answer needs, and only with your permission. Dibsly does the math on your phone; the AI just puts it into words."
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "details",
+                    "attrs": {},
+                    "children": [
+                      { "tag": "summary", "attrs": {}, "children": ["Do I need to sign up?"] },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "No. An account is only for the website, sync, ChatGPT or Claude and shared accounts."
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "details",
+                    "attrs": {},
+                    "children": [
+                      { "tag": "summary", "attrs": {}, "children": ["Android?"] },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Not yet: iPhone, and my.dibslyapp.com in any browser (with Premium). iPad and Mac are next."
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "details",
+                    "attrs": {},
+                    "children": [
+                      { "tag": "summary", "attrs": {}, "children": ["How do I cancel Premium?"] },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "iOS Settings → your name → Subscriptions → Dibsly, at least 24 hours before the paid period ends. Apple handles payments and refunds. When Premium ends nothing is deleted: your data stays; sync, the website and the assistants stop, and the limits go back to Free."
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "details",
+                    "attrs": {},
+                    "children": [
+                      {
+                        "tag": "summary",
+                        "attrs": {},
+                        "children": ["A new iPhone: how do I move my data?"]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Install Dibsly and choose “Restore my data” with your newest backup, or sign in to your Dibsly account (sync comes with Premium)."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "section",
+        "attrs": { "class": "section", "id": "plans" },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": { "class": "wrap" },
+            "children": [
+              { "tag": "h2", "attrs": { "class": "reveal" }, "children": ["Free and Premium"] },
+              {
+                "tag": "p",
+                "attrs": { "class": "section-lead reveal" },
+                "children": [
+                  "Dibsly is free. Premium adds sync, the website, your ChatGPT or Claude, shared accounts and an AI that does the routine for you."
+                ]
+              },
+              {
+                "tag": "div",
+                "attrs": { "class": "plans" },
+                "children": [
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "plan reveal" },
+                    "children": [
+                      { "tag": "h3", "attrs": {}, "children": ["Free"] },
+                      {
+                        "tag": "p",
+                        "attrs": { "class": "price" },
+                        "children": ["$0", { "tag": "small", "attrs": {}, "children": ["forever"] }]
+                      },
+                      {
+                        "tag": "ul",
+                        "attrs": { "class": "checks green" },
+                        "children": [
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Accounts, analytics, monthly plan, bill calendar and goals"
+                            ]
+                          },
+                          { "tag": "li", "attrs": {}, "children": ["Debts, credits and FOP"] },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "monobank directly, PrivatBank, UKRSIBBANK, KredoBank and monobank statements, Apple Pay"
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": ["Statements of other banks read by the AI: 3 in all"]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": ["Investments: broker reports and dividends"]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Chat with Dibsly: 20 questions a month ",
+                              {
+                                "tag": "span",
+                                "attrs": {},
+                                "children": ["(about settings: no limit)"]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": ["Receipts and split bills: 10 a month"]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": ["Encrypted backups in your iCloud Drive or Google Drive"]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "plan premium reveal" },
+                    "children": [
+                      {
+                        "tag": "h3",
+                        "attrs": {},
+                        "children": [
+                          "Dibsly Premium ",
+                          {
+                            "tag": "span",
+                            "attrs": { "class": "badge" },
+                            "children": ["all of it"]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": { "class": "price" },
+                        "children": [
+                          "$2.99",
+                          {
+                            "tag": "small",
+                            "attrs": {},
+                            "children": ["a month · or $29.99 a year"]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "ul",
+                        "attrs": { "class": "checks orange" },
+                        "children": [
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": ["Sync between iPhones and my.dibslyapp.com"]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": ["ChatGPT and Claude with access to your data"]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Shared accounts ",
+                              {
+                                "tag": "span",
+                                "attrs": {},
+                                "children": ["(one Premium is enough)"]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Notifications from any bank, read by the AI ",
+                              { "tag": "span", "attrs": {}, "children": ["(iOS 27)"] }
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": ["Chat with Dibsly: up to 40 questions a day"]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Statements of other banks read by the AI: up to 25 a month"
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": ["AI sorts purchases, receipts: up to 300 a month"]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": ["Voice with the AI for phrases your phone could not read"]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "a",
+                        "attrs": {
+                          "class": "button hot",
+                          "href": "https://apps.apple.com/app/id6765870838"
+                        },
+                        "children": ["Get Premium"]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "p",
+                "attrs": { "class": "plans-note" },
+                "children": [
+                  "Prices for Ukraine. The App Store shows the price in your country; the subscription renews automatically."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "section",
+        "attrs": { "class": "section", "id": "backup" },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": { "class": "wrap" },
+            "children": [
+              { "tag": "h2", "attrs": { "class": "reveal" }, "children": ["Backups"] },
+              {
+                "tag": "div",
+                "attrs": { "class": "grid two" },
+                "children": [
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      { "tag": "h3", "attrs": {}, "children": ["Where and when"] },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "An encrypted backup — by hand, or daily or weekly — to your iCloud Drive folder or to “Dibsly Backups” in Google Drive. Of the automatic ones, Dibsly keeps the five newest."
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      { "tag": "h3", "attrs": {}, "children": ["Recovery password"] },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "A backup opens only with your recovery password. Dibsly doesn’t know it and can’t reset it, so keep it in a password manager."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "section",
+        "attrs": { "class": "section", "id": "imports" },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": { "class": "wrap" },
+            "children": [
+              { "tag": "h2", "attrs": { "class": "reveal" }, "children": ["Imports"] },
+              {
+                "tag": "div",
+                "attrs": { "class": "grid two" },
+                "children": [
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      { "tag": "h3", "attrs": {}, "children": ["Banks"] },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "monobank, PrivatBank, UKRSIBBANK and KredoBank statements (and their FOP statements) are read by Dibsly itself, on your phone; the file is never uploaded. monobank can also be connected directly with a read-only token."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Any other bank’s statement is read by the AI: 3 in all free, up to 25 a month with Premium."
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      { "tag": "h3", "attrs": {}, "children": ["Apps and brokers"] },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Bring a ledger over from a Dibsly or Monefy CSV, and investments from Interactive Brokers and Freedom Finance reports."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "section",
+        "attrs": { "class": "section", "id": "privacy" },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": { "class": "wrap" },
+            "children": [
+              { "tag": "h2", "attrs": { "class": "reveal" }, "children": ["Your data"] },
+              {
+                "tag": "div",
+                "attrs": { "class": "grid two" },
+                "children": [
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      { "tag": "h3", "attrs": {}, "children": ["On your iPhone first"] },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Without an account your records stay on the phone and in your own encrypted backups. With an account and Premium they sync through Dibsly’s server, so your iPhones and my.dibslyapp.com show the same."
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "h3",
+                        "attrs": {},
+                        "children": ["The AI only with your permission"]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "The AI is OpenAI, reached through Dibsly’s own server. Only what a feature needs is sent; OpenAI keeps it for at most 30 days and doesn’t train models on it."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": { "class": "muted" },
+                        "children": [
+                          "Rates come from the National Bank of Ukraine, quotes from Nasdaq and Yahoo Finance; these requests carry none of your records. All the details are in the ",
+                          {
+                            "tag": "a",
+                            "attrs": { "href": "privacy.html" },
+                            "children": ["privacy policy"]
+                          },
+                          "."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "section",
+        "attrs": { "class": "section", "id": "contact" },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": { "class": "wrap narrow" },
+            "children": [
+              { "tag": "h2", "attrs": { "class": "reveal" }, "children": ["Write to us"] },
+              {
+                "tag": "div",
+                "attrs": { "class": "card reveal" },
+                "children": [
+                  {
+                    "tag": "p",
+                    "attrs": {},
+                    "children": [
+                      "Email ",
+                      {
+                        "tag": "a",
+                        "attrs": { "href": "mailto:dibslysupport@gmail.com" },
+                        "children": ["dibslysupport@gmail.com"]
+                      },
+                      ": what you did and what happened. In the app, “Write to us” in Help adds the Dibsly and iOS versions for you."
+                    ]
+                  },
+                  {
+                    "tag": "p",
+                    "attrs": { "class": "warn" },
+                    "children": [
+                      "Never send your recovery password or an unencrypted export of your data."
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

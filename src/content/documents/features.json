@@ -1,0 +1,3199 @@
+{
+  "route": "features.html",
+  "lang": "en",
+  "head": "<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\">\n<title>What Dibsly can do · Dibsly</title>\n<meta name=\"description\" content=\"What Dibsly can do and why: pockets, what counts as income and spending, accounts, bank imports and Apple Pay, the chat with Dibsly, analytics, plan, goals, investments, the website and ChatGPT or Claude.\">\n<meta name=\"theme-color\" content=\"#0E0C0B\">\n<link rel=\"canonical\" href=\"https://dibslyapp.com/features.html\">\n<link rel=\"alternate\" hreflang=\"uk\" href=\"https://dibslyapp.com/features-uk.html\">\n<link rel=\"alternate\" hreflang=\"en\" href=\"https://dibslyapp.com/features.html\">\n<meta property=\"og:type\" content=\"website\">\n<meta property=\"og:site_name\" content=\"Dibsly\">\n<meta property=\"og:title\" content=\"What Dibsly can do\">\n<meta property=\"og:description\" content=\"What Dibsly can do and why: pockets, what counts as income and spending, accounts, bank imports and Apple Pay, the chat with Dibsly, analytics, plan, goals, investments, the website and ChatGPT or Claude.\">\n<meta property=\"og:url\" content=\"https://dibslyapp.com/features.html\">\n<meta property=\"og:image\" content=\"https://dibslyapp.com/assets/screenshots/web/en-web.jpg\">\n<meta name=\"twitter:card\" content=\"summary_large_image\">\n<link rel=\"icon\" type=\"image/png\" href=\"assets/brand/favicon.png\">\n<link rel=\"apple-touch-icon\" href=\"assets/brand/apple-touch-icon.png\">",
+  "main": {
+    "tag": "main",
+    "attrs": {},
+    "children": [
+      {
+        "tag": "section",
+        "attrs": { "class": "page-hero fhero" },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": { "class": "wrap" },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {},
+                "children": [
+                  {
+                    "tag": "p",
+                    "attrs": { "class": "kicker" },
+                    "children": [
+                      { "tag": "span", "attrs": { "class": "dot" }, "children": [] },
+                      "Features"
+                    ]
+                  },
+                  { "tag": "h1", "attrs": {}, "children": ["Everything Dibsly can do"] },
+                  {
+                    "tag": "p",
+                    "attrs": { "class": "lead" },
+                    "children": [
+                      "The ideas Dibsly stands on, and every feature in short: with an example and where to find it in the app."
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "div",
+                "attrs": { "class": "mascot", "aria-hidden": "true" },
+                "children": [
+                  {
+                    "tag": "img",
+                    "attrs": {
+                      "src": "assets/brand/dibsly-dark.png",
+                      "alt": "",
+                      "width": "404",
+                      "height": "386"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "div",
+        "attrs": { "class": "wrap with-toc" },
+        "children": [
+          {
+            "tag": "nav",
+            "attrs": { "class": "toc", "aria-label": "Sections" },
+            "children": [
+              {
+                "tag": "a",
+                "attrs": { "href": "#ideas" },
+                "children": ["How Dibsly thinks about money"]
+              },
+              { "tag": "a", "attrs": { "href": "#accounts" }, "children": ["Accounts"] },
+              {
+                "tag": "a",
+                "attrs": { "href": "#in" },
+                "children": ["How money gets into Dibsly"]
+              },
+              { "tag": "a", "attrs": { "href": "#chat" }, "children": ["Chat with Dibsly"] },
+              { "tag": "a", "attrs": { "href": "#analytics" }, "children": ["Analytics"] },
+              {
+                "tag": "a",
+                "attrs": { "href": "#plan" },
+                "children": ["Plan, calendar and goals"]
+              },
+              { "tag": "a", "attrs": { "href": "#investments" }, "children": ["Investments"] },
+              { "tag": "a", "attrs": { "href": "#everywhere" }, "children": ["Everywhere"] },
+              { "tag": "a", "attrs": { "href": "#privacy" }, "children": ["Privacy"] },
+              { "tag": "a", "attrs": { "href": "#next" }, "children": ["What's next"] }
+            ]
+          },
+          {
+            "tag": "div",
+            "attrs": { "class": "flist" },
+            "children": [
+              {
+                "tag": "section",
+                "attrs": { "class": "fsection", "id": "ideas" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["How Dibsly thinks about money"] },
+                  {
+                    "tag": "p",
+                    "attrs": { "class": "intro" },
+                    "children": [
+                      "Dibsly's main rule: don't mix the money you live on every day with what you put aside or invest. The everyday balance shows how your money moves, while savings and investments sit apart: that's not money you need to keep poking at. Everything else grows from this rule."
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature idea reveal", "id": "idea-pockets" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "h3", "attrs": {}, "children": ["Why three pockets"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Every account sits in one pocket. On hand: cards and cash for every day. Savings: what you put aside. Investments: broker accounts. The big number on Main and the month's income and spending count only On hand. So the ₴50,000 you put aside doesn't wink at you on a Friday night, and the month shows how you really live."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Where:"] },
+                              " Settings → Accounts → an account"
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "#all-accounts" },
+                                "children": ["More"]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "iex pockets", "aria-hidden": "true" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "pocket main" },
+                                "children": [
+                                  { "tag": "span", "attrs": {}, "children": ["On hand"] },
+                                  { "tag": "b", "attrs": {}, "children": ["₴18,400"] },
+                                  { "tag": "i", "attrs": {}, "children": ["on Main"] }
+                                ]
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "pocket" },
+                                "children": [
+                                  { "tag": "span", "attrs": {}, "children": ["Savings"] },
+                                  { "tag": "b", "attrs": {}, "children": ["₴50,000"] },
+                                  { "tag": "i", "attrs": {}, "children": ["apart"] }
+                                ]
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "pocket" },
+                                "children": [
+                                  { "tag": "span", "attrs": {}, "children": ["Investments"] },
+                                  { "tag": "b", "attrs": {}, "children": ["$3,200"] },
+                                  { "tag": "i", "attrs": {}, "children": ["apart"] }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "phone" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "slides" },
+                                "children": [
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "class": "on",
+                                      "src": "assets/screenshots/app/en-accounts.jpg",
+                                      "alt": "Why three pockets",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature idea exvis reveal", "id": "idea-income" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          {
+                            "tag": "h3",
+                            "attrs": {},
+                            "children": ["What counts as income and spending"]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Income and spending are money that came in from outside or went out. Salary, a gift, coffee, rent. A transfer between your own accounts or a currency exchange changes nothing: the money moved from one pocket to another, and Dibsly spots such transfers in statements by itself. A transfer to Savings isn't spending either: you didn't spend that money, you put it aside. Buying and selling shares live in Investments, where dividends count as income and the tax and the broker's fee as spending."
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "iex live live-ledger",
+                              "data-start": "{\"hand\": 18400, \"income\": 0, \"spending\": 0, \"savings\": 50000}"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "tots" },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": { "class": "tot" },
+                                    "children": [
+                                      { "tag": "span", "attrs": {}, "children": ["On hand"] },
+                                      {
+                                        "tag": "b",
+                                        "attrs": { "data-total": "hand", "data-currency": "₴" },
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": { "class": "tot" },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": ["Month's income"]
+                                      },
+                                      {
+                                        "tag": "b",
+                                        "attrs": { "data-total": "income", "data-currency": "₴" },
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": { "class": "tot" },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": ["Month's spending"]
+                                      },
+                                      {
+                                        "tag": "b",
+                                        "attrs": { "data-total": "spending", "data-currency": "₴" },
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": { "class": "tot" },
+                                    "children": [
+                                      { "tag": "span", "attrs": {}, "children": ["Savings"] },
+                                      {
+                                        "tag": "b",
+                                        "attrs": { "data-total": "savings", "data-currency": "₴" },
+                                        "children": []
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": { "class": "hint" },
+                                "children": ["Tap the operations and watch the numbers"]
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "ledger" },
+                                "children": [
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "row in",
+                                      "aria-pressed": "false",
+                                      "data-effect": "{\"hand\": 40000, \"income\": 40000}"
+                                    },
+                                    "children": [
+                                      { "tag": "span", "attrs": {}, "children": ["Salary"] },
+                                      { "tag": "b", "attrs": {}, "children": ["+₴40,000"] },
+                                      { "tag": "i", "attrs": {}, "children": ["income"] }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "row out",
+                                      "aria-pressed": "false",
+                                      "data-effect": "{\"hand\": -85, \"spending\": 85}"
+                                    },
+                                    "children": [
+                                      { "tag": "span", "attrs": {}, "children": ["Coffee"] },
+                                      { "tag": "b", "attrs": {}, "children": ["−₴85"] },
+                                      { "tag": "i", "attrs": {}, "children": ["spending"] }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "row same",
+                                      "aria-pressed": "false",
+                                      "data-effect": "{}"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": ["monobank → PrivatBank"]
+                                      },
+                                      { "tag": "b", "attrs": {}, "children": ["₴5,000"] },
+                                      { "tag": "i", "attrs": {}, "children": ["not counted"] }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "row same",
+                                      "aria-pressed": "false",
+                                      "data-effect": "{\"hand\": -10000, \"savings\": 10000}"
+                                    },
+                                    "children": [
+                                      { "tag": "span", "attrs": {}, "children": ["To Savings"] },
+                                      { "tag": "b", "attrs": {}, "children": ["₴10,000"] },
+                                      { "tag": "i", "attrs": {}, "children": ["not spending"] }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "row same",
+                                      "aria-pressed": "false",
+                                      "data-effect": "{}"
+                                    },
+                                    "children": [
+                                      { "tag": "span", "attrs": {}, "children": ["Buying shares"] },
+                                      { "tag": "b", "attrs": {}, "children": ["$500"] },
+                                      { "tag": "i", "attrs": {}, "children": ["in Investments"] }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature idea reveal", "id": "idea-balance" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          {
+                            "tag": "h3",
+                            "attrs": {},
+                            "children": ["An everyday account outside the big number"]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Some accounts you use but don't want in the total: a sole-trader account clients pay into, or a dollar account. Keep it in On hand and switch off “Count in balance”. Its balance leaves the big number, while money arriving on it is still the month's income. Moving it to your card or selling the currency won't count as income a second time: it's the same money."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Where:"] },
+                              " Settings → Accounts → an account → “Count in balance”"
+                            ]
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "iex live live-switch",
+                              "data-start": "{\"hand\": 18400, \"income\": 65000}",
+                              "data-account": "25000"
+                            },
+                            "children": [
+                              {
+                                "tag": "label",
+                                "attrs": { "class": "switch-row" },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "tag": "b",
+                                        "attrs": {},
+                                        "children": ["Sole-trader account"]
+                                      },
+                                      { "tag": "i", "attrs": {}, "children": ["₴25,000"] }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": { "class": "toggle" },
+                                    "children": [
+                                      {
+                                        "tag": "input",
+                                        "attrs": { "type": "checkbox", "checked": null },
+                                        "children": []
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": { "aria-hidden": "true" },
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  { "tag": "em", "attrs": {}, "children": ["Count in balance"] }
+                                ]
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "tots two" },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": { "class": "tot" },
+                                    "children": [
+                                      { "tag": "span", "attrs": {}, "children": ["On hand"] },
+                                      {
+                                        "tag": "b",
+                                        "attrs": { "data-total": "hand", "data-currency": "₴" },
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": { "class": "tot" },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": ["Month's income"]
+                                      },
+                                      {
+                                        "tag": "b",
+                                        "attrs": { "data-total": "income", "data-currency": "₴" },
+                                        "children": []
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "phone" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "slides" },
+                                "children": [
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "class": "on",
+                                      "src": "assets/screenshots/app/en-accountEditor.jpg",
+                                      "alt": "An everyday account outside the big number",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature idea reveal", "id": "idea-salary-month" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          {
+                            "tag": "h3",
+                            "attrs": {},
+                            "children": ["A month from payday to payday"]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "If your salary comes on a different day each time, a month from the 1st gets it wrong: part of the spending before payday lands in the wrong month. Choose “With the salary” and a month runs from one salary to the next. Salary late? The month just goes on until it comes. Main, History, Analytics and the plan all count the same way."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Where:"] },
+                              " Settings → Preferences → “Month starts on”"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "phone" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "slides" },
+                                "children": [
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "class": "on",
+                                      "src": "assets/screenshots/app/en-salary.jpg",
+                                      "alt": "A month from payday to payday",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature idea exvis reveal", "id": "idea-plan" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "h3", "attrs": {}, "children": ["A plan from what came in"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "A plan starts with “Monthly funds”: the money you have for this month, what's on hand and the salary that came. From it you set aside the savings and investment plan and spread the rest as limits across categories. So you see how much you can still spend this month, not only how much has gone. Planning is switched on here: Settings → Features (in Dibsly 1.0.1, Settings → Preferences → Features)."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Where:"] },
+                              " Main → Plan"
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "#monthly-plan" },
+                                "children": ["More"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "iex sums", "aria-hidden": "true" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "row" },
+                                "children": [
+                                  { "tag": "span", "attrs": {}, "children": ["Monthly funds"] },
+                                  { "tag": "b", "attrs": {}, "children": ["₴52,000"] }
+                                ]
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "row" },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {},
+                                    "children": ["For spending (limits)"]
+                                  },
+                                  { "tag": "b", "attrs": {}, "children": ["−₴30,000"] }
+                                ]
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "row" },
+                                "children": [
+                                  { "tag": "span", "attrs": {}, "children": ["Savings plan"] },
+                                  { "tag": "b", "attrs": {}, "children": ["−₴10,000"] }
+                                ]
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "row" },
+                                "children": [
+                                  { "tag": "span", "attrs": {}, "children": ["Investment plan"] },
+                                  { "tag": "b", "attrs": {}, "children": ["−₴5,000"] }
+                                ]
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "row total" },
+                                "children": [
+                                  { "tag": "span", "attrs": {}, "children": ["Still free"] },
+                                  { "tag": "b", "attrs": {}, "children": ["₴7,000"] }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature idea exvis reveal", "id": "idea-drafts" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          {
+                            "tag": "h3",
+                            "attrs": {},
+                            "children": ["Why drafts and not all by itself"]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Dibsly catches Apple Pay purchases, bank notifications and receipts by itself but doesn't record them at once: they wait in Activity. The balance changes only after you tap Save. So nothing gets into your books behind your back, and an odd amount or the wrong category shows before it spoils the month."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Where:"] },
+                              " Main → Activity"
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "#apple-pay" },
+                                "children": ["More"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "ol",
+                            "attrs": { "class": "iex steps", "aria-hidden": "true" },
+                            "children": [
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": ["Apple Pay · Silpo · ₴412"]
+                              },
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": ["A draft in Activity: Groceries?"]
+                              },
+                              { "tag": "li", "attrs": {}, "children": ["Save: balance −₴412"] }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature idea exvis reveal", "id": "idea-brands" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          {
+                            "tag": "h3",
+                            "attrs": {},
+                            "children": ["A brand once, its category for good"]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Dibsly knows over 400 brands with their logos. Pick a category for a brand once and all its purchases go there. Buy different things from one brand, like Epicentr for the home one day and a gift the next? Just change the category on the operation: Dibsly remembers and next time offers both. And a category you don't want in your analytics can be hidden: it leaves the Analytics totals and nothing else."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Where:"] },
+                              " Settings → Brands"
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              { "tag": "a", "attrs": { "href": "#brands" }, "children": ["More"] }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "iex sums", "aria-hidden": "true" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "row" },
+                                "children": [
+                                  { "tag": "span", "attrs": {}, "children": ["Silpo → Groceries"] },
+                                  { "tag": "b", "attrs": {}, "children": ["23 purchases"] }
+                                ]
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "row" },
+                                "children": [
+                                  { "tag": "span", "attrs": {}, "children": ["Uklon → Taxi"] },
+                                  { "tag": "b", "attrs": {}, "children": ["14 rides"] }
+                                ]
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "row" },
+                                "children": [
+                                  { "tag": "span", "attrs": {}, "children": ["OKKO → Car"] },
+                                  { "tag": "b", "attrs": {}, "children": ["6 fill-ups"] }
+                                ]
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "row" },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {},
+                                    "children": ["Epicentr → Home or Gifts"]
+                                  },
+                                  { "tag": "b", "attrs": {}, "children": ["both"] }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature idea reveal", "id": "idea-goals" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          {
+                            "tag": "h3",
+                            "attrs": {},
+                            "children": ["Goals live on savings, not on your card"]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "A goal takes nothing off your accounts: it shows which of your savings and investments work for it. On hand money takes no part: to get closer, you move money to the goal's account. Several goals fill in turn: a reserve such as a cushion first, then in your order. And Dibsly tells you the month you reach each one at your pace."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Where:"] },
+                              " Main → Goals"
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              { "tag": "a", "attrs": { "href": "#goals" }, "children": ["More"] }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "phone" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "slides" },
+                                "children": [
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "class": "on",
+                                      "src": "assets/screenshots/app/en-goals-full.jpg",
+                                      "alt": "Goals live on savings, not on your card",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature idea exvis reveal", "id": "idea-growth" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "h3", "attrs": {}, "children": ["A deposit isn't profit"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "You put $1,000 into your broker account and the portfolio grew by $1,000, but you didn't earn a cent. So Dibsly shows growth apart from deposits: how much you put in and how much the money earned by itself, with dividends and the tax withheld. Capital in Analytics counts the same way."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Where:"] },
+                              " the Investments tab"
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "#portfolio" },
+                                "children": ["More"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "iex live live-growth",
+                              "data-start": "{\"deposits\": 10000, \"value\": 11200}"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "tots three" },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": { "class": "tot" },
+                                    "children": [
+                                      { "tag": "span", "attrs": {}, "children": ["Put in"] },
+                                      {
+                                        "tag": "b",
+                                        "attrs": { "data-total": "deposits", "data-currency": "$" },
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": { "class": "tot" },
+                                    "children": [
+                                      { "tag": "span", "attrs": {}, "children": ["Portfolio"] },
+                                      {
+                                        "tag": "b",
+                                        "attrs": { "data-total": "value", "data-currency": "$" },
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": { "class": "tot" },
+                                    "children": [
+                                      { "tag": "span", "attrs": {}, "children": ["Earned"] },
+                                      {
+                                        "tag": "b",
+                                        "attrs": { "data-total": "growth", "data-currency": "$" },
+                                        "children": []
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "chips" },
+                                "children": [
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "chip",
+                                      "data-act": "deposit"
+                                    },
+                                    "children": ["Top up $1,000"]
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "chip",
+                                      "data-act": "market"
+                                    },
+                                    "children": ["Market +5%"]
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "chip",
+                                      "data-act": "reset"
+                                    },
+                                    "children": ["Start over"]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature idea reveal", "id": "idea-shared" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "h3", "attrs": {}, "children": ["A shared account for two"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "You share one account, not your whole Dibsly: you both see it, who put in what and who spent what, and a notification comes when the other adds something. Your personal accounts stay yours alone. One Premium is enough for both of you."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Where:"] },
+                              " Profile → Sharing"
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              { "tag": "a", "attrs": { "href": "#shared" }, "children": ["More"] }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "phone" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "slides" },
+                                "children": [
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "class": "on",
+                                      "src": "assets/screenshots/app/en-shared.jpg",
+                                      "alt": "A shared account for two",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature idea reveal", "id": "idea-save" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "h3", "attrs": {}, "children": ["Nothing without your yes"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "The chat with Dibsly, your Claude or ChatGPT first show exactly what will change and write it only after Save or your yes. In the Dibsly chat a button under the card undoes the change. Operations, statements, trades, categories and accounts changed through Claude or ChatGPT are kept in the AI journal on the website, where they can be undone."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              { "tag": "a", "attrs": { "href": "#changes" }, "children": ["More"] }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "convo", "aria-hidden": "true" },
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": { "class": "me" },
+                                "children": ["Move my Uber rides to Taxi"]
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": { "class": "ai" },
+                                "children": ["12 operations from Transport to Taxi. Save?"]
+                              },
+                              { "tag": "p", "attrs": { "class": "me" }, "children": ["Save"] },
+                              {
+                                "tag": "p",
+                                "attrs": { "class": "ai" },
+                                "children": ["Done. Changed your mind? Undo is under the card."]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "fsection", "id": "accounts" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Accounts"] },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal", "id": "all-accounts" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Free"] },
+                          { "tag": "h3", "attrs": {}, "children": ["All your accounts together"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Cards from different banks, cash, savings and brokerage accounts in any currency. On top, “On hand”: what you can really spend now, without savings and investments."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Where:"] },
+                              " Main"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "phone" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "slides" },
+                                "children": [
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "class": "on",
+                                      "src": "assets/screenshots/app/en-main-a.jpg",
+                                      "alt": "All your accounts together",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal", "id": "shared" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind pro" }, "children": ["Premium"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Shared accounts"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "An account for a couple or a family: who put in what, a notification when the other adds something, shared goals. One Premium is enough for both of you."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "help.html#shared" },
+                                "children": ["Guide"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "halfcard", "aria-hidden": "true" },
+                            "children": [
+                              { "tag": "p", "attrs": { "class": "big" }, "children": ["50 / 50"] },
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "half" },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": { "class": "who" },
+                                        "children": ["O"]
+                                      },
+                                      { "tag": "i", "attrs": {}, "children": [] },
+                                      "₴10,700"
+                                    ]
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": { "class": "who" },
+                                        "children": ["D"]
+                                      },
+                                      { "tag": "i", "attrs": {}, "children": [] },
+                                      "₴10,700"
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "fsection", "id": "in" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["How money gets into Dibsly"] },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal", "id": "banks" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Free"] },
+                          {
+                            "tag": "h3",
+                            "attrs": {},
+                            "children": ["monobank and bank statements"]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "monobank directly with a read-only token. Statements from PrivatBank, UKRSIBBANK, KredoBank and monobank, their FOP statements too, as PDF, Excel or CSV. Dibsly reads the file on your phone, sorts operations into categories and spots transfers between your own accounts."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Where:"] },
+                              " Settings → Import & export"
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "help.html#statements" },
+                                "children": ["Guide"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "phone" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "slides" },
+                                "children": [
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "class": "on",
+                                      "src": "assets/screenshots/app/en-banks.jpg",
+                                      "alt": "monobank and bank statements",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal", "id": "apple-pay" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Free"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Apple Pay records itself"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "A Shortcuts automation hands every Apple Pay purchase to Dibsly. It waits as a draft with the amount, the shop and the category: look and confirm with one tap."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Where:"] },
+                              " Main → Activity"
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "help.html#apple-pay" },
+                                "children": ["Guide"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "phone" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "slides", "data-hold": "1700" },
+                                "children": [
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "class": "on",
+                                      "src": "assets/screenshots/app/en-main-a.jpg",
+                                      "alt": "Apple Pay records itself",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "data-tap": "89.6,71.1",
+                                      "src": "assets/screenshots/app/en-main-b.jpg",
+                                      "alt": "",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": { "class": "tap", "aria-hidden": "true" },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal", "id": "notifications" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind pro" }, "children": ["Premium"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Notifications from any bank"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "On iOS 27 your banking app's notifications become drafts: the AI reads the amount, the shop and the account from them."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "help.html#bank-notifications" },
+                                "children": ["Guide"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "phone" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "slides" },
+                                "children": [
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "class": "on",
+                                      "src": "assets/screenshots/app/en-drafts.jpg",
+                                      "alt": "Notifications from any bank",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal", "id": "voice" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Free"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Say it"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "“Coffee 85”, “taxi 180 mono”, “salary 40,000”: Dibsly works out the amount, the category and the account. With Premium the AI handles the tricky phrases."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Where:"] },
+                              " “+” → Say it"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "phone" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "slides" },
+                                "children": [
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "class": "on",
+                                      "src": "assets/screenshots/app/en-voice.jpg",
+                                      "alt": "Say it",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal", "id": "receipt" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Free"] },
+                          {
+                            "tag": "h3",
+                            "attrs": {},
+                            "children": ["Receipts and splitting a bill"]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Snap a receipt and Dibsly reads the items and sorts them into categories. Or split the bill: tick your part and send friends a link so each picks theirs. 10 receipts a month free, up to 300 with Premium."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Where:"] },
+                              " “+” → Receipt"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "phone" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "slides" },
+                                "children": [
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "class": "on",
+                                      "src": "assets/screenshots/app/en-receipt.jpg",
+                                      "alt": "Receipts and splitting a bill",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal", "id": "any-bank" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Free"] },
+                          { "tag": "h3", "attrs": {}, "children": ["A statement from any bank"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "A statement from Revolut, Wise or any other bank is read by the AI in Dibsly: you see the operations and the transfers between your accounts and save them once checked. 3 statements in all for free, up to 25 a month with Premium."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Where:"] },
+                              " Settings → Import & export → Bank statement"
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "help.html#statements" },
+                                "children": ["Guide"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "convo", "aria-hidden": "true" },
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": { "class": "me" },
+                                "children": ["Revolut statement.pdf"]
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": { "class": "ai" },
+                                "children": [
+                                  "48 operations, 3 of them transfers between your accounts. Add them?"
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal textonly", "id": "moving" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Free"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Moving from Monefy"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "A Monefy CSV export comes over with its categories and accounts. Before saving, Dibsly shows exactly what it will add."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Where:"] },
+                              " Settings → Import & export"
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "help.html#moving" },
+                                "children": ["Guide"]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "fsection", "id": "chat" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Chat with Dibsly"] },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal", "id": "ask" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Free"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Ask about your money"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "“What did most of it go on?”, “How much did I spend on taxis this year?”, “How are my goals?”: Dibsly works it out on your phone from your data and answers in your own figures, with cards and charts. 20 questions a month free, more with Premium."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Where:"] },
+                              " the Dibsly button above “+” on Main"
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "help.html#chat" },
+                                "children": ["Guide"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "phone" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "slides" },
+                                "children": [
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "class": "on",
+                                      "src": "assets/screenshots/app/en-chat.jpg",
+                                      "alt": "Ask about your money",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal", "id": "changes" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Free"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Changes only after Save"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "“Add a coffee, 85”, “move my Uber rides to Taxi”, “rename the account”: Dibsly shows a card with the change and writes it only after you tap Save. Every change can be undone."
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "convo", "aria-hidden": "true" },
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": { "class": "me" },
+                                "children": ["Add a coffee, 85"]
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": { "class": "ai" },
+                                "children": ["Coffee, ₴85, Cafés. Save it?"]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal textonly", "id": "chat-import" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Free"] },
+                          {
+                            "tag": "h3",
+                            "attrs": {},
+                            "children": ["A statement right in the chat"]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Tap the paperclip and pick a statement or a broker report: Dibsly reads it on your phone, without the AI, and offers to import it into the right account."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Where:"] },
+                              " chat → paperclip"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "fsection", "id": "analytics" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Analytics"] },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal", "id": "where" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Free"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Where the money goes"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Categories: where most of it goes and what is over plan. Cash flow: spending day by day with payday marked. Trends: the months side by side. Capital: savings and investments over the year, apart from deposits."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Where:"] },
+                              " the Analytics tab"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "phone" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "slides", "data-hold": "1700" },
+                                "children": [
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "class": "on",
+                                      "data-tap": "16.2,22.4",
+                                      "src": "assets/screenshots/app/en-an-1.jpg",
+                                      "alt": "Where the money goes",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "data-tap": "38.6,22.4",
+                                      "src": "assets/screenshots/app/en-an-2.jpg",
+                                      "alt": "",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "data-tap": "61.2,22.4",
+                                      "src": "assets/screenshots/app/en-an-3.jpg",
+                                      "alt": "",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "data-tap": "83.6,22.4",
+                                      "src": "assets/screenshots/app/en-an-4.jpg",
+                                      "alt": "",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": { "class": "tap", "aria-hidden": "true" },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal", "id": "brands" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Free"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Brands"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Over 400 brands with their logos: Dibsly recognises Silpo, OKKO, Uklon or Ryanair by itself. Pick a category for a brand and all its purchases go there."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "help.html#brands" },
+                                "children": ["Guide"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "phone" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "slides" },
+                                "children": [
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "class": "on",
+                                      "src": "assets/screenshots/app/en-brands.jpg",
+                                      "alt": "Brands",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "fsection", "id": "plan" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Plan, calendar and goals"] },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal widevis", "id": "monthly-plan" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Free"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Monthly plan"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Limits per category and how much is left to spend this month. Dibsly highlights the categories over plan and those at risk."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Where:"] },
+                              " Main → Plan"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual wide" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "fcrop" },
+                            "children": [
+                              {
+                                "tag": "img",
+                                "attrs": {
+                                  "src": "assets/screenshots/app/en-plan.jpg",
+                                  "alt": "Monthly plan",
+                                  "width": "1206",
+                                  "height": "780",
+                                  "loading": "lazy"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal widevis", "id": "calendar" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Free"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Bill calendar"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Rent, subscriptions, loans and salary on a calendar. Dibsly tells you how much each account needs before the day it is charged."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Where:"] },
+                              " Main → Calendar"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual wide" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "fcrop" },
+                            "children": [
+                              {
+                                "tag": "img",
+                                "attrs": {
+                                  "src": "assets/screenshots/app/en-calendar.jpg",
+                                  "alt": "Bill calendar",
+                                  "width": "1206",
+                                  "height": "1365",
+                                  "loading": "lazy"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal widevis", "id": "goals" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Free"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Goals"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "A car, a flat or a safety cushion. Savings and investments count toward the goal, and Dibsly tells you the month you reach it at your pace."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Where:"] },
+                              " Main → Goals"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual wide" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "fcrop" },
+                            "children": [
+                              {
+                                "tag": "img",
+                                "attrs": {
+                                  "src": "assets/screenshots/app/en-goals.jpg",
+                                  "alt": "Goals",
+                                  "width": "1206",
+                                  "height": "1725",
+                                  "loading": "lazy"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "fsection", "id": "investments" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Investments"] },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal", "id": "portfolio" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Free"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Portfolio and dividends"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Interactive Brokers and Freedom Finance reports instead of typing. Value history over a month, a year or all time, dividends with the tax withheld, and growth apart from deposits so a deposit never looks like profit."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Where:"] },
+                              " the Investments tab"
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "help.html#investments" },
+                                "children": ["Guide"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "phone" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "slides", "data-hold": "1700" },
+                                "children": [
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "class": "on",
+                                      "data-tap": "16.6,44.5",
+                                      "src": "assets/screenshots/app/en-inv-1.jpg",
+                                      "alt": "Portfolio and dividends",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "data-tap": "33.1,44.5",
+                                      "src": "assets/screenshots/app/en-inv-2.jpg",
+                                      "alt": "",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "data-tap": "66.2,44.5",
+                                      "src": "assets/screenshots/app/en-inv-3.jpg",
+                                      "alt": "",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "data-tap": "82.8,44.5",
+                                      "src": "assets/screenshots/app/en-inv-4.jpg",
+                                      "alt": "",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": { "class": "tap", "aria-hidden": "true" },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "fsection", "id": "everywhere" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Everywhere"] },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal widevis", "id": "website" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind pro" }, "children": ["Premium"] },
+                          { "tag": "h3", "attrs": {}, "children": ["my.dibslyapp.com"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "The same data on a big screen: history with search, analytics, the plan, the calendar and drafts. Changes show up on your phone at once."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "help.html#website" },
+                                "children": ["Guide"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual wide" },
+                        "children": [
+                          {
+                            "tag": "figure",
+                            "attrs": { "class": "browser" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "browser-bar", "aria-hidden": "true" },
+                                "children": [
+                                  { "tag": "span", "attrs": {}, "children": [] },
+                                  { "tag": "span", "attrs": {}, "children": [] },
+                                  { "tag": "span", "attrs": {}, "children": [] },
+                                  { "tag": "p", "attrs": {}, "children": ["my.dibslyapp.com"] }
+                                ]
+                              },
+                              {
+                                "tag": "img",
+                                "attrs": {
+                                  "src": "assets/screenshots/web/en-web.jpg",
+                                  "alt": "my.dibslyapp.com",
+                                  "width": "1440",
+                                  "height": "900",
+                                  "loading": "lazy"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal", "id": "assistants" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind pro" }, "children": ["Premium"] },
+                          {
+                            "tag": "h3",
+                            "attrs": {},
+                            "children": ["Dibsly in your ChatGPT or Claude"]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Connect Dibsly as a connector: ask about your money, import statements and set goals right in your assistant. Nothing is written until you say yes, and every change is in a journal where it can be undone."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "help.html#assistants" },
+                                "children": ["Guide"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "convo", "aria-hidden": "true" },
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": { "class": "me" },
+                                "children": ["Set a goal: a holiday, $2,000 by July."]
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": { "class": "ai" },
+                                "children": [
+                                  "Done, the goal “Holiday”. Put aside $250 a month and you will make it."
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal textonly", "id": "sync" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind pro" }, "children": ["Premium"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Account and sync"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Sign in with Apple, Google or e-mail and your data is the same on all your iPhones and on the website."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Where:"] },
+                              " Main → profile"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal textonly", "id": "backups" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Free"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Backups"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Encrypted backups in your iCloud Drive or Google Drive. A new iPhone or a reinstall: restore everything from a backup."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Where:"] },
+                              " Settings → Backup"
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "help.html#backup" },
+                                "children": ["Guide"]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "fsection", "id": "privacy" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Privacy"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "pgrid" },
+                    "children": [
+                      {
+                        "tag": "article",
+                        "attrs": { "class": "pcard reveal" },
+                        "children": [
+                          { "tag": "h3", "attrs": {}, "children": ["No bank passwords"] },
+                          {
+                            "tag": "p",
+                            "attrs": {},
+                            "children": [
+                              "Dibsly never asks for a password and cannot move money. A monobank token only reads the statement."
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "article",
+                        "attrs": { "class": "pcard reveal" },
+                        "children": [
+                          {
+                            "tag": "h3",
+                            "attrs": {},
+                            "children": ["AI only with your permission"]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": {},
+                            "children": [
+                              "Before first use Dibsly shows what it sends to the AI and to whom. Without permission everything else works, and you can change your mind in Settings."
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "article",
+                        "attrs": { "class": "pcard reveal" },
+                        "children": [
+                          { "tag": "h3", "attrs": {}, "children": ["No ads"] },
+                          {
+                            "tag": "p",
+                            "attrs": {},
+                            "children": [
+                              "No ads and no ad trackers. Without an account all your data stays on your iPhone and in your own backups."
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "p",
+                    "attrs": { "class": "pmore" },
+                    "children": [
+                      {
+                        "tag": "a",
+                        "attrs": { "href": "privacy.html" },
+                        "children": ["Privacy policy"]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "fsection", "id": "next" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["What's next"] },
+                  {
+                    "tag": "p",
+                    "attrs": { "class": "intro" },
+                    "children": [
+                      "What we're building now and what comes later. No dates promised: we build until it's good. Tap “I want this” on what you need most, and we'll know where to start."
+                    ]
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "rgrid" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "rcol" },
+                        "children": [
+                          { "tag": "h3", "attrs": {}, "children": ["Building now"] },
+                          {
+                            "tag": "ul",
+                            "attrs": {},
+                            "children": [
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "tag": "h4",
+                                        "attrs": {},
+                                        "children": ["Chat with Dibsly on the website"]
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {},
+                                        "children": [
+                                          "Find, count or change something tricky on a big screen."
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "want",
+                                      "data-item": "web-chat",
+                                      "aria-pressed": "false"
+                                    },
+                                    "children": [
+                                      "I want this ",
+                                      { "tag": "b", "attrs": {}, "children": [] }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "tag": "h4",
+                                        "attrs": {},
+                                        "children": ["Brands on the website"]
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {},
+                                        "children": [
+                                          "Every brand with its logo and category, with search."
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "want",
+                                      "data-item": "web-brands",
+                                      "aria-pressed": "false"
+                                    },
+                                    "children": [
+                                      "I want this ",
+                                      { "tag": "b", "attrs": {}, "children": [] }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "rcol" },
+                        "children": [
+                          { "tag": "h3", "attrs": {}, "children": ["Next"] },
+                          {
+                            "tag": "ul",
+                            "attrs": {},
+                            "children": [
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "tag": "h4",
+                                        "attrs": {},
+                                        "children": ["Undo for plans, the calendar and goals"]
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {},
+                                        "children": [
+                                          "As it already works for operations: changed through the AI, changed your mind, undone."
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "want",
+                                      "data-item": "undo-plans",
+                                      "aria-pressed": "false"
+                                    },
+                                    "children": [
+                                      "I want this ",
+                                      { "tag": "b", "attrs": {}, "children": [] }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "tag": "h4",
+                                        "attrs": {},
+                                        "children": ["monobank in one tap"]
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {},
+                                        "children": ["Connecting without a token copied by hand."]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "want",
+                                      "data-item": "mono-one-tap",
+                                      "aria-pressed": "false"
+                                    },
+                                    "children": [
+                                      "I want this ",
+                                      { "tag": "b", "attrs": {}, "children": [] }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "rcol" },
+                        "children": [
+                          { "tag": "h3", "attrs": {}, "children": ["Later"] },
+                          {
+                            "tag": "ul",
+                            "attrs": {},
+                            "children": [
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "tag": "h4",
+                                        "attrs": {},
+                                        "children": ["Sole traders (ФОП)"]
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {},
+                                        "children": [
+                                          "Foreign-currency income at the NBU rate, the single tax and the military levy, quarterly deadlines."
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "want",
+                                      "data-item": "fop",
+                                      "aria-pressed": "false"
+                                    },
+                                    "children": [
+                                      "I want this ",
+                                      { "tag": "b", "attrs": {}, "children": [] }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {},
+                                    "children": [
+                                      { "tag": "h4", "attrs": {}, "children": ["iPad and Mac"] }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "want",
+                                      "data-item": "ipad-mac",
+                                      "aria-pressed": "false"
+                                    },
+                                    "children": [
+                                      "I want this ",
+                                      { "tag": "b", "attrs": {}, "children": [] }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {},
+                                    "children": [
+                                      { "tag": "h4", "attrs": {}, "children": ["Android"] }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "want",
+                                      "data-item": "android",
+                                      "aria-pressed": "false"
+                                    },
+                                    "children": [
+                                      "I want this ",
+                                      { "tag": "b", "attrs": {}, "children": [] }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "rcol" },
+                        "children": [
+                          { "tag": "h3", "attrs": {}, "children": ["Thinking about"] },
+                          {
+                            "tag": "ul",
+                            "attrs": {},
+                            "children": [
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "tag": "h4",
+                                        "attrs": {},
+                                        "children": ["Shared plans for two"]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "want",
+                                      "data-item": "shared-plans",
+                                      "aria-pressed": "false"
+                                    },
+                                    "children": [
+                                      "I want this ",
+                                      { "tag": "b", "attrs": {}, "children": [] }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "tag": "h4",
+                                        "attrs": {},
+                                        "children": ["Broker accounts directly"]
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {},
+                                        "children": [
+                                          "Interactive Brokers and Freedom without reports by hand."
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "want",
+                                      "data-item": "brokers",
+                                      "aria-pressed": "false"
+                                    },
+                                    "children": [
+                                      "I want this ",
+                                      { "tag": "b", "attrs": {}, "children": [] }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {},
+                                    "children": [
+                                      { "tag": "h4", "attrs": {}, "children": ["More banks"] }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "want",
+                                      "data-item": "more-banks",
+                                      "aria-pressed": "false"
+                                    },
+                                    "children": [
+                                      "I want this ",
+                                      { "tag": "b", "attrs": {}, "children": [] }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "tag": "h4",
+                                        "attrs": {},
+                                        "children": ["“Guess the brand”"]
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {},
+                                        "children": ["A game: tell the brand by its logo."]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "want",
+                                      "data-item": "guess-brand",
+                                      "aria-pressed": "false"
+                                    },
+                                    "children": [
+                                      "I want this ",
+                                      { "tag": "b", "attrs": {}, "children": [] }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "form",
+                    "attrs": {
+                      "class": "missing-form",
+                      "data-thanks": "Thank you! It's written down, and the team will think it over.",
+                      "data-failed": "Couldn't send it. Try again or write to dibslysupport@gmail.com.",
+                      "data-later": "Too many messages this hour. Try again a bit later.",
+                      "data-email": "The e-mail looks wrong. Check it or leave the field empty.",
+                      "novalidate": null
+                    },
+                    "children": [
+                      { "tag": "h3", "attrs": {}, "children": ["What are you missing?"] },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": ["Tell us, and we'll think about how to make it great."]
+                      },
+                      {
+                        "tag": "label",
+                        "attrs": { "class": "sr", "for": "missing-text" },
+                        "children": ["What are you missing?"]
+                      },
+                      {
+                        "tag": "textarea",
+                        "attrs": {
+                          "id": "missing-text",
+                          "name": "text",
+                          "rows": "4",
+                          "maxlength": "2000",
+                          "required": null,
+                          "placeholder": "For example: I want to see how much went on the kids this year"
+                        },
+                        "children": []
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "form-row" },
+                        "children": [
+                          {
+                            "tag": "label",
+                            "attrs": { "class": "sr", "for": "missing-email" },
+                            "children": ["Your e-mail, if you'd like a reply"]
+                          },
+                          {
+                            "tag": "input",
+                            "attrs": {
+                              "id": "missing-email",
+                              "name": "email",
+                              "type": "email",
+                              "autocomplete": "email",
+                              "placeholder": "Your e-mail, if you'd like a reply"
+                            },
+                            "children": []
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": { "class": "button hot", "type": "submit" },
+                            "children": ["Send"]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "input",
+                        "attrs": {
+                          "class": "trap",
+                          "name": "company",
+                          "tabindex": "-1",
+                          "autocomplete": "off",
+                          "aria-hidden": "true"
+                        },
+                        "children": []
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": { "class": "form-status", "role": "status" },
+                        "children": []
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": { "class": "form-note" },
+                        "children": [
+                          "Only the Dibsly team sees the text and the e-mail. ",
+                          {
+                            "tag": "a",
+                            "attrs": { "href": "privacy.html" },
+                            "children": ["Privacy"]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "div",
+                "attrs": { "class": "fend" },
+                "children": [
+                  {
+                    "tag": "a",
+                    "attrs": {
+                      "class": "button hot",
+                      "href": "https://apps.apple.com/app/id6765870838"
+                    },
+                    "children": ["Download on the App Store"]
+                  },
+                  {
+                    "tag": "p",
+                    "attrs": {},
+                    "children": [
+                      "Questions? Write to ",
+                      {
+                        "tag": "a",
+                        "attrs": { "href": "mailto:dibslysupport@gmail.com" },
+                        "children": ["dibslysupport@gmail.com"]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,482 @@
+{
+  "route": "index.html",
+  "lang": "uk",
+  "head": "<meta charset=\"utf-8\">\n<meta name=\"google-site-verification\" content=\"IwF6x4L8Xjpc7eMHUY-npoZ4KZqFXWN9hBXnf8rxMeE\" />\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\">\n<title>Dibsly: усі твої гроші в одному місці</title>\n<meta name=\"description\" content=\"Dibsly для iPhone і браузера: картки всіх банків, готівка, накопичення, інвестиції, ФОП, борги й кредити разом. Витрати записуються самі, а Dibsly відповідає на питання про гроші твоїми цифрами.\">\n<meta name=\"theme-color\" content=\"#0E0C0B\">\n<link rel=\"canonical\" href=\"https://dibslyapp.com/\">\n<link rel=\"alternate\" hreflang=\"uk\" href=\"https://dibslyapp.com/\">\n<link rel=\"alternate\" hreflang=\"en\" href=\"https://dibslyapp.com/en.html\">\n<link rel=\"alternate\" hreflang=\"x-default\" href=\"https://dibslyapp.com/\">\n<meta property=\"og:type\" content=\"website\">\n<meta property=\"og:site_name\" content=\"Dibsly\">\n<meta property=\"og:url\" content=\"https://dibslyapp.com/\">\n<meta property=\"og:locale\" content=\"uk_UA\">\n<meta property=\"og:locale:alternate\" content=\"en_US\">\n<meta property=\"og:title\" content=\"Dibsly: усі твої гроші в одному місці\">\n<meta property=\"og:description\" content=\"Усі банки, Apple Pay, готівка, цілі, інвестиції, ФОП, борги й кредити на iPhone і в браузері.\">\n<meta property=\"og:image\" content=\"https://dibslyapp.com/assets/screenshots/web/uk-web.jpg\">\n<meta property=\"og:image:width\" content=\"1440\">\n<meta property=\"og:image:height\" content=\"900\">\n<meta property=\"og:image:alt\" content=\"Сайт my.dibslyapp.com: гроші під рукою, заощадження, інвестиції, куди пішли гроші й найближчі платежі\">\n<meta name=\"twitter:card\" content=\"summary_large_image\">\n<meta name=\"twitter:title\" content=\"Dibsly: усі твої гроші в одному місці\">\n<meta name=\"twitter:description\" content=\"Усі банки, Apple Pay, готівка, цілі, інвестиції, ФОП, борги й кредити на iPhone і в браузері.\">\n<meta name=\"twitter:image\" content=\"https://dibslyapp.com/assets/screenshots/web/uk-web.jpg\">\n<meta name=\"twitter:image:alt\" content=\"Сайт my.dibslyapp.com: гроші під рукою, заощадження, інвестиції, куди пішли гроші й найближчі платежі\">\n<link rel=\"icon\" type=\"image/png\" href=\"assets/brand/favicon.png\">\n<link rel=\"apple-touch-icon\" href=\"assets/brand/apple-touch-icon.png\">",
+  "sections": [
+    {
+      "tag": "section",
+      "attrs": { "class": "block glow", "id": "everywhere", "data-section": null },
+      "children": [
+        {
+          "tag": "div",
+          "attrs": { "class": "wrap" },
+          "children": [
+            {
+              "tag": "p",
+              "attrs": { "class": "kicker" },
+              "children": ["10 · Твої гроші всюди · Premium"]
+            },
+            {
+              "tag": "h2",
+              "attrs": { "class": "title" },
+              "children": [
+                { "tag": "span", "attrs": { "class": "line" }, "children": ["Телефон. Браузер."] },
+                {
+                  "tag": "span",
+                  "attrs": { "class": "line hot" },
+                  "children": ["Твій ChatGPT чи Claude."]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "attrs": { "class": "browser-wrap" },
+              "children": [
+                {
+                  "tag": "figure",
+                  "attrs": { "class": "browser" },
+                  "children": [
+                    {
+                      "tag": "div",
+                      "attrs": { "class": "browser-bar", "aria-hidden": "true" },
+                      "children": [
+                        { "tag": "span", "attrs": {}, "children": [] },
+                        { "tag": "span", "attrs": {}, "children": [] },
+                        { "tag": "span", "attrs": {}, "children": [] },
+                        { "tag": "p", "attrs": {}, "children": ["my.dibslyapp.com"] }
+                      ]
+                    },
+                    {
+                      "tag": "img",
+                      "attrs": {
+                        "src": "assets/screenshots/web/uk-web.jpg",
+                        "alt": "Портал my.dibslyapp.com на великому екрані",
+                        "width": "1440",
+                        "height": "900",
+                        "loading": "lazy"
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "attrs": { "class": "cards3 two" },
+              "children": [
+                {
+                  "tag": "article",
+                  "attrs": { "class": "spot" },
+                  "children": [
+                    { "tag": "h3", "attrs": {}, "children": ["my.dibslyapp.com"] },
+                    {
+                      "tag": "p",
+                      "attrs": {},
+                      "children": [
+                        "Історія з пошуком, аналітика, план і чернетки на великому екрані. Зміни одразу й на телефоні."
+                      ]
+                    },
+                    {
+                      "tag": "a",
+                      "attrs": { "class": "foot link", "href": "https://my.dibslyapp.com" },
+                      "children": ["Відкрити сайт →"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "article",
+                  "attrs": { "class": "spot" },
+                  "children": [
+                    { "tag": "h3", "attrs": {}, "children": ["ChatGPT і Claude"] },
+                    {
+                      "tag": "p",
+                      "attrs": {},
+                      "children": [
+                        "Імпортуй виписку будь-якого банку, питай і став цілі у своєму асистенті. Записує тільки після твого «так»."
+                      ]
+                    },
+                    {
+                      "tag": "p",
+                      "attrs": { "class": "foot" },
+                      "children": ["«Ось виписка Revolut, запиши»"]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "section",
+      "attrs": { "class": "block", "id": "price", "data-section": null },
+      "children": [
+        {
+          "tag": "div",
+          "attrs": { "class": "wrap" },
+          "children": [
+            {
+              "tag": "div",
+              "attrs": { "class": "center" },
+              "children": [
+                { "tag": "p", "attrs": { "class": "kicker" }, "children": ["11 · Ціна"] },
+                {
+                  "tag": "h2",
+                  "attrs": { "class": "title" },
+                  "children": [
+                    { "tag": "span", "attrs": { "class": "line" }, "children": ["Безкоштовно."] },
+                    {
+                      "tag": "span",
+                      "attrs": { "class": "line hot" },
+                      "children": ["Premium — коли захочеш більше."]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "attrs": { "class": "plans" },
+              "children": [
+                {
+                  "tag": "article",
+                  "attrs": { "class": "plan" },
+                  "children": [
+                    { "tag": "h3", "attrs": {}, "children": ["Free"] },
+                    {
+                      "tag": "p",
+                      "attrs": { "class": "price" },
+                      "children": ["0 ₴", { "tag": "small", "attrs": {}, "children": ["назавжди"] }]
+                    },
+                    {
+                      "tag": "ul",
+                      "attrs": { "class": "checks green" },
+                      "children": [
+                        {
+                          "tag": "li",
+                          "attrs": {},
+                          "children": ["Рахунки, аналітика, план, календар і цілі"]
+                        },
+                        {
+                          "tag": "li",
+                          "attrs": {},
+                          "children": [
+                            "monobank, виписки PrivatBank, UKRSIBBANK і KredoBank, Apple Pay"
+                          ]
+                        },
+                        {
+                          "tag": "li",
+                          "attrs": {},
+                          "children": ["Інвестиції: звіти брокерів і дивіденди"]
+                        },
+                        { "tag": "li", "attrs": {}, "children": ["ФОП, борги й кредити"] },
+                        { "tag": "li", "attrs": {}, "children": ["20 питань до Dibsly на місяць"] },
+                        { "tag": "li", "attrs": {}, "children": ["10 чеків і поділів на місяць"] },
+                        {
+                          "tag": "li",
+                          "attrs": {},
+                          "children": ["Виписки інших банків, прочитані ШІ: 3 всього"]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "a",
+                      "attrs": {
+                        "class": "button ghost wide",
+                        "href": "https://apps.apple.com/app/id6765870838"
+                      },
+                      "children": ["Завантажити"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "article",
+                  "attrs": { "class": "plan premium" },
+                  "children": [
+                    {
+                      "tag": "h3",
+                      "attrs": {},
+                      "children": [
+                        "Dibsly Premium ",
+                        { "tag": "span", "attrs": { "class": "badge" }, "children": ["усе"] }
+                      ]
+                    },
+                    {
+                      "tag": "p",
+                      "attrs": { "class": "price" },
+                      "children": [
+                        "$",
+                        { "tag": "span", "attrs": { "class": "count" }, "children": ["2.99"] },
+                        {
+                          "tag": "small",
+                          "attrs": {},
+                          "children": ["на місяць · або $29.99 на рік"]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "ul",
+                      "attrs": { "class": "checks orange" },
+                      "children": [
+                        { "tag": "li", "attrs": {}, "children": ["Більше питань до Dibsly"] },
+                        {
+                          "tag": "li",
+                          "attrs": {},
+                          "children": ["Синхронізація з iPhone і сайтом my.dibslyapp.com"]
+                        },
+                        {
+                          "tag": "li",
+                          "attrs": {},
+                          "children": ["ChatGPT і Claude з доступом до твоїх даних"]
+                        },
+                        {
+                          "tag": "li",
+                          "attrs": {},
+                          "children": ["Спільні рахунки й сповіщення будь-якого банку"]
+                        },
+                        {
+                          "tag": "li",
+                          "attrs": {},
+                          "children": ["ШІ розкладає покупки, до 300 чеків на місяць"]
+                        },
+                        {
+                          "tag": "li",
+                          "attrs": {},
+                          "children": ["Виписки інших банків, прочитані ШІ: до 25 на місяць"]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "a",
+                      "attrs": {
+                        "class": "button hot wide",
+                        "href": "https://apps.apple.com/app/id6765870838"
+                      },
+                      "children": ["Обрати Premium"]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "p",
+              "attrs": { "class": "center small" },
+              "children": ["Ціни для України. App Store покаже ціну у твоїй країні."]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "section",
+      "attrs": { "class": "block", "id": "faq" },
+      "children": [
+        {
+          "tag": "div",
+          "attrs": { "class": "wrap split top" },
+          "children": [
+            {
+              "tag": "div",
+              "attrs": { "class": "copy narrow" },
+              "children": [
+                { "tag": "p", "attrs": { "class": "kicker" }, "children": ["12 · Питання"] },
+                {
+                  "tag": "h2",
+                  "attrs": { "class": "title small" },
+                  "children": [
+                    { "tag": "span", "attrs": { "class": "line" }, "children": ["Безпечно."] },
+                    {
+                      "tag": "span",
+                      "attrs": { "class": "line dim" },
+                      "children": ["Без пароля від банку."]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "attrs": { "class": "faq" },
+              "children": [
+                {
+                  "tag": "details",
+                  "attrs": { "open": null },
+                  "children": [
+                    { "tag": "summary", "attrs": {}, "children": ["Це безпечно?"] },
+                    {
+                      "tag": "p",
+                      "attrs": {},
+                      "children": [
+                        "Так. Dibsly не просить пароль від банку й не може переказати гроші, а без акаунта ",
+                        {
+                          "tag": "a",
+                          "attrs": { "href": "privacy-uk.html" },
+                          "children": ["дані лишаються"]
+                        },
+                        " на твоєму iPhone і в твоїх зашифрованих копіях."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "details",
+                  "attrs": {},
+                  "children": [
+                    { "tag": "summary", "attrs": {}, "children": ["Скільки коштує?"] },
+                    {
+                      "tag": "p",
+                      "attrs": {},
+                      "children": [
+                        "Основне — безкоштовно. Premium — $2.99 на місяць або $29.99 на рік."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "details",
+                  "attrs": {},
+                  "children": [
+                    { "tag": "summary", "attrs": {}, "children": ["Які банки?"] },
+                    {
+                      "tag": "p",
+                      "attrs": {},
+                      "children": [
+                        "monobank напряму, виписки PrivatBank, UKRSIBBANK, KredoBank і monobank (і ФОП) та Apple Pay з будь-якої картки — безкоштовно. Виписку будь-якого іншого банку прочитає ШІ: 3 всього безкоштовно, до 25 на місяць з Premium."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "details",
+                  "attrs": {},
+                  "children": [
+                    { "tag": "summary", "attrs": {}, "children": ["Що бачить ШІ?"] },
+                    {
+                      "tag": "p",
+                      "attrs": {},
+                      "children": [
+                        "Лише те, що треба для відповіді, і тільки з твого дозволу. Рахує Dibsly на телефоні, а ШІ лише складає слова."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "details",
+                  "attrs": {},
+                  "children": [
+                    { "tag": "summary", "attrs": {}, "children": ["Чи треба реєструватись?"] },
+                    {
+                      "tag": "p",
+                      "attrs": {},
+                      "children": [
+                        "Ні. Акаунт потрібен лише для сайту, синхронізації, ChatGPT чи Claude і спільних рахунків."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "details",
+                  "attrs": {},
+                  "children": [
+                    { "tag": "summary", "attrs": {}, "children": ["А Android?"] },
+                    {
+                      "tag": "p",
+                      "attrs": {},
+                      "children": [
+                        "Поки що iPhone і сайт my.dibslyapp.com у будь-якому браузері (з Premium). Далі — iPad і Mac."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "p",
+                  "attrs": { "class": "more" },
+                  "children": [
+                    "Покрокові ",
+                    { "tag": "a", "attrs": { "href": "help-uk.html" }, "children": ["інструкції"] },
+                    " або просто напиши: ",
+                    {
+                      "tag": "a",
+                      "attrs": { "href": "mailto:dibslysupport@gmail.com" },
+                      "children": ["dibslysupport@gmail.com"]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "section",
+      "attrs": { "class": "finale", "id": "get" },
+      "children": [
+        {
+          "tag": "div",
+          "attrs": { "class": "wrap center" },
+          "children": [
+            {
+              "tag": "div",
+              "attrs": {
+                "class": "mascot big",
+                "data-play": "hello",
+                "data-loop": null,
+                "aria-hidden": "true"
+              },
+              "children": [
+                {
+                  "tag": "img",
+                  "attrs": {
+                    "class": "mascot-still",
+                    "src": "assets/brand/dibsly-dark.png",
+                    "alt": "",
+                    "width": "404",
+                    "height": "386",
+                    "loading": "lazy"
+                  },
+                  "children": []
+                },
+                { "tag": "div", "attrs": { "class": "mascot-stage" }, "children": [] }
+              ]
+            },
+            {
+              "tag": "h2",
+              "attrs": { "class": "giant" },
+              "children": [
+                "Dibsly",
+                { "tag": "span", "attrs": { "class": "hot" }, "children": ["."] }
+              ]
+            },
+            {
+              "tag": "p",
+              "attrs": { "class": "lead" },
+              "children": ["Усі гроші в одному місці. Спробуй безкоштовно."]
+            },
+            {
+              "tag": "div",
+              "attrs": { "class": "actions center" },
+              "children": [
+                {
+                  "tag": "a",
+                  "attrs": {
+                    "class": "button light",
+                    "href": "https://apps.apple.com/app/id6765870838"
+                  },
+                  "children": ["Завантажити в App Store"]
+                },
+                {
+                  "tag": "a",
+                  "attrs": { "class": "button ghost", "href": "https://my.dibslyapp.com" },
+                  "children": ["Відкрити в браузері"]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

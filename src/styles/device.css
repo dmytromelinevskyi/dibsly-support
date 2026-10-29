@@ -1,0 +1,44 @@
+.iphone-frame {
+  position: relative;
+  isolation: isolate;
+  aspect-ratio: 750/1631;
+  padding: 1.65%;
+  border-radius: 14.2%/6.55%;
+  background: linear-gradient(115deg, #a7a49b, #333430 22%, #85857b 49%, #262823 77%, #a7a69a);
+  box-shadow:
+    0 0 0 1px #b4b4a54d,
+    0 25px 60px #0005;
+}
+.iphone-glass {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid #050605;
+  border-radius: 12.9%/5.95%;
+  background: #111210;
+}
+.iphone-glass > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.iphone-button {
+  position: absolute;
+  width: 1%;
+  height: 7%;
+  background: linear-gradient(90deg, #55574e, #aaa99e);
+  border-radius: 2px;
+  z-index: -1;
+}
+.iphone-button.left {
+  left: -0.8%;
+  top: 24%;
+}
+.iphone-button.left.second {
+  top: 34%;
+}
+.iphone-button.right {
+  right: -0.8%;
+  top: 28%;
+  height: 11%;
+}

@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.wrangler/
+.idea/
+.DS_Store
+.qa/
+
+.build/
+__pycache__/

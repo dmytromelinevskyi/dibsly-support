@@ -1,0 +1,486 @@
+{
+  "route": "en.html",
+  "lang": "en",
+  "head": "<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\">\n<title>Dibsly: all your money in one place</title>\n<meta name=\"description\" content=\"Dibsly for iPhone and the web: cards from every bank, cash, savings, investments, FOP, debts and credits together. Spending records itself, and Dibsly answers your money questions in your own figures.\">\n<meta name=\"theme-color\" content=\"#0E0C0B\">\n<link rel=\"canonical\" href=\"https://dibslyapp.com/en.html\">\n<link rel=\"alternate\" hreflang=\"uk\" href=\"https://dibslyapp.com/\">\n<link rel=\"alternate\" hreflang=\"en\" href=\"https://dibslyapp.com/en.html\">\n<link rel=\"alternate\" hreflang=\"x-default\" href=\"https://dibslyapp.com/\">\n<meta property=\"og:type\" content=\"website\">\n<meta property=\"og:site_name\" content=\"Dibsly\">\n<meta property=\"og:url\" content=\"https://dibslyapp.com/en.html\">\n<meta property=\"og:locale\" content=\"en_US\">\n<meta property=\"og:locale:alternate\" content=\"uk_UA\">\n<meta property=\"og:title\" content=\"Dibsly: all your money in one place\">\n<meta property=\"og:description\" content=\"Every bank, Apple Pay, cash, goals, investments, FOP, debts and credits on iPhone and in your browser.\">\n<meta property=\"og:image\" content=\"https://dibslyapp.com/assets/screenshots/web/en-web.jpg\">\n<meta property=\"og:image:width\" content=\"2160\">\n<meta property=\"og:image:height\" content=\"1350\">\n<meta property=\"og:image:alt\" content=\"The website my.dibslyapp.com: money on hand, savings, investments, where the money went and upcoming payments\">\n<meta name=\"twitter:card\" content=\"summary_large_image\">\n<meta name=\"twitter:title\" content=\"Dibsly: all your money in one place\">\n<meta name=\"twitter:description\" content=\"Every bank, Apple Pay, cash, goals, investments, FOP, debts and credits on iPhone and in your browser.\">\n<meta name=\"twitter:image\" content=\"https://dibslyapp.com/assets/screenshots/web/en-web.jpg\">\n<meta name=\"twitter:image:alt\" content=\"The website my.dibslyapp.com: money on hand, savings, investments, where the money went and upcoming payments\">\n<link rel=\"icon\" type=\"image/png\" href=\"assets/brand/favicon.png\">\n<link rel=\"apple-touch-icon\" href=\"assets/brand/apple-touch-icon.png\">",
+  "sections": [
+    {
+      "tag": "section",
+      "attrs": { "class": "block glow", "id": "everywhere", "data-section": null },
+      "children": [
+        {
+          "tag": "div",
+          "attrs": { "class": "wrap" },
+          "children": [
+            {
+              "tag": "p",
+              "attrs": { "class": "kicker" },
+              "children": ["10 · Your money everywhere · Premium"]
+            },
+            {
+              "tag": "h2",
+              "attrs": { "class": "title" },
+              "children": [
+                { "tag": "span", "attrs": { "class": "line" }, "children": ["Phone. Browser."] },
+                {
+                  "tag": "span",
+                  "attrs": { "class": "line hot" },
+                  "children": ["Your ChatGPT or Claude."]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "attrs": { "class": "browser-wrap" },
+              "children": [
+                {
+                  "tag": "figure",
+                  "attrs": { "class": "browser" },
+                  "children": [
+                    {
+                      "tag": "div",
+                      "attrs": { "class": "browser-bar", "aria-hidden": "true" },
+                      "children": [
+                        { "tag": "span", "attrs": {}, "children": [] },
+                        { "tag": "span", "attrs": {}, "children": [] },
+                        { "tag": "span", "attrs": {}, "children": [] },
+                        { "tag": "p", "attrs": {}, "children": ["my.dibslyapp.com"] }
+                      ]
+                    },
+                    {
+                      "tag": "img",
+                      "attrs": {
+                        "src": "assets/screenshots/web/en-web.jpg",
+                        "alt": "The website my.dibslyapp.com on a big screen",
+                        "width": "1440",
+                        "height": "900",
+                        "loading": "lazy"
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "attrs": { "class": "cards3 two" },
+              "children": [
+                {
+                  "tag": "article",
+                  "attrs": { "class": "spot" },
+                  "children": [
+                    { "tag": "h3", "attrs": {}, "children": ["my.dibslyapp.com"] },
+                    {
+                      "tag": "p",
+                      "attrs": {},
+                      "children": [
+                        "History with search, analytics, the plan and drafts on a big screen. Changes show up on your phone at once."
+                      ]
+                    },
+                    {
+                      "tag": "a",
+                      "attrs": { "class": "foot link", "href": "https://my.dibslyapp.com" },
+                      "children": ["Open the website →"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "article",
+                  "attrs": { "class": "spot" },
+                  "children": [
+                    { "tag": "h3", "attrs": {}, "children": ["ChatGPT and Claude"] },
+                    {
+                      "tag": "p",
+                      "attrs": {},
+                      "children": [
+                        "Import a statement from any bank, ask and set goals in your own assistant. Nothing is written until you say yes."
+                      ]
+                    },
+                    {
+                      "tag": "p",
+                      "attrs": { "class": "foot" },
+                      "children": ["“Here is my Revolut statement, add it”"]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "section",
+      "attrs": { "class": "block", "id": "price", "data-section": null },
+      "children": [
+        {
+          "tag": "div",
+          "attrs": { "class": "wrap" },
+          "children": [
+            {
+              "tag": "div",
+              "attrs": { "class": "center" },
+              "children": [
+                { "tag": "p", "attrs": { "class": "kicker" }, "children": ["11 · Price"] },
+                {
+                  "tag": "h2",
+                  "attrs": { "class": "title" },
+                  "children": [
+                    { "tag": "span", "attrs": { "class": "line" }, "children": ["Free."] },
+                    {
+                      "tag": "span",
+                      "attrs": { "class": "line hot" },
+                      "children": ["Premium when you want more."]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "attrs": { "class": "plans" },
+              "children": [
+                {
+                  "tag": "article",
+                  "attrs": { "class": "plan" },
+                  "children": [
+                    { "tag": "h3", "attrs": {}, "children": ["Free"] },
+                    {
+                      "tag": "p",
+                      "attrs": { "class": "price" },
+                      "children": ["$0", { "tag": "small", "attrs": {}, "children": ["forever"] }]
+                    },
+                    {
+                      "tag": "ul",
+                      "attrs": { "class": "checks green" },
+                      "children": [
+                        {
+                          "tag": "li",
+                          "attrs": {},
+                          "children": ["Accounts, analytics, plan, calendar and goals"]
+                        },
+                        {
+                          "tag": "li",
+                          "attrs": {},
+                          "children": [
+                            "monobank, PrivatBank, UKRSIBBANK and KredoBank statements, Apple Pay"
+                          ]
+                        },
+                        {
+                          "tag": "li",
+                          "attrs": {},
+                          "children": ["Investments: broker reports and dividends"]
+                        },
+                        { "tag": "li", "attrs": {}, "children": ["FOP, debts and credits"] },
+                        {
+                          "tag": "li",
+                          "attrs": {},
+                          "children": ["20 questions to Dibsly a month"]
+                        },
+                        {
+                          "tag": "li",
+                          "attrs": {},
+                          "children": ["10 receipts and splits a month"]
+                        },
+                        {
+                          "tag": "li",
+                          "attrs": {},
+                          "children": ["Statements of other banks read by the AI: 3 in all"]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "a",
+                      "attrs": {
+                        "class": "button ghost wide",
+                        "href": "https://apps.apple.com/app/id6765870838"
+                      },
+                      "children": ["Download"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "article",
+                  "attrs": { "class": "plan premium" },
+                  "children": [
+                    {
+                      "tag": "h3",
+                      "attrs": {},
+                      "children": [
+                        "Dibsly Premium ",
+                        { "tag": "span", "attrs": { "class": "badge" }, "children": ["all of it"] }
+                      ]
+                    },
+                    {
+                      "tag": "p",
+                      "attrs": { "class": "price" },
+                      "children": [
+                        "$",
+                        { "tag": "span", "attrs": { "class": "count" }, "children": ["2.99"] },
+                        { "tag": "small", "attrs": {}, "children": ["a month · or $29.99 a year"] }
+                      ]
+                    },
+                    {
+                      "tag": "ul",
+                      "attrs": { "class": "checks orange" },
+                      "children": [
+                        { "tag": "li", "attrs": {}, "children": ["More questions to Dibsly"] },
+                        {
+                          "tag": "li",
+                          "attrs": {},
+                          "children": ["Sync between iPhones and my.dibslyapp.com"]
+                        },
+                        {
+                          "tag": "li",
+                          "attrs": {},
+                          "children": ["ChatGPT and Claude with access to your data"]
+                        },
+                        {
+                          "tag": "li",
+                          "attrs": {},
+                          "children": ["Shared accounts and notifications from any bank"]
+                        },
+                        {
+                          "tag": "li",
+                          "attrs": {},
+                          "children": ["AI sorts purchases, up to 300 receipts a month"]
+                        },
+                        {
+                          "tag": "li",
+                          "attrs": {},
+                          "children": ["Statements of other banks read by the AI: up to 25 a month"]
+                        }
+                      ]
+                    },
+                    {
+                      "tag": "a",
+                      "attrs": {
+                        "class": "button hot wide",
+                        "href": "https://apps.apple.com/app/id6765870838"
+                      },
+                      "children": ["Get Premium"]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "p",
+              "attrs": { "class": "center small" },
+              "children": ["Prices for Ukraine. The App Store shows the price in your country."]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "section",
+      "attrs": { "class": "block", "id": "faq" },
+      "children": [
+        {
+          "tag": "div",
+          "attrs": { "class": "wrap split top" },
+          "children": [
+            {
+              "tag": "div",
+              "attrs": { "class": "copy narrow" },
+              "children": [
+                { "tag": "p", "attrs": { "class": "kicker" }, "children": ["12 · Questions"] },
+                {
+                  "tag": "h2",
+                  "attrs": { "class": "title small" },
+                  "children": [
+                    { "tag": "span", "attrs": { "class": "line" }, "children": ["Safe."] },
+                    {
+                      "tag": "span",
+                      "attrs": { "class": "line dim" },
+                      "children": ["No bank password."]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "tag": "div",
+              "attrs": { "class": "faq" },
+              "children": [
+                {
+                  "tag": "details",
+                  "attrs": { "open": null },
+                  "children": [
+                    { "tag": "summary", "attrs": {}, "children": ["Is it safe?"] },
+                    {
+                      "tag": "p",
+                      "attrs": {},
+                      "children": [
+                        "Yes. Dibsly never asks for your bank password and can’t move money, and without an account ",
+                        {
+                          "tag": "a",
+                          "attrs": { "href": "privacy.html" },
+                          "children": ["your data stays"]
+                        },
+                        " on your iPhone and in your own encrypted backups."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "details",
+                  "attrs": {},
+                  "children": [
+                    { "tag": "summary", "attrs": {}, "children": ["How much is it?"] },
+                    {
+                      "tag": "p",
+                      "attrs": {},
+                      "children": [
+                        "The basics are free. Premium is $2.99 a month or $29.99 a year."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "details",
+                  "attrs": {},
+                  "children": [
+                    { "tag": "summary", "attrs": {}, "children": ["Which banks?"] },
+                    {
+                      "tag": "p",
+                      "attrs": {},
+                      "children": [
+                        "monobank directly, PrivatBank, UKRSIBBANK, KredoBank and monobank statements (FOP too) and Apple Pay from any card, all free. Any other bank’s statement is read by the AI: 3 in all free, up to 25 a month with Premium."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "details",
+                  "attrs": {},
+                  "children": [
+                    { "tag": "summary", "attrs": {}, "children": ["What does the AI see?"] },
+                    {
+                      "tag": "p",
+                      "attrs": {},
+                      "children": [
+                        "Only what an answer needs, and only with your permission. Dibsly does the math on your phone; the AI just puts it into words."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "details",
+                  "attrs": {},
+                  "children": [
+                    { "tag": "summary", "attrs": {}, "children": ["Do I need to sign up?"] },
+                    {
+                      "tag": "p",
+                      "attrs": {},
+                      "children": [
+                        "No. An account is only for the website, sync, ChatGPT or Claude and shared accounts."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "details",
+                  "attrs": {},
+                  "children": [
+                    { "tag": "summary", "attrs": {}, "children": ["Android?"] },
+                    {
+                      "tag": "p",
+                      "attrs": {},
+                      "children": [
+                        "Not yet: iPhone, and my.dibslyapp.com in any browser (with Premium). iPad and Mac are next."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "p",
+                  "attrs": { "class": "more" },
+                  "children": [
+                    "Step-by-step ",
+                    { "tag": "a", "attrs": { "href": "help.html" }, "children": ["guides"] },
+                    ", or just write: ",
+                    {
+                      "tag": "a",
+                      "attrs": { "href": "mailto:dibslysupport@gmail.com" },
+                      "children": ["dibslysupport@gmail.com"]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "tag": "section",
+      "attrs": { "class": "finale", "id": "get" },
+      "children": [
+        {
+          "tag": "div",
+          "attrs": { "class": "wrap center" },
+          "children": [
+            {
+              "tag": "div",
+              "attrs": {
+                "class": "mascot big",
+                "data-play": "hello",
+                "data-loop": null,
+                "aria-hidden": "true"
+              },
+              "children": [
+                {
+                  "tag": "img",
+                  "attrs": {
+                    "class": "mascot-still",
+                    "src": "assets/brand/dibsly-dark.png",
+                    "alt": "",
+                    "width": "404",
+                    "height": "386",
+                    "loading": "lazy"
+                  },
+                  "children": []
+                },
+                { "tag": "div", "attrs": { "class": "mascot-stage" }, "children": [] }
+              ]
+            },
+            {
+              "tag": "h2",
+              "attrs": { "class": "giant" },
+              "children": [
+                "Dibsly",
+                { "tag": "span", "attrs": { "class": "hot" }, "children": ["."] }
+              ]
+            },
+            {
+              "tag": "p",
+              "attrs": { "class": "lead" },
+              "children": ["All your money in one place. Free to start."]
+            },
+            {
+              "tag": "div",
+              "attrs": { "class": "actions center" },
+              "children": [
+                {
+                  "tag": "a",
+                  "attrs": {
+                    "class": "button light",
+                    "href": "https://apps.apple.com/app/id6765870838"
+                  },
+                  "children": ["Download on the App Store"]
+                },
+                {
+                  "tag": "a",
+                  "attrs": { "class": "button ghost", "href": "https://my.dibslyapp.com" },
+                  "children": ["Open in a browser"]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

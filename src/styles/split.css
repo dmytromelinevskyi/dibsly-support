@@ -1,0 +1,393 @@
+/* The landing's colours and type (2026-10-29: the site's pages in one style); the logic below is unchanged. */
+:root {
+  color-scheme: dark;
+  --background: #0e0c0b;
+  --surface: #1d1815;
+  --text: #f6ebdd;
+  --secondary: #a89a8d;
+  --border: rgba(246, 235, 221, 0.1);
+  --accent: #ff8a3d;
+  --accent-text: #ffa153;
+  --accent-soft: rgba(255, 138, 61, 0.16);
+  --display: 'Geologica', 'SF Pro Display', system-ui, sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background:
+    radial-gradient(700px 420px at 80% -120px, rgba(232, 110, 28, 0.14), rgba(232, 110, 28, 0))
+      no-repeat,
+    var(--background);
+  color: var(--text);
+  font-family:
+    'Manrope',
+    -apple-system,
+    BlinkMacSystemFont,
+    'SF Pro Text',
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  font-size: 17px;
+  line-height: 1.45;
+  -webkit-tap-highlight-color: transparent;
+}
+main {
+  width: min(560px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 8px 0 190px;
+}
+.top {
+  width: min(560px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 18px 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.top .brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+  text-decoration: none;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 18px;
+}
+.top .brand img {
+  border-radius: 8px;
+}
+.top .get {
+  padding: 9px 16px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #1a0e06;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 18px;
+  margin-bottom: 12px;
+}
+.head {
+  text-align: center;
+}
+.merchant {
+  font-family: var(--display);
+  font-weight: 650;
+  font-size: 18px;
+}
+.part {
+  font-family: var(--display);
+  font-size: 44px;
+  font-weight: 750;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+.muted {
+  color: var(--secondary);
+  font-size: 14px;
+}
+.hint {
+  color: var(--secondary);
+  font-size: 14px;
+  margin: 0 0 8px;
+}
+.row {
+  border-top: 1px solid var(--border);
+}
+.row:first-of-type {
+  border-top: 0;
+}
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 48px;
+  padding: 6px 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.check {
+  flex: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid var(--secondary);
+  display: grid;
+  place-items: center;
+  color: #1a0e06;
+  font-size: 15px;
+  font-weight: 800;
+}
+.item.mine .check {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+.name {
+  flex: 1;
+}
+.qty {
+  color: var(--secondary);
+  font-size: 14px;
+  margin-left: 4px;
+}
+.amount {
+  flex: none;
+  white-space: nowrap;
+  color: var(--secondary);
+  font-variant-numeric: tabular-nums;
+}
+/* The friend's part of a marked item, on its own line under it (owner, 2026-10-03: − and + squeezed the
+           name and the amount into a narrow column). */
+.partline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 0 8px 36px;
+}
+.partline[hidden] {
+  display: none;
+}
+.partline.tipshare {
+  padding: 10px 0 0;
+}
+.partline .mine {
+  flex: 1;
+  color: var(--accent-text);
+  font-size: 14px;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+.share {
+  flex: none;
+  min-width: 44px;
+  height: 32px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: none;
+  color: var(--accent-text);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 650;
+  cursor: pointer;
+}
+.share[hidden] {
+  display: none;
+}
+.bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 14px 16px calc(14px + env(safe-area-inset-bottom));
+  background: var(--background);
+  border-top: 1px solid var(--border);
+}
+.bar-inner {
+  width: min(560px, 100%);
+  margin: 0 auto;
+  display: flex;
+  gap: 10px;
+}
+/* The friend's part under their thumb too (owner, 2026-10-10): the top of the page scrolls away. */
+.bar-part {
+  width: min(560px, 100%);
+  margin: 0 auto 10px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  color: var(--secondary);
+  font-weight: 600;
+}
+.bar-part strong {
+  color: var(--text);
+  font-size: 20px;
+  font-variant-numeric: tabular-nums;
+}
+.bar button {
+  flex: 1;
+  min-height: 50px;
+  border-radius: 25px;
+  border: 0;
+  font: inherit;
+  font-weight: 650;
+  cursor: pointer;
+}
+.primary {
+  background: var(--accent);
+  color: #1a0e06;
+}
+.secondary {
+  background: var(--accent-soft);
+  color: var(--accent-text);
+}
+/* Tips on top of the friend's part (owner, 2026-10-04): the usual percents or their own. */
+.tiphead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.tiphead strong {
+  font-size: 17px;
+}
+.tipamount {
+  color: var(--accent-text);
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+.chips {
+  display: flex;
+  gap: 6px;
+}
+.chip {
+  flex: 1;
+  min-width: 0;
+  height: 36px;
+  padding: 0;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.chip.on {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #1a0e06;
+  font-weight: 650;
+}
+/* Percent or amount (owner, 2026-10-10): one switch above, then the percents or the amount — as in the app. */
+.tipmode {
+  display: flex;
+  padding: 3px;
+  gap: 2px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  background: var(--accent-soft);
+}
+.tipmode button {
+  flex: 1;
+  height: 34px;
+  border: 0;
+  border-radius: 9px;
+  background: none;
+  color: var(--accent-text);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.tipmode button.on {
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+}
+.chips[hidden] {
+  display: none;
+}
+.tipown {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+}
+.tipown[hidden] {
+  display: none;
+}
+.tipown input {
+  flex: 1;
+  min-height: 44px;
+  padding: 0 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+}
+.tipline {
+  color: var(--accent-text);
+  font-size: 14px;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+/* Always one line tall: it appeared with the first tapped item and pushed the page down (2026-10-05). */
+.tipline {
+  min-height: 1.45em;
+}
+.table {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.table strong {
+  flex: 1;
+}
+.table output {
+  min-width: 28px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+.round {
+  width: 44px;
+  height: 44px;
+  border-radius: 22px;
+  border: 1px solid var(--border);
+  background: none;
+  color: var(--accent-text);
+  font: inherit;
+  font-size: 22px;
+  cursor: pointer;
+}
+.round:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.feehead {
+  color: var(--secondary);
+  font-size: 14px;
+  font-weight: 650;
+  margin: 0 0 8px;
+}
+select.share {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 0 14px;
+  text-align: center;
+}
+.card .note {
+  margin: 10px 0 0;
+}
+.footer {
+  text-align: center;
+  margin-top: 18px;
+}
+.footer a {
+  color: var(--accent-text);
+}
+.error {
+  text-align: center;
+  padding: 60px 0;
+}

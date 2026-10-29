@@ -1,0 +1,21 @@
+:root {
+  color-scheme: dark;
+  --bg: oklch(15.7% 0.008 55);
+  --bg-2: oklch(18.4% 0.012 55);
+  --card: oklch(21.4% 0.015 55);
+  --card-2: oklch(25.2% 0.018 55);
+  --ink: oklch(94.6% 0.022 75);
+  --soft: oklch(79.2% 0.024 65);
+  --muted: oklch(68.8% 0.025 65);
+  --dim: oklch(62.8% 0.025 65);
+  --line: oklch(94.6% 0.022 75 / 0.1);
+  --line-2: oklch(94.6% 0.022 75 / 0.19);
+  --orange: oklch(75.2% 0.167 52);
+  --orange-soft: oklch(80.1% 0.14 58);
+  --orange-ink: oklch(19% 0.03 50);
+  --peach-ink: oklch(88% 0.05 65);
+  --green: oklch(77.6% 0.15 153);
+  --display: 'Geologica', 'SF Pro Display', system-ui, sans-serif;
+  --text: 'Manrope', 'SF Pro Text', system-ui, sans-serif;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}

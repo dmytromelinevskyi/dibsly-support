@@ -1,0 +1,587 @@
+{
+  "route": "support-uk.html",
+  "lang": "uk",
+  "head": "<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\">\n<title>Підтримка Dibsly</title>\n<meta name=\"description\" content=\"Підтримка Dibsly: Free і Premium, резервні копії, імпорт, твої дані й контакти.\">\n<meta name=\"theme-color\" content=\"#0E0C0B\">\n<link rel=\"canonical\" href=\"https://dibslyapp.com/support-uk.html\">\n<link rel=\"alternate\" hreflang=\"uk\" href=\"https://dibslyapp.com/support-uk.html\">\n<link rel=\"alternate\" hreflang=\"en\" href=\"https://dibslyapp.com/support.html\">\n<meta property=\"og:type\" content=\"website\">\n<meta property=\"og:site_name\" content=\"Dibsly\">\n<meta property=\"og:title\" content=\"Підтримка Dibsly\">\n<meta property=\"og:description\" content=\"Підтримка Dibsly: Free і Premium, резервні копії, імпорт, твої дані й контакти.\">\n<meta property=\"og:url\" content=\"https://dibslyapp.com/support-uk.html\">\n<meta property=\"og:image\" content=\"https://dibslyapp.com/assets/screenshots/web/uk-web.jpg\">\n<meta name=\"twitter:card\" content=\"summary_large_image\">\n<link rel=\"icon\" type=\"image/png\" href=\"assets/brand/favicon.png\">\n<link rel=\"apple-touch-icon\" href=\"assets/brand/apple-touch-icon.png\">",
+  "main": {
+    "tag": "main",
+    "attrs": {},
+    "children": [
+      {
+        "tag": "section",
+        "attrs": { "class": "page-hero" },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": { "class": "wrap" },
+            "children": [
+              {
+                "tag": "p",
+                "attrs": { "class": "kicker" },
+                "children": [
+                  { "tag": "span", "attrs": { "class": "dot" }, "children": [] },
+                  "Підтримка"
+                ]
+              },
+              { "tag": "h1", "attrs": {}, "children": ["Чим допомогти?"] },
+              {
+                "tag": "p",
+                "attrs": { "class": "lead" },
+                "children": [
+                  "Відповіді про Free і Premium, резервні копії, імпорт і твої дані. Не знайшов відповіді — напиши нам."
+                ]
+              },
+              {
+                "tag": "div",
+                "attrs": { "class": "actions" },
+                "children": [
+                  {
+                    "tag": "a",
+                    "attrs": { "class": "button hot", "href": "mailto:dibslysupport@gmail.com" },
+                    "children": ["Написати в підтримку"]
+                  },
+                  {
+                    "tag": "a",
+                    "attrs": { "class": "button ghost", "href": "help-uk.html" },
+                    "children": ["Інструкції"]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "section",
+        "attrs": { "class": "section", "id": "faq" },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": { "class": "wrap narrow" },
+            "children": [
+              { "tag": "h2", "attrs": { "class": "reveal" }, "children": ["Питання"] },
+              {
+                "tag": "div",
+                "attrs": { "class": "faq reveal" },
+                "children": [
+                  {
+                    "tag": "details",
+                    "attrs": { "open": null },
+                    "children": [
+                      { "tag": "summary", "attrs": {}, "children": ["Це безпечно?"] },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Так. Dibsly не просить пароль від банку й не може переказати гроші, а без акаунта ",
+                          {
+                            "tag": "a",
+                            "attrs": { "href": "privacy-uk.html" },
+                            "children": ["дані лишаються"]
+                          },
+                          " на твоєму iPhone і в твоїх зашифрованих копіях."
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "details",
+                    "attrs": {},
+                    "children": [
+                      { "tag": "summary", "attrs": {}, "children": ["Скільки коштує?"] },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Основне — безкоштовно. Premium — $2.99 на місяць або $29.99 на рік."
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "details",
+                    "attrs": {},
+                    "children": [
+                      { "tag": "summary", "attrs": {}, "children": ["Які банки?"] },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "monobank напряму, виписки PrivatBank, UKRSIBBANK, KredoBank і monobank (і ФОП) та Apple Pay з будь-якої картки — безкоштовно. Виписку будь-якого іншого банку прочитає ШІ: 3 всього безкоштовно, до 25 на місяць з Premium."
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "details",
+                    "attrs": {},
+                    "children": [
+                      { "tag": "summary", "attrs": {}, "children": ["Що бачить ШІ?"] },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Лише те, що треба для відповіді, і тільки з твого дозволу. Рахує Dibsly на телефоні, а ШІ лише складає слова."
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "details",
+                    "attrs": {},
+                    "children": [
+                      { "tag": "summary", "attrs": {}, "children": ["Чи треба реєструватись?"] },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Ні. Акаунт потрібен лише для сайту, синхронізації, ChatGPT чи Claude і спільних рахунків."
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "details",
+                    "attrs": {},
+                    "children": [
+                      { "tag": "summary", "attrs": {}, "children": ["А Android?"] },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Поки що iPhone і сайт my.dibslyapp.com у будь-якому браузері (з Premium). Далі — iPad і Mac."
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "details",
+                    "attrs": {},
+                    "children": [
+                      { "tag": "summary", "attrs": {}, "children": ["Як скасувати Premium?"] },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Параметри iOS → твоє ім'я → Підписки → Dibsly, щонайменше за 24 години до кінця оплаченого періоду. Оплату й повернення коштів обробляє Apple. Після Premium нічого не зникає: дані лишаються, зупиняються синхронізація, сайт і асистенти, а ліміти стають як у Free."
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "details",
+                    "attrs": {},
+                    "children": [
+                      {
+                        "tag": "summary",
+                        "attrs": {},
+                        "children": ["Новий iPhone: як перенести дані?"]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Встанови Dibsly й обери «Відновити мої дані» з найновішою копією або ввійди в акаунт Dibsly (синхронізація — з Premium)."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "section",
+        "attrs": { "class": "section", "id": "plans" },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": { "class": "wrap" },
+            "children": [
+              { "tag": "h2", "attrs": { "class": "reveal" }, "children": ["Free і Premium"] },
+              {
+                "tag": "p",
+                "attrs": { "class": "section-lead reveal" },
+                "children": [
+                  "Dibsly безкоштовний. Premium додає синхронізацію, сайт, твого ChatGPT чи Claude, спільні рахунки й ШІ, який робить рутину за тебе."
+                ]
+              },
+              {
+                "tag": "div",
+                "attrs": { "class": "plans" },
+                "children": [
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "plan reveal" },
+                    "children": [
+                      { "tag": "h3", "attrs": {}, "children": ["Free"] },
+                      {
+                        "tag": "p",
+                        "attrs": { "class": "price" },
+                        "children": [
+                          "0 ₴",
+                          { "tag": "small", "attrs": {}, "children": ["назавжди"] }
+                        ]
+                      },
+                      {
+                        "tag": "ul",
+                        "attrs": { "class": "checks green" },
+                        "children": [
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Рахунки, аналітика, план місяця, календар платежів і цілі"
+                            ]
+                          },
+                          { "tag": "li", "attrs": {}, "children": ["Борги, кредити й ФОП"] },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "monobank напряму, виписки PrivatBank, UKRSIBBANK, KredoBank і monobank, Apple Pay"
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": ["Виписки інших банків, прочитані ШІ: 3 всього"]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": ["Інвестиції: звіти брокерів і дивіденди"]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Чат з Dibsly: 20 питань на місяць ",
+                              {
+                                "tag": "span",
+                                "attrs": {},
+                                "children": ["(про налаштування — без ліміту)"]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": ["Чеки й поділ рахунку: 10 на місяць"]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": ["Зашифровані копії в твоєму iCloud Drive чи Google Drive"]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "plan premium reveal" },
+                    "children": [
+                      {
+                        "tag": "h3",
+                        "attrs": {},
+                        "children": [
+                          "Dibsly Premium ",
+                          { "tag": "span", "attrs": { "class": "badge" }, "children": ["усе"] }
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": { "class": "price" },
+                        "children": [
+                          "$2.99",
+                          {
+                            "tag": "small",
+                            "attrs": {},
+                            "children": ["на місяць · або $29.99 на рік"]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "ul",
+                        "attrs": { "class": "checks orange" },
+                        "children": [
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": ["Синхронізація між iPhone і сайтом my.dibslyapp.com"]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": ["ChatGPT і Claude з доступом до твоїх даних"]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Спільні рахунки ",
+                              {
+                                "tag": "span",
+                                "attrs": {},
+                                "children": ["(вистачить Premium в одного)"]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Сповіщення будь-якого банку, прочитані ШІ ",
+                              { "tag": "span", "attrs": {}, "children": ["(iOS 27)"] }
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": ["Чат з Dibsly: до 40 питань на день"]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": ["Виписки інших банків, прочитані ШІ: до 25 на місяць"]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": ["ШІ розкладає покупки, чеки: до 300 на місяць"]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": ["Голос з ШІ для фраз, які телефон не зрозумів"]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "a",
+                        "attrs": {
+                          "class": "button hot",
+                          "href": "https://apps.apple.com/app/id6765870838"
+                        },
+                        "children": ["Обрати Premium"]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "p",
+                "attrs": { "class": "plans-note" },
+                "children": [
+                  "Ціни для України. App Store покаже ціну у твоїй країні; підписка подовжується автоматично."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "section",
+        "attrs": { "class": "section", "id": "backup" },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": { "class": "wrap" },
+            "children": [
+              { "tag": "h2", "attrs": { "class": "reveal" }, "children": ["Резервні копії"] },
+              {
+                "tag": "div",
+                "attrs": { "class": "grid two" },
+                "children": [
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      { "tag": "h3", "attrs": {}, "children": ["Куди й коли"] },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Зашифрована копія — вручну чи щодня або щотижня — у твою папку iCloud Drive чи в «Dibsly Backups» у Google Drive. З автоматичних Dibsly лишає п'ять найновіших."
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      { "tag": "h3", "attrs": {}, "children": ["Пароль відновлення"] },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Копія відкривається лише твоїм паролем відновлення. Dibsly його не знає й не може скинути — збережи його в менеджері паролів."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "section",
+        "attrs": { "class": "section", "id": "imports" },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": { "class": "wrap" },
+            "children": [
+              { "tag": "h2", "attrs": { "class": "reveal" }, "children": ["Імпорт"] },
+              {
+                "tag": "div",
+                "attrs": { "class": "grid two" },
+                "children": [
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      { "tag": "h3", "attrs": {}, "children": ["Банки"] },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Виписки monobank, PrivatBank, UKRSIBBANK і KredoBank (і їхні виписки ФОП) Dibsly читає сам, на телефоні; файл нікуди не вивантажується. monobank можна підключити й напряму, токеном лише для читання."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Виписку будь-якого іншого банку прочитає ШІ: 3 всього безкоштовно, до 25 на місяць з Premium."
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      { "tag": "h3", "attrs": {}, "children": ["Застосунки й брокери"] },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Облік переноситься з CSV Dibsly чи Monefy, інвестиції — зі звітів Interactive Brokers і Freedom Finance."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "section",
+        "attrs": { "class": "section", "id": "privacy" },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": { "class": "wrap" },
+            "children": [
+              { "tag": "h2", "attrs": { "class": "reveal" }, "children": ["Твої дані"] },
+              {
+                "tag": "div",
+                "attrs": { "class": "grid two" },
+                "children": [
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      { "tag": "h3", "attrs": {}, "children": ["Спершу — на iPhone"] },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Без акаунта записи лишаються на телефоні й у твоїх зашифрованих копіях. З акаунтом і Premium вони синхронізуються через сервер Dibsly, тож iPhone і my.dibslyapp.com показують одне й те саме."
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      { "tag": "h3", "attrs": {}, "children": ["ШІ — лише з дозволу"] },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "ШІ — це OpenAI через власний сервер Dibsly. Іде лише те, що потрібно функції; OpenAI тримає це не довше 30 днів і не навчає на ньому моделі."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": { "class": "muted" },
+                        "children": [
+                          "Курси — від НБУ, котирування — з Nasdaq і Yahoo Finance; твоїх записів ці запити не несуть. Усе докладно — у ",
+                          {
+                            "tag": "a",
+                            "attrs": { "href": "privacy-uk.html" },
+                            "children": ["політиці конфіденційності"]
+                          },
+                          "."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "section",
+        "attrs": { "class": "section", "id": "contact" },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": { "class": "wrap narrow" },
+            "children": [
+              { "tag": "h2", "attrs": { "class": "reveal" }, "children": ["Написати нам"] },
+              {
+                "tag": "div",
+                "attrs": { "class": "card reveal" },
+                "children": [
+                  {
+                    "tag": "p",
+                    "attrs": {},
+                    "children": [
+                      "Пиши на ",
+                      {
+                        "tag": "a",
+                        "attrs": { "href": "mailto:dibslysupport@gmail.com" },
+                        "children": ["dibslysupport@gmail.com"]
+                      },
+                      ": що ти робив і що сталося. У застосунку «Написати нам» у довідці сам додасть версії Dibsly та iOS."
+                    ]
+                  },
+                  {
+                    "tag": "p",
+                    "attrs": { "class": "warn" },
+                    "children": [
+                      "Ніколи не надсилай пароль відновлення чи незашифрований експорт своїх даних."
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

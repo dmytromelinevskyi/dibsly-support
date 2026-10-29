@@ -1,0 +1,1353 @@
+{
+  "route": "help.html",
+  "lang": "en",
+  "head": "<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\">\n<title>Dibsly Guide</title>\n<meta name=\"description\" content=\"How to use Dibsly: Main, recording, Apple Pay and bank notifications, statements, plan, goals, debts, credits, FOP, the chat, shared accounts and backups.\">\n<meta name=\"theme-color\" content=\"#0E0C0B\">\n<link rel=\"canonical\" href=\"https://dibslyapp.com/help.html\">\n<link rel=\"alternate\" hreflang=\"uk\" href=\"https://dibslyapp.com/help-uk.html\">\n<link rel=\"alternate\" hreflang=\"en\" href=\"https://dibslyapp.com/help.html\">\n<meta property=\"og:type\" content=\"website\">\n<meta property=\"og:site_name\" content=\"Dibsly\">\n<meta property=\"og:title\" content=\"Dibsly Guide\">\n<meta property=\"og:description\" content=\"How to use Dibsly: Main, recording, Apple Pay and bank notifications, statements, plan, goals, debts, credits, FOP, the chat, shared accounts and backups.\">\n<meta property=\"og:url\" content=\"https://dibslyapp.com/help.html\">\n<meta property=\"og:image\" content=\"https://dibslyapp.com/assets/screenshots/web/en-web.jpg\">\n<meta name=\"twitter:card\" content=\"summary_large_image\">\n<link rel=\"icon\" type=\"image/png\" href=\"assets/brand/favicon.png\">\n<link rel=\"apple-touch-icon\" href=\"assets/brand/apple-touch-icon.png\">",
+  "main": {
+    "tag": "main",
+    "attrs": {},
+    "children": [
+      {
+        "tag": "section",
+        "attrs": { "class": "page-hero" },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": { "class": "wrap" },
+            "children": [
+              {
+                "tag": "p",
+                "attrs": { "class": "kicker" },
+                "children": [
+                  { "tag": "span", "attrs": { "class": "dot" }, "children": [] },
+                  "Guides"
+                ]
+              },
+              { "tag": "h1", "attrs": {}, "children": ["How to use Dibsly"] },
+              {
+                "tag": "p",
+                "attrs": { "class": "lead" },
+                "children": [
+                  "From the first launch to Apple Pay, bank notifications, debts, credits, FOP and your own ChatGPT or Claude. Short and step by step."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "div",
+        "attrs": { "class": "wrap with-toc" },
+        "children": [
+          {
+            "tag": "nav",
+            "attrs": { "class": "toc", "aria-label": "Sections" },
+            "children": [
+              { "tag": "a", "attrs": { "href": "#start" }, "children": ["Getting started"] },
+              { "tag": "a", "attrs": { "href": "#entry" }, "children": ["Recording operations"] },
+              {
+                "tag": "a",
+                "attrs": { "href": "#voice" },
+                "children": ["Voice, receipts and splitting"]
+              },
+              {
+                "tag": "a",
+                "attrs": { "href": "#apple-pay" },
+                "children": ["Apple Pay through Shortcuts"]
+              },
+              {
+                "tag": "a",
+                "attrs": { "href": "#bank-notifications" },
+                "children": ["Bank notifications"]
+              },
+              {
+                "tag": "a",
+                "attrs": { "href": "#statements" },
+                "children": ["Statements and monobank"]
+              },
+              { "tag": "a", "attrs": { "href": "#brands" }, "children": ["Brands"] },
+              { "tag": "a", "attrs": { "href": "#calendar" }, "children": ["Calendar"] },
+              { "tag": "a", "attrs": { "href": "#plan" }, "children": ["Monthly plan"] },
+              { "tag": "a", "attrs": { "href": "#goals" }, "children": ["Goals"] },
+              { "tag": "a", "attrs": { "href": "#investments" }, "children": ["Investments"] },
+              { "tag": "a", "attrs": { "href": "#debts" }, "children": ["Debts"] },
+              { "tag": "a", "attrs": { "href": "#credits" }, "children": ["Credits"] },
+              { "tag": "a", "attrs": { "href": "#fop" }, "children": ["FOP (sole traders)"] },
+              { "tag": "a", "attrs": { "href": "#chat" }, "children": ["Ask Dibsly"] },
+              { "tag": "a", "attrs": { "href": "#account" }, "children": ["Account and sync"] },
+              { "tag": "a", "attrs": { "href": "#shared" }, "children": ["Shared accounts"] },
+              {
+                "tag": "a",
+                "attrs": { "href": "#website" },
+                "children": ["The website my.dibslyapp.com"]
+              },
+              {
+                "tag": "a",
+                "attrs": { "href": "#assistants" },
+                "children": ["ChatGPT and Claude"]
+              },
+              {
+                "tag": "a",
+                "attrs": { "href": "#moving" },
+                "children": ["Moving from another app"]
+              },
+              {
+                "tag": "a",
+                "attrs": { "href": "#backup" },
+                "children": ["Backups and a new iPhone"]
+              },
+              { "tag": "a", "attrs": { "href": "#privacy" }, "children": ["Privacy"] },
+              {
+                "tag": "a",
+                "attrs": { "href": "#premium" },
+                "children": ["Premium and cancelling"]
+              }
+            ]
+          },
+          {
+            "tag": "div",
+            "attrs": { "class": "guide" },
+            "children": [
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "start" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Getting started"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      { "tag": "h3", "attrs": {}, "children": ["First steps"] },
+                      {
+                        "tag": "ol",
+                        "attrs": { "class": "steps" },
+                        "children": [
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Install Dibsly from the App Store and go through the welcome: language, main currency, first account."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "At «Your banks», connect monobank or pick your bank's statement — your history comes in at once."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Then let spending record itself: ",
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "#apple-pay" },
+                                "children": ["Apple Pay"]
+                              },
+                              " and, with Premium, ",
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "#bank-notifications" },
+                                "children": ["bank notifications"]
+                              },
+                              "."
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "An account is optional: you can sign in with Apple, Google or e-mail any time later."
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      { "tag": "h3", "attrs": {}, "children": ["Main"] },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["On hand"] },
+                          " — the big number at the top: your money for everyday life, cards and cash. Savings, investments and an account with Count in balance off are never in it."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Savings"] },
+                          " — one tile per currency with this month's change; the Investments tile appears when investments are on. Moving money between your accounts is never spending or income."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Your month"] },
+                          " — Income, Spent and Net. Below: Activity with drafts, the Plan and the Calendar — each opens with All ›."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["+"] },
+                          " records an operation (an expense, income, a transfer or a debt), a phrase («Say it»), a receipt or a credit. The gear at the top opens Settings, with a search at the bottom."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "entry" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Recording operations"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Amount first."] },
+                          " The keypad opens first and can count + − × ÷. Then pick a category — tapping it saves the operation."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Account and date."] },
+                          " Tap the date at the top to change it; a future date isn't counted until it comes. After expense lets you type the balance you see in the bank, and the amount is worked out."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Notes."] },
+                          " Your past notes are suggested as you type; picking one sets its category too."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Transfers."] },
+                          " A transfer moves money between your own accounts and is never spending. Between currencies, enter what arrived; the rate comes from Currencies."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Editing."] },
+                          " In History, tap an operation to change it — changes save at once. Hold it to change the category, duplicate, select several or delete."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "voice" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Voice, receipts and splitting"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Say it."] },
+                          " + → «Say it»: «coffee 85», «mono 100 groceries», «yesterday cash 1 200 transport» — and it is recorded. What the phone cannot read, the AI finishes (Premium)."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Siri and the Action button."] },
+                          " Say «Record in Dibsly» to Siri or put it on the Action button. Turn it on: Settings → Preferences → Input → «Voice entry»."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Receipt."] },
+                          " + → «Receipt»: a photo or up to three screenshots — the items and the total fill in themselves. 10 receipts a month are free, up to 300 with Premium."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Split the bill."] },
+                          " In a receipt, mark your items and send your friends their part by a link — each picks their own."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "apple-pay" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Apple Pay through Shortcuts"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Every Apple Pay payment becomes a draft in Activity: check the amount and category and save it with one tap. Only then does the balance change. Free, with any card."
+                        ]
+                      },
+                      {
+                        "tag": "ol",
+                        "attrs": { "class": "steps" },
+                        "children": [
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "In Dibsly: Settings → Transaction automation → Apple Pay → «Install automation»."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "In Shortcuts, the Automation tab: «Dibsly · Apple Pay» should be on and run immediately, without asking."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Save each card's first payment with its account — Dibsly remembers it."
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Another currency."] },
+                          " A payment in dollars on a hryvnia card is converted at the app's rate; tap the amount to enter what the bank charged. The statement later brings the exact amount."
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      { "tag": "h3", "attrs": {}, "children": ["Set it up by hand"] },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "A new «Notification» automation from the Wallet app, «Run Immediately». Actions: «Get text» from Subtitle, Body and Title; «Text» with the two texts you got; then Dibsly's «Import Wallet notification»: Notification text — the text, Card — the card's name, «Show When Run» off."
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      { "tag": "h3", "attrs": {}, "children": ["Nothing arrives?"] },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Check that Wallet may show notifications: iOS Settings → Notifications → Wallet. If bank notifications are on too, one purchase still stays one draft."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "bank-notifications" },
+                "children": [
+                  {
+                    "tag": "h2",
+                    "attrs": {},
+                    "children": [
+                      "Bank notifications ",
+                      {
+                        "tag": "span",
+                        "attrs": { "class": "tag" },
+                        "children": ["Premium · iOS 27"]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Pushes from any bank — purchases, top-ups, transfers — are read by Dibsly with the AI through one Shortcuts automation and become drafts."
+                        ]
+                      },
+                      {
+                        "tag": "ol",
+                        "attrs": { "class": "steps" },
+                        "children": [
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "In Dibsly: Settings → Transaction automation → Bank notifications → «Install automation»."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "In Shortcuts, open «Dibsly · Bank Notifications» and under «When I receive a notification from» choose your banks' apps: monobank, Privat24, UKRSIB online, KredoBank or any other."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "The automation should run immediately, and in «Read notification» turn off «Show When Run»."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Allow Dibsly's AI when it asks: without it the notifications can't be read."
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": ["The first payment of each card asks for its account."]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "statements" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Statements and monobank"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      { "tag": "h3", "attrs": {}, "children": ["monobank directly"] },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Create a personal token at api.monobank.ua and paste it: Settings → Import & export → «Connect monobank». Dibsly syncs your cards and jars by itself; the token can only read and stays in this iPhone's Keychain."
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      { "tag": "h3", "attrs": {}, "children": ["Any bank's statement"] },
+                      {
+                        "tag": "ol",
+                        "attrs": { "class": "steps" },
+                        "children": [
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Save a statement in your bank's app: PDF, CSV, XLS or XLSX. «How to export» in Dibsly shows where to get one."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Share it to Dibsly or open Settings → Import & export → «Bank statement» (or FOP)."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Check the preview — the account, the number of operations, transfers between your accounts — and tap «Add and continue»."
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "monobank, PrivatBank, UKRSIBBANK and KredoBank — and their FOP statements — Dibsly reads itself, free. Any other bank is read by the AI: 3 statements in all free, up to 25 a month with Premium. Check the amounts of such a statement."
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      { "tag": "h3", "attrs": {}, "children": ["Nothing twice, with categories"] },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Importing the same period again adds only new operations, and the balance check compares your balance with the bank's."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Transfers between your accounts are recognised; an account money often goes to is offered as yours («Is this your account?»). Categories come from your history, your rules and the bank; the rest lands in «Uncategorized»."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "brands" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Brands"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["A brand in one tap."] },
+                          " When recording an expense, open the category and switch to Brands: a tap writes the brand's name and picks your category for it."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Brand and category at once."] },
+                          " Type the beginning of a name in the note and the brand comes once per category you used it with. Hold a brand on the Brands tab for its other categories."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["It learns from you."] },
+                          " A brand goes where most of your operations with it went, and the note keeps your own way of writing it. One different category once does not change it."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Move a brand for good."] },
+                          " Settings → Brands: tap a brand and pick a category. It always goes there then, from statements and drafts too, and travels with backups, sync and the CSV export."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "calendar" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Calendar"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["What it is."] },
+                          " Payments you expect: subscriptions, rent, one-off reminders. They don't change the balance until you record or link an expense."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Paying."] },
+                          " Open a payment: «Record expense» writes it, «Link» attaches an expense you already have. A draft that matches a payment offers «Mark as paid»."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Reminders."] },
+                          " On the day or 1, 3 or 7 days before. «Add to calendar» in an expense creates a new payment. The calendar can be turned off in Settings, section Features."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "plan" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Monthly plan"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Turn it on."] },
+                          " Settings, section Features → Planning. Turning it off keeps your plans."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Limits."] },
+                          " One plan a month in your main currency. Tap a category to set its limit; the page shows what's left and about how much you can spend a day."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["On Main."] },
+                          " The Plan card shows what's left and up to four categories you watch. Orange means 90% used, red — over the limit."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Plan from what you spent."] },
+                          " In the plan editor tap a category's name: you see each expense of last month and so far this month, so a limit starts from what really went out."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Faster."] },
+                          " Hold a category for last month's amount or Remove limit; the eye shows it on Main. Hide the keypad with its ⌄ key or a swipe down."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "goals" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Goals"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["What a goal is."] },
+                          " What you save for: a flat, a car, a cushion. The money stays on savings and investment accounts; the goal shows how much of it is already its."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Adding one."] },
+                          " Turn Goals on in Settings, section Features. Then «Goals» on Main → «Add goal»: the amount, the date and the accounts."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["The queue."] },
+                          " «Goals’ order» decides which goal fills first; the cushion always comes first."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "investments" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Investments"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "ol",
+                        "attrs": { "class": "steps" },
+                        "children": [
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Turn on Settings → Features → Investments if there's no Investments tab yet."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Save your broker's report: Interactive Brokers — the Activity Statement, Freedom Finance — the broker report as XLSX or PDF."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Open Settings → Import & export → «Broker report» and pick the file. Dibsly sorts out buys, sales, dividends with the tax withheld, and deposits."
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "debts" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Debts"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Who owes whom and how much. Lent, borrowed or paid back is a transfer between your account and the person, so it is neither an expense nor an income. Dibsly only records it: you move the money yourself."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Record a debt."] },
+                          " Main → Debts at the bottom, or + → Operation → Debt."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Split an expense."] },
+                          " In an expense's card, «Split with…»: your part stays an expense, your friends' parts become debts. For a receipt: «Split the bill» with «I paid the whole bill»."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Paid back."] },
+                          " On the person's page, «Paid back» or «Pay back». Money from them in a bank notification is suggested as a return; a saved income becomes one with «It is a debt paid back» in its card."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["A link to the debt."] },
+                          " Until a friend accepts the debt, «Share» sends them its link: a friend with Dibsly accepts it in their app, and every record either of you makes reaches the other to confirm. Then «Remind» sends them a push. You both need a Dibsly account — a free one is enough."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["A debt let go."] },
+                          " «Paid back» → «Money did not come to an account»: the debt closes and the sum goes to Gifts in your expenses."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "credits" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Credits"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "A loan, a mortgage, instalments, a microloan or a card's limit: what's left, the next payment and the overpayment."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Add one."] },
+                          " Turn on «Credits» in Settings, section Features: the Credits block appears at the bottom of Main. «All ›» in it → «+» → the kind. A mortgage or an old loan is entered by what is left on a day."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Bought in instalments."] },
+                          " In a saved expense's card, «Bought in instalments»: the purchase stays whole in Analytics, the bank's part comes back to the card, and each month's part pays the instalment off."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Paying and paying early."] },
+                          " On a credit's page, «Pay» splits the payment into the body and interest (an expense in «Interest and fees»). «Early» shows what a shorter term or a lower payment saves. A payment from a statement: «This is a credit payment» in its card."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Credit card and reminders."] },
+                          " «On hand» shows only your own money, with «… of credit still available» under it. Payments show in the calendar with reminders three days before and on the day."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Dibsly only records the payments — it never moves the bank's money."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "fop" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["FOP (sole traders)"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "For a 3rd-group FOP: income, the single tax, the military levy and ESV by quarter, deadlines and payment details. Free."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Turn it on."] },
+                          " Settings, section Features → FOP → «Turn on FOP». A short questionnaire: the group, the rate, ESV, your community, the FOP accounts."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Income."] },
+                          " Income on a FOP account counts at the NBU rate of the day it arrived. A refund or your own transfer: turn off «FOP income» in the operation's card, or hold it on the FOP page → «Not income»."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Taxes and deadlines."] },
+                          " The FOP page shows the single tax, the military levy and ESV by quarter, how much is due and by when. The deadlines are in the calendar with reminders."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Paying."] },
+                          " «Show payment details» under the deadlines opens the amounts and the tax service's details for your community — every field copies with a tap."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Dibsly doesn't pay taxes or file returns — you do. Check the figures and details against the tax service's e-cabinet, especially before your first payment."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "chat" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Ask Dibsly"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "A chat about your money right in the app: ask in words, Dibsly answers in your own figures."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Where it is."] },
+                          " On Main — the button above «+»; on other pages — the orange tab on the right. The chat knows which page you opened it from."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["What it can do."] },
+                          " It counts spending, finds operations, records («record coffee 85»), moves them to categories, sets limits and imports a statement with 📎. Nothing is saved until you tap «Save»."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Free answers."] },
+                          " «Where do I turn on FOP?» or «how do I hide the amounts» — Dibsly answers itself from the help, without the AI and not counted. «Ask the AI» under such an answer asks the AI."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["How many questions."] },
+                          " 20 questions to the AI a month are free, up to 40 a day with Premium. The first time, Dibsly shows what goes to the AI and asks for your permission; to turn it off — Settings → Features → «AI in Dibsly». The conversation stays on this iPhone; «Clear conversation» is there too."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "account" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Account and sync"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["The account."] },
+                          " Profile (the circle next to the gear) → sign in with Apple, Google or e-mail. Without an account everything works on one iPhone."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Sync."] },
+                          " With Premium your data is the same on all your iPhones and on my.dibslyapp.com."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "shared" },
+                "children": [
+                  {
+                    "tag": "h2",
+                    "attrs": {},
+                    "children": [
+                      "Shared accounts ",
+                      { "tag": "span", "attrs": { "class": "tag" }, "children": ["Premium"] }
+                    ]
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "ol",
+                        "attrs": { "class": "steps" },
+                        "children": [
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Sign in to your Dibsly account: Profile → Apple, Google or e-mail."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Profile → «Sharing» → «Invite by link» and send the link."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "The other person opens it on an iPhone with Dibsly and taps «Join». Then choose which account to share."
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Shared accounts and goals: each sees their own and the shared. One member's Premium is enough; anyone can leave there any time."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "website" },
+                "children": [
+                  {
+                    "tag": "h2",
+                    "attrs": {},
+                    "children": [
+                      "The website my.dibslyapp.com ",
+                      { "tag": "span", "attrs": { "class": "tag" }, "children": ["Premium"] }
+                    ]
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Open ",
+                          {
+                            "tag": "a",
+                            "attrs": { "href": "https://my.dibslyapp.com" },
+                            "children": ["my.dibslyapp.com"]
+                          },
+                          " on a computer and sign in to the same Dibsly account as on your iPhone. History with search, analytics, the plan, the calendar and drafts are there; changes show up on your phone at once."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "assistants" },
+                "children": [
+                  {
+                    "tag": "h2",
+                    "attrs": {},
+                    "children": [
+                      "ChatGPT and Claude ",
+                      { "tag": "span", "attrs": { "class": "tag" }, "children": ["Premium"] }
+                    ]
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "On the website open «Connect AI»: it has the connection address ",
+                          {
+                            "tag": "code",
+                            "attrs": {},
+                            "children": ["https://my.dibslyapp.com/mcp"]
+                          },
+                          " and the steps for each assistant."
+                        ]
+                      },
+                      {
+                        "tag": "ol",
+                        "attrs": { "class": "steps" },
+                        "children": [
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Claude"] },
+                              " (claude.ai, the app): Settings → Connectors → add a custom connector with the address above, sign in to Dibsly and allow access."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["ChatGPT"] },
+                              " (chatgpt.com): Plugins → Add → Add custom MCP server, the address above, OAuth; sign in to Dibsly the same way and allow access. On some ChatGPT plans it can only read — that's the plan's limit, not Dibsly's."
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Ask in words: «how much did I spend on cafés this month?», «here is a statement, add it». The assistant writes changes only after your «yes», and each can be undone in the AI journal on the website."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "All connections are in the app: Profile → «Devices and AI». You can remove them there."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "moving" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Moving from another app"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Dibsly imports a Monefy CSV and its own CSV. In Monefy export your data as CSV, then in Dibsly: Settings → Import & export → «CSV file» → «Monefy CSV». Accounts, categories, currencies and transfers come over, and Dibsly shows exactly what it will add before saving."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "A CSV can be added to your data or replace it all — then a safety copy is made first."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "backup" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Backups and a new iPhone"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "ol",
+                        "attrs": { "class": "steps" },
+                        "children": [
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Settings → Backup & recovery: choose an iCloud Drive folder or connect Google Drive, make up a recovery password and turn on automatic backups."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Keep the password in a password manager: without it a backup can't be opened, and nobody, Dibsly included, can recover it."
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Where and when."] },
+                          " Automatic backups run daily or weekly, usually at night; the last five are kept, manual ones are never deleted."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Restoring."] },
+                          " «Open backup file» restores any .dibslybackup. On a new iPhone, tap «Restore my data» when Dibsly first opens, or just sign in if you have sync (Premium). A safety copy of the current data is made first."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Backup or CSV."] },
+                          " A backup holds everything, drafts and most settings included. A CSV holds operations, accounts, plans and the calendar, but no drafts or settings."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "privacy" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Privacy"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["On your iPhone."] },
+                          " Without an account your data stays on this iPhone only. Statements are read here and are never uploaded."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["What goes out."] },
+                          " An account and sync (Premium) keep your data on Dibsly's server. The AI works only with your consent: what an answer needs goes to OpenAI through Dibsly's server. Also NBU rates, investment quotes, monobank, your backups in iCloud or Google Drive, and anonymous usage statistics you can turn off in Preferences."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Hiding."] },
+                          " «Hide amounts» shows •••• instead of sums, and App Lock asks for Face ID when you come back. Notifications still show amounts — hide previews in iOS Settings."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "All the details are in the ",
+                          {
+                            "tag": "a",
+                            "attrs": { "href": "privacy.html" },
+                            "children": ["privacy policy"]
+                          },
+                          "."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "premium" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Premium and cancelling"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Premium — $2.99 a month or $29.99 a year — adds sync and shared accounts, the website, ChatGPT and Claude, notifications from any bank and AI categories. The limits are higher: up to 300 receipts a month (10 without Premium), up to 25 statements of other banks a month (3 in all without Premium) and up to 40 chat questions a day (20 a month without Premium)."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Cancel."] },
+                          " iOS Settings → your name → Subscriptions → Dibsly, at least 24 hours before the period ends. When Premium ends, nothing is deleted."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "p",
+                "attrs": { "class": "section-lead" },
+                "children": [
+                  "Didn’t find your answer? ",
+                  { "tag": "a", "attrs": { "href": "support.html" }, "children": ["Support"] },
+                  " or ",
+                  {
+                    "tag": "a",
+                    "attrs": { "href": "mailto:dibslysupport@gmail.com" },
+                    "children": ["dibslysupport@gmail.com"]
+                  },
+                  "."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

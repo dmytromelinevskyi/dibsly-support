@@ -1,0 +1,1347 @@
+{
+  "route": "help-uk.html",
+  "lang": "uk",
+  "head": "<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\">\n<title>Інструкції Dibsly</title>\n<meta name=\"description\" content=\"Як користуватися Dibsly: Головна, запис операцій, Apple Pay і сповіщення банків, виписки, план, цілі, борги, кредити, ФОП, чат, спільні рахунки й копії.\">\n<meta name=\"theme-color\" content=\"#0E0C0B\">\n<link rel=\"canonical\" href=\"https://dibslyapp.com/help-uk.html\">\n<link rel=\"alternate\" hreflang=\"uk\" href=\"https://dibslyapp.com/help-uk.html\">\n<link rel=\"alternate\" hreflang=\"en\" href=\"https://dibslyapp.com/help.html\">\n<meta property=\"og:type\" content=\"website\">\n<meta property=\"og:site_name\" content=\"Dibsly\">\n<meta property=\"og:title\" content=\"Інструкції Dibsly\">\n<meta property=\"og:description\" content=\"Як користуватися Dibsly: Головна, запис операцій, Apple Pay і сповіщення банків, виписки, план, цілі, борги, кредити, ФОП, чат, спільні рахунки й копії.\">\n<meta property=\"og:url\" content=\"https://dibslyapp.com/help-uk.html\">\n<meta property=\"og:image\" content=\"https://dibslyapp.com/assets/screenshots/web/uk-web.jpg\">\n<meta name=\"twitter:card\" content=\"summary_large_image\">\n<link rel=\"icon\" type=\"image/png\" href=\"assets/brand/favicon.png\">\n<link rel=\"apple-touch-icon\" href=\"assets/brand/apple-touch-icon.png\">",
+  "main": {
+    "tag": "main",
+    "attrs": {},
+    "children": [
+      {
+        "tag": "section",
+        "attrs": { "class": "page-hero" },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": { "class": "wrap" },
+            "children": [
+              {
+                "tag": "p",
+                "attrs": { "class": "kicker" },
+                "children": [
+                  { "tag": "span", "attrs": { "class": "dot" }, "children": [] },
+                  "Інструкції"
+                ]
+              },
+              { "tag": "h1", "attrs": {}, "children": ["Як користуватися Dibsly"] },
+              {
+                "tag": "p",
+                "attrs": { "class": "lead" },
+                "children": [
+                  "Від першого запуску до Apple Pay, сповіщень банку, боргів, кредитів, ФОП і твого ChatGPT чи Claude. Коротко й по кроках."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "div",
+        "attrs": { "class": "wrap with-toc" },
+        "children": [
+          {
+            "tag": "nav",
+            "attrs": { "class": "toc", "aria-label": "Розділи" },
+            "children": [
+              { "tag": "a", "attrs": { "href": "#start" }, "children": ["Початок"] },
+              { "tag": "a", "attrs": { "href": "#entry" }, "children": ["Запис операцій"] },
+              {
+                "tag": "a",
+                "attrs": { "href": "#voice" },
+                "children": ["Голос, чеки й поділ рахунку"]
+              },
+              {
+                "tag": "a",
+                "attrs": { "href": "#apple-pay" },
+                "children": ["Apple Pay через «Команди»"]
+              },
+              {
+                "tag": "a",
+                "attrs": { "href": "#bank-notifications" },
+                "children": ["Сповіщення банку"]
+              },
+              {
+                "tag": "a",
+                "attrs": { "href": "#statements" },
+                "children": ["Виписки й monobank"]
+              },
+              { "tag": "a", "attrs": { "href": "#brands" }, "children": ["Бренди"] },
+              { "tag": "a", "attrs": { "href": "#calendar" }, "children": ["Календар"] },
+              { "tag": "a", "attrs": { "href": "#plan" }, "children": ["План місяця"] },
+              { "tag": "a", "attrs": { "href": "#goals" }, "children": ["Цілі"] },
+              { "tag": "a", "attrs": { "href": "#investments" }, "children": ["Інвестиції"] },
+              { "tag": "a", "attrs": { "href": "#debts" }, "children": ["Борги"] },
+              { "tag": "a", "attrs": { "href": "#credits" }, "children": ["Кредити"] },
+              { "tag": "a", "attrs": { "href": "#fop" }, "children": ["ФОП"] },
+              { "tag": "a", "attrs": { "href": "#chat" }, "children": ["Запитай Dibsly"] },
+              {
+                "tag": "a",
+                "attrs": { "href": "#account" },
+                "children": ["Акаунт і синхронізація"]
+              },
+              { "tag": "a", "attrs": { "href": "#shared" }, "children": ["Спільні рахунки"] },
+              {
+                "tag": "a",
+                "attrs": { "href": "#website" },
+                "children": ["Сайт my.dibslyapp.com"]
+              },
+              { "tag": "a", "attrs": { "href": "#assistants" }, "children": ["ChatGPT і Claude"] },
+              {
+                "tag": "a",
+                "attrs": { "href": "#moving" },
+                "children": ["Переїзд з іншого застосунку"]
+              },
+              {
+                "tag": "a",
+                "attrs": { "href": "#backup" },
+                "children": ["Резервні копії й новий iPhone"]
+              },
+              { "tag": "a", "attrs": { "href": "#privacy" }, "children": ["Приватність"] },
+              { "tag": "a", "attrs": { "href": "#premium" }, "children": ["Premium і скасування"] }
+            ]
+          },
+          {
+            "tag": "div",
+            "attrs": { "class": "guide" },
+            "children": [
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "start" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Початок"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      { "tag": "h3", "attrs": {}, "children": ["Перші кроки"] },
+                      {
+                        "tag": "ol",
+                        "attrs": { "class": "steps" },
+                        "children": [
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Встанови Dibsly з App Store і пройди знайомство: мова, основна валюта, перший рахунок."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "На кроці «Твої банки» підключи monobank або вибери виписку свого банку — історія підтягнеться одразу."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Далі налаштуй, щоб витрати записувались самі: ",
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "#apple-pay" },
+                                "children": ["Apple Pay"]
+                              },
+                              " і, з Premium, ",
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "#bank-notifications" },
+                                "children": ["сповіщення банку"]
+                              },
+                              "."
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Акаунт не обов'язковий: увійти через Apple, Google чи пошту можна будь-коли пізніше."
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      { "tag": "h3", "attrs": {}, "children": ["Головна"] },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Під рукою"] },
+                          " — велике число вгорі: гроші на щодень, картки й готівка. Заощадження, інвестиції й рахунок з вимкненим «Враховувати в балансі» сюди не входять."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Заощадження"] },
+                          " — по плитці на валюту зі зміною за місяць; плитка «Інвестиції» з'являється, коли їх увімкнено. Переказ між своїми рахунками — не витрата й не дохід."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Твій місяць"] },
+                          " — доходи, витрати й підсумок. Нижче «Активність» з чернетками, план і календар; кожен розділ відкривається через «Усе ›»."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["+"] },
+                          " записує операцію (витрату, дохід, переказ чи борг), фразу («Сказати»), чек або кредит. Шестерня вгорі — налаштування, а внизу там пошук."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "entry" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Запис операцій"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Спершу сума."] },
+                          " Відкривається клавіатура, вона вміє рахувати + − × ÷. Потім вибери категорію — дотик одразу зберігає операцію."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Рахунок і дата."] },
+                          " Дату змінюй дотиком угорі; майбутня дата не враховується, доки не настане. «Після витрати» — введи залишок, який бачиш у банку, і сума порахується сама."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Нотатки."] },
+                          " Минулі нотатки підказуються під час введення; вибрана підставляє й свою категорію."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Перекази."] },
+                          " Переказ переносить гроші між твоїми рахунками й не вважається витратою. Між валютами вкажи, скільки надійшло; курс — із «Валют»."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Зміна."] },
+                          " В історії натисни на операцію, щоб змінити її, — зміни зберігаються одразу. Утримай: змінити категорію, дублювати, вибрати кілька чи видалити."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "voice" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Голос, чеки й поділ рахунку"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Сказати."] },
+                          " «+» → «Сказати»: «кава 85», «моно 100 продукти», «вчора готівкою 1 200 транспорт» — і операцію записано. Що не зрозумів телефон, дочитує ШІ (Premium)."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Siri й кнопка дії."] },
+                          " Скажи Siri «Записати в Dibsly» або признач це кнопці дії. Увімкнути: Налаштування → Параметри → Введення → «Голосове введення»."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Чек."] },
+                          " «+» → «Чек»: фото або до трьох скріншотів — позиції й сума з'являться самі. 10 чеків на місяць безкоштовно, з Premium — до 300."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Поділити рахунок."] },
+                          " У чеку відміть свої позиції, а друзям надішли їхню частину посиланням — кожен вибере своє."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "apple-pay" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Apple Pay через «Команди»"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Кожна оплата Apple Pay стає чернеткою в «Активності»: перевір суму й категорію і збережи одним дотиком. Баланс змінюється лише тоді. Безкоштовно, з будь-якою карткою."
+                        ]
+                      },
+                      {
+                        "tag": "ol",
+                        "attrs": { "class": "steps" },
+                        "children": [
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "У Dibsly: Налаштування → Автоматизація операцій → Apple Pay → «Установити автоматизацію»."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "У «Командах», вкладка «Автоматизація»: автоматизація «Dibsly · Apple Pay» має бути ввімкнена й виконуватись одразу, без запиту."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Першу оплату кожною карткою збережи з її рахунком — далі Dibsly запам'ятає."
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Інша валюта."] },
+                          " Оплата в доларах з гривневої картки перераховується за курсом застосунку; натисни на суму, щоб вказати списання банку. Виписка згодом принесе точну суму."
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      { "tag": "h3", "attrs": {}, "children": ["Налаштувати вручну"] },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Нова автоматизація «Сповіщення» від застосунку Wallet, «Виконувати одразу». Дії: «Отримати текст» з Subtitle, Body і Title; «Текст» з двома отриманими текстами; далі дія Dibsly «Import Wallet notification»: Notification text — текст, Card — назва картки, «Показувати під час виконання» вимкнено."
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      { "tag": "h3", "attrs": {}, "children": ["Нічого не приходить?"] },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Перевір, що Wallet може показувати сповіщення: Параметри iOS → Сповіщення → Wallet. Якщо ввімкнені й сповіщення банку, одна покупка лишається однією чернеткою."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "bank-notifications" },
+                "children": [
+                  {
+                    "tag": "h2",
+                    "attrs": {},
+                    "children": [
+                      "Сповіщення банку ",
+                      {
+                        "tag": "span",
+                        "attrs": { "class": "tag" },
+                        "children": ["Premium · iOS 27"]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Пуші будь-якого банку — покупки, поповнення, перекази — Dibsly читає з ШІ однією автоматизацією «Команд» і робить з них чернетки."
+                        ]
+                      },
+                      {
+                        "tag": "ol",
+                        "attrs": { "class": "steps" },
+                        "children": [
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "У Dibsly: Налаштування → Автоматизація операцій → Сповіщення банків → «Установити автоматизацію»."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "У «Командах» відкрий «Dibsly · Bank Notifications» і в «Коли я отримую сповіщення від» вибери застосунки своїх банків: monobank, Privat24, UKRSIB online, KredoBank чи будь-які інші."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Автоматизація має виконуватись одразу, а в дії «Read notification» вимкни «Показувати під час виконання»."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Дозволь ШІ в Dibsly, коли він попросить: без цього сповіщення не прочитати."
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": ["Перший платіж кожної картки спитає її рахунок."]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "statements" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Виписки й monobank"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      { "tag": "h3", "attrs": {}, "children": ["monobank напряму"] },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Створи персональний токен на api.monobank.ua і встав його: Налаштування → Імпорт та експорт → «Підключити monobank». Dibsly сам підтягує картки й банки; токен дає доступ лише на читання й лежить у «Зв'язці ключів» цього iPhone."
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      { "tag": "h3", "attrs": {}, "children": ["Виписка будь-якого банку"] },
+                      {
+                        "tag": "ol",
+                        "attrs": { "class": "steps" },
+                        "children": [
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Збережи виписку в застосунку банку: PDF, CSV, XLS чи XLSX. «Як зробити виписку» в Dibsly підкаже, де її взяти."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Поділись нею з Dibsly або відкрий Налаштування → Імпорт та експорт → «Виписка банку» (або ФОП)."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Перевір перегляд — рахунок, кількість операцій, перекази між твоїми рахунками — і натисни «Додати й продовжити»."
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "monobank, PrivatBank, UKRSIBBANK і KredoBank — і їхні виписки ФОП — Dibsly читає сам, безкоштовно. Будь-який інший банк читає ШІ: 3 виписки всього безкоштовно, з Premium до 25 на місяць. Суми такої виписки перевір."
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      { "tag": "h3", "attrs": {}, "children": ["Без повторів і з категоріями"] },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Повторний імпорт того самого періоду додасть лише нові операції, а перевірка балансу звірить залишок із банківським."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Перекази між твоїми рахунками розпізнаються; рахунок, куди часто йдуть гроші, Dibsly запропонує як твій («Це твій рахунок?»). Категорії беруться з історії, твоїх правил і банку, решта — у «Без категорії»."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "brands" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Бренди"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Бренд одним дотиком."] },
+                          " Записуючи витрату, відкрий категорію й перемкнись на «Бренди»: дотик пише назву бренду й вибирає твою категорію для нього."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Бренд і категорія одразу."] },
+                          " Почни писати назву в нотатці — «сіл», «мак», «wolt» — і бренд з'явиться по разу на кожну категорію, куди ти його записував. Утримай бренд у «Брендах», щоб побачити інші."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Вчиться на твоїх записах."] },
+                          " Бренд іде туди, куди пішло найбільше твоїх операцій із ним, а в назві лишається твоє написання. Одна інша категорія разово його не змінює."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Перенести назавжди."] },
+                          " Налаштування → Бренди: торкнись бренду й вибери категорію. Далі він завжди йде туди — і з виписок, і з чернеток — і зберігається в копіях, синхронізації та експорті CSV."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "calendar" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Календар"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Що це."] },
+                          " Платежі, на які ти чекаєш: підписки, оренда, разові нагадування. Баланс вони не змінюють, доки ти не запишеш чи не пов'яжеш витрату."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Оплата."] },
+                          " Відкрий платіж: «Записати витрату» запише його, «Пов'язати» прив'яже вже записану. Чернетка, схожа на платіж, запропонує «Позначити як оплачений»."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Нагадування."] },
+                          " У день платежу або за 1, 3 чи 7 днів. «У календар» у витраті створює новий платіж. Календар вимикається в Налаштуваннях, розділ «Функції»."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "plan" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["План місяця"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Як увімкнути."] },
+                          " Налаштування, розділ «Функції» → «Планування». Якщо вимкнути, плани збережуться."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Ліміти."] },
+                          " Один план на місяць в основній валюті. Натисни на категорію, щоб задати ліміт; сторінка покаже залишок і скільки приблизно можна витрачати на день."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["На Головній."] },
+                          " Картка плану показує залишок і до чотирьох категорій, за якими ти стежиш. Помаранчевий — витрачено 90%, червоний — ліміт перевищено."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["План за витратами."] },
+                          " У редакторі плану натисни на назву категорії: побачиш кожну витрату минулого й цього місяця, тож ліміт виходить із реальних витрат."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Швидше."] },
+                          " Утримай категорію — сума минулого місяця або «Прибрати ліміт»; око показує її на Головній. Клавіатуру ховає клавіша ⌄ або свайп униз."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "goals" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Цілі"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Що це."] },
+                          " Ціль — на що ти відкладаєш: квартира, машина, подушка. Гроші лишаються на рахунках заощаджень та інвестицій, а ціль показує, скільки з них уже її."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Як додати."] },
+                          " Увімкни «Цілі» в Налаштуваннях, розділ «Функції». Потім «Цілі» на Головній → «Додати ціль»: сума, строк, рахунки."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Черга."] },
+                          " «Черга цілей» вирішує, яка ціль наповнюється першою; подушка — завжди першою."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "investments" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Інвестиції"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "ol",
+                        "attrs": { "class": "steps" },
+                        "children": [
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Увімкни Налаштування → Функції → Інвестиції, якщо вкладки «Інвестиції» ще немає."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Збережи звіт брокера: Interactive Brokers — Activity Statement, Freedom Finance — звіт брокера у XLSX чи PDF."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Відкрий Налаштування → Імпорт та експорт → «Звіт брокера» й вибери файл. Dibsly розбере покупки, продажі, дивіденди з утриманим податком і поповнення."
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "debts" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Борги"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Хто кому винен і скільки. Позичив, узяв у борг чи повернув — це переказ між твоїм рахунком і людиною, тож не витрата й не дохід. Dibsly лише записує: гроші переказуєш ти сам."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Записати борг."] },
+                          " Головна → «Борги» внизу або «+» → «Операція» → «Борг»."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Поділити витрату."] },
+                          " У картці витрати «Розділити з…»: твоя частина лишається витратою, частини друзів стають боргами. У чеку — «Поділити рахунок» з «Я заплатив за весь рахунок»."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Повернення."] },
+                          " На сторінці людини «Повернули» чи «Віддати». Переказ від людини в сповіщенні банку Dibsly підкаже сам; збережений дохід — «Це повернення боргу» в його картці."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Посилання на борг."] },
+                          " Поки друг не прийняв борг, «Поділитися» надсилає йому посилання: друг із Dibsly приймає борг у себе, і кожен ваш запис приходить іншому на підтвердження. Після цього «Нагадати» надсилає йому пуш. Обом потрібен акаунт Dibsly — вистачить безкоштовного."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Прощений борг."] },
+                          " «Повернули» → «Гроші не прийшли на рахунок»: борг закривається, а сума йде у витрати «Подарунки»."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "credits" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Кредити"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Кредит, іпотека, розстрочка, мікрозайм чи ліміт картки: скільки лишилося, наступний платіж і переплата."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Як додати."] },
+                          " Увімкни «Кредити» в Налаштуваннях, розділ «Функції»: внизу Головної з'явиться блок «Кредити». «Усе ›» у ньому → «+» → вид кредиту. Іпотеку чи давній кредит вводиш за залишком на дату."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Покупка частинами."] },
+                          " У картці збереженої витрати «Купив частинами»: покупка лишається в Аналітиці цілою, частина банку повертається на картку, а кожна частина гасить розстрочку."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Платіж і достроково."] },
+                          " На сторінці кредиту «Сплатити» ділить платіж на тіло й відсотки (витрата у «Відсотки й комісії»). «Достроково» показує, скільки заощадить менший строк чи платіж. Платіж із виписки — «Це платіж за кредитом» у його картці."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Кредитка й нагадування."] },
+                          " «Під рукою» показує лише твої гроші, а під ним «ще доступно … кредитних». Платежі — у календарі, з нагадуванням за три дні й у день платежу."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": ["Dibsly лише записує платежі — гроші банку він не переказує."]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "fop" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["ФОП"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Для ФОП 3 групи: доходи, єдиний податок, військовий збір і ЄСВ за квартал, строки й реквізити. Безкоштовно."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Як увімкнути."] },
+                          " Налаштування, розділ «Функції» → ФОП → «Увімкнути ФОП». Коротка анкета: група, ставка, ЄСВ, громада, рахунки ФОП."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Доходи."] },
+                          " Дохід на рахунок ФОП рахується за курсом НБУ на день зарахування. Повернення чи свій переказ: вимкни «Дохід ФОП» у картці операції або утримай його на сторінці ФОП → «Не дохід»."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Податки й строки."] },
+                          " Сторінка ФОП показує єдиний податок, військовий збір і ЄСВ за квартал, скільки до сплати й до коли. Строки — у календарі з нагадуваннями."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Сплата."] },
+                          " «Показати реквізити» під строками відкриває суми й реквізити податкової для твоєї громади — кожне поле копіюється дотиком."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Dibsly не сплачує податки й не подає декларацію — це робиш ти. Звір цифри й реквізити з Електронним кабінетом, особливо перед першою оплатою."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "chat" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Запитай Dibsly"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Чат про твої гроші просто в застосунку: питай словами, Dibsly відповідає твоїми цифрами."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Де він."] },
+                          " На Головній — кнопка над «+», на інших сторінках — помаранчевий язичок справа. Чат знає, з якої сторінки ти його відкрив."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Що вміє."] },
+                          " Рахує витрати, знаходить операції, записує («запиши каву 85»), переносить у категорії, ставить ліміти, імпортує виписку через 📎. Нічого не зберігається, доки не натиснеш «Зберегти»."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Безкоштовні відповіді."] },
+                          " «Де увімкнути ФОП?» чи «як приховати суми» — Dibsly відповідає сам із довідки, без ШІ й без ліку. «Запитати ШІ» під такою відповіддю спитає ШІ."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Скільки питань."] },
+                          " 20 питань до ШІ на місяць безкоштовно, з Premium — до 40 на день. Перший раз Dibsly покаже, що йде до ШІ, і попросить дозволу; вимкнути — Налаштування → Функції → «ШІ в Dibsly». Розмова лишається на цьому iPhone, «Очистити розмову» — там само."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "account" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Акаунт і синхронізація"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Акаунт."] },
+                          " Профіль (кружок біля шестерні) → увійди через Apple, Google чи пошту. Без акаунта все працює на одному iPhone."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Синхронізація."] },
+                          " З Premium дані однакові на всіх твоїх iPhone і на сайті my.dibslyapp.com."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "shared" },
+                "children": [
+                  {
+                    "tag": "h2",
+                    "attrs": {},
+                    "children": [
+                      "Спільні рахунки ",
+                      { "tag": "span", "attrs": { "class": "tag" }, "children": ["Premium"] }
+                    ]
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "ol",
+                        "attrs": { "class": "steps" },
+                        "children": [
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Увійди в акаунт Dibsly: Профіль → Apple, Google чи пошта."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Профіль → «Спільний доступ» → «Запросити за посиланням» і надішли посилання."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Друга людина відкриває посилання на iPhone з Dibsly й натискає «Приєднатися». Далі вибери, який рахунок зробити спільним."
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Спільні рахунки й цілі: кожен бачить своє й спільне. Вистачить Premium в одного учасника; вийти можна будь-коли там само."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "website" },
+                "children": [
+                  {
+                    "tag": "h2",
+                    "attrs": {},
+                    "children": [
+                      "Сайт my.dibslyapp.com ",
+                      { "tag": "span", "attrs": { "class": "tag" }, "children": ["Premium"] }
+                    ]
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Відкрий ",
+                          {
+                            "tag": "a",
+                            "attrs": { "href": "https://my.dibslyapp.com" },
+                            "children": ["my.dibslyapp.com"]
+                          },
+                          " на комп'ютері й увійди в той самий акаунт Dibsly, що й на iPhone. Там історія з пошуком, аналітика, план, календар і чернетки; зміни одразу з'являються й на телефоні."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "assistants" },
+                "children": [
+                  {
+                    "tag": "h2",
+                    "attrs": {},
+                    "children": [
+                      "ChatGPT і Claude ",
+                      { "tag": "span", "attrs": { "class": "tag" }, "children": ["Premium"] }
+                    ]
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "На сайті відкрий «Підключити ШІ»: там адреса підключення ",
+                          {
+                            "tag": "code",
+                            "attrs": {},
+                            "children": ["https://my.dibslyapp.com/mcp"]
+                          },
+                          " і кроки для кожного асистента."
+                        ]
+                      },
+                      {
+                        "tag": "ol",
+                        "attrs": { "class": "steps" },
+                        "children": [
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Claude"] },
+                              " (claude.ai, застосунок): Налаштування → Конектори → додати власний конектор за адресою вище, увійди в Dibsly й дозволь доступ."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["ChatGPT"] },
+                              " (chatgpt.com): Plugins → Add → Add custom MCP server, адреса вище, авторизація OAuth; увійди в Dibsly так само й дозволь доступ. На деяких тарифах ChatGPT лише читає — це обмеження тарифу, а не Dibsly."
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Питай словами: «скільки я витратив на кафе цього місяця?», «ось виписка, запиши». Зміни асистент записує лише після твого «так», і кожну можна скасувати в журналі ШІ на сайті."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Усі підключення — у застосунку: Профіль → «Пристрої та AI». Там же їх можна відключити."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "moving" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Переїзд з іншого застосунку"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Dibsly імпортує CSV з Monefy і власні CSV Dibsly. У Monefy експортуй дані в CSV, потім у Dibsly: Налаштування → Імпорт та експорт → «CSV-файл» → «CSV Monefy». Рахунки, категорії, валюти й перекази перенесуться, а перед збереженням Dibsly покаже, що саме додасть."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "CSV можна додати до даних або замінити ними все — тоді спершу створюється страхувальна копія."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "backup" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Резервні копії й новий iPhone"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "ol",
+                        "attrs": { "class": "steps" },
+                        "children": [
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Налаштування → Резервні копії та відновлення: вибери папку в iCloud Drive чи підключи Google Drive, придумай пароль відновлення й увімкни автоматичні копії."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Збережи пароль у менеджері паролів: без нього копію не відкрити, і ніхто, зокрема Dibsly, не може його відновити."
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Де й коли."] },
+                          " Автокопії — раз на день чи тиждень, зазвичай уночі; зберігаються п'ять останніх, ручні не видаляються."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Відновлення."] },
+                          " «Відкрити файл копії» відновить будь-який .dibslybackup. На новому iPhone — «Відновити мої дані» під час першого запуску або просто вхід в акаунт, якщо є синхронізація (Premium). Спершу створюється страхувальна копія поточних даних."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Копія чи CSV."] },
+                          " У копії є все, включно з чернетками й більшістю налаштувань. У CSV — операції, рахунки, плани й календар, без чернеток і налаштувань."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "privacy" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Приватність"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["На твоєму iPhone."] },
+                          " Без акаунта дані лишаються лише на цьому iPhone. Виписки читаються тут і нікуди не завантажуються."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Що виходить назовні."] },
+                          " Акаунт і синхронізація (Premium) зберігають дані на сервері Dibsly. ШІ працює лише з твоєї згоди: потрібне для відповіді йде до OpenAI через сервер Dibsly. А ще курси НБУ, котирування інвестицій, monobank, твої копії в iCloud чи Google Drive й анонімна статистика, яку можна вимкнути в Параметрах."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Приховати."] },
+                          " «Приховувати суми» показує •••• замість сум, а блокування застосунку просить Face ID під час повернення. Сповіщення все одно показують суми — сховай прев'ю в налаштуваннях iOS."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Усе докладно — у ",
+                          {
+                            "tag": "a",
+                            "attrs": { "href": "privacy-uk.html" },
+                            "children": ["політиці конфіденційності"]
+                          },
+                          "."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "premium" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Premium і скасування"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Premium — $2.99 на місяць або $29.99 на рік — додає синхронізацію й спільні рахунки, сайт, ChatGPT і Claude, сповіщення будь-якого банку й категорії від ШІ. Ліміти більші: до 300 чеків на місяць (без Premium — 10), до 25 виписок інших банків на місяць (без Premium — 3 всього) і до 40 питань у чаті на день (без Premium — 20 на місяць)."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Скасувати."] },
+                          " Параметри iOS → твоє ім'я → Підписки → Dibsly, щонайменше за 24 години до кінця періоду. Коли Premium закінчується, нічого не видаляється."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "p",
+                "attrs": { "class": "section-lead" },
+                "children": [
+                  "Не знайшов відповіді? ",
+                  { "tag": "a", "attrs": { "href": "support-uk.html" }, "children": ["Підтримка"] },
+                  " або ",
+                  {
+                    "tag": "a",
+                    "attrs": { "href": "mailto:dibslysupport@gmail.com" },
+                    "children": ["dibslysupport@gmail.com"]
+                  },
+                  "."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

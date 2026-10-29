@@ -1,0 +1,46 @@
+{
+  "sourceCommit": "5c497b974511d7ee9a37378f14711e219b8a7be6",
+  "device": "iPhone 17 Pro / iOS 26.5",
+  "recorded": "2026-10-29",
+  "trim": {
+    "start": 0,
+    "end": 24.937477827072144
+  },
+  "sourceFrames": [
+    0,
+    7.875,
+    8.41667,
+    8.45833,
+    8.5,
+    8.54167,
+    8.58333,
+    8.625,
+    8.66667,
+    8.70833,
+    8.75,
+    8.79167,
+    8.83333,
+    8.875,
+    8.91667,
+    8.95833,
+    15.0833,
+    15.125,
+    15.1667,
+    15.2083,
+    15.25,
+    15.3333,
+    15.375,
+    15.4167,
+    15.4583
+  ],
+  "actions": [
+    {
+      "time": 1793273984.759,
+      "text": "The FOP pocket keeps business income and tax dates together."
+    },
+    {
+      "time": 1793273992.072,
+      "text": "Use the arrow to compare quarters. Income, taxes and deadlines change together."
+    }
+  ]
+}

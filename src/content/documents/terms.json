@@ -1,0 +1,179 @@
+{
+  "route": "terms.html",
+  "lang": "en",
+  "head": "<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\">\n<title>Dibsly Terms of Use</title>\n<meta name=\"description\" content=\"The terms of using Dibsly: what it is and isn&#x27;t, the AI, Premium, your data and contact.\">\n<meta name=\"theme-color\" content=\"#0E0C0B\">\n<link rel=\"canonical\" href=\"https://dibslyapp.com/terms.html\">\n<link rel=\"alternate\" hreflang=\"uk\" href=\"https://dibslyapp.com/terms-uk.html\">\n<link rel=\"alternate\" hreflang=\"en\" href=\"https://dibslyapp.com/terms.html\">\n<meta property=\"og:type\" content=\"website\">\n<meta property=\"og:site_name\" content=\"Dibsly\">\n<meta property=\"og:title\" content=\"Dibsly Terms of Use\">\n<meta property=\"og:description\" content=\"The terms of using Dibsly: what it is and isn&#x27;t, the AI, Premium, your data and contact.\">\n<meta property=\"og:url\" content=\"https://dibslyapp.com/terms.html\">\n<link rel=\"icon\" type=\"image/png\" href=\"assets/brand/favicon.png\">\n<link rel=\"apple-touch-icon\" href=\"assets/brand/apple-touch-icon.png\">",
+  "main": {
+    "tag": "main",
+    "attrs": {},
+    "children": [
+      {
+        "tag": "section",
+        "attrs": { "class": "page-hero" },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": { "class": "wrap" },
+            "children": [
+              {
+                "tag": "p",
+                "attrs": { "class": "kicker" },
+                "children": [
+                  { "tag": "span", "attrs": { "class": "dot" }, "children": [] },
+                  "Terms"
+                ]
+              },
+              { "tag": "h1", "attrs": {}, "children": ["Dibsly Terms of Use"] },
+              {
+                "tag": "p",
+                "attrs": { "class": "updated" },
+                "children": ["Last updated: October 28, 2026"]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "div",
+        "attrs": { "class": "wrap with-toc" },
+        "children": [
+          {
+            "tag": "nav",
+            "attrs": { "class": "toc", "aria-label": "Sections" },
+            "children": [
+              { "tag": "a", "attrs": { "href": "#about-dibsly" }, "children": ["About Dibsly"] },
+              {
+                "tag": "a",
+                "attrs": { "href": "#not-financial-advice" },
+                "children": ["Not financial advice"]
+              },
+              {
+                "tag": "a",
+                "attrs": { "href": "#ai-can-make-mistakes" },
+                "children": ["AI can make mistakes"]
+              },
+              { "tag": "a", "attrs": { "href": "#your-data" }, "children": ["Your data"] },
+              { "tag": "a", "attrs": { "href": "#premium" }, "children": ["Premium"] },
+              { "tag": "a", "attrs": { "href": "#no-warranty" }, "children": ["No warranty"] },
+              {
+                "tag": "a",
+                "attrs": { "href": "#changes-and-contact" },
+                "children": ["Changes and contact"]
+              }
+            ]
+          },
+          {
+            "tag": "article",
+            "attrs": { "class": "prose" },
+            "children": [
+              {
+                "tag": "p",
+                "attrs": {},
+                "children": [
+                  "These terms are shown in the app (Settings → Terms of Use) in English, Ukrainian and Russian."
+                ]
+              },
+              { "tag": "h2", "attrs": { "id": "about-dibsly" }, "children": ["About Dibsly"] },
+              {
+                "tag": "p",
+                "attrs": {},
+                "children": [
+                  "Dibsly is a personal finance tracker. Your records are kept on your device and in your own iCloud backups. If you sign in to a Dibsly account and sync is on, they are also kept in your account on Dibsly's server, so they appear on your devices, on the website and, if you connect one, in your AI assistant (Claude, ChatGPT or Codex); the Privacy Policy explains how. Dibsly is free to use, and so is the account; Dibsly Premium adds optional paid features."
+                ]
+              },
+              {
+                "tag": "h2",
+                "attrs": { "id": "not-financial-advice" },
+                "children": ["Not financial advice"]
+              },
+              {
+                "tag": "p",
+                "attrs": {},
+                "children": [
+                  "Dibsly shows and sorts your own records. Nothing in it is financial, investment, tax or legal advice. Decisions about your money are yours."
+                ]
+              },
+              {
+                "tag": "p",
+                "attrs": {},
+                "children": [
+                  { "tag": "strong", "attrs": {}, "children": ["Sole trader (FOP) taxes."] },
+                  " The single tax, the military levy, ESV, the deadlines, the declaration figures and the payment details Dibsly shows are worked out from your own records, the National Bank of Ukraine's rates and the State Tax Service's open data. They can be wrong or out of date: tax rules, rates and the tax service's accounts change, and a record can be missing. Check them in your taxpayer's e-cabinet before you pay or file. Dibsly never pays taxes or files declarations for you, and the developer is not liable for taxes, penalties or late fees."
+                ]
+              },
+              {
+                "tag": "p",
+                "attrs": {},
+                "children": [
+                  { "tag": "strong", "attrs": {}, "children": ["Debts."] },
+                  " Debts in Dibsly are your own notes of who owes whom. A debt link and its confirmations are not a loan agreement, a receipt or proof of a debt, and Dibsly never lends, collects or moves money: what you settle is between you and the other person. Send a link only to the person the debt is about."
+                ]
+              },
+              {
+                "tag": "p",
+                "attrs": {},
+                "children": [
+                  { "tag": "strong", "attrs": {}, "children": ["Credits."] },
+                  " The schedule, the interest, the overpayment and what an early repayment saves are Dibsly's estimate from the terms you enter. Your contract with the bank and its statements decide what you owe and when; check a payment against them, and Dibsly never pays a credit for you."
+                ]
+              },
+              {
+                "tag": "h2",
+                "attrs": { "id": "ai-can-make-mistakes" },
+                "children": ["AI can make mistakes"]
+              },
+              {
+                "tag": "p",
+                "attrs": {},
+                "children": [
+                  "Dibsly's AI (OpenAI) reads receipt photos — 10 a month free, more with Premium — and, with Premium, sorts merchants, reads your bank notifications and the phrases your phone could not understand. It sends merchant names, your category names, receipt photos, those phrases and, if you set it up, the text of your bank notifications to OpenAI — only after you allow it. The chat «Ask Dibsly» (20 questions a month free, more with Premium) sends your question and the figures the answer needs the same way, also only after you allow it; it changes nothing until you tap Save, and its answers can be wrong too. A statement of a bank Dibsly does not read itself (3 in all for free, up to 25 a month with Premium) is sent to it the same way, after you allow it, and comes back as a preview you check before importing: it may miss, add or misread operations, and Dibsly says so when the rows do not add up to the statement's balances. Its answers are guesses and may be wrong. Dibsly files only the ones it is fairly sure about and shows the rest as suggestions; you can change any category it chose or any receipt line it read. Check the result: you are responsible for your records. If you connect your AI assistant (Claude by Anthropic, ChatGPT or Codex by OpenAI) to your account, it reads your data when you ask it to; it saves records, and changes or deletes your expenses and incomes, only after you confirm, and every such change can be undone in the AI journal. Its answers can be wrong too."
+                ]
+              },
+              { "tag": "h2", "attrs": { "id": "your-data" }, "children": ["Your data"] },
+              {
+                "tag": "p",
+                "attrs": {},
+                "children": [
+                  "Statements, monobank sync, Apple Pay, bank notifications and receipts can be incomplete or read wrongly. Check your balances against your bank and keep backups. Bank access is read-only: Dibsly can never move money. In a shared account every member sees its records and can change them, so share it only with people you trust; you can leave it at any time. You can disconnect a bank or delete all data in Settings at any time."
+                ]
+              },
+              { "tag": "h2", "attrs": { "id": "premium" }, "children": ["Premium"] },
+              {
+                "tag": "p",
+                "attrs": {},
+                "children": [
+                  "Dibsly Premium adds sync of your account across your devices, the website and your AI assistant, shared accounts (one member's Premium is enough for everyone in it), bank notifications of any bank read by the AI (iOS 27 or later), AI categorization, up to 300 receipts and up to 25 statements of other banks a month, voice entry with the AI and more questions in the chat; everything else, including Investments, goals and the account itself, is free. Premium is monthly or yearly at the price the App Store shows before you buy (in your country's currency); it is an auto-renewing subscription bought through Apple. Each period renews, unless you cancel at least 24 hours before it ends. Manage or cancel it in iOS Settings → your name → Subscriptions; refunds are handled by Apple. Apple’s Standard License Agreement also applies."
+                ]
+              },
+              { "tag": "h2", "attrs": { "id": "no-warranty" }, "children": ["No warranty"] },
+              {
+                "tag": "p",
+                "attrs": {},
+                "children": [
+                  "Dibsly is provided “as is”. To the extent the law allows, the developer is not liable for losses caused by errors in the app, lost data, AI mistakes or decisions made with Dibsly."
+                ]
+              },
+              {
+                "tag": "h2",
+                "attrs": { "id": "changes-and-contact" },
+                "children": ["Changes and contact"]
+              },
+              {
+                "tag": "p",
+                "attrs": {},
+                "children": [
+                  "These terms may change; the current version is always here, in Settings. Using Dibsly after a change means you accept it. Questions: ",
+                  {
+                    "tag": "a",
+                    "attrs": { "href": "mailto:dibslysupport@gmail.com" },
+                    "children": ["dibslysupport@gmail.com"]
+                  },
+                  "."
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

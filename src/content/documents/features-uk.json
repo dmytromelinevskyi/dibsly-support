@@ -1,0 +1,3189 @@
+{
+  "route": "features-uk.html",
+  "lang": "uk",
+  "head": "<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\">\n<title>Що вміє Dibsly · Dibsly</title>\n<meta name=\"description\" content=\"Що вміє Dibsly і навіщо: кармани, що таке дохід і витрата, рахунки, імпорт банків і Apple Pay, чат з Dibsly, аналітика, план, цілі, інвестиції, сайт і ChatGPT чи Claude.\">\n<meta name=\"theme-color\" content=\"#0E0C0B\">\n<link rel=\"canonical\" href=\"https://dibslyapp.com/features-uk.html\">\n<link rel=\"alternate\" hreflang=\"uk\" href=\"https://dibslyapp.com/features-uk.html\">\n<link rel=\"alternate\" hreflang=\"en\" href=\"https://dibslyapp.com/features.html\">\n<meta property=\"og:type\" content=\"website\">\n<meta property=\"og:site_name\" content=\"Dibsly\">\n<meta property=\"og:title\" content=\"Що вміє Dibsly\">\n<meta property=\"og:description\" content=\"Що вміє Dibsly і навіщо: кармани, що таке дохід і витрата, рахунки, імпорт банків і Apple Pay, чат з Dibsly, аналітика, план, цілі, інвестиції, сайт і ChatGPT чи Claude.\">\n<meta property=\"og:url\" content=\"https://dibslyapp.com/features-uk.html\">\n<meta property=\"og:image\" content=\"https://dibslyapp.com/assets/screenshots/web/uk-web.jpg\">\n<meta name=\"twitter:card\" content=\"summary_large_image\">\n<link rel=\"icon\" type=\"image/png\" href=\"assets/brand/favicon.png\">\n<link rel=\"apple-touch-icon\" href=\"assets/brand/apple-touch-icon.png\">",
+  "main": {
+    "tag": "main",
+    "attrs": {},
+    "children": [
+      {
+        "tag": "section",
+        "attrs": { "class": "page-hero fhero" },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": { "class": "wrap" },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {},
+                "children": [
+                  {
+                    "tag": "p",
+                    "attrs": { "class": "kicker" },
+                    "children": [
+                      { "tag": "span", "attrs": { "class": "dot" }, "children": [] },
+                      "Можливості"
+                    ]
+                  },
+                  { "tag": "h1", "attrs": {}, "children": ["Усе, що вміє Dibsly"] },
+                  {
+                    "tag": "p",
+                    "attrs": { "class": "lead" },
+                    "children": [
+                      "Ідеї, на яких стоїть Dibsly, і кожна можливість коротко: з прикладом і з тим, де її знайти в застосунку."
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "div",
+                "attrs": { "class": "mascot", "aria-hidden": "true" },
+                "children": [
+                  {
+                    "tag": "img",
+                    "attrs": {
+                      "src": "assets/brand/dibsly-dark.png",
+                      "alt": "",
+                      "width": "404",
+                      "height": "386"
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "div",
+        "attrs": { "class": "wrap with-toc" },
+        "children": [
+          {
+            "tag": "nav",
+            "attrs": { "class": "toc", "aria-label": "Розділи" },
+            "children": [
+              {
+                "tag": "a",
+                "attrs": { "href": "#ideas" },
+                "children": ["Як Dibsly думає про гроші"]
+              },
+              { "tag": "a", "attrs": { "href": "#accounts" }, "children": ["Рахунки"] },
+              {
+                "tag": "a",
+                "attrs": { "href": "#in" },
+                "children": ["Як гроші потрапляють у Dibsly"]
+              },
+              { "tag": "a", "attrs": { "href": "#chat" }, "children": ["Чат з Dibsly"] },
+              { "tag": "a", "attrs": { "href": "#analytics" }, "children": ["Аналітика"] },
+              { "tag": "a", "attrs": { "href": "#plan" }, "children": ["План, календар і цілі"] },
+              { "tag": "a", "attrs": { "href": "#investments" }, "children": ["Інвестиції"] },
+              { "tag": "a", "attrs": { "href": "#everywhere" }, "children": ["Скрізь"] },
+              { "tag": "a", "attrs": { "href": "#privacy" }, "children": ["Приватність"] },
+              { "tag": "a", "attrs": { "href": "#next" }, "children": ["Що далі"] }
+            ]
+          },
+          {
+            "tag": "div",
+            "attrs": { "class": "flist" },
+            "children": [
+              {
+                "tag": "section",
+                "attrs": { "class": "fsection", "id": "ideas" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Як Dibsly думає про гроші"] },
+                  {
+                    "tag": "p",
+                    "attrs": { "class": "intro" },
+                    "children": [
+                      "Головне правило Dibsly: не змішувати гроші, якими ти живеш щодня, з тим, що відкладаєш чи інвестуєш. На повсякденному балансі видно, як рухаються твої гроші, а заощадження й інвестиції лежать окремо: це не ті гроші, які треба щодня смикати. З цього правила виростає решта."
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature idea reveal", "id": "idea-pockets" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "h3", "attrs": {}, "children": ["Навіщо три кармани"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Кожен рахунок лежить в одному кармані. «Під рукою»: картки й готівка на щодень. «Заощадження»: те, що відкладаєш. «Інвестиції»: брокерські рахунки. Велика цифра на Головній і доходи та витрати місяця рахуються тільки з «Під рукою». Тож відкладені 50 000 ₴ не підморгують тобі в п'ятницю ввечері, а місяць показує, як ти справді живеш."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Де:"] },
+                              " Налаштування → Рахунки → рахунок"
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "#all-accounts" },
+                                "children": ["Докладніше"]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "iex pockets", "aria-hidden": "true" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "pocket main" },
+                                "children": [
+                                  { "tag": "span", "attrs": {}, "children": ["Під рукою"] },
+                                  { "tag": "b", "attrs": {}, "children": ["18 400 ₴"] },
+                                  { "tag": "i", "attrs": {}, "children": ["на Головній"] }
+                                ]
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "pocket" },
+                                "children": [
+                                  { "tag": "span", "attrs": {}, "children": ["Заощадження"] },
+                                  { "tag": "b", "attrs": {}, "children": ["50 000 ₴"] },
+                                  { "tag": "i", "attrs": {}, "children": ["окремо"] }
+                                ]
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "pocket" },
+                                "children": [
+                                  { "tag": "span", "attrs": {}, "children": ["Інвестиції"] },
+                                  { "tag": "b", "attrs": {}, "children": ["3 200 $"] },
+                                  { "tag": "i", "attrs": {}, "children": ["окремо"] }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "phone" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "slides" },
+                                "children": [
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "class": "on",
+                                      "src": "assets/screenshots/app/uk-accounts.jpg",
+                                      "alt": "Навіщо три кармани",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature idea exvis reveal", "id": "idea-income" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "h3", "attrs": {}, "children": ["Що таке дохід і витрата"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Дохід і витрата: гроші, що прийшли ззовні чи пішли назовні. Зарплата, подарунок, кава, оренда. Переказ між своїми рахунками й обмін валют нічого не змінюють: гроші переклалися з кишені в кишеню, і Dibsly сам впізнає такі перекази у виписках. Переказ у «Заощадження» теж не витрата: ти ці гроші не витратив, а відклав. Купівля й продаж акцій живуть в Інвестиціях, а дивіденди там рахуються доходом, податок і комісія брокера витратою."
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "iex live live-ledger",
+                              "data-start": "{\"hand\": 18400, \"income\": 0, \"spending\": 0, \"savings\": 50000}"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "tots" },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": { "class": "tot" },
+                                    "children": [
+                                      { "tag": "span", "attrs": {}, "children": ["Під рукою"] },
+                                      {
+                                        "tag": "b",
+                                        "attrs": { "data-total": "hand", "data-currency": "₴" },
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": { "class": "tot" },
+                                    "children": [
+                                      { "tag": "span", "attrs": {}, "children": ["Дохід місяця"] },
+                                      {
+                                        "tag": "b",
+                                        "attrs": { "data-total": "income", "data-currency": "₴" },
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": { "class": "tot" },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": ["Витрати місяця"]
+                                      },
+                                      {
+                                        "tag": "b",
+                                        "attrs": { "data-total": "spending", "data-currency": "₴" },
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": { "class": "tot" },
+                                    "children": [
+                                      { "tag": "span", "attrs": {}, "children": ["Заощадження"] },
+                                      {
+                                        "tag": "b",
+                                        "attrs": { "data-total": "savings", "data-currency": "₴" },
+                                        "children": []
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": { "class": "hint" },
+                                "children": ["Натисни на операції й дивись на цифри"]
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "ledger" },
+                                "children": [
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "row in",
+                                      "aria-pressed": "false",
+                                      "data-effect": "{\"hand\": 40000, \"income\": 40000}"
+                                    },
+                                    "children": [
+                                      { "tag": "span", "attrs": {}, "children": ["Зарплата"] },
+                                      { "tag": "b", "attrs": {}, "children": ["+40 000 ₴"] },
+                                      { "tag": "i", "attrs": {}, "children": ["дохід"] }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "row out",
+                                      "aria-pressed": "false",
+                                      "data-effect": "{\"hand\": -85, \"spending\": 85}"
+                                    },
+                                    "children": [
+                                      { "tag": "span", "attrs": {}, "children": ["Кава"] },
+                                      { "tag": "b", "attrs": {}, "children": ["−85 ₴"] },
+                                      { "tag": "i", "attrs": {}, "children": ["витрата"] }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "row same",
+                                      "aria-pressed": "false",
+                                      "data-effect": "{}"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": ["monobank → PrivatBank"]
+                                      },
+                                      { "tag": "b", "attrs": {}, "children": ["5 000 ₴"] },
+                                      { "tag": "i", "attrs": {}, "children": ["не рахується"] }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "row same",
+                                      "aria-pressed": "false",
+                                      "data-effect": "{\"hand\": -10000, \"savings\": 10000}"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": ["У «Заощадження»"]
+                                      },
+                                      { "tag": "b", "attrs": {}, "children": ["10 000 ₴"] },
+                                      { "tag": "i", "attrs": {}, "children": ["не витрата"] }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "row same",
+                                      "aria-pressed": "false",
+                                      "data-effect": "{}"
+                                    },
+                                    "children": [
+                                      { "tag": "span", "attrs": {}, "children": ["Купівля акцій"] },
+                                      { "tag": "b", "attrs": {}, "children": ["500 $"] },
+                                      { "tag": "i", "attrs": {}, "children": ["в Інвестиціях"] }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature idea reveal", "id": "idea-balance" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          {
+                            "tag": "h3",
+                            "attrs": {},
+                            "children": ["Рахунок на щодень, але не в загальній цифрі"]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Буває рахунок, яким ти користуєшся, але не хочеш бачити в загальній цифрі: рахунок ФОП, куди платять клієнти, чи доларовий рахунок. Залиш його в «Під рукою» й вимкни «Враховувати в балансі». Його баланс зникне з великої цифри, а гроші, що приходять на нього, все одно будуть доходом місяця. Переказ з нього на твою картку чи продаж валюти доходом вдруге не стануть: це ті самі гроші."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Де:"] },
+                              " Налаштування → Рахунки → рахунок → «Враховувати в балансі»"
+                            ]
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "iex live live-switch",
+                              "data-start": "{\"hand\": 18400, \"income\": 65000}",
+                              "data-account": "25000"
+                            },
+                            "children": [
+                              {
+                                "tag": "label",
+                                "attrs": { "class": "switch-row" },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {},
+                                    "children": [
+                                      { "tag": "b", "attrs": {}, "children": ["Рахунок ФОП"] },
+                                      { "tag": "i", "attrs": {}, "children": ["25 000 ₴"] }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": { "class": "toggle" },
+                                    "children": [
+                                      {
+                                        "tag": "input",
+                                        "attrs": { "type": "checkbox", "checked": null },
+                                        "children": []
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": { "aria-hidden": "true" },
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "em",
+                                    "attrs": {},
+                                    "children": ["Враховувати в балансі"]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "tots two" },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": { "class": "tot" },
+                                    "children": [
+                                      { "tag": "span", "attrs": {}, "children": ["Під рукою"] },
+                                      {
+                                        "tag": "b",
+                                        "attrs": { "data-total": "hand", "data-currency": "₴" },
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": { "class": "tot" },
+                                    "children": [
+                                      { "tag": "span", "attrs": {}, "children": ["Дохід місяця"] },
+                                      {
+                                        "tag": "b",
+                                        "attrs": { "data-total": "income", "data-currency": "₴" },
+                                        "children": []
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "phone" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "slides" },
+                                "children": [
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "class": "on",
+                                      "src": "assets/screenshots/app/uk-accountEditor.jpg",
+                                      "alt": "Рахунок на щодень, але не в загальній цифрі",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature idea reveal", "id": "idea-salary-month" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          {
+                            "tag": "h3",
+                            "attrs": {},
+                            "children": ["Місяць від зарплати до зарплати"]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Якщо зарплата щоразу приходить в інший день, місяць з 1-го числа плутає: частина витрат до зарплати потрапляє не туди. Вибери «Із зарплати», і місяць триватиме від однієї зарплати до наступної. Затрималася зарплата: місяць просто йде далі, поки вона не прийде. Головна, Історія, Аналітика й план рахують однаково."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Де:"] },
+                              " Налаштування → Параметри → «Початок місяця»"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "phone" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "slides" },
+                                "children": [
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "class": "on",
+                                      "src": "assets/screenshots/app/uk-salary.jpg",
+                                      "alt": "Місяць від зарплати до зарплати",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature idea exvis reveal", "id": "idea-plan" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "h3", "attrs": {}, "children": ["План з того, що прийшло"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "План починається з «Коштів на місяць»: скільки грошей у тебе на цей місяць, те, що під рукою, і зарплата, що прийшла. З них ти відкладаєш план заощаджень та інвестицій, а решту розкладаєш лімітами по категоріях. Так видно, скільки ще можна витратити до кінця місяця, а не тільки скільки вже пішло. Планування вмикається тут: Налаштування → Функції (у Dibsly 1.0.1: Налаштування → Параметри → Функції)."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Де:"] },
+                              " Головна → План"
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "#monthly-plan" },
+                                "children": ["Докладніше"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "iex sums", "aria-hidden": "true" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "row" },
+                                "children": [
+                                  { "tag": "span", "attrs": {}, "children": ["Кошти на місяць"] },
+                                  { "tag": "b", "attrs": {}, "children": ["52 000 ₴"] }
+                                ]
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "row" },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {},
+                                    "children": ["На витрати (ліміти)"]
+                                  },
+                                  { "tag": "b", "attrs": {}, "children": ["−30 000 ₴"] }
+                                ]
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "row" },
+                                "children": [
+                                  { "tag": "span", "attrs": {}, "children": ["План заощаджень"] },
+                                  { "tag": "b", "attrs": {}, "children": ["−10 000 ₴"] }
+                                ]
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "row" },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {},
+                                    "children": ["Інвестиційний план"]
+                                  },
+                                  { "tag": "b", "attrs": {}, "children": ["−5 000 ₴"] }
+                                ]
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "row total" },
+                                "children": [
+                                  { "tag": "span", "attrs": {}, "children": ["Ще вільно"] },
+                                  { "tag": "b", "attrs": {}, "children": ["7 000 ₴"] }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature idea exvis reveal", "id": "idea-drafts" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          {
+                            "tag": "h3",
+                            "attrs": {},
+                            "children": ["Чому чернетки, а не все само"]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Покупки з Apple Pay, сповіщення банків і чеки Dibsly ловить сам, але не записує одразу: вони чекають в «Активності». Баланс зміниться тільки після твого «Зберегти». Так нічого не потрапляє в облік за твоєю спиною, а дивну суму чи не ту категорію видно до того, як вони зіпсують місяць."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Де:"] },
+                              " Головна → Активність"
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "#apple-pay" },
+                                "children": ["Докладніше"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "ol",
+                            "attrs": { "class": "iex steps", "aria-hidden": "true" },
+                            "children": [
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": ["Apple Pay · Сільпо · 412 ₴"]
+                              },
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": ["Чернетка в «Активності»: Продукти?"]
+                              },
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": ["«Зберегти»: баланс −412 ₴"]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature idea exvis reveal", "id": "idea-brands" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          {
+                            "tag": "h3",
+                            "attrs": {},
+                            "children": ["Бренд один раз, категорія назавжди"]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Dibsly знає понад 400 брендів з логотипами. Вибери категорію для бренду один раз, і всі його покупки підуть туди. Купуєш у бренду різне, як-от в Епіцентрі то для дому, то подарунки? Просто зміни категорію в операції: Dibsly це запам'ятає й наступного разу запропонує обидві. А категорію, яку не хочеш бачити в аналітиці, можна приховати: вона зникне з підсумків Аналітики, і більше ніде."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Де:"] },
+                              " Налаштування → Бренди"
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "#brands" },
+                                "children": ["Докладніше"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "iex sums", "aria-hidden": "true" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "row" },
+                                "children": [
+                                  { "tag": "span", "attrs": {}, "children": ["Сільпо → Продукти"] },
+                                  { "tag": "b", "attrs": {}, "children": ["23 покупки"] }
+                                ]
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "row" },
+                                "children": [
+                                  { "tag": "span", "attrs": {}, "children": ["Uklon → Таксі"] },
+                                  { "tag": "b", "attrs": {}, "children": ["14 поїздок"] }
+                                ]
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "row" },
+                                "children": [
+                                  { "tag": "span", "attrs": {}, "children": ["ОККО → Авто"] },
+                                  { "tag": "b", "attrs": {}, "children": ["6 заправок"] }
+                                ]
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "row" },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {},
+                                    "children": ["Епіцентр → Дім або Подарунки"]
+                                  },
+                                  { "tag": "b", "attrs": {}, "children": ["обидві"] }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature idea reveal", "id": "idea-goals" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          {
+                            "tag": "h3",
+                            "attrs": {},
+                            "children": ["Цілі на заощадженнях, а не на картці"]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Ціль нічого не забирає з рахунків: вона показує, які з твоїх заощаджень та інвестицій працюють на неї. Гроші під рукою в цілях не беруть участі: щоб наблизитися до цілі, переказуєш гроші на її рахунок. Кілька цілей наповнюються по черзі: спершу запас, як-от подушка, далі в твоєму порядку. А Dibsly каже, в якому місяці дійдеш до кожної в такому темпі."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Де:"] },
+                              " Головна → Цілі"
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "#goals" },
+                                "children": ["Докладніше"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "phone" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "slides" },
+                                "children": [
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "class": "on",
+                                      "src": "assets/screenshots/app/uk-goals-full.jpg",
+                                      "alt": "Цілі на заощадженнях, а не на картці",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature idea exvis reveal", "id": "idea-growth" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "h3", "attrs": {}, "children": ["Поповнення не прибуток"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Закинув 1 000 $ на брокерський рахунок, і портфель виріс на 1 000 $, але ти не заробив ані цента. Тому Dibsly показує ріст окремо від поповнень: скільки ти вклав і скільки заробили самі гроші, а дивіденди разом з утриманим податком. Так само рахується Капітал в Аналітиці."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Де:"] },
+                              " вкладка Інвестиції"
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "#portfolio" },
+                                "children": ["Докладніше"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "iex live live-growth",
+                              "data-start": "{\"deposits\": 10000, \"value\": 11200}"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "tots three" },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": { "class": "tot" },
+                                    "children": [
+                                      { "tag": "span", "attrs": {}, "children": ["Вклав"] },
+                                      {
+                                        "tag": "b",
+                                        "attrs": { "data-total": "deposits", "data-currency": "$" },
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": { "class": "tot" },
+                                    "children": [
+                                      { "tag": "span", "attrs": {}, "children": ["Портфель"] },
+                                      {
+                                        "tag": "b",
+                                        "attrs": { "data-total": "value", "data-currency": "$" },
+                                        "children": []
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": { "class": "tot" },
+                                    "children": [
+                                      { "tag": "span", "attrs": {}, "children": ["Заробили"] },
+                                      {
+                                        "tag": "b",
+                                        "attrs": { "data-total": "growth", "data-currency": "$" },
+                                        "children": []
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "chips" },
+                                "children": [
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "chip",
+                                      "data-act": "deposit"
+                                    },
+                                    "children": ["Поповнити на 1 000 $"]
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "chip",
+                                      "data-act": "market"
+                                    },
+                                    "children": ["Ринок +5%"]
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "chip",
+                                      "data-act": "reset"
+                                    },
+                                    "children": ["Спочатку"]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature idea reveal", "id": "idea-shared" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "h3", "attrs": {}, "children": ["Спільний рахунок на двох"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Спільним стає окремий рахунок, а не весь Dibsly: його бачите обоє, видно, хто скільки вніс і хто що витратив, а коли інший щось додає, приходить сповіщення. Твої особисті рахунки лишаються тільки твоїми. Вистачить Premium в одного з вас."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Де:"] },
+                              " Профіль → Спільний доступ"
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "#shared" },
+                                "children": ["Докладніше"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "phone" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "slides" },
+                                "children": [
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "class": "on",
+                                      "src": "assets/screenshots/app/uk-shared.jpg",
+                                      "alt": "Спільний рахунок на двох",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature idea reveal", "id": "idea-save" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "h3", "attrs": {}, "children": ["Нічого без твого «так»"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Чат з Dibsly, твій Claude чи ChatGPT спершу показують, що саме зміниться, і записують тільки після «Зберегти» чи твого «так». У чаті Dibsly зміну скасовує кнопка під карткою. Операції, виписки, угоди, категорії й рахунки, змінені через Claude чи ChatGPT, лежать у журналі ШІ на сайті, звідки їх можна скасувати."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "#changes" },
+                                "children": ["Докладніше"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "convo", "aria-hidden": "true" },
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": { "class": "me" },
+                                "children": ["Перенеси поїздки Uber у Таксі"]
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": { "class": "ai" },
+                                "children": ["12 операцій з «Транспорт» у «Таксі». Зберегти?"]
+                              },
+                              { "tag": "p", "attrs": { "class": "me" }, "children": ["Зберегти"] },
+                              {
+                                "tag": "p",
+                                "attrs": { "class": "ai" },
+                                "children": ["Готово. Передумаєш: «Скасувати» під карткою."]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "fsection", "id": "accounts" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Рахунки"] },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal", "id": "all-accounts" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Безкоштовно"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Усі рахунки разом"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Картки різних банків, готівка, накопичення й брокерські рахунки в будь-яких валютах. Зверху «Під рукою»: скільки ти справді можеш витратити зараз, без накопичень та інвестицій."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Де:"] },
+                              " Головна"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "phone" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "slides" },
+                                "children": [
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "class": "on",
+                                      "src": "assets/screenshots/app/uk-main-a.jpg",
+                                      "alt": "Усі рахунки разом",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal", "id": "shared" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind pro" }, "children": ["Premium"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Спільні рахунки"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Рахунок для пари чи сім'ї: видно внески кожного, приходить сповіщення, коли інший щось додає, є спільні цілі. Вистачить Premium в одного з вас."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "help-uk.html#shared" },
+                                "children": ["Інструкція"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "halfcard", "aria-hidden": "true" },
+                            "children": [
+                              { "tag": "p", "attrs": { "class": "big" }, "children": ["50 / 50"] },
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "half" },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": { "class": "who" },
+                                        "children": ["О"]
+                                      },
+                                      { "tag": "i", "attrs": {}, "children": [] },
+                                      "10 700 ₴"
+                                    ]
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": { "class": "who" },
+                                        "children": ["Д"]
+                                      },
+                                      { "tag": "i", "attrs": {}, "children": [] },
+                                      "10 700 ₴"
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "fsection", "id": "in" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Як гроші потрапляють у Dibsly"] },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal", "id": "banks" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Безкоштовно"] },
+                          { "tag": "h3", "attrs": {}, "children": ["monobank і виписки банків"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "monobank напряму за токеном лише для читання. Виписки PrivatBank, UKRSIBBANK, KredoBank і monobank, і їхні виписки ФОП, у PDF, Excel чи CSV. Dibsly читає файл на телефоні, сам розкладає операції по категоріях і впізнає перекази між твоїми рахунками."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Де:"] },
+                              " Налаштування → Імпорт та експорт"
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "help-uk.html#statements" },
+                                "children": ["Інструкція"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "phone" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "slides" },
+                                "children": [
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "class": "on",
+                                      "src": "assets/screenshots/app/uk-banks.jpg",
+                                      "alt": "monobank і виписки банків",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal", "id": "apple-pay" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Безкоштовно"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Apple Pay записується сам"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Автоматизація в «Командах» передає кожну покупку Apple Pay у Dibsly. Вона чекає чернеткою з сумою, магазином і категорією: глянь і підтверди одним дотиком."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Де:"] },
+                              " Головна → Активність"
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "help-uk.html#apple-pay" },
+                                "children": ["Інструкція"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "phone" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "slides", "data-hold": "1700" },
+                                "children": [
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "class": "on",
+                                      "src": "assets/screenshots/app/uk-main-a.jpg",
+                                      "alt": "Apple Pay записується сам",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "data-tap": "89.6,68.9",
+                                      "src": "assets/screenshots/app/uk-main-b.jpg",
+                                      "alt": "",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": { "class": "tap", "aria-hidden": "true" },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal", "id": "notifications" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind pro" }, "children": ["Premium"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Сповіщення будь-якого банку"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "На iOS 27 сповіщення банківського застосунку стають чернетками: ШІ читає з них суму, магазин і рахунок."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "help-uk.html#bank-notifications" },
+                                "children": ["Інструкція"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "phone" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "slides" },
+                                "children": [
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "class": "on",
+                                      "src": "assets/screenshots/app/uk-drafts.jpg",
+                                      "alt": "Сповіщення будь-якого банку",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal", "id": "voice" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Безкоштовно"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Скажи голосом"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "«Кава 85», «таксі 180 моно», «зарплата 40 000»: Dibsly сам розбере суму, категорію й рахунок. Складні фрази з Premium розбирає ШІ."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Де:"] },
+                              " «+» → Сказати"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "phone" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "slides" },
+                                "children": [
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "class": "on",
+                                      "src": "assets/screenshots/app/uk-voice.jpg",
+                                      "alt": "Скажи голосом",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal", "id": "receipt" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Безкоштовно"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Чек і поділ рахунку"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Сфотографуй чек: Dibsly прочитає позиції й розкладе їх по категоріях. Або поділи рахунок: відміть своє, а друзям надішли посилання, щоб кожен вибрав свої позиції. 10 чеків на місяць безкоштовно, до 300 з Premium."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Де:"] },
+                              " «+» → Чек"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "phone" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "slides" },
+                                "children": [
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "class": "on",
+                                      "src": "assets/screenshots/app/uk-receipt.jpg",
+                                      "alt": "Чек і поділ рахунку",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal", "id": "any-bank" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Безкоштовно"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Виписка будь-якого банку"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Виписку Revolut, Wise чи будь-якого іншого банку прочитає ШІ в Dibsly: ти побачиш операції й перекази між своїми рахунками й збережеш після перевірки. 3 виписки всього безкоштовно, до 25 на місяць з Premium."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Де:"] },
+                              " Налаштування → Імпорт та експорт → Виписка банку"
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "help-uk.html#statements" },
+                                "children": ["Інструкція"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "convo", "aria-hidden": "true" },
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": { "class": "me" },
+                                "children": ["Виписка Revolut.pdf"]
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": { "class": "ai" },
+                                "children": [
+                                  "48 операцій, з них 3 перекази між твоїми рахунками. Додати?"
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal textonly", "id": "moving" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Безкоштовно"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Переїзд з Monefy"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Експорт Monefy в CSV переноситься з категоріями й рахунками. Перед збереженням Dibsly покаже, що саме додасть."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Де:"] },
+                              " Налаштування → Імпорт та експорт"
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "help-uk.html#moving" },
+                                "children": ["Інструкція"]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "fsection", "id": "chat" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Чат з Dibsly"] },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal", "id": "ask" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Безкоштовно"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Питай про свої гроші"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "«На що пішло найбільше?», «Скільки я витратив на таксі цього року?», «Як там мої цілі?»: Dibsly рахує на телефоні з твоїх даних і відповідає твоїми цифрами, з картками й графіками. 20 питань на місяць безкоштовно, більше з Premium."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Де:"] },
+                              " кнопка Dibsly над «+» на Головній"
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "help-uk.html#chat" },
+                                "children": ["Інструкція"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "phone" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "slides" },
+                                "children": [
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "class": "on",
+                                      "src": "assets/screenshots/app/uk-chat.jpg",
+                                      "alt": "Питай про свої гроші",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal", "id": "changes" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Безкоштовно"] },
+                          {
+                            "tag": "h3",
+                            "attrs": {},
+                            "children": ["Змінює тільки після «Зберегти»"]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "«Запиши каву 85», «перенеси поїздки Uber у Таксі», «перейменуй рахунок»: Dibsly покаже картку зі змінами, а запише лише після твого «Зберегти». Кожну зміну можна скасувати."
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "convo", "aria-hidden": "true" },
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": { "class": "me" },
+                                "children": ["Запиши каву 85"]
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": { "class": "ai" },
+                                "children": ["Кава, 85 ₴, Кафе й ресторани. Зберегти?"]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal textonly", "id": "chat-import" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Безкоштовно"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Виписка просто в чат"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Натисни скріпку й вибери файл виписки чи звіту брокера: Dibsly прочитає його на телефоні, без ШІ, і запропонує імпорт у потрібний рахунок."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Де:"] },
+                              " чат → скріпка"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "fsection", "id": "analytics" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Аналітика"] },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal", "id": "where" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Безкоштовно"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Куди йдуть гроші"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Категорії: де найбільше і що вже понад план. Грошовий потік: витрати по днях і зарплата позначкою. Тренди: місяці року поруч. Капітал: накопичення й інвестиції за рік, окремо від поповнень."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Де:"] },
+                              " вкладка Аналітика"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "phone" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "slides", "data-hold": "1700" },
+                                "children": [
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "class": "on",
+                                      "data-tap": "16.2,22.4",
+                                      "src": "assets/screenshots/app/uk-an-1.jpg",
+                                      "alt": "Куди йдуть гроші",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "data-tap": "38.6,22.4",
+                                      "src": "assets/screenshots/app/uk-an-2.jpg",
+                                      "alt": "",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "data-tap": "61.2,22.4",
+                                      "src": "assets/screenshots/app/uk-an-3.jpg",
+                                      "alt": "",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "data-tap": "83.6,22.4",
+                                      "src": "assets/screenshots/app/uk-an-4.jpg",
+                                      "alt": "",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": { "class": "tap", "aria-hidden": "true" },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal", "id": "brands" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Безкоштовно"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Бренди"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Понад 400 брендів з логотипами: Сільпо, ОККО, Uklon чи Ryanair Dibsly впізнає сам. Вибери категорію для бренду, і всі його покупки підуть туди."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "help-uk.html#brands" },
+                                "children": ["Інструкція"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "phone" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "slides" },
+                                "children": [
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "class": "on",
+                                      "src": "assets/screenshots/app/uk-brands.jpg",
+                                      "alt": "Бренди",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "fsection", "id": "plan" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["План, календар і цілі"] },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal widevis", "id": "monthly-plan" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Безкоштовно"] },
+                          { "tag": "h3", "attrs": {}, "children": ["План місяця"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Ліміти на категорії й скільки ще можна витратити до кінця місяця. Dibsly підсвітить категорії понад план і ті, що в зоні ризику."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Де:"] },
+                              " Головна → План"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual wide" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "fcrop" },
+                            "children": [
+                              {
+                                "tag": "img",
+                                "attrs": {
+                                  "src": "assets/screenshots/app/uk-plan.jpg",
+                                  "alt": "План місяця",
+                                  "width": "1206",
+                                  "height": "780",
+                                  "loading": "lazy"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal widevis", "id": "calendar" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Безкоштовно"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Календар платежів"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Оренда, підписки, кредити й зарплата в календарі. Dibsly скаже, скільки має бути на кожному рахунку до дня списання."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Де:"] },
+                              " Головна → Календар"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual wide" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "fcrop" },
+                            "children": [
+                              {
+                                "tag": "img",
+                                "attrs": {
+                                  "src": "assets/screenshots/app/uk-calendar.jpg",
+                                  "alt": "Календар платежів",
+                                  "width": "1206",
+                                  "height": "1365",
+                                  "loading": "lazy"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal widevis", "id": "goals" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Безкоштовно"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Цілі"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Авто, квартира чи подушка. Накопичення й інвестиції йдуть у ціль, а Dibsly каже, в якому місяці ти її досягнеш у такому темпі."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Де:"] },
+                              " Головна → Цілі"
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual wide" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "fcrop" },
+                            "children": [
+                              {
+                                "tag": "img",
+                                "attrs": {
+                                  "src": "assets/screenshots/app/uk-goals.jpg",
+                                  "alt": "Цілі",
+                                  "width": "1206",
+                                  "height": "1725",
+                                  "loading": "lazy"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "fsection", "id": "investments" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Інвестиції"] },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal", "id": "portfolio" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Безкоштовно"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Портфель і дивіденди"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Звіти Interactive Brokers і Freedom Finance замість ручного введення. Історія вартості за місяць, рік чи весь час, дивіденди разом з утриманим податком і ріст окремо від поповнень, щоб депозит не виглядав прибутком."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Де:"] },
+                              " вкладка Інвестиції"
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "help-uk.html#investments" },
+                                "children": ["Інструкція"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "phone" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "slides", "data-hold": "1700" },
+                                "children": [
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "class": "on",
+                                      "data-tap": "16.6,44.5",
+                                      "src": "assets/screenshots/app/uk-inv-1.jpg",
+                                      "alt": "Портфель і дивіденди",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "data-tap": "33.1,44.5",
+                                      "src": "assets/screenshots/app/uk-inv-2.jpg",
+                                      "alt": "",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "data-tap": "66.2,44.5",
+                                      "src": "assets/screenshots/app/uk-inv-3.jpg",
+                                      "alt": "",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "data-tap": "82.8,44.5",
+                                      "src": "assets/screenshots/app/uk-inv-4.jpg",
+                                      "alt": "",
+                                      "width": "750",
+                                      "height": "1631",
+                                      "loading": "lazy"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": { "class": "tap", "aria-hidden": "true" },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "fsection", "id": "everywhere" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Скрізь"] },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal widevis", "id": "website" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind pro" }, "children": ["Premium"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Сайт my.dibslyapp.com"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Ті самі дані на великому екрані: історія з пошуком, аналітика, план, календар і чернетки. Зміни одразу з'являються на телефоні."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "help-uk.html#website" },
+                                "children": ["Інструкція"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual wide" },
+                        "children": [
+                          {
+                            "tag": "figure",
+                            "attrs": { "class": "browser" },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": { "class": "browser-bar", "aria-hidden": "true" },
+                                "children": [
+                                  { "tag": "span", "attrs": {}, "children": [] },
+                                  { "tag": "span", "attrs": {}, "children": [] },
+                                  { "tag": "span", "attrs": {}, "children": [] },
+                                  { "tag": "p", "attrs": {}, "children": ["my.dibslyapp.com"] }
+                                ]
+                              },
+                              {
+                                "tag": "img",
+                                "attrs": {
+                                  "src": "assets/screenshots/web/uk-web.jpg",
+                                  "alt": "Сайт my.dibslyapp.com",
+                                  "width": "1440",
+                                  "height": "900",
+                                  "loading": "lazy"
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal", "id": "assistants" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind pro" }, "children": ["Premium"] },
+                          {
+                            "tag": "h3",
+                            "attrs": {},
+                            "children": ["Dibsly у твоєму ChatGPT чи Claude"]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Підключи Dibsly як конектор: питай про гроші, імпортуй виписки й став цілі просто у своєму асистенті. Записує тільки після твого «так», а кожну зміну видно в журналі, звідки її можна скасувати."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "help-uk.html#assistants" },
+                                "children": ["Інструкція"]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "fvisual" },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": { "class": "convo", "aria-hidden": "true" },
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": { "class": "me" },
+                                "children": ["Постав ціль: відпустка, 2 000 $ до липня."]
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": { "class": "ai" },
+                                "children": [
+                                  "Готово, ціль «Відпустка». Відкладай 250 $ на місяць, і встигнеш."
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal textonly", "id": "sync" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind pro" }, "children": ["Premium"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Акаунт і синхронізація"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Увійди через Apple, Google чи пошту, і дані будуть однакові на всіх твоїх iPhone і на сайті."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Де:"] },
+                              " Головна → профіль"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal textonly", "id": "backups" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind" }, "children": ["Безкоштовно"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Резервні копії"] },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Зашифровані копії в твоєму iCloud Drive чи Google Drive. Новий iPhone чи перевстановлення: відновиш усе з копії."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Де:"] },
+                              " Налаштування → Резервна копія"
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "help-uk.html#backup" },
+                                "children": ["Інструкція"]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "fsection", "id": "privacy" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Приватність"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "pgrid" },
+                    "children": [
+                      {
+                        "tag": "article",
+                        "attrs": { "class": "pcard reveal" },
+                        "children": [
+                          { "tag": "h3", "attrs": {}, "children": ["Без паролів від банку"] },
+                          {
+                            "tag": "p",
+                            "attrs": {},
+                            "children": [
+                              "Dibsly не просить пароль і не може переказати гроші. Токен monobank дає доступ лише до виписки."
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "article",
+                        "attrs": { "class": "pcard reveal" },
+                        "children": [
+                          { "tag": "h3", "attrs": {}, "children": ["ШІ тільки з дозволом"] },
+                          {
+                            "tag": "p",
+                            "attrs": {},
+                            "children": [
+                              "Перед першим використанням Dibsly покаже, що саме надсилає ШІ й кому. Без дозволу все інше працює, а змінити рішення можна в Налаштуваннях."
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "article",
+                        "attrs": { "class": "pcard reveal" },
+                        "children": [
+                          { "tag": "h3", "attrs": {}, "children": ["Без реклами"] },
+                          {
+                            "tag": "p",
+                            "attrs": {},
+                            "children": [
+                              "Без реклами й рекламних трекерів. Без акаунта всі дані лежать лише на твоєму iPhone і в твоїх копіях."
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "p",
+                    "attrs": { "class": "pmore" },
+                    "children": [
+                      {
+                        "tag": "a",
+                        "attrs": { "href": "privacy-uk.html" },
+                        "children": ["Політика конфіденційності"]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "fsection", "id": "next" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Що далі"] },
+                  {
+                    "tag": "p",
+                    "attrs": { "class": "intro" },
+                    "children": [
+                      "Що ми робимо зараз і що буде потім. Дат не обіцяємо: робимо, поки не стане добре. Натисни «Хочу це» на тому, що тобі потрібно найбільше, і ми знатимемо, з чого почати."
+                    ]
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "rgrid" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "rcol" },
+                        "children": [
+                          { "tag": "h3", "attrs": {}, "children": ["Робимо зараз"] },
+                          {
+                            "tag": "ul",
+                            "attrs": {},
+                            "children": [
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "tag": "h4",
+                                        "attrs": {},
+                                        "children": ["Чат з Dibsly на сайті"]
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {},
+                                        "children": [
+                                          "Знайти, порахувати чи змінити щось складне на великому екрані."
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "want",
+                                      "data-item": "web-chat",
+                                      "aria-pressed": "false"
+                                    },
+                                    "children": [
+                                      "Хочу це ",
+                                      { "tag": "b", "attrs": {}, "children": [] }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {},
+                                    "children": [
+                                      { "tag": "h4", "attrs": {}, "children": ["Бренди на сайті"] },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {},
+                                        "children": [
+                                          "Усі бренди з логотипами й категоріями, з пошуком."
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "want",
+                                      "data-item": "web-brands",
+                                      "aria-pressed": "false"
+                                    },
+                                    "children": [
+                                      "Хочу це ",
+                                      { "tag": "b", "attrs": {}, "children": [] }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "rcol" },
+                        "children": [
+                          { "tag": "h3", "attrs": {}, "children": ["Далі"] },
+                          {
+                            "tag": "ul",
+                            "attrs": {},
+                            "children": [
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "tag": "h4",
+                                        "attrs": {},
+                                        "children": ["Скасування для планів, календаря й цілей"]
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {},
+                                        "children": [
+                                          "Як уже є для операцій: змінив через ШІ, передумав, скасував."
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "want",
+                                      "data-item": "undo-plans",
+                                      "aria-pressed": "false"
+                                    },
+                                    "children": [
+                                      "Хочу це ",
+                                      { "tag": "b", "attrs": {}, "children": [] }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "tag": "h4",
+                                        "attrs": {},
+                                        "children": ["monobank в один дотик"]
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {},
+                                        "children": [
+                                          "Підключення без токена, який треба копіювати руками."
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "want",
+                                      "data-item": "mono-one-tap",
+                                      "aria-pressed": "false"
+                                    },
+                                    "children": [
+                                      "Хочу це ",
+                                      { "tag": "b", "attrs": {}, "children": [] }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "rcol" },
+                        "children": [
+                          { "tag": "h3", "attrs": {}, "children": ["Потім"] },
+                          {
+                            "tag": "ul",
+                            "attrs": {},
+                            "children": [
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {},
+                                    "children": [
+                                      { "tag": "h4", "attrs": {}, "children": ["ФОП"] },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {},
+                                        "children": [
+                                          "Дохід у валюті за курсом НБУ, єдиний податок і військовий збір, квартальні дедлайни."
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "want",
+                                      "data-item": "fop",
+                                      "aria-pressed": "false"
+                                    },
+                                    "children": [
+                                      "Хочу це ",
+                                      { "tag": "b", "attrs": {}, "children": [] }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {},
+                                    "children": [
+                                      { "tag": "h4", "attrs": {}, "children": ["iPad і Mac"] }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "want",
+                                      "data-item": "ipad-mac",
+                                      "aria-pressed": "false"
+                                    },
+                                    "children": [
+                                      "Хочу це ",
+                                      { "tag": "b", "attrs": {}, "children": [] }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {},
+                                    "children": [
+                                      { "tag": "h4", "attrs": {}, "children": ["Android"] }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "want",
+                                      "data-item": "android",
+                                      "aria-pressed": "false"
+                                    },
+                                    "children": [
+                                      "Хочу це ",
+                                      { "tag": "b", "attrs": {}, "children": [] }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "rcol" },
+                        "children": [
+                          { "tag": "h3", "attrs": {}, "children": ["Думаємо"] },
+                          {
+                            "tag": "ul",
+                            "attrs": {},
+                            "children": [
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "tag": "h4",
+                                        "attrs": {},
+                                        "children": ["Спільні плани на двох"]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "want",
+                                      "data-item": "shared-plans",
+                                      "aria-pressed": "false"
+                                    },
+                                    "children": [
+                                      "Хочу це ",
+                                      { "tag": "b", "attrs": {}, "children": [] }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "tag": "h4",
+                                        "attrs": {},
+                                        "children": ["Брокерські рахунки напряму"]
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {},
+                                        "children": [
+                                          "Interactive Brokers і Freedom без звітів вручну."
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "want",
+                                      "data-item": "brokers",
+                                      "aria-pressed": "false"
+                                    },
+                                    "children": [
+                                      "Хочу це ",
+                                      { "tag": "b", "attrs": {}, "children": [] }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {},
+                                    "children": [
+                                      { "tag": "h4", "attrs": {}, "children": ["Більше банків"] }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "want",
+                                      "data-item": "more-banks",
+                                      "aria-pressed": "false"
+                                    },
+                                    "children": [
+                                      "Хочу це ",
+                                      { "tag": "b", "attrs": {}, "children": [] }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {},
+                                    "children": [
+                                      { "tag": "h4", "attrs": {}, "children": ["«Вгадай бренд»"] },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {},
+                                        "children": ["Гра: впізнай бренд за логотипом."]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "want",
+                                      "data-item": "guess-brand",
+                                      "aria-pressed": "false"
+                                    },
+                                    "children": [
+                                      "Хочу це ",
+                                      { "tag": "b", "attrs": {}, "children": [] }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "form",
+                    "attrs": {
+                      "class": "missing-form",
+                      "data-thanks": "Дякую! Записали, команда подумає.",
+                      "data-failed": "Не вийшло надіслати. Спробуй ще раз або напиши на dibslysupport@gmail.com.",
+                      "data-later": "Забагато повідомлень за годину. Спробуй трохи пізніше.",
+                      "data-email": "Схоже, в пошті помилка. Перевір її або залиш поле порожнім.",
+                      "novalidate": null
+                    },
+                    "children": [
+                      { "tag": "h3", "attrs": {}, "children": ["Чого тобі не вистачає?"] },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": ["Розкажи, а ми подумаємо, як зробити це круто."]
+                      },
+                      {
+                        "tag": "label",
+                        "attrs": { "class": "sr", "for": "missing-text" },
+                        "children": ["Чого тобі не вистачає?"]
+                      },
+                      {
+                        "tag": "textarea",
+                        "attrs": {
+                          "id": "missing-text",
+                          "name": "text",
+                          "rows": "4",
+                          "maxlength": "2000",
+                          "required": null,
+                          "placeholder": "Наприклад: хочу бачити, скільки за рік пішло на дітей"
+                        },
+                        "children": []
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "form-row" },
+                        "children": [
+                          {
+                            "tag": "label",
+                            "attrs": { "class": "sr", "for": "missing-email" },
+                            "children": ["Пошта, якщо хочеш відповідь"]
+                          },
+                          {
+                            "tag": "input",
+                            "attrs": {
+                              "id": "missing-email",
+                              "name": "email",
+                              "type": "email",
+                              "autocomplete": "email",
+                              "placeholder": "Пошта, якщо хочеш відповідь"
+                            },
+                            "children": []
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": { "class": "button hot", "type": "submit" },
+                            "children": ["Надіслати"]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "input",
+                        "attrs": {
+                          "class": "trap",
+                          "name": "company",
+                          "tabindex": "-1",
+                          "autocomplete": "off",
+                          "aria-hidden": "true"
+                        },
+                        "children": []
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": { "class": "form-status", "role": "status" },
+                        "children": []
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": { "class": "form-note" },
+                        "children": [
+                          "Текст і пошту бачить лише команда Dibsly. ",
+                          {
+                            "tag": "a",
+                            "attrs": { "href": "privacy-uk.html" },
+                            "children": ["Конфіденційність"]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "div",
+                "attrs": { "class": "fend" },
+                "children": [
+                  {
+                    "tag": "a",
+                    "attrs": {
+                      "class": "button hot",
+                      "href": "https://apps.apple.com/app/id6765870838"
+                    },
+                    "children": ["Завантажити в App Store"]
+                  },
+                  {
+                    "tag": "p",
+                    "attrs": {},
+                    "children": [
+                      "Є питання? Напиши: ",
+                      {
+                        "tag": "a",
+                        "attrs": { "href": "mailto:dibslysupport@gmail.com" },
+                        "children": ["dibslysupport@gmail.com"]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "route": "split.html",
+  "lang": "en",
+  "head": "<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<meta name=\"robots\" content=\"noindex\">\n<meta name=\"description\" content=\"A bill shared from Dibsly: tap your items and see your part.\">\n<title>Розділи рахунок · Dibsly</title>\n<meta property=\"og:type\" content=\"website\">\n<meta property=\"og:site_name\" content=\"Dibsly\">\n<meta property=\"og:title\" content=\"Розділи рахунок · Dibsly\">\n<meta property=\"og:description\" content=\"Обери свої позиції — побачиш свою частину. Без реєстрації та застосунку.\">\n<meta property=\"og:image\" content=\"https://dibslyapp.com/assets/brand/split-card.png\">\n<meta property=\"og:image:width\" content=\"1200\">\n<meta property=\"og:image:height\" content=\"630\">\n<meta name=\"twitter:card\" content=\"summary_large_image\">\n<link rel=\"icon\" href=\"assets/brand/favicon.png\">\n<link rel=\"apple-touch-icon\" href=\"assets/brand/apple-touch-icon.png\">",
+  "main": {
+    "tag": "main",
+    "attrs": { "id": "app" },
+    "children": [{ "tag": "p", "attrs": { "class": "error", "id": "loading" }, "children": ["…"] }]
+  }
+}

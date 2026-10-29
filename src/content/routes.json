@@ -1,0 +1,54 @@
+{
+  "privacy-uk.html": {
+    "lang": "uk",
+    "file": "content/documents/privacy-uk.json"
+  },
+  "features-uk.html": {
+    "lang": "uk",
+    "file": "content/documents/features-uk.json"
+  },
+  "help.html": {
+    "lang": "en",
+    "file": "content/documents/help.json"
+  },
+  "index.html": {
+    "lang": "uk",
+    "file": "content/landing/uk.json"
+  },
+  "split.html": {
+    "lang": "en",
+    "file": "content/documents/split.json"
+  },
+  "support.html": {
+    "lang": "en",
+    "file": "content/documents/support.json"
+  },
+  "support-uk.html": {
+    "lang": "uk",
+    "file": "content/documents/support-uk.json"
+  },
+  "help-uk.html": {
+    "lang": "uk",
+    "file": "content/documents/help-uk.json"
+  },
+  "terms.html": {
+    "lang": "en",
+    "file": "content/documents/terms.json"
+  },
+  "en.html": {
+    "lang": "en",
+    "file": "content/landing/en.json"
+  },
+  "terms-uk.html": {
+    "lang": "uk",
+    "file": "content/documents/terms-uk.json"
+  },
+  "features.html": {
+    "lang": "en",
+    "file": "content/documents/features.json"
+  },
+  "privacy.html": {
+    "lang": "en",
+    "file": "content/documents/privacy.json"
+  }
+}
