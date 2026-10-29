@@ -1052,11 +1052,12 @@ export async function startJourney(root, { lang, reduced }) {
     order.forEach(function (section, index) {
       if (index === 0) return;
       var before = order[index - 1].getAttribute('data-scene');
-      var copy = section.querySelector('.step-copy') || section;
       ScrollTrigger.create({
-        // One column up to 1080 px (the layout's own break, not main's 760): a scene starts with its words.
-        trigger: window.innerWidth <= 1080 ? copy : section,
-        start: window.innerWidth <= 1080 ? 'top 88%' : 'top 55%',
+        // One column up to 1080 px (the layout's own break, not main's 760): a scene starts with its step, at the same
+        // mark as the caption under the phone (owner, 2026-10-29: with Safari's bars hidden the screen is taller than a
+        // step, and at 88% the next step's scene played under step 01's caption).
+        trigger: section,
+        start: window.innerWidth <= 1080 ? 'top 60%' : 'top 55%',
         onEnter: function () {
           play(section.getAttribute('data-scene'));
         },
