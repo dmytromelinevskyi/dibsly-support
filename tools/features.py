@@ -64,7 +64,7 @@ S = [
   ("apple-pay", "free",
    ("Apple Pay записується сам", "Автоматизація в «Командах» передає кожну покупку Apple Pay у Dibsly. Вона чекає чернеткою з сумою, магазином і категорією: глянь і підтверди одним дотиком.", "Головна → Активність"),
    ("Apple Pay records itself", "A Shortcuts automation hands every Apple Pay purchase to Dibsly. It waits as a draft with the amount, the shop and the category: look and confirm with one tap.", "Main → Activity"),
-   ("slides", [("main-a", None), ("main-b", "89.6,{dy}")]), "apple-pay"),
+   ("slides", [("main-a", None), ("main-b", "89.3,{dy}")]), "apple-pay"),
   ("notifications", "pro",
    ("Сповіщення будь-якого банку", "На iOS 27 сповіщення банківського застосунку стають чернетками: ШІ читає з них суму, магазин і рахунок.", None),
    ("Notifications from any bank", "On iOS 27 your banking app's notifications become drafts: the AI reads the amount, the shop and the account from them.", None),
@@ -278,7 +278,8 @@ def visual(v, lang, alt):
         return (f'<div class="fvisual"><div class="phone"><div class="slides"><img class="on" src="v2/shots/{lang}-{data}.jpg" alt="{e(alt)}" '
                 f'width="750" height="1631" loading="lazy"></div></div></div>')
     if kind == "slides":
-        dy = "68.9" if lang == "uk" else "71.1"
+        # The first draft's ✓ on main-a (the landing's a-main: 359, 568 points; English 583, its «Activity» on two lines).
+        dy = "65.0" if lang == "uk" else "66.7"
         imgs = []
         for k, (name, tap) in enumerate(data):
             cls = ' class="on"' if k == 0 else ""

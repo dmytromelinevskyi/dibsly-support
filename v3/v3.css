@@ -124,7 +124,8 @@ main { position: relative; z-index: 2; overflow-x: clip; }
    опущен», «можно еще поднять»): its height follows the window's, 650px at most. */
 .journey { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); column-gap: 40px; }
 .journey > .hero { grid-column: 1; grid-row: 1; }
-.journey-stage { grid-column: 2; grid-row: 1 / span 11; position: relative; z-index: 3; }
+/* The phone's column spans the hero, the 11 steps and the journey's end (rows 1–13): a step added means one more. */
+.journey-stage { grid-column: 2; grid-row: 1 / span 13; position: relative; z-index: 3; }
 /* The last step is read with the phone still in place. */
 .journey-end { grid-column: 1; grid-row: var(--row); height: 30vh; }
 .stage-sticky { position: sticky; top: 0; height: 100vh; display: flex; align-items: center; justify-content: center; perspective: 1200px; }
@@ -398,7 +399,7 @@ footer { position: relative; z-index: 2; border-top: 1px solid var(--line); padd
     .journey { --ph-m: min(45vh, 480px); grid-template-columns: minmax(0, 1fr); }
     @supports (height: 1svh) { .journey { --ph-m: min(45svh, 480px); } }
     .journey > .hero { min-height: 0; padding: 140px 0 48px; }
-    .journey-stage { grid-column: 1; grid-row: 2 / span 10; }
+    .journey-stage { grid-column: 1; grid-row: 2 / span 12; } /* the 11 steps and the end, rows 2–13 */
     .journey-end { height: 0; }
     .stage-sticky { top: 74px; height: auto; padding-top: 0; }
     .stage-sticky::before { content: ""; position: absolute; z-index: -1; top: -74px; bottom: -24px; left: 50%; width: 100vw; transform: translateX(-50%);
