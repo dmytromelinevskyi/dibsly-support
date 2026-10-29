@@ -479,42 +479,59 @@
       },
       "together": {
         "src": "assets/cinema/uk/films/together.mp4",
-        "duration": 10.486666666666663,
+        "duration": 16.826666666666632,
         "poster": "assets/cinema/uk/together/0001.webp",
         "steps": [
           {
             "start": 0,
             "press": 1.4,
             "transition": 1.8499999999999999,
-            "settle": 3.4966666666666706,
-            "end": 4.996666666666671,
+            "settle": 2.7166666666666686,
+            "end": 4.216666666666669,
             "target": [
-              0.907,
-              0.095,
-              0.1,
-              0.05
+              0.249,
+              0.372,
+              0.4,
+              0.08
             ],
-            "control": "Налаштування",
-            "description": "Бачимо учасника та внесок кожного.",
+            "control": "Заощадження",
+            "description": "Спільні накопичення пари: твоя частина й Настина, і скільки вона додала цього місяця.",
             "before": "assets/cinema/uk/together/0001.webp",
-            "after": "assets/cinema/uk/together/0025.webp"
+            "after": "assets/cinema/uk/together/0016.webp"
           },
           {
-            "start": 4.996666666666671,
-            "press": 6.39666666666667,
-            "transition": 6.84666666666667,
-            "settle": 7.886666666666662,
-            "end": 9.386666666666663,
+            "start": 4.216666666666669,
+            "press": 5.616666666666669,
+            "transition": 6.066666666666669,
+            "settle": 9.09999999999998,
+            "end": 10.59999999999998,
             "target": [
-              0.09,
-              0.128,
-              0.1,
-              0.05
+              0.5,
+              0.55,
+              0.9,
+              0.3
             ],
-            "control": "Закрити",
-            "description": "Повертаємося до спільної історії.",
-            "before": "assets/cinema/uk/together/0027.webp",
-            "after": "assets/cinema/uk/together/0042.webp"
+            "control": "Рахунки",
+            "description": "Нижче — цілі, план і рахунки, на яких лежать гроші.",
+            "before": "assets/cinema/uk/together/0016.webp",
+            "after": "assets/cinema/uk/together/0066.webp"
+          },
+          {
+            "start": 10.59999999999998,
+            "press": 11.99999999999998,
+            "transition": 12.44999999999998,
+            "settle": 14.226666666666633,
+            "end": 15.726666666666633,
+            "target": [
+              0.754,
+              0.613,
+              0.2,
+              0.04
+            ],
+            "control": "Настя",
+            "description": "Тільки Настина частина — у спільній «Відпустці».",
+            "before": "assets/cinema/uk/together/0066.webp",
+            "after": "assets/cinema/uk/together/0088.webp"
           }
         ],
         "source": "native-ios-edited-film"
@@ -1056,42 +1073,59 @@
       },
       "together": {
         "src": "assets/cinema/en/films/together.mp4",
-        "duration": 10.269999999999998,
+        "duration": 16.306666666666636,
         "poster": "assets/cinema/en/together/0001.webp",
         "steps": [
           {
             "start": 0,
             "press": 1.4,
             "transition": 1.8499999999999999,
-            "settle": 3.3666666666666702,
-            "end": 4.866666666666671,
+            "settle": 2.760000000000002,
+            "end": 4.260000000000002,
             "target": [
-              0.907,
-              0.095,
-              0.1,
-              0.05
+              0.249,
+              0.372,
+              0.4,
+              0.08
             ],
-            "control": "Settings",
-            "description": "See the participant and both contributions.",
+            "control": "Savings",
+            "description": "A couple’s shared savings: your part and Nastya’s, and what she added this month.",
             "before": "assets/cinema/en/together/0001.webp",
-            "after": "assets/cinema/en/together/0024.webp"
+            "after": "assets/cinema/en/together/0017.webp"
           },
           {
-            "start": 4.866666666666671,
-            "press": 6.266666666666671,
-            "transition": 6.716666666666671,
-            "settle": 7.669999999999997,
-            "end": 9.169999999999998,
+            "start": 4.260000000000002,
+            "press": 5.660000000000002,
+            "transition": 6.110000000000002,
+            "settle": 9.09999999999998,
+            "end": 10.59999999999998,
             "target": [
-              0.09,
-              0.128,
-              0.1,
-              0.05
+              0.5,
+              0.55,
+              0.9,
+              0.3
             ],
-            "control": "Close",
-            "description": "Return to the shared history.",
-            "before": "assets/cinema/en/together/0026.webp",
-            "after": "assets/cinema/en/together/0040.webp"
+            "control": "Accounts",
+            "description": "Further down: the goals, the plan and the accounts that hold the money.",
+            "before": "assets/cinema/en/together/0017.webp",
+            "after": "assets/cinema/en/together/0068.webp"
+          },
+          {
+            "start": 10.59999999999998,
+            "press": 11.99999999999998,
+            "transition": 12.44999999999998,
+            "settle": 13.706666666666637,
+            "end": 15.206666666666637,
+            "target": [
+              0.813,
+              0.613,
+              0.2,
+              0.04
+            ],
+            "control": "Nastya’s",
+            "description": "Only Nastya’s part, in the shared holiday account.",
+            "before": "assets/cinema/en/together/0068.webp",
+            "after": "assets/cinema/en/together/0087.webp"
           }
         ],
         "source": "native-ios-edited-film"

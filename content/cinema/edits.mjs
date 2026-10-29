@@ -269,21 +269,30 @@ export const edits = {
     together: [
       b(
         0,
-        24,
-        [0.907, 0.095, 0.1, 0.05],
-        'Налаштування',
-        'Settings',
-        'Бачимо учасника та внесок кожного.',
-        'See the participant and both contributions.'
+        15,
+        [0.249, 0.372, 0.4, 0.08],
+        'Заощадження',
+        'Savings',
+        'Спільні накопичення пари: твоя частина й Настина, і скільки вона додала цього місяця.',
+        'A couple’s shared savings: your part and Nastya’s, and what she added this month.'
       ),
       b(
-        26,
-        41,
-        [0.09, 0.128, 0.1, 0.05],
-        'Закрити',
-        'Close',
-        'Повертаємося до спільної історії.',
-        'Return to the shared history.'
+        15,
+        65,
+        [0.5, 0.55, 0.9, 0.3],
+        'Рахунки',
+        'Accounts',
+        'Нижче — цілі, план і рахунки, на яких лежать гроші.',
+        'Further down: the goals, the plan and the accounts that hold the money.'
+      ),
+      b(
+        65,
+        87,
+        [0.754, 0.613, 0.2, 0.04],
+        'Настя',
+        'Nastya',
+        'Тільки Настина частина — у спільній «Відпустці».',
+        'Only Nastya’s part, in the shared holiday account.'
       ),
     ],
   },
@@ -538,21 +547,30 @@ export const edits = {
     together: [
       b(
         0,
-        23,
-        [0.907, 0.095, 0.1, 0.05],
-        'Налаштування',
-        'Settings',
-        'Учасники.',
-        'See the participant and both contributions.'
+        16,
+        [0.249, 0.372, 0.4, 0.08],
+        'Заощадження',
+        'Savings',
+        'Спільні накопичення пари: твоя частина й Настина, і скільки вона додала цього місяця.',
+        'A couple’s shared savings: your part and Nastya’s, and what she added this month.'
       ),
       b(
-        25,
-        39,
-        [0.09, 0.128, 0.1, 0.05],
-        'Закрити',
-        'Close',
-        'Назад.',
-        'Return to the shared history.'
+        16,
+        67,
+        [0.5, 0.55, 0.9, 0.3],
+        'Рахунки',
+        'Accounts',
+        'Нижче — цілі, план і рахунки, на яких лежать гроші.',
+        'Further down: the goals, the plan and the accounts that hold the money.'
+      ),
+      b(
+        67,
+        86,
+        [0.813, 0.613, 0.2, 0.04],
+        'Настя',
+        'Nastya’s',
+        'Тільки Настина частина — у спільній «Відпустці».',
+        'Only Nastya’s part, in the shared holiday account.'
       ),
     ],
   },

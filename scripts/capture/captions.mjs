@@ -47,8 +47,9 @@ export const captions = {
       '«Капітал» складає заощадження й інвестиції.',
     ],
     together: [
-      'Шестерня на спільному рахунку відкриває його налаштування.',
-      'Учасник і внесок кожного видно разом. Закриття повертає до спільної історії.',
+      'Плитка «Заощадження» відкриває спільні накопичення.',
+      'Прокрутка показує цілі, план і рахунки.',
+      '«Настя» залишає тільки її частину.',
     ],
   },
   en: {
@@ -97,8 +98,9 @@ export const captions = {
       'Capital adds up savings and investments.',
     ],
     together: [
-      'The gear on the shared account opens its settings.',
-      'Settings show both contributions. Closing returns to the shared history.',
+      'The Savings tile opens the shared savings.',
+      'Scrolling shows the goals, the plan and the accounts.',
+      'Nastya’s keeps only her part.',
     ],
   },
 };

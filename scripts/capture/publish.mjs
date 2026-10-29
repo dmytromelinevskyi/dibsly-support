@@ -40,8 +40,8 @@ const outcomes = {
     'Four views of the same money, from today to the whole year.',
   ],
   together: [
-    'Внески й витрати кожного — одна зрозуміла спільна історія.',
-    'Both contributions and spending, in one clear shared history.',
+    'Видно внесок кожного. Вистачить Premium в одного.',
+    'Everyone’s part in view. One Premium is enough.',
   ],
 };
 const captures = {
