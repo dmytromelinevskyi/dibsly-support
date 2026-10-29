@@ -32,6 +32,7 @@
             closeAll(group);
             setOpen(group, true);
             var list = items(group);
+            void getComputedStyle(group.querySelector(".nav-drop")).visibility;  // the card visible before its link is focused
             list[event.key === "ArrowDown" ? 0 : list.length - 1].focus();
         });
         group.addEventListener("keydown", function (event) {
