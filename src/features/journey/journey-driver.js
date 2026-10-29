@@ -48,8 +48,6 @@ export function attachJourney(canvas) {
   const resize = new ResizeObserver(remeasure);
   resize.observe(document.body);
   addEventListener('scroll', schedule, { passive: true });
-  // The landing's phone glides left and right between steps: its hole moves without a scroll.
-  addEventListener('dibsly:phone', schedule);
   addEventListener('resize', remeasure, { passive: true });
   schedule();
   return {
@@ -57,7 +55,6 @@ export function attachJourney(canvas) {
       cancelAnimationFrame(raf);
       resize.disconnect();
       removeEventListener('scroll', schedule);
-      removeEventListener('dibsly:phone', schedule);
       removeEventListener('resize', remeasure);
       line.destroy();
     },

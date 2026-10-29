@@ -2,8 +2,9 @@
 // «просто взять со самого dibslyapp все анимации»). The hero and the steps as there: smooth scrolling, titles that rise
 // in word by word, reveals, the hero's phone that stays and plays each step's scene — the journey() below is main's,
 // unchanged but for the language, which comes from the page — and the particle field behind it (field.js). On a wide
-// screen the phone stands left and right in turn, gliding across as a step comes in (owner, 2026-10-29: «экраны слева
-// справа»). Left out: the counting intro, the phone's tilt, magnetic buttons and the cursor (Roma's frame does not turn).
+// screen the phone jumps left and right between steps as on Roma's landing (sides.js; owner, 2026-10-29).
+// Left out: the counting intro, the tilt under the cursor, magnetic buttons and the cursor.
+import { phoneAt } from './sides.js';
 export async function startJourney(root, { lang, reduced }) {
   var html = document.documentElement;
   var small = window.innerWidth < 760;
@@ -109,7 +110,8 @@ export async function startJourney(root, { lang, reduced }) {
       ScrollTrigger.create({
         trigger: root.querySelector('.step'),
         start: 'top bottom',
-        endTrigger: '#faq',
+        // The price and the finale are outside this component: elements, not selectors (the context scopes those).
+        endTrigger: document.querySelector('#faq'),
         end: 'bottom top',
         onToggle: function (self) {
           field.fade = self.isActive ? 0.32 : 1;
@@ -117,7 +119,7 @@ export async function startJourney(root, { lang, reduced }) {
         },
       });
       ScrollTrigger.create({
-        trigger: '.finale',
+        trigger: document.querySelector('.finale'),
         start: 'top 80%',
         end: 'bottom bottom',
         scrub: true,
@@ -220,55 +222,60 @@ export async function startJourney(root, { lang, reduced }) {
       scrollTrigger: { trigger: '.hero', start: '5% top', end: '20% top', scrub: true },
     });
 
-    // ------------------------------------------------------------ left and right
-    // A step's data-side says where its phone stands. The phone glides there as the step comes in (where its scene
-    // starts), back as one scrolls up; its place on the left mirrors the right one across the page's column.
-    var side = 'right';
-    function across(where) {
-      if (where !== 'left' || window.innerWidth <= 1080) return 0;
-      var box = root.querySelector('.journey'),
-        style = getComputedStyle(box),
-        rect = box.getBoundingClientRect(),
-        phone = heroPhone.getBoundingClientRect(),
-        centre = phone.left + phone.width / 2 - gsap.getProperty(lift, 'x');
-      return (
-        rect.left +
-        parseFloat(style.paddingLeft) +
-        rect.right -
-        parseFloat(style.paddingRight) -
-        2 * centre
-      );
+    // ------------------------------------------------------------ left and right, as on Roma's landing
+    // On a wide screen the phone jumps between the sides as his did: on a curve, lifted, smaller and turned edgewise
+    // on the way (sides.js). The line keeps its own wave. On phones and tablets the phone stays in the middle.
+    var magnet = root.querySelector('.phone-magnet'),
+      model = null,
+      shown = '';
+    function measureSides() {
+      gsap.set(magnet, { x: 0, y: 0, scale: 1, rotationX: 0, rotationY: 0, rotationZ: 0 });
+      shown = '';
+      if (window.innerWidth <= 1080) {
+        model = null;
+        return;
+      }
+      var phone = heroPhone.getBoundingClientRect();
+      model = {
+        anchors: [root.querySelector('.hero')].concat(all('.step')).map(function (section) {
+          return {
+            top: section.getBoundingClientRect().top + window.scrollY,
+            side: section.getAttribute('data-side') || 'right',
+          };
+        }),
+        width: window.innerWidth,
+        height: window.innerHeight,
+        centre: phone.left + phone.width / 2,
+      };
+      follow();
     }
-    function glide(where) {
-      side = where;
-      gsap.to(lift, {
-        x: across(where),
-        duration: 1.1,
-        ease: 'power3.inOut',
-        overwrite: 'auto',
-        onUpdate: function () {
-          window.dispatchEvent(new Event('dibsly:phone'));
-        },
+    function follow() {
+      if (!model) return;
+      var at = phoneAt(model, window.scrollY),
+        key = [at.x, at.y, at.rotationY, at.rotationZ]
+          .map(function (value) {
+            return value.toFixed(2);
+          })
+          .join(':');
+      if (key === shown) return;
+      shown = key;
+      gsap.set(magnet, {
+        x: at.x,
+        y: at.y,
+        scale: at.scale,
+        rotationX: at.rotationX,
+        rotationY: at.rotationY,
+        rotationZ: at.rotationZ,
+        transformPerspective: 1400,
       });
     }
-    var steps = all('[data-scene]');
-    steps.forEach(function (section, index) {
-      if (!index) return;
-      var before = steps[index - 1].getAttribute('data-side') || 'right';
-      ScrollTrigger.create({
-        trigger: section,
-        start: 'top 55%',
-        onEnter: function () {
-          glide(section.getAttribute('data-side') || 'right');
-        },
-        onLeaveBack: function () {
-          glide(before);
-        },
-      });
+    gsap.ticker.add(follow);
+    ScrollTrigger.addEventListener('refresh', measureSides);
+    undo.push(function () {
+      gsap.ticker.remove(follow);
+      ScrollTrigger.removeEventListener('refresh', measureSides);
     });
-    ScrollTrigger.addEventListener('refresh', function () {
-      gsap.set(lift, { x: across(side) });
-    });
+    measureSides();
 
     // ------------------------------------------------------------ phones and tablets: words fade under the phone
     // The phone sticks under the header with the steps' words going up behind it. Main hid them with a band of the

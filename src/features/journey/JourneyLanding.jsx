@@ -109,133 +109,140 @@ export default function JourneyLanding({ lang }) {
         <div className="journey-stage">
           <div className="stage-sticky">
             <div className="phone-lift">
-              <IPhoneFrame className="hero-phone" data-journey-hole>
-                <div className="screen" data-tabs={data.tabs}>
-                  <div className="live">
-                    <img
-                      className="screen-long"
-                      src={asset(`${lang}-main-empty.jpg`)}
-                      alt={data.stripAlt}
-                      width="750"
-                      height="3249"
-                      fetchPriority="high"
-                    />
-                    <div className="ios-top" aria-hidden="true">
+              <div className="phone-magnet">
+                <IPhoneFrame className="hero-phone" data-journey-hole>
+                  <div className="screen" data-tabs={data.tabs}>
+                    <div className="live">
                       <img
-                        className="ios-head"
-                        src={asset(`${lang}-main-head.jpg`)}
+                        className="screen-long"
+                        src={asset(`${lang}-main-empty.jpg`)}
+                        alt={data.stripAlt}
+                        width="750"
+                        height="3249"
+                        fetchPriority="high"
+                      />
+                      <div className="ios-top" aria-hidden="true">
+                        <img
+                          className="ios-head"
+                          src={asset(`${lang}-main-head.jpg`)}
+                          alt=""
+                          width="750"
+                          height="221"
+                        />
+                      </div>
+                      <i className="ios-home" aria-hidden="true" />
+                      <div className="ios-tabbar" aria-hidden="true">
+                        <div className="ios-pill">
+                          {data.tabLabels.map((label, index) => (
+                            <span key={label} className={`ios-tab${index ? '' : ' on'}`}>
+                              {tabIcons[index]}
+                              {label}
+                            </span>
+                          ))}
+                        </div>
+                        <img
+                          className="ios-dibsly"
+                          src={asset('dibsly-button.png')}
+                          alt=""
+                          width="184"
+                          height="184"
+                        />
+                        <span className="ios-plus">
+                          <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2.4"
+                            strokeLinecap="round"
+                          >
+                            <path d="M12 5v14M5 12h14" />
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                    <div className="frames" aria-hidden="true">
+                      <div className="sheet-dim" />
+                      <img
+                        className="push-bar"
+                        src={asset(`${lang}-a-d0.jpg`)}
                         alt=""
                         width="750"
-                        height="221"
+                        height="1631"
                       />
-                    </div>
-                    <i className="ios-home" aria-hidden="true" />
-                    <div className="ios-tabbar" aria-hidden="true">
-                      <div className="ios-pill">
-                        {data.tabLabels.map((label, index) => (
-                          <span key={label} className={`ios-tab${index ? '' : ' on'}`}>
-                            {tabIcons[index]}
-                            {label}
-                          </span>
+                      {data.frames
+                        .filter((frame) => used.has(frame.name))
+                        .map((frame) => (
+                          <img
+                            key={frame.name}
+                            className="frame"
+                            data-frame={frame.name}
+                            src={asset(`${lang}-${frame.name}.jpg`)}
+                            alt={frame.alt}
+                            width="750"
+                            height="1631"
+                            decoding="async"
+                            fetchPriority="low"
+                          />
                         ))}
-                      </div>
-                      <img
-                        className="ios-dibsly"
-                        src={asset('dibsly-button.png')}
-                        alt=""
-                        width="184"
-                        height="184"
-                      />
-                      <span className="ios-plus">
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2.4"
-                          strokeLinecap="round"
-                        >
-                          <path d="M12 5v14M5 12h14" />
-                        </svg>
-                      </span>
                     </div>
-                  </div>
-                  <div className="frames" aria-hidden="true">
-                    <div className="sheet-dim" />
-                    <img
-                      className="push-bar"
-                      src={asset(`${lang}-a-d0.jpg`)}
-                      alt=""
-                      width="750"
-                      height="1631"
-                    />
-                    {data.frames
-                      .filter((frame) => used.has(frame.name))
-                      .map((frame) => (
+                    <div className="fx" aria-hidden="true">
+                      <div className="banner">
                         <img
-                          key={frame.name}
-                          className="frame"
-                          data-frame={frame.name}
-                          src={asset(`${lang}-${frame.name}.jpg`)}
-                          alt={frame.alt}
-                          width="750"
-                          height="1631"
-                          decoding="async"
-                          fetchPriority="low"
+                          src="/assets/brand/apple-touch-icon.png"
+                          alt=""
+                          width="38"
+                          height="38"
                         />
-                      ))}
-                  </div>
-                  <div className="fx" aria-hidden="true">
-                    <div className="banner">
-                      <img src="/assets/brand/apple-touch-icon.png" alt="" width="38" height="38" />
-                      <div>
-                        <b>
-                          {data.fx.banner[0]} <span>{data.fx.banner[1]}</span>
-                        </b>
-                        <p>{data.fx.banner[2]}</p>
-                        <p className="dim-line">{data.fx.banner[3]}</p>
+                        <div>
+                          <b>
+                            {data.fx.banner[0]} <span>{data.fx.banner[1]}</span>
+                          </b>
+                          <p>{data.fx.banner[2]}</p>
+                          <p className="dim-line">{data.fx.banner[3]}</p>
+                        </div>
                       </div>
-                    </div>
-                    <div className="bank">
-                      <i className="bank-icon">
-                        <svg
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="1.7"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <path d="M3.5 9.5L12 4.5l8.5 5M5.5 10.5v7M10 10.5v7M14 10.5v7M18.5 10.5v7M3.5 20h17" />
+                      <div className="bank">
+                        <i className="bank-icon">
+                          <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="1.7"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <path d="M3.5 9.5L12 4.5l8.5 5M5.5 10.5v7M10 10.5v7M14 10.5v7M18.5 10.5v7M3.5 20h17" />
+                          </svg>
+                        </i>
+                        <div>
+                          <b>
+                            {data.fx.bank[0]} <span>{data.fx.bank[1]}</span>
+                          </b>
+                          <p>{data.fx.bank[2]}</p>
+                        </div>
+                      </div>
+                      <div className="hl" />
+                      <div className="tap" />
+                      <div className="touch">
+                        <svg viewBox="0 0 86 107">
+                          <path d="M28 56L28 16C28 5 42 5 42 16L42 43C45 35 55 36 56 45C63 39 71 43 71 52C80 48 84 55 82 65L78 85C76 99 55 103 44 94L17 68C8 57 18 49 28 61Z" />
                         </svg>
-                      </i>
-                      <div>
-                        <b>
-                          {data.fx.bank[0]} <span>{data.fx.bank[1]}</span>
-                        </b>
-                        <p>{data.fx.bank[2]}</p>
                       </div>
-                    </div>
-                    <div className="hl" />
-                    <div className="tap" />
-                    <div className="touch">
-                      <svg viewBox="0 0 86 107">
-                        <path d="M28 56L28 16C28 5 42 5 42 16L42 43C45 35 55 36 56 45C63 39 71 43 71 52C80 48 84 55 82 65L78 85C76 99 55 103 44 94L17 68C8 57 18 49 28 61Z" />
-                      </svg>
-                    </div>
-                    <div
-                      className="app-toast"
-                      data-auto={data.fx.toast.auto}
-                      data-plus={data.fx.toast.plus}
-                    >
-                      <img src="/assets/brand/dibsly-dark.png" alt="" width="40" height="38" />
-                      <div>
-                        <b>{data.fx.toast.title}</b>
-                        <span>{data.fx.toast.line}</span>
+                      <div
+                        className="app-toast"
+                        data-auto={data.fx.toast.auto}
+                        data-plus={data.fx.toast.plus}
+                      >
+                        <img src="/assets/brand/dibsly-dark.png" alt="" width="40" height="38" />
+                        <div>
+                          <b>{data.fx.toast.title}</b>
+                          <span>{data.fx.toast.line}</span>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </IPhoneFrame>
+                </IPhoneFrame>
+              </div>
             </div>
           </div>
         </div>
@@ -285,7 +292,7 @@ export default function JourneyLanding({ lang }) {
             id={step.id}
             data-section
             data-scene={step.id}
-            data-side={index % 2 ? 'right' : 'left'}
+            data-side={index % 2 ? 'left' : 'right'}
             style={{ '--row': index + 2 }}
           >
             <div className="step-copy">

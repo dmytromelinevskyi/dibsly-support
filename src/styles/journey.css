@@ -769,3 +769,8 @@
 
 /* Phones and tablets: no band of the page's colour behind the phone (owner, 2026-10-29: over the particles it was a
    flat dark box); a step's words fade out instead as they come up to the phone (journey-engine.js). */
+
+/* The phone's travel between the sides (journey-engine.js moves and turns it; Roma's frame keeps its look). */
+.v3 .phone-magnet {
+  will-change: transform;
+}
