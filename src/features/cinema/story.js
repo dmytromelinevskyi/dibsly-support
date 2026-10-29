@@ -5,12 +5,12 @@ export const chapterDefinitions = [
     id: 'auto',
     length: 220,
     word: localized('БЕЗ ЗУСИЛЬ', 'EFFORTLESS'),
-    title: localized(['Покупка.', 'Вже під контролем.'], ['Paid.', 'Already in sight.']),
+    title: localized(['Заплатив.', 'Уже записано.'], ['Paid.', 'Already recorded.']),
     description: localized(
-      'Оплати звично. Dibsly збере покупку в «Активності», а ти лише підтвердиш.',
-      'Pay as usual. Dibsly brings the purchase into Activity. You just confirm.'
+      'Оплатив Apple Pay чи прийшов пуш банку — покупка вже чекає в «Активності». Один дотик, і вона в історії та балансі.',
+      'Paid with Apple Pay or got a bank’s push: the purchase already waits in Activity. One tap and it’s in History and the balance.'
     ),
-    label: localized('Записується саме', 'Effortless tracking'),
+    label: localized('Записується саме', 'Records itself'),
     motif: 0,
     pose: [1.9, 0.1, 0.02, -0.07, -0.11, 0.02],
   },
@@ -18,15 +18,12 @@ export const chapterDefinitions = [
     id: 'plus',
     length: 330,
     word: localized('ПРОСТО', 'SIMPLY'),
-    title: localized(
-      ['Кілька дотиків.', 'І все сходиться.'],
-      ['A few taps.', 'Everything adds up.']
-    ),
+    title: localized(['Олдскул?', 'Тисни «+».'], ['Old school?', 'Tap “+”.']),
     description: localized(
-      'Плюс, сума, категорія. Готівка та маленькі щоденні покупки теж на своєму місці.',
-      'Plus, amount, category. Cash and the little everyday purchases have a place, too.'
+      'Витрата, дохід, переказ чи борг — вручну за три дотики. Або скажи: «кава 85».',
+      'Spending, income, a transfer or a debt: by hand in three taps. Or just say “coffee 5”.'
     ),
-    label: localized('Швидкий запис', 'Quick entry'),
+    label: localized('Додати самому', 'Add it yourself'),
     motif: 1,
     pose: [1.85, 0.08, 0.14, 0.04, 0.1, -0.025],
   },
@@ -34,104 +31,101 @@ export const chapterDefinitions = [
     id: 'ask',
     length: 250,
     word: localized('ЗРОЗУМІЛО', 'CLARITY'),
-    title: localized(['Можна просто', 'запитати.'], ['Just ask.', 'Dibsly understands.']),
+    title: localized(['Запитай.', 'Він знає.'], ['Ask.', 'He knows.']),
     description: localized(
-      'Що з грошима? На що пішло найбільше? Відповідь твоїми цифрами. Будь-яка зміна лише після твого «Зберегти».',
-      'How is my money doing? Where did most of it go? Answers in your own figures. Changes only after your Save.'
+      'Відповідає твоїми цифрами й змінює щось тільки після «Зберегти». Про налаштування — без ліміту, про гроші — 20 питань на місяць безкоштовно.',
+      'Answers in your own figures and changes nothing until you tap Save. Questions about settings: no limit. About money: 20 a month free.'
     ),
-    label: localized('Чат із Dibsly', 'Ask Dibsly'),
+    label: localized('Чат з Dibsly', 'Chat with Dibsly'),
     motif: 2,
     pose: [1.85, 0.06, 0.17, -0.03, -0.08, 0.015],
+  },
+  {
+    id: 'analytics',
+    length: 350,
+    word: localized('КАРТИНА', 'PERSPECTIVE'),
+    title: localized(['Куди йдуть', 'гроші.'], ['Where the money', 'goes.']),
+    description: localized(
+      'Категорії, потік, тренди й капітал — чотири погляди на твої гроші.',
+      'Categories, flow, trends and capital: four views of your money.'
+    ),
+    label: localized('Аналітика', 'Analytics'),
+    motif: 7,
+    pose: [1.85, 0.08, 0.06, 0.04, 0.06, -0.015],
   },
   {
     id: 'plan',
     length: 280,
     word: localized('ПОПЕРЕДУ', 'FORWARD'),
     title: localized(
-      ['Сьогодні спокійніше.', 'Мрія ближче.'],
-      ['A calmer today.', 'A closer tomorrow.']
+      ['Бюджет на місяць.', 'Цілі з датою.'],
+      ['A budget for the month.', 'Goals with a date.']
     ),
     description: localized(
-      'Ліміти на місяць і цілі, до яких хочеться йти. Видно, що залишилось і коли ти дістанешся.',
-      'Monthly limits and goals worth moving towards. Know what is left and when you could get there.'
+      'Ліміт на кожну категорію й скільки можна ще. Перевитрати — червоним. Ціль показує, коли дійдеш.',
+      'A limit for each category and what’s left. Overspending in red. A goal shows when you get there.'
     ),
     label: localized('План і цілі', 'Plan and goals'),
     motif: 3,
     pose: [1.9, 0.1, 0.06, 0.04, 0.08, -0.02],
   },
   {
+    id: 'together',
+    length: 220,
+    word: localized('РАЗОМ', 'TOGETHER'),
+    title: localized(['Гроші', 'разом.'], ['Money', 'together.']),
+    description: localized(
+      'Спільні накопичення й цілі для пари: видно внесок кожного. Вистачить Premium в одного.',
+      'Shared savings and goals for a couple: everyone’s part in view. One Premium is enough.'
+    ),
+    label: localized('Гроші разом · Premium', 'Money together · Premium'),
+    motif: 8,
+    pose: [1.8, 0.08, 0.08, -0.03, -0.06, 0.01],
+  },
+  {
+    id: 'money',
+    length: 260,
+    word: localized('БАЛАНС', 'BALANCE'),
+    title: localized(['Хто кому винен.', 'І нагадування.'], ['Who owes whom.', 'And reminders.']),
+    description: localized(
+      'Позики, повернення, рахунок у кафе — по людях, нагадати в один дотик. Кредити: наступний платіж і переплата.',
+      'Loans, paybacks, the café bill: by person, a reminder in one tap. Credits: the next payment and the overpayment.'
+    ),
+    label: localized('Борги й кредити', 'Debts and credits'),
+    motif: 5,
+    pose: [1.9, 0.07, 0.1, 0.04, 0.1, -0.025],
+  },
+  {
     id: 'invest',
     length: 230,
     word: localized('ЗРОСТАННЯ', 'GROWTH'),
     title: localized(
-      ['Гроші працюють.', 'Ти бачиш результат.'],
-      ['Money at work.', 'Progress in view.']
+      ['Портфель.', 'Поруч з витратами.'],
+      ['Your portfolio.', 'Next to your spending.']
     ),
     description: localized(
-      'Портфель, дивіденди й ріст поруч із повсякденними фінансами. Поповнення окремо від прибутку.',
-      'Your portfolio, dividends and growth beside everyday finances. Deposits stay separate from returns.'
+      'Звіти Interactive Brokers і Freedom Finance замість ручного введення. Дивіденди разом з утриманим податком, ріст окремо від поповнень. Безкоштовно.',
+      'Interactive Brokers and Freedom Finance reports instead of typing. Dividends with the tax withheld, growth apart from deposits. Free.'
     ),
     label: localized('Інвестиції', 'Investments'),
     motif: 4,
     pose: [1.85, 0.06, 0.02, -0.04, -0.1, 0.025],
   },
   {
-    id: 'money',
-    length: 260,
-    word: localized('БАЛАНС', 'BALANCE'),
-    title: localized(['Хто кому.', 'Скільки й коли.'], ['Who owes whom.', 'And when.']),
-    description: localized(
-      'Борги, повернення, кредитні платежі. Усі домовленості й наступні дати видно в одному місці.',
-      'Debts, repayments and upcoming loan payments. Every agreement and its next date, together.'
-    ),
-    label: localized('Борги та кредити', 'Debts and loans'),
-    motif: 5,
-    pose: [1.9, 0.07, 0.1, 0.04, 0.1, -0.025],
-  },
-  {
     id: 'fop',
     length: 220,
     word: localized('СВОЯ СПРАВА', 'YOUR BUSINESS'),
     title: localized(
-      ['Особисте окремо.', 'Справа під контролем.'],
-      ['Personal, separate.', 'Business, in order.']
+      ['ФОП окремою кишенею.', 'Податки вже пораховані.'],
+      ['Your FOP in its own pocket.', 'Taxes already worked out.']
     ),
     description: localized(
-      'Кишеня ФОП: доходи, податки та найближчі строки. Без окремої таблиці для кожного кварталу.',
-      'A dedicated FOP pocket: income, taxes and upcoming deadlines. No separate spreadsheet for every quarter.'
+      'Єдиний податок, ЄСВ і військовий збір рахуються самі. Строки, декларації й нагадування.',
+      'Single tax, ESV and military levy work themselves out. Deadlines, returns and reminders.'
     ),
-    label: localized('ФОП', 'Sole trader'),
+    label: localized('ФОП', 'Sole traders (FOP)'),
     motif: 6,
     pose: [1.8, 0.1, 0.13, -0.04, -0.08, 0.015],
-  },
-  {
-    id: 'analytics',
-    length: 350,
-    word: localized('КАРТИНА', 'PERSPECTIVE'),
-    title: localized(
-      ['Побачити ціле.', 'Зрозуміти деталі.'],
-      ['See the whole.', 'Understand the detail.']
-    ),
-    description: localized(
-      'Категорії, потік, тренди та капітал. Від загальної картини до конкретної покупки й наступного платежу.',
-      'Categories, cash flow, trends and capital. From the bigger picture to a purchase or an upcoming payment.'
-    ),
-    label: localized('Аналітика й календар', 'Analytics and calendar'),
-    motif: 7,
-    pose: [1.85, 0.08, 0.06, 0.04, 0.06, -0.015],
-  },
-  {
-    id: 'together',
-    length: 220,
-    word: localized('РАЗОМ', 'TOGETHER'),
-    title: localized(['Спільні плани.', 'Спільна ясність.'], ['Shared plans.', 'Shared clarity.']),
-    description: localized(
-      'Рахунок для пари чи сім’ї. Видно внесок кожного, спільні витрати й цілі. Достатньо Premium в одного.',
-      'An account for a couple or family. See each contribution, shared spending and goals. One Premium is enough.'
-    ),
-    label: localized('Гроші разом', 'Money together'),
-    motif: 8,
-    pose: [1.8, 0.08, 0.08, -0.03, -0.06, 0.01],
   },
 ];
 const guideAnchors = {
@@ -158,23 +152,23 @@ export function getChapters(lang) {
 }
 export const heroCopy = {
   uk: {
-    eyebrow: 'Особисті фінанси. По-твоєму.',
-    title: ['Усі твої гроші.', 'Один твій світ.'],
-    lead: 'Банки, готівка, інвестиції й великі плани. Коли все поруч, із грошима спокійніше.',
-    download: 'Спробувати безкоштовно',
-    web: 'Відкрити вебверсію',
+    eyebrow: 'Особисті фінанси · iPhone і браузер',
+    title: ['Усі гроші.', 'В одному місці.'],
+    lead: 'Картки всіх банків, готівка, накопичення, інвестиції, ФОП, борги й кредити. Dibsly сам записує витрати й відповідає на питання про гроші твоїми цифрами.',
+    download: 'Завантажити в App Store',
+    web: 'Відкрити в браузері',
     scroll: 'Гортай. Побачиш кожен крок.',
     interaction: 'Проведи курсором. Відчуй свій ритм.',
-    platforms: 'iPhone · Браузер',
+    platforms: 'iPhone · Браузер · iPad і Mac — скоро',
   },
   en: {
-    eyebrow: 'Personal finance. On your terms.',
-    title: ['All your money.', 'A world of your own.'],
-    lead: 'Banks, cash, investments and bigger plans. When everything is together, money feels a little calmer.',
-    download: 'Start for free',
-    web: 'Open the web app',
+    eyebrow: 'Personal finance · iPhone and the web',
+    title: ['All your money.', 'In one place.'],
+    lead: 'Cards from every bank, cash, savings, investments, your FOP, debts and credits. Dibsly records your spending and answers your money questions in your own figures.',
+    download: 'Download on the App Store',
+    web: 'Open in a browser',
     scroll: 'Scroll. See every step.',
     interaction: 'Move your cursor. Find your rhythm.',
-    platforms: 'iPhone · Web',
+    platforms: 'iPhone · Browser · iPad and Mac — soon',
   },
 };

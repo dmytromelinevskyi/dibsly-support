@@ -113,7 +113,10 @@ export default function ScrollCinema({ lang, routeCanvas, worldCanvas }) {
               <article className="chapter-copy">
                 <div className="chapter-heading">
                   <p className="chapter-eyebrow">
-                    <span>{String(index + 1).padStart(2, '0')} / 09</span>
+                    <span>
+                      {String(index + 1).padStart(2, '0')} /{' '}
+                      {String(chapters.length).padStart(2, '0')}
+                    </span>
                     {chapter.label}
                   </p>
                   <h2>

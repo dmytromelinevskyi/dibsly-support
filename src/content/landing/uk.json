@@ -14,7 +14,7 @@
             {
               "tag": "p",
               "attrs": { "class": "kicker" },
-              "children": ["10 · Твої гроші всюди · Premium"]
+              "children": ["11 · Твої гроші всюди · Premium"]
             },
             {
               "tag": "h2",
@@ -121,7 +121,7 @@
               "tag": "div",
               "attrs": { "class": "center" },
               "children": [
-                { "tag": "p", "attrs": { "class": "kicker" }, "children": ["11 · Ціна"] },
+                { "tag": "p", "attrs": { "class": "kicker" }, "children": ["12 · Ціна"] },
                 {
                   "tag": "h2",
                   "attrs": { "class": "title" },
@@ -281,7 +281,7 @@
               "tag": "div",
               "attrs": { "class": "copy narrow" },
               "children": [
-                { "tag": "p", "attrs": { "class": "kicker" }, "children": ["12 · Питання"] },
+                { "tag": "p", "attrs": { "class": "kicker" }, "children": ["13 · Питання"] },
                 {
                   "tag": "h2",
                   "attrs": { "class": "title small" },
