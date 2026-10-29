@@ -58,8 +58,14 @@ main { position: relative; z-index: 2; overflow-x: clip; }
 /* The header: v3/nav.css (every page's, from tools/pages.py). */
 
 /* Section rail */
-.rail { position: fixed; right: 24px; top: 50%; transform: translateY(-50%); z-index: 40; list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
-.rail li { width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; color: var(--dim); border: 1px solid var(--line-2); transition: all .4s var(--ease); background: rgba(14, 12, 11, 0.5); }
+/* The steps' numbers on the right: each one goes to its step (smoothly with the landing's scroll, at once with «reduce
+   motion»), the one on screen lit. */
+.rail { position: fixed; right: 24px; top: 50%; transform: translateY(-50%); z-index: 40; }
+.rail ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.rail li { width: 30px; height: 30px; border-radius: 50%; font-size: 10px; color: var(--dim); border: 1px solid var(--line-2); transition: all .4s var(--ease); background: rgba(14, 12, 11, 0.5); }
+.rail a { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; border-radius: 50%; color: inherit; cursor: pointer; }
+.rail li:hover { color: var(--ink); border-color: var(--orange); }
+.rail a:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
 .rail li.on { background: var(--orange); color: var(--orange-ink); border-color: var(--orange); font-weight: 700; transform: scale(1.12); }
 
 /* Type */
@@ -106,8 +112,9 @@ main { position: relative; z-index: 2; overflow-x: clip; }
    опущен», «можно еще поднять»): its height follows the window's, 650px at most. */
 .journey { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); column-gap: 40px; }
 .journey > .hero { grid-column: 1; grid-row: 1; }
-/* The phone's column spans the hero, the 11 steps and the journey's end (rows 1–13): a step added means one more. */
-.journey-stage { grid-column: 2; grid-row: 1 / span 13; position: relative; z-index: 3; }
+/* The phone's column spans the hero, the 10 steps and the journey's end (rows 1–12): a step added or taken away
+   means one more or one less here and in the phones' rule below. */
+.journey-stage { grid-column: 2; grid-row: 1 / span 12; position: relative; z-index: 3; }
 /* The last step is read with the phone still in place. */
 .journey-end { grid-column: 1; grid-row: var(--row); height: 30vh; }
 .stage-sticky { position: sticky; top: 0; height: 100vh; display: flex; align-items: center; justify-content: center; perspective: 1200px; }
@@ -126,24 +133,14 @@ main { position: relative; z-index: 2; overflow-x: clip; }
    --pt is one of the 402 points of the screen's width. */
 .screen { position: relative; width: 100%; height: 100%; border-radius: 41px; overflow: hidden; background: #151412; container-type: inline-size; }
 .screen { --pt: calc(100cqw / 402); }
-.screen .screen-long { position: absolute; left: 0; top: 12.59%; width: 100%; height: auto; border-radius: 0; object-fit: initial; will-change: transform; }
-/* The bar and the header measured on v3/scenes/uk-a-main.jpg (2026-10-28): the app's background (#151412), opaque down
-   to the strip's top with a short soft edge and no shadow over «Під рукою»; the status bar the frames' own picture;
-   the capsule 62–106 pt and 17 pt from the right. */
-.ios-top { position: absolute; left: 0; right: 0; top: 0; height: calc(114 * var(--pt)); z-index: 2; color: #F6EBDD; pointer-events: none;
-    background: linear-gradient(#151412 0, #151412 calc(102 * var(--pt)), rgba(21, 20, 18, 0) 100%); }
-.ios-top::before { content: ""; position: absolute; inset: 0; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
-    -webkit-mask: linear-gradient(#000 60%, transparent); mask: linear-gradient(#000 60%, transparent); z-index: -1; }
-/* The status bar is the frames' own (v3/scenes/status-bar.png, cut from uk-a-main.jpg's top 54 pt, white on clear):
-   drawn in HTML it moved by ~2 pt where SF Pro is missing. */
-.screen .ios-status { position: absolute; left: 0; top: 0; width: 100%; height: auto; border-radius: 0; object-fit: initial; }
-.ios-header { position: absolute; left: calc(17 * var(--pt)); right: calc(17 * var(--pt)); top: calc(62 * var(--pt)); height: calc(44 * var(--pt)); display: flex; align-items: center; justify-content: space-between; }
-.ios-header > span:first-child { line-height: 1; font-size: calc(15 * var(--pt)); color: #A4A4A6; font-family: -apple-system, "SF Pro Text", var(--text); font-weight: 500; }
-.ios-glass { display: flex; gap: calc(28.6 * var(--pt)); align-items: center; height: 100%; padding: 0 calc(7.9 * var(--pt)) 0 calc(9.4 * var(--pt)); border-radius: 999px; background: #373634; border: 1px solid rgba(255, 255, 255, 0.08); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
-.ios-glass svg { width: calc(29.5 * var(--pt)); height: calc(29.5 * var(--pt)); color: #F6EBDD; }
-/* Signed in: the first letter on the brand's orange, as the app's profile circle. */
-.ios-avatar { width: calc(26 * var(--pt)); height: calc(26 * var(--pt)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-style: normal;
-    font-family: ui-rounded, -apple-system, "SF Pro Rounded", var(--text); font-weight: 600; font-size: calc(13 * var(--pt)); color: #FF9A4D; background: rgba(255, 138, 61, 0.18); }
+.screen .screen-long { position: absolute; left: 0; top: calc(110.2 * var(--pt)); width: 100%; height: auto; border-radius: 0; object-fit: initial; will-change: transform; }
+/* Main's bar and header are the frame's own picture (v3/scenes/<lang>-main-head.jpg, the top 118 pt of a-main.jpg,
+   task 16; owner: the drawn one had «no soft border and no grain»): the app's grained background, the date, the glass
+   capsule with its soft rim, «М» and the gear, as on every frame. Its last 10 pt melt into the strip, which starts where
+   it does on a-main (110.2 pt; the strip's own background under the header is the same colour). */
+.ios-top { position: absolute; left: 0; right: 0; top: 0; height: calc(118 * var(--pt)); z-index: 2; pointer-events: none;
+    -webkit-mask: linear-gradient(#000 calc(100% - 10 * var(--pt)), transparent); mask: linear-gradient(#000 calc(100% - 10 * var(--pt)), transparent); }
+.screen .ios-head { position: absolute; left: 0; top: 0; width: 100%; height: auto; border-radius: 0; object-fit: initial; }
 /* Dibsly's own button above «+», as on Main. */
 .screen .ios-dibsly { position: absolute; left: calc(318.5 * var(--pt)); top: calc(-62 * var(--pt)); width: calc(61 * var(--pt)); height: calc(61 * var(--pt)); border-radius: 50%; object-fit: cover; }
 .ios-tabbar { position: absolute; left: 0; right: 0; bottom: 0; height: calc(110 * var(--pt)); z-index: 2; pointer-events: none; }
@@ -155,7 +152,7 @@ main { position: relative; z-index: 2; overflow-x: clip; }
 .ios-plus { position: absolute; left: calc(319 * var(--pt)); top: calc(9 * var(--pt)); width: calc(58 * var(--pt)); height: calc(58 * var(--pt)); border-radius: 50%; background: #E86E1C; color: #fff; display: flex; align-items: center; justify-content: center; box-shadow: 0 calc(6 * var(--pt)) calc(18 * var(--pt)) rgba(232, 110, 28, 0.35); }
 .ios-plus svg { width: calc(28 * var(--pt)); height: calc(28 * var(--pt)); }
 /* The app's own screens, captured on the demo, and what happens over them: positions in the screen's points (402 × 874). */
-.live { position: absolute; inset: 0; }
+.live { position: absolute; inset: 0; background: #0D0C0A; } /* the strip's bottom colour (the script reads it) */
 .frames { position: absolute; inset: 0; pointer-events: none; }
 /* A frame (402 × 874) is a little shorter than the screen: it goes on below its picture in its bottom row's colour
    (the script reads it), so a sheet or a screen over another leaves no strip of the one under it at the bottom. */
@@ -214,12 +211,6 @@ main { position: relative; z-index: 2; overflow-x: clip; }
 @keyframes drip { 0% { transform: scaleY(0); } 50% { transform: scaleY(1); } 100% { transform: scaleY(1); opacity: 0; } }
 
 /* Marquee */
-.marquee { position: relative; z-index: 2; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(18, 15, 13, 0.85); overflow: hidden; padding: 26px 0; }
-.marquee-track { display: flex; gap: 64px; width: max-content; font-family: var(--display); font-size: 30px; font-weight: 600; color: var(--dim); animation: marquee 38s linear infinite; }
-.marquee-track span { white-space: nowrap; }
-.marquee-track span::after { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-left: 64px; background: rgba(255, 138, 61, 0.6); vertical-align: middle; }
-.marquee-track .hot { color: var(--orange-soft); }
-@keyframes marquee { to { transform: translateX(-50%); } }
 
 /* Blocks */
 .block { position: relative; padding: 160px 0; overflow-x: clip; }
@@ -361,12 +352,8 @@ footer { position: relative; z-index: 2; border-top: 1px solid var(--line); padd
 /* Without JavaScript or with «reduce motion», reveals are simply there. */
 .js .reveal, .js .fade-up { opacity: 0; transform: translateY(28px); }
 .no-motion .reveal, .no-motion .fade-up { opacity: 1 !important; transform: none !important; }
-/* «Reduce motion» also stops what CSS itself keeps moving: the marquee stands as a wrapped row, the scroll hint's drip
-   and Premium's turning edge stop. */
+/* «Reduce motion» also stops what CSS itself keeps moving: the scroll hint's drip and Premium's turning edge stop. */
 @media (prefers-reduced-motion: reduce) {
-    .marquee-track { animation: none; width: auto; flex-wrap: wrap; justify-content: center; gap: 10px 28px; padding: 0 24px; font-size: clamp(18px, 2.4vw, 30px); }
-    .marquee-track span::after { margin-left: 28px; }
-    .marquee-track span:nth-last-child(7)::after, .marquee-track span[aria-hidden="true"] { display: none; }
     .scroll-hint i, .plan.premium::before { animation: none; }
 }
 
@@ -380,7 +367,7 @@ footer { position: relative; z-index: 2; border-top: 1px solid var(--line); padd
     .journey { --ph-m: min(45vh, 480px); grid-template-columns: minmax(0, 1fr); }
     @supports (height: 1svh) { .journey { --ph-m: min(45svh, 480px); } }
     .journey > .hero { min-height: 0; padding: 140px 0 48px; }
-    .journey-stage { grid-column: 1; grid-row: 2 / span 12; } /* the 11 steps and the end, rows 2–13 */
+    .journey-stage { grid-column: 1; grid-row: 2 / span 11; } /* the 10 steps and the end, rows 2–12 */
     .journey-end { height: 0; }
     .stage-sticky { top: 74px; height: auto; padding-top: 0; }
     .stage-sticky::before { content: ""; position: absolute; z-index: -1; top: -74px; bottom: -24px; left: 50%; width: 100vw; transform: translateX(-50%);

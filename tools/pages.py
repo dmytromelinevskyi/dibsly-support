@@ -37,6 +37,15 @@ BURGER = '<svg viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5.5h14M2 12.5h
 CROSS = '<svg viewBox="0 0 18 18" aria-hidden="true"><path d="M4 4l10 10M14 4 4 14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>'
 
 
+def newtab(text):
+    # The App Store and the website open in a new tab (owner, task 16): every link to them, the header's and the
+    # sheet's included, gets target="_blank" rel="noopener" (once).
+    def fix(m):
+        tag = m.group(0)
+        return tag if "target=" in tag else tag[:-1] + ' target="_blank" rel="noopener">'
+    return re.sub(r'<a [^>]*href="https://(?:apps\.apple\.com|my\.dibslyapp\.com)[^"]*"[^>]*>', fix, text)
+
+
 def remember(lang):
     return f"try {{ localStorage.setItem('dibsly.site.lang', '{TEXT[lang]['other_lang']}'); }} catch (error) {{}}"
 
@@ -168,7 +177,7 @@ if __name__ == "__main__":
             new = put(put(text, "footer", footer(lang, name)), "header", nav(lang, name))
         else:
             new = put(text, "header", split_nav())
-        new = assets(new)
+        new = newtab(assets(new))
         if new != text:
             open(path, "w").write(new)
         print(name, "changed" if new != text else "as it was")
