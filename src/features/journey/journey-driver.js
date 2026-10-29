@@ -18,9 +18,12 @@ export function attachJourney(canvas) {
   function measure() {
     goal = destination();
     const rect = document.querySelector('[data-journey-destination]')?.getBoundingClientRect();
+    // The canvas is as wide as the page without its scroll bar (100% of a fixed box), not innerWidth: drawn 15 px
+    // wider and squeezed, the head landed a few pixels left of the period and the two made one lumpy dot (owner,
+    // 2026-10-30: «больше похоже на начало мастеркарда»).
     line.measure(
-      innerWidth,
-      innerHeight,
+      document.documentElement.clientWidth,
+      document.documentElement.clientHeight,
       document.documentElement.scrollHeight,
       rect
         ? {
