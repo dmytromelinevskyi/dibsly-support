@@ -281,14 +281,6 @@
     gsap.to(".hero-copy", { yPercent: -10, opacity: 0.2, ease: "none", scrollTrigger: { trigger: ".hero", start: "40% top", end: "bottom top", scrub: true } });
     gsap.to(".scroll-hint", { opacity: 0, scrollTrigger: { trigger: ".hero", start: "5% top", end: "20% top", scrub: true } });
 
-    // ---------------------------------------------------------------- the marquee leans with the scroll's speed
-    var track = document.querySelector(".marquee-track");
-    if (track) {
-        var skew = gsap.quickTo(track, "skewX", { duration: 0.6, ease: "power3.out" });
-        ScrollTrigger.create({ trigger: ".marquee", start: "top bottom", end: "bottom top",
-            onUpdate: function (self) { skew(Math.max(-10, Math.min(10, self.getVelocity() / -300))); } });
-    }
-
     // ---------------------------------------------------------------- the price counts up
     all(".count").forEach(function (cell) {
         var to = parseFloat(cell.getAttribute("data-to")), decimals = parseInt(cell.getAttribute("data-decimals") || "0", 10);
@@ -384,6 +376,10 @@
             if (frame.complete && !frame.naturalWidth) lost(); else frame.addEventListener("error", lost);
             if (frame.complete && frame.naturalWidth) floor(frame); else frame.addEventListener("load", function () { floor(frame); });
         });
+        // Under Main's strip, where it ends above the tab bar, the screen goes on in the strip's own bottom colour, not
+        // the phone's (owner: a black band under «Кредити» when Main reached its end).
+        function under() { floor(strip); live.style.backgroundColor = strip.style.backgroundColor; }
+        if (strip.complete && strip.naturalWidth) under(); else strip.addEventListener("load", under);
         var layers = Object.keys(frames).map(function (name) { return frames[name]; });
         var fx = {};
         ["banner", "bank", "hl", "tap", "touch", "app-toast"].forEach(function (name) { fx[name] = screen.querySelector(".fx ." + name); });
@@ -394,11 +390,11 @@
         // Analytics' Flow, Trends and Capital tabs, x in points (their widths follow the language's words).
         var tabs = (screen.getAttribute("data-tabs") || "161,244,337").split(",").map(Number);
         // What sits elsewhere on the English frames (points, measured on the captures); the rest is the same for both:
-        // «Борги» on Main's long strip, how far the chat scrolls from its top, its «Нова витрата» card, the width of
-        // «Скинути фільтри» and the left and width of «Нагадати».
+        // «Борги» on Main's long strip, how far the chat scrolls from its top, its «Нова витрата» card and the left and
+        // width of «Нагадати».
         var spot = document.documentElement.lang === "en"
-            ? { debts: 1319.1, chat: 106.7, card: 416, reset: 142, remind: [47, 144] }
-            : { debts: 1301.4, chat: 128.7, card: 395, reset: 180, remind: [31, 162] };
+            ? { debts: 1319.1, chat: 106.7, card: 416, remind: [47, 144] }
+            : { debts: 1301.4, chat: 128.7, card: 395, remind: [31, 162] };
 
         function travel() {
             var tabs = live.querySelector(".ios-tabbar");
@@ -417,7 +413,7 @@
         function barless() { return "inset(" + 54 * screen.offsetWidth / 402 + "px 0px 0px 0px)"; }
         // A rising sheet is cut along its own top edge on its frame (the points measured on the captures, the corners'
         // radius 40), so it rides exactly as it lands: no step when the whole frame comes in (owner: it jumped ~7 px).
-        var sheetTops = { "b-form": 61.5, "b-cats": 71.5, "c-chat-top": 61.5, "g-history-filter": 61.5, "h-payment": 61.5 };
+        var sheetTops = { "b-form": 61.5, "b-cats": 71.5, "c-chat-top": 61.5, "h-payment": 61.5 };
         function sheetEdge(name) {
             return function () {
                 var pt = screen.offsetWidth / 402, top = (sheetTops[name] || 61.5) * pt;
@@ -622,16 +618,6 @@
                     show(tl, step[0], "cut", step[1] + 0.12);
                 });
                 release(tl, 4.9);
-            },
-            // History: the «Категорія» filter opens as a sheet, «Кафе й ресторани» closes it on the filtered list.
-            history: function (tl) {
-                show(tl, "g-history", "push", 0);
-                tap(tl, 295, 145, 1.6);
-                show(tl, "g-history-filter", "sheet", 1.75);
-                tap(tl, 154, 245, 3.3);
-                show(tl, "g-history-filtered", "drop", 3.45);
-                release(tl, 3.9);
-                mark(tl, 18, 712, spot.reset, 46, 4.3, 2.2);
             },
             // The calendar: the month, then as a list, then a payment (MEGOGO) opened.
             calendar: function (tl) {

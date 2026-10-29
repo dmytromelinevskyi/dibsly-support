@@ -5,7 +5,7 @@ import html, os, re, sys
 
 sys.dont_write_bytecode = True
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from pages import CSS, JS, footer, nav  # the header and the footer, one copy for every page (tools/pages.py)
+from pages import CSS, JS, footer, nav, newtab  # the header and the footer, one copy for every page (tools/pages.py)
 
 ROOT = sys.argv[1] if len(sys.argv) > 1 else "."
 SRC = f"{ROOT}/sources/app-1.0.2"
@@ -118,6 +118,7 @@ def page(name, other, lang, md, kicker, desc):
 </body>
 </html>
 '''
+    out = newtab(out)
     open(f"{ROOT}/{name}", "w").write(out)
     print(name, len(out), len(sections), "sections")
 

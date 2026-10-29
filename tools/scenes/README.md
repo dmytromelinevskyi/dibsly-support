@@ -24,12 +24,12 @@ the English screens need the same layout. What the page draws over them in Engli
 «Lidl · −$42.13 from Chase» (the first purchase in Activity on the English strip), «+» → 8, 5 → «Cafés», and the toast
 «Expense saved · Cafés · −$85»; change those lines in `en.html` if the frames show something else.
 
-## The steps and their frames (2026-10-29, task 13)
+## The steps and their frames (2026-10-29, task 13; task 16 took History out)
 
 01 «Записується саме» (`a-main`, `a-after`), 02 «+» (`b-*`), 03 the chat (`c-chat-top` rises as a sheet, scrolls to
-`c-chat`), 04 analytics (`d-analytics`, `d-cashflow`, `d-trends`, `d-capital`), 05 history (`g-history`, the
-`g-history-filter` sheet, `g-history-filtered`), 06 the calendar (`h-calendar`, `h-calendar-list`, the `h-payment`
-sheet), 07 plan and goals (`c-plan`, `c-goals`), 08 money together (`i-savings`, scrolling to `i-savings-accounts`),
-09 debts and credits (Main's strip, then `f-main-money`, `f-debt`, back, `f-credits`), 10 investments (`c-invest`),
-11 FOP (`c-fop`). A scroll between two captures of one screen moves by the distance between them (measured on the
-frames); what sits elsewhere on the English frames is in `spot` in `v3/v3.js` (the rest is the same for both).
+`c-chat`), 04 analytics (`d-analytics`, `d-cashflow`, `d-trends`, `d-capital`), 05 the calendar (`h-calendar`,
+`h-calendar-list`, the `h-payment` sheet), 06 plan and goals (`c-plan`, `c-goals`), 07 money together (`i-savings`,
+scrolling to `i-savings-accounts`), 08 debts and credits (Main's strip, then `f-main-money`, `f-debt`, back,
+`f-credits`), 09 investments (`c-invest`), 10 FOP (`c-fop`). A scroll between two captures of one screen moves by the
+distance between them (measured on the frames); what sits elsewhere on the English frames is in `spot` in `v3/v3.js`
+(the rest is the same for both).
