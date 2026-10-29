@@ -16,11 +16,11 @@ L = {
                          later="Забагато повідомлень за годину. Спробуй трохи пізніше.",
                          email_bad="Схоже, в пошті помилка. Перевір її або залиш поле порожнім.",
                          note="Текст і пошту бачить лише команда Dibsly.", privacy="Конфіденційність"),
-               nav=[("index.html#ask", "Чат"), ("features-uk.html", "Можливості"), ("index.html#price", "Ціна"),
-                    ("support-uk.html", "Підтримка")],
+               nav=[("features-uk.html", "Можливості"), ("help-uk.html", "Інструкції"), ("support-uk.html", "Підтримка"), ("./#price", "Ціна")],
+               main="Головне меню", get="Завантажити", other_name="English", kicker="Можливості",
                store="Завантажити в App Store", more="Є питання? Напиши: ",
-               foot=[("help-uk.html", "Інструкції"), ("support-uk.html", "Підтримка"), ("privacy-uk.html", "Конфіденційність"),
-                     ("terms-uk.html", "Умови")], help="help-uk.html", privacy="privacy-uk.html",
+               foot=[("features-uk.html", "Можливості"), ("help-uk.html", "Інструкції"), ("support-uk.html", "Підтримка"),
+                     ("privacy-uk.html", "Конфіденційність"), ("terms-uk.html", "Умови")], help="help-uk.html", privacy="privacy-uk.html",
                desc="Що вміє Dibsly і навіщо: кармани, що таке дохід і витрата, рахунки, імпорт банків і Apple Pay, чат з Dibsly, аналітика, план, цілі, інвестиції, сайт і ChatGPT чи Claude."),
     "en": dict(page="features.html", other="features-uk.html", other_lang="uk", other_label="UK", home="en.html",
                title="What Dibsly can do", h1="Everything Dibsly can do",
@@ -35,10 +35,10 @@ L = {
                          later="Too many messages this hour. Try again a bit later.",
                          email_bad="The e-mail looks wrong. Check it or leave the field empty.",
                          note="Only the Dibsly team sees the text and the e-mail.", privacy="Privacy"),
-               nav=[("en.html#ask", "Chat"), ("features.html", "Features"), ("en.html#price", "Price"),
-                    ("support.html", "Support")],
+               nav=[("features.html", "Features"), ("help.html", "Guides"), ("support.html", "Support"), ("en.html#price", "Price")],
+               main="Main menu", get="Download", other_name="Українська", kicker="Features",
                store="Download on the App Store", more="Questions? Write to ",
-               foot=[("help.html", "Guides"), ("support.html", "Support"), ("privacy.html", "Privacy"), ("terms.html", "Terms")],
+               foot=[("features.html", "Features"), ("help.html", "Guides"), ("support.html", "Support"), ("privacy.html", "Privacy"), ("terms.html", "Terms")],
                help="help.html", privacy="privacy.html",
                desc="What Dibsly can do and why: pockets, what counts as income and spending, accounts, bank imports and Apple Pay, the chat with Dibsly, analytics, plan, goals, investments, the website and ChatGPT or Claude."),
 }
@@ -396,7 +396,7 @@ def roadmap(lang):
             f'<textarea id="missing-text" name="text" rows="4" maxlength="2000" required placeholder="{e(f["placeholder"])}"></textarea>'
             f'<div class="form-row"><label class="sr" for="missing-email">{e(f["email"])}</label>'
             f'<input id="missing-email" name="email" type="email" autocomplete="email" placeholder="{e(f["email"])}">'
-            f'<button class="button primary" type="submit">{e(f["send"])}</button></div>'
+            f'<button class="button hot" type="submit">{e(f["send"])}</button></div>'
             f'<input class="trap" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">'
             f'<p class="form-status" role="status"></p>'
             f'<p class="form-note">{e(f["note"])} <a href="{t["privacy"]}">{e(f["privacy"])}</a></p></form>')
@@ -428,77 +428,87 @@ def build(lang):
         body.append(f'<section class="fsection" id="{sid}"><h2>{e(title)}</h2>' + "".join(items) + "</section>")
     toc.append(f'<a href="#next">{e(t["next"])}</a>')
     body.append(roadmap(lang))
-    nav = "".join(f'<a href="{h}">{e(x)}</a>' for h, x in t["nav"])
-    foot = "".join(f'<a href="{h}">{e(x)}</a>' for h, x in t["foot"])
+    nav = "\n".join(f'                <a href="{h}"{" aria-current=" + chr(34) + "page" + chr(34) if h == t["page"] else ""}>{e(x)}</a>' for h, x in t["nav"])
+    foot = "\n".join(f'            <a href="{h}">{e(x)}</a>' for h, x in t["foot"])
+    remember = f"try {{ localStorage.setItem('dibsly.site.lang', '{t['other_lang']}'); }} catch (error) {{}}"
+    links = "\n".join(f"                {x}" for x in toc)
     page = f'''<!doctype html>
 <html lang="{lang}">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>{e(t["title"])} · Dibsly</title>
     <meta name="description" content="{e(t["desc"])}">
-    <meta name="theme-color" content="#F7F3EE">
-    <meta property="og:title" content="{e(t["title"])}">
-    <meta property="og:description" content="{e(t["desc"])}">
-    <meta property="og:image" content="https://dibslyapp.com/img/shots/{lang}-web.jpg">
+    <meta name="theme-color" content="#0E0C0B">
+    <link rel="canonical" href="https://dibslyapp.com/{t["page"]}">
     <link rel="alternate" hreflang="uk" href="https://dibslyapp.com/features-uk.html">
     <link rel="alternate" hreflang="en" href="https://dibslyapp.com/features.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Dibsly">
+    <meta property="og:title" content="{e(t["title"])}">
+    <meta property="og:description" content="{e(t["desc"])}">
+    <meta property="og:url" content="https://dibslyapp.com/{t["page"]}">
+    <meta property="og:image" content="https://dibslyapp.com/img/shots/{lang}-web.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/png" href="img/favicon.png">
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-    <link rel="stylesheet" href="v2/v2.css">
-    <link rel="stylesheet" href="v2/features.css">
-    <script>
-        document.documentElement.classList.add("js");
-        try {{ if (localStorage.getItem("dibsly.site.theme") === "dark") document.documentElement.dataset.theme = "dark"; }} catch (error) {{}}
-    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="v3/pages.css">
+    <link rel="stylesheet" href="v3/features.css">
 </head>
 <body>
     <header class="nav">
-        <div class="wrap">
-            <a class="brand" href="{t["home"]}"><img src="img/apple-touch-icon.png" alt="" width="30" height="30">Dibsly</a>
-            <nav class="nav-links" aria-label="{t["toc"]}">{nav}</nav>
-            <a class="lang" href="{t["other"]}" hreflang="{t["other_lang"]}" onclick="try {{ localStorage.setItem('dibsly.site.lang', '{t["other_lang"]}'); }} catch (error) {{}}">{t["other_label"]}</a>
-            <button class="theme" type="button" aria-label="{"Темна чи світла тема" if lang == "uk" else "Dark or light theme"}">◐</button>
-            <a class="button quiet small signin" href="https://my.dibslyapp.com">{t["signin"]}</a>
-            <a class="button primary small" href="https://apps.apple.com/app/id6765870838">App Store</a>
-        </div>
+        <nav class="nav-pill" aria-label="{t["main"]}">
+            <a class="brand" href="{t["home"]}"><img src="img/apple-touch-icon.png" alt="" width="28" height="28">Dibsly</a>
+            <div class="nav-links">
+{nav}
+            </div>
+            <div class="nav-actions">
+                <a class="lang" href="{t["other"]}" hreflang="{t["other_lang"]}" lang="{t["other_lang"]}" aria-label="{t["other_name"]}" onclick="{remember}">{t["other_label"]}</a>
+                <a class="pill ghost" href="https://my.dibslyapp.com">{t["signin"]}</a>
+                <a class="pill hot" href="https://apps.apple.com/app/id6765870838">{t["get"]}</a>
+            </div>
+        </nav>
     </header>
+
     <main>
-        <section class="fhero">
+        <section class="page-hero fhero">
             <div class="wrap">
                 <div>
+                    <p class="kicker"><span class="dot"></span>{e(t["kicker"])}</p>
                     <h1>{e(t["h1"])}</h1>
                     <p class="lead">{e(t["lead"])}</p>
                 </div>
-                <div class="mascot" data-play="hello" data-then="idle" aria-hidden="true">
-                    <picture class="mascot-still"><img class="light-only" src="img/dibsly.png" alt="" width="404" height="386"><img class="dark-only" src="img/dibsly-dark.png" alt="" width="404" height="386"></picture>
-                    <div class="mascot-stage"></div>
-                </div>
+                <div class="mascot" aria-hidden="true"><img src="img/dibsly-dark.png" alt="" width="404" height="386"></div>
             </div>
         </section>
-        <div class="wrap fgrid">
-            <nav class="toc" aria-label="{t["toc"]}">{"".join(toc)}</nav>
+        <div class="wrap with-toc">
+            <nav class="toc" aria-label="{t["toc"]}">
+{links}
+            </nav>
             <div class="flist">
 {chr(10).join(body)}
                 <div class="fend">
-                    <a class="button primary" href="https://apps.apple.com/app/id6765870838">{e(t["store"])}</a>
+                    <a class="button hot" href="https://apps.apple.com/app/id6765870838">{e(t["store"])}</a>
                     <p>{e(t["more"])}<a href="mailto:dibslysupport@gmail.com">dibslysupport@gmail.com</a></p>
                 </div>
             </div>
         </div>
     </main>
+
     <footer>
-        <div class="wrap">
-            <nav aria-label="Links">{foot}<a href="https://my.dibslyapp.com">my.dibslyapp.com</a></nav>
-            <p>© 2026 Dibsly</p>
+        <div class="wrap foot-row">
+            <b>Dibsly</b>
+{foot}
+            <a href="https://my.dibslyapp.com">my.dibslyapp.com</a>
+            <a href="{t["other"]}" hreflang="{t["other_lang"]}" lang="{t["other_lang"]}" onclick="{remember}">{t["other_name"]}</a>
+            <span class="copy-r">© 2026 Dibsly</span>
         </div>
     </footer>
-    <script>
-        window.DIBSLY_ASSETS = "v2/";
-        window.DIBSLY_IMAGES = "img/";
-    </script>
-    <script src="js/lottie_light.min.js" defer></script>
-    <script src="v2/v2.js" defer></script>
+    <script src="v3/pages.js" defer></script>
+    <script src="v3/features.js" defer></script>
     <script src="v2/ideas.js" defer></script>
 </body>
 </html>
