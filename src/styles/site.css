@@ -424,21 +424,23 @@ body {
   width: 18px;
   height: 18px;
 }
+/* Over the cream «Придивись ближче»: the header turns cream with dark words. */
 html[data-header-tone='light'] .site-header {
-  color: #253b1c;
-  background: linear-gradient(#e1e5d9, #e1e5d9ed 65%, #e1e5d900);
+  color: #1a1410;
+  background: linear-gradient(#f6ebdd, #f6ebdded 65%, #f6ebdd00);
 }
 html[data-header-tone='light'] .site-nav,
 html[data-header-tone='light'] .site-language {
-  color: #60764e;
+  color: rgba(26, 20, 16, 0.7);
 }
 html[data-header-tone='light'] .site-header .icon-button {
-  background: #d5ddcb;
-  border-color: #71836740;
+  background: rgba(26, 20, 16, 0.06);
+  border-color: rgba(26, 20, 16, 0.16);
+  color: #1a1410;
 }
 html[data-header-tone='light'] .store-link {
-  background: #304328;
-  color: #edf1e6;
+  background: #1a1410;
+  color: #f6ebdd;
 }
 .document-page .reference-device {
   width: 100%;

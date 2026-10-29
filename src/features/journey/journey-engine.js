@@ -90,14 +90,22 @@ export async function startJourney(root, { lang, reduced }) {
 
     // ------------------------------------------------------------ the hero comes in (no tilt: Roma's frame stands)
     var tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
-    tl.from('.hero .kicker', { y: 20, opacity: 0, duration: 1 })
-      .from(
+    // The page comes prerendered with these hidden (journey.css): nothing shows in its layout place first and then
+    // jumps (owner, 2026-10-29: the phone flashed further left on a reload, «как будто 25-й кадр»).
+    tl.fromTo('.hero .kicker', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 1 })
+      .fromTo(
         '.hero-title .word',
-        { yPercent: 115, rotate: 4, duration: 1.4, stagger: 0.07 },
+        { yPercent: 115, rotate: 4 },
+        { yPercent: 0, rotate: 0, duration: 1.4, stagger: 0.07 },
         '-=0.7'
       )
       .to('.hero .fade-up', { y: 0, opacity: 1, duration: 1.2, stagger: 0.1 }, '-=1.0')
-      .from('.hero-phone', { y: 160, opacity: 0, duration: 1.8, onUpdate: moved }, '-=1.5');
+      .fromTo(
+        '.hero-phone',
+        { y: 160, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1.8, onUpdate: moved },
+        '-=1.5'
+      );
 
     // ------------------------------------------------------------ the field follows the page
     if (field) {

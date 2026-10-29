@@ -3,7 +3,6 @@
    .screen sits in its glass, the same 402 × 874 points. Six steps: the phone's column spans the hero, them and the end. */
 .v3 {
   position: relative;
-  z-index: 2;
 }
 .v3 .wrap {
   max-width: 1240px;
@@ -228,7 +227,8 @@
   grid-column: 2;
   grid-row: 1 / span 8;
   position: relative;
-  z-index: 3;
+  /* Above the journey line (z-index 6): the line runs whole and the phone stands over it (owner, 2026-10-29). */
+  z-index: 7;
 }
 .v3 .journey-end {
   grid-column: 1;
@@ -773,4 +773,14 @@
 /* The phone's travel between the sides (journey-engine.js moves and turns it; Roma's frame keeps its look). */
 .v3 .phone-magnet {
   will-change: transform;
+}
+
+/* Until the hero's entrance starts, its phone, kicker and title words are not shown (no flash of the prerendered
+   layout); with «reduce motion» or no engine (.no-motion) they are simply there. */
+.js:not(.no-motion) .v3 .hero .kicker,
+.js:not(.no-motion) .v3 .hero-phone {
+  opacity: 0;
+}
+.js:not(.no-motion) .v3 .hero-title .word {
+  transform: translateY(115%);
 }

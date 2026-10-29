@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import IPhoneFrame from '../../components/device/IPhoneFrame.jsx';
 import Icon from '../../components/site/Icon.jsx';
 import '../../styles/gallery.css';
@@ -49,6 +49,29 @@ const labels = {
   fop: ['Окрема кишеня для справи.', 'A pocket for your business.'],
 };
 export default function FeatureGallery({ lang }) {
+  const section = useRef(null);
+  // The header turns cream while it is over this section.
+  useEffect(() => {
+    let raf = 0;
+    const update = () => {
+      raf = 0;
+      const rect = section.current?.getBoundingClientRect();
+      document.documentElement.dataset.headerTone =
+        rect && rect.top <= 70 && rect.bottom > 70 ? 'light' : 'dark';
+    };
+    const schedule = () => {
+      if (!raf) raf = requestAnimationFrame(update);
+    };
+    addEventListener('scroll', schedule, { passive: true });
+    addEventListener('resize', schedule, { passive: true });
+    update();
+    return () => {
+      cancelAnimationFrame(raf);
+      removeEventListener('scroll', schedule);
+      removeEventListener('resize', schedule);
+      delete document.documentElement.dataset.headerTone;
+    };
+  }, []);
   const [group, setGroup] = useState(0),
     [selected, setSelected] = useState('voice');
   const uk = lang === 'uk',
@@ -59,7 +82,7 @@ export default function FeatureGallery({ lang }) {
     setSelected(groups[index].scenes[0]);
   };
   return (
-    <section className="feature-gallery" id="closer" aria-labelledby="gallery-title">
+    <section ref={section} className="feature-gallery" id="closer" aria-labelledby="gallery-title">
       <div className="gallery-layout">
         <div className="gallery-intro">
           <p className="eyebrow">{uk ? 'Твій простір можливостей' : 'Your possibilities'}</p>

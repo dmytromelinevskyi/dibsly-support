@@ -76,12 +76,14 @@ export default function JourneyLanding({ lang }) {
   useEffect(() => {
     let stop = null,
       cancelled = false;
-    import('./journey-engine.js').then(({ startJourney }) =>
-      startJourney(root.current, { lang, reduced }).then((cleanup) => {
+    import('./journey-engine.js')
+      .then(({ startJourney }) => startJourney(root.current, { lang, reduced }))
+      .then((cleanup) => {
         if (cancelled) cleanup();
         else stop = cleanup;
       })
-    );
+      // No engine (a network error): the page is simply there, as with «reduce motion».
+      .catch(() => document.documentElement.classList.add('no-motion'));
     return () => {
       cancelled = true;
       stop?.();
@@ -110,7 +112,7 @@ export default function JourneyLanding({ lang }) {
           <div className="stage-sticky">
             <div className="phone-lift">
               <div className="phone-magnet">
-                <IPhoneFrame className="hero-phone" data-journey-hole>
+                <IPhoneFrame className="hero-phone">
                   <div className="screen" data-tabs={data.tabs}>
                     <div className="live">
                       <img

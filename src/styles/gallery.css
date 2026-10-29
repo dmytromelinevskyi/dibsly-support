@@ -1,10 +1,17 @@
-/* «Придивись ближче» in the landing's own look (owner, 2026-10-29: «вообще не в нашем стиле и шрифты, и цвета и бг»):
-   the dark page with its particles behind, main's type scale (Geologica titles with the orange second line, Manrope),
-   the kicker with its orange dot, groups as main's pills and the orange accent; Roma's layout and phone frame stay. */
+/* «Придивись ближче» in the landing's own look (owner, 2026-10-29: «вообще не в нашем стиле и шрифты, и цвета и бг»,
+   then «можно сделать белым (кремовым)»): the cream of main's ink as the ground with its dark brown as the text, main's
+   type scale (Geologica titles with the orange second line, Manrope), the kicker with its orange dot, groups as pills
+   and the orange accent; Roma's layout and phone frame stay. */
 .feature-gallery {
+  --g-ink: #1a1410;
+  --g-soft: rgba(26, 20, 16, 0.74);
+  --g-muted: rgba(26, 20, 16, 0.56);
+  --g-line: rgba(26, 20, 16, 0.13);
+  --g-orange: #e8661c;
   position: relative;
   z-index: 4;
-  color: var(--ink);
+  background: #f6ebdd;
+  color: var(--g-ink);
   padding: 140px 40px 80px;
   scroll-margin-top: 0;
 }
@@ -18,7 +25,7 @@
   height: 760px;
   transform: translateY(-50%);
   border-radius: 50%;
-  background: radial-gradient(closest-side, rgba(232, 110, 28, 0.13), rgba(232, 110, 28, 0));
+  background: radial-gradient(closest-side, rgba(255, 138, 61, 0.22), rgba(255, 138, 61, 0));
   pointer-events: none;
 }
 .gallery-layout {
@@ -45,7 +52,7 @@
   font: 600 13px/1.3 var(--text);
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--g-muted);
 }
 .gallery-intro .eyebrow::before {
   content: '';
@@ -65,14 +72,14 @@
   display: block;
 }
 .gallery-intro h2 > .hot {
-  color: var(--orange);
+  color: var(--g-orange);
 }
 .gallery-lead {
   max-width: 520px;
   margin: 24px 0 0;
   font-size: 19px;
   line-height: 1.6;
-  color: var(--soft);
+  color: var(--g-soft);
 }
 .gallery-groups {
   grid-column: 1;
@@ -86,10 +93,10 @@
 .gallery-groups button {
   min-height: 40px;
   padding: 8px 16px;
-  border: 1px solid var(--line-2);
+  border: 1px solid var(--g-line);
   border-radius: 999px;
-  background: rgba(29, 24, 21, 0.82);
-  color: var(--soft);
+  background: rgba(26, 20, 16, 0.04);
+  color: var(--g-soft);
   font: 600 14px/1.2 var(--text);
   cursor: pointer;
   transition:
@@ -99,8 +106,8 @@
     transform 0.15s;
 }
 .gallery-groups button:hover {
-  border-color: var(--orange);
-  color: var(--ink);
+  border-color: var(--g-orange);
+  color: var(--g-ink);
 }
 .gallery-groups button:active {
   transform: scale(0.97);
@@ -123,30 +130,30 @@
   min-height: 56px;
   padding: 14px 0;
   border: 0;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--g-line);
   background: none;
   text-align: left;
   font: 600 18px/1.3 var(--text);
-  color: var(--muted);
+  color: var(--g-muted);
   cursor: pointer;
   transition: color 0.2s;
 }
 .gallery-features button:last-child {
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--g-line);
 }
 .gallery-features button:hover {
-  color: var(--ink);
+  color: var(--g-ink);
 }
 .gallery-features button > span {
   font: 600 13px/1 var(--text);
   font-variant-numeric: tabular-nums;
-  color: var(--dim);
+  color: var(--g-muted);
 }
 .gallery-features button > svg {
   width: 16px;
   height: 16px;
   margin-left: auto;
-  color: var(--orange);
+  color: var(--g-orange);
   opacity: 0;
   transform: translateX(-8px);
   transition:
@@ -154,10 +161,10 @@
     transform 0.35s var(--ease);
 }
 .gallery-features button[aria-pressed='true'] {
-  color: var(--ink);
+  color: var(--g-ink);
 }
 .gallery-features button[aria-pressed='true'] > span {
-  color: var(--orange);
+  color: var(--g-orange);
 }
 .gallery-features button[aria-pressed='true'] > svg {
   opacity: 1;
@@ -179,7 +186,7 @@
   top: 4%;
   font: 800 clamp(200px, 26vw, 400px)/1 var(--display);
   letter-spacing: -0.065em;
-  color: rgba(255, 138, 61, 0.07);
+  color: rgba(232, 102, 28, 0.1);
   pointer-events: none;
 }
 .gallery-device {
@@ -188,8 +195,8 @@
   max-width: 84%;
   flex: none;
   box-shadow:
-    0 0 0 1px #b4b4a54d,
-    0 40px 90px rgba(0, 0, 0, 0.6);
+    0 0 0 1px rgba(26, 20, 16, 0.25),
+    0 40px 80px rgba(70, 40, 15, 0.3);
 }
 .gallery-device img {
   object-position: top;
@@ -199,7 +206,7 @@
   position: absolute;
   bottom: 0;
   font: 600 15px/1.3 var(--text);
-  color: var(--soft);
+  color: var(--g-soft);
 }
 .gallery-all {
   grid-column: 1;
@@ -210,11 +217,11 @@
   justify-self: start;
   padding-top: 24px;
   font: 600 16px/1.3 var(--text);
-  color: var(--orange-soft);
+  color: var(--g-orange);
   transition: color 0.2s;
 }
 .gallery-all:hover {
-  color: var(--ink);
+  color: var(--g-ink);
 }
 .gallery-all svg {
   width: 13px;
@@ -296,15 +303,15 @@
     gap: 14px;
     margin: 24px 0 12px;
     padding: 0 16px;
-    border: 1px solid var(--line-2);
+    border: 1px solid var(--g-line);
     border-radius: 16px;
-    background: rgba(29, 24, 21, 0.82);
+    background: rgba(26, 20, 16, 0.04);
   }
   .gallery-select > span {
     font: 600 13px/1 var(--text);
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--muted);
+    color: var(--g-muted);
   }
   .gallery-select select {
     flex: 1;
@@ -312,13 +319,13 @@
     min-height: 48px;
     border: 0;
     background: transparent;
-    color: var(--ink);
+    color: var(--g-ink);
     font: 600 16px var(--text);
     cursor: pointer;
   }
   .gallery-select option {
-    background: var(--card);
-    color: var(--ink);
+    background: #f6ebdd;
+    color: var(--g-ink);
   }
   .gallery-features {
     grid-row: 3;
