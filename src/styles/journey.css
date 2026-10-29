@@ -902,8 +902,11 @@
   .v3 .step-copy {
     visibility: hidden;
   }
+  /* No room for the header here: it is away while the steps snap, and the page's 110 px for anchors under it made each
+     snap stop that much short — step 01 showed the hero's buttons above the phone (owner, 2026-10-29). */
   html.snap-steps {
     scroll-snap-type: y mandatory;
+    scroll-padding-top: 0;
   }
   .v3 .hero,
   .v3 .step {

@@ -157,7 +157,8 @@ export function attachNav(root) {
       });
       // While a phone's steps snap under the stuck phone (html.snap-steps) the header stays away, so the phone can sit
       // at the top of the screen and be larger (owner, 2026-10-29: «скрин телефона побольше»).
-      var steps = document.documentElement.classList.contains('snap-steps');
+      var steps =
+        document.documentElement.classList.contains('snap-steps') && y > window.innerHeight * 0.6;
       nav.classList.toggle('hide', !open && ((y > lastY && y > 120) || steps));
       lastY = y;
     },
