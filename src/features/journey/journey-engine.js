@@ -322,49 +322,32 @@ export async function startJourney(root, { lang, reduced }) {
       undo.push(function () {
         html.classList.remove('snap-steps');
       });
-      var sticky = root.querySelector('.stage-sticky'),
-        box = root.querySelector('.journey');
-      // Where the stuck phone really ends, measured on the device (owner, 2026-10-29: on his iPhone the phone stood
-      // ~28 px lower than the CSS reckoned and covered the words): the sticky stage's top plus the phone's own place
-      // in it, without the moves the scripts give it. The words stick under it (journey.css, --phone-bottom).
-      var edge = function () {
-        var inside =
-          heroPhone.getBoundingClientRect().top -
-          sticky.getBoundingClientRect().top -
-          gsap.getProperty(heroPhone, 'y') -
-          gsap.getProperty(lift, 'y');
-        return parseFloat(getComputedStyle(sticky).top) + inside + heroPhone.offsetHeight;
+      // The caption under the phone shows the step in the middle of the window.
+      var captions = all('.stage-caption'),
+        steps = all('.step');
+      var show = function (id) {
+        captions.forEach(function (caption) {
+          caption.classList.toggle('on', caption.getAttribute('data-for') === id);
+        });
       };
-      var place = function () {
-        box.style.setProperty('--phone-bottom', edge().toFixed(1) + 'px');
-      };
-      place();
-      ScrollTrigger.addEventListener('refresh', place);
-      all('.step-copy').forEach(function (copy) {
-        gsap.fromTo(
-          copy,
-          { opacity: 1 },
-          {
-            opacity: 0,
-            ease: 'none',
-            // Whole while they sit under the phone, gone once they are behind it.
-            scrollTrigger: {
-              trigger: copy,
-              start: function () {
-                return 'top ' + (edge() + 12) + 'px';
-              },
-              end: function () {
-                return 'top ' + (edge() - 24) + 'px';
-              },
-              scrub: true,
-              invalidateOnRefresh: true,
-            },
-          }
-        );
+      steps.forEach(function (step, index) {
+        ScrollTrigger.create({
+          trigger: step,
+          start: 'top 60%',
+          end: 'bottom 60%',
+          onEnter: function () {
+            show(step.id);
+          },
+          onEnterBack: function () {
+            show(step.id);
+          },
+          onLeaveBack: function () {
+            if (!index) show(null);
+          },
+        });
       });
       return function () {
-        ScrollTrigger.removeEventListener('refresh', place);
-        box.style.removeProperty('--phone-bottom');
+        show(null);
       };
     });
     undo.push(function () {

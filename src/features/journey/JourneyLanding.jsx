@@ -242,6 +242,24 @@ export default function JourneyLanding({ lang }) {
                 </IPhoneFrame>
               </div>
             </div>
+            {/* Phones and tablets: the steps' words under the phone, in the same stuck block, so they are always
+                right under it whatever Safari's bars do (owner, 2026-10-29); the steps' own words are for wide
+                screens and screen readers. */}
+            <div className="stage-captions" aria-hidden="true">
+              {steps.map((step) => (
+                <div key={step.id} className="stage-caption" data-for={step.id}>
+                  <p className="kicker">{step.kicker}</p>
+                  <p className="caption-title">
+                    {step.title.map((line, index) => (
+                      <span key={index} className={`line${line.tone ? ` ${line.tone}` : ''}`}>
+                        {line.text}
+                      </span>
+                    ))}
+                  </p>
+                  <p className="caption-lead">{step.lead}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
         <section className="hero" id="top" data-section data-scene="hero">
