@@ -156,8 +156,8 @@ S = [
  ]),
  ("everywhere", "Скрізь", "Everywhere", [
   ("website", "pro",
-   ("Сайт my.dibslyapp.com", "Ті самі дані на великому екрані: історія з пошуком, аналітика, план, календар і чернетки. Зміни одразу з'являються на телефоні.", None),
-   ("my.dibslyapp.com", "The same data on a big screen: history with search, analytics, the plan, the calendar and drafts. Changes show up on your phone at once.", None),
+   ("Сайт my.dibslyapp.com", "Ті самі дані на великому екрані: історія з пошуком, аналітика, план, календар, чернетки й усі бренди з логотипами, з пошуком. Зміни одразу з'являються на телефоні.", None),
+   ("my.dibslyapp.com", "The same data on a big screen: history with search, analytics, the plan, the calendar, drafts and every brand with its logo, with search. Changes show up on your phone at once.", None),
    ("browser", None), "website"),
   ("assistants", "pro",
    ("Dibsly у твоєму ChatGPT чи Claude", "Підключи Dibsly як конектор: питай про гроші, імпортуй виписки й став цілі просто у своєму асистенті. Записує тільки після твого «так», а кожну зміну видно в журналі, звідки її можна скасувати.", None),
@@ -241,8 +241,8 @@ IDEAS = ("ideas", "Як Dibsly думає про гроші", "How Dibsly thinks
    ("A shared account for two", "You share one account, not your whole Dibsly: you both see it, who put in what and who spent what, and a notification comes when the other adds something. Your personal accounts stay yours alone. One Premium is enough for both of you.", "Profile → Sharing"),
    None, ("phone", "shared"), "shared"),
   ("idea-save",
-   ("Нічого без твого «так»", "Чат з Dibsly, твій Claude чи ChatGPT спершу показують, що саме зміниться, і записують тільки після «Зберегти» чи твого «так». У чаті Dibsly зміну скасовує кнопка під карткою. Операції, виписки, угоди, категорії й рахунки, змінені через Claude чи ChatGPT, лежать у журналі ШІ на сайті, звідки їх можна скасувати.", None),
-   ("Nothing without your yes", "The chat with Dibsly, your Claude or ChatGPT first show exactly what will change and write it only after Save or your yes. In the Dibsly chat a button under the card undoes the change. Operations, statements, trades, categories and accounts changed through Claude or ChatGPT are kept in the AI journal on the website, where they can be undone.", None),
+   ("Нічого без твого «так»", "Чат з Dibsly, твій Claude чи ChatGPT спершу показують, що саме зміниться, і записують тільки після «Зберегти» чи твого «так». У чаті Dibsly зміну скасовує кнопка під карткою. Операції, виписки, угоди, категорії, рахунки, план місяця, платежі календаря, цілі й борги, змінені через Claude, ChatGPT чи чат на сайті, лежать на сайті в «Історія → Журнал ШІ», звідки їх можна скасувати.", None),
+   ("Nothing without your yes", "The chat with Dibsly, your Claude or ChatGPT first show exactly what will change and write it only after Save or your yes. In the Dibsly chat a button under the card undoes the change. Operations, statements, trades, categories, accounts, the month's plan, calendar payments, goals and debts changed through Claude, ChatGPT or the website's chat are kept on the website in History → AI journal, where they can be undone.", None),
    None, ("convo", [("me", "Перенеси поїздки Uber у Таксі", "Move my Uber rides to Taxi"),
                     ("ai", "12 операцій з «Транспорт» у «Таксі». Зберегти?", "12 operations from Transport to Taxi. Save?"),
                     ("me", "Зберегти", "Save"),
@@ -253,12 +253,6 @@ IDEAS = ("ideas", "Як Dibsly думає про гроші", "How Dibsly thinks
 # (`Server/sync/src/siteFeedback.ts` in dibsly-ios). Column (uk, en), then items: id, uk title, en title, uk text, en text.
 ROADMAP = [
  (("Робимо зараз", "Building now"), [
-  ("web-brands", "Бренди на сайті", "Brands on the website",
-   "Усі бренди з логотипами й категоріями, з пошуком.", "Every brand with its logo and category, with search."),
- ]),
- (("Далі", "Next"), [
-  ("undo-plans", "Скасування для планів, календаря й цілей", "Undo for plans, the calendar and goals",
-   "Як уже є для операцій: змінив через ШІ, передумав, скасував.", "As it already works for operations: changed through the AI, changed your mind, undone."),
   ("mono-one-tap", "monobank в один дотик", "monobank in one tap",
    "Підключення без токена, який треба копіювати руками.", "Connecting without a token copied by hand."),
  ]),

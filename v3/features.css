@@ -142,7 +142,8 @@
 .iex.steps li::before { content: counter(step); position: absolute; left: 14px; top: 50%; transform: translateY(-50%); width: 22px; height: 22px;
     display: grid; place-items: center; border-radius: 50%; background: var(--orange); color: #fff; font-size: 12.5px; }
 .iex.steps li:last-child { background: var(--peach); color: var(--peach-ink); }
-.rgrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 14px; }
+/* As many columns as the roadmap has groups (tools/features.py's ROADMAP), side by side; two, then one, on smaller screens. */
+.rgrid { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 14px; margin-top: 14px; }
 .rcol { background: var(--card); border-radius: var(--r-card); padding: 20px; }
 .rcol h3 { font-size: 15px; color: var(--muted); font-weight: 650; }
 .rcol ul { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 14px; }
@@ -182,14 +183,14 @@
 .fend p { margin: 0; color: var(--peach-ink); }
 
 @media (min-width: 901px) and (max-width: 1180px) {
-    .rgrid { grid-template-columns: repeat(2, 1fr); }
+    .rgrid { grid-auto-flow: row; grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 900px) {
     .feature, .feature.widevis, .feature.exvis { grid-template-columns: minmax(0, 1fr); gap: 22px; padding: 22px; }
     .fvisual .phone { max-width: 220px; }
     .pgrid { grid-template-columns: 1fr; }
     .feature.idea .ftext > .iex { max-width: none; }
-    .rgrid { grid-template-columns: 1fr; }
+    .rgrid { grid-auto-flow: row; grid-template-columns: 1fr; }
     .form-row { grid-template-columns: 1fr; }
     .missing-form { padding: 22px; }
     .fhero .wrap { grid-template-columns: minmax(0, 1fr) 96px; }
