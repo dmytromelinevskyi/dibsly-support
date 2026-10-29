@@ -14,7 +14,7 @@
             {
               "tag": "p",
               "attrs": { "class": "kicker" },
-              "children": ["11 · Your money everywhere · Premium"]
+              "children": ["07 · Your money everywhere · Premium"]
             },
             {
               "tag": "h2",
@@ -121,7 +121,7 @@
               "tag": "div",
               "attrs": { "class": "center" },
               "children": [
-                { "tag": "p", "attrs": { "class": "kicker" }, "children": ["12 · Price"] },
+                { "tag": "p", "attrs": { "class": "kicker" }, "children": ["08 · Price"] },
                 {
                   "tag": "h2",
                   "attrs": { "class": "title" },
@@ -285,7 +285,7 @@
               "tag": "div",
               "attrs": { "class": "copy narrow" },
               "children": [
-                { "tag": "p", "attrs": { "class": "kicker" }, "children": ["13 · Questions"] },
+                { "tag": "p", "attrs": { "class": "kicker" }, "children": ["09 · Questions"] },
                 {
                   "tag": "h2",
                   "attrs": { "class": "title small" },

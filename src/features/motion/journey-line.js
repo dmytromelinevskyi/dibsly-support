@@ -8,7 +8,8 @@ export function createJourneyLine(canvas) {
     shown = null,
     last = 0,
     landed = -1,
-    wasHome = false;
+    wasHome = false,
+    settled = true;
   function circle(x, y, r) {
     context.beginPath();
     context.arc(x, y, Math.max(0.1, r), 0, Math.PI * 2);
@@ -18,8 +19,8 @@ export function createJourneyLine(canvas) {
     measure(w, h, total, destination) {
       width = w;
       height = h;
-      // A thin line and a dot: 1× is enough, and it is redrawn every frame.
-      const dpr = 1;
+      // Drawn only while the page scrolls, so a sharp 2× line costs nothing at rest.
+      const dpr = Math.min(2, globalThis.devicePixelRatio || 1);
       canvas.width = w * dpr;
       canvas.height = h * dpr;
       context.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -45,20 +46,21 @@ export function createJourneyLine(canvas) {
       const landing = landed < 0 ? 1 : Math.min(1, (now - landed) / 1100);
       context.clearRect(0, 0, width, height);
       context.save();
-      if (
-        exclude && exclude.bottom !== undefined
-          ? exclude.bottom > 0 && exclude.top < height
-          : exclude
-      ) {
+      // The line passes behind the phones: one rect or several, only those on the screen.
+      const holes = (Array.isArray(exclude) ? exclude : [exclude]).filter(
+        (rect) => rect && (rect.bottom === undefined || (rect.bottom > 0 && rect.top < height))
+      );
+      if (holes.length) {
         context.beginPath();
         context.rect(0, 0, width, height);
-        context.roundRect(
-          exclude.left,
-          exclude.top,
-          exclude.width,
-          exclude.height,
-          Math.min(25, exclude.width * 0.12)
-        );
+        for (const rect of holes)
+          context.roundRect(
+            rect.left,
+            rect.top,
+            rect.width,
+            rect.height,
+            Math.min(25, rect.width * 0.12)
+          );
         context.clip('evenodd');
       }
       context.lineWidth = 1;
@@ -153,8 +155,13 @@ export function createJourneyLine(canvas) {
       circle(head.x, head.y, head.radius);
       context.restore();
       canvas.dataset.merge = head.merge.toFixed(4);
+      settled = Math.hypot(aim.x - shown.x, aim.y - shown.y) < 0.3 && landing >= 1;
       canvas.dataset.headX = head.x.toFixed(2);
       canvas.dataset.headY = head.y.toFixed(2);
+    },
+    /** The head has caught up with the scroll and no landing plays: nothing moves until the next scroll. */
+    get settled() {
+      return settled;
     },
     destroy() {
       context.clearRect(0, 0, width, height);

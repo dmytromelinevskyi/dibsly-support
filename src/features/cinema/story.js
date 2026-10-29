@@ -153,8 +153,13 @@ const guideAnchors = {
   calendar: 'calendar',
   together: 'shared',
 };
-export function getChapters(lang) {
-  return chapterDefinitions.map((chapter) => ({
+/** The landing shows six chapters (owner, 2026-10-29); analytics, calendar, plan and investments are in the gallery. */
+export const landingChapterIds = ['auto', 'plus', 'ask', 'together', 'money', 'fop'];
+export function getChapters(lang, ids) {
+  const definitions = ids
+    ? ids.map((id) => chapterDefinitions.find((chapter) => chapter.id === id))
+    : chapterDefinitions;
+  return definitions.map((chapter) => ({
     ...chapter,
     title: chapter.title[lang],
     word: chapter.word[lang],
