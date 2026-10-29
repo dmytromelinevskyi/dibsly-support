@@ -364,3 +364,10 @@ html.lenis body {
 .landing-react > .field.on {
   opacity: 1;
 }
+/* «Твої гроші всюди»: the site, the assistants and sync with backups side by side (owner, 2026-10-29). */
+@media (min-width: 801px) {
+  .landing-details .cards3.three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 40px;
+  }
+}

@@ -63,7 +63,7 @@
             },
             {
               "tag": "div",
-              "attrs": { "class": "cards3 two" },
+              "attrs": { "class": "cards3 three" },
               "children": [
                 {
                   "tag": "article",
@@ -100,6 +100,25 @@
                       "tag": "p",
                       "attrs": { "class": "foot" },
                       "children": ["«Ось виписка Revolut, запиши»"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "article",
+                  "attrs": { "class": "spot" },
+                  "children": [
+                    { "tag": "h3", "attrs": {}, "children": ["Синхронізація й копії"] },
+                    {
+                      "tag": "p",
+                      "attrs": {},
+                      "children": [
+                        "Один акаунт — і ті самі гроші на iPhone і на сайті. Зашифровані резервні копії в iCloud Drive чи Google Drive — безкоштовно, автоматично або вручну."
+                      ]
+                    },
+                    {
+                      "tag": "p",
+                      "attrs": { "class": "foot" },
+                      "children": ["Акаунт безкоштовний, синхронізація — у Premium"]
                     }
                   ]
                 }
@@ -372,6 +391,20 @@
                       "attrs": {},
                       "children": [
                         "Ні. Акаунт потрібен лише для сайту, синхронізації, ChatGPT чи Claude і спільних рахунків."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "details",
+                  "attrs": {},
+                  "children": [
+                    { "tag": "summary", "attrs": {}, "children": ["А якщо зміню телефон?"] },
+                    {
+                      "tag": "p",
+                      "attrs": {},
+                      "children": [
+                        "Увійди в той самий акаунт: з Premium усе з’явиться на новому iPhone і на сайті. Без Premium віднови дані з зашифрованої копії в iCloud Drive чи Google Drive — автоматичні копії вмикаються в налаштуваннях."
                       ]
                     }
                   ]

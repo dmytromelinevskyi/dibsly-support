@@ -352,6 +352,10 @@ export async function startJourney(root, { lang, reduced }) {
       onToggle: function (self) {
         rail.classList.toggle('away', !self.isActive);
       },
+      // Opened further down (a reload, a link to the price): no toggle comes, the rail is put aside at once.
+      onRefresh: function (self) {
+        rail.classList.toggle('away', !self.isActive);
+      },
     });
 
     if (document.readyState === 'complete') placed();

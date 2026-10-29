@@ -63,7 +63,7 @@
             },
             {
               "tag": "div",
-              "attrs": { "class": "cards3 two" },
+              "attrs": { "class": "cards3 three" },
               "children": [
                 {
                   "tag": "article",
@@ -100,6 +100,25 @@
                       "tag": "p",
                       "attrs": { "class": "foot" },
                       "children": ["“Here is my Revolut statement, add it”"]
+                    }
+                  ]
+                },
+                {
+                  "tag": "article",
+                  "attrs": { "class": "spot" },
+                  "children": [
+                    { "tag": "h3", "attrs": {}, "children": ["Sync and backups"] },
+                    {
+                      "tag": "p",
+                      "attrs": {},
+                      "children": [
+                        "One account, the same money on your iPhone and the website. Encrypted backups to iCloud Drive or Google Drive, free, automatic or by hand."
+                      ]
+                    },
+                    {
+                      "tag": "p",
+                      "attrs": { "class": "foot" },
+                      "children": ["The account is free; sync is part of Premium"]
                     }
                   ]
                 }
@@ -376,6 +395,20 @@
                       "attrs": {},
                       "children": [
                         "No. An account is only for the website, sync, ChatGPT or Claude and shared accounts."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "details",
+                  "attrs": {},
+                  "children": [
+                    { "tag": "summary", "attrs": {}, "children": ["What if I change phones?"] },
+                    {
+                      "tag": "p",
+                      "attrs": {},
+                      "children": [
+                        "Sign in to the same account: with Premium everything shows up on the new iPhone and the website. Without it, restore from your encrypted backup in iCloud Drive or Google Drive; automatic backups are turned on in Settings."
                       ]
                     }
                   ]
