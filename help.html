@@ -2,207 +2,121 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Dibsly guide: first steps, Apple Pay and bank notifications through Shortcuts, statements, investing, debts, credits, FOP, shared accounts, the website, the Ask Dibsly chat, ChatGPT and Claude, backups, Premium.">
-    <meta name="color-scheme" content="light dark">
-    <meta name="theme-color" content="#F7F3EE" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#0F0D0C" media="(prefers-color-scheme: dark)">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Dibsly Guide</title>
+    <meta name="description" content="How to use Dibsly: Main, recording, Apple Pay and bank notifications, statements, plan, goals, debts, credits, FOP, the chat, shared accounts and backups.">
+    <meta name="theme-color" content="#0E0C0B">
+    <link rel="canonical" href="https://dibslyapp.com/help.html">
     <link rel="alternate" hreflang="uk" href="https://dibslyapp.com/help-uk.html">
     <link rel="alternate" hreflang="en" href="https://dibslyapp.com/help.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Dibsly">
+    <meta property="og:title" content="Dibsly Guide">
+    <meta property="og:description" content="How to use Dibsly: Main, recording, Apple Pay and bank notifications, statements, plan, goals, debts, credits, FOP, the chat, shared accounts and backups.">
+    <meta property="og:url" content="https://dibslyapp.com/help.html">
+    <meta property="og:image" content="https://dibslyapp.com/img/shots/en-web.jpg">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/png" href="img/favicon.png">
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="v3/pages.css">
 </head>
 <body>
-    <div class="shell shell-narrow">
-        <header class="site-header">
-            <a class="brand" href="en.html"><img src="img/apple-touch-icon.png" alt="" width="32" height="32">Dibsly</a>
-            <nav class="site-nav" aria-label="Site">
-                <a href="help.html" aria-current="page">Guide</a>
+    <header class="nav">
+        <nav class="nav-pill" aria-label="Main menu">
+            <a class="brand" href="en.html"><img src="img/apple-touch-icon.png" alt="" width="28" height="28">Dibsly</a>
+            <div class="nav-links">
+                <a href="features.html">Features</a>
+                <a href="help.html" aria-current="page">Guides</a>
                 <a href="support.html">Support</a>
-                <a href="privacy.html">Privacy</a>
-                <a class="portal" href="https://my.dibslyapp.com">Sign in</a>
-                <a class="lang-switch" href="help-uk.html" hreflang="uk">UK</a>
+                <a href="en.html#price">Price</a>
+            </div>
+            <div class="nav-actions">
+                <a class="lang" href="help-uk.html" hreflang="uk" lang="uk" aria-label="Українська" onclick="try { localStorage.setItem('dibsly.site.lang', 'uk'); } catch (error) {}">UK</a>
+                <a class="pill ghost" href="https://my.dibslyapp.com">Sign in</a>
+                <a class="pill hot" href="https://apps.apple.com/app/id6765870838">Download</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="wrap">
+                <p class="kicker"><span class="dot"></span>Guides</p>
+                <h1>How to use Dibsly</h1>
+                <p class="lead">From the first launch to Apple Pay, bank notifications, debts, credits, FOP and your own ChatGPT or Claude. Short and step by step.</p>
+            </div>
+        </section>
+        <div class="wrap with-toc">
+            <nav class="toc" aria-label="Sections">
+                <a href="#start">Getting started</a>
+                <a href="#entry">Recording operations</a>
+                <a href="#voice">Voice, receipts and splitting</a>
+                <a href="#apple-pay">Apple Pay through Shortcuts</a>
+                <a href="#bank-notifications">Bank notifications</a>
+                <a href="#statements">Statements and monobank</a>
+                <a href="#brands">Brands</a>
+                <a href="#calendar">Calendar</a>
+                <a href="#plan">Monthly plan</a>
+                <a href="#goals">Goals</a>
+                <a href="#investments">Investments</a>
+                <a href="#debts">Debts</a>
+                <a href="#credits">Credits</a>
+                <a href="#fop">FOP (sole traders)</a>
+                <a href="#chat">Ask Dibsly</a>
+                <a href="#account">Account and sync</a>
+                <a href="#shared">Shared accounts</a>
+                <a href="#website">The website my.dibslyapp.com</a>
+                <a href="#assistants">ChatGPT and Claude</a>
+                <a href="#moving">Moving from another app</a>
+                <a href="#backup">Backups and a new iPhone</a>
+                <a href="#privacy">Privacy</a>
+                <a href="#premium">Premium and cancelling</a>
             </nav>
-        </header>
+            <div class="guide">
+                <section class="section" id="start"><h2>Getting started</h2><div class="card reveal"><h3>First steps</h3><ol class="steps"><li>Install Dibsly from the App Store and go through the welcome: language, main currency, first account.</li><li>At «Your banks», connect monobank or pick your bank's statement — your history comes in at once.</li><li>Then let spending record itself: <a href="#apple-pay">Apple Pay</a> and, with Premium, <a href="#bank-notifications">bank notifications</a>.</li></ol><p>An account is optional: you can sign in with Apple, Google or e-mail any time later.</p></div><div class="card reveal"><h3>Main</h3><p><b>On hand</b> — the big number at the top: your money for everyday life, cards and cash. Savings, investments and an account with Count in balance off are never in it.</p><p><b>Savings</b> — one tile per currency with this month's change; the Investments tile appears when investments are on. Moving money between your accounts is never spending or income.</p><p><b>Your month</b> — Income, Spent and Net. Below: Activity with drafts, the Plan and the Calendar — each opens with All ›.</p><p><b>+</b> records an operation (an expense, income, a transfer or a debt), a phrase («Say it»), a receipt or a credit. The gear at the top opens Settings, with a search at the bottom.</p></div></section>
+                <section class="section" id="entry"><h2>Recording operations</h2><div class="card reveal"><p><b>Amount first.</b> The keypad opens first and can count + − × ÷. Then pick a category — tapping it saves the operation.</p><p><b>Account and date.</b> Tap the date at the top to change it; a future date isn't counted until it comes. After expense lets you type the balance you see in the bank, and the amount is worked out.</p><p><b>Notes.</b> Your past notes are suggested as you type; picking one sets its category too.</p><p><b>Transfers.</b> A transfer moves money between your own accounts and is never spending. Between currencies, enter what arrived; the rate comes from Currencies.</p><p><b>Editing.</b> In History, tap an operation to change it — changes save at once. Hold it to change the category, duplicate, select several or delete.</p></div></section>
+                <section class="section" id="voice"><h2>Voice, receipts and splitting</h2><div class="card reveal"><p><b>Say it.</b> + → «Say it»: «coffee 85», «mono 100 groceries», «yesterday cash 1 200 transport» — and it is recorded. What the phone cannot read, the AI finishes (Premium).</p><p><b>Siri and the Action button.</b> Say «Record in Dibsly» to Siri or put it on the Action button. Turn it on: Settings → Preferences → Input → «Voice entry».</p><p><b>Receipt.</b> + → «Receipt»: a photo or up to three screenshots — the items and the total fill in themselves. 10 receipts a month are free, up to 300 with Premium.</p><p><b>Split the bill.</b> In a receipt, mark your items and send your friends their part by a link — each picks their own.</p></div></section>
+                <section class="section" id="apple-pay"><h2>Apple Pay through Shortcuts</h2><div class="card reveal"><p>Every Apple Pay payment becomes a draft in Activity: check the amount and category and save it with one tap. Only then does the balance change. Free, with any card.</p><ol class="steps"><li>In Dibsly: Settings → Transaction automation → Apple Pay → «Install automation».</li><li>In Shortcuts, the Automation tab: «Dibsly · Apple Pay» should be on and run immediately, without asking.</li><li>Save each card's first payment with its account — Dibsly remembers it.</li></ol><p><b>Another currency.</b> A payment in dollars on a hryvnia card is converted at the app's rate; tap the amount to enter what the bank charged. The statement later brings the exact amount.</p></div><div class="card reveal"><h3>Set it up by hand</h3><p>A new «Notification» automation from the Wallet app, «Run Immediately». Actions: «Get text» from Subtitle, Body and Title; «Text» with the two texts you got; then Dibsly's «Import Wallet notification»: Notification text — the text, Card — the card's name, «Show When Run» off.</p></div><div class="card reveal"><h3>Nothing arrives?</h3><p>Check that Wallet may show notifications: iOS Settings → Notifications → Wallet. If bank notifications are on too, one purchase still stays one draft.</p></div></section>
+                <section class="section" id="bank-notifications"><h2>Bank notifications <span class="tag">Premium · iOS 27</span></h2><div class="card reveal"><p>Pushes from any bank — purchases, top-ups, transfers — are read by Dibsly with the AI through one Shortcuts automation and become drafts.</p><ol class="steps"><li>In Dibsly: Settings → Transaction automation → Bank notifications → «Install automation».</li><li>In Shortcuts, open «Dibsly · Bank Notifications» and under «When I receive a notification from» choose your banks' apps: monobank, Privat24, UKRSIB online, KredoBank or any other.</li><li>The automation should run immediately, and in «Read notification» turn off «Show When Run».</li><li>Allow Dibsly's AI when it asks: without it the notifications can't be read.</li></ol><p>The first payment of each card asks for its account.</p></div></section>
+                <section class="section" id="statements"><h2>Statements and monobank</h2><div class="card reveal"><h3>monobank directly</h3><p>Create a personal token at api.monobank.ua and paste it: Settings → Import &amp; export → «Connect monobank». Dibsly syncs your cards and jars by itself; the token can only read and stays in this iPhone's Keychain.</p></div><div class="card reveal"><h3>Any bank's statement</h3><ol class="steps"><li>Save a statement in your bank's app: PDF, CSV, XLS or XLSX. «How to export» in Dibsly shows where to get one.</li><li>Share it to Dibsly or open Settings → Import &amp; export → «Bank statement» (or FOP).</li><li>Check the preview — the account, the number of operations, transfers between your accounts — and tap «Add and continue».</li></ol><p>monobank, PrivatBank, UKRSIBBANK and KredoBank — and their FOP statements — Dibsly reads itself, free. Any other bank is read by the AI: 3 statements in all free, up to 25 a month with Premium. Check the amounts of such a statement.</p></div><div class="card reveal"><h3>Nothing twice, with categories</h3><p>Importing the same period again adds only new operations, and the balance check compares your balance with the bank's.</p><p>Transfers between your accounts are recognised; an account money often goes to is offered as yours («Is this your account?»). Categories come from your history, your rules and the bank; the rest lands in «Uncategorized».</p></div></section>
+                <section class="section" id="brands"><h2>Brands</h2><div class="card reveal"><p><b>A brand in one tap.</b> When recording an expense, open the category and switch to Brands: a tap writes the brand's name and picks your category for it.</p><p><b>Brand and category at once.</b> Type the beginning of a name in the note and the brand comes once per category you used it with. Hold a brand on the Brands tab for its other categories.</p><p><b>It learns from you.</b> A brand goes where most of your operations with it went, and the note keeps your own way of writing it. One different category once does not change it.</p><p><b>Move a brand for good.</b> Settings → Brands: tap a brand and pick a category. It always goes there then, from statements and drafts too, and travels with backups, sync and the CSV export.</p></div></section>
+                <section class="section" id="calendar"><h2>Calendar</h2><div class="card reveal"><p><b>What it is.</b> Payments you expect: subscriptions, rent, one-off reminders. They don't change the balance until you record or link an expense.</p><p><b>Paying.</b> Open a payment: «Record expense» writes it, «Link» attaches an expense you already have. A draft that matches a payment offers «Mark as paid».</p><p><b>Reminders.</b> On the day or 1, 3 or 7 days before. «Add to calendar» in an expense creates a new payment. The calendar can be turned off in Settings, section Features.</p></div></section>
+                <section class="section" id="plan"><h2>Monthly plan</h2><div class="card reveal"><p><b>Turn it on.</b> Settings, section Features → Planning. Turning it off keeps your plans.</p><p><b>Limits.</b> One plan a month in your main currency. Tap a category to set its limit; the page shows what's left and about how much you can spend a day.</p><p><b>On Main.</b> The Plan card shows what's left and up to four categories you watch. Orange means 90% used, red — over the limit.</p><p><b>Plan from what you spent.</b> In the plan editor tap a category's name: you see each expense of last month and so far this month, so a limit starts from what really went out.</p><p><b>Faster.</b> Hold a category for last month's amount or Remove limit; the eye shows it on Main. Hide the keypad with its ⌄ key or a swipe down.</p></div></section>
+                <section class="section" id="goals"><h2>Goals</h2><div class="card reveal"><p><b>What a goal is.</b> What you save for: a flat, a car, a cushion. The money stays on savings and investment accounts; the goal shows how much of it is already its.</p><p><b>Adding one.</b> Turn Goals on in Settings, section Features. Then «Goals» on Main → «Add goal»: the amount, the date and the accounts.</p><p><b>The queue.</b> «Goals’ order» decides which goal fills first; the cushion always comes first.</p></div></section>
+                <section class="section" id="investments"><h2>Investments</h2><div class="card reveal"><ol class="steps"><li>Turn on Settings → Features → Investments if there's no Investments tab yet.</li><li>Save your broker's report: Interactive Brokers — the Activity Statement, Freedom Finance — the broker report as XLSX or PDF.</li><li>Open Settings → Import &amp; export → «Broker report» and pick the file. Dibsly sorts out buys, sales, dividends with the tax withheld, and deposits.</li></ol></div></section>
+                <section class="section" id="debts"><h2>Debts</h2><div class="card reveal"><p>Who owes whom and how much. Lent, borrowed or paid back is a transfer between your account and the person, so it is neither an expense nor an income. Dibsly only records it: you move the money yourself.</p><p><b>Record a debt.</b> Main → Debts at the bottom, or + → Operation → Debt.</p><p><b>Split an expense.</b> In an expense's card, «Split with…»: your part stays an expense, your friends' parts become debts. For a receipt: «Split the bill» with «I paid the whole bill».</p><p><b>Paid back.</b> On the person's page, «Paid back» or «Pay back». Money from them in a bank notification is suggested as a return; a saved income becomes one with «It is a debt paid back» in its card.</p><p><b>A link to the debt.</b> Until a friend accepts the debt, «Share» sends them its link: a friend with Dibsly accepts it in their app, and every record either of you makes reaches the other to confirm. Then «Remind» sends them a push. You both need a Dibsly account — a free one is enough.</p><p><b>A debt let go.</b> «Paid back» → «Money did not come to an account»: the debt closes and the sum goes to Gifts in your expenses.</p></div></section>
+                <section class="section" id="credits"><h2>Credits</h2><div class="card reveal"><p>A loan, a mortgage, instalments, a microloan or a card's limit: what's left, the next payment and the overpayment.</p><p><b>Add one.</b> Turn on «Credits» in Settings, section Features: the Credits block appears at the bottom of Main. «All ›» in it → «+» → the kind. A mortgage or an old loan is entered by what is left on a day.</p><p><b>Bought in instalments.</b> In a saved expense's card, «Bought in instalments»: the purchase stays whole in Analytics, the bank's part comes back to the card, and each month's part pays the instalment off.</p><p><b>Paying and paying early.</b> On a credit's page, «Pay» splits the payment into the body and interest (an expense in «Interest and fees»). «Early» shows what a shorter term or a lower payment saves. A payment from a statement: «This is a credit payment» in its card.</p><p><b>Credit card and reminders.</b> «On hand» shows only your own money, with «… of credit still available» under it. Payments show in the calendar with reminders three days before and on the day.</p><p>Dibsly only records the payments — it never moves the bank's money.</p></div></section>
+                <section class="section" id="fop"><h2>FOP (sole traders)</h2><div class="card reveal"><p>For a 3rd-group FOP: income, the single tax, the military levy and ESV by quarter, deadlines and payment details. Free.</p><p><b>Turn it on.</b> Settings, section Features → FOP → «Turn on FOP». A short questionnaire: the group, the rate, ESV, your community, the FOP accounts.</p><p><b>Income.</b> Income on a FOP account counts at the NBU rate of the day it arrived. A refund or your own transfer: turn off «FOP income» in the operation's card, or hold it on the FOP page → «Not income».</p><p><b>Taxes and deadlines.</b> The FOP page shows the single tax, the military levy and ESV by quarter, how much is due and by when. The deadlines are in the calendar with reminders.</p><p><b>Paying.</b> «Show payment details» under the deadlines opens the amounts and the tax service's details for your community — every field copies with a tap.</p><p>Dibsly doesn't pay taxes or file returns — you do. Check the figures and details against the tax service's e-cabinet, especially before your first payment.</p></div></section>
+                <section class="section" id="chat"><h2>Ask Dibsly</h2><div class="card reveal"><p>A chat about your money right in the app: ask in words, Dibsly answers in your own figures.</p><p><b>Where it is.</b> On Main — the button above «+»; on other pages — the orange tab on the right. The chat knows which page you opened it from.</p><p><b>What it can do.</b> It counts spending, finds operations, records («record coffee 85»), moves them to categories, sets limits and imports a statement with 📎. Nothing is saved until you tap «Save».</p><p><b>Free answers.</b> «Where do I turn on FOP?» or «how do I hide the amounts» — Dibsly answers itself from the help, without the AI and not counted. «Ask the AI» under such an answer asks the AI.</p><p><b>How many questions.</b> 20 questions to the AI a month are free, up to 40 a day with Premium. The first time, Dibsly shows what goes to the AI and asks for your permission; to turn it off — Settings → Features → «AI in Dibsly». The conversation stays on this iPhone; «Clear conversation» is there too.</p></div></section>
+                <section class="section" id="account"><h2>Account and sync</h2><div class="card reveal"><p><b>The account.</b> Profile (the circle next to the gear) → sign in with Apple, Google or e-mail. Without an account everything works on one iPhone.</p><p><b>Sync.</b> With Premium your data is the same on all your iPhones and on my.dibslyapp.com.</p></div></section>
+                <section class="section" id="shared"><h2>Shared accounts <span class="tag">Premium</span></h2><div class="card reveal"><ol class="steps"><li>Sign in to your Dibsly account: Profile → Apple, Google or e-mail.</li><li>Profile → «Sharing» → «Invite by link» and send the link.</li><li>The other person opens it on an iPhone with Dibsly and taps «Join». Then choose which account to share.</li></ol><p>Shared accounts and goals: each sees their own and the shared. One member's Premium is enough; anyone can leave there any time.</p></div></section>
+                <section class="section" id="website"><h2>The website my.dibslyapp.com <span class="tag">Premium</span></h2><div class="card reveal"><p>Open <a href="https://my.dibslyapp.com">my.dibslyapp.com</a> on a computer and sign in to the same Dibsly account as on your iPhone. History with search, analytics, the plan, the calendar and drafts are there; changes show up on your phone at once.</p></div></section>
+                <section class="section" id="assistants"><h2>ChatGPT and Claude <span class="tag">Premium</span></h2><div class="card reveal"><p>On the website open «Connect AI»: it has the connection address <code>https://my.dibslyapp.com/mcp</code> and the steps for each assistant.</p><ol class="steps"><li><b>Claude</b> (claude.ai, the app): Settings → Connectors → add a custom connector with the address above, sign in to Dibsly and allow access.</li><li><b>ChatGPT</b> (chatgpt.com): Plugins → Add → Add custom MCP server, the address above, OAuth; sign in to Dibsly the same way and allow access. On some ChatGPT plans it can only read — that's the plan's limit, not Dibsly's.</li></ol><p>Ask in words: «how much did I spend on cafés this month?», «here is a statement, add it». The assistant writes changes only after your «yes», and each can be undone in the AI journal on the website.</p><p>All connections are in the app: Profile → «Devices and AI». You can remove them there.</p></div></section>
+                <section class="section" id="moving"><h2>Moving from another app</h2><div class="card reveal"><p>Dibsly imports a Monefy CSV and its own CSV. In Monefy export your data as CSV, then in Dibsly: Settings → Import &amp; export → «CSV file» → «Monefy CSV». Accounts, categories, currencies and transfers come over, and Dibsly shows exactly what it will add before saving.</p><p>A CSV can be added to your data or replace it all — then a safety copy is made first.</p></div></section>
+                <section class="section" id="backup"><h2>Backups and a new iPhone</h2><div class="card reveal"><ol class="steps"><li>Settings → Backup &amp; recovery: choose an iCloud Drive folder or connect Google Drive, make up a recovery password and turn on automatic backups.</li><li>Keep the password in a password manager: without it a backup can't be opened, and nobody, Dibsly included, can recover it.</li></ol><p><b>Where and when.</b> Automatic backups run daily or weekly, usually at night; the last five are kept, manual ones are never deleted.</p><p><b>Restoring.</b> «Open backup file» restores any .dibslybackup. On a new iPhone, tap «Restore my data» when Dibsly first opens, or just sign in if you have sync (Premium). A safety copy of the current data is made first.</p><p><b>Backup or CSV.</b> A backup holds everything, drafts and most settings included. A CSV holds operations, accounts, plans and the calendar, but no drafts or settings.</p></div></section>
+                <section class="section" id="privacy"><h2>Privacy</h2><div class="card reveal"><p><b>On your iPhone.</b> Without an account your data stays on this iPhone only. Statements are read here and are never uploaded.</p><p><b>What goes out.</b> An account and sync (Premium) keep your data on Dibsly's server. The AI works only with your consent: what an answer needs goes to OpenAI through Dibsly's server. Also NBU rates, investment quotes, monobank, your backups in iCloud or Google Drive, and anonymous usage statistics you can turn off in Preferences.</p><p><b>Hiding.</b> «Hide amounts» shows •••• instead of sums, and App Lock asks for Face ID when you come back. Notifications still show amounts — hide previews in iOS Settings.</p><p>All the details are in the <a href="privacy.html">privacy policy</a>.</p></div></section>
+                <section class="section" id="premium"><h2>Premium and cancelling</h2><div class="card reveal"><p>Premium — $2.99 a month or $29.99 a year — adds sync and shared accounts, the website, ChatGPT and Claude, notifications from any bank and AI categories. The limits are higher: up to 300 receipts a month (10 without Premium), up to 25 statements of other banks a month (3 in all without Premium) and up to 40 chat questions a day (20 a month without Premium).</p><p><b>Cancel.</b> iOS Settings → your name → Subscriptions → Dibsly, at least 24 hours before the period ends. When Premium ends, nothing is deleted.</p></div></section>
+                <p class="section-lead">Didn’t find your answer? <a href="support.html">Support</a> or <a href="mailto:dibslysupport@gmail.com">dibslysupport@gmail.com</a>.</p>
+            </div>
+        </div>
+    </main>
 
-        <main>
-            <header class="policy-header">
-                <p class="eyebrow">Dibsly for iPhone</p>
-                <h1>Guide</h1>
-                <p class="lead">How to set Dibsly up so it records everything by itself: from the first launch to Apple Pay, bank notifications and your ChatGPT or Claude.</p>
-            </header>
-
-            <nav class="card toc" aria-labelledby="toc-title">
-                <h2 id="toc-title">Sections</h2>
-                <ol>
-                    <li><a href="#start">First steps</a></li>
-                    <li><a href="#apple-pay">Apple Pay through Shortcuts</a></li>
-                    <li><a href="#bank-notifications">Bank notifications</a></li>
-                    <li><a href="#statements">Bank statements and monobank</a></li>
-                    <li><a href="#brands">Brands and categories</a></li>
-                    <li><a href="#investments">Investing</a></li>
-                    <li><a href="#debts">Debts</a></li>
-                    <li><a href="#credits">Credits</a></li>
-                    <li><a href="#fop">FOP (Ukrainian sole trader)</a></li>
-                    <li><a href="#moving">Moving from another app</a></li>
-                    <li><a href="#shared">Shared accounts</a></li>
-                    <li><a href="#website">The website my.dibslyapp.com</a></li>
-                    <li><a href="#chat">Ask Dibsly</a></li>
-                    <li><a href="#assistants">ChatGPT and Claude</a></li>
-                    <li><a href="#backup">Backups and a new iPhone</a></li>
-                    <li><a href="#premium">Premium and cancelling</a></li>
-                </ol>
-            </nav>
-
-            <article class="card policy guide">
-                <h2 id="start">First steps</h2>
-                <ol class="guide-steps">
-                    <li>Install Dibsly from the <a href="https://apps.apple.com/app/id6765870838">App Store</a> and go through the setup: language, main currency, first account.</li>
-                    <li>At Your banks, connect monobank or pick your bank's statement, and the history comes in at once.</li>
-                    <li>An account is optional. You can sign in with Apple, Google or e-mail any time later, from your profile on Main.</li>
-                    <li>Then let new spending record itself: <a href="#apple-pay">Apple Pay</a> and, with Premium, <a href="#bank-notifications">bank notifications</a>.</li>
-                </ol>
-
-                <h2 id="apple-pay">Apple Pay through Shortcuts</h2>
-                <p>Every Apple Pay payment becomes a draft in Dibsly: check the amount and category and save it with one tap. Free, with any card.</p>
-                <ol class="guide-steps">
-                    <li>In Dibsly open <strong>Settings → Transaction automation → Apple Pay</strong> and tap <strong>Install automation</strong>.</li>
-                    <li>In the Shortcuts app open the <strong>Automation</strong> tab, find <strong>Dibsly · Apple Pay</strong> and make sure it is on and runs immediately, without asking.</li>
-                    <li>The first payment with each card asks for its account in Dibsly; after that it is remembered.</li>
-                </ol>
-                <p class="muted">By hand: a new Notification automation for the Wallet app, Run Immediately. Actions: Get text from Subtitle, Body and Title, a Text with the texts, then Dibsly's <strong>Import Wallet notification</strong>: Notification text — the text, Card — the card's name, Show When Run off.</p>
-                <div class="guide-shots">
-                    <img src="img/help/wallet-1.webp" alt="The Dibsly · Apple Pay automation in Shortcuts: a notification from Wallet and getting its text" width="460" height="1000" loading="lazy">
-                    <img src="img/help/wallet-2.webp" alt="The Import Wallet notification action: Notification text, Card and Show When Run off" width="460" height="1000" loading="lazy">
-                </div>
-                <p class="muted">Nothing arrives? Check that Wallet may show notifications (iOS Settings → Notifications → Wallet). With bank notifications on too, one purchase stays one draft.</p>
-
-                <h2 id="bank-notifications">Bank notifications <span class="tag">Premium · iOS 27</span></h2>
-                <p>Pushes from any bank — purchases, top-ups, transfers — are read by Dibsly with the AI and become drafts.</p>
-                <ol class="guide-steps">
-                    <li>In Dibsly open <strong>Settings → Transaction automation → Bank notifications</strong> and tap <strong>Install automation</strong>.</li>
-                    <li>In Shortcuts open the <strong>Dibsly · Bank Notifications</strong> automation and, under “When I receive a notification from”, pick your banks' apps: monobank, Privat24, UKRSIB online, KredoBank or any other.</li>
-                    <li>Make sure it runs immediately and that Show When Run is off in the <strong>Read notification</strong> action.</li>
-                    <li>Allow the AI in Dibsly when it asks: without it the notifications cannot be read.</li>
-                </ol>
-                <div class="guide-shots">
-                    <img src="img/help/bank-1.webp" alt="The Dibsly · Bank Notifications automation: notifications from monobank, Privat24, UKRSIB online and KredoBank" width="460" height="1000" loading="lazy">
-                    <img src="img/help/bank-2.webp" alt="The Read notification action with Title, Subtitle, Body and Show When Run off" width="460" height="1000" loading="lazy">
-                </div>
-
-                <h2 id="statements">Bank statements and monobank</h2>
-                <ol class="guide-steps">
-                    <li><strong>monobank directly:</strong> create a personal token at <a href="https://api.monobank.ua">api.monobank.ua</a> and paste it in Dibsly: <strong>Settings → Import &amp; export → Connect monobank</strong>. The token only reads, and it stays on this iPhone.</li>
-                    <li><strong>A statement:</strong> in your bank's app save a statement for the period you need — PDF, CSV, XLS or XLSX — and share it to Dibsly or open it in <strong>Settings → Import &amp; export → Bank statement</strong> (or FOP). monobank, PrivatBank, UKRSIBBANK and KredoBank — and their FOP statements — Dibsly reads by itself on the phone, free. “How to export” shows where to get one.</li>
-                    <li>Check the preview — the account, the number of operations and the transfers between your accounts — and tap <strong>Add and continue</strong>. What Dibsly already has is not added twice.</li>
-                    <li><strong>Any other bank:</strong> the statement is read by the AI in Dibsly — 3 statements in all for free, up to 25 a month with Premium. Check the amounts of such a statement before saving.</li>
-                </ol>
-
-                <h2 id="brands">Brands and categories</h2>
-                <ol class="guide-steps">
-                    <li><strong>A brand in one tap:</strong> when recording an expense, open the category and switch to <strong>Brands</strong> — the logos of shops, cafés, carriers and services, laid out by your categories. A tap writes the brand's name and picks the category; hold a brand to pick another one.</li>
-                    <li><strong>Start typing the name</strong> in the note — “silp”, “mcd”, “wolt” — and Dibsly offers the brand once per category you have used it with.</li>
-                    <li><strong>Dibsly learns from your records:</strong> a brand goes where most of your operations with it went, and the note keeps your own way of writing it. One different category once does not change it.</li>
-                    <li><strong>Move it for good:</strong> <strong>Settings → Brands</strong>, tap a brand and pick a category (or drag it onto one). It always goes there then — from statements and drafts too — and travels with backups, sync and the CSV export. “Back to automatic” undoes the move.</li>
-                </ol>
-
-                <h2 id="investments">Investing</h2>
-                <ol class="guide-steps">
-                    <li>Turn on <strong>Settings → Features → Investments</strong> if the Invest tab is not there yet.</li>
-                    <li>Save your broker's report: Interactive Brokers — the Activity Statement, Freedom Finance — the broker report as XLSX or PDF.</li>
-                    <li>Open <strong>Settings → Import &amp; export → Broker report</strong> and pick the file. Dibsly sorts out buys, sales, dividends with the tax withheld and deposits.</li>
-                </ol>
-
-                <h2 id="debts">Debts</h2>
-                <p>Who owes whom and how much. Lent, borrowed or paid back is a transfer between your account and the person, so it is neither an expense nor an income. Dibsly only records it: you move the money yourself.</p>
-                <ol class="guide-steps">
-                    <li><strong>Record a debt:</strong> on Main open <strong>Debts</strong> at the bottom, or tap <strong>+ → Operation → Debt</strong>.</li>
-                    <li><strong>Split an expense:</strong> in an expense's card, <strong>Split with…</strong> — your part stays an expense, your friends' parts become debts. For a receipt: <strong>Split the bill</strong> with “I paid the whole bill”.</li>
-                    <li><strong>Paid back:</strong> on the person's page, <strong>Paid back</strong> or <strong>Pay back</strong>. Money from them in a bank notification is suggested as a return; a saved income becomes one with “It is a debt paid back” in its card.</li>
-                    <li><strong>A link to the debt:</strong> until a friend accepts the debt, <strong>Share</strong> sends them its link. The friend accepts it in their own Dibsly, and every record either of you makes reaches the other to confirm. Then <strong>Remind</strong> sends them a push.</li>
-                    <li><strong>A debt let go:</strong> <strong>Paid back → Money did not come to an account</strong> — the debt closes and the sum goes to Gifts in your expenses.</li>
-                </ol>
-                <p class="muted">For the link both of you need a Dibsly account — a free one is enough. Without an account, Share sends only the reminder's text.</p>
-
-                <h2 id="credits">Credits</h2>
-                <p>A loan, a mortgage, an instalment plan, a microloan or a credit card's limit: what is left, the next payment and the overpayment.</p>
-                <ol class="guide-steps">
-                    <li>Turn on <strong>Settings → Features → Credits</strong>: a Credits block appears at the bottom of Main.</li>
-                    <li>Open <strong>All ›</strong> in that block and tap <strong>+</strong> to pick the kind of credit. A mortgage or an old loan is entered by what is left on a day.</li>
-                    <li><strong>Bought in instalments:</strong> in a saved expense's card, <strong>Bought in instalments</strong> — the purchase stays whole in Analytics, the bank's part comes back to the card, and each month's part pays the instalment off.</li>
-                    <li><strong>Paying:</strong> on a credit's page <strong>Pay</strong> records the payment and splits it into the body and interest (an expense in Interest and fees). <strong>Early</strong> shows what a shorter term or a lower payment saves. A payment from a statement: “This is a credit payment” in its card.</li>
-                    <li><strong>Credit card and reminders:</strong> On hand shows only your own money, with “… of credit still available” under it. Payments show in the calendar with reminders three days before and on the day.</li>
-                </ol>
-                <p class="muted">Dibsly only records the payments — it never moves money to the bank.</p>
-
-                <h2 id="fop">FOP (Ukrainian sole trader)</h2>
-                <p>For a FOP of the 3rd group: income, the single tax, the military levy and ESV by quarter, deadlines and payment details. Free.</p>
-                <ol class="guide-steps">
-                    <li>Open <strong>Settings → Features → FOP</strong> and tap <strong>Turn on FOP</strong>. A short questionnaire: the group, the rate, ESV, your community, the FOP accounts.</li>
-                    <li><strong>Income:</strong> money that arrives on a FOP account counts as income at the NBU rate of the day it arrived. A refund or your own transfer: turn off “FOP income” in the operation's card, or hold it on the FOP page → “Not income”.</li>
-                    <li><strong>Taxes and deadlines:</strong> the FOP page shows the single tax, the military levy and ESV by quarter, how much is due and by when. The deadlines are in the calendar with reminders.</li>
-                    <li><strong>Paying:</strong> <strong>Show payment details</strong> under the deadlines opens the amounts and the tax service's details for your community — every field copies with a tap.</li>
-                </ol>
-                <p class="muted">Dibsly does not pay taxes or file the declaration: you pay and file them yourself. The figures and payment details are worked out from your records — check them in the taxpayer's e-cabinet, especially before the first payment.</p>
-
-                <h2 id="moving">Moving from another app</h2>
-                <p>Dibsly imports a Monefy export and its own Dibsly CSV. In Monefy export your data to CSV, then in Dibsly open <strong>Settings → Import &amp; export → CSV file → Monefy CSV</strong>. Accounts, categories, currencies and transfers come along, and Dibsly shows what it will add before saving.</p>
-
-                <h2 id="shared">Shared accounts <span class="tag">Premium</span></h2>
-                <ol class="guide-steps">
-                    <li>Sign in to a Dibsly account: your profile on Main → sign in with Apple, Google or e-mail.</li>
-                    <li>Open <strong>Profile → Sharing → Invite by link</strong> and send the link.</li>
-                    <li>The other person opens the link on an iPhone with Dibsly and taps Join. Then choose which account to share.</li>
-                    <li>One member's Premium is enough. You can leave any time, in Sharing too.</li>
-                </ol>
-
-                <h2 id="website">The website my.dibslyapp.com <span class="tag">Premium</span></h2>
-                <p>Open <a href="https://my.dibslyapp.com">my.dibslyapp.com</a> on your computer and sign in to the same Dibsly account as on your iPhone: with Apple, Google or an e-mail and a password. You get searchable history, analytics, the plan, the calendar and drafts; changes show up on your phone too.</p>
-
-                <h2 id="chat">Ask Dibsly</h2>
-                <p>A chat about your money right in the app: ask in plain words, and Dibsly answers with your own figures.</p>
-                <ol class="guide-steps">
-                    <li><strong>Where it is:</strong> on Main, the Dibsly button above “+”; on other pages, the orange tab on the right. The chat knows which page you opened it from.</li>
-                    <li><strong>The first time</strong> Dibsly shows what goes to the AI and asks your permission — tap <strong>Allow</strong>. Turn it on or off in <strong>Settings → Features → AI in Dibsly</strong>.</li>
-                    <li><strong>What it can do:</strong> it counts spending, finds operations, records (“record coffee 85”), moves them to categories, sets limits and imports a statement with 📎. Nothing is saved until you tap <strong>Save</strong>.</li>
-                    <li><strong>How many questions:</strong> 20 questions to the AI a month are free, up to 40 a day with Premium. Questions about the app itself (“where do I turn on FOP?”) Dibsly answers from the help, without the AI and not counted.</li>
-                </ol>
-
-                <h2 id="assistants">ChatGPT and Claude <span class="tag">Premium</span></h2>
-                <ol class="guide-steps">
-                    <li>On the website open <strong>Connect AI</strong>: it has the connection address <strong>https://my.dibslyapp.com/mcp</strong> and the steps for each assistant.</li>
-                    <li><strong>Claude</strong> (claude.ai, the app): Settings → Connectors → add a custom connector with the address above, then sign in to Dibsly (Apple, Google or an e-mail and a password) and allow access.</li>
-                    <li><strong>ChatGPT</strong> (chatgpt.com): <strong>Plugins → Add → Add custom MCP server</strong>, the address above, OAuth for authentication, then sign in to Dibsly the same way and allow access. On some ChatGPT plans it only reads and does not save — that is the plan's limit, not Dibsly's.</li>
-                    <li>Ask in plain words: “how much did I spend on cafés this month?”, “here is a statement, record it”. The assistant saves changes only after your “yes”, and each one can be undone in the AI journal on the website.</li>
-                    <li>Every connection is listed in the app: <strong>Profile → Devices and AI</strong>. You can disconnect them there too.</li>
-                </ol>
-
-                <h2 id="backup">Backups and a new iPhone</h2>
-                <ol class="guide-steps">
-                    <li><strong>Settings → Backup &amp; recovery</strong>: choose an iCloud Drive folder or connect Google Drive, make up a recovery password and turn on automatic backups.</li>
-                    <li>Keep the password in a password manager: a backup does not open without it, and Dibsly cannot reset it.</li>
-                    <li>On a new iPhone install Dibsly, choose <strong>Restore my data</strong> and the latest backup — or just sign in to your Dibsly account if you have sync (Premium).</li>
-                </ol>
-
-                <h2 id="premium">Premium and cancelling</h2>
-                <p>Premium adds sync and shared accounts, the website, ChatGPT and Claude, notifications from any bank and categories in one tap with the AI. The limits are higher: up to 300 receipts a month (10 without Premium), up to 25 statements of other banks a month (3 in all without Premium) and up to 40 chat questions a day (20 a month without Premium). Start it from your profile on Main or the Premium screen.</p>
-                <p>To cancel: <strong>iOS Settings → your name → Subscriptions → Dibsly</strong>, at least 24 hours before the period ends. Nothing is deleted when Premium ends.</p>
-
-                <p class="muted">Didn't find an answer? <a href="support.html">Support</a> or <a href="mailto:dibslysupport@gmail.com">dibslysupport@gmail.com</a>.</p>
-            </article>
-        </main>
-
-        <footer class="site-footer">
-            <nav aria-label="Footer">
-                <a href="support.html">Support</a>
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Use</a>
-                <a href="mailto:dibslysupport@gmail.com">Contact Support</a>
-            </nav>
-            <p>© 2026 Dibsly</p>
-        </footer>
-    </div>
+    <footer>
+        <div class="wrap foot-row">
+            <b>Dibsly</b>
+            <a href="features.html">Features</a>
+            <a href="help.html">Guides</a>
+            <a href="support.html">Support</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="https://my.dibslyapp.com">my.dibslyapp.com</a>
+            <a href="help-uk.html" hreflang="uk" lang="uk" onclick="try { localStorage.setItem('dibsly.site.lang', 'uk'); } catch (error) {}">Українська</a>
+            <span class="copy-r">© 2026 Dibsly</span>
+        </div>
+    </footer>
+    <script src="v3/pages.js" defer></script>
 </body>
 </html>
