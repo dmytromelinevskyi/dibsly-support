@@ -270,12 +270,32 @@ export const edits = {
     auto: [
       b(
         0,
-        20,
-        [0.895, 0.647, 0.1, 0.05],
+        22,
+        [0.5, 0.667, 0.94, 0.05],
+        'Apple Pay',
+        'Apple Pay',
+        'Оплатив телефоном — Dibsly одразу кладе покупку в «Активність» і каже про це.',
+        'You paid with your phone: Dibsly puts the purchase in Activity at once and tells you.',
+        watch
+      ),
+      b(
+        27,
+        60,
+        [0.5, 0.667, 0.94, 0.05],
+        'Пуш банку',
+        'Revolut push',
+        'Прийшов пуш банку — ще одна покупка вже чекає.',
+        'A bank push came in: one more purchase already waits.',
+        watch
+      ),
+      b(
+        64,
+        100,
+        [0.89, 0.73, 0.1, 0.05],
         'Галочка',
         'Confirm',
-        'Покупку підтверджено.',
-        'The purchase moves to History. The balance updates immediately.'
+        'Один дотик — покупка в історії, а «Витрачено» вже більше.',
+        'One tap: the purchase is in History and Spent has grown.'
       ),
     ],
     plus: [

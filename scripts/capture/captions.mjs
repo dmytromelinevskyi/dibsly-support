@@ -48,7 +48,11 @@ export const captions = {
     ],
   },
   en: {
-    auto: ['The check beside Lidl confirms the purchase in Activity.'],
+    auto: [
+      'Apple Pay, and the Lidl purchase already waits in Activity.',
+      'A Revolut push brings one more purchase: Lyft.',
+      'The check beside Lidl confirms the purchase in Activity.',
+    ],
     plus: [
       'The orange plus opens the entry menu.',
       'Operation opens an expense, income, transfer or debt.',

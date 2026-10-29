@@ -523,25 +523,61 @@
     "en": {
       "auto": {
         "src": "assets/cinema/en/films/auto.mp4",
-        "duration": 5.663333333333336,
+        "duration": 16.56666666666664,
         "poster": "assets/cinema/en/auto/0001.webp",
         "steps": [
           {
             "start": 0,
             "press": 1.4,
             "transition": 1.8499999999999999,
-            "settle": 3.063333333333336,
-            "end": 4.563333333333336,
+            "settle": 3.1933333333333365,
+            "end": 4.693333333333337,
             "target": [
-              0.895,
-              0.647,
+              0.5,
+              0.667,
+              0.94,
+              0.05
+            ],
+            "watch": true,
+            "control": "Apple Pay",
+            "description": "You paid with your phone: Dibsly puts the purchase in Activity at once and tells you.",
+            "before": "assets/cinema/en/auto/0001.webp",
+            "after": "assets/cinema/en/auto/0023.webp"
+          },
+          {
+            "start": 4.693333333333337,
+            "press": 6.093333333333337,
+            "transition": 6.543333333333337,
+            "settle": 8.493333333333323,
+            "end": 9.993333333333323,
+            "target": [
+              0.5,
+              0.667,
+              0.94,
+              0.05
+            ],
+            "watch": true,
+            "control": "Revolut push",
+            "description": "A bank push came in: one more purchase already waits.",
+            "before": "assets/cinema/en/auto/0028.webp",
+            "after": "assets/cinema/en/auto/0061.webp"
+          },
+          {
+            "start": 9.993333333333323,
+            "press": 11.393333333333324,
+            "transition": 11.843333333333323,
+            "settle": 13.96666666666664,
+            "end": 15.46666666666664,
+            "target": [
+              0.89,
+              0.73,
               0.1,
               0.05
             ],
             "control": "Confirm",
-            "description": "The purchase moves to History. The balance updates immediately.",
-            "before": "assets/cinema/en/auto/0001.webp",
-            "after": "assets/cinema/en/auto/0021.webp"
+            "description": "One tap: the purchase is in History and Spent has grown.",
+            "before": "assets/cinema/en/auto/0065.webp",
+            "after": "assets/cinema/en/auto/0101.webp"
           }
         ],
         "source": "native-ios-edited-film"
