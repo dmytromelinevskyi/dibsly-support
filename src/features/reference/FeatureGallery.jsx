@@ -44,7 +44,7 @@ const labels = {
   brands: ['Бренд раз — категорія назавжди.', 'One brand, one category, for good.'],
   accounts: ['Кожним грошам своє місце.', 'A place for every penny.'],
   accountEditor: ['Баланс за твоїми правилами.', 'Balance, by your rules.'],
-  converter: ['Будь-яка валюта. Курс НБУ.', 'Any currency, at the official rate.'],
+  converter: ['Понад 40 валют. Курс НБУ.', 'Over 40 currencies, at the official rate.'],
   data: ['Переїзд з Monefy. Згодом — з інших трекерів.', 'Move from Monefy. Other trackers next.'],
 };
 /** A screen of the gallery: the app's captures, and «Олдскул» the steps' own frame of the «+» menu. */

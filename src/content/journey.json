@@ -36,7 +36,7 @@
       "platformsLabel": "Платформи"
     },
     "tabs": "161,244,337",
-    "stripAlt": "Головна Dibsly: гроші під рукою, кредитний ліміт, накопичення, місяць, план, цілі, календар, борги й кредити",
+    "stripAlt": "Головна Dibsly: гроші під рукою, кредитний ліміт, заощадження, місяць, план, цілі, календар, борги й кредити",
     "tabLabels": ["Головна", "Історія", "Аналітика"],
     "frames": [
       {
@@ -186,7 +186,7 @@
           }
         ],
         "lead": "Оплатив Apple Pay чи прийшов пуш банку — покупка вже чекає в «Активності». Один дотик, і вона в історії та балансі.",
-        "tags": ["Apple Pay", "Пуші будь-яких банків", "Виписки банків", "Голос і чек"]
+        "tags": ["Apple Pay", "Пуші будь-яких банків · Premium", "Виписки банків", "Голос і чек"]
       },
       {
         "id": "ask",
@@ -247,7 +247,7 @@
             "tone": "hot"
           }
         ],
-        "lead": "Єдиний податок, ЄСВ і військовий збір рахуються самі. Строки, декларації й нагадування."
+        "lead": "Для 3 групи (5 %, без ПДВ): єдиний податок, військовий збір і ЄСВ рахуються самі. Строки, нагадування й реквізити для сплати. Безкоштовно."
       },
       {
         "id": "together",
@@ -452,7 +452,7 @@
           }
         ],
         "lead": "Paid with Apple Pay or got a bank’s push: the purchase already waits in Activity. One tap and it’s in History and the balance.",
-        "tags": ["Apple Pay", "Any bank’s notifications", "Bank statements", "Voice and receipts"]
+        "tags": ["Apple Pay", "Any bank’s notifications · Premium", "Bank statements", "Voice and receipts"]
       },
       {
         "id": "ask",
@@ -513,7 +513,7 @@
             "tone": "hot"
           }
         ],
-        "lead": "Single tax, ESV and military levy work themselves out. Deadlines, returns and reminders."
+        "lead": "For the 3rd group (5 %, no VAT): the single tax, military levy and ESV work themselves out. Deadlines, reminders and payment details. Free."
       },
       {
         "id": "together",

@@ -118,7 +118,7 @@
                             "tag": "p",
                             "attrs": { "class": "desc" },
                             "children": [
-                              "Every account sits in one pocket. On hand: cards and cash for every day. Savings: what you put aside. Investments: broker accounts. The big number on Main and the month's income and spending count only On hand. So the ₴50,000 you put aside doesn't wink at you on a Friday night, and the month shows how you really live."
+                              "Every account sits in one pocket. On hand: cards and cash for every day. Savings: what you put aside. Investments: broker accounts. The big number on Main and the month's income and spending count only On hand. So the ₴50,000 you put aside doesn't wink at you on a Friday night, and the month shows how you really live. Turn on FOP and a fourth pocket, FOP, appears: its money stays out of the big number too."
                             ]
                           },
                           {
@@ -410,7 +410,7 @@
                             "tag": "p",
                             "attrs": { "class": "desc" },
                             "children": [
-                              "Some accounts you use but don't want in the total: a sole-trader account clients pay into, or a dollar account. Keep it in On hand and switch off “Count in balance”. Its balance leaves the big number, while money arriving on it is still the month's income. Moving it to your card or selling the currency won't count as income a second time: it's the same money."
+                              "Some accounts you use but don't want in the total: a sole-trader account clients pay into, if you don't turn on FOP in Dibsly, or a dollar account. Keep it in On hand and switch off “Count in balance”. Its balance leaves the big number, while money arriving on it is still the month's income. Moving it to your card or selling the currency won't count as income a second time: it's the same money."
                             ]
                           },
                           {
@@ -861,7 +861,7 @@
                             "tag": "p",
                             "attrs": { "class": "desc" },
                             "children": [
-                              "A goal takes nothing off your accounts: it shows which of your savings and investments work for it. On hand money takes no part: to get closer, you move money to the goal's account. Several goals fill in turn: a reserve such as a cushion first, then in your order. And Dibsly tells you the month you reach each one at your pace."
+                              "A goal takes nothing off your accounts: it shows which of your savings and investments work for it. On hand money takes no part: to get closer, you move money to the goal's account. Several goals fill in turn: a Reserve such as a cushion first, then in your order. And Dibsly tells you the month you reach each one at your pace."
                             ]
                           },
                           {
@@ -934,7 +934,7 @@
                             "attrs": { "class": "try" },
                             "children": [
                               { "tag": "b", "attrs": {}, "children": ["Where:"] },
-                              " the Investments tab"
+                              " Main → Investments"
                             ]
                           },
                           {
@@ -1331,7 +1331,7 @@
                             "attrs": { "class": "try" },
                             "children": [
                               { "tag": "b", "attrs": {}, "children": ["Where:"] },
-                              " Main → On hand"
+                              " Main → the rate to the right of On hand"
                             ]
                           }
                         ]
@@ -1384,7 +1384,7 @@
                             "tag": "p",
                             "attrs": { "class": "desc" },
                             "children": [
-                              "monobank directly with a read-only token. Statements from PrivatBank, UKRSIBBANK, KredoBank and monobank, their FOP statements too, as PDF, Excel or CSV. Dibsly reads the file on your phone, sorts operations into categories and spots transfers between your own accounts."
+                              "monobank directly with a read-only token. Statements from PrivatBank, UKRSIBBANK, KredoBank and monobank as PDF, Excel or CSV, and FOP statements from PrivatBank and UKRSIBBANK. Dibsly reads the file on your phone, sorts operations into categories and spots transfers between your own accounts."
                             ]
                           },
                           {
@@ -1836,7 +1836,7 @@
                             "tag": "p",
                             "attrs": { "class": "desc" },
                             "children": [
-                              "“What did most of it go on?”, “How much did I spend on taxis this year?”, “How are my goals?”: Dibsly works it out on your phone from your data and answers in your own figures, with cards and charts. The chat opens from any page and knows where you ask from. 20 questions a month free, more with Premium."
+                              "“What did most of it go on?”, “How much did I spend on taxis this year?”, “How are my goals?”: Dibsly works it out on your phone from your data and answers in your own figures, with cards and charts. The chat opens from any page and knows where you ask from. 20 questions a month free, 40 a day with Premium."
                             ]
                           },
                           {
@@ -1953,7 +1953,7 @@
                             "tag": "p",
                             "attrs": { "class": "desc" },
                             "children": [
-                              "Tap the paperclip and pick a statement or a broker report: Dibsly reads it on your phone, without the AI, and offers to import it into the right account."
+                              "Tap the paperclip and pick a monobank, PrivatBank, UKRSIBBANK or KredoBank statement or an Interactive Brokers or Freedom Finance report: Dibsly reads the file on your phone, without the AI, and offers to import it into the right account. Another bank's statement is read by the AI in Settings → Import & export."
                             ]
                           },
                           {
@@ -1989,7 +1989,7 @@
                             "tag": "p",
                             "attrs": { "class": "desc" },
                             "children": [
-                              "Categories: where most of it goes and what is over plan. Cash flow: spending day by day with payday marked. Trends: the months side by side. Capital: savings and investments over the year, apart from deposits."
+                              "Categories: where most of it goes and what is over plan. Cash flow: spending day by day with payday marked. Trends: the months side by side. Capital: savings, investments and what you are owed over the year, apart from deposits."
                             ]
                           },
                           {
@@ -2132,6 +2132,39 @@
                                   }
                                 ]
                               }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": { "class": "feature reveal textonly", "id": "ai-categories" },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": { "class": "ftext" },
+                        "children": [
+                          { "tag": "p", "attrs": { "class": "kind pro" }, "children": ["Premium"] },
+                          {
+                            "tag": "h3",
+                            "attrs": {},
+                            "children": ["Categories in one tap with AI"]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "desc" },
+                            "children": [
+                              "Operations Dibsly couldn't place itself, like “BEERLANDER” or “magazin 1124”, are sorted by the AI: tap Sort merchants, and what it is sure about goes straight into a category, while the rest it suggests to you. People's names and transfers never go to the AI."
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "try" },
+                            "children": [
+                              { "tag": "b", "attrs": {}, "children": ["Where:"] },
+                              " Main → Activity → To review"
                             ]
                           }
                         ]
@@ -2462,7 +2495,7 @@
                             "tag": "p",
                             "attrs": { "class": "desc" },
                             "children": [
-                              "Every income at the NBU rate of the day it arrived, the single tax, the military levy and ESV by quarter, what is due and by when, the deadlines in the calendar with reminders and the tax service's payment details to copy in one tap. And your client's payout: hours, rate and your own conditions."
+                              "For the 3rd group at 5% without VAT: every income at the NBU rate of the day it arrived, the single tax, the military levy and ESV by quarter, what is due and by when, the deadlines in the calendar with reminders and the tax service's payment details to copy in one tap. And your client's payout: hours, rate and your own conditions. Dibsly reads PrivatBank and UKRSIBBANK FOP statements itself."
                             ]
                           },
                           {
@@ -2547,7 +2580,7 @@
                             "attrs": { "class": "try" },
                             "children": [
                               { "tag": "b", "attrs": {}, "children": ["Where:"] },
-                              " the Investments tab"
+                              " Settings → Features → Investments, then Main → Investments"
                             ]
                           },
                           {
@@ -2658,7 +2691,7 @@
                             "tag": "p",
                             "attrs": { "class": "desc" },
                             "children": [
-                              "The same data on a big screen: history with search, analytics, the plan, the calendar, drafts and every brand with its logo, with search. Changes show up on your phone at once."
+                              "The same data on a big screen: Main, history with search and drafts, analytics, the plan, the calendar, goals, the portfolio, debts, credits and FOP, every brand with its logo and the chat with Dibsly. Changes show up on your phone at once."
                             ]
                           },
                           {
@@ -2727,7 +2760,7 @@
                             "tag": "p",
                             "attrs": { "class": "desc" },
                             "children": [
-                              "Connect Dibsly as a connector: ask about your money, import statements and set goals right in your assistant. Nothing is written until you say yes, and every change is in a journal where it can be undone."
+                              "Connect Dibsly as a connector: ask about your money, import statements, set goals and record debts right in your assistant. Nothing is written until you say yes, and every change is in a journal where it can be undone."
                             ]
                           },
                           {
@@ -2778,12 +2811,12 @@
                         "attrs": { "class": "ftext" },
                         "children": [
                           { "tag": "p", "attrs": { "class": "kind pro" }, "children": ["Premium"] },
-                          { "tag": "h3", "attrs": {}, "children": ["Account and sync"] },
+                          { "tag": "h3", "attrs": {}, "children": ["Sync"] },
                           {
                             "tag": "p",
                             "attrs": { "class": "desc" },
                             "children": [
-                              "Sign in with Apple, Google or e-mail and your data is the same on all your iPhones and on the website."
+                              "An account is free and optional: sign in with Apple, Google or e-mail. With Premium your data is the same on all your iPhones and on the website."
                             ]
                           },
                           {
@@ -2792,6 +2825,17 @@
                             "children": [
                               { "tag": "b", "attrs": {}, "children": ["Where:"] },
                               " Main → profile"
+                            ]
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": { "class": "fguide" },
+                            "children": [
+                              {
+                                "tag": "a",
+                                "attrs": { "href": "help.html#account" },
+                                "children": ["Guide"]
+                              }
                             ]
                           }
                         ]
@@ -2820,7 +2864,7 @@
                             "attrs": { "class": "try" },
                             "children": [
                               { "tag": "b", "attrs": {}, "children": ["Where:"] },
-                              " Settings → Backup"
+                              " Settings → Backup & recovery"
                             ]
                           },
                           {
@@ -3123,7 +3167,11 @@
                                     "tag": "div",
                                     "attrs": {},
                                     "children": [
-                                      { "tag": "h4", "attrs": {}, "children": ["More banks"] }
+                                      {
+                                        "tag": "h4",
+                                        "attrs": {},
+                                        "children": ["More banks connected directly"]
+                                      }
                                     ]
                                   },
                                   {

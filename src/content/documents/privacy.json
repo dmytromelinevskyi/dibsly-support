@@ -26,7 +26,7 @@
               {
                 "tag": "p",
                 "attrs": { "class": "updated" },
-                "children": ["Last updated: October 28, 2026"]
+                "children": ["Last updated: October 30, 2026"]
               }
             ]
           }
@@ -93,6 +93,11 @@
               { "tag": "a", "attrs": { "href": "#data-sharing" }, "children": ["Data Sharing"] },
               {
                 "tag": "a",
+                "attrs": { "href": "#service-providers" },
+                "children": ["Service Providers"]
+              },
+              {
+                "tag": "a",
                 "attrs": { "href": "#optional-backup-recovery" },
                 "children": ["Optional Backup & Recovery"]
               },
@@ -138,7 +143,7 @@
                 "tag": "p",
                 "attrs": {},
                 "children": [
-                  "Dibsly is a local-first personal finance tracker for iOS. A Dibsly account is optional: with it, your data is kept in your account and on all your devices, on the website and, if you connect one, in your AI assistant (Claude, ChatGPT or Codex); you can also keep an account together with other people."
+                  "Dibsly is a local-first personal finance tracker for iOS. A Dibsly account is optional: with it and Dibsly Premium, your data is kept in your account and on all your devices, on the website and, if you connect one, in your AI assistant (Claude, ChatGPT or Codex); you can also keep an account together with other people."
                 ]
               },
               {
@@ -162,7 +167,7 @@
                 "tag": "p",
                 "attrs": {},
                 "children": [
-                  "Without a Dibsly account, Dibsly does not collect personal data, financial data or tracking data on Dibsly-operated servers, and nothing leaves your device except as described in this policy. The only data the app sends on its own is the anonymous usage statistics described in “Usage Statistics”, which you can turn off. It also makes a few requests that carry none of your data: when Dibsly comes to the front, at most every six hours, it asks Apple's App Store which version of Dibsly is the latest (only the app's identifier and your device's region are sent), reads dibslyapp.com/app-config.json when a newer version is out, to learn the oldest version that still works, and downloads the table of sole-trader (FOP) tax rates by year from my.dibslyapp.com. These servers receive standard network metadata such as an IP address."
+                  "Without a Dibsly account, Dibsly does not collect personal data, financial data or tracking data on Dibsly-operated servers (once you use the AI, its relay keeps only the counters described in “AI Features” and “Data Retention and Deletion”), and nothing leaves your device except as described in this policy. The only data the app sends on its own is the anonymous usage statistics described in “Usage Statistics”, which you can turn off. It also makes a few requests that carry none of your data: when Dibsly comes to the front, at most every six hours, it asks Apple's App Store which version of Dibsly is the latest (only the app's identifier and your device's region are sent), reads dibslyapp.com/app-config.json when a newer version is out, to learn the oldest version that still works, and downloads the table of sole-trader (FOP) tax rates by year from my.dibslyapp.com. These servers receive standard network metadata such as an IP address."
                 ]
               },
               {
@@ -181,7 +186,7 @@
                 "tag": "p",
                 "attrs": {},
                 "children": [
-                  "To learn which parts of Dibsly people use and which they never find, the app counts how many times a day its screens are opened and some of its buttons are tapped, such as adding an expense, switching an Analytics section or importing a statement. Once a day it sends the counts of the previous days to Dibsly's server: only the names of those screens and actions with their numbers, the date, and whether the app came from the App Store or TestFlight. Nothing you type or see is counted — no amounts, names, categories, accounts or notes — and the counts carry no account, no device identifier and no advertising identifier, so they cannot be linked to you or to your other data; the server adds them to totals per day and keeps no copy of what a device sent. Cloudflare receives standard network metadata such as an IP address, which Dibsly does not store with the counts. The totals are kept for about 13 months and seen only by the developer. You can turn this off in Settings → Preferences → “Share usage statistics”; the counts not yet sent are then deleted. Nothing is counted while the app shows test data."
+                  "To learn which parts of Dibsly people use and which they never find, the app counts how many times a day its screens are opened and some of its buttons are tapped, such as adding an expense, switching an Analytics section or importing a statement. Once a day it sends the counts of the previous days to Dibsly's server: only the names of those screens and actions with their numbers, the date, and whether the app came from the App Store or TestFlight. Nothing you type or see is counted — no amounts, names, categories, accounts or notes — and the counts carry no account, no device identifier and no advertising identifier, so they cannot be linked to you or to your other data; the server adds them to totals per day and keeps no copy of what a device sent. Cloudflare receives standard network metadata such as an IP address, which Dibsly does not store with the counts. The totals are kept for about 13 months and seen only by the developer. You can turn this off in Settings → Preferences → “Share usage statistics”; the counts not yet sent are then deleted. Nothing is counted while the app shows test data. The website my.dibslyapp.com counts the same way: how many times a day its pages are opened and which kinds of change are saved (such as operations, the plan or a question to the chat), with no account, nothing you typed and no identifier; to count a browser once a day, it keeps in that browser the names it has already reported that day. Dibsly's server counts each call of a connected AI assistant's tools by the tool's name only, with no account. These totals are kept like the app's, about 13 months; the website's and the assistants' counts have no switch."
                 ]
               },
               {
@@ -248,7 +253,7 @@
                     "attrs": {},
                     "children": ["AI assistants (optional, Dibsly Premium)."]
                   },
-                  " You can connect your own AI assistant to your account — Claude (Anthropic), ChatGPT or Codex (OpenAI); Dibsly asks you on its own page and shows the connection among your devices, where you can remove it at any time. A connection reaches only your own account. Once connected, the assistant can read, when you ask it to, your accounts, operations, plan, payment calendar, goals, investments, debts, credits and sole-trader records. After you confirm in the chat it can record, change or delete your expenses and incomes, import a bank statement, record or remove broker trades, change the month's plan, calendar payments, goals, categories and your accounts' names, icons and visibility, record a debt, and save the records described above (savings months, salary and sole-trader records, rates, your notes) — every such change is kept in your account's AI journal, where you can undo it; balances, credits and other transfers are read-only for it, and no tool moves real money. What the assistant reads is processed by its provider under your agreement with that provider and its privacy policy; Dibsly sends nothing to an assistant you have not connected. The connection's tokens are stored only as hashes, and its grant (which account and connection it belongs to, encrypted with a key only the token unlocks) in Cloudflare's global key-value store."
+                  " You can connect your own AI assistant to your account — Claude (Anthropic), ChatGPT or Codex (OpenAI); Dibsly asks you on its own page and shows the connection among your devices, where you can remove it at any time. A connection reaches only your own account. Once connected, the assistant can read, when you ask it to, your accounts, operations, plan, payment calendar, goals, investments, debts, credits and sole-trader records. After you confirm in the chat it can record, change or delete your expenses and incomes, import a bank statement, record or remove broker trades, change the month's plan, calendar payments, goals, categories and your accounts' names, icons and visibility, record a debt, and save the records described above (savings months, salary and sole-trader records, rates, your notes) — every such change is kept in your account's AI journal, where you can undo it; balances, credits and other transfers are read-only for it, and no tool moves real money. What the assistant reads is processed by its provider under your agreement with that provider and its privacy policy; Dibsly sends nothing to an assistant you have not connected. The connection's tokens are stored only as hashes, and its grant (which account and connection it belongs to, encrypted with a key only the token unlocks) in Cloudflare's global key-value store. Removing the connection or the account stops it at its next call; the stored grant itself expires at the latest 30 days after you connected, and an access token after an hour."
                 ]
               },
               {
@@ -256,7 +261,7 @@
                 "attrs": {},
                 "children": [
                   { "tag": "strong", "attrs": {}, "children": ["Deleting."] },
-                  " “Remove from this iPhone” signs that device out and keeps your account. Removing a device or an assistant's connection, in the app's profile or on the website, ends its access. “Delete account” in the app erases your account, its devices and sessions, your profile photo and every record of your space on Dibsly's server, revokes Sign in with Apple, and signs out every device; the data on your devices is erased too."
+                  " “Remove from this iPhone” signs that device out, erases its data and keeps your account. Removing a device or an assistant's connection, in the app's profile or on the website, ends its access. “Delete account and all data” in the app's profile (confirmed by signing in again with Apple, Google or your password) erases your account, its ways to sign in, devices, sessions and push tokens, your subscription record, profile photo and debt links, every record of your personal space on Dibsly's server and every shared space you were the last member of; it revokes Sign in with Apple and signs out every device, and the data on your devices is erased too. What you added to a shared account others are still in stays with them. Deleting the account does not cancel Premium (cancel it in iOS Settings) and does not delete your backups in iCloud Drive or Google Drive. A few things are not removed with the account: the ended sessions' records (a hash of the token, the account's and the device's identifiers and when it began, kept so your other devices learn why they were signed out), the time of your last debt reminder, a connected assistant's grant until it expires (see above), and the AI relay's counters described in “Data Retention and Deletion”, which the relay keeps apart from your account. On your iPhone, erasing leaves an encrypted local safety copy, as described in “Optional Backup & Recovery”."
                 ]
               },
               {
@@ -424,6 +429,40 @@
               },
               {
                 "tag": "h2",
+                "attrs": { "id": "service-providers" },
+                "children": ["Service Providers"]
+              },
+              {
+                "tag": "p",
+                "attrs": {},
+                "children": [
+                  "Dibsly relies on these providers, each receiving only what this policy describes. ",
+                  { "tag": "strong", "attrs": {}, "children": ["Cloudflare"] },
+                  " runs Dibsly's server, the AI relay, my.dibslyapp.com and dibslyapp.com, stores the account's data and the relay's counters, and sends the one-time e-mail codes and the website form's copies through Cloudflare Email Service. ",
+                  { "tag": "strong", "attrs": {}, "children": ["OpenAI"] },
+                  " answers the AI features. ",
+                  { "tag": "strong", "attrs": {}, "children": ["Apple"] },
+                  " sells Premium (App Store, StoreKit), signs you in with Apple, delivers push notifications, checks the app with App Attest, recognizes speech, keeps your iCloud Drive backups and tells the app its latest version. ",
+                  { "tag": "strong", "attrs": {}, "children": ["Google"] },
+                  " signs you in with Google, keeps your Google Drive backups if you choose them, and serves the fonts of dibslyapp.com: your browser loads them from fonts.googleapis.com and fonts.gstatic.com, which receive its IP address and browser details. On my.dibslyapp.com, signing in loads Apple's and Google's sign-in scripts from their servers. The support mailbox ",
+                  {
+                    "tag": "a",
+                    "attrs": { "href": "mailto:dibslysupport@gmail.com" },
+                    "children": ["dibslysupport@gmail.com"]
+                  },
+                  " is a Gmail account, so what you write to support and the copies of the website form are kept by Google. ",
+                  { "tag": "strong", "attrs": {}, "children": ["Nasdaq"] },
+                  " and ",
+                  { "tag": "strong", "attrs": {}, "children": ["Yahoo Finance"] },
+                  " give market prices, the ",
+                  { "tag": "strong", "attrs": {}, "children": ["National Bank of Ukraine"] },
+                  " exchange rates, and ",
+                  { "tag": "strong", "attrs": {}, "children": ["monobank"] },
+                  " your own data when you connect it, as described above. Links made before the domain, at dmytromelinevskyi.github.io/dibsly-support, are served by GitHub."
+                ]
+              },
+              {
+                "tag": "h2",
                 "attrs": { "id": "optional-backup-recovery" },
                 "children": ["Optional Backup & Recovery"]
               },
@@ -484,15 +523,21 @@
                 "tag": "p",
                 "attrs": {},
                 "children": [
-                  "Before managed restore or CSV Replace mutates local data, Dibsly creates and verifies an encrypted emergency snapshot in the app's local Application Support storage. Its local-only encryption credential is held in the device Keychain. Dibsly does not upload these emergency files or their credentials. After a new snapshot is verified, Dibsly keeps the five newest Dibsly-managed emergency snapshots on a best-effort basis and does not remove unrelated files. Only exact ",
+                  "Before managed restore, CSV Replace or Delete All Data changes local data — also when “Remove from this iPhone” or a deleted account erases the phone — Dibsly creates and verifies an encrypted emergency snapshot in the app's local Application Support storage, which Backup & recovery lists as a local safety copy you can restore. Its local-only encryption credential is held in the device Keychain. Dibsly does not upload these emergency files or their credentials. After a new snapshot is verified, Dibsly keeps the five newest Dibsly-managed emergency snapshots on a best-effort basis and does not remove unrelated files. Only exact ",
                   { "tag": "code", "attrs": {}, "children": ["pre-restore-<UUID>.dibslybackup"] },
-                  " and ",
+                  ", ",
                   {
                     "tag": "code",
                     "attrs": {},
                     "children": ["pre-replace-import-<UUID>.dibslybackup"]
                   },
-                  " names are eligible for this pruning."
+                  " and ",
+                  {
+                    "tag": "code",
+                    "attrs": {},
+                    "children": ["pre-delete-all-<UUID>.dibslybackup"]
+                  },
+                  " names are eligible for this pruning. These snapshots are removed with the app."
                 ]
               },
               {
@@ -566,7 +611,7 @@
                     "attrs": {},
                     "children": ["AI categorization (Dibsly Premium)."]
                   },
-                  " AI categorization helps with the operations Dibsly could not categorize itself: imported operations when you tap Sort with AI, and new payments captured from bank notifications or Apple Pay, whose category it proposes before you save them. Once you allow the AI, Dibsly sends to OpenAI, through Dibsly's own relay server, the names of those merchants as your bank wrote them (for a bill paid to a company through internet banking: the company and the service, without an address, a phone number or an account number), the names of your categories, and up to eight merchants you already filed under each category. Long numbers are removed from every name before it is sent. Amounts, dates, accounts, balances, notes, card or account numbers are never sent, and transfers to and from people are never sent at all: Dibsly files them as transfers itself. Your device proves it runs a genuine copy of Dibsly through Apple's App Attest. Dibsly's relay, run on Cloudflare, passes each request to OpenAI and keeps none of its content — only an anonymous key of your device and how many requests it made this month and today, to hold the AI's limits; the relay and OpenAI receive standard network metadata such as an IP address. Requests are sent with storage off; under OpenAI's API terms the data is kept for at most 30 days for abuse monitoring and is not used to train models. With Premium, the app also sends the relay the App Store's signed record of your subscription; the relay checks Apple's signature and keeps none of it, only whether Premium is active and until when inside its short-lived session token."
+                  " AI categorization helps with the operations Dibsly could not categorize itself: imported operations when you tap Sort with AI, and new payments captured from bank notifications or Apple Pay, whose category it proposes before you save them. Once you allow the AI, Dibsly sends to OpenAI, through Dibsly's own relay server, the names of those merchants as your bank wrote them (for a bill paid to a company through internet banking: the company and the service, without an address, a phone number or an account number), the names of your categories, and up to eight merchants you already filed under each category. Long numbers are removed from every name before it is sent. Amounts, dates, accounts, balances, notes, card or account numbers are never sent, and transfers to and from people are never sent at all: Dibsly files them as transfers itself. Your device proves it runs a genuine copy of Dibsly through Apple's App Attest. Dibsly's relay, run on Cloudflare, passes each request to OpenAI and keeps none of its content — only your device's App Attest key and how many requests it made and what they cost this month and today, to hold the AI's limits (see “Data Retention and Deletion”); the relay and OpenAI receive standard network metadata such as an IP address. Requests are sent with storage off; under OpenAI's API terms the data is kept for at most 30 days for abuse monitoring and is not used to train models. With Premium, the app also sends the relay the App Store's signed record of your subscription; the relay checks Apple's signature and keeps none of it, only whether Premium is active and until when inside its short-lived session token. When you are signed in to a Dibsly account, the app also shows the relay its Dibsly session; the relay asks Dibsly's server whose it is and keeps only your account's identifier in its token, so the chat's questions and the statements of other banks count for your account on all your devices and the website."
                 ]
               },
               {
@@ -606,7 +651,7 @@
                       "Statements of other banks (3 in all for free, up to 25 a month with Dibsly Premium)."
                     ]
                   },
-                  " Dibsly reads the statements of monobank, PrivatBank, UKRSIBBANK and KredoBank — and their sole-trader statements — on your device, without the AI. A statement file of any other bank (PDF, CSV, XLS or XLSX) that you choose is read by the AI after you allow it: its text page by page, and a page without text (a scan) as a picture, is sent the same way to OpenAI, which returns the account, the period, the balances and each operation — its date, amount and currency, the merchant or the other side with its account or card number as printed, and a category. Every page goes as the bank printed it, the header included: your name, your address, tax number and date of birth if the bank prints them, full account and card numbers, and balances. Dibsly removes nothing from it before it is sent. After you import, Dibsly keeps only the operations and the account from the preview, with card numbers and IBANs masked; the rest of the file is not kept. Neither Dibsly nor its relay keeps the file or its content; to hold the limits the relay keeps only an anonymous key of your device (or your account's identifier when you are signed in), a random identifier of the file, how many pages and scanned pages it had and how many statements you read. The result is shown as the usual preview to check before anything is imported, marked as read by the AI. The same OpenAI terms apply: the data is kept for at most 30 days and is not used to train models."
+                  " Dibsly reads the statements of monobank, PrivatBank, UKRSIBBANK and KredoBank, and the sole-trader (FOP) statements of PrivatBank and UKRSIBBANK, on your device, without the AI. A statement file of any other bank (PDF, CSV, XLS or XLSX) that you choose is read by the AI after you allow it: its text page by page, and a page without text (a scan) as a picture, is sent the same way to OpenAI, which returns the account, the period, the balances and each operation — its date, amount and currency, the merchant or the other side with its account or card number as printed, and a category. Every page goes as the bank printed it, the header included: your name, your address, tax number and date of birth if the bank prints them, full account and card numbers, and balances. Dibsly removes nothing from it before it is sent. After you import, Dibsly keeps only the operations and the account from the preview, with card numbers and IBANs masked; the rest of the file is not kept. Neither Dibsly nor its relay keeps the file or its content; to hold the limits the relay keeps only an anonymous key of your device (or your account's identifier when you are signed in), a random identifier of the file, how many pages and scanned pages it had and how many statements you read. The result is shown as the usual preview to check before anything is imported, marked as read by the AI. The same OpenAI terms apply: the data is kept for at most 30 days and is not used to train models."
                 ]
               },
               {
@@ -634,7 +679,7 @@
                       "Chat with Dibsly (20 questions a month free, more with Dibsly Premium)."
                     ]
                   },
-                  " The chat has its own switch on the same permission page. Your question and the earlier messages of the conversation are sent the same way to OpenAI; to answer, the AI asks your device for what it needs and your device sends only that — totals, the operations it found (their dates, titles, amounts, categories and accounts), your plan's limits, your accounts' names and balances, your categories' names, the people and shops of your debts with what is between you, and your credits with their terms, payments and schedule. Nothing is changed by the AI: a change it proposes (operations, a category or an account, a plan's limit, a debt, a credit's payment) is made on your device only when you tap Save, and you can undo it. The conversation itself is kept only on your device — it is not synced, not in your backups and not on Dibsly's server — and is deleted with “Clear the conversation”; turning the chat off withdraws its permission. Dibsly's relay counts your questions and their cost for the chat's limits, and how long each answer took (kept 120 days, without your account's name), and keeps none of their content. A card you share from the chat is a picture made on your device and shared only where you choose. The same OpenAI terms apply: the data is kept for at most 30 days and is not used to train models."
+                  " The chat has its own switch on the same permission page. Your question, the earlier messages of the conversation and the name of the app's page you opened the chat from are sent the same way to OpenAI; to answer, the AI asks your device for what it needs and your device sends only that — totals, the operations it found (their dates, titles, amounts, categories and accounts), your plan's limits, your accounts' names and balances, your categories' names, the people and shops of your debts with what is between you, your credits with their terms, payments and schedule, and today's exchange rates. Nothing is changed by the AI: a change it proposes (operations, a category or an account, a plan's limit, a debt, a credit's payment) is made on your device only when you tap Save, and you can undo it. The conversation itself is kept only on your device — it is not synced, not in your backups and not on Dibsly's server — and is deleted with “Clear the conversation”; turning the chat off withdraws its permission. Dibsly's relay counts your questions and their cost for the chat's limits — under your device's key or, when you are signed in, your account's identifier — and how long each answer took, and keeps none of their content (see “Data Retention and Deletion”). A card you share from the chat is a picture made on your device and shared only where you choose. The same OpenAI terms apply: the data is kept for at most 30 days and is not used to train models."
                 ]
               },
               {
@@ -646,7 +691,7 @@
                     "attrs": {},
                     "children": ["Chat with Dibsly on the website (Dibsly Premium)."]
                   },
-                  " On my.dibslyapp.com the chat asks for your permission before the first question. Your question and up to ten earlier messages of the conversation go to Dibsly's server, which sends them on to OpenAI through Dibsly's relay in the same way; to answer, the AI asks the server for what it needs, and the server sends only that — totals by category, the operations found (their dates, titles, amounts, categories and accounts), accounts with their balances, the plan, payments, goals, investments, debts and credits. The chat changes nothing by itself: a change it proposes (operations moved to another category, renamed, or one operation's amount, day or account) is shown as a card, saved only when you press Save, and kept in your account's AI journal, where you can undo it. The conversation is kept only in that browser, not on Dibsly's server, and the Clear button deletes it; the server and the relay count your questions and their cost for the chat's limits by your account's identifier and keep none of their content. The same OpenAI terms apply: the data is kept no longer than 30 days and is not used to train models."
+                  " On my.dibslyapp.com the chat asks for your permission before the first question. Your question and up to ten earlier messages of the conversation go to Dibsly's server, which sends them on to OpenAI through Dibsly's relay in the same way, together with your accounts (names, currencies and balances), your categories and, when you ask from History or Analytics, the page's period, category, search and the operations you ticked; to answer, the AI asks the server for what else it needs, and the server sends only that — totals by category, the operations found (their dates, titles, amounts, categories and accounts), the plan, payments, goals, investments, debts, credits and the drafts waiting to be recorded. The chat changes nothing by itself: a change it proposes (operations moved to another category, renamed, or one operation's amount, day or account; new expenses or incomes, also from drafts; a brand's category) is shown as a card and saved only when you press Save — or as soon as it appears, if you chose “Save changes at once” in the chat's menu, a choice kept in that browser; Undo on the card takes it back, and changes to operations are also kept in your account's AI journal. The conversation is kept only in that browser, not on Dibsly's server, and the Clear button deletes it; the server and the relay count your questions and their cost for the chat's limits, and how long each answer took, by your account's identifier and keep none of their content. The same OpenAI terms apply: the data is kept no longer than 30 days and is not used to train models."
                 ]
               },
               {
@@ -665,7 +710,7 @@
                 "tag": "p",
                 "attrs": {},
                 "children": [
-                  "Dibsly Premium (sync of your account across devices, the website and your AI assistant; shared accounts; bank notifications of any bank read by the AI; up to 25 statements of other banks a month read by the AI; AI categorization; up to 300 receipts a month; voice entry with the AI and more questions in the chat) is an auto-renewable subscription sold through the App Store. Apple processes the purchase, the payment and the renewals under your Apple account; Dibsly never receives your payment details, and the purchase does not give Dibsly your name or email. On your device Dibsly reads only whether the subscription is active and until when, through Apple's StoreKit. You manage and cancel the subscription in iOS Settings → your name → Subscriptions. Everything else, including Investments, goals and the account itself, is free. Your data stays on your device whether or not you subscribe: when Premium ends, the Premium features stop — sync, the website and the assistants for your own data, while a shared account keeps syncing as long as another member has Premium — receipts return to 10 a month, and nothing is deleted from your devices or your account."
+                  "Dibsly Premium (sync of your account across devices, the website and your AI assistant; shared accounts; bank notifications of any bank read by the AI; up to 25 statements of other banks a month read by the AI; AI categorization; up to 300 receipts a month; voice entry with the AI and more questions in the chat) is an auto-renewable subscription sold through the App Store. Apple processes the purchase, the payment and the renewals under your Apple account; Dibsly never receives your payment details, and the purchase does not give Dibsly your name or email. On your device Dibsly reads only whether the subscription is active and until when, through Apple's StoreKit. You manage and cancel the subscription in iOS Settings → your name → Subscriptions. Everything else, including Investments, goals and the account itself, is free. Your data stays on your device whether or not you subscribe: when Premium ends, the Premium features stop — sync, the website and its chat, and the assistants for your own data (a shared account keeps syncing as long as another member has Premium), bank notifications read by the AI, AI categorization and voice entry with the AI; receipts return to 10 a month, the chat to 20 questions a month and statements of other banks to the free 3 in all. Nothing is deleted from your devices or your account: what is in the account stays there until you delete it and comes back with sync if you subscribe again."
                 ]
               },
               {
@@ -677,7 +722,7 @@
                 "tag": "p",
                 "attrs": {},
                 "children": [
-                  "Local data remains on your device until you edit it, delete it, remove the app, or use Dibsly's Delete All Data action. Data in a Dibsly account remains until you delete it or delete the account; a shared account's records remain while anyone is still in it; shared split bills are deleted after 30 days; a debt link nobody accepted expires after 30 days. Cloud backups remain in your iCloud Drive until you delete them there, from Dibsly's backup list, or through automatic retention described above. Dibsly does not control Apple's own retention practices."
+                  "Local data remains on your device until you edit it, delete it, remove the app, or use Dibsly's Delete All Data action, which keeps an encrypted local safety copy (see “Optional Backup & Recovery”). Data in a Dibsly account remains until you delete it or delete the account, also after Premium ends; a shared account's records remain while anyone is still in it; shared split bills stop opening after 30 days and are then deleted; a debt link nobody accepted expires after 30 days. A one-time e-mail code works for 15 minutes and is kept only as a hash; expired codes are cleared later. Push tokens are kept until you sign out, remove the device, delete the account or turn notifications off. The usage statistics' daily totals are kept for about 13 months. A connected assistant's grant expires at the latest 30 days after you connected, its access tokens after an hour. The AI relay keeps, apart from your account: your device's App Attest key (its identifier and public key), the device's request counts and their cost per month, and for each statement of another bank its random identifier and page counts — with no automatic deletion, as they hold the monthly and the “3 in all” limits; the chat's questions until the end of the month; and how long each chat answer took, for 120 days. The chat's and the statements' rows carry your account's identifier when you were signed in, otherwise your device's key, and deleting the Dibsly account does not remove them. Cloud backups remain in your iCloud Drive or Google Drive until you delete them there, from Dibsly's backup list, or through automatic retention described above. Dibsly does not control the retention practices of Apple, Google or OpenAI."
                 ]
               },
               { "tag": "h2", "attrs": { "id": "your-choices" }, "children": ["Your Choices"] },
@@ -685,10 +730,17 @@
                 "tag": "p",
                 "attrs": {},
                 "children": [
-                  "You can use Dibsly without an account, turn off the usage statistics, use it without backup, disable automatic backup, disconnect iCloud Drive or Google Drive, delete Dibsly backups, export your data, or delete all local Dibsly data from the app. With an account you can remove any device or assistant's connection, leave a shared account, switch off notifications about others' operations, and delete the account with everything in it. Bank statement import, the monobank connection and the AI features are optional: you can use Dibsly without them, disconnect monobank at any time, and revoke its token in your monobank cabinet."
+                  "You can use Dibsly without an account, turn off the usage statistics, use it without backup, disable automatic backup, disconnect iCloud Drive or Google Drive, delete Dibsly backups, export your data, or delete all local Dibsly data from the app (Settings → Data health → Delete all data; the row is hidden while you are signed in). With an account you can remove any device or assistant's connection, leave a shared account, switch off notifications about others' operations, and delete the account as described in “Deleting”. Bank statement import, the monobank connection and the AI features are optional: you can use Dibsly without them, disconnect monobank at any time, and revoke its token in your monobank cabinet."
                 ]
               },
               { "tag": "h2", "attrs": { "id": "contact" }, "children": ["Contact"] },
+              {
+                "tag": "p",
+                "attrs": {},
+                "children": [
+                  "Dibsly is made and run by Dmytro Melinevskyi, its seller on the App Store."
+                ]
+              },
               { "tag": "p", "attrs": {}, "children": ["For privacy questions, contact:"] },
               {
                 "tag": "p",

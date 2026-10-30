@@ -72,13 +72,13 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "Yes. Dibsly never asks for your bank password and can’t move money, and without an account ",
+                          "Yes. Dibsly never asks for your bank password and can’t move money. ",
                           {
                             "tag": "a",
                             "attrs": { "href": "privacy.html" },
-                            "children": ["your data stays"]
+                            "children": ["Your records stay"]
                           },
-                          " on your iPhone and in your own encrypted backups."
+                          " on your iPhone and in your own encrypted backups; they go to Dibsly’s server only with sync (Premium), and to the AI only what a feature needs, and only with your permission."
                         ]
                       }
                     ]
@@ -120,7 +120,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "Only what an answer needs, and only with your permission. Dibsly does the math on your phone; the AI just puts it into words."
+                          "Only with your permission, and only through Dibsly’s server to OpenAI. The chat: your question and the figures the answer needs. Categories in one tap: merchant names and your category names, no amounts. A receipt: its photo. Voice: a phrase your phone could not read, with your account and category names. A bank push: its text, without full card and phone numbers. Another bank’s statement: the whole file with its header — your name, address, tax number and full account numbers if the bank prints them. The files of monobank, PrivatBank, UKRSIBBANK and KredoBank statements never reach the AI."
                         ]
                       }
                     ]
@@ -184,6 +184,24 @@
                         ]
                       }
                     ]
+                  },
+                  {
+                    "tag": "details",
+                    "attrs": {},
+                    "children": [
+                      {
+                        "tag": "summary",
+                        "attrs": {},
+                        "children": ["How do I delete my data or my account?"]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Without an account: Settings → Data health → “Delete all data” erases the data on this iPhone (an encrypted safety copy stays in the app until you delete the app). With an account: Profile (the circle next to the gear) → “Delete account and all data”, then sign in again to confirm — the server erases the account and your records, and the data disappears from your devices too; what you added to a shared account stays with its other members. “Remove from this iPhone” only erases this phone and keeps the account. Backups in iCloud Drive or Google Drive don’t go by themselves — delete them in “Backup & recovery”. Deleting doesn’t cancel Premium: cancel it in iOS Settings. What remains after deletion is in the privacy policy."
+                        ]
+                      }
+                    ]
                   }
                 ]
               }
@@ -237,7 +255,7 @@
                             "tag": "li",
                             "attrs": {},
                             "children": [
-                              "monobank directly, PrivatBank, UKRSIBBANK, KredoBank and monobank statements, Apple Pay"
+                              "monobank directly, PrivatBank, UKRSIBBANK, KredoBank and monobank statements, Apple Pay and voice"
                             ]
                           },
                           {
@@ -456,7 +474,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "monobank, PrivatBank, UKRSIBBANK and KredoBank statements (and their FOP statements) are read by Dibsly itself, on your phone; the file is never uploaded. monobank can also be connected directly with a read-only token."
+                          "monobank, PrivatBank, UKRSIBBANK and KredoBank statements, and the FOP statements of PrivatBank and UKRSIBBANK, are read by Dibsly itself, on your phone; the file is never uploaded. monobank can also be connected directly with a read-only token."
                         ]
                       },
                       {
@@ -510,7 +528,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "Without an account your records stay on the phone and in your own encrypted backups. With an account and Premium they sync through Dibsly’s server, so your iPhones and my.dibslyapp.com show the same."
+                          "Without sync — with no account or a free one — your records stay on the phone and in your own encrypted backups; only what you send yourself goes out: to the AI with your permission, an export, a debt or split-bill link. With an account and Premium they sync through Dibsly’s server, so your iPhones and my.dibslyapp.com show the same."
                         ]
                       }
                     ]
@@ -528,7 +546,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "The AI is OpenAI, reached through Dibsly’s own server. Only what a feature needs is sent; OpenAI keeps it for at most 30 days and doesn’t train models on it."
+                          "The AI is OpenAI, reached through Dibsly’s own server. Only what a feature needs is sent (another bank’s statement goes as the whole file, header included); OpenAI keeps it for at most 30 days and doesn’t train models on it."
                         ]
                       },
                       {

@@ -74,7 +74,7 @@
                       "tag": "p",
                       "attrs": {},
                       "children": [
-                        "History with search, analytics, the plan and drafts on a big screen. Changes show up on your phone at once."
+                        "History with search, analytics, the plan, drafts, FOP and debts on a big screen. Changes show up on your phone at once."
                       ]
                     },
                     {
@@ -182,9 +182,10 @@
                           "tag": "li",
                           "attrs": {},
                           "children": [
-                            "monobank, PrivatBank, UKRSIBBANK and KredoBank statements, Apple Pay"
+                            "monobank directly and monobank, PrivatBank, UKRSIBBANK and KredoBank statements"
                           ]
                         },
+                        { "tag": "li", "attrs": {}, "children": ["Apple Pay and voice"] },
                         {
                           "tag": "li",
                           "attrs": {},
@@ -243,7 +244,7 @@
                       "tag": "ul",
                       "attrs": { "class": "checks orange" },
                       "children": [
-                        { "tag": "li", "attrs": {}, "children": ["More questions to Dibsly"] },
+                        { "tag": "li", "attrs": {}, "children": ["40 questions to Dibsly a day"] },
                         {
                           "tag": "li",
                           "attrs": {},
@@ -336,9 +337,9 @@
                         {
                           "tag": "a",
                           "attrs": { "href": "privacy.html" },
-                          "children": ["your data stays"]
+                          "children": ["your records are kept"]
                         },
-                        " on your iPhone and in your own encrypted backups."
+                        " only on your iPhone and in your own encrypted backups. Nothing goes to the AI without your permission."
                       ]
                     }
                   ]
@@ -366,7 +367,7 @@
                       "tag": "p",
                       "attrs": {},
                       "children": [
-                        "monobank directly, PrivatBank, UKRSIBBANK, KredoBank and monobank statements (FOP too) and Apple Pay from any card, all free. Any other bank’s statement is read by the AI: 3 in all free, up to 25 a month with Premium."
+                        "monobank directly, monobank, PrivatBank, UKRSIBBANK and KredoBank statements, PrivatBank and UKRSIBBANK FOP statements and Apple Pay from any card, all free. Any other bank’s statement is read by the AI: 3 in all free, up to 25 a month with Premium. With Premium, Dibsly records any bank’s notifications by itself."
                       ]
                     }
                   ]
@@ -380,7 +381,7 @@
                       "tag": "p",
                       "attrs": {},
                       "children": [
-                        "Only what an answer needs, and only with your permission. Dibsly does the math on your phone; the AI just puts it into words."
+                        "Only with your permission, and only what’s needed: your question to the chat with the figures for the answer, receipt photos, phrases, bank notifications, the names of merchants Dibsly doesn’t know and statements of banks Dibsly doesn’t read itself. It goes to OpenAI through Dibsly’s server, which keeps none of it, and isn’t used for training. Everything else works without it; switch it off in Settings → Features → “AI in Dibsly”."
                       ]
                     }
                   ]
@@ -409,6 +410,20 @@
                       "attrs": {},
                       "children": [
                         "Sign in to the same account: with Premium everything shows up on the new iPhone and the website. Without it, restore from your encrypted backup in iCloud Drive or Google Drive; automatic backups are turned on in Settings."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "details",
+                  "attrs": {},
+                  "children": [
+                    { "tag": "summary", "attrs": {}, "children": ["How do I delete all data?"] },
+                    {
+                      "tag": "p",
+                      "attrs": {},
+                      "children": [
+                        "Without an account: Settings → Data health → Delete all data. With one: Settings → Profile → Delete account and all data, and the server erases everything. Your backups in iCloud Drive or Google Drive stay until you delete them. Deleting doesn’t cancel Premium: you cancel it in the App Store."
                       ]
                     }
                   ]

@@ -1,7 +1,7 @@
 {
   "route": "index.html",
   "lang": "uk",
-  "head": "<meta charset=\"utf-8\">\n<meta name=\"google-site-verification\" content=\"IwF6x4L8Xjpc7eMHUY-npoZ4KZqFXWN9hBXnf8rxMeE\" />\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\">\n<title>Dibsly: усі твої гроші в одному місці</title>\n<meta name=\"description\" content=\"Dibsly для iPhone і браузера: картки всіх банків, готівка, накопичення, інвестиції, ФОП, борги й кредити разом. Витрати записуються самі, а Dibsly відповідає на питання про гроші твоїми цифрами.\">\n<meta name=\"theme-color\" content=\"#0E0C0B\">\n<link rel=\"canonical\" href=\"https://dibslyapp.com/\">\n<link rel=\"alternate\" hreflang=\"uk\" href=\"https://dibslyapp.com/\">\n<link rel=\"alternate\" hreflang=\"en\" href=\"https://dibslyapp.com/en.html\">\n<link rel=\"alternate\" hreflang=\"x-default\" href=\"https://dibslyapp.com/\">\n<meta property=\"og:type\" content=\"website\">\n<meta property=\"og:site_name\" content=\"Dibsly\">\n<meta property=\"og:url\" content=\"https://dibslyapp.com/\">\n<meta property=\"og:locale\" content=\"uk_UA\">\n<meta property=\"og:locale:alternate\" content=\"en_US\">\n<meta property=\"og:title\" content=\"Dibsly: усі твої гроші в одному місці\">\n<meta property=\"og:description\" content=\"Усі банки, Apple Pay, готівка, цілі, інвестиції, ФОП, борги й кредити на iPhone і в браузері.\">\n<meta property=\"og:image\" content=\"https://dibslyapp.com/assets/screenshots/web/uk-web.jpg\">\n<meta property=\"og:image:width\" content=\"1440\">\n<meta property=\"og:image:height\" content=\"900\">\n<meta property=\"og:image:alt\" content=\"Сайт my.dibslyapp.com: гроші під рукою, заощадження, інвестиції, куди пішли гроші й найближчі платежі\">\n<meta name=\"twitter:card\" content=\"summary_large_image\">\n<meta name=\"twitter:title\" content=\"Dibsly: усі твої гроші в одному місці\">\n<meta name=\"twitter:description\" content=\"Усі банки, Apple Pay, готівка, цілі, інвестиції, ФОП, борги й кредити на iPhone і в браузері.\">\n<meta name=\"twitter:image\" content=\"https://dibslyapp.com/assets/screenshots/web/uk-web.jpg\">\n<meta name=\"twitter:image:alt\" content=\"Сайт my.dibslyapp.com: гроші під рукою, заощадження, інвестиції, куди пішли гроші й найближчі платежі\">\n<link rel=\"icon\" type=\"image/png\" href=\"assets/brand/favicon.png\">\n<link rel=\"apple-touch-icon\" href=\"assets/brand/apple-touch-icon.png\">",
+  "head": "<meta charset=\"utf-8\">\n<meta name=\"google-site-verification\" content=\"IwF6x4L8Xjpc7eMHUY-npoZ4KZqFXWN9hBXnf8rxMeE\" />\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\">\n<title>Dibsly: усі твої гроші в одному місці</title>\n<meta name=\"description\" content=\"Dibsly для iPhone і браузера: картки всіх банків, готівка, накопичення, інвестиції, ФОП, борги й кредити разом. Витрати записуються самі, а Dibsly відповідає на питання про гроші твоїми цифрами.\">\n<meta name=\"theme-color\" content=\"#0E0C0B\">\n<link rel=\"canonical\" href=\"https://dibslyapp.com/\">\n<link rel=\"alternate\" hreflang=\"uk\" href=\"https://dibslyapp.com/\">\n<link rel=\"alternate\" hreflang=\"en\" href=\"https://dibslyapp.com/en.html\">\n<link rel=\"alternate\" hreflang=\"x-default\" href=\"https://dibslyapp.com/\">\n<meta property=\"og:type\" content=\"website\">\n<meta property=\"og:site_name\" content=\"Dibsly\">\n<meta property=\"og:url\" content=\"https://dibslyapp.com/\">\n<meta property=\"og:locale\" content=\"uk_UA\">\n<meta property=\"og:locale:alternate\" content=\"en_US\">\n<meta property=\"og:title\" content=\"Dibsly: усі твої гроші в одному місці\">\n<meta property=\"og:description\" content=\"Усі банки, Apple Pay, готівка, цілі, інвестиції, ФОП, борги й кредити на iPhone і в браузері.\">\n<meta property=\"og:image\" content=\"https://dibslyapp.com/assets/screenshots/web/uk-web.jpg\">\n<meta property=\"og:image:width\" content=\"2160\">\n<meta property=\"og:image:height\" content=\"1350\">\n<meta property=\"og:image:alt\" content=\"Сайт my.dibslyapp.com: гроші під рукою, заощадження, інвестиції, куди пішли гроші й найближчі платежі\">\n<meta name=\"twitter:card\" content=\"summary_large_image\">\n<meta name=\"twitter:title\" content=\"Dibsly: усі твої гроші в одному місці\">\n<meta name=\"twitter:description\" content=\"Усі банки, Apple Pay, готівка, цілі, інвестиції, ФОП, борги й кредити на iPhone і в браузері.\">\n<meta name=\"twitter:image\" content=\"https://dibslyapp.com/assets/screenshots/web/uk-web.jpg\">\n<meta name=\"twitter:image:alt\" content=\"Сайт my.dibslyapp.com: гроші під рукою, заощадження, інвестиції, куди пішли гроші й найближчі платежі\">\n<link rel=\"icon\" type=\"image/png\" href=\"assets/brand/favicon.png\">\n<link rel=\"apple-touch-icon\" href=\"assets/brand/apple-touch-icon.png\">",
   "sections": [
     {
       "tag": "section",
@@ -50,7 +50,7 @@
                       "tag": "img",
                       "attrs": {
                         "src": "assets/screenshots/web/uk-web.jpg",
-                        "alt": "Портал my.dibslyapp.com на великому екрані",
+                        "alt": "Сайт my.dibslyapp.com на великому екрані",
                         "width": "1440",
                         "height": "900",
                         "loading": "lazy"
@@ -74,7 +74,7 @@
                       "tag": "p",
                       "attrs": {},
                       "children": [
-                        "Історія з пошуком, аналітика, план і чернетки на великому екрані. Зміни одразу й на телефоні."
+                        "Історія з пошуком, аналітика, план, чернетки, ФОП і борги на великому екрані. Зміни одразу й на телефоні."
                       ]
                     },
                     {
@@ -182,9 +182,10 @@
                           "tag": "li",
                           "attrs": {},
                           "children": [
-                            "monobank, виписки PrivatBank, UKRSIBBANK і KredoBank, Apple Pay"
+                            "monobank напряму й виписки monobank, PrivatBank, UKRSIBBANK і KredoBank"
                           ]
                         },
+                        { "tag": "li", "attrs": {}, "children": ["Apple Pay і голос"] },
                         {
                           "tag": "li",
                           "attrs": {},
@@ -239,11 +240,11 @@
                       "tag": "ul",
                       "attrs": { "class": "checks orange" },
                       "children": [
-                        { "tag": "li", "attrs": {}, "children": ["Більше питань до Dibsly"] },
+                        { "tag": "li", "attrs": {}, "children": ["40 питань до Dibsly на день"] },
                         {
                           "tag": "li",
                           "attrs": {},
-                          "children": ["Синхронізація з iPhone і сайтом my.dibslyapp.com"]
+                          "children": ["Синхронізація між iPhone і сайтом my.dibslyapp.com"]
                         },
                         {
                           "tag": "li",
@@ -332,9 +333,9 @@
                         {
                           "tag": "a",
                           "attrs": { "href": "privacy-uk.html" },
-                          "children": ["дані лишаються"]
+                          "children": ["твої записи зберігаються"]
                         },
-                        " на твоєму iPhone і в твоїх зашифрованих копіях."
+                        " лише на твоєму iPhone і в твоїх зашифрованих копіях. До ШІ щось іде тільки з твого дозволу."
                       ]
                     }
                   ]
@@ -362,7 +363,7 @@
                       "tag": "p",
                       "attrs": {},
                       "children": [
-                        "monobank напряму, виписки PrivatBank, UKRSIBBANK, KredoBank і monobank (і ФОП) та Apple Pay з будь-якої картки — безкоштовно. Виписку будь-якого іншого банку прочитає ШІ: 3 всього безкоштовно, до 25 на місяць з Premium."
+                        "monobank напряму, виписки monobank, PrivatBank, UKRSIBBANK і KredoBank, ФОП-виписки PrivatBank і UKRSIBBANK та Apple Pay з будь-якої картки — безкоштовно. Виписку будь-якого іншого банку прочитає ШІ: 3 всього безкоштовно, до 25 на місяць з Premium. Пуші будь-якого банку Dibsly записує сам — з Premium."
                       ]
                     }
                   ]
@@ -376,7 +377,7 @@
                       "tag": "p",
                       "attrs": {},
                       "children": [
-                        "Лише те, що треба для відповіді, і тільки з твого дозволу. Рахує Dibsly на телефоні, а ШІ лише складає слова."
+                        "Лише з твого дозволу й лише потрібне: питання до чату з цифрами для відповіді, фото чеків, фрази, сповіщення банків, назви незнайомих продавців і виписки банків, яких Dibsly сам не читає. Це йде до OpenAI через сервер Dibsly, який нічого не зберігає, і не використовується для навчання. Без дозволу решта Dibsly працює; вимкнути — Налаштування → Функції → «ШІ в Dibsly»."
                       ]
                     }
                   ]
@@ -405,6 +406,20 @@
                       "attrs": {},
                       "children": [
                         "Увійди в той самий акаунт: з Premium усе з’явиться на новому iPhone і на сайті. Без Premium віднови дані з зашифрованої копії в iCloud Drive чи Google Drive — автоматичні копії вмикаються в налаштуваннях."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "tag": "details",
+                  "attrs": {},
+                  "children": [
+                    { "tag": "summary", "attrs": {}, "children": ["Як видалити всі дані?"] },
+                    {
+                      "tag": "p",
+                      "attrs": {},
+                      "children": [
+                        "Без акаунта: Налаштування → «Стан даних» → «Видалити всі дані». З акаунтом: Налаштування → «Профіль» → «Видалити акаунт і всі дані» — сервер стирає все. Копії в iCloud Drive чи Google Drive лишаються, поки ти їх не видалиш. Підписку Premium це не скасовує — її скасовуєш в App Store."
                       ]
                     }
                   ]
@@ -486,7 +501,7 @@
             {
               "tag": "p",
               "attrs": { "class": "lead" },
-              "children": ["Усі гроші в одному місці. Спробуй безкоштовно."]
+              "children": ["Усі гроші в одному місці. Почни безкоштовно."]
             },
             {
               "tag": "div",

@@ -133,8 +133,8 @@ export const chapterDefinitions = [
       ['Your FOP in its own pocket.', 'Taxes already worked out.']
     ),
     description: localized(
-      'Єдиний податок, ЄСВ і військовий збір рахуються самі. Строки, декларації й нагадування.',
-      'Single tax, ESV and military levy work themselves out. Deadlines, returns and reminders.'
+      'Для 3 групи (5 %, без ПДВ): єдиний податок, військовий збір і ЄСВ рахуються самі. Строки, нагадування й реквізити для сплати. Безкоштовно.',
+      'For the 3rd group (5 %, no VAT): the single tax, military levy and ESV work themselves out. Deadlines, reminders and payment details. Free.'
     ),
     label: localized('ФОП', 'Sole traders (FOP)'),
     motif: 6,

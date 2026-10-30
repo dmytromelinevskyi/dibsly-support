@@ -95,6 +95,11 @@
                 "attrs": { "href": "#backup" },
                 "children": ["Backups and a new iPhone"]
               },
+              {
+                "tag": "a",
+                "attrs": { "href": "#delete" },
+                "children": ["Deleting data and the account"]
+              },
               { "tag": "a", "attrs": { "href": "#privacy" }, "children": ["Privacy"] },
               {
                 "tag": "a",
@@ -125,21 +130,21 @@
                             "tag": "li",
                             "attrs": {},
                             "children": [
-                              "Install Dibsly from the App Store and go through the welcome: language, main currency, first account."
+                              "Install Dibsly from the App Store and go through the welcome: a few screens about Dibsly (the globe at the top changes the language), the AI permission — «Not now» is fine — and the account, which can wait too."
                             ]
                           },
                           {
                             "tag": "li",
                             "attrs": {},
                             "children": [
-                              "At «Your banks», connect monobank or pick your bank's statement — your history comes in at once."
+                              "At «Your banks», tap «Upload a statement» (any bank: PDF, CSV or XLS) or «monobank directly» — your history comes in at once. No statement? «Start without a statement»."
                             ]
                           },
                           {
                             "tag": "li",
                             "attrs": {},
                             "children": [
-                              "Then let spending record itself: ",
+                              "At «Spending on its own», let spending record itself: ",
                               {
                                 "tag": "a",
                                 "attrs": { "href": "#apple-pay" },
@@ -191,7 +196,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Savings"] },
-                          " — one tile per currency with this month's change; the Investments tile appears when investments are on. Moving money between your accounts is never spending or income."
+                          " — one tile per currency; the Investments and FOP tiles appear when they are on. Moving money between your accounts is never spending or income."
                         ]
                       },
                       {
@@ -199,7 +204,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Your month"] },
-                          " — Income, Spent and Net. Below: Activity with drafts, the Plan and the Calendar — each opens with All ›."
+                          " — Income, Spent and Net; a tap opens their operations. Below: Activity with drafts, the Plan and the Calendar — each opens with All ›."
                         ]
                       },
                       {
@@ -207,7 +212,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["+"] },
-                          " records an operation (an expense, income, a transfer or a debt), a phrase («Say it»), a receipt or a credit. The gear at the top opens Settings, with a search at the bottom."
+                          " records an operation (an expense, income, a transfer or a debt), a phrase («Say it») or a receipt. The gear at the top opens Settings, with a search at the bottom."
                         ]
                       }
                     ]
@@ -297,7 +302,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Siri and the Action button."] },
-                          " Say «Record in Dibsly» to Siri or put it on the Action button. Turn it on: Settings → Preferences → Input → «Voice entry»."
+                          " Say «Record in Dibsly» to Siri (Siri takes it in English only) or put the «Record in Dibsly» shortcut on the Action button. Step by step: Settings → Preferences → Input → «Voice entry»."
                         ]
                       },
                       {
@@ -324,7 +329,18 @@
                 "tag": "section",
                 "attrs": { "class": "section", "id": "apple-pay" },
                 "children": [
-                  { "tag": "h2", "attrs": {}, "children": ["Apple Pay through Shortcuts"] },
+                  {
+                    "tag": "h2",
+                    "attrs": {},
+                    "children": [
+                      "Apple Pay through Shortcuts ",
+                      {
+                        "tag": "span",
+                        "attrs": { "class": "tag" },
+                        "children": ["iOS 27"]
+                      }
+                    ]
+                  },
                   {
                     "tag": "div",
                     "attrs": { "class": "card reveal" },
@@ -452,7 +468,7 @@
                             "tag": "li",
                             "attrs": {},
                             "children": [
-                              "The automation should run immediately, and in «Read notification» turn off «Show When Run»."
+                              "The automation should run immediately, and in «Read bank notification» turn off «Show When Run»."
                             ]
                           },
                           {
@@ -487,7 +503,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "Create a personal token at api.monobank.ua and paste it: Settings → Import & export → «Connect monobank». Dibsly syncs your cards and jars by itself; the token can only read and stays in this iPhone's Keychain."
+                          "Create a personal token at api.monobank.ua and paste it: Settings → Import & export → «Connect monobank directly». Dibsly syncs your cards and jars by itself; the token can only read and stays in this iPhone's Keychain."
                         ]
                       }
                     ]
@@ -512,7 +528,7 @@
                             "tag": "li",
                             "attrs": {},
                             "children": [
-                              "Share it to Dibsly or open Settings → Import & export → «Bank statement» (or FOP)."
+                              "Share it to Dibsly or open Settings → Import & export → «Bank statement» — Dibsly recognises a FOP statement by itself."
                             ]
                           },
                           {
@@ -528,7 +544,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "monobank, PrivatBank, UKRSIBBANK and KredoBank — and their FOP statements — Dibsly reads itself, free. Any other bank is read by the AI: 3 statements in all free, up to 25 a month with Premium. Check the amounts of such a statement."
+                          "Dibsly reads the statements of monobank, PrivatBank, UKRSIBBANK and KredoBank, and the FOP statements of PrivatBank and UKRSIBBANK, by itself, free. Any other bank is read by the AI: 3 statements in all free, up to 25 a month with Premium. Check the amounts of such a statement."
                         ]
                       }
                     ]
@@ -721,7 +737,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["The queue."] },
-                          " «Goals’ order» decides which goal fills first; the cushion always comes first."
+                          " «Goals’ order» decides which goal fills first. A goal of the Reserve kind (a cushion) always fills first and stays at the bottom."
                         ]
                       }
                     ]
@@ -745,7 +761,7 @@
                             "tag": "li",
                             "attrs": {},
                             "children": [
-                              "Turn on Settings → Features → Investments if there's no Investments tab yet."
+                              "Settings → Features → Investments → «Turn on Investments». An Investments tile appears on Main — it opens your portfolio."
                             ]
                           },
                           {
@@ -762,6 +778,13 @@
                               "Open Settings → Import & export → «Broker report» and pick the file. Dibsly sorts out buys, sales, dividends with the tax withheld, and deposits."
                             ]
                           }
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "A buy, a sale or a dividend can be recorded by hand too: «+» on the portfolio's page."
                         ]
                       }
                     ]
@@ -900,7 +923,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "For a 3rd-group FOP: income, the single tax, the military levy and ESV by quarter, deadlines and payment details. Free."
+                          "For a 3rd-group FOP (5%, no VAT): income, the single tax, the military levy and ESV by quarter, deadlines and payment details. Free."
                         ]
                       },
                       {
@@ -999,7 +1022,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["How many questions."] },
-                          " 20 questions to the AI a month are free, up to 40 a day with Premium. The first time, Dibsly shows what goes to the AI and asks for your permission; to turn it off — Settings → Features → «AI in Dibsly». The conversation stays on this iPhone; «Clear conversation» is there too."
+                          " 20 questions to the AI a month are free, up to 40 a day with Premium. The first time, Dibsly shows what goes to the AI and asks for your permission; to turn the chat on or off — Settings → Features → «AI in Dibsly» → «Ask Dibsly». The conversation stays on this iPhone; «Clear conversation» is there too."
                         ]
                       }
                     ]
@@ -1073,7 +1096,7 @@
                             "tag": "li",
                             "attrs": {},
                             "children": [
-                              "The other person opens it on an iPhone with Dibsly and taps «Join». Then choose which account to share."
+                              "The other person opens it on an iPhone with Dibsly and taps «Join». To share an account, open its card (Settings → Accounts) → «Make shared»."
                             ]
                           }
                         ]
@@ -1119,7 +1142,7 @@
                             },
                             "children": ["my.dibslyapp.com"]
                           },
-                          " on a computer and sign in to the same Dibsly account as on your iPhone. History with search, analytics, the plan, the calendar and drafts are there; changes show up on your phone at once."
+                          " on a computer and sign in to the same Dibsly account as on your iPhone. History with search and drafts, analytics, accounts, debts and credits, the plan, the calendar, goals, investments, FOP and the «Ask Dibsly» chat are there; changes show up on your phone at once."
                         ]
                       }
                     ]
@@ -1164,7 +1187,7 @@
                             "attrs": {},
                             "children": [
                               { "tag": "b", "attrs": {}, "children": ["Claude"] },
-                              " (claude.ai, the app): Settings → Connectors → add a custom connector with the address above, sign in to Dibsly and allow access."
+                              " (claude.ai, the app): Settings → Connectors → Add custom connector with the address above, sign in to Dibsly and allow access."
                             ]
                           },
                           {
@@ -1264,7 +1287,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Restoring."] },
-                          " «Open backup file» restores any .dibslybackup. On a new iPhone, tap «Restore my data» when Dibsly first opens, or just sign in if you have sync (Premium). A safety copy of the current data is made first."
+                          " «Open a backup file» restores any .dibslybackup. On a new iPhone, tap «Restore my data» when Dibsly first opens, or just sign in if you have sync (Premium). A safety copy of the current data is made first."
                         ]
                       },
                       {
@@ -1273,6 +1296,43 @@
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Backup or CSV."] },
                           " A backup holds everything, drafts and most settings included. A CSV holds operations, accounts, plans and the calendar, but no drafts or settings."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "delete" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Deleting data and the account"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["All data on this iPhone."] },
+                          " Settings → Data health → «Delete all data». Dibsly first keeps a safety copy on this iPhone and leaves your iCloud Drive and Google Drive backups alone. When you are signed in, the button isn't there — see below."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["The account."] },
+                          " Profile → «Delete account and all data»: the server deletes everything in the account and this iPhone is erased. «Save a copy first» makes a backup. Deleting doesn't cancel Premium — cancel it in iOS Settings."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Signing out."] },
+                          " Profile → «Remove from this iPhone» (with sync): your data stays in the account and the phone is erased. Without sync the button reads «Sign out», and the data stays on the iPhone."
                         ]
                       }
                     ]
@@ -1293,7 +1353,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["On your iPhone."] },
-                          " Without an account your data stays on this iPhone only. Statements are read here and are never uploaded."
+                          " Without an account your records stay only on this iPhone and in your own backups. monobank, PrivatBank, UKRSIBBANK and KredoBank statements are read here; another bank's statement is read by the AI, only with your permission."
                         ]
                       },
                       {
