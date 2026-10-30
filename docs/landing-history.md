@@ -1,4 +1,4 @@
-> Historical context. The current React implementation and native capture pipeline are documented in `architecture.md` and `animation-audit.md`.
+> Historical context: how the landing evolved before the React site. The current structure is in the README and `architecture.md`.
 
 # Dibsly Support
 

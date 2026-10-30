@@ -1,5 +1,4 @@
-import { clamp, mix } from '../cinema/timeline.js';
-import { smoother } from '../cinema/film-timeline.js';
+import { clamp, mix, smoother } from './easing.js';
 /**
  * origin (owner, 2026-10-30: «линию прям с точки в заголовке начинать, тогда не будет ни разрыва ни острых углов»):
  * the hero kicker's dot. The line starts there and comes down the gutter left of the hero's words, under them it

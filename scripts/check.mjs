@@ -30,42 +30,6 @@ for (const name of pages) {
     }
   }
 }
-const captures = JSON.parse(await readFile('src/content/captures.json', 'utf8')),
-  frames = new Set();
-for (const lang of ['uk', 'en'])
-  for (const [id, sequence] of Object.entries(captures.languages[lang])) {
-    if (!sequence.source.startsWith('native-'))
-      failures.push(`${lang}/${id}: stale capture source`);
-    for (const frame of sequence.frames) frames.add(frame);
-  }
-await Promise.all(
-  [...frames].map(async (frame) => {
-    try {
-      await access(resolve(root, frame));
-    } catch {
-      failures.push(`Missing native frame ${frame}`);
-    }
-  })
-);
-const films = JSON.parse(await readFile('src/content/films.json', 'utf8'));
-let filmCount = 0;
-for (const lang of ['uk', 'en'])
-  for (const [id, film] of Object.entries(films.languages[lang])) {
-    filmCount++;
-    try {
-      await access(resolve(root, film.src));
-    } catch {
-      failures.push(`Missing native film ${lang}/${id}`);
-    }
-    for (const step of film.steps)
-      if (
-        step.press <= step.start ||
-        step.transition <= step.press ||
-        step.settle <= step.transition ||
-        step.end <= step.settle
-      )
-        failures.push(`Invalid causal timing ${lang}/${id}`);
-  }
 for (const forbidden of ['src', 'server', 'content', 'node_modules', '.git', '.build']) {
   try {
     await access(resolve(root, forbidden));
@@ -77,5 +41,5 @@ if (failures.length) {
   process.exitCode = 1;
 } else
   console.log(
-    `Checked ${pages.length} React routes, ${frames.size} native frames, ${filmCount} native films, links and public output.`
+    `Checked ${pages.length} React routes, their links and images, and the public output.`
   );
