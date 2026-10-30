@@ -88,8 +88,8 @@ export const chapterDefinitions = [
     word: localized('РАЗОМ', 'TOGETHER'),
     title: localized(['Гроші', 'разом.'], ['Money', 'together.']),
     description: localized(
-      'Спільні накопичення й цілі для пари: видно внесок кожного. Вистачить Premium в одного.',
-      'Shared savings and goals for a couple: everyone’s part in view. One Premium is enough.'
+      'Спільні накопичення й цілі для пари чи сімʼї: видно внесок кожного. Вистачить Premium в одного.',
+      'Shared savings and goals for a couple or a family: everyone’s part in view. One Premium is enough.'
     ),
     label: localized('Гроші разом · Premium', 'Money together · Premium'),
     motif: 8,

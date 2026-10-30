@@ -15,28 +15,23 @@ export function attachJourney(canvas) {
       ? `${(rect.x + scrollX).toFixed(1)},${(rect.y + scrollY).toFixed(1)},${rect.width.toFixed(1)}`
       : '';
   }
-  /** The hero kicker's dot the head starts from, while the page is at the top (its entrance moves and fades it). */
+  /** The hero kicker's dot the line starts from, while the page is at the top (its entrance moves it). */
   function origin() {
     const dot = document.querySelector('[data-journey-origin]');
     if (!dot) return null;
     const rect = dot.getBoundingClientRect(),
-      kicker = dot.closest('.kicker'),
-      // The free lane between the hero's words and its phone, and the room above the kicker.
-      words = document.querySelector('.hero-copy')?.getBoundingClientRect(),
-      phone = document.querySelector('.hero-phone')?.getBoundingClientRect(),
-      // The phone's place on the right (sides.js: its centre at 73.5 % of the width), not its live, moving box.
-      phoneLeft = phone ? document.documentElement.clientWidth * 0.735 - phone.width / 2 : 0,
-      lane = words && phone && phoneLeft > words.right ? (words.right + phoneLeft) / 2 : null;
+      // The line comes down the gutter left of the hero's words and bends under them.
+      words = document.querySelector('.hero-copy')?.getBoundingClientRect();
     return {
       x: rect.x + rect.width / 2,
       y: rect.y + scrollY + rect.height / 2,
       radius: rect.width / 2,
-      opacity: kicker ? Number(getComputedStyle(kicker).opacity) : 1,
-      lane,
-      ceiling: kicker ? kicker.getBoundingClientRect().top + scrollY - 34 : null,
+      left: words?.left,
+      bottom: words ? words.bottom + scrollY : undefined,
     };
   }
-  const originKey = (o) => (o ? `${o.x.toFixed(1)},${o.y.toFixed(1)},${o.opacity.toFixed(2)}` : '');
+  const originKey = (o) =>
+    o ? `${o.x.toFixed(1)},${o.y.toFixed(1)},${(o.bottom ?? 0).toFixed(0)}` : '';
   let start = '';
   function measure() {
     goal = destination();

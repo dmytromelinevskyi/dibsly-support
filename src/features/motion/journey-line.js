@@ -1,4 +1,5 @@
 import { createJourneyPath } from './journey-path.js';
+const ORANGE = 'rgb(255,140,58)';
 /** A real document path terminates at the footer period. Its two circles share a liquid neck on arrival. */
 export function createJourneyLine(canvas) {
   const context = canvas.getContext('2d');
@@ -82,12 +83,6 @@ export function createJourneyLine(canvas) {
       let started = false;
       for (let i = 0; i < path.points.length; i++) {
         const p = path.points[i];
-        // The way from the hero's dot is drawn behind the head only: a trail, not a road laid out ahead.
-        if (i < path.introCount && path.lengths[i] > aim.distance) {
-          if (started) context.lineTo(aim.x, aim.y);
-          started = false;
-          continue;
-        }
         if (p.y < scroll - 12 || p.y > scroll + height + 12) {
           started = false;
           continue;
@@ -98,11 +93,9 @@ export function createJourneyLine(canvas) {
         } else context.lineTo(p.x, p.y - scroll);
       }
       context.stroke();
-      // Leaving the hero it is still the kicker's orange dot; on the way it takes the line's warm cream.
-      const color =
-        head.flight < 1
-          ? `rgb(${Math.round(255 - 19 * head.flight)},${Math.round(138 + 55 * head.flight)},${Math.round(61 + 78 * head.flight)})`
-          : `rgb(${Math.round(236 + 4 * head.merge)},${Math.round(193 - 27 * head.merge)},${Math.round(139 - 41 * head.merge)})`;
+      // Dibsly's orange all the way, as the kicker's dot and the footer's period are (owner, 2026-10-30: the head went
+      // pale cream behind the phone; tokens.css --orange, oklch(75.2% 0.167 52)).
+      const color = ORANGE;
       context.fillStyle = color;
       if (head.merge > 0.01) {
         const target = head.target,
@@ -158,9 +151,8 @@ export function createJourneyLine(canvas) {
           context.globalAlpha = 1;
         }
       }
-      // At the top the head is the kicker's dot, so it comes in with the kicker (the hero's entrance fades it in).
-      if (start && head.flight < 1)
-        context.globalAlpha = start.opacity + (1 - start.opacity) * head.flight;
+      // At the top the kicker's own dot is the head; the drawn one comes out of it as the page starts to move.
+      if (start && head.flight < 1) context.globalAlpha = Math.min(1, head.flight * 12);
       // The head's glow as a gradient (a canvas shadow blur every frame was expensive, Safari above all).
       const glow = 1 - head.merge;
       if (glow > 0.02) {
@@ -172,8 +164,8 @@ export function createJourneyLine(canvas) {
           head.y,
           head.radius + 10
         );
-        halo.addColorStop(0, `rgba(230,173,104,${0.33 * glow})`);
-        halo.addColorStop(1, 'rgba(230,173,104,0)');
+        halo.addColorStop(0, `rgba(255,140,58,${0.4 * glow})`);
+        halo.addColorStop(1, 'rgba(255,140,58,0)');
         const fill = context.fillStyle;
         context.fillStyle = halo;
         circle(head.x, head.y, head.radius + 10);

@@ -345,10 +345,6 @@
     display: none;
   }
 }
-/* The hero kicker's dot is the line's head on wide screens (journey-line.js draws it and flies it to the footer). */
-.journey-flight .hero .kicker [data-journey-origin] {
-  visibility: hidden;
-}
 .landing-react .landing-details {
   background: oklch(16% 0.008 65 / 0.72);
 }
