@@ -1189,7 +1189,7 @@
                             "attrs": {},
                             "children": [
                               { "tag": "b", "attrs": {}, "children": ["ChatGPT"] },
-                              " (chatgpt.com): Plugins → Add → Add custom MCP server, адреса вище, авторизація OAuth; увійди в Dibsly так само й дозволь доступ. На деяких тарифах ChatGPT лише читає — це обмеження тарифу, а не Dibsly."
+                              ": відкрий ", { "tag": "a", "attrs": { "href": "https://chatgpt.com/plugins/plugin_asdk_app_6ad4e73af0b88191be6796d645fdd30f", "target": "_blank", "rel": "noreferrer" }, "children": ["Dibsly у каталозі ChatGPT"] }, " і підключи; увійди в Dibsly так само й дозволь доступ. На деяких тарифах ChatGPT лише читає — це обмеження тарифу, а не Dibsly."
                             ]
                           }
                         ]
