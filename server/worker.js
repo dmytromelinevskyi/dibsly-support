@@ -40,6 +40,28 @@ async function siteAPI(path, request, env) {
     "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store", "X-Robots-Tag": "noindex" } });
 }
 
+// The statement videos (1.0.3): iOS's player asks for byte ranges and will not play an mp4 answered in full, and the
+// static files answer only in full — so a video is sliced here (each is under 1 MB).
+async function video(request, env) {
+  const asset = await env.ASSETS.fetch(new URL(new URL(request.url).pathname, request.url));
+  const range = /^bytes=(\d*)-(\d*)$/.exec(request.headers.get("Range") ?? "");
+  const headers = new Headers(asset.headers);
+  headers.set("Accept-Ranges", "bytes");
+  if (!asset.ok || !range || (range[1] === "" && range[2] === "")) {
+    return new Response(asset.body, { status: asset.status, headers });
+  }
+  const bytes = new Uint8Array(await asset.arrayBuffer());
+  const size = bytes.length;
+  let start = range[1] === "" ? Math.max(0, size - Number(range[2])) : Number(range[1]);
+  let end = range[1] === "" || range[2] === "" ? size - 1 : Math.min(Number(range[2]), size - 1);
+  if (start >= size || start > end) {
+    return new Response(null, { status: 416, headers: { "Content-Range": `bytes */${size}`, "Accept-Ranges": "bytes" } });
+  }
+  headers.set("Content-Range", `bytes ${start}-${end}/${size}`);
+  headers.set("Content-Length", String(end - start + 1));
+  return new Response(bytes.slice(start, end + 1), { status: 206, headers });
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -50,6 +72,7 @@ export default {
     if (short && request.method === "GET") return splitPage(short[1], request, env);
     const api = SITE_API[`${request.method} ${url.pathname}`];
     if (api) return siteAPI(api, request, env);
+    if (request.method === "GET" && url.pathname.endsWith(".mp4")) return video(request, env);
     return env.ASSETS.fetch(request);
   },
 };

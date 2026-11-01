@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "updated": "2026-11-01",
+  "note": "How to get a statement in each bank's app: Dibsly's statement page shows these (onboarding 1.0.3). Videos end at the bank's share sheet; the last step is choosing Dibsly.",
+  "banks": [
+    {
+      "id": "privatbank",
+      "app": "Privat24",
+      "video": "/assets/statements/privat24.mp4",
+      "poster": "/assets/statements/privat24.jpg",
+      "steps": {
+        "uk": ["«Ще» → «Довідки» → «Виписка» → «По картці / рахунку»", "Обери картку й період — хоч увесь рік", "Вид виписки «Повна» → «Сформувати»", "Відкрий її → «Завантажити документ» → «Поділитися»", "Обери Dibsly"],
+        "ru": ["«Ще» → «Довідки» → «Виписка» → «По картці / рахунку»", "Выбери карту и период — хоть весь год", "Вид выписки «Повна» → «Сформувати»", "Открой её → «Завантажити документ» → «Поделиться»", "Выбери Dibsly"],
+        "en": ["«Ще» → «Довідки» → «Виписка» → «По картці / рахунку»", "Pick the card and the period — a whole year is fine", "Statement type «Повна» → «Сформувати»", "Open it → «Завантажити документ» → Share", "Choose Dibsly"]
+      }
+    },
+    {
+      "id": "ukrsibbank",
+      "app": "UKRSIB online",
+      "video": "/assets/statements/ukrsib.mp4",
+      "poster": "/assets/statements/ukrsib.jpg",
+      "steps": {
+        "uk": ["Відкрий рахунок → «Дії над рахунком» → «Зробити виписку»", "Період «1 рік» → «Показати»", "«Поділитись»", "Обери Dibsly"],
+        "ru": ["Открой счёт → «Дії над рахунком» → «Зробити виписку»", "Период «1 рік» → «Показати»", "«Поділитись»", "Выбери Dibsly"],
+        "en": ["Open the account → «Дії над рахунком» → «Зробити виписку»", "Period «1 рік» → «Показати»", "«Поділитись»", "Choose Dibsly"]
+      }
+    },
+    {
+      "id": "ukrsibbank-business",
+      "app": "UKRSIB business",
+      "video": "/assets/statements/ukrsib-fop.mp4",
+      "poster": "/assets/statements/ukrsib-fop.jpg",
+      "steps": {
+        "uk": ["«Виписка та обороти»", "«Період» → «Поточний рік»", "Формат PDF → «Експортувати»", "Обери Dibsly"],
+        "ru": ["«Виписка та обороти»", "«Період» → «Поточний рік»", "Формат PDF → «Експортувати»", "Выбери Dibsly"],
+        "en": ["«Виписка та обороти»", "«Період» → «Поточний рік»", "PDF → «Експортувати»", "Choose Dibsly"]
+      }
+    },
+    {
+      "id": "kredobank",
+      "app": "KredoBank",
+      "video": "/assets/statements/kredo.mp4",
+      "poster": "/assets/statements/kredo.jpg",
+      "steps": {
+        "uk": ["Тицни на картку → «Отримати виписку»", "«Період» — до 3 місяців за раз → «Показати»", "«Отримати» → «Поділитися»", "Обери Dibsly"],
+        "ru": ["Нажми на карту → «Отримати виписку»", "«Період» — до 3 месяцев за раз → «Показати»", "«Отримати» → «Поділитися»", "Выбери Dibsly"],
+        "en": ["Tap the card → «Отримати виписку»", "«Період» — up to 3 months at a time → «Показати»", "«Отримати» → «Поділитися»", "Choose Dibsly"]
+      }
+    },
+    {
+      "id": "monobank",
+      "app": "monobank",
+      "video": "/assets/statements/monobank.mp4",
+      "poster": "/assets/statements/monobank.jpg",
+      "steps": {
+        "uk": ["«Виписки та довідки» → «Виписка за карткою»", "PDF і період → «Продовжити»", "«Надіслати»", "Обери Dibsly"],
+        "ru": ["«Виписки та довідки» → «Виписка за карткою»", "PDF и период → «Продовжити»", "«Надіслати»", "Выбери Dibsly"],
+        "en": ["«Виписки та довідки» → «Виписка за карткою»", "PDF and the period → «Продовжити»", "«Надіслати»", "Choose Dibsly"]
+      }
+    }
+  ]
+}

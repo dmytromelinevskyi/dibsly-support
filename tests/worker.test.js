@@ -67,3 +67,42 @@ test('feedback and roadmap still forward through the existing service binding', 
   assert.equal(forwarded.url, 'https://dibsly-sync/v1/site/feedback');
   assert.equal(forwarded.body, '{"text":"Test"}');
 });
+test('statement videos answer byte ranges for the iPhone player', async () => {
+  const env = {
+    ASSETS: {
+      fetch: async () =>
+        new Response(new Uint8Array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]), {
+          headers: { 'Content-Type': 'video/mp4' },
+        }),
+    },
+  };
+  const ranged = await worker.fetch(
+    new Request('https://dibslyapp.com/assets/statements/kredo.mp4', {
+      headers: { Range: 'bytes=2-5' },
+    }),
+    env
+  );
+  assert.equal(ranged.status, 206);
+  assert.equal(ranged.headers.get('content-range'), 'bytes 2-5/10');
+  assert.deepEqual([...new Uint8Array(await ranged.arrayBuffer())], [2, 3, 4, 5]);
+  const tail = await worker.fetch(
+    new Request('https://dibslyapp.com/assets/statements/kredo.mp4', {
+      headers: { Range: 'bytes=-3' },
+    }),
+    env
+  );
+  assert.deepEqual([...new Uint8Array(await tail.arrayBuffer())], [7, 8, 9]);
+  const whole = await worker.fetch(
+    new Request('https://dibslyapp.com/assets/statements/kredo.mp4'),
+    env
+  );
+  assert.equal(whole.status, 200);
+  assert.equal(whole.headers.get('accept-ranges'), 'bytes');
+  const outside = await worker.fetch(
+    new Request('https://dibslyapp.com/assets/statements/kredo.mp4', {
+      headers: { Range: 'bytes=20-' },
+    }),
+    env
+  );
+  assert.equal(outside.status, 416);
+});
