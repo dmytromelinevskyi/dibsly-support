@@ -1287,7 +1287,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Restoring."] },
-                          " «Open a backup file» restores any .dibslybackup. On a new iPhone, tap «Restore my data» when Dibsly first opens, or just sign in if you have sync (Premium). A safety copy of the current data is made first."
+                          " «Open a backup file» restores any .dibslybackup. On a new iPhone, tap «Restore your data» on Dibsly's first screen, or just sign in if you have sync (Premium). A safety copy of the current data is made first."
                         ]
                       },
                       {
