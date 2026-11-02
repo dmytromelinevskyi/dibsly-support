@@ -69,8 +69,8 @@ S = [
  ]),
  ("in", "Як гроші потрапляють у Dibsly", "How money gets into Dibsly", [
   ("banks", "free",
-   ("monobank і виписки банків", "monobank напряму за токеном лише для читання. Виписки PrivatBank, UKRSIBBANK, KredoBank і monobank у PDF, Excel чи CSV, а ще виписки ФОП з PrivatBank і UKRSIBBANK. Dibsly читає файл на телефоні, сам розкладає операції по категоріях і впізнає перекази між твоїми рахунками.", "Налаштування → Імпорт та експорт"),
-   ("monobank and bank statements", "monobank directly with a read-only token. Statements from PrivatBank, UKRSIBBANK, KredoBank and monobank as PDF, Excel or CSV, and FOP statements from PrivatBank and UKRSIBBANK. Dibsly reads the file on your phone, sorts operations into categories and spots transfers between your own accounts.", "Settings → Import & export"),
+   ("monobank і виписки банків", "monobank в один дотик: тиснеш «Підключити monobank», підтверджуєш у застосунку mono, і операції приходять самі за хвилину. Без токена й паролів, лише читання. Виписки PrivatBank, UKRSIBBANK, KredoBank і monobank у PDF, Excel чи CSV, а ще виписки ФОП з PrivatBank і UKRSIBBANK. Dibsly читає файл на телефоні, сам називає рахунки, розкладає операції по категоріях і впізнає перекази між твоїми рахунками. Випискою можна поділитися просто з застосунку банку.", "Налаштування → Імпорт та експорт"),
+   ("monobank and bank statements", "monobank in one tap: tap “Connect monobank”, confirm in the mono app, and transactions arrive on their own within a minute. No token, no passwords, read only. Statements from PrivatBank, UKRSIBBANK, KredoBank and monobank as PDF, Excel or CSV, and FOP statements from PrivatBank and UKRSIBBANK. Dibsly reads the file on your phone, names the accounts, sorts operations into categories and spots transfers between your own accounts. You can share a statement straight from your bank's app.", "Settings → Import & export"),
    ("phone", "banks"), "statements"),
   ("apple-pay", "free",
    ("Apple Pay записується сам", "Автоматизація в «Командах» передає кожну покупку Apple Pay у Dibsly. Вона чекає чернеткою з сумою, магазином і категорією: глянь і підтверди одним дотиком.", "Головна → Активність"),
@@ -151,8 +151,8 @@ S = [
    ("Credits", "Loans, a mortgage, instalments and microloans: what is left, the next payment in the calendar with a reminder, the overpayment and what an early repayment saves. A credit card's limit stays apart from your own money: “On hand” shows only yours.", "Settings → Features → Credits, then Main → Credits"),
    ("frame", "f-credits"), "credits"),
   ("fop", "free",
-   ("ФОП 3 групи", "Для 3 групи на 5 % без ПДВ: кожен дохід за курсом НБУ на день зарахування, єдиний податок, військовий збір і ЄСВ по кварталах, скільки до сплати й до коли, строки в календарі з нагадуваннями й реквізити податкової, щоб скопіювати одним дотиком. І виплата від замовника: години, ставка й свої умови. Виписки ФОП з PrivatBank і UKRSIBBANK Dibsly читає сам.", "Налаштування → Функції → ФОП"),
-   ("FOP, 3rd group", "For the 3rd group at 5% without VAT: every income at the NBU rate of the day it arrived, the single tax, the military levy and ESV by quarter, what is due and by when, the deadlines in the calendar with reminders and the tax service's payment details to copy in one tap. And your client's payout: hours, rate and your own conditions. Dibsly reads PrivatBank and UKRSIBBANK FOP statements itself.", "Settings → Features → FOP"),
+   ("ФОП 3 групи", "Для 3 групи на 5 % без ПДВ: кожен дохід за курсом НБУ на день зарахування, єдиний податок, військовий збір і ЄСВ по кварталах, скільки до сплати й до коли, строки в календарі з нагадуваннями й реквізити податкової, щоб скопіювати одним дотиком. І виплата від замовника: години, ставка й свої умови. Виписки ФОП з PrivatBank і UKRSIBBANK Dibsly читає сам, а рахунок ФОП у monobank підтягує разом із картками.", "Налаштування → Функції → ФОП"),
+   ("FOP, 3rd group", "For the 3rd group at 5% without VAT: every income at the NBU rate of the day it arrived, the single tax, the military levy and ESV by quarter, what is due and by when, the deadlines in the calendar with reminders and the tax service's payment details to copy in one tap. And your client's payout: hours, rate and your own conditions. Dibsly reads PrivatBank and UKRSIBBANK FOP statements itself and brings your monobank FOP account in with your cards.", "Settings → Features → FOP"),
    ("frame", "c-fop"), "fop"),
  ]),
  ("investments", "Інвестиції", "Investments", [
@@ -260,8 +260,8 @@ IDEAS = ("ideas", "Як Dibsly думає про гроші", "How Dibsly thinks
 # (`Server/sync/src/siteFeedback.ts` in dibsly-ios). Column (uk, en), then items: id, uk title, en title, uk text, en text.
 ROADMAP = [
  (("Робимо зараз", "Building now"), [
-  ("mono-one-tap", "monobank в один дотик", "monobank in one tap",
-   "Підключення без токена, який треба копіювати руками.", "Connecting without a token copied by hand."),
+  ("brokers", "Брокерські рахунки напряму", "Broker accounts directly",
+   "Interactive Brokers і Freedom без звітів вручну.", "Interactive Brokers and Freedom without reports by hand."),
  ]),
  (("Потім", "Later"), [
   ("ipad-mac", "iPad і Mac", "iPad and Mac", "", ""),
@@ -269,16 +269,14 @@ ROADMAP = [
  ]),
  (("Думаємо", "Thinking about"), [
   ("shared-plans", "Спільні плани на двох", "Shared plans for two", "", ""),
-  ("brokers", "Брокерські рахунки напряму", "Broker accounts directly",
-   "Interactive Brokers і Freedom без звітів вручну.", "Interactive Brokers and Freedom without reports by hand."),
   ("more-banks", "Більше банків напряму", "More banks connected directly", "", ""),
   ("guess-brand", "«Вгадай бренд»", "“Guess the brand”", "Гра: впізнай бренд за логотипом.", "A game: tell the brand by its logo."),
  ]),
 ]
 
 PRIVACY = ("privacy", "Приватність", "Privacy", [
-  (("Без паролів від банку", "Dibsly не просить пароль і не може переказати гроші. Токен monobank дає доступ лише до виписки."),
-   ("No bank passwords", "Dibsly never asks for a password and cannot move money. A monobank token only reads the statement.")),
+  (("Без паролів від банку", "Dibsly не просить пароль і не може переказати гроші. monobank дає Dibsly лише читати операції, і це ти підтверджуєш у застосунку mono."),
+   ("No bank passwords", "Dibsly never asks for a password and cannot move money. monobank lets Dibsly only read your transactions, and you confirm that in the mono app.")),
   (("ШІ тільки з дозволом", "Перед першим використанням Dibsly покаже, що саме надсилає ШІ й кому. Без дозволу все інше працює, а змінити рішення можна в Налаштуваннях."),
    ("AI only with your permission", "Before first use Dibsly shows what it sends to the AI and to whom. Without permission everything else works, and you can change your mind in Settings.")),
   (("Без реклами", "Без реклами й рекламних трекерів. Без акаунта всі дані лежать лише на твоєму iPhone і в твоїх копіях."),

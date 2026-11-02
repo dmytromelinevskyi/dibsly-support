@@ -474,7 +474,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "monobank, PrivatBank, UKRSIBBANK and KredoBank statements, and the FOP statements of PrivatBank and UKRSIBBANK, are read by Dibsly itself, on your phone; the file is never uploaded. monobank can also be connected directly with a read-only token."
+                          "monobank, PrivatBank, UKRSIBBANK and KredoBank statements, and the FOP statements of PrivatBank and UKRSIBBANK, are read by Dibsly itself, on your phone; the file is never uploaded. monobank can also be connected directly, in one tap: read-only access, no token."
                         ]
                       },
                       {

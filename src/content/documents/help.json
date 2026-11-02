@@ -503,7 +503,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "Create a personal token at api.monobank.ua and paste it: Settings → Import & export → «Connect monobank directly». Dibsly syncs your cards and jars by itself; the token can only read and stays in this iPhone's Keychain."
+                          "Settings → Import & export → «Connect monobank directly» → «Connect monobank», and confirm the access in the mono app. Dibsly names your cards and jars itself — check the names on «Here are your accounts», choose how much history to load, and from then on transactions arrive on their own within a minute. Read-only access, no token, no passwords; disconnect in the same place."
                         ]
                       }
                     ]

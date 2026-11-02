@@ -471,7 +471,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "Виписки monobank, PrivatBank, UKRSIBBANK і KredoBank, а також виписки ФОП PrivatBank і UKRSIBBANK, Dibsly читає сам, на телефоні; файл нікуди не вивантажується. monobank можна підключити й напряму, токеном лише для читання."
+                          "Виписки monobank, PrivatBank, UKRSIBBANK і KredoBank, а також виписки ФОП PrivatBank і UKRSIBBANK, Dibsly читає сам, на телефоні; файл нікуди не вивантажується. monobank можна підключити й напряму, в один дотик: доступ лише на читання, без токена."
                         ]
                       },
                       {
