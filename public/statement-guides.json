@@ -78,5 +78,19 @@
         "en": ["Menu → «Statements & Tax» → «Activity Statements»", "Period «Year to Date» (or another)", "«Download PDF»", "Share → «More» → Dibsly"]
       }
     }
+  ],
+  "automations": [
+    {
+      "id": "bank-notifications",
+      "video": "/assets/statements/shortcut-banks.mp4",
+      "poster": "/assets/statements/shortcut-banks.jpg",
+      "steps": {"en": ["Dibsly → Settings → Features → Transaction automation → Bank notifications → «Install automation»", "«Add Shortcut»", "Open the shortcut and add every bank app to «When I receive a notification from»", "Shortcuts → Automation: turn it on"]}
+    },
+    {
+      "id": "apple-pay",
+      "video": "/assets/statements/shortcut-applepay.mp4",
+      "poster": "/assets/statements/shortcut-applepay.jpg",
+      "steps": {"en": ["Dibsly → Settings → Features → Transaction automation → Apple Pay → «Install automation»", "«Add Shortcut»", "Shortcuts → Automation: turn on «When I get a notification from Wallet»"]}
+    }
   ]
 }
