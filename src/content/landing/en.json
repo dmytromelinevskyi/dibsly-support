@@ -182,7 +182,7 @@
                           "tag": "li",
                           "attrs": {},
                           "children": [
-                            "monobank directly and monobank, PrivatBank, UKRSIBBANK and KredoBank statements"
+                            "monobank in one tap and monobank, PrivatBank, UKRSIBBANK and KredoBank statements"
                           ]
                         },
                         { "tag": "li", "attrs": {}, "children": ["Apple Pay and voice"] },
@@ -367,7 +367,7 @@
                       "tag": "p",
                       "attrs": {},
                       "children": [
-                        "monobank directly, monobank, PrivatBank, UKRSIBBANK and KredoBank statements, PrivatBank and UKRSIBBANK FOP statements and Apple Pay from any card, all free. Any other bank’s statement is read by the AI: 3 in all free, up to 25 a month with Premium. With Premium, Dibsly records any bank’s notifications by itself."
+                        "monobank in one tap, monobank, PrivatBank, UKRSIBBANK and KredoBank statements, PrivatBank and UKRSIBBANK FOP statements and Apple Pay from any card, all free. Any other bank’s statement is read by the AI: 3 in all free, up to 25 a month with Premium. With Premium, Dibsly records any bank’s notifications by itself."
                       ]
                     }
                   ]

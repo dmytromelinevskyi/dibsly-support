@@ -182,7 +182,7 @@
                           "tag": "li",
                           "attrs": {},
                           "children": [
-                            "monobank напряму й виписки monobank, PrivatBank, UKRSIBBANK і KredoBank"
+                            "monobank в один тап і виписки monobank, PrivatBank, UKRSIBBANK і KredoBank"
                           ]
                         },
                         { "tag": "li", "attrs": {}, "children": ["Apple Pay і голос"] },
@@ -363,7 +363,7 @@
                       "tag": "p",
                       "attrs": {},
                       "children": [
-                        "monobank напряму, виписки monobank, PrivatBank, UKRSIBBANK і KredoBank, ФОП-виписки PrivatBank і UKRSIBBANK та Apple Pay з будь-якої картки — безкоштовно. Виписку будь-якого іншого банку прочитає ШІ: 3 всього безкоштовно, до 25 на місяць з Premium. Пуші будь-якого банку Dibsly записує сам — з Premium."
+                        "monobank в один тап, виписки monobank, PrivatBank, UKRSIBBANK і KredoBank, ФОП-виписки PrivatBank і UKRSIBBANK та Apple Pay з будь-якої картки — безкоштовно. Виписку будь-якого іншого банку прочитає ШІ: 3 всього безкоштовно, до 25 на місяць з Premium. Пуші будь-якого банку Dibsly записує сам — з Premium."
                       ]
                     }
                   ]
