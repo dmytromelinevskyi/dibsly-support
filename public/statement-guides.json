@@ -58,5 +58,25 @@
         "en": ["«Виписки та довідки» → «Виписка за карткою»", "PDF and the period → «Продовжити»", "«Надіслати»", "Choose Dibsly"]
       }
     }
+  ],
+  "brokers": [
+    {
+      "id": "freedom",
+      "app": "Freedom24",
+      "video": "/assets/statements/freedom.mp4",
+      "poster": "/assets/statements/freedom.jpg",
+      "steps": {
+        "en": ["«Menu» → «Reports and documents» → «Brokerage reports»", "«Broker report», «Year-to-date» or «Over a period»; «Aggregate trades and commissions» off", "«Generate a report» → «Download»", "Share → Dibsly"]
+      }
+    },
+    {
+      "id": "interactive-brokers",
+      "app": "IBKR",
+      "video": "/assets/statements/ibkr.mp4",
+      "poster": "/assets/statements/ibkr.jpg",
+      "steps": {
+        "en": ["Menu → «Statements & Tax» → «Activity Statements»", "Period «Year to Date» (or another)", "«Download PDF»", "Share → «More» → Dibsly"]
+      }
+    }
   ]
 }
