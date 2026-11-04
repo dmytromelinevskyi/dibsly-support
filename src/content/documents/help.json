@@ -804,6 +804,183 @@
                         ]
                       }
                     ]
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "card reveal",
+                      "id": "ibkr-auto"
+                    },
+                    "children": [
+                      {
+                        "tag": "h3",
+                        "attrs": {},
+                        "children": [
+                          "Interactive Brokers, automatically"
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Connect it once, and new trades, dividends with their tax and commissions arrive every day by themselves, in every currency. Steps 1–3 are easiest on a computer."
+                        ]
+                      },
+                      {
+                        "tag": "ol",
+                        "attrs": {
+                          "class": "steps"
+                        },
+                        "children": [
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "In IBKR's Client Portal: Performance & Reports → Flex Queries → Activity Flex Query → «+»."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Add the sections Trades (Execution), Cash Transactions, Open Positions and Cash Report, all fields in each. Format XML, period Last 365 Calendar Days. Save it and note its number (Query ID)."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "On the same page, Flex Web Service Configuration: switch it on and tap Generate a New Token. Copy the token."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "In Dibsly: Investments → «+» → «Connect a broker» (or Settings → Investments → «Brokers, automatically») → Interactive Brokers. Paste the token and the query number → «Connect»."
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Dollars go to your Interactive dollar account, euros to the euro one; if there is no such account, Dibsly makes it. Record deposits as a transfer. Update any time: «+» → «Update from the broker»."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "tag": "b",
+                            "attrs": {},
+                            "children": [
+                              "Safe."
+                            ]
+                          },
+                          " The token only reads reports: it cannot trade or withdraw money. It stays on your iPhone only."
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "card reveal",
+                      "id": "freedom-auto"
+                    },
+                    "children": [
+                      {
+                        "tag": "h3",
+                        "attrs": {},
+                        "children": [
+                          "Freedom Finance, automatically"
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "The same for Freedom24: one key, and new trades, dividends with their tax and commissions come by themselves. Steps 1–4 are easiest on a computer."
+                        ]
+                      },
+                      {
+                        "tag": "ol",
+                        "attrs": {
+                          "class": "steps"
+                        },
+                        "children": [
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "On a computer, sign in to Freedom24 and open the API key page: ",
+                              {
+                                "tag": "a",
+                                "attrs": {
+                                  "href": "https://freedom24.com/tradernet-api/auth-api"
+                                },
+                                "children": [
+                                  "freedom24.com/tradernet-api/auth-api"
+                                ]
+                              },
+                              "."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Leave the key's validity «Perpetual» and tap «Create a new key pair»."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Freedom asks to open a security session: in the Freedom24 app on your phone open «Menu» → the icon at the top right and scan the QR code on the screen."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Copy the public key (32 characters). The private one isn't needed — don't paste it anywhere."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "In Dibsly: Investments → «+» → «Connect a broker» → Freedom Finance. Paste the e-mail you sign in to Freedom24 with and the public key → «Connect»."
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Currencies go to your Freedom accounts just as with Interactive. Update any time: «+» → «Update from the broker»."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "tag": "b",
+                            "attrs": {},
+                            "children": [
+                              "Safe."
+                            ]
+                          },
+                          " The public key only opens the broker's report: it cannot trade or withdraw money — that takes the private key, which Dibsly never asks for. The key stays on your iPhone only; to close the access, delete the key pair on the same Freedom24 page."
+                        ]
+                      }
+                    ]
                   }
                 ]
               },
