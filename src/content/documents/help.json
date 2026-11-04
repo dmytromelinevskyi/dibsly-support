@@ -214,6 +214,14 @@
                           { "tag": "b", "attrs": {}, "children": ["+"] },
                           " records an operation (an expense, income, a transfer or a debt), a phrase («Say it») or a receipt. The gear at the top opens Settings, with a search at the bottom."
                         ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["What else Dibsly can do"] },
+                          " — a block on Main: a short film for each feature, “Turn on” under it, swipe up for the next one. × hides it; Settings → Features → “Show on Main” brings it back."
+                        ]
                       }
                     ]
                   }
