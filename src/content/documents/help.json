@@ -130,21 +130,21 @@
                             "tag": "li",
                             "attrs": {},
                             "children": [
-                              "Install Dibsly from the App Store and go through the welcome: a few screens about Dibsly (the globe at the top changes the language), the AI permission — «Not now» is fine — and the account, which can wait too."
+                              "Install Dibsly from the App Store and tap «Get started» (the globe at the top changes the language). Dibsly asks for notifications and the AI — both can wait. Used Dibsly before? «Restore your data»: sign in, a backup or a CSV."
                             ]
                           },
                           {
                             "tag": "li",
                             "attrs": {},
                             "children": [
-                              "At «Your banks», tap «Upload a statement» (any bank: PDF, CSV or XLS) or «monobank directly» — your history comes in at once. No statement? «Start without a statement»."
+                              "«Where does your money come from?»: monobank in one tap or any bank's statement (PDF, CSV or XLS), several if you like. Dibsly names the accounts itself on «Here are your accounts». No bank? «Start without a bank»."
                             ]
                           },
                           {
                             "tag": "li",
                             "attrs": {},
                             "children": [
-                              "At «Spending on its own», let spending record itself: ",
+                              "Then Main's «Set up the rest?» card shows what is left: the accounts, a backup and the automation that records spending itself — ",
                               {
                                 "tag": "a",
                                 "attrs": { "href": "#apple-pay" },
@@ -283,6 +283,14 @@
                           { "tag": "b", "attrs": {}, "children": ["Undo after deleting."] },
                           " Deleted something by mistake? «Undo» in the message after deleting brings back operations, transfers, goals and payments."
                         ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Filters."] },
+                          " In History and Analytics the filter takes several accounts and several categories at once: tick them and tap «Apply»."
+                        ]
                       }
                     ]
                   }
@@ -310,7 +318,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Siri and the Action button."] },
-                          " Say «Record in Dibsly» to Siri (Siri takes it in English only) or put the «Record in Dibsly» shortcut on the Action button. Step by step: Settings → Preferences → Input → «Voice entry»."
+                          " Say «Record in Dibsly» to Siri (Siri takes it in English only) or put the «Record in Dibsly» shortcut on the Action button. Step by step: Settings → Features → «Voice entry»."
                         ]
                       },
                       {
@@ -543,7 +551,7 @@
                             "tag": "li",
                             "attrs": {},
                             "children": [
-                              "Check the preview — the account, the number of operations, transfers between your accounts — and tap «Add and continue»."
+                              "Check the preview — the account, the number of operations, transfers between your accounts — and tap «Add to Dibsly» on «Here are your accounts»."
                             ]
                           }
                         ]
@@ -655,7 +663,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Reminders."] },
-                          " On the day or 1, 3 or 7 days before. «Add to calendar» in an expense creates a new payment. The calendar can be turned off in Settings, section Features."
+                          " On the day or 1, 3 or 7 days before. «Add to calendar» in an expense creates a new payment. The calendar can be turned off in Settings, section Features; what Dibsly reminds you of is in Settings → Notifications."
                         ]
                       }
                     ]
@@ -792,7 +800,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "A buy, a sale or a dividend can be recorded by hand too: «+» on the portfolio's page."
+                          "A buy, a sale or a dividend can be recorded by hand too, and a broker's report added from the same place: «+» on the portfolio's page."
                         ]
                       }
                     ]
