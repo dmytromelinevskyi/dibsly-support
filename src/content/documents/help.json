@@ -823,7 +823,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "Connect it once, and new trades, dividends with their tax and commissions arrive every day by themselves, in every currency. Steps 1–3 are easiest on a computer."
+                          "Connect it once, and new trades, dividends with their tax and commissions arrive every day by themselves, in every currency. While connecting, Dibsly also loads the whole history IBKR keeps (usually this year and the four before), and later from any day: «Load the history from…» on the connection page. Steps 1–3 are easiest on a computer."
                         ]
                       },
                       {
