@@ -850,7 +850,7 @@
                             "tag": "li",
                             "attrs": {},
                             "children": [
-                              "On the same page, Flex Web Service Configuration: switch it on and tap Generate a New Token. Copy the token."
+                              "On the same page, the gear of Flex Web Service Configuration: tick Flex Web Service Status and tap Save — a Current Token appears. Copy it."
                             ]
                           },
                           {

@@ -846,7 +846,7 @@
                             "tag": "li",
                             "attrs": {},
                             "children": [
-                              "Там само, Flex Web Service Configuration: увімкни сервіс і натисни Generate a New Token. Скопіюй токен."
+                              "Там само, шестерня у Flex Web Service Configuration: постав галочку Flex Web Service Status і натисни Save — з'явиться Current Token. Скопіюй його."
                             ]
                           },
                           {
