@@ -829,8 +829,8 @@
                       {
                         "tag": "video",
                         "attrs": {
-                          "src": "/assets/statements/ibkr-api-en.mp4",
-                          "poster": "/assets/statements/ibkr-api-en.jpg",
+                          "src": "/assets/statements/ibkr-connect-en.mp4",
+                          "poster": "/assets/statements/ibkr-connect-en.jpg",
                           "controls": "true",
                           "preload": "metadata",
                           "style": "display:block;width:100%;aspect-ratio:16/9;margin:16px 0;border-radius:14px;background:#0f0d0c"
