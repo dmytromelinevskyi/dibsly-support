@@ -829,7 +829,7 @@
                           "poster": "/assets/statements/ibkr-api.jpg",
                           "controls": "true",
                           "preload": "metadata",
-                          "style": "display:block;width:100%;max-width:340px;margin:16px auto;border-radius:18px;background:#0f0d0c"
+                          "style": "display:block;width:100%;aspect-ratio:16/9;margin:16px 0;border-radius:14px;background:#0f0d0c"
                         },
                         "children": []
                       },
