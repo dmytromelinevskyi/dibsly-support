@@ -866,21 +866,102 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "Dollars go to your Interactive dollar account, euros to the euro one; if there is no such account, Dibsly makes it. Record deposits as a transfer. Update any time: «+» → «Update from the broker»."
+                          "Dollars go to your Interactive dollar account, euros to the euro one; if there is no such account, Dibsly makes it. Deposits and currency conversions come too; what you already recorded as a transfer is not doubled. Update any time: «+» → «Update from the broker»."
                         ]
                       },
                       {
-                        "tag": "p",
+                        "tag": "div",
                         "attrs": {},
                         "children": [
                           {
-                            "tag": "b",
+                            "tag": "p",
                             "attrs": {},
                             "children": [
-                              "Safe."
+                              {
+                                "tag": "b",
+                                "attrs": {},
+                                "children": [
+                                  "Why it is safe"
+                                ]
+                              }
                             ]
                           },
-                          " The token only reads reports: it cannot trade or withdraw money. It stays on your iPhone only."
+                          {
+                            "tag": "ul",
+                            "attrs": {},
+                            "children": [
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "b",
+                                    "attrs": {},
+                                    "children": [
+                                      "The token only reads reports."
+                                    ]
+                                  },
+                                  " It cannot trade, withdraw money or change the account's settings — that is how IBKR's Flex Web Service works."
+                                ]
+                              },
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "b",
+                                    "attrs": {},
+                                    "children": [
+                                      "The token stays on your iPhone."
+                                    ]
+                                  },
+                                  " It sits in the phone's Keychain and goes only to IBKR; it never reaches Dibsly's server."
+                                ]
+                              },
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "b",
+                                    "attrs": {},
+                                    "children": [
+                                      "We don't keep the account number."
+                                    ]
+                                  },
+                                  " Dibsly takes only its last 4 digits from the report, to tell operations apart."
+                                ]
+                              },
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "b",
+                                    "attrs": {},
+                                    "children": [
+                                      "Disconnect any time."
+                                    ]
+                                  },
+                                  " «Disconnect» in Dibsly erases the token from the phone at once; the operations stay. You can also switch Flex Web Service off or issue a new token in IBKR."
+                                ]
+                              },
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "b",
+                                    "attrs": {},
+                                    "children": [
+                                      "IBKR sets how long it lasts."
+                                    ]
+                                  },
+                                  " A token lasts up to a year; when it ends, Dibsly asks for a new one."
+                                ]
+                              }
+                            ]
+                          }
                         ]
                       }
                     ]
@@ -967,17 +1048,84 @@
                         ]
                       },
                       {
-                        "tag": "p",
+                        "tag": "div",
                         "attrs": {},
                         "children": [
                           {
-                            "tag": "b",
+                            "tag": "p",
                             "attrs": {},
                             "children": [
-                              "Safe."
+                              {
+                                "tag": "b",
+                                "attrs": {},
+                                "children": [
+                                  "Why it is safe"
+                                ]
+                              }
                             ]
                           },
-                          " The public key only opens the broker's report: it cannot trade or withdraw money — that takes the private key, which Dibsly never asks for. The key stays on your iPhone only; to close the access, delete the key pair on the same Freedom24 page."
+                          {
+                            "tag": "ul",
+                            "attrs": {},
+                            "children": [
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "b",
+                                    "attrs": {},
+                                    "children": [
+                                      "The public key only opens the report."
+                                    ]
+                                  },
+                                  " It cannot trade or withdraw money — that takes the private key, which Dibsly never asks for."
+                                ]
+                              },
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "b",
+                                    "attrs": {},
+                                    "children": [
+                                      "The key stays on your iPhone."
+                                    ]
+                                  },
+                                  " It sits in the phone's Keychain and goes only to Freedom24; it never reaches Dibsly's server."
+                                ]
+                              },
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "b",
+                                    "attrs": {},
+                                    "children": [
+                                      "Disconnect any time."
+                                    ]
+                                  },
+                                  " «Disconnect» in Dibsly erases the key from the phone at once; to close the access for good, delete the key pair on the same Freedom24 page."
+                                ]
+                              },
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "b",
+                                    "attrs": {},
+                                    "children": [
+                                      "You choose how long it lasts."
+                                    ]
+                                  },
+                                  " When you create the key in Freedom24: an empty field means no expiry."
+                                ]
+                              }
+                            ]
+                          }
                         ]
                       }
                     ]
