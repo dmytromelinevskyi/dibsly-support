@@ -613,32 +613,69 @@ footer {
     grid-template-columns: minmax(0, 1fr);
     gap: 8px;
   }
+  /* The row of sections (owner, 2026-11-05): right under the header while it is shown, at the very top while it is
+     away (they move together); once stuck it covers the band behind the header, so no page shows above or between.
+     It runs from edge to edge and swipes sideways (a chip is a link, and links are pan-y in site.css). */
   .toc {
+    --toc-top: 84px;
+    --toc-edge: 40px;
     position: sticky;
-    top: 76px;
+    top: var(--toc-top);
     z-index: 5;
     flex-direction: row;
     overflow-x: auto;
     overflow-y: hidden;
     max-height: none;
     gap: 6px;
-    padding: 10px 0;
+    margin: 0 calc(-1 * var(--toc-edge));
+    padding: 10px 0 10px var(--toc-edge);
+    scroll-padding-inline: var(--toc-edge);
     background: var(--bg);
     box-shadow: 0 14px 16px -6px var(--bg);
     scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    touch-action: pan-x pan-y;
+    transition:
+      top 0.5s var(--ease),
+      padding-top 0.5s var(--ease);
+  }
+  /* The end's space as an item: Safari leaves a scrolling row's own end padding out. */
+  .toc::after {
+    content: '';
+    flex: 0 0 calc(var(--toc-edge) - 6px);
+  }
+  .toc.stuck {
+    box-shadow:
+      0 -48px 0 48px var(--bg),
+      0 14px 16px -6px var(--bg);
+  }
+  html:has(.nav.hide) .toc {
+    top: 0;
+    padding-top: calc(10px + env(safe-area-inset-top));
   }
   .toc::-webkit-scrollbar {
     display: none;
   }
   .toc a {
+    flex: none;
     white-space: nowrap;
     background: var(--card);
+    touch-action: pan-x pan-y;
+  }
+  .toc a.on {
+    background: var(--card-2);
+    box-shadow: inset 0 0 0 1px var(--line-2);
   }
 }
 /* Phones */
 @media (max-width: 640px) {
   .wrap {
     padding: 0 20px;
+  }
+  .toc {
+    --toc-top: 68px;
+    --toc-edge: 20px;
   }
   .nav-inner {
     gap: 10px;
