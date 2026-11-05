@@ -827,6 +827,17 @@
                         ]
                       },
                       {
+                        "tag": "video",
+                        "attrs": {
+                          "src": "/assets/statements/ibkr-api-en.mp4",
+                          "poster": "/assets/statements/ibkr-api-en.jpg",
+                          "controls": "true",
+                          "preload": "metadata",
+                          "style": "display:block;width:100%;max-width:340px;margin:16px auto;border-radius:18px;background:#0f0d0c"
+                        },
+                        "children": []
+                      },
+                      {
                         "tag": "ol",
                         "attrs": {
                           "class": "steps"
