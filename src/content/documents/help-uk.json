@@ -995,6 +995,17 @@
                         ]
                       },
                       {
+                        "tag": "video",
+                        "attrs": {
+                          "src": "/assets/statements/freedom-connect.mp4",
+                          "poster": "/assets/statements/freedom-connect.jpg",
+                          "controls": "true",
+                          "preload": "metadata",
+                          "style": "display:block;width:100%;aspect-ratio:16/9;margin:16px 0;border-radius:14px;background:#0f0d0c"
+                        },
+                        "children": []
+                      },
+                      {
                         "tag": "ol",
                         "attrs": {
                           "class": "steps"
