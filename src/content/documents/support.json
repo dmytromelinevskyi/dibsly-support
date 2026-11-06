@@ -120,7 +120,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "Only with your permission, and only through Dibsly’s server to OpenAI. The chat: your question and the figures the answer needs. Categories in one tap: merchant names and your category names, no amounts. A receipt: its photo. Voice: a phrase your phone could not read, with your account and category names. A bank push: its text, without full card and phone numbers. Another bank’s statement: the whole file with its header — your name, address, tax number and full account numbers if the bank prints them. The files of monobank, PrivatBank, UKRSIBBANK and KredoBank statements never reach the AI."
+                          "Only with your permission, and only through Dibsly’s server to OpenAI. The chat: your question and the figures the answer needs. Categories in one tap: merchant names and your category names, no amounts. A receipt: its photo. Voice: a phrase your phone could not read, with your account and category names. A bank push: its text, without full card and phone numbers. Another bank’s statement: the whole file with its header — your name, address, tax number and full account numbers if the bank prints them. Another app’s export (Premium): its column titles and a sample of rows, to tell where the date, amount and category are — Dibsly reads the rest of the rows on your phone. The files of monobank, PrivatBank, UKRSIBBANK and KredoBank statements, Dibsly and Monefy CSVs and broker reports never reach the AI."
                         ]
                       }
                     ]
@@ -266,7 +266,9 @@
                           {
                             "tag": "li",
                             "attrs": {},
-                            "children": ["Investments: broker reports and dividends"]
+                            "children": [
+                              "Investments: Interactive Brokers and Freedom automatically, dividends and taxes for the declaration"
+                            ]
                           },
                           {
                             "tag": "li",
@@ -377,6 +379,11 @@
                             "tag": "li",
                             "attrs": {},
                             "children": ["Voice with the AI for phrases your phone could not read"]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": ["Import from any app: the AI reads its CSV or Excel"]
                           }
                         ]
                       },
@@ -495,7 +502,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "Bring a ledger over from a Dibsly or Monefy CSV, and investments from Interactive Brokers and Freedom Finance reports."
+                          "Bring a ledger over from a Dibsly or Monefy CSV, and with Premium from any other app’s CSV or Excel, read by the AI. Connect Interactive Brokers or Freedom Finance once and trades, dividends, deposits and exchanges come by themselves; a broker’s report works too."
                         ]
                       }
                     ]

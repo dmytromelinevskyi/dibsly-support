@@ -189,7 +189,7 @@
                         {
                           "tag": "li",
                           "attrs": {},
-                          "children": ["Investments: broker reports and dividends"]
+                          "children": ["Investments: brokers automatically, dividends and taxes"]
                         },
                         { "tag": "li", "attrs": {}, "children": ["FOP, debts and credits"] },
                         {
@@ -269,6 +269,11 @@
                           "tag": "li",
                           "attrs": {},
                           "children": ["Statements of other banks read by the AI: up to 25 a month"]
+                        },
+                        {
+                          "tag": "li",
+                          "attrs": {},
+                          "children": ["Import from any app, read by the AI"]
                         }
                       ]
                     },

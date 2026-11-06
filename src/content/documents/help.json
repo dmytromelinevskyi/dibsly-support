@@ -27,7 +27,7 @@
                 "tag": "p",
                 "attrs": { "class": "lead" },
                 "children": [
-                  "From the first launch to Apple Pay, bank notifications, debts, credits, FOP and your own ChatGPT or Claude. Short and step by step."
+                  "From the first launch to Apple Pay, bank notifications, debts, credits, FOP, brokers, investment taxes and your own ChatGPT or Claude. Short and step by step."
                 ]
               }
             ]
@@ -280,6 +280,18 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
+                          {
+                            "tag": "b",
+                            "attrs": {},
+                            "children": ["One expense, several categories."]
+                          },
+                          " In an expense's card, «Split by category»: ₴1,000 at a café becomes 600 for food, 250 for drinks and 150 for a hookah, each part counted in its own category. The balance doesn't change, and the bank's later statement still recognises the whole payment. You can split before saving too — in the new expense's card and in an Apple Pay or bank notification draft, where «Split with…» for friends is as well."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
                           { "tag": "b", "attrs": {}, "children": ["Undo after deleting."] },
                           " Deleted something by mistake? «Undo» in the message after deleting brings back operations, transfers, goals and payments."
                         ]
@@ -350,11 +362,7 @@
                     "attrs": {},
                     "children": [
                       "Apple Pay through Shortcuts ",
-                      {
-                        "tag": "span",
-                        "attrs": { "class": "tag" },
-                        "children": ["iOS 27"]
-                      }
+                      { "tag": "span", "attrs": { "class": "tag" }, "children": ["iOS 27"] }
                     ]
                   },
                   {
@@ -365,7 +373,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "Every Apple Pay payment becomes a draft in Activity: check the amount and category and save it with one tap. Only then does the balance change. Free, with any card."
+                          "Every Apple Pay payment comes into Dibsly. When its account and category are already known, it is recorded by itself; the rest wait as drafts in Activity: check the amount and category and save with one tap. Free, with any card."
                         ]
                       },
                       {
@@ -401,6 +409,14 @@
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Another currency."] },
                           " A payment in dollars on a hryvnia card is converted at the app's rate; tap the amount to enter what the bank charged. The statement later brings the exact amount."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Save at once."] },
+                          " A purchase with its account, amount and category, with nothing like it recorded yet, saves by itself, and Dibsly says «Saved ✅»; tap the notification to open the operation and change or delete it. A calendar payment with the same amount is marked paid. It is on for new users; after the update — Settings → Transaction automation → «Save at once». The same goes for bank notifications."
                         ]
                       }
                     ]
@@ -499,7 +515,15 @@
                       {
                         "tag": "p",
                         "attrs": {},
-                        "children": ["The first payment of each card asks for its account."]
+                        "children": [
+                          "The first payment of each card asks for its account. A complete draft with its account and category saves by itself when ",
+                          {
+                            "tag": "a",
+                            "attrs": { "href": "#apple-pay" },
+                            "children": ["«Save at once»"]
+                          },
+                          " is on."
+                        ]
                       }
                     ]
                   }
@@ -619,6 +643,14 @@
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["It learns from you."] },
                           " A brand goes where most of your operations with it went, and the note keeps your own way of writing it. One different category once does not change it."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Your own title."] },
+                          " Rename an operation — «Heater» instead of «Rozetka» — and the brand stays, with its logo and category."
                         ]
                       },
                       {
@@ -770,6 +802,25 @@
                     "attrs": { "class": "card reveal" },
                     "children": [
                       {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "The easiest way is to connect ",
+                          {
+                            "tag": "a",
+                            "attrs": { "href": "#ibkr-auto" },
+                            "children": ["Interactive Brokers"]
+                          },
+                          " or ",
+                          {
+                            "tag": "a",
+                            "attrs": { "href": "#freedom-auto" },
+                            "children": ["Freedom Finance"]
+                          },
+                          ": trades, dividends, deposits and currency exchanges come by themselves, and Investments turn on by themselves with the first connection. Or use a broker's report:"
+                        ]
+                      },
+                      {
                         "tag": "ol",
                         "attrs": { "class": "steps" },
                         "children": [
@@ -807,23 +858,18 @@
                   },
                   {
                     "tag": "div",
-                    "attrs": {
-                      "class": "card reveal",
-                      "id": "ibkr-auto"
-                    },
+                    "attrs": { "class": "card reveal", "id": "ibkr-auto" },
                     "children": [
                       {
                         "tag": "h3",
                         "attrs": {},
-                        "children": [
-                          "Interactive Brokers, automatically"
-                        ]
+                        "children": ["Interactive Brokers, automatically"]
                       },
                       {
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "Connect it once, and new trades, dividends with their tax and commissions arrive every day by themselves, in every currency. While connecting, Dibsly also loads the whole history IBKR keeps (usually this year and the four before), and later from any day: «Load the history from…» on the connection page. Steps 1–3 are easiest on a computer."
+                          "Connect it once, and new trades, dividends with their tax, commissions, deposits and currency exchanges arrive by themselves once a day, when you open Investments, in every currency. While connecting, Dibsly also loads the whole history IBKR keeps (usually this year and the four before), and later from any day: «Load the history from…» on the connection page. Steps 1–3 are easiest on a computer."
                         ]
                       },
                       {
@@ -839,9 +885,7 @@
                       },
                       {
                         "tag": "ol",
-                        "attrs": {
-                          "class": "steps"
-                        },
+                        "attrs": { "class": "steps" },
                         "children": [
                           {
                             "tag": "li",
@@ -877,7 +921,14 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "Dollars go to your Interactive dollar account, euros to the euro one; if there is no such account, Dibsly makes it. Deposits and currency conversions come too; what you already recorded as a transfer is not doubled. Update any time: «+» → «Update from the broker»."
+                          "Dollars go to your Interactive dollar account, euros to the euro one; if there is no such account, Dibsly makes it. Deposits and currency conversions come too; what you already recorded as a transfer is not doubled. Update any time: «+» → «Update from the broker»; with two brokers connected it has a row for each, and each one updates on its own."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Such an operation's card says «Automatically from Interactive Brokers». If a broker stops accepting the key, Investments shows «… no longer accepts the key» with «Connect again»."
                         ]
                       },
                       {
@@ -888,13 +939,7 @@
                             "tag": "p",
                             "attrs": {},
                             "children": [
-                              {
-                                "tag": "b",
-                                "attrs": {},
-                                "children": [
-                                  "Why it is safe"
-                                ]
-                              }
+                              { "tag": "b", "attrs": {}, "children": ["Why it is safe"] }
                             ]
                           },
                           {
@@ -908,9 +953,7 @@
                                   {
                                     "tag": "b",
                                     "attrs": {},
-                                    "children": [
-                                      "The token only reads reports."
-                                    ]
+                                    "children": ["The token only reads reports."]
                                   },
                                   " It cannot trade, withdraw money or change the account's settings — that is how IBKR's Flex Web Service works."
                                 ]
@@ -922,9 +965,7 @@
                                   {
                                     "tag": "b",
                                     "attrs": {},
-                                    "children": [
-                                      "The token stays on your iPhone."
-                                    ]
+                                    "children": ["The token stays on your iPhone."]
                                   },
                                   " It sits in the phone's Keychain and goes only to IBKR; it never reaches Dibsly's server."
                                 ]
@@ -936,9 +977,7 @@
                                   {
                                     "tag": "b",
                                     "attrs": {},
-                                    "children": [
-                                      "We don't keep the account number."
-                                    ]
+                                    "children": ["We don't keep the account number."]
                                   },
                                   " Dibsly takes only its last 4 digits from the report, to tell operations apart."
                                 ]
@@ -947,13 +986,7 @@
                                 "tag": "li",
                                 "attrs": {},
                                 "children": [
-                                  {
-                                    "tag": "b",
-                                    "attrs": {},
-                                    "children": [
-                                      "Disconnect any time."
-                                    ]
-                                  },
+                                  { "tag": "b", "attrs": {}, "children": ["Disconnect any time."] },
                                   " «Disconnect» in Dibsly erases the token from the phone at once; the operations stay. You can also switch Flex Web Service off or issue a new token in IBKR."
                                 ]
                               },
@@ -964,9 +997,7 @@
                                   {
                                     "tag": "b",
                                     "attrs": {},
-                                    "children": [
-                                      "IBKR sets how long it lasts."
-                                    ]
+                                    "children": ["IBKR sets how long it lasts."]
                                   },
                                   " A token lasts up to a year; when it ends, Dibsly asks for a new one."
                                 ]
@@ -979,23 +1010,14 @@
                   },
                   {
                     "tag": "div",
-                    "attrs": {
-                      "class": "card reveal",
-                      "id": "freedom-auto"
-                    },
+                    "attrs": { "class": "card reveal", "id": "freedom-auto" },
                     "children": [
-                      {
-                        "tag": "h3",
-                        "attrs": {},
-                        "children": [
-                          "Freedom Finance, automatically"
-                        ]
-                      },
+                      { "tag": "h3", "attrs": {}, "children": ["Freedom Finance, automatically"] },
                       {
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "The same for Freedom24: one key, and new trades, dividends with their tax and commissions come by themselves. Steps 1–4 are easiest on a computer."
+                          "The same for Freedom24: one key, and new trades, dividends with their tax, commissions, deposits and currency exchanges come by themselves. Steps 1–4 are easiest on a computer."
                         ]
                       },
                       {
@@ -1011,9 +1033,7 @@
                       },
                       {
                         "tag": "ol",
-                        "attrs": {
-                          "class": "steps"
-                        },
+                        "attrs": { "class": "steps" },
                         "children": [
                           {
                             "tag": "li",
@@ -1022,12 +1042,8 @@
                               "On a computer, sign in to Freedom24 and open the API key page: ",
                               {
                                 "tag": "a",
-                                "attrs": {
-                                  "href": "https://freedom24.com/tradernet-api/auth-api"
-                                },
-                                "children": [
-                                  "freedom24.com/tradernet-api/auth-api"
-                                ]
+                                "attrs": { "href": "https://freedom24.com/tradernet-api/auth-api" },
+                                "children": ["freedom24.com/tradernet-api/auth-api"]
                               },
                               "."
                             ]
@@ -1066,7 +1082,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "Currencies go to your Freedom accounts just as with Interactive. Update any time: «+» → «Update from the broker»."
+                          "Currencies go to your Freedom accounts just as with Interactive, and transfers you already recorded are not doubled. Update any time: «+» → «Update from the broker»."
                         ]
                       },
                       {
@@ -1077,13 +1093,7 @@
                             "tag": "p",
                             "attrs": {},
                             "children": [
-                              {
-                                "tag": "b",
-                                "attrs": {},
-                                "children": [
-                                  "Why it is safe"
-                                ]
-                              }
+                              { "tag": "b", "attrs": {}, "children": ["Why it is safe"] }
                             ]
                           },
                           {
@@ -1097,9 +1107,7 @@
                                   {
                                     "tag": "b",
                                     "attrs": {},
-                                    "children": [
-                                      "The public key only opens the report."
-                                    ]
+                                    "children": ["The public key only opens the report."]
                                   },
                                   " It cannot trade or withdraw money — that takes the private key, which Dibsly never asks for."
                                 ]
@@ -1111,9 +1119,7 @@
                                   {
                                     "tag": "b",
                                     "attrs": {},
-                                    "children": [
-                                      "The key stays on your iPhone."
-                                    ]
+                                    "children": ["The key stays on your iPhone."]
                                   },
                                   " It sits in the phone's Keychain and goes only to Freedom24; it never reaches Dibsly's server."
                                 ]
@@ -1122,13 +1128,7 @@
                                 "tag": "li",
                                 "attrs": {},
                                 "children": [
-                                  {
-                                    "tag": "b",
-                                    "attrs": {},
-                                    "children": [
-                                      "Disconnect any time."
-                                    ]
-                                  },
+                                  { "tag": "b", "attrs": {}, "children": ["Disconnect any time."] },
                                   " «Disconnect» in Dibsly erases the key from the phone at once; to close the access for good, delete the key pair on the same Freedom24 page."
                                 ]
                               },
@@ -1139,15 +1139,85 @@
                                   {
                                     "tag": "b",
                                     "attrs": {},
-                                    "children": [
-                                      "You choose how long it lasts."
-                                    ]
+                                    "children": ["You choose how long it lasts."]
                                   },
                                   " When you create the key in Freedom24: an empty field means no expiry."
                                 ]
                               }
                             ]
                           }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal", "id": "investment-taxes" },
+                    "children": [
+                      { "tag": "h3", "attrs": {}, "children": ["Investment taxes"] },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "What to pay in Ukraine on dividends and sales at foreign brokers, and what goes into the declaration. Free."
+                        ]
+                      },
+                      {
+                        "tag": "ol",
+                        "attrs": { "class": "steps" },
+                        "children": [
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Investments → the «Taxes for 2026» tile. The taxes page shows each year apart."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "The first time, Dibsly asks where your brokers are: for a foreign one Dibsly counts the taxes; a Ukrainian one withholds them itself, so Dibsly leaves it out. The US tax authority's certificate and the loss from past years go in «Tax settings»."
+                            ]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": [
+                              "Paid? Record the expense in the «Investment taxes» category and Dibsly finds the payment itself. Filed the declaration? «Filed?» → «Filed»."
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["How it counts."] },
+                          " Every dividend and sale in hryvnias at the NBU rate of its day. Dividends: PIT 9 % and the military levy 5 %; the tax withheld abroad reduces PIT only with the US tax authority's certificate. Sales: 18 % and 5 % of the profit in hryvnias — the proceeds at the sale day's rate less the purchase at the purchase day's rate and the commissions. A loss is carried to the next years."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["For the declaration."] },
+                          " Dividends — line 10.10, investment profit — line 10.8 and annex Ф1, and how much PIT and military levy to pay. The declaration is due by 1 May, the payment by 1 August; Dibsly reminds you on 24 April and 24 July."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["After taxes."] },
+                          " On Investments, under the profit — «After taxes, if sold today»: what would be left if you sold everything now. And the «Investment taxes» category also gathers every tax a broker withheld."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "It's a calculation for the declaration, not tax advice: Dibsly doesn't pay taxes or file the declaration. Check the figures in the tax service's online office."
                         ]
                       }
                     ]
@@ -1376,6 +1446,14 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
+                          { "tag": "b", "attrs": {}, "children": ["How Dibsly works."] },
+                          " Ask about the app itself too: «how do trends in Analytics work?», «how are investment taxes counted?» — Dibsly answers from its own guide, so it explains how the app really works. Such a question goes to the AI and is counted like the others."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
                           { "tag": "b", "attrs": {}, "children": ["Free answers."] },
                           " «Where do I turn on FOP?» or «how do I hide the amounts» — Dibsly answers itself from the help, without the AI and not counted. «Ask the AI» under such an answer asks the AI."
                         ]
@@ -1558,7 +1636,17 @@
                             "attrs": {},
                             "children": [
                               { "tag": "b", "attrs": {}, "children": ["ChatGPT"] },
-                              ": open ", { "tag": "a", "attrs": { "href": "https://chatgpt.com/plugins/plugin_asdk_app_6ad4e73af0b88191be6796d645fdd30f", "target": "_blank", "rel": "noreferrer" }, "children": ["Dibsly in ChatGPT's catalog"] }, " and connect it; sign in to Dibsly the same way and allow access. On some ChatGPT plans it can only read — that's the plan's limit, not Dibsly's."
+                              ": open ",
+                              {
+                                "tag": "a",
+                                "attrs": {
+                                  "href": "https://chatgpt.com/plugins/plugin_asdk_app_6ad4e73af0b88191be6796d645fdd30f",
+                                  "target": "_blank",
+                                  "rel": "noreferrer"
+                                },
+                                "children": ["Dibsly in ChatGPT's catalog"]
+                              },
+                              " and connect it; sign in to Dibsly the same way and allow access. On some ChatGPT plans it can only read — that's the plan's limit, not Dibsly's."
                             ]
                           }
                         ]
@@ -1567,7 +1655,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "Ask in words: «how much did I spend on cafés this month?», «here is a statement, add it». The assistant writes changes only after your «yes», and each can be undone in the AI journal on the website."
+                          "Ask in words: «how much did I spend on cafés this month?», «here is a statement, add it», «how much tax do I owe on last year's dividends?» — the assistant sees investment taxes too, with the same figures as the app. The assistant writes changes only after your «yes», and each can be undone in the AI journal on the website."
                         ]
                       },
                       {
@@ -1601,7 +1689,15 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "A CSV can be added to your data or replace it all — then a safety copy is made first."
+                          { "tag": "b", "attrs": {}, "children": ["Any other app (Premium)."] },
+                          " Export your data as CSV or Excel, then «CSV file» → «Other app». Dibsly's AI works out from a sample of rows where the date, amount, category and account are, and Dibsly reads every row on your phone. Before saving you see what will be added and how many rows were left out. This import only adds operations and never replaces anything, and the same file a second time doubles nothing."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "A Dibsly or Monefy CSV can be added to your data or replace it all — then a safety copy is made first."
                         ]
                       }
                     ]
@@ -1716,7 +1812,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["On your iPhone."] },
-                          " Without an account your records stay only on this iPhone and in your own backups. monobank, PrivatBank, UKRSIBBANK and KredoBank statements are read here; another bank's statement is read by the AI, only with your permission."
+                          " Without an account your records stay only on this iPhone and in your own backups. monobank, PrivatBank, UKRSIBBANK and KredoBank statements are read here; another bank's statement or another app's export is read by the AI, only with your permission."
                         ]
                       },
                       {
@@ -1724,7 +1820,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["What goes out."] },
-                          " An account and sync (Premium) keep your data on Dibsly's server. The AI works only with your consent: what an answer needs goes to OpenAI through Dibsly's server. Also NBU rates, investment quotes, monobank, your backups in iCloud or Google Drive, and anonymous usage statistics you can turn off in Preferences."
+                          " An account and sync (Premium) keep your data on Dibsly's server. The AI works only with your consent: what an answer needs goes to OpenAI through Dibsly's server. Also NBU rates, investment quotes, monobank, connected brokers (straight from your iPhone, the key kept only in its Keychain), your backups in iCloud or Google Drive, and anonymous usage statistics you can turn off in Preferences."
                         ]
                       },
                       {
@@ -1765,7 +1861,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "Premium — $2.99 a month or $29.99 a year — adds sync and shared accounts, the website, ChatGPT and Claude, notifications from any bank and AI categories. The limits are higher: up to 300 receipts a month (10 without Premium), up to 25 statements of other banks a month (3 in all without Premium) and up to 40 chat questions a day (20 a month without Premium)."
+                          "Premium — $2.99 a month or $29.99 a year — adds sync and shared accounts, the website, ChatGPT and Claude, notifications from any bank, AI categories and import from any other app. The limits are higher: up to 300 receipts a month (10 without Premium), up to 25 statements of other banks a month (3 in all without Premium) and up to 40 chat questions a day (20 a month without Premium)."
                         ]
                       },
                       {

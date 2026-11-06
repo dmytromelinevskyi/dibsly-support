@@ -185,7 +185,7 @@
             "tone": "dim"
           }
         ],
-        "lead": "Оплатив Apple Pay чи прийшов пуш банку — покупка вже чекає в «Активності». Один дотик, і вона в історії та балансі.",
+        "lead": "Оплатив Apple Pay чи прийшов пуш банку — знайома покупка записується сама, решта чекає в «Активності» на один дотик.",
         "tags": ["Apple Pay", "Пуші будь-яких банків · Premium", "Виписки банків", "Голос і чек"]
       },
       {
@@ -232,7 +232,7 @@
             "tone": "green"
           }
         ],
-        "lead": "Звіти Interactive Brokers і Freedom Finance замість ручного введення. Дивіденди разом з утриманим податком, ріст окремо від поповнень. Безкоштовно."
+        "lead": "Interactive Brokers і Freedom Finance підключаються раз, і угоди з дивідендами приходять самі. Ріст окремо від поповнень, податки для декларації пораховані. Безкоштовно."
       },
       {
         "id": "fop",
@@ -451,7 +451,7 @@
             "tone": "dim"
           }
         ],
-        "lead": "Paid with Apple Pay or got a bank’s push: the purchase already waits in Activity. One tap and it’s in History and the balance.",
+        "lead": "Paid with Apple Pay or got a bank’s push: a familiar purchase records itself, the rest wait in Activity for one tap.",
         "tags": ["Apple Pay", "Any bank’s notifications · Premium", "Bank statements", "Voice and receipts"]
       },
       {
@@ -498,7 +498,7 @@
             "tone": "green"
           }
         ],
-        "lead": "Interactive Brokers and Freedom Finance reports instead of typing. Dividends with the tax withheld, growth apart from deposits. Free."
+        "lead": "Connect Interactive Brokers or Freedom Finance once, and trades and dividends come by themselves. Growth apart from deposits, taxes for the declaration worked out. Free."
       },
       {
         "id": "fop",
