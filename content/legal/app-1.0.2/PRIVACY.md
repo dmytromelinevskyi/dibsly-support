@@ -1,6 +1,6 @@
 # Dibsly Privacy Policy
 
-Last updated: November 4, 2026
+Last updated: November 6, 2026
 
 Dibsly is a local-first personal finance tracker for iOS. A Dibsly account is optional: with it and Dibsly Premium, your data is kept in your account and on all your devices, on the website and, if you connect one, in your AI assistant (Claude, ChatGPT or Codex); you can also keep an account together with other people.
 
@@ -128,7 +128,7 @@ Dibsly reads the statement files of four banks itself (monobank CSV, XLS and PDF
 
 ## Broker Connections
 
-**Dibsly 1.0.4 and later, optional.** You can connect Interactive Brokers and Freedom Finance (Freedom24) so that new trades, dividends with their tax and fees come by themselves. One connection covers the broker's login with all its currencies; each currency goes to your account of that broker in it, and Dibsly makes one if you have none. For Interactive Brokers you give Dibsly a Flex Web Service token and the number of an Activity Flex Query you made in its Client Portal: with them Dibsly can only download that report — it cannot trade or move money. For Freedom24 you give your login (the e-mail you sign in with) and the public key of an API key pair you made in its cabinet: with them Dibsly can only download your broker report — orders need the private key, which Dibsly never asks for and refuses if you paste it.
+**Dibsly 1.0.4 and later, optional.** You can connect Interactive Brokers and Freedom Finance (Freedom24) so that new trades, dividends with their tax, fees, deposits and currency exchanges come by themselves (Interactive Brokers also the account's whole history, from a day you choose). One connection covers the broker's login with all its currencies; each currency goes to your account of that broker in it, and Dibsly makes one if you have none. For Interactive Brokers you give Dibsly a Flex Web Service token and the number of an Activity Flex Query you made in its Client Portal: with them Dibsly can only download that report — it cannot trade or move money. For Freedom24 you give your login (the e-mail you sign in with) and the public key of an API key pair you made in its cabinet: with them Dibsly can only download your broker report — orders need the private key, which Dibsly never asks for and refuses if you paste it.
 
 **What stays on your iPhone.** The token or the key and the login are kept only in the Keychain of that iPhone (after first unlock, this device only): never in a backup, an export, a diagnostic report or your Dibsly account. Your iPhone sends them only to the broker — ndcdyn.interactivebrokers.com or freedom24.com — directly, not through Dibsly's servers; the broker receives the request and standard network metadata such as an IP address. The report comes straight back to your iPhone, is read there like a report file you import yourself, and is not kept: Dibsly keeps the operations it imports, which are your data like the rest (in your Dibsly account too if sync is on), and which account each currency went to.
 
