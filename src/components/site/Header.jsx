@@ -16,7 +16,7 @@ const chevron = (
 );
 /**
  * dibslyapp.com's header (main's 3.0 nav, owner, 2026-10-29: «не хватает бургера как на старой версии + доп пунктов
- * меню»): the dark pill with «Можливості ▾», «Допомога ▾», «Ціна», «Питання», the language, «Увійти» and «Завантажити»;
+ * меню»): the dark pill with «Можливості», «Допомога ▾», «Ціна», «Питання», the language, «Увійти» and «Завантажити»;
  * under 900 px a burger opens it all as a sheet. The site's motion switch is gone (owner: «режим ноу моушен… уберем»).
  */
 export default function Header({ lang = 'uk', route = 'index.html' }) {
@@ -34,11 +34,8 @@ export default function Header({ lang = 'uk', route = 'index.html' }) {
         : route.replace('.html', '-uk.html'),
     page = (name) => (uk ? `${name}-uk.html` : `${name}.html`),
     current = (href) => (href === route ? 'page' : undefined);
-  const features = [
-      [at('auto'), uk ? 'Як це працює' : 'How it works'],
-      [page('features'), uk ? 'Усі можливості' : 'All features'],
-      [at('everywhere'), uk ? 'Портал і ШІ' : 'Website & AI'],
-    ],
+  // «Можливості» is a page of its own, not a menu (owner, 2026-11-07: it mixed the landing's anchors with a page).
+  const features = [page('features'), uk ? 'Можливості' : 'Features'],
     help = [
       [page('help'), uk ? 'Інструкції' : 'Guide'],
       [page('support'), uk ? 'Підтримка' : 'Support'],
@@ -94,10 +91,12 @@ export default function Header({ lang = 'uk', route = 'index.html' }) {
         <nav className="nav-pill" aria-label={uk ? 'Головне меню' : 'Main menu'}>
           {brand}
           <ul className="nav-menu">
-            {[
-              ['features', uk ? 'Можливості' : 'Features', features],
-              ['help', uk ? 'Допомога' : 'Help', help],
-            ].map(([id, label, items]) => (
+            <li>
+              <a className="nav-top" href={features[0]} aria-current={current(features[0])}>
+                {features[1]}
+              </a>
+            </li>
+            {[['help', uk ? 'Допомога' : 'Help', help]].map(([id, label, items]) => (
               <li className="nav-group" key={id}>
                 <button
                   className="nav-top"
@@ -175,7 +174,7 @@ export default function Header({ lang = 'uk', route = 'index.html' }) {
         </div>
         <nav className="nav-sheet-body" aria-label={uk ? 'Головне меню' : 'Main menu'}>
           {[
-            [uk ? 'Можливості' : 'Features', features],
+            [null, [features]],
             [uk ? 'Допомога' : 'Help', help],
             [null, links],
           ].map(([title, items], index) => (
