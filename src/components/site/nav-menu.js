@@ -1,6 +1,6 @@
 // dibslyapp.com's header behaviour (main's v3/nav.js, 2026-10-29), unchanged but for running on the React page and
 // undoing itself: «Можливості» and «Допомога» open their cards on hover, on a click and from the keyboard (↓ ↑ inside,
-// ← → between the menu's items, Esc), and close on Esc, a click elsewhere or leaving them. Under 900 px the burger opens
+// ← → between the menu's items, Esc), and close on Esc, a click elsewhere or leaving them. Under 1200 px the burger opens
 // the whole menu as a sheet: focus stays in it, the page under it does not scroll, Esc, the cross or a chosen item close
 // it. The landing hears «dibsly:nav» to pause its smooth scroll while the sheet is open.
 export function attachNav(root) {
@@ -165,12 +165,12 @@ export function attachNav(root) {
     { passive: true }
   );
 
-  // ---------------------------------------------------------------- the sheet (under 900 px)
+  // ---------------------------------------------------------------- the sheet (under 1200 px)
   all('.nav-burger').forEach(function (burger) {
     var sheet = document.getElementById(burger.getAttribute('aria-controls'));
     if (!sheet) return;
     var close = sheet.querySelector('.nav-close'),
-      wide = window.matchMedia('(min-width: 900px)');
+      wide = window.matchMedia('(min-width: 1200px)');
     function focusable() {
       return all('a[href], button', sheet).filter(function (el) {
         return el.offsetParent !== null || el === close;

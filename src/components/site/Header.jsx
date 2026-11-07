@@ -16,8 +16,10 @@ const chevron = (
 );
 /**
  * dibslyapp.com's header (main's 3.0 nav, owner, 2026-10-29: «не хватает бургера как на старой версии + доп пунктов
- * меню»): the dark pill with «Можливості», «Допомога ▾», «Ціна», «Питання», the language, «Увійти» and «Завантажити»;
- * under 900 px a burger opens it all as a sheet. The site's motion switch is gone (owner: «режим ноу моушен… уберем»).
+ * меню»): the dark pill with two blocks (owner, 2026-11-07: «те которые на главной — 1 блок, а те что ведут на
+ * другие страницы — другой»): the landing's sections («Як це працює», «Портал і ШІ», «Ціна», «Питання»), a divider,
+ * then the pages («Можливості», «Допомога ▾»); then the language, «Увійти» and «Завантажити»;
+ * under 1200 px a burger opens it all as a sheet. The site's motion switch is gone (owner: «режим ноу моушен… уберем»).
  */
 export default function Header({ lang = 'uk', route = 'index.html' }) {
   const root = useRef(null),
@@ -34,17 +36,19 @@ export default function Header({ lang = 'uk', route = 'index.html' }) {
         : route.replace('.html', '-uk.html'),
     page = (name) => (uk ? `${name}-uk.html` : `${name}.html`),
     current = (href) => (href === route ? 'page' : undefined);
-  // «Можливості» is a page of its own, not a menu (owner, 2026-11-07: it mixed the landing's anchors with a page).
-  const features = [page('features'), uk ? 'Можливості' : 'Features'],
+  // The landing's sections first, the other pages after them: never one menu mixing both (owner, 2026-11-07).
+  const sections = [
+      [at('auto'), uk ? 'Як це працює' : 'How it works'],
+      [at('everywhere'), uk ? 'Портал і ШІ' : 'Website & AI'],
+      [at('price'), uk ? 'Ціна' : 'Pricing'],
+      [at('faq'), uk ? 'Питання' : 'FAQ'],
+    ],
+    features = [page('features'), uk ? 'Можливості' : 'Features'],
     help = [
       [page('help'), uk ? 'Інструкції' : 'Guide'],
       [page('support'), uk ? 'Підтримка' : 'Support'],
       [page('privacy'), uk ? 'Конфіденційність' : 'Privacy'],
       [page('terms'), uk ? 'Умови' : 'Terms'],
-    ],
-    links = [
-      [at('price'), uk ? 'Ціна' : 'Pricing'],
-      [at('faq'), uk ? 'Питання' : 'FAQ'],
     ],
     rememberLanguage = () => {
       try {
@@ -91,6 +95,14 @@ export default function Header({ lang = 'uk', route = 'index.html' }) {
         <nav className="nav-pill" aria-label={uk ? 'Головне меню' : 'Main menu'}>
           {brand}
           <ul className="nav-menu">
+            {sections.map(([href, text]) => (
+              <li key={href}>
+                <a className="nav-top" href={href}>
+                  {text}
+                </a>
+              </li>
+            ))}
+            <li className="nav-sep" aria-hidden="true" />
             <li>
               <a className="nav-top" href={features[0]} aria-current={current(features[0])}>
                 {features[1]}
@@ -114,13 +126,6 @@ export default function Header({ lang = 'uk', route = 'index.html' }) {
                     </a>
                   ))}
                 </div>
-              </li>
-            ))}
-            {links.map(([href, text]) => (
-              <li key={href}>
-                <a className="nav-top" href={href}>
-                  {text}
-                </a>
               </li>
             ))}
           </ul>
@@ -174,9 +179,9 @@ export default function Header({ lang = 'uk', route = 'index.html' }) {
         </div>
         <nav className="nav-sheet-body" aria-label={uk ? 'Головне меню' : 'Main menu'}>
           {[
-            [null, [features]],
+            [uk ? 'На головній' : 'On the home page', sections],
+            [uk ? 'Сторінки' : 'Pages', [features]],
             [uk ? 'Допомога' : 'Help', help],
-            [null, links],
           ].map(([title, items], index) => (
             <div className="nav-sheet-group" key={index}>
               {title && <p>{title}</p>}
