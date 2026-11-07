@@ -274,7 +274,6 @@ ROADMAP = [
  ]),
  (("Думаємо", "Thinking about"), [
   ("more-banks", "Більше банків напряму", "More banks connected directly", "", ""),
-  ("guess-brand", "«Вгадай бренд»", "“Guess the brand”", "Гра: впізнай бренд за логотипом.", "A game: tell the brand by its logo."),
  ]),
 ]
 
