@@ -294,6 +294,11 @@
                             "tag": "li",
                             "attrs": {},
                             "children": ["Зашифровані копії в твоєму iCloud Drive чи Google Drive"]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": ["«Мої Дібслі»: 67 анімованих Дібслі за добрі звички"]
                           }
                         ]
                       }

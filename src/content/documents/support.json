@@ -291,6 +291,11 @@
                             "tag": "li",
                             "attrs": {},
                             "children": ["Encrypted backups in your iCloud Drive or Google Drive"]
+                          },
+                          {
+                            "tag": "li",
+                            "attrs": {},
+                            "children": ["My Dibsly: 67 animated Dibsly for good habits"]
                           }
                         ]
                       }

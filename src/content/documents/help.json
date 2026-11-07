@@ -74,6 +74,7 @@
               { "tag": "a", "attrs": { "href": "#fop" }, "children": ["FOP (sole traders)"] },
               { "tag": "a", "attrs": { "href": "#chat" }, "children": ["Ask Dibsly"] },
               { "tag": "a", "attrs": { "href": "#account" }, "children": ["Account and sync"] },
+              { "tag": "a", "attrs": { "href": "#personas" }, "children": ["My Dibsly"] },
               { "tag": "a", "attrs": { "href": "#shared" }, "children": ["Shared accounts"] },
               {
                 "tag": "a",
@@ -731,6 +732,20 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
+                          { "tag": "b", "attrs": {}, "children": ["The calendar in the plan."] },
+                          " When a category has payments from the ",
+                          {
+                            "tag": "a",
+                            "attrs": { "href": "#calendar" },
+                            "children": ["calendar"]
+                          },
+                          " this month, «By the calendar …» under it shows their sum. Hold the category → «Use the calendar», and the limit becomes that sum. The limit card in Planning and Analytics shows the fact «By the calendar», and a new plan sets a limit no lower than the calendar."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
                           { "tag": "b", "attrs": {}, "children": ["On Main."] },
                           " The Plan card shows what's left and up to four categories you watch. Orange means 90% used, red — over the limit."
                         ]
@@ -748,7 +763,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Faster."] },
-                          " Hold a category for last month's amount or Remove limit; the eye shows it on Main. Hide the keypad with its ⌄ key or a swipe down."
+                          " Hold a category for last month's amount or Remove limit; the bin next to the eye removes a limit in one tap, and the eye shows the category on Main. Hide the keypad with its ⌄ key or a swipe down."
                         ]
                       }
                     ]
@@ -1217,6 +1232,20 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
+                          { "tag": "b", "attrs": {}, "children": ["On the website."] },
+                          " With Premium the same page is on ",
+                          {
+                            "tag": "a",
+                            "attrs": { "href": "#website" },
+                            "children": ["my.dibslyapp.com"]
+                          },
+                          " → «Investment taxes»."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
                           "It's a calculation for the declaration, not tax advice: Dibsly doesn't pay taxes or file the declaration. Check the figures in the tax service's online office."
                         ]
                       }
@@ -1501,6 +1530,65 @@
               },
               {
                 "tag": "section",
+                "attrs": { "class": "section", "id": "personas" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["My Dibsly"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "67 animated Dibsly. They open as you set things up — accounts, a backup, automation — and keep good habits, and there are memes, secrets and holidays too. Free."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Where."] },
+                          " Profile (the circle next to the gear) → «My Dibsly»: your level, «Next» — whom to open next, and the sections Setup, Habits, Memes, Secrets and Holidays. Tap a closed Dibsly to see what opens it."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["A new Dibsly"] },
+                          " arrives as a toast with confetti right on the screen where you opened it; «View» shows its page."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Avatar."] },
+                          " On a Dibsly's page, «Make it my avatar», and it appears in the circle on Main instead of your photo. «Back to the photo» undoes it."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Share"] },
+                          " — a 9:16 picture of your Dibsly for Stories or a messenger."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "With sync, the Dibsly you opened and your avatar are the same on all your iPhones."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
                 "attrs": { "class": "section", "id": "shared" },
                 "children": [
                   {
@@ -1583,7 +1671,17 @@
                             },
                             "children": ["my.dibslyapp.com"]
                           },
-                          " on a computer and sign in to the same Dibsly account as on your iPhone. History with search and drafts, analytics, accounts, debts and credits, the plan, the calendar, goals, investments, FOP and the «Ask Dibsly» chat are there; changes show up on your phone at once."
+                          " on a computer and sign in to the same Dibsly account as on your iPhone. History with search and drafts, analytics, accounts, debts and credits, the plan, the calendar, goals, investments with their taxes, FOP and the «Ask Dibsly» chat are there; changes show up on your phone at once."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Investment taxes."] },
+                          " Each year apart: the taxes on dividends and sales, what is already paid and with what, what is left and the declaration's lines. The «paid» and «filed» marks and the tax settings are the same as in the app. ",
+                          { "tag": "b", "attrs": {}, "children": ["Split by category."] },
+                          " In History open an expense → «Split by category», as in the app."
                         ]
                       }
                     ]
