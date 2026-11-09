@@ -226,6 +226,29 @@ button:disabled {
 .footer-wordmark span {
   color: var(--orange);
 }
+.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 48px;
+}
+.footer-social a {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: inherit;
+  transition:
+    color 0.2s,
+    border-color 0.2s;
+}
+.footer-social a:hover,
+.footer-social a:focus-visible {
+  color: var(--orange);
+  border-color: var(--orange);
+}
 .footer-bottom {
   display: flex;
   flex-wrap: wrap;
