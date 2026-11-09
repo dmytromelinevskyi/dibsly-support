@@ -17,8 +17,8 @@ CHROME = {
                foot=[("features.html", "Features"), ("help.html", "Guides"), ("support.html", "Support"), ("privacy.html", "Privacy"), ("terms.html", "Terms")]),
 }
 PAGES = [
-    ("privacy.html", "privacy-uk.html", "en", "PRIVACY.md", "Privacy", "How Dibsly handles your data: what stays on your iPhone, what an account, sync, the AI and backups send, and your choices."),
-    ("privacy-uk.html", "privacy.html", "uk", "PRIVACY.uk.md", "Конфіденційність", "Як Dibsly поводиться з твоїми даними: що лишається на iPhone, що надсилають акаунт, синхронізація, ШІ й копії, і твій вибір."),
+    ("privacy.html", "privacy-uk.html", "en", "PRIVACY.md", "Privacy", "How Dibsly handles your data: what stays on your device, what an account, sync, the AI and backups send, and your choices."),
+    ("privacy-uk.html", "privacy.html", "uk", "PRIVACY.uk.md", "Конфіденційність", "Як Dibsly поводиться з твоїми даними: що лишається на пристрої, що надсилають акаунт, синхронізація, ШІ й копії, і твій вибір."),
     ("terms.html", "terms-uk.html", "en", "TERMS.md", "Terms", "The terms of using Dibsly: what it is and isn't, the AI, Premium, your data and contact."),
     ("terms-uk.html", "terms.html", "uk", "TERMS.uk.md", "Умови", "Умови використання Dibsly: що це й чим він не є, ШІ, Premium, твої дані й контакти."),
 ]

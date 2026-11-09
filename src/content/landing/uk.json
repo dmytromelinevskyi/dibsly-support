@@ -1,7 +1,7 @@
 {
   "route": "index.html",
   "lang": "uk",
-  "head": "<meta charset=\"utf-8\">\n<meta name=\"google-site-verification\" content=\"IwF6x4L8Xjpc7eMHUY-npoZ4KZqFXWN9hBXnf8rxMeE\" />\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\">\n<title>Dibsly: усі твої гроші в одному місці</title>\n<meta name=\"description\" content=\"Dibsly для iPhone і браузера: картки всіх банків, готівка, накопичення, інвестиції, ФОП, борги й кредити разом. Витрати записуються самі, а Dibsly відповідає на питання про гроші твоїми цифрами.\">\n<meta name=\"theme-color\" content=\"#0E0C0B\">\n<link rel=\"canonical\" href=\"https://dibslyapp.com/\">\n<link rel=\"alternate\" hreflang=\"uk\" href=\"https://dibslyapp.com/\">\n<link rel=\"alternate\" hreflang=\"en\" href=\"https://dibslyapp.com/en.html\">\n<link rel=\"alternate\" hreflang=\"x-default\" href=\"https://dibslyapp.com/\">\n<meta property=\"og:type\" content=\"website\">\n<meta property=\"og:site_name\" content=\"Dibsly\">\n<meta property=\"og:url\" content=\"https://dibslyapp.com/\">\n<meta property=\"og:locale\" content=\"uk_UA\">\n<meta property=\"og:locale:alternate\" content=\"en_US\">\n<meta property=\"og:title\" content=\"Dibsly: усі твої гроші в одному місці\">\n<meta property=\"og:description\" content=\"Усі банки, Apple Pay, готівка, цілі, інвестиції, ФОП, борги й кредити на iPhone і в браузері.\">\n<meta property=\"og:image\" content=\"https://dibslyapp.com/assets/screenshots/web/uk-web.jpg\">\n<meta property=\"og:image:width\" content=\"2160\">\n<meta property=\"og:image:height\" content=\"1350\">\n<meta property=\"og:image:alt\" content=\"Сайт my.dibslyapp.com: гроші під рукою, заощадження, інвестиції, куди пішли гроші й найближчі платежі\">\n<meta name=\"twitter:card\" content=\"summary_large_image\">\n<meta name=\"twitter:title\" content=\"Dibsly: усі твої гроші в одному місці\">\n<meta name=\"twitter:description\" content=\"Усі банки, Apple Pay, готівка, цілі, інвестиції, ФОП, борги й кредити на iPhone і в браузері.\">\n<meta name=\"twitter:image\" content=\"https://dibslyapp.com/assets/screenshots/web/uk-web.jpg\">\n<meta name=\"twitter:image:alt\" content=\"Сайт my.dibslyapp.com: гроші під рукою, заощадження, інвестиції, куди пішли гроші й найближчі платежі\">\n<link rel=\"icon\" type=\"image/png\" href=\"assets/brand/favicon.png\">\n<link rel=\"apple-touch-icon\" href=\"assets/brand/apple-touch-icon.png\">",
+  "head": "<meta charset=\"utf-8\">\n<meta name=\"google-site-verification\" content=\"IwF6x4L8Xjpc7eMHUY-npoZ4KZqFXWN9hBXnf8rxMeE\" />\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\">\n<title>Dibsly: усі твої гроші в одному місці</title>\n<meta name=\"description\" content=\"Dibsly для iPhone, iPad і браузера: картки всіх банків, готівка, накопичення, інвестиції, ФОП, борги й кредити разом. Витрати записуються самі, а Dibsly відповідає на питання про гроші твоїми цифрами.\">\n<meta name=\"theme-color\" content=\"#0E0C0B\">\n<link rel=\"canonical\" href=\"https://dibslyapp.com/\">\n<link rel=\"alternate\" hreflang=\"uk\" href=\"https://dibslyapp.com/\">\n<link rel=\"alternate\" hreflang=\"en\" href=\"https://dibslyapp.com/en.html\">\n<link rel=\"alternate\" hreflang=\"x-default\" href=\"https://dibslyapp.com/\">\n<meta property=\"og:type\" content=\"website\">\n<meta property=\"og:site_name\" content=\"Dibsly\">\n<meta property=\"og:url\" content=\"https://dibslyapp.com/\">\n<meta property=\"og:locale\" content=\"uk_UA\">\n<meta property=\"og:locale:alternate\" content=\"en_US\">\n<meta property=\"og:title\" content=\"Dibsly: усі твої гроші в одному місці\">\n<meta property=\"og:description\" content=\"Усі банки, Apple Pay, готівка, цілі, інвестиції, ФОП, борги й кредити на iPhone, iPad і в браузері.\">\n<meta property=\"og:image\" content=\"https://dibslyapp.com/assets/screenshots/web/uk-web.jpg\">\n<meta property=\"og:image:width\" content=\"2160\">\n<meta property=\"og:image:height\" content=\"1350\">\n<meta property=\"og:image:alt\" content=\"Сайт my.dibslyapp.com: гроші під рукою, заощадження, інвестиції, куди пішли гроші й найближчі платежі\">\n<meta name=\"twitter:card\" content=\"summary_large_image\">\n<meta name=\"twitter:title\" content=\"Dibsly: усі твої гроші в одному місці\">\n<meta name=\"twitter:description\" content=\"Усі банки, Apple Pay, готівка, цілі, інвестиції, ФОП, борги й кредити на iPhone, iPad і в браузері.\">\n<meta name=\"twitter:image\" content=\"https://dibslyapp.com/assets/screenshots/web/uk-web.jpg\">\n<meta name=\"twitter:image:alt\" content=\"Сайт my.dibslyapp.com: гроші під рукою, заощадження, інвестиції, куди пішли гроші й найближчі платежі\">\n<link rel=\"icon\" type=\"image/png\" href=\"assets/brand/favicon.png\">\n<link rel=\"apple-touch-icon\" href=\"assets/brand/apple-touch-icon.png\">",
   "sections": [
     {
       "tag": "section",
@@ -20,7 +20,11 @@
               "tag": "h2",
               "attrs": { "class": "title" },
               "children": [
-                { "tag": "span", "attrs": { "class": "line" }, "children": ["Телефон. Браузер."] },
+                {
+                  "tag": "span",
+                  "attrs": { "class": "line" },
+                  "children": ["Телефон. Планшет. Браузер."]
+                },
                 {
                   "tag": "span",
                   "attrs": { "class": "line hot" },
@@ -74,7 +78,7 @@
                       "tag": "p",
                       "attrs": {},
                       "children": [
-                        "Історія з пошуком, аналітика, план, чернетки, ФОП і борги на великому екрані. Зміни одразу й на телефоні."
+                        "Історія з пошуком, аналітика, план, чернетки, ФОП і борги на великому екрані. Зміни одразу й у застосунку."
                       ]
                     },
                     {
@@ -112,7 +116,7 @@
                       "tag": "p",
                       "attrs": {},
                       "children": [
-                        "Один акаунт — і ті самі гроші на iPhone і на сайті. Зашифровані резервні копії в iCloud Drive чи Google Drive — безкоштовно, автоматично або вручну."
+                        "Один акаунт — і ті самі гроші на iPhone, iPad і на сайті. Зашифровані резервні копії в iCloud Drive чи Google Drive — безкоштовно, автоматично або вручну."
                       ]
                     },
                     {
@@ -249,7 +253,7 @@
                         {
                           "tag": "li",
                           "attrs": {},
-                          "children": ["Синхронізація між iPhone і сайтом my.dibslyapp.com"]
+                          "children": ["Синхронізація між iPhone, iPad і сайтом my.dibslyapp.com"]
                         },
                         {
                           "tag": "li",
@@ -345,7 +349,7 @@
                           "attrs": { "href": "privacy-uk.html" },
                           "children": ["твої записи зберігаються"]
                         },
-                        " лише на твоєму iPhone і в твоїх зашифрованих копіях. До ШІ щось іде тільки з твого дозволу."
+                        " лише на твоїх пристроях і в твоїх зашифрованих копіях. До ШІ щось іде тільки з твого дозволу."
                       ]
                     }
                   ]
@@ -443,7 +447,7 @@
                       "tag": "p",
                       "attrs": {},
                       "children": [
-                        "Поки що iPhone і сайт my.dibslyapp.com у будь-якому браузері (з Premium). Далі — iPad і Mac, а потім Android."
+                        "Поки що iPhone, iPad і сайт my.dibslyapp.com у будь-якому браузері (з Premium). Далі — Mac, а потім Android."
                       ]
                     }
                   ]

@@ -980,9 +980,9 @@
                                   {
                                     "tag": "b",
                                     "attrs": {},
-                                    "children": ["The token stays on your iPhone."]
+                                    "children": ["The token stays on your device."]
                                   },
-                                  " It sits in the phone's Keychain and goes only to IBKR; it never reaches Dibsly's server."
+                                  " It sits in the device's Keychain and goes only to IBKR; it never reaches Dibsly's server."
                                 ]
                               },
                               {
@@ -1002,7 +1002,7 @@
                                 "attrs": {},
                                 "children": [
                                   { "tag": "b", "attrs": {}, "children": ["Disconnect any time."] },
-                                  " «Disconnect» in Dibsly erases the token from the phone at once; the operations stay. You can also switch Flex Web Service off or issue a new token in IBKR."
+                                  " «Disconnect» in Dibsly erases the token from the device at once; the operations stay. You can also switch Flex Web Service off or issue a new token in IBKR."
                                 ]
                               },
                               {
@@ -1134,9 +1134,9 @@
                                   {
                                     "tag": "b",
                                     "attrs": {},
-                                    "children": ["The key stays on your iPhone."]
+                                    "children": ["The key stays on your device."]
                                   },
-                                  " It sits in the phone's Keychain and goes only to Freedom24; it never reaches Dibsly's server."
+                                  " It sits in the device's Keychain and goes only to Freedom24; it never reaches Dibsly's server."
                                 ]
                               },
                               {
@@ -1144,7 +1144,7 @@
                                 "attrs": {},
                                 "children": [
                                   { "tag": "b", "attrs": {}, "children": ["Disconnect any time."] },
-                                  " «Disconnect» in Dibsly erases the key from the phone at once; to close the access for good, delete the key pair on the same Freedom24 page."
+                                  " «Disconnect» in Dibsly erases the key from the device at once; to close the access for good, delete the key pair on the same Freedom24 page."
                                 ]
                               },
                               {
@@ -1492,7 +1492,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["How many questions."] },
-                          " 20 questions to the AI a month are free, up to 40 a day with Premium. The first time, Dibsly shows what goes to the AI and asks for your permission; to turn the chat on or off — Settings → Features → «AI in Dibsly» → «Ask Dibsly». The conversation stays on this iPhone; «Clear conversation» is there too."
+                          " 20 questions to the AI a month are free, up to 40 a day with Premium. The first time, Dibsly shows what goes to the AI and asks for your permission; to turn the chat on or off — Settings → Features → «AI in Dibsly» → «Ask Dibsly». The conversation stays on this device; «Clear conversation» is there too."
                         ]
                       }
                     ]
@@ -1513,7 +1513,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["The account."] },
-                          " Profile (the circle next to the gear) → sign in with Apple, Google or e-mail. Without an account everything works on one iPhone."
+                          " Profile (the circle next to the gear) → sign in with Apple, Google or e-mail. Without an account everything works on one device."
                         ]
                       },
                       {
@@ -1521,7 +1521,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Sync."] },
-                          " With Premium your data is the same on all your iPhones and on my.dibslyapp.com."
+                          " With Premium your data is the same on all your iPhones, iPads and on my.dibslyapp.com."
                         ]
                       }
                     ]
@@ -1580,7 +1580,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "With sync, the Dibsly you opened and your avatar are the same on all your iPhones."
+                          "With sync, the Dibsly you opened and your avatar are the same on all your iPhones and iPads."
                         ]
                       }
                     ]
@@ -1625,7 +1625,7 @@
                             "tag": "li",
                             "attrs": {},
                             "children": [
-                              "The other person opens it on an iPhone with Dibsly and taps «Join». To share an account, open its card (Settings → Accounts) → «Make shared»."
+                              "The other person opens it on an iPhone or iPad with Dibsly and taps «Join». To share an account, open its card (Settings → Accounts) → «Make shared»."
                             ]
                           }
                         ]
@@ -1671,7 +1671,7 @@
                             },
                             "children": ["my.dibslyapp.com"]
                           },
-                          " on a computer and sign in to the same Dibsly account as on your iPhone. History with search and drafts, analytics, accounts, debts and credits, the plan, the calendar, goals, investments with their taxes, FOP and the «Ask Dibsly» chat are there; changes show up on your phone at once."
+                          " on a computer and sign in to the same Dibsly account as in the app. History with search and drafts, analytics, accounts, debts and credits, the plan, the calendar, goals, investments with their taxes, FOP and the «Ask Dibsly» chat are there; changes show up in the app at once."
                         ]
                       },
                       {
@@ -1788,7 +1788,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Any other app (Premium)."] },
-                          " Export your data as CSV or Excel, then «CSV file» → «Other app». Dibsly's AI works out from a sample of rows where the date, amount, category and account are, and Dibsly reads every row on your phone. Before saving you see what will be added and how many rows were left out. This import only adds operations and never replaces anything, and the same file a second time doubles nothing."
+                          " Export your data as CSV or Excel, then «CSV file» → «Other app». Dibsly's AI works out from a sample of rows where the date, amount, category and account are, and Dibsly reads every row on your device. Before saving you see what will be added and how many rows were left out. This import only adds operations and never replaces anything, and the same file a second time doubles nothing."
                         ]
                       },
                       {
@@ -1844,7 +1844,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Restoring."] },
-                          " «Open a backup file» restores any .dibslybackup. On a new iPhone, tap «Restore your data» on Dibsly's first screen, or just sign in if you have sync (Premium). A safety copy of the current data is made first."
+                          " «Open a backup file» restores any .dibslybackup. On a new iPhone or iPad, tap «Restore your data» on Dibsly's first screen, or just sign in if you have sync (Premium). A safety copy of the current data is made first."
                         ]
                       },
                       {
@@ -1872,8 +1872,8 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          { "tag": "b", "attrs": {}, "children": ["All data on this iPhone."] },
-                          " Settings → Data health → «Delete all data». Dibsly first keeps a safety copy on this iPhone and leaves your iCloud Drive and Google Drive backups alone. When you are signed in, the button isn't there — see below."
+                          { "tag": "b", "attrs": {}, "children": ["All data on this device."] },
+                          " Settings → Data health → «Delete all data». Dibsly first keeps a safety copy on this device and leaves your iCloud Drive and Google Drive backups alone. When you are signed in, the button isn't there — see below."
                         ]
                       },
                       {
@@ -1881,7 +1881,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["The account."] },
-                          " Profile → «Delete account and all data»: the server deletes everything in the account and this iPhone is erased. «Save a copy first» makes a backup. Deleting doesn't cancel Premium — cancel it in iOS Settings."
+                          " Profile → «Delete account and all data»: the server deletes everything in the account and this device is erased. «Save a copy first» makes a backup. Deleting doesn't cancel Premium — cancel it in iOS Settings."
                         ]
                       },
                       {
@@ -1889,7 +1889,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Signing out."] },
-                          " Profile → «Remove from this iPhone» (with sync): your data stays in the account and the phone is erased. Without sync the button reads «Sign out», and the data stays on the iPhone."
+                          " Profile → «Remove from this device» (with sync): your data stays in the account and the device is erased. Without sync the button reads «Sign out», and the data stays on the device."
                         ]
                       }
                     ]
@@ -1909,8 +1909,8 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          { "tag": "b", "attrs": {}, "children": ["On your iPhone."] },
-                          " Without an account your records stay only on this iPhone and in your own backups. monobank, PrivatBank, UKRSIBBANK and KredoBank statements are read here; another bank's statement or another app's export is read by the AI, only with your permission."
+                          { "tag": "b", "attrs": {}, "children": ["On your device."] },
+                          " Without an account your records stay only on this device and in your own backups. monobank, PrivatBank, UKRSIBBANK and KredoBank statements are read here; another bank's statement or another app's export is read by the AI, only with your permission."
                         ]
                       },
                       {
@@ -1918,7 +1918,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["What goes out."] },
-                          " An account and sync (Premium) keep your data on Dibsly's server. The AI works only with your consent: what an answer needs goes to OpenAI through Dibsly's server. Also NBU rates, investment quotes, monobank, connected brokers (straight from your iPhone, the key kept only in its Keychain), your backups in iCloud or Google Drive, and anonymous usage statistics you can turn off in Preferences."
+                          " An account and sync (Premium) keep your data on Dibsly's server. The AI works only with your consent: what an answer needs goes to OpenAI through Dibsly's server. Also NBU rates, investment quotes, monobank, connected brokers (straight from your device, the key kept only in its Keychain), your backups in iCloud or Google Drive, and anonymous usage statistics you can turn off in Preferences."
                         ]
                       },
                       {

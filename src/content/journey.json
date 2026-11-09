@@ -1,7 +1,7 @@
 {
   "uk": {
     "hero": {
-      "kicker": "Особисті фінанси · iPhone і браузер",
+      "kicker": "Особисті фінанси · iPhone, iPad і браузер",
       "title": [
         {
           "text": "Усі гроші.",
@@ -21,11 +21,15 @@
           "soon": false
         },
         {
+          "text": "iPad",
+          "soon": false
+        },
+        {
           "text": "Браузер",
           "soon": false
         },
         {
-          "text": "iPad · Mac — скоро",
+          "text": "Mac — скоро",
           "soon": true
         },
         {
@@ -267,7 +271,7 @@
   },
   "en": {
     "hero": {
-      "kicker": "Personal finance · iPhone and the web",
+      "kicker": "Personal finance · iPhone, iPad and the web",
       "title": [
         {
           "text": "All your money.",
@@ -287,11 +291,15 @@
           "soon": false
         },
         {
+          "text": "iPad",
+          "soon": false
+        },
+        {
           "text": "Browser",
           "soon": false
         },
         {
-          "text": "iPad · Mac — soon",
+          "text": "Mac — soon",
           "soon": true
         },
         {

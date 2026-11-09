@@ -269,7 +269,7 @@ ROADMAP = [
  (("Потім", "Later"), [
   ("shared-plans", "Спільні плани на двох", "Shared plans for two", "", ""),
   ("ovdp", "ОВДП в Інвестиціях", "Ukrainian government bonds (OVDP) in Investments", "", ""),
-  ("ipad-mac", "iPad і Mac", "iPad and Mac", "", ""),
+  ("ipad-mac", "Mac", "Mac", "", ""),
   ("android", "Android", "Android", "", ""),
  ]),
  (("Думаємо", "Thinking about"), [
