@@ -75,6 +75,9 @@
               { "tag": "a", "attrs": { "href": "#chat" }, "children": ["Ask Dibsly"] },
               { "tag": "a", "attrs": { "href": "#account" }, "children": ["Account and sync"] },
               { "tag": "a", "attrs": { "href": "#personas" }, "children": ["My Dibsly"] },
+              { "tag": "a", "attrs": { "href": "#ipad" }, "children": ["iPad"] },
+              { "tag": "a", "attrs": { "href": "#widgets" }, "children": ["Widgets"] },
+              { "tag": "a", "attrs": { "href": "#app-icon" }, "children": ["App icon"] },
               { "tag": "a", "attrs": { "href": "#shared" }, "children": ["Shared accounts"] },
               {
                 "tag": "a",
@@ -689,6 +692,14 @@
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Paying."] },
                           " Open a payment: «Record expense» writes it, «Link» attaches an expense you already have. A draft that matches a payment offers «Mark as paid»."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Paid by itself."] },
+                          " A charge from monobank (its sync or a push) or from a statement marks its payment in the calendar paid when it comes within three days: the same brand from any account and for any amount; the same name on the payment's account within ±10 %; an income for the exact amount. If the amount differs, the next payments take the new one. The “Paid in the calendar” message has Undo. An expense you record by hand you link yourself."
                         ]
                       },
                       {
@@ -1581,6 +1592,106 @@
                         "attrs": {},
                         "children": [
                           "With sync, the Dibsly you opened and your avatar are the same on all your iPhones and iPads."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "ipad" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["iPad"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "The same Dibsly: install it from the App Store on your iPad and sign in to the same account — with sync the data is the same as on your iPhone. Premium from the same Apple Account works on the iPad too."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["A wide window."] },
+                          " A sidebar on the left: Main, History, Analytics and Main's pages. Main in two columns, tiles and charts across the screen. A bar at the bottom: type “coffee 85” and press Return to record it, or a question to open the chat with Dibsly; the microphone, the camera and “+” beside it. Upright or in Split View you get the tabs at the bottom, as on iPhone."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Keyboard."] },
+                          " ⌘N a new expense, ⇧⌘N an income, ⌘F search History, ⌘1–⌘3 Main, History, Analytics. Hold ⌘ and the iPad lists them."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Automation."] },
+                          " Apple Pay and bank notifications are set up on the iPhone, where payments and banks' pushes arrive. With sync those operations are on the iPad at once."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "widgets" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["Widgets"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "On hand — the total, the rates, the credit available, your accounts and the Savings, Investments and FOP tiles, as on Main. Next payment — the nearest payments from the calendar. Quick entry — an expense, voice or a receipt in one tap. On the Lock Screen — On hand and a “+” for an expense. Free, on iPhone and iPad."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Add one."] },
+                          " Touch and hold an empty spot on the Home Screen → Edit → Add Widget → Dibsly, and pick a size. On the Lock Screen: touch and hold → Customize → Lock Screen → the widgets area → Dibsly."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Amounts."] },
+                          " Hide amounts hides them in the widgets too, and a locked screen keeps them hidden. A widget shows what Dibsly saved for it on your device — nothing goes out. It updates when you open Dibsly; the total and the accounts also after a sync or a monobank operation in the background."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": { "class": "section", "id": "app-icon" },
+                "children": [
+                  { "tag": "h2", "attrs": {}, "children": ["App icon"] },
+                  {
+                    "tag": "div",
+                    "attrs": { "class": "card reveal" },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Settings → Preferences → App icon: System — light on a light Home Screen and dark on a dark one — Dark or Light. iOS shows its own message that the icon changed."
                         ]
                       }
                     ]

@@ -215,6 +215,11 @@
                           "tag": "li",
                           "attrs": {},
                           "children": ["My Dibsly: 67 animated Dibsly for good habits"]
+                        },
+                        {
+                          "tag": "li",
+                          "attrs": {},
+                          "children": ["Widgets on the Home Screen and Lock Screen"]
                         }
                       ]
                     },

@@ -1,6 +1,6 @@
 # Dibsly Privacy Policy
 
-Last updated: November 9, 2026
+Last updated: November 10, 2026
 
 Dibsly is a local-first personal finance tracker for iOS and iPadOS. A Dibsly account is optional: with it and Dibsly Premium, your data is kept in your account and on all your devices, on the website and, if you connect one, in your AI assistant (Claude, ChatGPT or Codex); you can also keep an account together with other people.
 
@@ -62,11 +62,15 @@ If you are signed in to a Dibsly account (a free account is enough) and tap Shar
 
 ## Recurring Payments and Local Notifications
 
-Recurring schedules and their links to recorded expenses stay on the device and are included in optional encrypted backups. Searching past expenses to suggest a payment name, category and estimated amount happens on the device; it does not send transaction history to a search service.
+Recurring schedules and their links to recorded expenses stay on the device and are included in optional encrypted backups. Searching past expenses to suggest a payment name, category and estimated amount happens on the device; it does not send transaction history to a search service. When an expense or income comes in from monobank or a statement, Dibsly checks on the device whether it pays a planned payment and marks that payment paid.
 
 If you grant notification permission and enable a reminder, Dibsly schedules local notifications through iOS. Their text includes the payment name, estimated amount/currency and expected date. App Lock and Hide amounts do not redact these notification previews. You control notification permissions and lock-screen previews in iOS Settings. Opening Dibsly from a reminder still respects App Lock. These reminders are local: no Dibsly server or bank connection is involved.
 
 The sole trader's deadlines and the credits' payments (three days before and on the day, and a credit card's grace period) are reminded the same way: local notifications with the deadline or the credit's name, the amount and the day, worked out on your device.
+
+## Widgets
+
+If you add Dibsly's widgets to the Home Screen or the Lock Screen, the app writes what they show — On hand's total, the rates, the credit available, account names and balances, the Savings, Investments and FOP tiles, the next payments with their names, amounts and days, and small icons — to a file in its own App Group container on the device. The widgets read only that file: it never leaves the device, is not in Dibsly's backups or your Dibsly account, and is readable after the device's first unlock. With Hide amounts on, the file holds “••••” in place of every amount, and a locked device's Lock Screen redacts the amounts. App Lock does not cover widgets: remove them or turn on Hide amounts if others can see your screen.
 
 ## Apple Pay Drafts through Shortcuts
 
