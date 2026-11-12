@@ -148,7 +148,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "Not yet: iPhone, iPad, and my.dibslyapp.com in any browser (with Premium). Mac is next, then Android."
+                          "Not yet: iPhone, iPad, the Mac and my.dibslyapp.com in any browser (the Mac and the website with Premium). Android is next."
                         ]
                       }
                     ]
@@ -341,8 +341,9 @@
                           {
                             "tag": "li",
                             "attrs": {},
-                            "children": ["Sync between iPhone, iPad and my.dibslyapp.com"]
+                            "children": ["Sync between iPhone, iPad, Mac and my.dibslyapp.com"]
                           },
+                          { "tag": "li", "attrs": {}, "children": ["Dibsly on the Mac"] },
                           {
                             "tag": "li",
                             "attrs": {},
@@ -545,7 +546,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "Without sync — with no account or a free one — your records stay on your device and in your own encrypted backups; only what you send yourself goes out: to the AI with your permission, an export, a debt or split-bill link. With an account and Premium they sync through Dibsly’s server, so your iPhone, iPad and my.dibslyapp.com show the same."
+                          "Without sync — with no account or a free one — your records stay on your device and in your own encrypted backups; only what you send yourself goes out: to the AI with your permission, an export, a debt or split-bill link. With an account and Premium they sync through Dibsly’s server, so your iPhone, iPad, Mac and my.dibslyapp.com show the same."
                         ]
                       }
                     ]

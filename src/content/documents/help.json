@@ -76,6 +76,7 @@
               { "tag": "a", "attrs": { "href": "#account" }, "children": ["Account and sync"] },
               { "tag": "a", "attrs": { "href": "#personas" }, "children": ["My Dibsly"] },
               { "tag": "a", "attrs": { "href": "#ipad" }, "children": ["iPad"] },
+              { "tag": "a", "attrs": { "href": "#mac" }, "children": ["Mac"] },
               { "tag": "a", "attrs": { "href": "#widgets" }, "children": ["Widgets"] },
               { "tag": "a", "attrs": { "href": "#app-icon" }, "children": ["App icon"] },
               { "tag": "a", "attrs": { "href": "#shared" }, "children": ["Shared accounts"] },
@@ -1532,7 +1533,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Sync."] },
-                          " With Premium your data is the same on all your iPhones, iPads and on my.dibslyapp.com."
+                          " With Premium your data is the same on all your iPhones, iPads, your Mac and on my.dibslyapp.com."
                         ]
                       }
                     ]
@@ -1636,6 +1637,71 @@
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Automation."] },
                           " Apple Pay and bank notifications are set up on the iPhone, where payments and banks' pushes arrive. With sync those operations are on the iPad at once."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": {
+                  "class": "section",
+                  "id": "mac"
+                },
+                "children": [
+                  {
+                    "tag": "h2",
+                    "attrs": {},
+                    "children": ["Mac"]
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "card reveal"
+                    },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Dibsly for Mac: install it from the App Store on your Mac and sign in to your Dibsly account — everything you recorded on the iPhone is there, and every change reaches the iPhone at once. The Mac comes with Dibsly Premium: a subscription from the iPhone works here too, or take it on the Mac's welcome page."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "tag": "b",
+                            "attrs": {},
+                            "children": ["Pages."]
+                          },
+                          " A sidebar as on my.dibslyapp.com: Main, History, Analytics, Accounts, Debts, Credits, the Plan, the Calendar, Goals, Investments, Taxes and FOP, then Categories, Brands, Sharing, Devices and AI, the profile and Settings. Forms and an operation's details open as a panel on the right."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "tag": "b",
+                            "attrs": {},
+                            "children": ["Statements and keyboard."]
+                          },
+                          " Drag a bank's PDF, Excel or CSV onto the window: Dibsly reads it and shows what is new before it saves anything. Amounts are typed on the keyboard, «Sections» in the menu bar opens any page, ⌘[ goes back."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "tag": "b",
+                            "attrs": {},
+                            "children": ["What stays on the iPhone."]
+                          },
+                          " Apple Pay and bank notifications through Shortcuts and the widgets are the iPhone's and the iPad's; with sync what they record is on the Mac at once."
                         ]
                       }
                     ]

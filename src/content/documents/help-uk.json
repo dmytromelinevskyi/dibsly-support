@@ -80,6 +80,7 @@
               },
               { "tag": "a", "attrs": { "href": "#personas" }, "children": ["Мої Дібслі"] },
               { "tag": "a", "attrs": { "href": "#ipad" }, "children": ["iPad"] },
+              { "tag": "a", "attrs": { "href": "#mac" }, "children": ["Mac"] },
               { "tag": "a", "attrs": { "href": "#widgets" }, "children": ["Віджети"] },
               { "tag": "a", "attrs": { "href": "#app-icon" }, "children": ["Іконка застосунку"] },
               { "tag": "a", "attrs": { "href": "#shared" }, "children": ["Спільні рахунки"] },
@@ -1530,7 +1531,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Синхронізація."] },
-                          " З Premium дані однакові на всіх твоїх iPhone, iPad і на сайті my.dibslyapp.com."
+                          " З Premium дані однакові на всіх твоїх iPhone, iPad, Mac і на сайті my.dibslyapp.com."
                         ]
                       }
                     ]
@@ -1634,6 +1635,71 @@
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Автоматизація."] },
                           " Apple Pay і сповіщення банків налаштовуються на iPhone: туди приходять оплати й пуші банків. Із синхронізацією ці операції одразу є й на iPad."
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "section",
+                "attrs": {
+                  "class": "section",
+                  "id": "mac"
+                },
+                "children": [
+                  {
+                    "tag": "h2",
+                    "attrs": {},
+                    "children": ["Mac"]
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "card reveal"
+                    },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          "Dibsly для Mac: постав його з App Store на Mac і ввійди в свій акаунт Dibsly — усе, що ти записав на iPhone, уже там, а кожна зміна одразу з'являється на iPhone. Mac — з Dibsly Premium: підписка з iPhone діє й тут, або оформи її на вітальній сторінці Mac."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "tag": "b",
+                            "attrs": {},
+                            "children": ["Розділи."]
+                          },
+                          " Бічна панель, як на my.dibslyapp.com: Головна, Історія, Аналітика, Рахунки, Борги, Кредити, План, Календар, Цілі, Інвестиції, Податки й ФОП, далі Категорії, Бренди, Спільний доступ, Пристрої та AI, профіль і Налаштування. Форми й деталі операції відкриваються панеллю праворуч."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "tag": "b",
+                            "attrs": {},
+                            "children": ["Виписки й клавіатура."]
+                          },
+                          " Перетягни PDF, Excel чи CSV банку на вікно: Dibsly прочитає й покаже нове, перш ніж щось зберегти. Суми набираються з клавіатури, «Розділи» в рядку меню відкривають будь-яку сторінку, ⌘[ — назад."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "tag": "b",
+                            "attrs": {},
+                            "children": ["Що лишається на iPhone."]
+                          },
+                          " Apple Pay і сповіщення банків через Команди та віджети — на iPhone й iPad; із синхронізацією записане ними одразу є й на Mac."
                         ]
                       }
                     ]

@@ -1,7 +1,7 @@
 {
   "route": "en.html",
   "lang": "en",
-  "head": "<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\">\n<title>Dibsly: all your money in one place</title>\n<meta name=\"description\" content=\"Dibsly for iPhone, iPad and the web: cards from every bank, cash, savings, investments, FOP, debts and credits together. Spending records itself, and Dibsly answers your money questions in your own figures.\">\n<meta name=\"theme-color\" content=\"#0E0C0B\">\n<link rel=\"canonical\" href=\"https://dibslyapp.com/en.html\">\n<link rel=\"alternate\" hreflang=\"uk\" href=\"https://dibslyapp.com/\">\n<link rel=\"alternate\" hreflang=\"en\" href=\"https://dibslyapp.com/en.html\">\n<link rel=\"alternate\" hreflang=\"x-default\" href=\"https://dibslyapp.com/\">\n<meta property=\"og:type\" content=\"website\">\n<meta property=\"og:site_name\" content=\"Dibsly\">\n<meta property=\"og:url\" content=\"https://dibslyapp.com/en.html\">\n<meta property=\"og:locale\" content=\"en_US\">\n<meta property=\"og:locale:alternate\" content=\"uk_UA\">\n<meta property=\"og:title\" content=\"Dibsly: all your money in one place\">\n<meta property=\"og:description\" content=\"Every bank, Apple Pay, cash, goals, investments, FOP, debts and credits on iPhone, iPad and in your browser.\">\n<meta property=\"og:image\" content=\"https://dibslyapp.com/assets/screenshots/web/en-web.jpg\">\n<meta property=\"og:image:width\" content=\"2160\">\n<meta property=\"og:image:height\" content=\"1350\">\n<meta property=\"og:image:alt\" content=\"The website my.dibslyapp.com: money on hand, savings, investments, where the money went and upcoming payments\">\n<meta name=\"twitter:card\" content=\"summary_large_image\">\n<meta name=\"twitter:title\" content=\"Dibsly: all your money in one place\">\n<meta name=\"twitter:description\" content=\"Every bank, Apple Pay, cash, goals, investments, FOP, debts and credits on iPhone, iPad and in your browser.\">\n<meta name=\"twitter:image\" content=\"https://dibslyapp.com/assets/screenshots/web/en-web.jpg\">\n<meta name=\"twitter:image:alt\" content=\"The website my.dibslyapp.com: money on hand, savings, investments, where the money went and upcoming payments\">\n<link rel=\"icon\" type=\"image/png\" href=\"assets/brand/favicon.png\">\n<link rel=\"apple-touch-icon\" href=\"assets/brand/apple-touch-icon.png\">",
+  "head": "<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\">\n<title>Dibsly: all your money in one place</title>\n<meta name=\"description\" content=\"Dibsly for iPhone, iPad, Mac and the web: cards from every bank, cash, savings, investments, FOP, debts and credits together. Spending records itself, and Dibsly answers your money questions in your own figures.\">\n<meta name=\"theme-color\" content=\"#0E0C0B\">\n<link rel=\"canonical\" href=\"https://dibslyapp.com/en.html\">\n<link rel=\"alternate\" hreflang=\"uk\" href=\"https://dibslyapp.com/\">\n<link rel=\"alternate\" hreflang=\"en\" href=\"https://dibslyapp.com/en.html\">\n<link rel=\"alternate\" hreflang=\"x-default\" href=\"https://dibslyapp.com/\">\n<meta property=\"og:type\" content=\"website\">\n<meta property=\"og:site_name\" content=\"Dibsly\">\n<meta property=\"og:url\" content=\"https://dibslyapp.com/en.html\">\n<meta property=\"og:locale\" content=\"en_US\">\n<meta property=\"og:locale:alternate\" content=\"uk_UA\">\n<meta property=\"og:title\" content=\"Dibsly: all your money in one place\">\n<meta property=\"og:description\" content=\"Every bank, Apple Pay, cash, goals, investments, FOP, debts and credits on iPhone, iPad, Mac and in your browser.\">\n<meta property=\"og:image\" content=\"https://dibslyapp.com/assets/screenshots/web/en-web.jpg\">\n<meta property=\"og:image:width\" content=\"2160\">\n<meta property=\"og:image:height\" content=\"1350\">\n<meta property=\"og:image:alt\" content=\"The website my.dibslyapp.com: money on hand, savings, investments, where the money went and upcoming payments\">\n<meta name=\"twitter:card\" content=\"summary_large_image\">\n<meta name=\"twitter:title\" content=\"Dibsly: all your money in one place\">\n<meta name=\"twitter:description\" content=\"Every bank, Apple Pay, cash, goals, investments, FOP, debts and credits on iPhone, iPad, Mac and in your browser.\">\n<meta name=\"twitter:image\" content=\"https://dibslyapp.com/assets/screenshots/web/en-web.jpg\">\n<meta name=\"twitter:image:alt\" content=\"The website my.dibslyapp.com: money on hand, savings, investments, where the money went and upcoming payments\">\n<link rel=\"icon\" type=\"image/png\" href=\"assets/brand/favicon.png\">\n<link rel=\"apple-touch-icon\" href=\"assets/brand/apple-touch-icon.png\">",
   "sections": [
     {
       "tag": "section",
@@ -23,7 +23,7 @@
                 {
                   "tag": "span",
                   "attrs": { "class": "line" },
-                  "children": ["Phone. Tablet. Browser."]
+                  "children": ["Phone. Tablet. Mac. Browser."]
                 },
                 {
                   "tag": "span",
@@ -116,7 +116,7 @@
                       "tag": "p",
                       "attrs": {},
                       "children": [
-                        "One account, the same money on your iPhone, iPad and the website. Encrypted backups to iCloud Drive or Google Drive, free, automatic or by hand."
+                        "One account, the same money on your iPhone, iPad, Mac and the website. Encrypted backups to iCloud Drive or Google Drive, free, automatic or by hand."
                       ]
                     },
                     {
@@ -262,8 +262,9 @@
                         {
                           "tag": "li",
                           "attrs": {},
-                          "children": ["Sync between iPhone, iPad and my.dibslyapp.com"]
+                          "children": ["Sync between iPhone, iPad, Mac and my.dibslyapp.com"]
                         },
+                        { "tag": "li", "attrs": {}, "children": ["Dibsly on the Mac"] },
                         {
                           "tag": "li",
                           "attrs": {},
@@ -456,7 +457,7 @@
                       "tag": "p",
                       "attrs": {},
                       "children": [
-                        "Not yet: iPhone, iPad, and my.dibslyapp.com in any browser (with Premium). Mac is next, then Android."
+                        "Not yet: iPhone, iPad, the Mac and my.dibslyapp.com in any browser (the Mac and the website with Premium). Android is next."
                       ]
                     }
                   ]

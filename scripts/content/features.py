@@ -172,8 +172,8 @@ S = [
    ("convo", [("me", "Постав ціль: відпустка, 2 000 $ до липня.", "Set a goal: a holiday, $2,000 by July."),
               ("ai", "Готово, ціль «Відпустка». Відкладай 250 $ на місяць, і встигнеш.", "Done, the goal “Holiday”. Put aside $250 a month and you will make it.")]), "assistants"),
   ("sync", "pro",
-   ("Синхронізація", "Акаунт безкоштовний і не обов'язковий: увійди через Apple, Google чи пошту. З Premium дані однакові на всіх твоїх iPhone і на сайті.", "Головна → профіль"),
-   ("Sync", "An account is free and optional: sign in with Apple, Google or e-mail. With Premium your data is the same on all your iPhones and on the website.", "Main → profile"),
+   ("Синхронізація", "Акаунт безкоштовний і не обов'язковий: увійди через Apple, Google чи пошту. З Premium дані однакові на всіх твоїх iPhone, iPad, Mac і на сайті.", "Головна → профіль"),
+   ("Sync", "An account is free and optional: sign in with Apple, Google or e-mail. With Premium your data is the same on all your iPhones, iPads, your Mac and on the website.", "Main → profile"),
    None, "account"),
   ("backups", "free",
    ("Резервні копії", "Зашифровані копії в твоєму iCloud Drive чи Google Drive. Новий iPhone чи перевстановлення: відновиш усе з копії.", "Налаштування → Резервні копії та відновлення"),
@@ -269,7 +269,6 @@ ROADMAP = [
  (("Потім", "Later"), [
   ("shared-plans", "Спільні плани на двох", "Shared plans for two", "", ""),
   ("ovdp", "ОВДП в Інвестиціях", "Ukrainian government bonds (OVDP) in Investments", "", ""),
-  ("ipad-mac", "Mac", "Mac", "", ""),
   ("android", "Android", "Android", "", ""),
  ]),
  (("Думаємо", "Thinking about"), [

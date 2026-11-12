@@ -891,3 +891,17 @@
   height: auto;
   border-radius: 16px;
 }
+/* The Mac's window (1.1.1): the app's own window, rounded as macOS draws it, with the page's shadow. */
+.fvisual .macwin {
+  margin: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    var(--shadow);
+}
+.fvisual .macwin img {
+  display: block;
+  width: 100%;
+  height: auto;
+}

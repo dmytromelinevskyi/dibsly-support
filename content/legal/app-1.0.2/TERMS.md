@@ -1,6 +1,6 @@
 # Dibsly Terms of Use
 
-Last updated: November 9, 2026
+Last updated: November 12, 2026
 
 These terms are shown in the app (Settings → Terms of Use) in English, Ukrainian and Russian. This file is the English source; keep both in step and raise `TermsOfUse.version` in the app with every change.
 
@@ -30,7 +30,7 @@ Statements, monobank sync, Apple Pay, bank notifications and receipts can be inc
 
 ## Premium
 
-Dibsly Premium adds sync of your account across your devices, the website and your AI assistant, shared accounts (one member's Premium is enough for everyone in it), bank notifications of any bank read by the AI (iOS 27 or later), AI categorization, up to 300 receipts and up to 25 statements of other banks a month, importing other money apps' exports, voice entry with the AI and more questions in the chat; everything else, including Investments with broker connections and investment taxes, goals and the account itself, is free. Premium is monthly or yearly at the price the App Store shows before you buy (in your country's currency); it is an auto-renewing subscription bought through Apple. Each period renews, unless you cancel at least 24 hours before it ends. Manage or cancel it in iOS Settings → your name → Subscriptions; refunds are handled by Apple. Apple’s Standard License Agreement also applies.
+Dibsly Premium adds sync of your account across your devices, the website and your AI assistant, Dibsly on the Mac, shared accounts (one member's Premium is enough for everyone in it), bank notifications of any bank read by the AI (iOS 27 or later), AI categorization, up to 300 receipts and up to 25 statements of other banks a month, importing other money apps' exports, voice entry with the AI and more questions in the chat; everything else, including Investments with broker connections and investment taxes, goals and the account itself, is free. Premium is monthly or yearly at the price the App Store shows before you buy (in your country's currency); it is an auto-renewing subscription bought through Apple. Each period renews, unless you cancel at least 24 hours before it ends. Manage or cancel it in iOS Settings → your name → Subscriptions (on a Mac: System Settings → your name → Media & Purchases → Subscriptions); refunds are handled by Apple. Apple’s Standard License Agreement also applies.
 
 ## No warranty
 

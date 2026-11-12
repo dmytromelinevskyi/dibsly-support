@@ -1,7 +1,7 @@
 {
   "uk": {
     "hero": {
-      "kicker": "Особисті фінанси · iPhone, iPad і браузер",
+      "kicker": "Особисті фінанси · iPhone, iPad, Mac і браузер",
       "title": [
         {
           "text": "Усі гроші.",
@@ -25,12 +25,12 @@
           "soon": false
         },
         {
-          "text": "Браузер",
+          "text": "Mac",
           "soon": false
         },
         {
-          "text": "Mac — скоро",
-          "soon": true
+          "text": "Браузер",
+          "soon": false
         },
         {
           "text": "Android — згодом",
@@ -271,7 +271,7 @@
   },
   "en": {
     "hero": {
-      "kicker": "Personal finance · iPhone, iPad and the web",
+      "kicker": "Personal finance · iPhone, iPad, Mac and the web",
       "title": [
         {
           "text": "All your money.",
@@ -295,12 +295,12 @@
           "soon": false
         },
         {
-          "text": "Browser",
+          "text": "Mac",
           "soon": false
         },
         {
-          "text": "Mac — soon",
-          "soon": true
+          "text": "Browser",
+          "soon": false
         },
         {
           "text": "Android — later",
@@ -460,7 +460,12 @@
           }
         ],
         "lead": "Paid with Apple Pay or got a bank’s push: a familiar purchase records itself, the rest wait in Activity for one tap.",
-        "tags": ["Apple Pay", "Any bank’s notifications · Premium", "Bank statements", "Voice and receipts"]
+        "tags": [
+          "Apple Pay",
+          "Any bank’s notifications · Premium",
+          "Bank statements",
+          "Voice and receipts"
+        ]
       },
       {
         "id": "ask",

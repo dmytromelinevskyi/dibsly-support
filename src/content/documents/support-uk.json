@@ -148,7 +148,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "Поки що iPhone, iPad і сайт my.dibslyapp.com у будь-якому браузері (з Premium). Далі — Mac, а потім Android."
+                          "Поки що iPhone, iPad, Mac і сайт my.dibslyapp.com у будь-якому браузері (Mac і сайт — з Premium). Далі — Android."
                         ]
                       }
                     ]
@@ -340,8 +340,11 @@
                           {
                             "tag": "li",
                             "attrs": {},
-                            "children": ["Синхронізація між iPhone, iPad і сайтом my.dibslyapp.com"]
+                            "children": [
+                              "Синхронізація між iPhone, iPad, Mac і сайтом my.dibslyapp.com"
+                            ]
                           },
+                          { "tag": "li", "attrs": {}, "children": ["Dibsly на Маці"] },
                           {
                             "tag": "li",
                             "attrs": {},
