@@ -1,8 +1,8 @@
 # Dibsly Terms of Use
 
-Last updated: November 12, 2026
+Last updated: November 17, 2026
 
-These terms are shown in the app (Settings → Terms of Use) in English, Ukrainian and Russian. This file is the English source; keep both in step and raise `TermsOfUse.version` in the app with every change.
+These terms are shown in the app (Settings → Documents → Terms of Use) in English, Ukrainian and Russian. This file is the English source; keep both in step and raise `TermsOfUse.version` in the app with every change.
 
 ## About Dibsly
 

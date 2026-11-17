@@ -142,14 +142,14 @@
                             "tag": "li",
                             "attrs": {},
                             "children": [
-                              "«Where does your money come from?»: monobank in one tap or any bank's statement (PDF, CSV or XLS), several if you like. Dibsly names the accounts itself on «Here are your accounts». No bank? «Start without a bank»."
+                              "«Your banks»: monobank in one tap or any bank's statement (PDF, CSV or XLS), several if you like. Dibsly names the accounts itself on the «Your accounts» page. No bank? Tap «Start without a bank»."
                             ]
                           },
                           {
                             "tag": "li",
                             "attrs": {},
                             "children": [
-                              "Then Main's «Set up the rest?» card shows what is left: the accounts, a backup and the automation that records spending itself — ",
+                              "Then Main shows the «Where do we start?» card: its first row is «Add your first expense», and «See an example» shows Dibsly with made-up money. The example never turns on without that button. Once you have data, the card is «What else to set up»: the accounts, a backup and the automation that records spending itself through ",
                               {
                                 "tag": "a",
                                 "attrs": { "href": "#apple-pay" },
@@ -193,7 +193,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Exchange rates."] },
-                          " The NBU rate is on the right of the On hand row; a tap opens the converter."
+                          " The NBU rate is on the right of the On hand row; tapping it opens the converter."
                         ]
                       },
                       {
@@ -209,7 +209,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Your month"] },
-                          " — Income, Spent and Net; a tap opens their operations. Below: Activity with drafts, the Plan and the Calendar — each opens with All ›."
+                          " — Income, Spent and Net; tapping it opens their operations. Below: Activity with drafts, then the sections you turned on: the plan, goals, the calendar, debts, credits. Debts and credits show in short only what needs your attention; the full list opens with All ›."
                         ]
                       },
                       {
@@ -217,15 +217,23 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["+"] },
-                          " records an operation (an expense, income, a transfer or a debt), a phrase («Say it») or a receipt. The gear at the top opens Settings, with a search at the bottom."
+                          " records an operation (an expense, income, a transfer or a debt), a phrase («Say it») or a receipt. The gear at the top opens Settings, with a search at the bottom, and the avatar next to it opens Profile."
                         ]
                       },
                       {
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          { "tag": "b", "attrs": {}, "children": ["What else Dibsly can do"] },
-                          " — a block on Main: a short film for each feature, “Turn on” under it, swipe up for the next one. × hides it; Settings → Features → “Show on Main” brings it back."
+                          { "tag": "b", "attrs": {}, "children": ["What else Dibsly can do."] },
+                          " Tap a tile in the block on Main and Dibsly shows a short film about the feature, with a “Turn on” button. Swipe up for the next film. × hides the block; Settings → Features → “Show on Main” brings it back."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Automation."] },
+                          " Settings → Automation is one page for four sources: monobank directly, Brokers, Apple Pay and Bank notifications. The Automation row in Settings shows how many of them work, for example «2 of 4 connected». monobank and brokers record operations at once, while Apple Pay and bank notifications put drafts in Activity."
                         ]
                       }
                     ]
@@ -246,7 +254,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Amount first."] },
-                          " The keypad opens first and can count + − × ÷. Then pick a category — tapping it saves the operation."
+                          " The keypad opens first and can count + − × ÷. Then pick a category: tapping it records the operation at once."
                         ]
                       },
                       {
@@ -254,7 +262,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Account and date."] },
-                          " Tap the date at the top to change it; a future date isn't counted until it comes. After expense lets you type the balance you see in the bank, and the amount is worked out."
+                          " Tap the date at the top to change it: pick the day and tap «Done». A future date isn't counted until it comes. After expense lets you type the balance you see in the bank, and the amount is worked out."
                         ]
                       },
                       {
@@ -278,7 +286,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Editing."] },
-                          " In History, tap an operation to change it — changes save at once. Hold it to change the category, duplicate, select several or delete."
+                          " In History, tap an operation, change it and tap «Save» at the bottom; × closes without changes. Splitting an expense, adding it to another or returning a purchase is in «More actions». Hold an operation to change the category, duplicate, select several or delete."
                         ]
                       },
                       {
@@ -290,7 +298,15 @@
                             "attrs": {},
                             "children": ["One expense, several categories."]
                           },
-                          " In an expense's card, «Split by category»: ₴1,000 at a café becomes 600 for food, 250 for drinks and 150 for a hookah, each part counted in its own category. The balance doesn't change, and the bank's later statement still recognises the whole payment. You can split before saving too — in the new expense's card and in an Apple Pay or bank notification draft, where «Split with…» for friends is as well."
+                          " In a saved expense's card, «More actions» → «Split by category»: ₴1,000 at a café becomes 600 for food, 250 for drinks and 150 for a hookah, each part counted in its own category. The balance doesn't change, and the bank's later statement still recognises the whole payment. You can split before saving too: in the new expense's card and in an Apple Pay or bank notification draft, where, with Debts on, «Split with a person» for friends is as well."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Add to expense."] },
+                          " A tip paid from another card joins the expense: in the tip's card, «More actions» → «Add to expense», and pick the expense. History keeps one row for the whole sum, and the expense's card shows «Made of» with which account paid what. «Take off» next to a part makes it a separate operation again."
                         ]
                       },
                       {
@@ -317,7 +333,11 @@
                 "tag": "section",
                 "attrs": { "class": "section", "id": "voice" },
                 "children": [
-                  { "tag": "h2", "attrs": {}, "children": ["Voice, receipts and splitting"] },
+                  {
+                    "tag": "h2",
+                    "attrs": {},
+                    "children": ["Voice, receipts and splitting"]
+                  },
                   {
                     "tag": "div",
                     "attrs": { "class": "card reveal" },
@@ -350,8 +370,8 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          { "tag": "b", "attrs": {}, "children": ["Split the bill."] },
-                          " In a receipt, mark your items and send your friends their part by a link — each picks their own."
+                          { "tag": "b", "attrs": {}, "children": ["Split the receipt."] },
+                          " In a receipt, tap «Split the receipt» and mark your items, then send your friends the link: each picks their own."
                         ]
                       }
                     ]
@@ -378,7 +398,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "Every Apple Pay payment comes into Dibsly. When its account and category are already known, it is recorded by itself; the rest wait as drafts in Activity: check the amount and category and save with one tap. Free, with any card."
+                          "Every Apple Pay payment comes into Dibsly. When its account and category are already known and «Record at once» is on, it is recorded by itself; the rest wait as drafts in Activity: check the amount and category and record it with one tap. Free, with any card."
                         ]
                       },
                       {
@@ -389,7 +409,7 @@
                             "tag": "li",
                             "attrs": {},
                             "children": [
-                              "In Dibsly: Settings → Transaction automation → Apple Pay → «Install automation»."
+                              "In Dibsly: Settings → Automation → Apple Pay: turn the switch on and tap «Install automation». The steps and a video are on the same page, under «How to set up the automation»."
                             ]
                           },
                           {
@@ -403,7 +423,7 @@
                             "tag": "li",
                             "attrs": {},
                             "children": [
-                              "Save each card's first payment with its account — Dibsly remembers it."
+                              "Record each card's first payment with its account, and Dibsly remembers it."
                             ]
                           }
                         ]
@@ -420,8 +440,8 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          { "tag": "b", "attrs": {}, "children": ["Save at once."] },
-                          " A purchase with its account, amount and category, with nothing like it recorded yet, saves by itself, and Dibsly says «Saved ✅»; tap the notification to open the operation and change or delete it. A calendar payment with the same amount is marked paid. It is on for new users; after the update — Settings → Transaction automation → «Save at once». The same goes for bank notifications."
+                          { "tag": "b", "attrs": {}, "children": ["Record at once."] },
+                          " A purchase with its account, amount and category, with nothing like it recorded yet, records itself, and Dibsly says «Saved ✅»; tap the notification to open the operation and change or delete it. A calendar payment with the same amount is marked paid. The switch is in Settings → Automation → «Record at once» once Apple Pay or bank notifications are on. It is on for new users. The same goes for bank notifications."
                         ]
                       }
                     ]
@@ -435,7 +455,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "A new «Notification» automation from the Wallet app, «Run Immediately». Actions: «Get text» from Subtitle, Body and Title; «Text» with the two texts you got; then Dibsly's «Import Wallet notification»: Notification text — the text, Card — the card's name, «Show When Run» off."
+                          "A new «Notification» automation from the Wallet app, «Run Immediately». Actions: «Get text» from Subtitle, Body and Title; «Text» with the two texts you got; then Dibsly's «Import Wallet notification»: Notification text: the text, Card: the card's name, «Show When Run» off."
                         ]
                       }
                     ]
@@ -480,7 +500,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "Pushes from any bank — purchases, top-ups, transfers — are read by Dibsly with the AI through one Shortcuts automation and become drafts."
+                          "Notifications from any bank about purchases, top-ups and transfers are read by Dibsly with the AI through one Shortcuts automation and become drafts."
                         ]
                       },
                       {
@@ -491,7 +511,7 @@
                             "tag": "li",
                             "attrs": {},
                             "children": [
-                              "In Dibsly: Settings → Transaction automation → Bank notifications → «Install automation»."
+                              "In Dibsly: Settings → Automation → Bank notifications: turn the switch on and tap «Install automation». The steps and a video are on the same page, under «How to set up the automation»."
                             ]
                           },
                           {
@@ -521,11 +541,11 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "The first payment of each card asks for its account. A complete draft with its account and category saves by itself when ",
+                          "The first payment of each card asks for its account. A complete draft with its account and category records itself when ",
                           {
                             "tag": "a",
                             "attrs": { "href": "#apple-pay" },
-                            "children": ["«Save at once»"]
+                            "children": ["«Record at once»"]
                           },
                           " is on."
                         ]
@@ -548,7 +568,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "Settings → Import & export → «Connect monobank directly» → «Connect monobank», and confirm the access in the mono app. Dibsly names your cards and jars itself — check the names on «Here are your accounts», choose how much history to load, and from then on transactions arrive on their own within a minute. Read-only access, no token, no passwords; disconnect in the same place."
+                          "Settings → Automation → monobank directly (or Settings → Import & export → «Connect monobank directly») → «Connect monobank», and confirm the access in the mono app. Dibsly names your cards and jars itself. Check the names on «Your accounts», choose how much history to load, and from then on transactions arrive on their own within a minute. Read-only access, no token, no passwords; disconnect in the same place."
                         ]
                       }
                     ]
@@ -580,7 +600,7 @@
                             "tag": "li",
                             "attrs": {},
                             "children": [
-                              "Check the preview — the account, the number of operations, transfers between your accounts — and tap «Add to Dibsly» on «Here are your accounts»."
+                              "Check the account, the number of operations and the transfers between your accounts, and tap «Add to Dibsly» on «Your accounts»."
                             ]
                           }
                         ]
@@ -610,7 +630,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "Transfers between your accounts are recognised; an account money often goes to is offered as yours («Is this your account?»). Categories come from your history, your rules and the bank; the rest lands in «Uncategorized»."
+                          "Transfers between your accounts are recognised; other cards in the statement show as accounts on «Your accounts», and if a card isn't yours, choose «Not my card». Categories come from your history, your rules and the bank; the rest lands in «Uncategorized»."
                         ]
                       }
                     ]
@@ -655,7 +675,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Your own title."] },
-                          " Rename an operation — «Heater» instead of «Rozetka» — and the brand stays, with its logo and category."
+                          " Rename an operation («Heater» instead of «Rozetka»), and the brand stays, with its logo and category."
                         ]
                       },
                       {
@@ -700,7 +720,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Paid by itself."] },
-                          " A charge from monobank (its sync or a push) or from a statement marks its payment in the calendar paid when it comes within three days: the same brand from any account and for any amount; the same name on the payment's account within ±10 %; an income for the exact amount. If the amount differs, the next payments take the new one. The “Paid in the calendar” message has Undo. An expense you record by hand you link yourself."
+                          " A charge from monobank (its sync or a notification) or from a statement marks its payment in the calendar paid when it comes within three days: the same brand from any account and for any amount; the same name on the payment's account within ±10 %; an income for the exact amount. If the amount differs, the next payments take the new one. The “Paid in the calendar” message has Undo. An expense you record by hand you link yourself."
                         ]
                       },
                       {
@@ -759,7 +779,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["On Main."] },
-                          " The Plan card shows what's left and up to four categories you watch. Orange means 90% used, red — over the limit."
+                          " The Plan card shows what's left and up to four categories you watch. Orange means 90% is used, red that the limit is exceeded."
                         ]
                       },
                       {
@@ -844,7 +864,7 @@
                             "attrs": { "href": "#freedom-auto" },
                             "children": ["Freedom Finance"]
                           },
-                          ": trades, dividends, deposits and currency exchanges come by themselves, and Investments turn on by themselves with the first connection. Or use a broker's report:"
+                          ": Settings → Automation → Brokers. Trades, dividends, deposits and currency exchanges come by themselves, and Investments turn on by themselves with the first connection. Or use a broker's report:"
                         ]
                       },
                       {
@@ -855,14 +875,14 @@
                             "tag": "li",
                             "attrs": {},
                             "children": [
-                              "Settings → Features → Investments → «Turn on Investments». An Investments tile appears on Main — it opens your portfolio."
+                              "Settings → Features → Investments: the first row is the switch. The first time, a two-page questionnaire opens: the brokers and accounts, then the portfolio currency. An Investments tile appears on Main; it opens your portfolio."
                             ]
                           },
                           {
                             "tag": "li",
                             "attrs": {},
                             "children": [
-                              "Save your broker's report: Interactive Brokers — the Activity Statement, Freedom Finance — the broker report as XLSX or PDF."
+                              "Save your broker's report: for Interactive Brokers it is the Activity Statement, for Freedom Finance the broker report as XLSX or PDF."
                             ]
                           },
                           {
@@ -939,7 +959,7 @@
                             "tag": "li",
                             "attrs": {},
                             "children": [
-                              "In Dibsly: Investments → «+» → «Connect a broker» (or Settings → Investments → «Brokers, automatically») → Interactive Brokers. Paste the token and the query number → «Connect»."
+                              "In Dibsly: Settings → Automation → Brokers (or Investments → «+» → «Connect a broker») → Interactive Brokers. Paste the token and the query number → «Connect»."
                             ]
                           }
                         ]
@@ -1100,7 +1120,7 @@
                             "tag": "li",
                             "attrs": {},
                             "children": [
-                              "In Dibsly: Investments → «+» → «Connect a broker» → Freedom Finance. Paste the e-mail you sign in to Freedom24 with and the public key → «Connect»."
+                              "In Dibsly: Settings → Automation → Brokers (or Investments → «+» → «Connect a broker») → Freedom Finance. Paste the e-mail you sign in to Freedom24 with and the public key → «Connect»."
                             ]
                           }
                         ]
@@ -1229,7 +1249,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["For the declaration."] },
-                          " Dividends — line 10.10, investment profit — line 10.8 and annex Ф1, and how much PIT and military levy to pay. The declaration is due by 1 May, the payment by 1 August; Dibsly reminds you on 24 April and 24 July."
+                          " Dividends go to line 10.10, investment profit to line 10.8 and annex Ф1; the same place shows how much PIT and military levy to pay. The declaration is due by 1 May, the payment by 1 August; Dibsly reminds you on 24 April and 24 July."
                         ]
                       },
                       {
@@ -1286,7 +1306,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Record a debt."] },
-                          " Main → Debts at the bottom, or + → Operation → Debt."
+                          " First turn on «Debts» in Settings → Features: the Debts block appears on Main. Record a debt there or with + → Operation → Debt."
                         ]
                       },
                       {
@@ -1294,7 +1314,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Split an expense."] },
-                          " In an expense's card, «Split with…»: your part stays an expense, your friends' parts become debts. For a receipt: «Split the bill» with «I paid the whole bill»."
+                          " In an expense's card, «More actions» → «Split with a person»: your part stays an expense, your friends' parts become debts. In a receipt, tap «Split the receipt» and «I paid for the whole receipt»."
                         ]
                       },
                       {
@@ -1310,7 +1330,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["A link to the debt."] },
-                          " Until a friend accepts the debt, «Share» sends them its link: a friend with Dibsly accepts it in their app, and every record either of you makes reaches the other to confirm. Then «Remind» sends them a push. You both need a Dibsly account — a free one is enough."
+                          " Until a friend accepts the debt, «Share» sends them its link: a friend with Dibsly accepts it in their app, and every record either of you makes reaches the other to confirm. Then «Remind» sends them a notification. You both need a Dibsly account — a free one is enough."
                         ]
                       },
                       {
@@ -1354,7 +1374,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Bought in instalments."] },
-                          " In a saved expense's card, «Bought in instalments»: the purchase stays whole in Analytics, the bank's part comes back to the card, and each month's part pays the instalment off."
+                          " In a saved expense's card, «More actions» → «Bought in instalments»: the purchase stays whole in Analytics, the bank's part comes back to the card, and each month's part pays the instalment off."
                         ]
                       },
                       {
@@ -1362,7 +1382,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Paying and paying early."] },
-                          " On a credit's page, «Pay» splits the payment into the body and interest (an expense in «Interest and fees»). «Early» shows what a shorter term or a lower payment saves. A payment from a statement: «This is a credit payment» in its card."
+                          " On a credit's page, «Pay» splits the payment into the body and interest (an expense in «Interest and fees»). «Early» shows what a shorter term or a lower payment saves. A payment from a statement: in its card, «More actions» → «This is a credit payment»."
                         ]
                       },
                       {
@@ -1405,7 +1425,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Turn it on."] },
-                          " Settings, section Features → FOP → «Turn on FOP». A short questionnaire: the group, the rate, ESV, your community, the FOP accounts."
+                          " Settings → Features → FOP: the first row is the switch. The first time you turn it on, the «FOP questionnaire» opens on two pages: who pays ESV and where you are registered, then the FOP accounts and the operations you already have. The rest you change in «FOP settings», and «Open the FOP page» takes you to the taxes and deadlines."
                         ]
                       },
                       {
@@ -1413,7 +1433,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Income."] },
-                          " Income on a FOP account counts at the NBU rate of the day it arrived. A refund or your own transfer: turn off «FOP income» in the operation's card, or hold it on the FOP page → «Not income»."
+                          " Income on a FOP account counts at the NBU rate of the day it arrived. A refund or your own transfer: turn off «FOP income» in the operation's card, or hold it on the FOP page → «Not FOP income»."
                         ]
                       },
                       {
@@ -1472,7 +1492,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Where it is."] },
-                          " On Main — the button above «+»; on other pages — the orange tab on the right. The chat knows which page you opened it from."
+                          " On Main the chat opens with the button above «+»; on other pages, with the orange tab on the right. The chat knows which page you opened it from."
                         ]
                       },
                       {
@@ -1525,7 +1545,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["The account."] },
-                          " Profile (the circle next to the gear) → sign in with Apple, Google or e-mail. Without an account everything works on one device."
+                          " The avatar on Main, next to the gear, opens Profile: sign in with Apple, Google or e-mail. Without an account everything works on one device."
                         ]
                       },
                       {
@@ -1553,7 +1573,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "67 animated Dibsly. They open as you set things up — accounts, a backup, automation — and keep good habits, and there are memes, secrets and holidays too. Free."
+                          "67 animated Dibsly. They open as you set things up (accounts, a backup, automation) and keep good habits, and there are memes, secrets and holidays too. Free."
                         ]
                       },
                       {
@@ -1561,7 +1581,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Where."] },
-                          " Profile (the circle next to the gear) → «My Dibsly»: your level, «Next» — whom to open next, and the sections Setup, Habits, Memes, Secrets and Holidays. Tap a closed Dibsly to see what opens it."
+                          " The avatar on Main → «My Dibsly»: your level, «Next» — whom to open next, and the sections Setup, Habits, Memes, Secrets and Holidays. Tap a closed Dibsly to see what opens it."
                         ]
                       },
                       {
@@ -1577,7 +1597,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Avatar."] },
-                          " On a Dibsly's page, «Make it my avatar», and it appears in the circle on Main instead of your photo. «Back to the photo» undoes it."
+                          " On a Dibsly's page, «Make it my avatar», and it appears as the avatar on Main instead of your photo. «Back to the photo» undoes it."
                         ]
                       },
                       {
@@ -1636,7 +1656,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Automation."] },
-                          " Apple Pay and bank notifications are set up on the iPhone, where payments and banks' pushes arrive. With sync those operations are on the iPad at once."
+                          " Apple Pay and bank notifications are set up on the iPhone, where payments and banks' notifications arrive. With sync those operations are on the iPad at once."
                         ]
                       }
                     ]
@@ -1757,7 +1777,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "Settings → Preferences → App icon: System — light on a light Home Screen and dark on a dark one — Dark or Light. iOS shows its own message that the icon changed."
+                          "Settings → Preferences → App icon: System (light on a light Home Screen and dark on a dark one), Dark or Light. iOS shows its own message that the icon changed."
                         ]
                       }
                     ]
@@ -1788,14 +1808,14 @@
                             "tag": "li",
                             "attrs": {},
                             "children": [
-                              "Sign in to your Dibsly account: Profile → Apple, Google or e-mail."
+                              "Sign in to your Dibsly account: the avatar on Main → Apple, Google or e-mail."
                             ]
                           },
                           {
                             "tag": "li",
                             "attrs": {},
                             "children": [
-                              "Profile → «Sharing» → «Invite by link» and send the link."
+                              "The avatar on Main → «Sharing» → «Invite by link» and send the link."
                             ]
                           },
                           {
@@ -1937,7 +1957,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "All connections are in the app: Profile → «Devices and AI». You can remove them there."
+                          "All connections are in the app: the avatar on Main → «Devices and AI». You can remove them there."
                         ]
                       }
                     ]
@@ -2050,7 +2070,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["All data on this device."] },
-                          " Settings → Data health → «Delete all data». Dibsly first keeps a safety copy on this device and leaves your iCloud Drive and Google Drive backups alone. When you are signed in, the button isn't there — see below."
+                          " Settings → Data health and test data → «Delete all data». Dibsly first keeps a safety copy on this device and leaves your iCloud Drive and Google Drive backups alone. When you are signed in, the button isn't there — see below."
                         ]
                       },
                       {
@@ -2058,7 +2078,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["The account."] },
-                          " Profile → «Delete account and all data»: the server deletes everything in the account and this device is erased. «Save a copy first» makes a backup. Deleting doesn't cancel Premium — cancel it in iOS Settings."
+                          " The avatar on Main → «Delete account and all data»: the server deletes everything in the account and this device is erased. «Save a copy first» makes a backup. Deleting doesn't cancel Premium — cancel it in iOS Settings."
                         ]
                       },
                       {
@@ -2066,7 +2086,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Signing out."] },
-                          " Profile → «Remove from this device» (with sync): your data stays in the account and the device is erased. Without sync the button reads «Sign out», and the data stays on the device."
+                          " The avatar on Main → «Remove from this device» (with sync): your data stays in the account and the device is erased. Without sync the button reads «Sign out», and the data stays on the device."
                         ]
                       }
                     ]
@@ -2136,7 +2156,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "Premium — $2.99 a month or $29.99 a year — adds sync and shared accounts, the website, ChatGPT and Claude, notifications from any bank, AI categories and import from any other app. The limits are higher: up to 300 receipts a month (10 without Premium), up to 25 statements of other banks a month (3 in all without Premium) and up to 40 chat questions a day (20 a month without Premium)."
+                          "Premium, at $2.99 a month or $29.99 a year, adds sync and shared accounts, the website, ChatGPT and Claude, notifications from any bank, AI categories and import from any other app. The limits are higher: up to 300 receipts a month (10 without Premium), up to 25 statements of other banks a month (3 in all without Premium) and up to 40 chat questions a day (20 a month without Premium)."
                         ]
                       },
                       {

@@ -35,7 +35,7 @@ export const receiptStrings = {
       'The receipt already adds {0} on top of its items — if that is service or tips, it is already in your part.',
   },
   uk: {
-    title: 'Поділити рахунок',
+    title: 'Поділити чек',
     yours: 'Твоя частина',
     of: 'з {0} · за цінами чека; чайові — пропорційно',
     bonus: 'Бонуси й знижки −{0} · сплачено {1}',

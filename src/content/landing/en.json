@@ -443,7 +443,7 @@
                       "tag": "p",
                       "attrs": {},
                       "children": [
-                        "Without an account: Settings → Data health → Delete all data. With one: Settings → Profile → Delete account and all data, and the server erases everything. Your backups in iCloud Drive or Google Drive stay until you delete them. Deleting doesn’t cancel Premium: you cancel it in the App Store."
+                        "Without an account: Settings → Data health and test data → Delete all data. With one: the avatar on Main → Delete account and all data, and the server erases everything. Your backups in iCloud Drive or Google Drive stay until you delete them. Deleting doesn’t cancel Premium: you cancel it in the App Store."
                       ]
                     }
                   ]

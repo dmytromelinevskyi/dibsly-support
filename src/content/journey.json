@@ -189,8 +189,8 @@
             "tone": "dim"
           }
         ],
-        "lead": "Оплатив Apple Pay чи прийшов пуш банку — знайома покупка записується сама, решта чекає в «Активності» на один дотик.",
-        "tags": ["Apple Pay", "Пуші будь-яких банків · Premium", "Виписки банків", "Голос і чек"]
+        "lead": "Оплатив Apple Pay чи прийшло сповіщення банку — знайома покупка записується сама, решта чекає в «Активності» на одне натискання.",
+        "tags": ["Apple Pay", "Сповіщення банків · Premium", "Виписки банків", "Голос і чек"]
       },
       {
         "id": "ask",
@@ -206,7 +206,7 @@
           }
         ],
         "lead": "Відповідає твоїми цифрами й змінює щось тільки після «Зберегти».",
-        "note": "Про налаштування — без ліміту, про гроші — 20 питань на місяць безкоштовно."
+        "note": "Про налаштування питай без ліміту, про гроші — 20 питань на місяць безкоштовно."
       },
       {
         "id": "money",
@@ -221,7 +221,7 @@
             "tone": "dim"
           }
         ],
-        "lead": "Позики, повернення, рахунок у кафе — по людях, нагадати в один дотик. Кредити: наступний платіж і переплата."
+        "lead": "Позики, повернення, чек у кафе — по людях, нагадати одним натисканням. Кредити: наступний платіж і переплата."
       },
       {
         "id": "invest",
@@ -459,7 +459,7 @@
             "tone": "dim"
           }
         ],
-        "lead": "Paid with Apple Pay or got a bank’s push: a familiar purchase records itself, the rest wait in Activity for one tap.",
+        "lead": "Paid with Apple Pay or got a bank’s notification: a familiar purchase records itself, the rest wait in Activity for one tap.",
         "tags": [
           "Apple Pay",
           "Any bank’s notifications · Premium",
@@ -496,7 +496,7 @@
             "tone": "dim"
           }
         ],
-        "lead": "Loans, paybacks, the café bill: by person, a reminder in one tap. Credits: the next payment and the overpayment."
+        "lead": "Loans, paybacks, the café receipt: by person, a reminder in one tap. Credits: the next payment and the overpayment."
       },
       {
         "id": "invest",

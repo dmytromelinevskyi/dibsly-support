@@ -124,7 +124,7 @@ export default function FeatureGallery({ lang }) {
           </h2>
           <p className="gallery-lead">
             {uk
-              ? 'Обери те, що важливо тобі. Роздивись справжні екрани Dibsly у власному темпі.'
+              ? 'Вибери те, що важливо тобі. Роздивись справжні екрани Dibsly у власному темпі.'
               : 'Choose what matters to you. Explore the real Dibsly screens at your own pace.'}
           </p>
         </div>
