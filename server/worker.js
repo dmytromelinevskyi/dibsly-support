@@ -69,12 +69,12 @@ async function video(request, env) {
 const APP_STORE = "https://apps.apple.com/app/apple-store/id6765870838";
 const LINK_ROBOTS = /facebookexternalhit|facebot|twitterbot|telegrambot|whatsapp|slackbot|discordbot|linkedinbot|skypeuripreview|viber|pinterest|redditbot|applebot|embedly|iframely|vkshare|googlebot|bingbot/i;
 const APP_TEXT = {
-  uk: { title: "Dibsly: усі твої гроші в одному місці", site: "https://dibslyapp.com/",
+  uk: { title: "Dibsly: знаю, куди поділися твої гроші", site: "https://dibslyapp.com/",
     description: "Усі банки, Apple Pay, готівка, цілі, інвестиції, ФОП, борги й кредити на iPhone, iPad і Mac.",
-    alt: "Dibsly. Усі гроші в одному місці.", open: "Відкрити в App Store" },
-  en: { title: "Dibsly: all your money in one place", site: "https://dibslyapp.com/en.html",
+    alt: "Dibsly. Знаю, куди поділися твої гроші.", open: "Відкрити в App Store" },
+  en: { title: "Dibsly: I know where your money went", site: "https://dibslyapp.com/en.html",
     description: "Every bank, Apple Pay, cash, goals, investments, debts and loans on iPhone, iPad and Mac.",
-    alt: "Dibsly. All your money in one place.", open: "Open in the App Store" },
+    alt: "Dibsly. I know where your money went.", open: "Open in the App Store" },
 };
 
 function appLink(url, request) {
