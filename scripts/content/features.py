@@ -471,7 +471,7 @@ def build(lang):
     <meta property="og:title" content="{e(t["title"])}">
     <meta property="og:description" content="{e(t["desc"])}">
     <meta property="og:url" content="https://dibslyapp.com/{t["page"]}">
-    <meta property="og:image" content="https://dibslyapp.com/assets/screenshots/web/{lang}-web.jpg">
+    <meta property="og:image" content="https://dibslyapp.com/assets/brand/og-{lang}.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/png" href="assets/brand/favicon.png">
     <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">

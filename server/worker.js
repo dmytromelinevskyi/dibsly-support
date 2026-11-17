@@ -62,11 +62,61 @@ async function video(request, env) {
   return new Response(bytes.slice(start, end + 1), { status: 206, headers });
 }
 
+// The short link for posts and profiles (1.1.2, owner 2026-11-17: an App Store link's preview is Apple's icon on
+// white): /app (Ukrainian) and /en/app. A messenger's or a network's robot gets a page with our own preview — «Dibsly.»
+// on the night sky with the hamster — and a person goes straight on: an iPhone, iPad or Mac to the App Store, with
+// `?ct=` naming the campaign in App Store Connect (`site-app` without one), anything else to the site.
+const APP_STORE = "https://apps.apple.com/app/apple-store/id6765870838";
+const LINK_ROBOTS = /facebookexternalhit|facebot|twitterbot|telegrambot|whatsapp|slackbot|discordbot|linkedinbot|skypeuripreview|viber|pinterest|redditbot|applebot|embedly|iframely|vkshare|googlebot|bingbot/i;
+const APP_TEXT = {
+  uk: { title: "Dibsly: усі твої гроші в одному місці", site: "https://dibslyapp.com/",
+    description: "Усі банки, Apple Pay, готівка, цілі, інвестиції, ФОП, борги й кредити на iPhone, iPad і Mac.",
+    alt: "Dibsly. Усі гроші в одному місці.", open: "Відкрити в App Store" },
+  en: { title: "Dibsly: all your money in one place", site: "https://dibslyapp.com/en.html",
+    description: "Every bank, Apple Pay, cash, goals, investments, debts and loans on iPhone, iPad and Mac.",
+    alt: "Dibsly. All your money in one place.", open: "Open in the App Store" },
+};
+
+function appLink(url, request) {
+  const lang = url.pathname.startsWith("/en/") ? "en" : "uk";
+  const text = APP_TEXT[lang];
+  const asked = url.searchParams.get("ct") ?? "";
+  const campaign = /^[A-Za-z0-9_-]{1,40}$/.test(asked) ? asked : "site-app";
+  const store = `${APP_STORE}?pt=128854143&ct=${campaign}&mt=8`;
+  const agent = request.headers.get("User-Agent") ?? "";
+  const headers = { "Cache-Control": "public, max-age=300", "Vary": "User-Agent" };
+  if (!LINK_ROBOTS.test(agent)) {
+    const apple = /iPhone|iPad|iPod|Macintosh/.test(agent);
+    return new Response(null, { status: 302, headers: { ...headers, Location: apple ? store : text.site } });
+  }
+  const image = `https://dibslyapp.com/assets/brand/og-${lang}.jpg`;
+  const page = `<!doctype html><html lang="${lang}"><head><meta charset="utf-8">
+<title>${escape(text.title)}</title>
+<meta name="description" content="${escape(text.description)}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Dibsly">
+<meta property="og:url" content="https://dibslyapp.com${url.pathname}">
+<meta property="og:title" content="${escape(text.title)}">
+<meta property="og:description" content="${escape(text.description)}">
+<meta property="og:image" content="${image}">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1260">
+<meta property="og:image:alt" content="${escape(text.alt)}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="${image}">
+<meta name="apple-itunes-app" content="app-id=6765870838">
+</head><body><a href="${escape(store)}">${escape(text.open)}</a></body></html>`;
+  return new Response(page, { headers: { ...headers, "Content-Type": "text/html; charset=utf-8" } });
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     if (url.hostname.startsWith("www.")) {
       return Response.redirect(`https://${url.hostname.slice(4)}${url.pathname}${url.search}`, 301);
+    }
+    if (/^\/(en\/)?app\/?$/.test(url.pathname) && ["GET", "HEAD"].includes(request.method)) {
+      return appLink(url, request);
     }
     const short = /^\/s\/([A-Za-z0-9]{4,12})\/?$/.exec(url.pathname);
     if (short && request.method === "GET") return splitPage(short[1], request, env);
