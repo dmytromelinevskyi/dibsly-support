@@ -221,7 +221,7 @@
             "tone": "dim"
           }
         ],
-        "lead": "Позики, повернення, чек у кафе — по людях, нагадати одним натисканням. Кредити: наступний платіж і переплата."
+        "lead": "Позики, повернення, чек у кафе — по людях, нагадати одним натисканням. Кредити: наступний платіж, переплата й до якого числа погасити кредитку без відсотків."
       },
       {
         "id": "invest",
@@ -496,7 +496,7 @@
             "tone": "dim"
           }
         ],
-        "lead": "Loans, paybacks, the café receipt: by person, a reminder in one tap. Credits: the next payment and the overpayment."
+        "lead": "Loans, paybacks, the café receipt: by person, a reminder in one tap. Credits: the next payment, the overpayment and the day to pay a credit card back without interest."
       },
       {
         "id": "invest",

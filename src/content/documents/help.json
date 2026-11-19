@@ -142,7 +142,7 @@
                             "tag": "li",
                             "attrs": {},
                             "children": [
-                              "«Your banks»: monobank in one tap or any bank's statement (PDF, CSV or XLS), several if you like. Dibsly names the accounts itself on the «Your accounts» page. No bank? Tap «Start without a bank»."
+                              "«Import your operations»: monobank in one tap, any bank's statement (PDF, CSV or XLS), several if you like, or «From another app» for another app's CSV. Dibsly names the accounts itself on the «Your accounts» page. No bank? Tap «Start without a bank»."
                             ]
                           },
                           {
@@ -217,7 +217,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["+"] },
-                          " records an operation (an expense, income, a transfer or a debt), a phrase («Say it») or a receipt. The gear at the top opens Settings, with a search at the bottom, and the avatar next to it opens Profile."
+                          " records an operation (an expense, income or a transfer), a phrase («Say it») or a receipt; «Bank statement» and «Connect monobank» (or «Update from monobank») are there too. The gear at the top opens Settings, with a search at the bottom, and the avatar next to it opens Profile."
                         ]
                       },
                       {
@@ -278,7 +278,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Transfers."] },
-                          " A transfer moves money between your own accounts and is never spending. Between currencies, enter what arrived; the rate comes from Currencies."
+                          " A transfer moves money between your own accounts and is never spending. Between currencies, enter what arrived; the rate comes from Currencies. Pick a person instead of an account, and it is a loan or a debt paid back."
                         ]
                       },
                       {
@@ -286,7 +286,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Editing."] },
-                          " In History, tap an operation, change it and tap «Save» at the bottom; × closes without changes. Splitting an expense, adding it to another or returning a purchase is in «More actions». Hold an operation to change the category, duplicate, select several or delete."
+                          " In History, tap an operation, change it and tap «Save» at the bottom; × closes without changes. Splitting an expense, repeating it, adding it to another, returning a purchase or duplicating is in «More actions». Hold an operation to change the category, duplicate, select several or delete."
                         ]
                       },
                       {
@@ -298,7 +298,7 @@
                             "attrs": {},
                             "children": ["One expense, several categories."]
                           },
-                          " In a saved expense's card, «More actions» → «Split by category»: ₴1,000 at a café becomes 600 for food, 250 for drinks and 150 for a hookah, each part counted in its own category. The balance doesn't change, and the bank's later statement still recognises the whole payment. You can split before saving too: in the new expense's card and in an Apple Pay or bank notification draft, where, with Debts on, «Split with a person» for friends is as well."
+                          " In an expense's card, «More actions» → «Split by category»: ₴1,000 at a café becomes 600 for food, 250 for drinks and 150 for a hookah, each part counted in its own category. The sum on top stays the whole bill, with lines under it: your part, the categories apart and, with «Split with a person», who owes you what. Tap a line to change it, and one «Save» keeps it all. History shows each part as its own row with ÷. The balance doesn't change, and the bank's later statement still recognises the whole payment. You can split before saving too: in the new expense's card and in an Apple Pay or bank notification draft, where, with Debts on, «Split with a person» for friends is as well."
                         ]
                       },
                       {
@@ -306,7 +306,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Add to expense."] },
-                          " A tip paid from another card joins the expense: in the tip's card, «More actions» → «Add to expense», and pick the expense. History keeps one row for the whole sum, and the expense's card shows «Made of» with which account paid what. «Take off» next to a part makes it a separate operation again."
+                          " A tip paid from another card joins the expense: in the tip's card, «More actions» → «Add to expense», and pick the expense. History keeps one row for the whole sum, marked «· 2 payments», and under the sum the expense's card shows «Paid in two payments» with which account paid what. «More actions» → «Separate a payment» makes a part a separate operation again."
                         ]
                       },
                       {
@@ -568,7 +568,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "Settings → Automation → monobank directly (or Settings → Import & export → «Connect monobank directly») → «Connect monobank», and confirm the access in the mono app. Dibsly names your cards and jars itself. Check the names on «Your accounts», choose how much history to load, and from then on transactions arrive on their own within a minute. Read-only access, no token, no passwords; disconnect in the same place."
+                          "«+» on Main → «Connect monobank» (or Settings → Automation → monobank directly), and confirm the access in the mono app. Dibsly names your cards and jars itself. Check the names on «Your accounts», choose how much history to load, and from then on transactions arrive on their own within a minute. Read-only access, no token, no passwords. Update any time: «+» → «Update from monobank»; disconnect in Settings → Automation."
                         ]
                       }
                     ]
@@ -593,14 +593,14 @@
                             "tag": "li",
                             "attrs": {},
                             "children": [
-                              "Share it to Dibsly or open Settings → Import & export → «Bank statement» — Dibsly recognises a FOP statement by itself."
+                              "Share it to Dibsly or tap «+» on Main → «Bank statement» (or Settings → Import & export → «Bank statement»; with FOP on, «Bank or FOP statement»). Dibsly recognises a FOP statement by itself."
                             ]
                           },
                           {
                             "tag": "li",
                             "attrs": {},
                             "children": [
-                              "Check the account, the number of operations and the transfers between your accounts, and tap «Add to Dibsly» on «Your accounts»."
+                              "If Dibsly isn't sure which account a file belongs to, it asks «Where to import?»: its proposal, a new account or one of your accounts at that bank. Check the number of operations and the transfers between your accounts, and tap «Add to Dibsly» on «Your accounts»."
                             ]
                           }
                         ]
@@ -630,7 +630,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "Transfers between your accounts are recognised; other cards in the statement show as accounts on «Your accounts», and if a card isn't yours, choose «Not my card». Categories come from your history, your rules and the bank; the rest lands in «Uncategorized»."
+                          "Transfers between your accounts are recognised; other cards in the statement show as accounts on «Your accounts», and if a card isn't yours, choose «Not my card». A second card of the same bank becomes an account of its own, named with the card's last digits («Privat hryvnias •1234»), and a credit card's statement turns Credits on with the card's limit. Tap a new account to change its name, icon or pocket. Categories come from your history, your rules and the bank; the rest lands in «Uncategorized»."
                         ]
                       }
                     ]
@@ -704,7 +704,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["What it is."] },
-                          " Payments you expect: subscriptions, rent, one-off reminders. They don't change the balance until you record or link an expense."
+                          " Payments you expect: subscriptions, rent, one-off reminders. They don't change the balance until you record or link an expense. Each day shows the logos of what is due, and the month says what goes out and what comes in."
                         ]
                       },
                       {
@@ -728,7 +728,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Reminders."] },
-                          " On the day or 1, 3 or 7 days before. «Add to calendar» in an expense creates a new payment. The calendar can be turned off in Settings, section Features; what Dibsly reminds you of is in Settings → Notifications."
+                          " On the day or 1, 3 or 7 days before. «More actions» → «Repeat» in an expense's or income's card creates a new payment. The calendar can be turned off in Settings, section Features; what Dibsly reminds you of is in Settings → Notifications."
                         ]
                       }
                     ]
@@ -1306,7 +1306,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Record a debt."] },
-                          " First turn on «Debts» in Settings → Features: the Debts block appears on Main. Record a debt there or with + → Operation → Debt."
+                          " First turn on «Debts» in Settings → Features: the Debts block appears on Main. Record a debt there or with + → Operation → Transfer: under «To», pick a person in the «Lend» row (under «From» it is «Borrow»). The card shows what the person owes after this transfer."
                         ]
                       },
                       {
@@ -1314,7 +1314,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Split an expense."] },
-                          " In an expense's card, «More actions» → «Split with a person»: your part stays an expense, your friends' parts become debts. In a receipt, tap «Split the receipt» and «I paid for the whole receipt»."
+                          " In an expense's card, «More actions» → «Split with a person»: your part stays an expense, your friends' parts become debts, and under the sum you see who owes you what. In a receipt, tap «Split the receipt» and «I paid for the whole receipt»."
                         ]
                       },
                       {
@@ -1390,7 +1390,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Credit card and reminders."] },
-                          " «On hand» shows only your own money, with «… of credit still available» under it. Payments show in the calendar with reminders three days before and on the day."
+                          " «On hand» shows only your own money, and the card's sum has «… credit left» beside it. In «Credit card limit», enter from your bank's tariffs when the grace period ends («the month's end», as at monobank, or «a set day» of the next month, like the 25th at PrivatBank), the interest per month and the minimum payment. That day, with what to pay back, goes into the calendar, onto Main and into the widget, with a reminder three days before. Dibsly shows the minimum payment and, once the grace period is over, what a month of the debt costs. Credit payments are in the calendar too, with reminders three days before and on the day."
                         ]
                       },
                       {
@@ -1545,7 +1545,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["The account."] },
-                          " The avatar on Main, next to the gear, opens Profile: sign in with Apple, Google or e-mail. Without an account everything works on one device."
+                          " The avatar on Main, next to the gear, opens Profile: sign in with Apple, Google or e-mail. One address is one account: Google, Apple or «Create an account» with an address that already has Dibsly sign in to that account, and «Forgot your password?» adds a password to a Google or Apple account too. Without an account everything works on one device."
                         ]
                       },
                       {
@@ -1741,7 +1741,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "On hand — the total, the rates, the credit available, your accounts and the Savings, Investments and FOP tiles, as on Main. Next payment — the nearest payments from the calendar. Quick entry — an expense, voice or a receipt in one tap. On the Lock Screen — On hand and a “+” for an expense. Free, on iPhone and iPad."
+                          "On hand — the total, the rates, the credit available, your accounts and the Savings, Investments and FOP tiles, as on Main. Next payment — the nearest payments from the calendar, a credit card's grace period end among them. Quick entry — an expense, voice or a receipt in one tap. On the Lock Screen — On hand and a “+” for an expense. Free, on iPhone and iPad."
                         ]
                       },
                       {
@@ -1977,7 +1977,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "Dibsly imports a Monefy CSV and its own CSV. In Monefy export your data as CSV, then in Dibsly: Settings → Import & export → «CSV file» → «Monefy CSV». Accounts, categories, currencies and transfers come over, and Dibsly shows exactly what it will add before saving."
+                          "Dibsly imports a Monefy CSV and its own CSV. In Monefy export your data as CSV, then in Dibsly: Settings → Import & export → «CSV file» → «Monefy CSV». Accounts, categories, currencies and transfers come over, and Dibsly shows exactly what it will add before saving. On the first launch the same is in «Import your operations» → «From another app»."
                         ]
                       },
                       {
