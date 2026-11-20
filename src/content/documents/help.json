@@ -142,7 +142,7 @@
                             "tag": "li",
                             "attrs": {},
                             "children": [
-                              "«Import your operations»: monobank in one tap, any bank's statement (PDF, CSV or XLS), several if you like, or «From another app» for another app's CSV. Dibsly names the accounts itself on the «Your accounts» page. No bank? Tap «Start without a bank»."
+                              "«Import your operations»: monobank in one tap, or «A statement or a file» — any bank's statement, a broker's report or another app's export (PDF, CSV or Excel), several if you like. Dibsly works out what the file is and names the accounts itself. No bank? Tap «Start without a bank»."
                             ]
                           },
                           {
@@ -217,7 +217,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["+"] },
-                          " records an operation (an expense, income or a transfer), a phrase («Say it») or a receipt; «Bank statement» and «Connect monobank» (or «Update from monobank») are there too. The gear at the top opens Settings, with a search at the bottom, and the avatar next to it opens Profile."
+                          " records an operation (an expense, income or a transfer), a phrase («Say it») or a receipt; «Import operations» and «Connect monobank» (or «Update from monobank») are there too. The gear at the top opens Settings, with a search at the bottom, and the avatar next to it opens Profile."
                         ]
                       },
                       {
@@ -586,21 +586,21 @@
                             "tag": "li",
                             "attrs": {},
                             "children": [
-                              "Save a statement in your bank's app: PDF, CSV, XLS or XLSX. «How to export» in Dibsly shows where to get one."
+                              "Save a statement in your bank's app: PDF, CSV, XLS or XLSX. «Where to find a statement» in Dibsly shows a video and the steps for your bank."
                             ]
                           },
                           {
                             "tag": "li",
                             "attrs": {},
                             "children": [
-                              "Share it to Dibsly or tap «+» on Main → «Bank statement» (or Settings → Import & export → «Bank statement»; with FOP on, «Bank or FOP statement»). Dibsly recognises a FOP statement by itself."
+                              "Share it to Dibsly or tap «+» on Main → «Import operations» (or Settings → Import & export → «Import operations») and pick the file. Dibsly recognises a FOP statement by itself."
                             ]
                           },
                           {
                             "tag": "li",
                             "attrs": {},
                             "children": [
-                              "If Dibsly isn't sure which account a file belongs to, it asks «Where to import?»: its proposal, a new account or one of your accounts at that bank. Check the number of operations and the transfers between your accounts, and tap «Add to Dibsly» on «Your accounts»."
+                              "Before writing, Dibsly shows what it will do — «I'll create a new account» or «I'll add the new operations» — with the account's card: the number of operations, the period and the balance. If the file could go to several of your accounts, it asks «Where should it go?». Tap «Import», and «Done» shows how many operations were written and to which accounts."
                             ]
                           }
                         ]
@@ -889,7 +889,7 @@
                             "tag": "li",
                             "attrs": {},
                             "children": [
-                              "Open Settings → Import & export → «Broker report» and pick the file. Dibsly sorts out buys, sales, dividends with the tax withheld, and deposits."
+                              "Open «Import operations» («+» in Investments or on Main, or Settings → Import & export) and pick the file. Dibsly sorts out buys, sales, dividends with the tax withheld, deposits and currency exchanges; euros go to an «IBKR EUR» account."
                             ]
                           }
                         ]
@@ -1977,7 +1977,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "Dibsly imports a Monefy CSV and its own CSV. In Monefy export your data as CSV, then in Dibsly: Settings → Import & export → «CSV file» → «Monefy CSV». Accounts, categories, currencies and transfers come over, and Dibsly shows exactly what it will add before saving. On the first launch the same is in «Import your operations» → «From another app»."
+                          "Dibsly imports a Monefy CSV and its own CSV. In Monefy export your data as CSV, then in Dibsly open «Import operations» and pick the file. Accounts, categories, currencies and transfers come over, and before saving Dibsly shows how many operations are new and which of the file's accounts and categories it already has or will add. On the first launch it's the «A statement or a file» tile."
                         ]
                       },
                       {
@@ -1985,14 +1985,14 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Any other app (Premium)."] },
-                          " Export your data as CSV or Excel, then «CSV file» → «Other app». Dibsly's AI works out from a sample of rows where the date, amount, category and account are, and Dibsly reads every row on your device. Before saving you see what will be added and how many rows were left out. This import only adds operations and never replaces anything, and the same file a second time doubles nothing."
+                          " Export your data as CSV or Excel and pick the file in «Import operations». Dibsly's AI works out from a sample of rows where the date, amount, category and account are, and Dibsly reads every row on your device. Before saving you see what will be added and how many rows were left out. This import only adds operations and never replaces anything, and the same file a second time doubles nothing."
                         ]
                       },
                       {
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "A Dibsly or Monefy CSV can be added to your data or replace it all — then a safety copy is made first."
+                          "A Dibsly export can also replace all your data («Replace all data with this file») — then a safety copy is made first. Files from Monefy and other apps only add."
                         ]
                       }
                     ]
