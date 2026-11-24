@@ -286,7 +286,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Editing."] },
-                          " In History, tap an operation, change it and tap «Save» at the bottom; × closes without changes. Splitting an expense, repeating it, adding it to another, returning a purchase or duplicating is in «More actions». Hold an operation to change the category, duplicate, select several or delete."
+                          " In History, tap an operation, change it and tap «Save» at the bottom; × closes without changes. Splitting an expense, repeating it, adding it to another, returning a purchase or duplicating is in «More actions». Hold an operation to change the category, duplicate, select several or delete. Selected operations can go to another category with «Move» or get a new name with «More actions» → «Rename», and the message after it has «Undo»."
                         ]
                       },
                       {
@@ -322,7 +322,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Filters."] },
-                          " In History and Analytics the filter takes several accounts and several categories at once: tick them and tap «Apply»."
+                          " In History and Analytics the filter takes several accounts and several categories at once: tick them and tap «Apply». While a filter applies, a line «Filters: …» with «Reset» stands over the search. When nothing is found, Dibsly says why: nothing in this period (then you can search all time) or nothing for these filters (then «Reset filters»)."
                         ]
                       }
                     ]
@@ -355,7 +355,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Siri and the Action button."] },
-                          " Say «Record in Dibsly» to Siri (Siri takes it in English only) or put the «Record in Dibsly» shortcut on the Action button. Step by step: Settings → Features → «Voice entry»."
+                          " Say «Record in Dibsly» to Siri (Siri takes it in English only) or put the «Record in Dibsly» shortcut on the Action button. Step by step: Settings → Features → «Voice entry». While test data is on, the command still records into your real data, and Dibsly says so: «Saved to your real data»."
                         ]
                       },
                       {
@@ -568,7 +568,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "«+» on Main → «Connect monobank» (or Settings → Automation → monobank directly), and confirm the access in the mono app. Dibsly names your cards and jars itself. Check the names on «Your accounts», choose how much history to load, and from then on transactions arrive on their own within a minute. Read-only access, no token, no passwords. Update any time: «+» → «Update from monobank»; disconnect in Settings → Automation."
+                          "«+» on Main → «Connect monobank» (or Settings → Automation → monobank directly), and confirm the access in the mono app. Then Dibsly shows a page like a statement's: «I'll create new accounts» (or «Here's what I'll do» when a card is already in Dibsly) and a card for each account with its type and balance after import. An account in another currency gets the type «Savings»; «Change name or type» on its card changes it. At the top, «History · From the 1st of the month»: tap it to pick another period, then «Add to Dibsly». From then on transactions arrive on their own within a minute. Read-only access, no token, no passwords. Update any time: «+» → «Update from monobank». Settings → Automation → monobank directly opens «monobank connected»: each account's card has «Importing» or «Not importing», where its operations go and «Rename», then a red «Disconnect» follows the cards."
                         ]
                       }
                     ]
@@ -630,7 +630,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "Transfers between your accounts are recognised; other cards in the statement show as accounts on «Your accounts», and if a card isn't yours, choose «Not my card». A second card of the same bank becomes an account of its own, named with the card's last digits («Privat hryvnias •1234»), and a credit card's statement turns Credits on with the card's limit. Tap a new account to change its name, icon or pocket. Categories come from your history, your rules and the bank; the rest lands in «Uncategorized»."
+                          "Transfers between your accounts are recognised; other cards in the statement show as accounts in «More accounts from the statement», and if a card isn't yours, choose «Not my card». A second card of the same bank becomes an account of its own, named with the card's last digits («Privat hryvnias •1234»), and a credit card's statement turns Credits on with the card's limit. Tap a new account to change its name, icon or pocket. Categories come from your history, your rules and the bank; the rest lands in «Uncategorized»."
                         ]
                       }
                     ]
@@ -704,7 +704,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["What it is."] },
-                          " Payments you expect: subscriptions, rent, one-off reminders. They don't change the balance until you record or link an expense. Each day shows the logos of what is due, and the month says what goes out and what comes in."
+                          " Payments you expect: subscriptions, rent, one-off reminders. They don't change the balance until you record or link an expense. Each day shows the logos of what is due, and the month says what goes out and what comes in. A day's total counts debts and credit payments too."
                         ]
                       },
                       {
@@ -728,7 +728,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Reminders."] },
-                          " On the day or 1, 3 or 7 days before. «More actions» → «Repeat» in an expense's or income's card creates a new payment. The calendar can be turned off in Settings, section Features; what Dibsly reminds you of is in Settings → Notifications."
+                          " On the day or 1, 3 or 7 days before. «More actions» → «Repeat» in an expense's or income's card creates a new payment. The calendar can be turned off in Settings, section Features; what Dibsly reminds you of is in Settings → Notifications. Tapping a reminder opens its page: the payment, the credit, the FOP or the investment taxes. Reminders show while Dibsly is open too."
                         ]
                       }
                     ]
@@ -749,7 +749,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Turn it on."] },
-                          " Settings, section Features → Planning. Turning it off keeps your plans."
+                          " Settings, section Features → Plan. Turning it off keeps your plans."
                         ]
                       },
                       {
@@ -771,7 +771,7 @@
                             "attrs": { "href": "#calendar" },
                             "children": ["calendar"]
                           },
-                          " this month, «By the calendar …» under it shows their sum. Hold the category → «Use the calendar», and the limit becomes that sum. The limit card in Planning and Analytics shows the fact «By the calendar», and a new plan sets a limit no lower than the calendar."
+                          " this month, «By the calendar …» under it shows their sum. Hold the category → «Use the calendar», and the limit becomes that sum. The limit card in the Plan and Analytics shows the fact «By the calendar», and a new plan sets a limit no lower than the calendar."
                         ]
                       },
                       {
@@ -796,6 +796,14 @@
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Faster."] },
                           " Hold a category for last month's amount or Remove limit; the bin next to the eye removes a limit in one tap, and the eye shows the category on Main. Hide the keypad with its ⌄ key or a swipe down."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Undo."] },
+                          " Deleted the plan, saved or removed a limit: the message after it has «Undo». Close the plan editor with changes, and Dibsly asks «Changes not saved» with «Save» or «Don't save»."
                         ]
                       }
                     ]
@@ -832,7 +840,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["The queue."] },
-                          " «Goals’ order» decides which goal fills first. A goal of the Reserve kind (a cushion) always fills first and stays at the bottom."
+                          " «Goals’ order» decides which goal fills first. A goal of the Reserve kind (a cushion) always fills first and stays at the bottom. Deleted a goal by mistake? «Undo» in the message puts it back."
                         ]
                       }
                     ]
@@ -898,7 +906,39 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "A buy, a sale or a dividend can be recorded by hand too, and a broker's report added from the same place: «+» on the portfolio's page."
+                          "A buy, a sale or a dividend can be recorded by hand too, and a broker's report added from the same place: «+» on the portfolio's page. After recording Dibsly says «Recorded: …», after deleting «Deleted: …», and both messages have «Undo»."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["A position's result."] },
+                          " In a position's card, under «Total P&L», you see what it is made of: the price, dividends and fees, and the sales when part was sold."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Strategy."] },
+                          " On the portfolio's page, the «Strategy» card → «Edit»: split the portfolio into blocks or single tickers with «from» and «to» shares, and Dibsly shows what to buy. The blocks sit under «Allocation». A saved or deleted block comes back with «Undo» in the message."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Portfolio together."] },
+                          " The people icon at the top of the portfolio shares your investments with those you share accounts with. The menu in the title switches between «My portfolio», the other person's portfolio and «Portfolio together». Nothing can be recorded in someone else's portfolio, so it has no «+»."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Moving operations."] },
+                          " On an investment account's page, the ⇄ button at the top moves the operations you choose to another investment account of yours in the same currency. The message «Moved … operations» has «Undo»."
                         ]
                       }
                     ]
@@ -1249,7 +1289,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["For the declaration."] },
-                          " Dividends go to line 10.10, investment profit to line 10.8 and annex Ф1; the same place shows how much PIT and military levy to pay. The declaration is due by 1 May, the payment by 1 August; Dibsly reminds you on 24 April and 24 July."
+                          " Dividends go to line 10.10, investment profit to line 10.8 and annex Ф1; the same place shows how much PIT and military levy to pay. The declaration is due by 1 May, the payment by 1 August; Dibsly reminds you on 24 April and 24 July. Tapping the reminder opens «Taxes», and you can switch these reminders off in Settings → «Notifications» → «Investment taxes»."
                         ]
                       },
                       {
@@ -1306,7 +1346,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Record a debt."] },
-                          " First turn on «Debts» in Settings → Features: the Debts block appears on Main. Record a debt there or with + → Operation → Transfer: under «To», pick a person in the «Lend» row (under «From» it is «Borrow»). The card shows what the person owes after this transfer."
+                          " First turn on «Debts» in Settings → Features: the Debts block appears on Main. Record a debt there or with + → Operation → Transfer: under «To», pick a person in the «Lend» row (under «From» it is «Borrow»). The card shows what the person owes after this transfer. A loan, a payback or a debt let go ends with the message «Saved to debts», and «Undo» in it removes what was just recorded."
                         ]
                       },
                       {
@@ -1340,6 +1380,14 @@
                           { "tag": "b", "attrs": {}, "children": ["A debt let go."] },
                           " «Paid back» → «Money did not come to an account»: the debt closes and the sum goes to Gifts in your expenses."
                         ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Date, name and archive."] },
+                          " The ⋯ menu on the person's page sets or removes the pay-back date, renames the debt or sends it to the archive. Each change says what was done and has «Undo»."
+                        ]
                       }
                     ]
                   }
@@ -1358,7 +1406,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "A loan, a mortgage, instalments, a microloan or a card's limit: what's left, the next payment and the overpayment."
+                          "A loan, a mortgage, a purchase in instalments, a microloan or a card's limit: what's left, the next payment and the overpayment."
                         ]
                       },
                       {
@@ -1374,7 +1422,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Bought in instalments."] },
-                          " In a saved expense's card, «More actions» → «Bought in instalments»: the purchase stays whole in Analytics, the bank's part comes back to the card, and each month's part pays the instalment off."
+                          " In a saved expense's card, «More actions» → «Bought in instalments»: the purchase stays whole in Analytics, the bank's part comes back to the card, and each month's part pays off the «Purchase in instalments» in Credits."
                         ]
                       },
                       {
@@ -1390,7 +1438,15 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Credit card and reminders."] },
-                          " «On hand» shows only your own money, and the card's sum has «… credit left» beside it. In «Credit card limit», enter from your bank's tariffs when the grace period ends («the month's end», as at monobank, or «a set day» of the next month, like the 25th at PrivatBank), the interest per month and the minimum payment. That day, with what to pay back, goes into the calendar, onto Main and into the widget, with a reminder three days before. Dibsly shows the minimum payment and, once the grace period is over, what a month of the debt costs. Credit payments are in the calendar too, with reminders three days before and on the day."
+                          " «On hand» shows only your own money, and the card's sum has «… credit left» beside it. In «Credit card limit», enter from your bank's tariffs when the grace period ends («the month's end», as at monobank, or «a set day» of the next month, like the 25th at PrivatBank), the interest per month and the minimum payment. That day, with what to pay back, goes into the calendar, onto Main and into the widget, with a reminder three days before. Dibsly shows the minimum payment and, once the grace period is over, what a month of the debt costs. Credit payments are in the calendar too, with reminders three days before and on the day. Tapping a reminder opens the credit itself, or a credit card's account."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Undo."] },
+                          " A payment, a new credit, changed terms and a card's limit end with a message («Payment saved», «Credit added», «Terms saved», «Limit saved»), and it has «Undo»."
                         ]
                       },
                       {
@@ -1433,7 +1489,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Income."] },
-                          " Income on a FOP account counts at the NBU rate of the day it arrived. A refund or your own transfer: turn off «FOP income» in the operation's card, or hold it on the FOP page → «Not FOP income»."
+                          " Income on a FOP account counts at the NBU rate of the day it arrived. A refund or your own transfer: turn off «FOP income» in the operation's card, or hold it on the FOP page → «Not FOP income». Tapping an income opens its operation."
                         ]
                       },
                       {
@@ -1449,7 +1505,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Paying."] },
-                          " «Show payment details» under the deadlines opens the amounts and the tax service's details for your community — every field copies with a tap."
+                          " «Show payment details» under the deadlines opens the amounts and the tax service's details for your community — every field copies with a tap. The tax's card in the calendar has «Show payment details» too, and the line «By … your accounts need» counts the FOP taxes as well."
                         ]
                       },
                       {
@@ -1457,7 +1513,15 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Your client's payout."] },
-                          " Hours, rate and your own conditions — and how much should arrive each month. You type the hours each month on the FOP page."
+                          " Hours, rate and your own conditions — and how much should arrive each month. You type the hours each month on the FOP page: with an hourly rate every month in «Incomes» opens a payout, so the hours can go in before the first payout arrives."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Undo."] },
+                          " Every mark says what it did and has «Undo»: «Not counting it as FOP income», «Filed», «Mark paid», a payment recorded from the calendar and an account taken out of FOP."
                         ]
                       },
                       {
@@ -1500,7 +1564,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["What it can do."] },
-                          " It counts spending, finds operations, records («record coffee 85»), moves them to categories, sets limits and imports a statement with 📎. Nothing is saved until you tap «Save»."
+                          " It counts spending, finds operations, records («record coffee 85»), moves them to categories, sets limits and imports a statement with 📎. Nothing is saved until you tap «Save». After an answer Dibsly suggests what to ask next."
                         ]
                       },
                       {
@@ -1524,7 +1588,15 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["How many questions."] },
-                          " 20 questions to the AI a month are free, up to 40 a day with Premium. The first time, Dibsly shows what goes to the AI and asks for your permission; to turn the chat on or off — Settings → Features → «AI in Dibsly» → «Ask Dibsly». The conversation stays on this device; «Clear conversation» is there too."
+                          " 20 questions to the AI a month are free, up to 40 a day with Premium. The first time, Dibsly shows what goes to the AI and asks for your permission; to turn the chat on or off — Settings → Features → «AI in Dibsly» → «Ask Dibsly». «Delete all chats» is there too."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Chats."] },
+                          " «+» at the top of the chat starts a new one, and the earlier one goes to «Chats» (the clock button next to «+»): the newest first, a tap opens a chat to go on with it. To delete one, use the bin on the right or hold it → «Delete»; «Undo» in the message brings it back. Chats are kept on this device only, up to the 50 latest."
                         ]
                       }
                     ]
@@ -1546,6 +1618,22 @@
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["The account."] },
                           " The avatar on Main, next to the gear, opens Profile: sign in with Apple, Google or e-mail. One address is one account: Google, Apple or «Create an account» with an address that already has Dibsly sign in to that account, and «Forgot your password?» adds a password to a Google or Apple account too. Without an account everything works on one device."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Ways to sign in."] },
+                          " Profile → «Ways to sign in»: Apple, Google and e-mail with a password sign in to the same account. Google and the password have «Remove» on the right, but the last way in never does: at least one always stays. A new password is typed twice, the second field is «Repeat the password»."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Test data."] },
+                          " While test data is on, you can't sign in, because test data never reaches an account. «Turn off test data» is right in Profile."
                         ]
                       },
                       {
@@ -1723,6 +1811,14 @@
                           },
                           " Apple Pay and bank notifications through Shortcuts and the widgets are the iPhone's and the iPad's; with sync what they record is on the Mac at once."
                         ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["An empty account."] },
+                          " When the account has nothing yet, the Mac shows «Start on your iPhone» as the page's title. Open Dibsly on your iPhone and sign in to the same account, and the Mac picks the data up by itself. The same page has «Check again» and «Use another account»."
+                        ]
                       }
                     ]
                   }
@@ -1815,14 +1911,14 @@
                             "tag": "li",
                             "attrs": {},
                             "children": [
-                              "The avatar on Main → «Sharing» → «Invite by link» and send the link."
+                              "The avatar on Main → «Sharing» → «Invite a person» and send the link. Each such invitation starts a new group. A link is for one person: it works once, for 7 days."
                             ]
                           },
                           {
                             "tag": "li",
                             "attrs": {},
                             "children": [
-                              "The other person opens it on an iPhone or iPad with Dibsly and taps «Join». To share an account, open its card (Settings → Accounts) → «Make shared»."
+                              "The other person opens it on an iPhone or iPad with Dibsly and taps «Join». To share an account, tap «Make an account shared» on the group's page, or open the account's card (Settings → Accounts) → «Make shared». With several groups Dibsly asks who it is «Together with»."
                             ]
                           }
                         ]
@@ -1831,7 +1927,47 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "Shared accounts and goals: each sees their own and the shared. One member's Premium is enough; anyone can leave there any time."
+                          "Shared accounts and goals: each sees their own and the shared. One member's Premium is enough."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Groups."] },
+                          " «Sharing» is a list, «Who you keep accounts with», with a row for each person or group. Each person sees only the accounts you make shared with them. A group's page shows its people, unused invitations and shared accounts, and «Make an account shared», «Invite someone else to these accounts» and «Leave sharing with …»."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Invitations."] },
+                          " Until the person accepts an invitation, it has a page of its own with «Send again» and «Cancel invitation»."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["One left."] },
+                          " When everyone but one person has left a group, the group ends: its shared accounts become that person's own, with all their history, and they get a notification."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Split."] },
+                          " On a shared account's page, «Split» takes each part to its owner's account. If your account went to the archive when it became shared, it comes back from the archive."
+                        ]
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {},
+                        "children": [
+                          { "tag": "b", "attrs": {}, "children": ["Notifications."] },
+                          " Dibsly tells you when someone joins or leaves a group and when a new shared account appears in it."
                         ]
                       }
                     ]
@@ -2078,7 +2214,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["The account."] },
-                          " The avatar on Main → «Delete account and all data»: the server deletes everything in the account and this device is erased. «Save a copy first» makes a backup. Deleting doesn't cancel Premium — cancel it in iOS Settings."
+                          " The avatar on Main → «Delete account and all data»: the server deletes everything in the account and this device is erased. «Save a copy first» makes a backup. After deleting, Dibsly starts again from the first launch. Deleting doesn't cancel Premium — cancel it in iOS Settings."
                         ]
                       },
                       {
@@ -2086,7 +2222,7 @@
                         "attrs": {},
                         "children": [
                           { "tag": "b", "attrs": {}, "children": ["Signing out."] },
-                          " The avatar on Main → «Remove from this device» (with sync): your data stays in the account and the device is erased. Without sync the button reads «Sign out», and the data stays on the device."
+                          " The avatar on Main → «Sign out». With sync or shared accounts your data stays in the account, the device is erased and Dibsly starts again from the first launch. Without them the data stays on the device, as without an account."
                         ]
                       }
                     ]

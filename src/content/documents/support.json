@@ -198,7 +198,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "Without an account: Settings → Data health and test data → “Delete all data” erases the data on this device (an encrypted safety copy stays in the app until you delete the app). With an account: the avatar on Main → “Delete account and all data”, then sign in again to confirm — the server erases the account and your records, and the data disappears from your devices too; what you added to a shared account stays with its other members. “Remove from this device” only erases this phone and keeps the account. Backups in iCloud Drive or Google Drive don’t go by themselves — delete them in “Backup & recovery”. Deleting doesn’t cancel Premium: cancel it in iOS Settings. What remains after deletion is in the privacy policy."
+                          "Without an account: Settings → Data health and test data → “Delete all data” erases the data on this device (an encrypted safety copy stays in the app until you delete the app). With an account: the avatar on Main → “Delete account and all data”, then sign in again to confirm — the server erases the account and your records, and the data disappears from your devices too; what you added to a shared account stays with its other members. “Sign out” keeps the account: with sync or shared accounts it erases this phone’s data and Dibsly starts from the first launch; without them the data stays on the phone. Backups in iCloud Drive or Google Drive don’t go by themselves — delete them in “Backup & recovery”. Deleting doesn’t cancel Premium: cancel it in iOS Settings. What remains after deletion is in the privacy policy."
                         ]
                       }
                     ]
@@ -492,7 +492,7 @@
                         "tag": "p",
                         "attrs": {},
                         "children": [
-                          "monobank, PrivatBank, UKRSIBBANK and KredoBank statements, and the FOP statements of PrivatBank and UKRSIBBANK, are read by Dibsly itself, on your device; the file is never uploaded. A statement opens from “+” on Main → “Bank statement”. monobank can also be connected directly, in one tap: “+” on Main → “Connect monobank”. Read-only access, no token."
+                          "monobank, PrivatBank, UKRSIBBANK and KredoBank statements, and the FOP statements of PrivatBank and UKRSIBBANK, are read by Dibsly itself, on your device; the file is never uploaded. A statement opens from “+” on Main → “Import operations”. monobank can also be connected directly, in one tap: “+” on Main → “Connect monobank”. Read-only access, no token."
                         ]
                       },
                       {
